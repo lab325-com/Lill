@@ -1,0 +1,10 @@
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+CONFIGURATION_NAME = Release
+HOST_NAME = https:\/\/lill.co/api/
+SUPPORT_EMAIL = support@lill.co
+APP_NAME = Lill
+
+#include "Generator.xcconfig"

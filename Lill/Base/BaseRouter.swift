@@ -1,13 +1,15 @@
 
 import UIKit
+
 //----------------------------------------------
-//MARK: - Router Protocol
+// MARK: - Router Protocol
 //----------------------------------------------
 protocol RouterProtocol {
     var presenter: UINavigationController? { get }
 }
+
 //----------------------------------------------
-//MARK: - Base Router
+// MARK: - Base Router
 //----------------------------------------------
 class BaseRouter: RouterProtocol {
     
@@ -21,8 +23,9 @@ class BaseRouter: RouterProtocol {
         self.presenter = presenter
     }
 }
+
 //----------------------------------------------
-//MARK: - Navigation
+// MARK: - Navigation
 //----------------------------------------------
 extension RouterProtocol {
     

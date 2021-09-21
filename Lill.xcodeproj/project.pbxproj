@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,10 +18,23 @@
 		02A8348226F38FA70009E147 /* OnboardingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A8348026F38FA70009E147 /* OnboardingController.xib */; };
 		02AB244326F39BA400309CFF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB244226F39BA400309CFF /* R.generated.swift */; };
 		02AB244726F39D8E00309CFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02AB244926F39D8E00309CFF /* Localizable.strings */; };
+		02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */; };
+		02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */; };
+		02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC726F5E7AD00F86B87 /* Release.xcconfig */; };
+		02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */; };
+		02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECB26F5E7AE00F86B87 /* AppConfiguration.swift */; };
+		02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */; };
+		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
+		02E4576026F90FF000F19C41 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575F26F90FF000F19C41 /* Login.swift */; };
+		02E4576326F911BE00F19C41 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */; };
 		E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */; };
 		FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA230F26F3624F00E10E89 /* AppDelegate.swift */; };
 		FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231826F3625200E10E89 /* Assets.xcassets */; };
 		FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */; };
+		FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FAAA234926F51A5800E10E89 /* Apollo */; };
+		FAD1832A26F899B4007A67DC /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAD1832926F899B4007A67DC /* Login.graphql */; };
+		FAD1832E26F8A458007A67DC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD1832D26F8A458007A67DC /* schema.json */; };
+		FAD1833226F8A5CA007A67DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833126F8A5CA007A67DC /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +49,21 @@
 		02A8348026F38FA70009E147 /* OnboardingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingController.xib; sourceTree = "<group>"; };
 		02AB244226F39BA400309CFF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		02AB244826F39D8E00309CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
+		02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		02D04EC726F5E7AD00F86B87 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		02D04ECB26F5E7AE00F86B87 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		02D04ECD26F5E7AE00F86B87 /* AppConfigurationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigurationBridge.h; sourceTree = "<group>"; };
+		02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationBridge.m; sourceTree = "<group>"; };
+		02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lill-Bridging-Header.h"; sourceTree = "<group>"; };
+		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		02E4575F26F90FF000F19C41 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		345C8D7B95F2127992B3CEF4 /* Pods-Lill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.debug.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.debug.xcconfig"; sourceTree = "<group>"; };
 		6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.release.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.release.xcconfig"; sourceTree = "<group>"; };
+		DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.staging.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.staging.xcconfig"; sourceTree = "<group>"; };
 		FAAA230C26F3624F00E10E89 /* Lill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA230F26F3624F00E10E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA231826F3625200E10E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +71,9 @@
 		FAAA231D26F3625200E10E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAA234326F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FAAA234426F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAD1832926F899B4007A67DC /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		FAD1832D26F8A458007A67DC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		FAD1833126F8A5CA007A67DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
+				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +137,7 @@
 		02A8347E26F38F920009E147 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				02E4576126F911B000F19C41 /* Presenter */,
 				02A8347F26F38FA70009E147 /* OnboardingController.swift */,
 				02A8348026F38FA70009E147 /* OnboardingController.xib */,
 			);
@@ -125,10 +155,99 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02D04ED726F5E89800F86B87 /* BridgingHeaders */,
+				02D04EC926F5E7AE00F86B87 /* Application */,
+				02D04EC426F5E7AD00F86B87 /* ConfigFiles */,
 				02A8346F26F38B430009E147 /* Extension */,
 				02AB244426F39BF400309CFF /* Localization */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		02D04EC426F5E7AD00F86B87 /* ConfigFiles */ = {
+			isa = PBXGroup;
+			children = (
+				02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */,
+				02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */,
+				02D04EC726F5E7AD00F86B87 /* Release.xcconfig */,
+				02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */,
+			);
+			path = ConfigFiles;
+			sourceTree = "<group>";
+		};
+		02D04EC926F5E7AE00F86B87 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				02D04ECA26F5E7AE00F86B87 /* AppConfiguration */,
+				02D04ECC26F5E7AE00F86B87 /* ConfigurationBridge */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		02D04ECA26F5E7AE00F86B87 /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				02D04ECB26F5E7AE00F86B87 /* AppConfiguration.swift */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		02D04ECC26F5E7AE00F86B87 /* ConfigurationBridge */ = {
+			isa = PBXGroup;
+			children = (
+				02D04ECD26F5E7AE00F86B87 /* AppConfigurationBridge.h */,
+				02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */,
+			);
+			path = ConfigurationBridge;
+			sourceTree = "<group>";
+		};
+		02D04ED726F5E89800F86B87 /* BridgingHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */,
+			);
+			path = BridgingHeaders;
+			sourceTree = "<group>";
+		};
+		02E4575B26F903A200F19C41 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				02E4575C26F903B000F19C41 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		02E4575E26F90FE600F19C41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02E4575F26F90FF000F19C41 /* Login.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02E4576126F911B000F19C41 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		02E4576426F9137C00F19C41 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02E4575E26F90FE600F19C41 /* Model */,
+				FAD1832926F899B4007A67DC /* Login.graphql */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		02E4576526F9139000F19C41 /* GraphQl */ = {
+			isa = PBXGroup;
+			children = (
+				02E4576426F9137C00F19C41 /* Login */,
+			);
+			path = GraphQl;
 			sourceTree = "<group>";
 		};
 		04EAD7DE0DECEAC3326BB8CE /* Pods */ = {
@@ -136,6 +255,7 @@
 			children = (
 				345C8D7B95F2127992B3CEF4 /* Pods-Lill.debug.xcconfig */,
 				7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */,
+				DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -169,7 +289,10 @@
 		FAAA230E26F3624F00E10E89 /* Lill */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1833126F8A5CA007A67DC /* API.swift */,
+				FAD1832D26F8A458007A67DC /* schema.json */,
 				02AB244226F39BA400309CFF /* R.generated.swift */,
+				FAD1832826F899A8007A67DC /* Apollo */,
 				02AB244B26F3B8C100309CFF /* Resources */,
 				02A8346A26F38AF50009E147 /* Base */,
 				02A8347C26F38F210009E147 /* AppDelegate */,
@@ -181,6 +304,15 @@
 			path = Lill;
 			sourceTree = "<group>";
 		};
+		FAD1832826F899A8007A67DC /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				02E4575B26F903A200F19C41 /* Network */,
+				02E4576526F9139000F19C41 /* GraphQl */,
+			);
+			path = Apollo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,13 +320,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAA232026F3625200E10E89 /* Build configuration list for PBXNativeTarget "Lill" */;
 			buildPhases = (
+				FAAA230A26F3624F00E10E89 /* Resources */,
+				FAAA230926F3624F00E10E89 /* Frameworks */,
 				4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */,
+				1BB3FD5E32FCD87F5669FC86 /* [CP] Embed Pods Frameworks */,
 				02AB244A26F39EF100309CFF /* Localize */,
 				02AB244126F39A1700309CFF /* RSwift */,
+				FAD1832226F887FD007A67DC /* Generate Apollo GraphQL API */,
 				FAAA230826F3624F00E10E89 /* Sources */,
-				FAAA230926F3624F00E10E89 /* Frameworks */,
-				FAAA230A26F3624F00E10E89 /* Resources */,
-				1BB3FD5E32FCD87F5669FC86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +335,7 @@
 			);
 			name = Lill;
 			packageProductDependencies = (
+				FAAA234926F51A5800E10E89 /* Apollo */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -232,6 +366,7 @@
 			);
 			mainGroup = FAAA230326F3624F00E10E89;
 			packageReferences = (
+				FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -247,10 +382,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
+				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
 				02AB244726F39D8E00309CFF /* Localizable.strings in Resources */,
 				02A8348226F38FA70009E147 /* OnboardingController.xib in Resources */,
+				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
+				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
+				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
+				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +476,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FAD1832226F887FD007A67DC /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -342,14 +501,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingController.swift in Sources */,
+				02E4576026F90FF000F19C41 /* Login.swift in Sources */,
+				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
+				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
+				02E4576326F911BE00F19C41 /* OnboardingPresenter.swift in Sources */,
+				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,8 +543,95 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		02D04ED526F5E7CF00F86B87 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		02D04ED626F5E7CF00F86B87 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = J544E3RJX6;
+				INFOPLIST_FILE = Lill/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lill/Resources/BridgingHeaders/Lill-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Staging;
+		};
 		FAAA231E26F3625200E10E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -442,6 +694,7 @@
 		};
 		FAAA231F26F3625200E10E89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02D04EC726F5E7AD00F86B87 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -513,6 +766,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lill/Resources/BridgingHeaders/Lill-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -535,6 +789,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lill/Resources/BridgingHeaders/Lill-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -547,6 +802,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAAA231E26F3625200E10E89 /* Debug */,
+				02D04ED526F5E7CF00F86B87 /* Staging */,
 				FAAA231F26F3625200E10E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -556,12 +812,32 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FAAA232126F3625200E10E89 /* Debug */,
+				02D04ED626F5E7CF00F86B87 /* Staging */,
 				FAAA232226F3625200E10E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.48.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAAA234926F51A5800E10E89 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAAA230426F3624F00E10E89 /* Project object */;
 }

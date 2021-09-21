@@ -8,6 +8,7 @@ final class NavigationController: UINavigationController {
 }
 
 class BaseController: UIViewController {
+    
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------

@@ -1,0 +1,10 @@
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+CONFIGURATION_NAME = Debug
+HOST_NAME = https:\/\/faker.graphqleditor.com/3knbh/lill/graphql
+SUPPORT_EMAIL = support@lill.co
+APP_NAME = Lill
+
+#include "Generator.xcconfig"

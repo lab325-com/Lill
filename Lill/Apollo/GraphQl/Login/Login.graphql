@@ -1,0 +1,18 @@
+mutation login($socialToken: String!,
+			   $udid: String!,
+			   $firebaseId: String,
+			   $social: Social,
+			   $lang: Lang) {
+	login(socialToken: $socialToken
+		  udid: $udid
+		  firebaseId: $firebaseId
+		  social: $social
+		  lang: $lang) {
+		avatar
+		barer
+		id
+		lang
+		name
+		social
+	}
+}

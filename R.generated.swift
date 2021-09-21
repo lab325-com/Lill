@@ -130,6 +130,60 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.file` struct is generated, and contains static references to 6 files.
+  struct file {
+    /// Resource file `Debug.xcconfig`.
+    static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
+    /// Resource file `Generator.xcconfig`.
+    static let generatorXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Generator", pathExtension: "xcconfig")
+    /// Resource file `Login.graphql`.
+    static let loginGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Login", pathExtension: "graphql")
+    /// Resource file `Release.xcconfig`.
+    static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
+    /// Resource file `Staging.xcconfig`.
+    static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
+    /// Resource file `schema.json`.
+    static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
+
+    /// `bundle.url(forResource: "Debug", withExtension: "xcconfig")`
+    static func debugXcconfig(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.debugXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Generator", withExtension: "xcconfig")`
+    static func generatorXcconfig(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.generatorXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Login", withExtension: "graphql")`
+    static func loginGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.loginGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Release", withExtension: "xcconfig")`
+    static func releaseXcconfig(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.releaseXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Staging", withExtension: "xcconfig")`
+    static func stagingXcconfig(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.stagingXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "schema", withExtension: "json")`
+    static func schemaJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.schemaJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
     /// Image `temp`.
