@@ -41,9 +41,6 @@
 		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
 		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
 		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
-		FA7C8CE826FCBB8F000D2976 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */; };
-		FA7C8CEA26FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */; };
-		FA7C8CEC26FCBB8F000D2976 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */; };
 		FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CEE26FCC082000D2976 /* GoogleSignIn */; };
 		FA7C8CF526FDEF5C000D2976 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7C8CF426FDEF5C000D2976 /* GoogleService-Info.plist */; };
 		FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */; };
@@ -126,14 +123,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8A31062701C98B00F99516 /* Toast in Frameworks */,
-				FA7C8CEA26FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */,
 				029CFD972701A85D00C69908 /* NVActivityIndicatorView in Frameworks */,
 				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
 				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
-				FA7C8CE826FCBB8F000D2976 /* FirebaseAnalytics in Frameworks */,
-				FA7C8CEC26FCBB8F000D2976 /* FirebaseAuth in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
@@ -489,9 +483,6 @@
 				FAAA234926F51A5800E10E89 /* Apollo */,
 				FA7C8CD526FB6688000D2976 /* FacebookCore */,
 				FA7C8CD726FB6688000D2976 /* FacebookLogin */,
-				FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */,
-				FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */,
-				FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */,
 				FA7C8CEE26FCC082000D2976 /* GoogleSignIn */,
 				029CFD962701A85D00C69908 /* NVActivityIndicatorView */,
 				029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */,
@@ -528,7 +519,6 @@
 			packageReferences = (
 				FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
@@ -609,7 +599,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -797,7 +787,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -947,7 +937,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -977,7 +967,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1041,14 +1031,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1095,21 +1077,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookLogin;
-		};
-		FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseAnalyticsSwift-Beta";
-		};
-		FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
 		};
 		FA7C8CEE26FCC082000D2976 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
