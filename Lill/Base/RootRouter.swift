@@ -44,7 +44,16 @@ class RootRouter {
 //----------------------------------------------
 extension RootRouter {
     func loadOnboarding(toWindow window: UIWindow) {
-        let viewController = OnboardingController()
+        let viewController = OnboardingPageController()
+        let navigationController = NavigationController(rootViewController: viewController)
+        UIApplication.shared.switchRootViewController(window: window,
+                                                      rootViewController: navigationController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
+    
+    func loadLogin(toWindow window: UIWindow) {
+        let viewController = LoginController()
         let navigationController = NavigationController(rootViewController: viewController)
         UIApplication.shared.switchRootViewController(window: window,
                                                       rootViewController: navigationController,

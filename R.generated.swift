@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -130,16 +131,37 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 6 files.
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 11 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
     /// Resource file `Generator.xcconfig`.
     static let generatorXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Generator", pathExtension: "xcconfig")
+    /// Resource file `GetCatalogPlants.graphql`.
+    static let getCatalogPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GetCatalogPlants", pathExtension: "graphql")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Login.graphql`.
     static let loginGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Login", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
+    /// Resource file `SFProDisplay-Bold.ttf`.
+    static let sfProDisplayBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Bold", pathExtension: "ttf")
+    /// Resource file `SFProDisplay-Medium.ttf`.
+    static let sfProDisplayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Medium", pathExtension: "ttf")
+    /// Resource file `SFProDisplay-Regular.ttf`.
+    static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
     /// Resource file `schema.json`.
@@ -157,6 +179,18 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "GetCatalogPlants", withExtension: "graphql")`
+    static func getCatalogPlantsGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.getCatalogPlantsGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Login", withExtension: "graphql")`
     static func loginGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.loginGraphql
@@ -166,6 +200,24 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Release", withExtension: "xcconfig")`
     static func releaseXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.releaseXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SFProDisplay-Bold", withExtension: "ttf")`
+    static func sfProDisplayBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProDisplayBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SFProDisplay-Medium", withExtension: "ttf")`
+    static func sfProDisplayMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProDisplayMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SFProDisplay-Regular", withExtension: "ttf")`
+    static func sfProDisplayRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProDisplayRegularTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -184,10 +236,103 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.font` struct is generated, and contains static references to 3 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `SFProDisplay-Bold`.
+    static let sfProDisplayBold = Rswift.FontResource(fontName: "SFProDisplay-Bold")
+    /// Font `SFProDisplay-Medium`.
+    static let sfProDisplayMedium = Rswift.FontResource(fontName: "SFProDisplay-Medium")
+    /// Font `SFProDisplay-Regular`.
+    static let sfProDisplayRegular = Rswift.FontResource(fontName: "SFProDisplay-Regular")
+
+    /// `UIFont(name: "SFProDisplay-Bold", size: ...)`
+    static func sfProDisplayBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfProDisplayBold, size: size)
+    }
+
+    /// `UIFont(name: "SFProDisplay-Medium", size: ...)`
+    static func sfProDisplayMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfProDisplayMedium, size: size)
+    }
+
+    /// `UIFont(name: "SFProDisplay-Regular", size: ...)`
+    static func sfProDisplayRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfProDisplayRegular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.sfProDisplayBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Bold' could not be loaded, is 'SFProDisplay-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sfProDisplayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Medium' could not be loaded, is 'SFProDisplay-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sfProDisplayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Regular' could not be loaded, is 'SFProDisplay-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
+    /// Image `ic_login_apple`.
+    static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
+    /// Image `ic_login_bg`.
+    static let ic_login_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_bg")
+    /// Image `ic_login_facebook`.
+    static let ic_login_facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_facebook")
+    /// Image `ic_login_google`.
+    static let ic_login_google = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_google")
+    /// Image `ic_login_instagram`.
+    static let ic_login_instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_instagram")
+    /// Image `ic_login_logo`.
+    static let ic_login_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_logo")
+    /// Image `temp_onboarding_1_ic`.
+    static let temp_onboarding_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_1_ic")
+    /// Image `temp_onboarding_2_ic`.
+    static let temp_onboarding_2_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_2_ic")
+    /// Image `temp_onboarding_3_ic`.
+    static let temp_onboarding_3_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_3_ic")
     /// Image `temp`.
     static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_apple", bundle: ..., traitCollection: ...)`
+    static func ic_login_apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_apple, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_bg", bundle: ..., traitCollection: ...)`
+    static func ic_login_bg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_bg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_facebook", bundle: ..., traitCollection: ...)`
+    static func ic_login_facebook(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_facebook, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_google", bundle: ..., traitCollection: ...)`
+    static func ic_login_google(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_google, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_instagram", bundle: ..., traitCollection: ...)`
+    static func ic_login_instagram(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_instagram, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_logo", bundle: ..., traitCollection: ...)`
+    static func ic_login_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_logo, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
@@ -196,21 +341,82 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "temp_onboarding_1_ic", bundle: ..., traitCollection: ...)`
+    static func temp_onboarding_1_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.temp_onboarding_1_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "temp_onboarding_2_ic", bundle: ..., traitCollection: ...)`
+    static func temp_onboarding_2_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.temp_onboarding_2_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "temp_onboarding_3_ic", bundle: ..., traitCollection: ...)`
+    static func temp_onboarding_3_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.temp_onboarding_3_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
-    /// Nib `OnboardingController`.
-    static let onboardingController = _R.nib._OnboardingController()
+    /// Nib `LoginController`.
+    static let loginController = _R.nib._LoginController()
+    /// Nib `OnboardingFirsController`.
+    static let onboardingFirsController = _R.nib._OnboardingFirsController()
+    /// Nib `OnboardingPageController`.
+    static let onboardingPageController = _R.nib._OnboardingPageController()
+    /// Nib `OnboardingSecondController`.
+    static let onboardingSecondController = _R.nib._OnboardingSecondController()
+    /// Nib `OnboardingThreeController`.
+    static let onboardingThreeController = _R.nib._OnboardingThreeController()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "OnboardingController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingController) instead")
-    static func onboardingController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.onboardingController)
+    /// `UINib(name: "LoginController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loginController) instead")
+    static func loginController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loginController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingFirsController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingFirsController) instead")
+    static func onboardingFirsController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingFirsController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingPageController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingPageController) instead")
+    static func onboardingPageController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingPageController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingSecondController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingSecondController) instead")
+    static func onboardingSecondController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingSecondController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingThreeController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingThreeController) instead")
+    static func onboardingThreeController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingThreeController)
     }
     #endif
 
@@ -222,8 +428,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    static func onboardingController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.onboardingController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.loginController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func onboardingFirsController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingFirsController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func onboardingPageController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingPageController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func onboardingSecondController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingSecondController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func onboardingThreeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingThreeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func splashController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -240,26 +462,64 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
     struct localizable {
-      /// en translation: Title
+      /// en translation: Explore Plants and create garden of your dream
       ///
-      /// Locales: en, es
-      static let base_title = Rswift.StringResource(key: "base_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// Locales: en
+      static let login_info = Rswift.StringResource(key: "login_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Login with
+      ///
+      /// Locales: en
+      static let login_loginWith = Rswift.StringResource(key: "login_loginWith", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Please wait
+      ///
+      /// Locales: en
+      static let activity_title = Rswift.StringResource(key: "activity_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
 
-      /// en translation: Title
+      /// en translation: Explore Plants and create garden of your dream
       ///
-      /// Locales: en, es
-      static func base_title(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: en
+      static func login_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("base_title", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("login_info", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "base_title"
+          return "login_info"
         }
 
-        return NSLocalizedString("base_title", bundle: bundle, comment: "")
+        return NSLocalizedString("login_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Login with
+      ///
+      /// Locales: en
+      static func login_loginWith(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_loginWith", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login_loginWith"
+        }
+
+        return NSLocalizedString("login_loginWith", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please wait
+      ///
+      /// Locales: en
+      static func activity_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("activity_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "activity_title"
+        }
+
+        return NSLocalizedString("activity_title", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -294,15 +554,92 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _LoginController.validate()
+      try _OnboardingFirsController.validate()
+      try _OnboardingSecondController.validate()
+      try _OnboardingThreeController.validate()
       try _SplashController.validate()
     }
 
-    struct _OnboardingController: Rswift.NibResourceType {
+    struct _LoginController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let name = "OnboardingController"
+      let name = "LoginController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_login_apple", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_apple' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_facebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_facebook' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_google' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_instagram", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_instagram' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_logo' is used in nib 'LoginController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _OnboardingFirsController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OnboardingFirsController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_onboarding_1_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_1_ic' is used in nib 'OnboardingFirsController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _OnboardingPageController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "OnboardingPageController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _OnboardingSecondController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OnboardingSecondController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_onboarding_2_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_2_ic' is used in nib 'OnboardingSecondController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _OnboardingThreeController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OnboardingThreeController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_onboarding_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_3_ic' is used in nib 'OnboardingThreeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

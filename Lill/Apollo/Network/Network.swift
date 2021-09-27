@@ -43,6 +43,30 @@ class Network {
             }
         }
     }
+    
+    func query<T: GraphQLQuery, Model: Codable>(model type: Model.Type,
+                                                      _ guery: T,
+                                                      successHandler: @escaping ((_ model :Model) -> Void) ,
+                                                      failureHandler: @escaping ((_ error: Error) -> Void)) {
+        
+        apollo.fetch(query: guery) { (result) in
+            
+            switch result {
+            case .success(let queryResult):
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: queryResult.data!.jsonObject, options: .fragmentsAllowed)
+                    let model = try JSONDecoder().decode(Model.self, from: data)
+                    successHandler(model)
+                } catch {
+                    debugPrint("Failure! Error: \(error)")
+                    failureHandler(error)
+                }
+            case .failure(let error):
+                debugPrint("Failure! Error: \(error)")
+                failureHandler(error)
+            }
+        }
+    }
 }
 
 ///Managments

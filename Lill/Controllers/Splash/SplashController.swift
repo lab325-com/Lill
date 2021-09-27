@@ -10,7 +10,7 @@ class SplashController: BaseController {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            RootRouter.sharedInstance.loadOnboarding(toWindow: RootRouter.sharedInstance.window!)
+            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
         }
     }
 }

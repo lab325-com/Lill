@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* CatalogPlantsModel.swift */; };
+		029CFD972701A85D00C69908 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 029CFD962701A85D00C69908 /* NVActivityIndicatorView */; };
+		029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */; };
+		02A4BA2C26FDCF6700DF6A08 /* OnboardingFirsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4BA2A26FDCF6700DF6A08 /* OnboardingFirsController.swift */; };
+		02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A4BA2B26FDCF6700DF6A08 /* OnboardingFirsController.xib */; };
+		02A4BA3626FDCFEF00DF6A08 /* OnboardingSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4BA3426FDCFEF00DF6A08 /* OnboardingSecondController.swift */; };
+		02A4BA3726FDCFEF00DF6A08 /* OnboardingSecondController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A4BA3526FDCFEF00DF6A08 /* OnboardingSecondController.xib */; };
+		02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4BA3926FDD02600DF6A08 /* OnboardingThreeController.swift */; };
+		02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A4BA3A26FDD02600DF6A08 /* OnboardingThreeController.xib */; };
+		02A4BA3E26FDD16C00DF6A08 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4BA3D26FDD16C00DF6A08 /* UIPageViewController.swift */; };
+		02A4BA4126FDD1C900DF6A08 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4BA4026FDD1C900DF6A08 /* OnboardingRouter.swift */; };
 		02A8346C26F38B140009E147 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8346B26F38B140009E147 /* RootRouter.swift */; };
 		02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8346D26F38B290009E147 /* BaseRouter.swift */; };
 		02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347026F38B5F0009E147 /* UIViewController+Extension.swift */; };
@@ -14,8 +25,8 @@
 		02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347426F38CAB0009E147 /* UIApplicathion+Extension.swift */; };
 		02A8347926F38E580009E147 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347726F38E580009E147 /* SplashController.swift */; };
 		02A8347A26F38E580009E147 /* SplashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A8347826F38E580009E147 /* SplashController.xib */; };
-		02A8348126F38FA70009E147 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347F26F38FA70009E147 /* OnboardingController.swift */; };
-		02A8348226F38FA70009E147 /* OnboardingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A8348026F38FA70009E147 /* OnboardingController.xib */; };
+		02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347F26F38FA70009E147 /* OnboardingPageController.swift */; };
+		02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A8348026F38FA70009E147 /* OnboardingPageController.xib */; };
 		02AB244326F39BA400309CFF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB244226F39BA400309CFF /* R.generated.swift */; };
 		02AB244726F39D8E00309CFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02AB244926F39D8E00309CFF /* Localizable.strings */; };
 		02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */; };
@@ -26,18 +37,42 @@
 		02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */; };
 		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
 		02E4576026F90FF000F19C41 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575F26F90FF000F19C41 /* Login.swift */; };
-		02E4576326F911BE00F19C41 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */; };
 		E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */; };
+		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
+		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
+		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
+		FA7C8CE826FCBB8F000D2976 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */; };
+		FA7C8CEA26FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */; };
+		FA7C8CEC26FCBB8F000D2976 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */; };
+		FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CEE26FCC082000D2976 /* GoogleSignIn */; };
+		FA7C8CF526FDEF5C000D2976 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7C8CF426FDEF5C000D2976 /* GoogleService-Info.plist */; };
+		FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */; };
+		FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */; };
+		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
+		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
+		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
 		FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA230F26F3624F00E10E89 /* AppDelegate.swift */; };
 		FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231826F3625200E10E89 /* Assets.xcassets */; };
 		FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */; };
 		FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FAAA234926F51A5800E10E89 /* Apollo */; };
+		FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */; };
 		FAD1832A26F899B4007A67DC /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAD1832926F899B4007A67DC /* Login.graphql */; };
 		FAD1832E26F8A458007A67DC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD1832D26F8A458007A67DC /* schema.json */; };
 		FAD1833226F8A5CA007A67DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833126F8A5CA007A67DC /* API.swift */; };
+		FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833626F9DD2C007A67DC /* LoginController.swift */; };
+		FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1833726F9DD2C007A67DC /* LoginController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		022949932701E7F700003A3E /* CatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPlantsModel.swift; sourceTree = "<group>"; };
+		02A4BA2A26FDCF6700DF6A08 /* OnboardingFirsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirsController.swift; sourceTree = "<group>"; };
+		02A4BA2B26FDCF6700DF6A08 /* OnboardingFirsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingFirsController.xib; sourceTree = "<group>"; };
+		02A4BA3426FDCFEF00DF6A08 /* OnboardingSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondController.swift; sourceTree = "<group>"; };
+		02A4BA3526FDCFEF00DF6A08 /* OnboardingSecondController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingSecondController.xib; sourceTree = "<group>"; };
+		02A4BA3926FDD02600DF6A08 /* OnboardingThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeController.swift; sourceTree = "<group>"; };
+		02A4BA3A26FDD02600DF6A08 /* OnboardingThreeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingThreeController.xib; sourceTree = "<group>"; };
+		02A4BA3D26FDD16C00DF6A08 /* UIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
+		02A4BA4026FDD1C900DF6A08 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		02A8346B26F38B140009E147 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		02A8346D26F38B290009E147 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		02A8347026F38B5F0009E147 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -45,8 +80,8 @@
 		02A8347426F38CAB0009E147 /* UIApplicathion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplicathion+Extension.swift"; sourceTree = "<group>"; };
 		02A8347726F38E580009E147 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		02A8347826F38E580009E147 /* SplashController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashController.xib; sourceTree = "<group>"; };
-		02A8347F26F38FA70009E147 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
-		02A8348026F38FA70009E147 /* OnboardingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingController.xib; sourceTree = "<group>"; };
+		02A8347F26F38FA70009E147 /* OnboardingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageController.swift; sourceTree = "<group>"; };
+		02A8348026F38FA70009E147 /* OnboardingPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageController.xib; sourceTree = "<group>"; };
 		02AB244226F39BA400309CFF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		02AB244826F39D8E00309CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
@@ -59,11 +94,17 @@
 		02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lill-Bridging-Header.h"; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		02E4575F26F90FF000F19C41 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		345C8D7B95F2127992B3CEF4 /* Pods-Lill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.debug.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.debug.xcconfig"; sourceTree = "<group>"; };
 		6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.release.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.release.xcconfig"; sourceTree = "<group>"; };
 		DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.staging.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.staging.xcconfig"; sourceTree = "<group>"; };
+		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		FA7C8CF426FDEF5C000D2976 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialManager.swift; sourceTree = "<group>"; };
+		FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lill.entitlements; sourceTree = "<group>"; };
+		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		FAAA230C26F3624F00E10E89 /* Lill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA230F26F3624F00E10E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA231826F3625200E10E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,9 +112,12 @@
 		FAAA231D26F3625200E10E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAA234326F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FAAA234426F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCatalogPlants.graphql; sourceTree = "<group>"; };
 		FAD1832926F899B4007A67DC /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		FAD1832D26F8A458007A67DC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FAD1833126F8A5CA007A67DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +125,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8A31062701C98B00F99516 /* Toast in Frameworks */,
+				FA7C8CEA26FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */,
+				029CFD972701A85D00C69908 /* NVActivityIndicatorView in Frameworks */,
+				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
+				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
+				FA7C8CE826FCBB8F000D2976 /* FirebaseAnalytics in Frameworks */,
+				FA7C8CEC26FCBB8F000D2976 /* FirebaseAuth in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
+				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022949952701E7FB00003A3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				022949932701E7F700003A3E /* CatalogPlantsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02A4BA2926FDCF0900DF6A08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				02A4BA2E26FDCFA500DF6A08 /* OnboardingFirsController */,
+				02A4BA2F26FDCFAA00DF6A08 /* OnboardingSecondController */,
+				02A4BA3826FDD01500DF6A08 /* OnboardingThreeController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		02A4BA2E26FDCFA500DF6A08 /* OnboardingFirsController */ = {
+			isa = PBXGroup;
+			children = (
+				02A4BA2A26FDCF6700DF6A08 /* OnboardingFirsController.swift */,
+				02A4BA2B26FDCF6700DF6A08 /* OnboardingFirsController.xib */,
+			);
+			path = OnboardingFirsController;
+			sourceTree = "<group>";
+		};
+		02A4BA2F26FDCFAA00DF6A08 /* OnboardingSecondController */ = {
+			isa = PBXGroup;
+			children = (
+				02A4BA3426FDCFEF00DF6A08 /* OnboardingSecondController.swift */,
+				02A4BA3526FDCFEF00DF6A08 /* OnboardingSecondController.xib */,
+			);
+			path = OnboardingSecondController;
+			sourceTree = "<group>";
+		};
+		02A4BA3826FDD01500DF6A08 /* OnboardingThreeController */ = {
+			isa = PBXGroup;
+			children = (
+				02A4BA3926FDD02600DF6A08 /* OnboardingThreeController.swift */,
+				02A4BA3A26FDD02600DF6A08 /* OnboardingThreeController.xib */,
+			);
+			path = OnboardingThreeController;
+			sourceTree = "<group>";
+		};
 		02A8346A26F38AF50009E147 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +202,7 @@
 			children = (
 				02A8347026F38B5F0009E147 /* UIViewController+Extension.swift */,
 				02A8347426F38CAB0009E147 /* UIApplicathion+Extension.swift */,
+				02A4BA3D26FDD16C00DF6A08 /* UIPageViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				02A8347B26F38F130009E147 /* Splash */,
+				FAD1833326F9DAB1007A67DC /* Login */,
 				02A8347E26F38F920009E147 /* Onboarding */,
 			);
 			path = Controllers;
@@ -137,9 +237,10 @@
 		02A8347E26F38F920009E147 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				02E4576126F911B000F19C41 /* Presenter */,
-				02A8347F26F38FA70009E147 /* OnboardingController.swift */,
-				02A8348026F38FA70009E147 /* OnboardingController.xib */,
+				02A4BA4026FDD1C900DF6A08 /* OnboardingRouter.swift */,
+				02A4BA2926FDCF0900DF6A08 /* Controllers */,
+				02A8347F26F38FA70009E147 /* OnboardingPageController.swift */,
+				02A8348026F38FA70009E147 /* OnboardingPageController.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -155,11 +256,13 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA7C8CF926FDFED8000D2976 /* Managers */,
 				02D04ED726F5E89800F86B87 /* BridgingHeaders */,
 				02D04EC926F5E7AE00F86B87 /* Application */,
 				02D04EC426F5E7AD00F86B87 /* ConfigFiles */,
 				02A8346F26F38B430009E147 /* Extension */,
 				02AB244426F39BF400309CFF /* Localization */,
+				FA8721FD26FB4FE700BB8125 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,14 +328,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		02E4576126F911B000F19C41 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				02E4576226F911BE00F19C41 /* OnboardingPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		02E4576426F9137C00F19C41 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +340,7 @@
 		02E4576526F9139000F19C41 /* GraphQl */ = {
 			isa = PBXGroup;
 			children = (
+				FAC6D9962701E1E4000A551F /* GetPlants */,
 				02E4576426F9137C00F19C41 /* Login */,
 			);
 			path = GraphQl;
@@ -268,6 +364,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA7C8CF926FDFED8000D2976 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FA8721FD26FB4FE700BB8125 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */,
+				FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */,
+				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA8A30FB2701AAD600F99516 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FAAA230326F3624F00E10E89 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +410,7 @@
 		FAAA230E26F3624F00E10E89 /* Lill */ = {
 			isa = PBXGroup;
 			children = (
+				FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */,
 				FAD1833126F8A5CA007A67DC /* API.swift */,
 				FAD1832D26F8A458007A67DC /* schema.json */,
 				02AB244226F39BA400309CFF /* R.generated.swift */,
@@ -297,11 +419,22 @@
 				02A8346A26F38AF50009E147 /* Base */,
 				02A8347C26F38F210009E147 /* AppDelegate */,
 				02A8347626F38E3E0009E147 /* Controllers */,
+				FA8A30FB2701AAD600F99516 /* Views */,
 				FAAA231826F3625200E10E89 /* Assets.xcassets */,
-				FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */,
 				FAAA231D26F3625200E10E89 /* Info.plist */,
+				FA7C8CF426FDEF5C000D2976 /* GoogleService-Info.plist */,
+				FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */,
 			);
 			path = Lill;
+			sourceTree = "<group>";
+		};
+		FAC6D9962701E1E4000A551F /* GetPlants */ = {
+			isa = PBXGroup;
+			children = (
+				022949952701E7FB00003A3E /* Model */,
+				FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */,
+			);
+			path = GetPlants;
 			sourceTree = "<group>";
 		};
 		FAD1832826F899A8007A67DC /* Apollo */ = {
@@ -313,6 +446,24 @@
 			path = Apollo;
 			sourceTree = "<group>";
 		};
+		FAD1833326F9DAB1007A67DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FAD1833A26F9E008007A67DC /* LoginPresenter */,
+				FAD1833626F9DD2C007A67DC /* LoginController.swift */,
+				FAD1833726F9DD2C007A67DC /* LoginController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FAD1833A26F9E008007A67DC /* LoginPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */,
+			);
+			path = LoginPresenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,14 +471,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAA232026F3625200E10E89 /* Build configuration list for PBXNativeTarget "Lill" */;
 			buildPhases = (
+				4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */,
 				FAAA230A26F3624F00E10E89 /* Resources */,
 				FAAA230926F3624F00E10E89 /* Frameworks */,
-				4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */,
-				1BB3FD5E32FCD87F5669FC86 /* [CP] Embed Pods Frameworks */,
 				02AB244A26F39EF100309CFF /* Localize */,
 				02AB244126F39A1700309CFF /* RSwift */,
 				FAD1832226F887FD007A67DC /* Generate Apollo GraphQL API */,
 				FAAA230826F3624F00E10E89 /* Sources */,
+				68DC3267BDF8955DB94E8497 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +487,15 @@
 			name = Lill;
 			packageProductDependencies = (
 				FAAA234926F51A5800E10E89 /* Apollo */,
+				FA7C8CD526FB6688000D2976 /* FacebookCore */,
+				FA7C8CD726FB6688000D2976 /* FacebookLogin */,
+				FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */,
+				FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */,
+				FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */,
+				FA7C8CEE26FCC082000D2976 /* GoogleSignIn */,
+				029CFD962701A85D00C69908 /* NVActivityIndicatorView */,
+				029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */,
+				FA8A31052701C98B00F99516 /* Toast */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -367,6 +527,11 @@
 			mainGroup = FAAA230326F3624F00E10E89;
 			packageReferences = (
 				FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -382,13 +547,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A4BA3726FDCFEF00DF6A08 /* OnboardingSecondController.xib in Resources */,
 				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
+				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
+				FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */,
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
+				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02AB244726F39D8E00309CFF /* Localizable.strings in Resources */,
-				02A8348226F38FA70009E147 /* OnboardingController.xib in Resources */,
+				02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */,
+				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
 				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
+				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
+				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
+				FA7C8CF526FDEF5C000D2976 /* GoogleService-Info.plist in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
 				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
+				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
@@ -437,23 +611,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
-		1BB3FD5E32FCD87F5669FC86 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,6 +631,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68DC3267BDF8955DB94E8497 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lill/Pods-Lill-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAD1832226F887FD007A67DC /* Generate Apollo GraphQL API */ = {
@@ -504,18 +678,27 @@
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
+				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
-				02A8348126F38FA70009E147 /* OnboardingController.swift in Sources */,
+				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
+				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
+				022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */,
+				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				02E4576026F90FF000F19C41 /* Login.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
+				02A4BA4126FDD1C900DF6A08 /* OnboardingRouter.swift in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
-				02E4576326F911BE00F19C41 /* OnboardingPresenter.swift in Sources */,
+				02A4BA3E26FDD16C00DF6A08 /* UIPageViewController.swift in Sources */,
+				02A4BA3626FDCFEF00DF6A08 /* OnboardingSecondController.swift in Sources */,
+				02A4BA2C26FDCF6700DF6A08 /* OnboardingFirsController.swift in Sources */,
+				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
+				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
@@ -620,6 +804,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -755,6 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
@@ -763,6 +954,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -778,6 +975,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
@@ -786,6 +984,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.lill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,17 +1025,102 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 0.48.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		029CFD962701A85D00C69908 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		FA7C8CD526FB6688000D2976 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		FA7C8CD726FB6688000D2976 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		FA7C8CE726FCBB8F000D2976 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FA7C8CE926FCBB8F000D2976 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
+		FA7C8CEB26FCBB8F000D2976 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CE626FCBB8F000D2976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FA7C8CEE26FCC082000D2976 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		FA8A31052701C98B00F99516 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		FAAA234926F51A5800E10E89 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */;
