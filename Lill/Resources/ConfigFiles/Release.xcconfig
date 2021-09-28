@@ -3,8 +3,8 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 CONFIGURATION_NAME = Release
-HOST_NAME = https:\/\/lill.co/api/
-SUPPORT_EMAIL = support@lill.co
+HOST_NAME = https:\/\/faker.graphqleditor.com/3knbh/lill/graphql
+SUPPORT_EMAIL = support@lill.com
 APP_NAME = Lill
 
 #include "Generator.xcconfig"

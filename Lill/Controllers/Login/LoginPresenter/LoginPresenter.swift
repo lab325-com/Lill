@@ -52,8 +52,22 @@ class LoginPresenter: LoginPresenterProtocol {
             socialManager.loginGoogle()
         case .apple:
             socialManager.loginApple()
+        case .none:
+            loginUser(token: "", udid: uuid, firebaseId: "", social: .none, lang: .en)
         default:
             break
+        }
+    }
+    
+    func loginUser(token: String, udid: String, firebaseId: String, social: Social, lang: Lang) {
+        view?.startLoader()
+        let mutation = LoginMutation(socialToken: token, udid: uuid, firebaseId: firebaseId, social: social, lang: lang)
+        Network.shared.mutation(model: LoginModel.self, mutation) { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.success()
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         }
     }
 }
@@ -64,15 +78,7 @@ class LoginPresenter: LoginPresenterProtocol {
 
 extension LoginPresenter: SocialManagerDelegate {
     func login(service: SocialManager, token: String, social: Social) {
-        view?.startLoader()
-        let mutation = LoginMutation(socialToken: token, udid: uuid, firebaseId: "firebaseId", social: social, lang: .en)
-        Network.shared.mutation(model: LoginModel.self, mutation) { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.success()
-        } failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        }
+        loginUser(token: token, udid: uuid, firebaseId: "", social: social, lang: .en)
     }
     
     func login(service: SocialManager, error: Error?) {

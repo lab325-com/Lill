@@ -1,5 +1,6 @@
 
 import Apollo
+import Foundation
 
 class Network {
     static let shared = Network()
@@ -30,7 +31,7 @@ class Network {
             switch result {
             case .success(let queryResult):
                 do {
-                    let data = try JSONSerialization.data(withJSONObject: queryResult.data!.jsonObject, options: .fragmentsAllowed)
+                    let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
                     let model = try JSONDecoder().decode(Model.self, from: data)
                     successHandler(model)
                 } catch {
@@ -54,7 +55,7 @@ class Network {
             switch result {
             case .success(let queryResult):
                 do {
-                    let data = try JSONSerialization.data(withJSONObject: queryResult.data!.jsonObject, options: .fragmentsAllowed)
+                    let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
                     let model = try JSONDecoder().decode(Model.self, from: data)
                     successHandler(model)
                 } catch {

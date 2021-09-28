@@ -269,12 +269,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 10 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `ic_login_apple`.
     static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
     /// Image `ic_login_bg`.
     static let ic_login_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_bg")
+    /// Image `ic_login_close`.
+    static let ic_login_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_close")
     /// Image `ic_login_facebook`.
     static let ic_login_facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_facebook")
     /// Image `ic_login_google`.
@@ -303,6 +305,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_login_bg", bundle: ..., traitCollection: ...)`
     static func ic_login_bg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_login_bg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_login_close", bundle: ..., traitCollection: ...)`
+    static func ic_login_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_login_close, compatibleWith: traitCollection)
     }
     #endif
 
@@ -572,6 +581,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "ic_login_apple", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_apple' is used in nib 'LoginController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in nib 'LoginController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_close' is used in nib 'LoginController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_facebook", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_facebook' is used in nib 'LoginController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_google", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_google' is used in nib 'LoginController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_instagram", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_instagram' is used in nib 'LoginController', but couldn't be loaded.") }

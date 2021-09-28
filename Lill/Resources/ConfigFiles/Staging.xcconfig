@@ -3,8 +3,8 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 CONFIGURATION_NAME = Staging
-HOST_NAME = https:\/\/st-lill.envs.idevs.co/api/
-SUPPORT_EMAIL = support@ylill.co
+HOST_NAME = https:\/\/faker.graphqleditor.com/3knbh/lill/graphql
+SUPPORT_EMAIL = support@ylill.com
 APP_NAME = Lill
 
 #include "Generator.xcconfig"
