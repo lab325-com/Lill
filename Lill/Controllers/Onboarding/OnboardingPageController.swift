@@ -108,6 +108,7 @@ extension OnboardingPageController: OnboardingSecondDelegate {
 
 extension OnboardingPageController: OnboardingThreeDelegate {
     func onboardingThreePrevious(controller: OnboardingThreeController) {
-        goToPreviousPage()
+        //goToPreviousPage()
+        RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window)
     }
 }

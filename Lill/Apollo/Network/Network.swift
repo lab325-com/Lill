@@ -48,9 +48,9 @@ class Network {
     func query<T: GraphQLQuery, Model: Codable>(model type: Model.Type,
                                                       _ guery: T,
                                                       successHandler: @escaping ((_ model :Model) -> Void) ,
-                                                      failureHandler: @escaping ((_ error: Error) -> Void)) {
+                                                      failureHandler: @escaping ((_ error: Error) -> Void)) -> Cancellable {
         
-        apollo.fetch(query: guery) { (result) in
+        let query = apollo.fetch(query: guery) { (result) in
             
             switch result {
             case .success(let queryResult):
@@ -67,6 +67,8 @@ class Network {
                 failureHandler(error)
             }
         }
+        
+        return query
     }
 }
 

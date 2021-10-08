@@ -3,6 +3,7 @@ import UIKit
 import Rswift
 import FBSDKCoreKit
 import GoogleSignIn
+import Firebase
 
 //----------------------------------------------
 // MARK: - Typealias
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        FirebaseApp.configure()
                 
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         

@@ -29,6 +29,12 @@ class RootRouter {
     // MARK: - APPLICATION DIDFINISHLAUCHING WITH OPTIONSё
     //----------------------------------------------
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow) -> Bool {
+        
+        if PreferencesManager.sharedManager.isFirstRun == false {
+            KeychainService.standard.removeObject(forKey: .token)
+            PreferencesManager.sharedManager.isFirstRun = true
+        }
+        
         RootRouter.sharedInstance.window = window
         let splashScreenViewController = SplashController()
         let navigationController = NavigationController(rootViewController: splashScreenViewController)
@@ -57,6 +63,15 @@ extension RootRouter {
         let navigationController = NavigationController(rootViewController: viewController)
         UIApplication.shared.switchRootViewController(window: window,
                                                       rootViewController: navigationController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
+    
+    func loadPlants(toWindow window: UIWindow) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        UIApplication.shared.switchRootViewController(window: RootRouter.sharedInstance.window!,
+                                                      rootViewController: viewController,
                                                       animated: true,
                                                       completion: nil)
     }

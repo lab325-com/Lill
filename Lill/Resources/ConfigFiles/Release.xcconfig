@@ -4,7 +4,7 @@
 
 CONFIGURATION_NAME = Release
 HOST_NAME = https:\/\/faker.graphqleditor.com/3knbh/lill/graphql
-SUPPORT_EMAIL = support@lill.com
+SUPPORT_EMAIL = support@lill.co
 APP_NAME = Lill
 
 #include "Generator.xcconfig"

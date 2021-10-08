@@ -1,8 +1,8 @@
 mutation login($socialToken: String!,
 			   $udid: String!,
-			   $firebaseId: String,
-			   $social: Social,
-			   $lang: Lang) {
+			   $firebaseId: String!,
+			   $social: Social!,
+			   $lang: Lang!) {
 	login(socialToken: $socialToken
 		  udid: $udid
 		  firebaseId: $firebaseId

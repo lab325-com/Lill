@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>624217647467-04qjmf8n1s5dof434c4rpo4b4uul7e69.apps.googleusercontent.com</string>
+	<string>56234342754-rlsko0abgguc69b3lt3l5pb8ku21sf0l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.624217647467-04qjmf8n1s5dof434c4rpo4b4uul7e69</string>
+	<string>com.googleusercontent.apps.56234342754-rlsko0abgguc69b3lt3l5pb8ku21sf0l</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBryIBFppAiLWfOqAnteW5fzflKfpz6AN0</string>
+	<string>AIzaSyAaaRcDCiVO4tBDBwcVpXRVSu-h_toc2a0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>624217647467</string>
+	<string>56234342754</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.bgtech.lill</string>
 	<key>PROJECT_ID</key>
-	<string>lill-327011</string>
+	<string>lill-mob325</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lill-327011.appspot.com</string>
+	<string>lill-mob325.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:624217647467:ios:1a8bec43a97471c32e442e</string>
+	<string>1:56234342754:ios:c7fcdcc86d96748265943b</string>
 </dict>
 </plist>

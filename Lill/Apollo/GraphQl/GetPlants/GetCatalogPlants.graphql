@@ -1,7 +1,9 @@
 query GetCatalogPlants($pagination: InputPagination!,
-					   $search: String!) {
+					   $search: String!,
+					   $onlyFavorites: Boolean) {
 	getCatalogPlants(pagination: $pagination,
-					 search: $search) {
+					 search: $search,
+					 onlyFavorites: $onlyFavorites) {
 		pagination {
 			limit
 			nextPageExist
@@ -9,83 +11,18 @@ query GetCatalogPlants($pagination: InputPagination!,
 			prevPageExist
 			totalPages
 		}
+		totalFavorites
 		plants {
+			id
 			description {
-				is_poisonous
-				is_weed
-				latinName
-				name {
-					en
-					ru
-				}
-				plantImages {
+				is_favorite
+				name
+				image {
 					media_id
-					type
-					urlAndroidPhone
-					urlAndroidTablet
-					urlIosPhone
-					urlIosTablet
-				}
-				invitation {
-					en
-					ru
-				}
-				descriptionFull {
-					en
-					ru
-				}
-				climat {
-					absolute_min_temp
-					difficulty {
-						en
-						ru
-					}
-					dormancy {
-						en
-						ru
-					}
-					humidity {
-						en
-						ru
-					}
-					light {
-						en
-						ru
-					}
-					light_secondary {
-						en
-						ru
-					}
-					pet_toxic
-					poison_type {
-						en
-						ru
-					}
-					temp_max
-					temp_min
-					zone_max
-					zone_min
-				}
-				care {
-					humidity {
-						count
-						period
-					}
-					misting {
-						count
-						period
-					}
-					rotating {
-						count
-						period
-					}
-					watering {
-						count
-						period
-					}
+					urlIosFull
+					urlIosPrev
 				}
 			}
-			id
 		}
 	}
 }

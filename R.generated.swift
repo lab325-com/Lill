@@ -90,15 +90,24 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     #endif
 
@@ -269,8 +278,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 11 images.
+  /// This `R.image` struct is generated, and contains static references to 31 images.
   struct image {
+    /// Image `garden_back_ic`.
+    static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `ic_login_apple`.
     static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
     /// Image `ic_login_bg`.
@@ -285,14 +296,59 @@ struct R: Rswift.Validatable {
     static let ic_login_instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_instagram")
     /// Image `ic_login_logo`.
     static let ic_login_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_logo")
+    /// Image `ic_plants_add`.
+    static let ic_plants_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_add")
+    /// Image `ic_plants_backToTop`.
+    static let ic_plants_backToTop = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_backToTop")
+    /// Image `ic_plants_close`.
+    static let ic_plants_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_close")
+    /// Image `ic_plants_favorite`.
+    static let ic_plants_favorite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_favorite")
+    /// Image `ic_plants_line`.
+    static let ic_plants_line = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_line")
+    /// Image `ic_plants_photo`.
+    static let ic_plants_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_photo")
+    /// Image `ic_plants_search`.
+    static let ic_plants_search = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_search")
+    /// Image `ic_plants_unfavorite`.
+    static let ic_plants_unfavorite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_unfavorite")
+    /// Image `ic_plants_unique`.
+    static let ic_plants_unique = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_unique")
+    /// Image `ic_tab_garden_act`.
+    static let ic_tab_garden_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_garden_act")
+    /// Image `ic_tab_garden`.
+    static let ic_tab_garden = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_garden")
+    /// Image `ic_tab_menu_act`.
+    static let ic_tab_menu_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_menu_act")
+    /// Image `ic_tab_menu`.
+    static let ic_tab_menu = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_menu")
+    /// Image `ic_tab_plants_act`.
+    static let ic_tab_plants_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_plants_act")
+    /// Image `ic_tab_plants`.
+    static let ic_tab_plants = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_plants")
+    /// Image `ic_tab_schedule_act`.
+    static let ic_tab_schedule_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule_act")
+    /// Image `ic_tab_schedule`.
+    static let ic_tab_schedule = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule")
     /// Image `temp_onboarding_1_ic`.
     static let temp_onboarding_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_1_ic")
     /// Image `temp_onboarding_2_ic`.
     static let temp_onboarding_2_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_2_ic")
     /// Image `temp_onboarding_3_ic`.
     static let temp_onboarding_3_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_3_ic")
+    /// Image `temp_plants_ic`.
+    static let temp_plants_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_plants_ic")
     /// Image `temp`.
     static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
+    /// Image `wish_list_back_ground_ic`.
+    static let wish_list_back_ground_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "wish_list_back_ground_ic")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_back_ic", bundle: ..., traitCollection: ...)`
+    static func garden_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_login_apple", bundle: ..., traitCollection: ...)`
@@ -344,6 +400,125 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_add", bundle: ..., traitCollection: ...)`
+    static func ic_plants_add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_backToTop", bundle: ..., traitCollection: ...)`
+    static func ic_plants_backToTop(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_backToTop, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_close", bundle: ..., traitCollection: ...)`
+    static func ic_plants_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_close, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_favorite", bundle: ..., traitCollection: ...)`
+    static func ic_plants_favorite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_favorite, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_line", bundle: ..., traitCollection: ...)`
+    static func ic_plants_line(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_line, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_photo", bundle: ..., traitCollection: ...)`
+    static func ic_plants_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_photo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_search", bundle: ..., traitCollection: ...)`
+    static func ic_plants_search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_search, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_unfavorite", bundle: ..., traitCollection: ...)`
+    static func ic_plants_unfavorite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_unfavorite, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_unique", bundle: ..., traitCollection: ...)`
+    static func ic_plants_unique(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_unique, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_garden", bundle: ..., traitCollection: ...)`
+    static func ic_tab_garden(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_garden, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_garden_act", bundle: ..., traitCollection: ...)`
+    static func ic_tab_garden_act(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_garden_act, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_menu", bundle: ..., traitCollection: ...)`
+    static func ic_tab_menu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_menu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_menu_act", bundle: ..., traitCollection: ...)`
+    static func ic_tab_menu_act(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_menu_act, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_plants", bundle: ..., traitCollection: ...)`
+    static func ic_tab_plants(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_plants, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_plants_act", bundle: ..., traitCollection: ...)`
+    static func ic_tab_plants_act(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_plants_act, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_schedule", bundle: ..., traitCollection: ...)`
+    static func ic_tab_schedule(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_schedule, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_tab_schedule_act", bundle: ..., traitCollection: ...)`
+    static func ic_tab_schedule_act(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tab_schedule_act, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
     static func temp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp, compatibleWith: traitCollection)
@@ -371,11 +546,29 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "temp_plants_ic", bundle: ..., traitCollection: ...)`
+    static func temp_plants_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.temp_plants_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "wish_list_back_ground_ic", bundle: ..., traitCollection: ...)`
+    static func wish_list_back_ground_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wish_list_back_ground_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
   struct nib {
+    /// Nib `GardenButtonCell`.
+    static let gardenButtonCell = _R.nib._GardenButtonCell()
+    /// Nib `GardenViewCell`.
+    static let gardenViewCell = _R.nib._GardenViewCell()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
     /// Nib `OnboardingFirsController`.
@@ -386,8 +579,28 @@ struct R: Rswift.Validatable {
     static let onboardingSecondController = _R.nib._OnboardingSecondController()
     /// Nib `OnboardingThreeController`.
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
+    /// Nib `PlantCollectionCell`.
+    static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
+    /// Nib `WishListController`.
+    static let wishListController = _R.nib._WishListController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenButtonCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenButtonCell) instead")
+    static func gardenButtonCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenButtonCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenViewCell) instead")
+    static func gardenViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "LoginController", in: bundle)`
@@ -430,12 +643,36 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PlantCollectionCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.plantCollectionCell) instead")
+    static func plantCollectionCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.plantCollectionCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SplashController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.splashController) instead")
     static func splashController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.splashController)
     }
     #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "WishListController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.wishListController) instead")
+    static func wishListController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.wishListController)
+    }
+    #endif
+
+    static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
+      return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
+    }
+
+    static func gardenViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenViewCell? {
+      return R.nib.gardenViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenViewCell
+    }
 
     static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -457,8 +694,16 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingThreeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func plantCollectionCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlantCollectionCell? {
+      return R.nib.plantCollectionCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlantCollectionCell
+    }
+
     static func splashController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.splashController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func wishListController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.wishListController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -471,12 +716,36 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
+      /// en translation: Add Unique
+      ///
+      /// Locales: en
+      static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Back
+      ///
+      /// Locales: en
+      static let wish_list_back = Rswift.StringResource(key: "wish_list_back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Back to top
+      ///
+      /// Locales: en
+      static let plants_backToTop = Rswift.StringResource(key: "plants_backToTop", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Can’t identify or find in catalog?
+      ///
+      /// Locales: en
+      static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Explore Plants and create garden of your dream
       ///
       /// Locales: en
       static let login_info = Rswift.StringResource(key: "login_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Explore catalog
+      ///
+      /// Locales: en
+      static let plants_explore = Rswift.StringResource(key: "plants_explore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identify my Plants
+      ///
+      /// Locales: en
+      static let plants_identifier = Rswift.StringResource(key: "plants_identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Login with
       ///
       /// Locales: en
@@ -485,6 +754,74 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let activity_title = Rswift.StringResource(key: "activity_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Search by Name
+      ///
+      /// Locales: en
+      static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Wishlist
+      ///
+      /// Locales: en
+      static let wish_list_title = Rswift.StringResource(key: "wish_list_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: Add Unique
+      ///
+      /// Locales: en
+      static func plants_uniquePlantButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_uniquePlantButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_uniquePlantButton"
+        }
+
+        return NSLocalizedString("plants_uniquePlantButton", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back
+      ///
+      /// Locales: en
+      static func wish_list_back(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wish_list_back", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "wish_list_back"
+        }
+
+        return NSLocalizedString("wish_list_back", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Back to top
+      ///
+      /// Locales: en
+      static func plants_backToTop(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_backToTop", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_backToTop"
+        }
+
+        return NSLocalizedString("plants_backToTop", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Can’t identify or find in catalog?
+      ///
+      /// Locales: en
+      static func plants_uniquePlantLabel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_uniquePlantLabel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_uniquePlantLabel"
+        }
+
+        return NSLocalizedString("plants_uniquePlantLabel", bundle: bundle, comment: "")
+      }
 
       /// en translation: Explore Plants and create garden of your dream
       ///
@@ -499,6 +836,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("login_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Explore catalog
+      ///
+      /// Locales: en
+      static func plants_explore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_explore", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_explore"
+        }
+
+        return NSLocalizedString("plants_explore", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identify my Plants
+      ///
+      /// Locales: en
+      static func plants_identifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_identifier"
+        }
+
+        return NSLocalizedString("plants_identifier", bundle: bundle, comment: "")
       }
 
       /// en translation: Login with
@@ -529,6 +896,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("activity_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Search by Name
+      ///
+      /// Locales: en
+      static func plants_search(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_search"
+        }
+
+        return NSLocalizedString("plants_search", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Wishlist
+      ///
+      /// Locales: en
+      static func wish_list_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wish_list_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "wish_list_title"
+        }
+
+        return NSLocalizedString("wish_list_title", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -563,11 +960,42 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _GardenViewCell.validate()
       try _LoginController.validate()
       try _OnboardingFirsController.validate()
       try _OnboardingSecondController.validate()
       try _OnboardingThreeController.validate()
+      try _PlantCollectionCell.validate()
       try _SplashController.validate()
+      try _WishListController.validate()
+    }
+
+    struct _GardenButtonCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GardenButtonCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _LoginController: Rswift.NibResourceType, Rswift.Validatable {
@@ -655,6 +1083,25 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _PlantCollectionCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PlantCollectionCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlantCollectionCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlantCollectionCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_plants_add", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_add' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_favorite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_favorite' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SplashController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "SplashController"
@@ -664,7 +1111,25 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "iphone.landscape") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'iphone.landscape' is used in nib 'SplashController', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in nib 'SplashController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_logo' is used in nib 'SplashController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _WishListController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "WishListController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "wish_list_back_ground_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wish_list_back_ground_ic' is used in nib 'WishListController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -682,6 +1147,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try main.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -692,8 +1160,67 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let gardenController = StoryboardViewControllerResource<GardenController>(identifier: "GardenController")
+      let mainTabBarController = StoryboardViewControllerResource<MainTabBarController>(identifier: "MainTabBarController")
+      let menuController = StoryboardViewControllerResource<MenuController>(identifier: "MenuController")
+      let name = "Main"
+      let plantsController = StoryboardViewControllerResource<PlantsController>(identifier: "PlantsController")
+      let scheduleController = StoryboardViewControllerResource<ScheduleController>(identifier: "ScheduleController")
+
+      func gardenController(_: Void = ()) -> GardenController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gardenController)
+      }
+
+      func mainTabBarController(_: Void = ()) -> MainTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabBarController)
+      }
+
+      func menuController(_: Void = ()) -> MenuController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuController)
+      }
+
+      func plantsController(_: Void = ()) -> PlantsController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: plantsController)
+      }
+
+      func scheduleController(_: Void = ()) -> ScheduleController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: scheduleController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_backToTop", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_backToTop' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_close' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_favorite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_favorite' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_line", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_line' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_photo' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_search' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_unique", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_unique' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tab_garden", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_garden' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tab_menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_menu' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tab_schedule", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_schedule' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tab_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_search' is used in storyboard 'Main', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.main().gardenController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardenController' could not be loaded from storyboard 'Main' as 'GardenController'.") }
+        if _R.storyboard.main().mainTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarController' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
+        if _R.storyboard.main().menuController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuController' could not be loaded from storyboard 'Main' as 'MenuController'.") }
+        if _R.storyboard.main().plantsController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'plantsController' could not be loaded from storyboard 'Main' as 'PlantsController'.") }
+        if _R.storyboard.main().scheduleController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'scheduleController' could not be loaded from storyboard 'Main' as 'ScheduleController'.") }
       }
 
       fileprivate init() {}

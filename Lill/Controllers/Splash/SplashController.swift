@@ -10,7 +10,11 @@ class SplashController: BaseController {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+            if let _ = KeychainService.standard.token {
+                RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window!)
+            } else {
+                RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+            }
         }
     }
 }

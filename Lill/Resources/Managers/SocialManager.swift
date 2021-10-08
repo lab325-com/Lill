@@ -43,25 +43,21 @@ class SocialManager: NSObject {
         LoginManager().logOut()
         LoginManager().logIn(permissions: ["email"], from: controller) { (result, error) in
             if let result = result, let token = result.token?.tokenString {
-                //self.delegate?.social(service: self, loginFacebook: token)
                 self.delegate?.login(service: self, token: token, social: .fb)
             } else {
-                //self.delegate?.social(service: self, error: error)
                 self.delegate?.login(service: self, error: error)
             }
         }
     }
 
     func loginGoogle() {
-        let signInConfig = GIDConfiguration.init(clientID: "624217647467-04qjmf8n1s5dof434c4rpo4b4uul7e69.apps.googleusercontent.com",
-                                                 serverClientID: "624217647467-t8fqo3nns6a4qkl05i3c4spl28v08i4g.apps.googleusercontent.com")
+        let signInConfig = GIDConfiguration.init(clientID: "56234342754-rlsko0abgguc69b3lt3l5pb8ku21sf0l.apps.googleusercontent.com",
+                                                 serverClientID: "56234342754-i3ohbtdini1f9cf12q0gq5gi9lonpls8.apps.googleusercontent.com")
         guard let controller = controller else { return }
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: controller) { (user, error) in
             if let user = user, let token =  user.serverAuthCode {
-                //self.delegate?.social(service: self, loginGoogle: token)
                 self.delegate?.login(service: self, token: token, social: .google)
             } else {
-                //self.delegate?.social(service: self, error: error)
                 self.delegate?.login(service: self, error: error)
             }
         }
@@ -90,7 +86,6 @@ extension SocialManager: ASAuthorizationControllerDelegate, ASAuthorizationContr
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
             let authorizationCode = appleIDCredential.authorizationCode,
             let token = String(data: authorizationCode, encoding: .utf8) {
-            //self.delegate?.social(service: self, loginApple: token)
             self.delegate?.login(service: self, token: token, social: .apple)
         }
     }

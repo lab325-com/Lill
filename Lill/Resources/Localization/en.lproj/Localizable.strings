@@ -1,3 +1,11 @@
 "activity_title" = "Please wait";
 "login_info" = "Explore Plants and create garden of your dream";
 "login_loginWith" = "Login with";
+"plants_backToTop" = "Back to top";
+"plants_explore" = "Explore catalog";
+"plants_identifier" = "Identify my Plants";
+"plants_search" = "Search by Name";
+"plants_uniquePlantButton" = "Add Unique";
+"plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
+"wish_list_back" = "Back";
+"wish_list_title" = "Wishlist";
