@@ -33,41 +33,23 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xho-CO-Sgg">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-95-IyI">
-                    <rect key="frame" x="20" y="44" width="28" height="28"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="28" id="hV7-qL-4ZC"/>
-                        <constraint firstAttribute="height" constant="28" id="m4g-fQ-X6K"/>
-                    </constraints>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="ic_login_close"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="14"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="skipAction:" destination="-1" eventType="touchUpInside" id="Lne-bh-yNL"/>
-                    </connections>
-                </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6TV-gg-gnu">
                     <rect key="frame" x="149.5" y="194" width="115.5" height="91"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore Plants and create garden of your dream" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HK-Ih-qLU">
-                    <rect key="frame" x="80" y="335" width="254.5" height="16"/>
+                    <rect key="frame" x="80" y="325" width="254.5" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-II-4a1">
-                    <rect key="frame" x="179" y="556" width="56" height="16"/>
+                    <rect key="frame" x="179" y="576" width="56" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsi-Pd-BFm">
-                    <rect key="frame" x="50" y="592" width="314" height="44"/>
+                    <rect key="frame" x="50" y="612" width="314" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="QtX-sU-Q6K"/>
@@ -85,16 +67,16 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_apple" translatesAutoresizingMaskIntoConstraints="NO" id="Qb7-UF-VLF">
-                    <rect key="frame" x="74" y="602" width="20" height="24.5"/>
+                    <rect key="frame" x="74" y="622" width="20" height="24.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPLE ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-EE-2A9">
-                    <rect key="frame" x="180.5" y="606" width="53" height="16"/>
+                    <rect key="frame" x="180.5" y="626" width="53" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiV-bn-3CL">
-                    <rect key="frame" x="50" y="644" width="314" height="44"/>
+                    <rect key="frame" x="50" y="664" width="314" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="WY5-cb-LT7"/>
@@ -111,16 +93,16 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-aR-Rrz">
-                    <rect key="frame" x="74" y="656" width="20" height="20"/>
+                    <rect key="frame" x="74" y="676" width="20" height="20"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FACEBOOK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-gy-sqX">
-                    <rect key="frame" x="173.5" y="658" width="67" height="16"/>
+                    <rect key="frame" x="173.5" y="678" width="67" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-9y-nwx">
-                    <rect key="frame" x="50" y="696" width="314" height="44"/>
+                    <rect key="frame" x="50" y="716" width="314" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="IXP-Ob-OEN"/>
@@ -137,16 +119,16 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_instagram" translatesAutoresizingMaskIntoConstraints="NO" id="QWi-3b-kiR">
-                    <rect key="frame" x="74" y="708" width="20" height="20.5"/>
+                    <rect key="frame" x="74" y="728" width="20" height="20.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTAGRAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-Z8-rvi">
-                    <rect key="frame" x="171" y="710" width="72" height="16"/>
+                    <rect key="frame" x="171" y="730" width="72" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6K-HD-uzh">
-                    <rect key="frame" x="50" y="748" width="314" height="44"/>
+                    <rect key="frame" x="50" y="768" width="314" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="D0o-s7-L4h"/>
@@ -163,20 +145,39 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOGLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-Do-vgN">
-                    <rect key="frame" x="181" y="762" width="52" height="16"/>
+                    <rect key="frame" x="181" y="782" width="52" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_google" translatesAutoresizingMaskIntoConstraints="NO" id="kjY-G2-KHR">
-                    <rect key="frame" x="74" y="760" width="20" height="20"/>
+                    <rect key="frame" x="74" y="780" width="20" height="20"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver. 1.0 (1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-gb-BDL">
-                    <rect key="frame" x="179.5" y="846" width="55" height="16"/>
+                    <rect key="frame" x="179.5" y="838" width="55" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-95-IyI">
+                    <rect key="frame" x="35" y="44" width="28" height="28"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="hV7-qL-4ZC"/>
+                        <constraint firstAttribute="height" constant="28" id="m4g-fQ-X6K"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="ic_login_close"/>
+                    <buttonConfiguration key="configuration" style="plain" image="ic_login_close"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="skipAction:" destination="-1" eventType="touchUpInside" id="Lne-bh-yNL"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,9 +195,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lsi-Pd-BFm" secondAttribute="trailing" constant="50" id="M4I-aN-sQ0"/>
                 <constraint firstItem="SHK-II-4a1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MVm-n6-dHj"/>
                 <constraint firstItem="iDy-Do-vgN" firstAttribute="centerY" secondItem="h6K-HD-uzh" secondAttribute="centerY" id="NXG-vy-wD8"/>
+                <constraint firstItem="pPd-95-IyI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="P4w-wI-IRm"/>
                 <constraint firstItem="gtZ-gy-sqX" firstAttribute="centerY" secondItem="UiV-bn-3CL" secondAttribute="centerY" id="QSD-An-v63"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xho-CO-Sgg" secondAttribute="trailing" id="Qc5-G4-Qxz"/>
-                <constraint firstItem="5HK-Ih-qLU" firstAttribute="top" secondItem="6TV-gg-gnu" secondAttribute="bottom" constant="50" id="SH6-GR-aJP"/>
+                <constraint firstItem="5HK-Ih-qLU" firstAttribute="top" secondItem="6TV-gg-gnu" secondAttribute="bottom" constant="40" id="SH6-GR-aJP"/>
                 <constraint firstItem="6TV-gg-gnu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T8p-WC-mhB"/>
                 <constraint firstItem="BVv-Z8-rvi" firstAttribute="centerY" secondItem="o5M-9y-nwx" secondAttribute="centerY" id="UGp-MN-iJp"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xz6-yA-x0I"/>
@@ -212,13 +214,12 @@
                 <constraint firstAttribute="bottom" secondItem="xho-CO-Sgg" secondAttribute="bottom" id="iV5-Pg-acd"/>
                 <constraint firstItem="S1P-gb-BDL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kvU-I5-x9n"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n4s-xA-JBB"/>
-                <constraint firstItem="pPd-95-IyI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="oY2-YZ-tOd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h6K-HD-uzh" secondAttribute="bottom" constant="70" id="ot2-jw-idc"/>
-                <constraint firstItem="S1P-gb-BDL" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pj4-Lv-gQp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h6K-HD-uzh" secondAttribute="bottom" constant="50" id="ot2-jw-idc"/>
+                <constraint firstItem="S1P-gb-BDL" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-8" id="pj4-Lv-gQp"/>
                 <constraint firstItem="o5M-9y-nwx" firstAttribute="top" secondItem="UiV-bn-3CL" secondAttribute="bottom" constant="8" symbolic="YES" id="rPQ-mO-ixI"/>
                 <constraint firstItem="QWi-3b-kiR" firstAttribute="centerY" secondItem="o5M-9y-nwx" secondAttribute="centerY" id="ret-wP-EHD"/>
                 <constraint firstItem="Qb7-UF-VLF" firstAttribute="leading" secondItem="lsi-Pd-BFm" secondAttribute="leading" constant="24" id="tUi-JR-wwe"/>
-                <constraint firstItem="pPd-95-IyI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uiU-jN-Tuf"/>
+                <constraint firstItem="pPd-95-IyI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="uiU-jN-Tuf"/>
                 <constraint firstItem="UiV-bn-3CL" firstAttribute="top" secondItem="lsi-Pd-BFm" secondAttribute="bottom" constant="8" symbolic="YES" id="v9M-AX-7os"/>
                 <constraint firstItem="MOz-aR-Rrz" firstAttribute="leading" secondItem="UiV-bn-3CL" secondAttribute="leading" constant="24" id="vgZ-wV-dnB"/>
                 <constraint firstItem="h6K-HD-uzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="w9u-nr-tXv"/>

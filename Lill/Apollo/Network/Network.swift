@@ -23,11 +23,10 @@ class Network {
     
     func mutation<T: GraphQLMutation, Model: Codable>(model type: Model.Type,
                                                       _ mutation: T,
-                                                      successHandler: @escaping ((_ model :Model) -> Void) ,
+                                                      successHandler: @escaping ((_ model :Model) -> Void),
                                                       failureHandler: @escaping ((_ error: Error) -> Void)) {
         
         apollo.perform(mutation: mutation) { (result) in
-            
             switch result {
             case .success(let queryResult):
                 do {
@@ -47,11 +46,10 @@ class Network {
     
     func query<T: GraphQLQuery, Model: Codable>(model type: Model.Type,
                                                       _ guery: T,
-                                                      successHandler: @escaping ((_ model :Model) -> Void) ,
+                                                      successHandler: @escaping ((_ model :Model) -> Void),
                                                       failureHandler: @escaping ((_ error: Error) -> Void)) -> Cancellable {
         
         let query = apollo.fetch(query: guery) { (result) in
-            
             switch result {
             case .success(let queryResult):
                 do {

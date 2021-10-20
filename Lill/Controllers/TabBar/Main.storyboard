@@ -484,7 +484,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-OB-Vey">
-                                <rect key="frame" x="10" y="828" width="394" height="48"/>
+                                <rect key="frame" x="10" y="815" width="394" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Can’t identify or find in catalog?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-cR-TGb">
                                         <rect key="frame" x="15" y="16" width="244" height="16"/>
@@ -541,7 +541,7 @@
                             <constraint firstAttribute="bottom" secondItem="caZ-hE-877" secondAttribute="bottom" id="gof-rL-wyZ"/>
                             <constraint firstItem="zyc-OB-Vey" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" constant="10" id="jCw-Mv-t7c"/>
                             <constraint firstItem="q5Q-i6-jlZ" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" id="jT4-l2-54f"/>
-                            <constraint firstAttribute="bottom" secondItem="zyc-OB-Vey" secondAttribute="bottom" constant="20" id="k1A-wa-0yt"/>
+                            <constraint firstItem="B1r-u0-q8d" firstAttribute="bottom" secondItem="zyc-OB-Vey" secondAttribute="bottom" constant="-50" id="k1A-wa-0yt"/>
                             <constraint firstItem="d10-0g-iQ9" firstAttribute="top" secondItem="NZo-Js-jvq" secondAttribute="bottom" id="kf7-Yb-iTA"/>
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" constant="70" id="lH4-PJ-2fz"/>
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="centerX" secondItem="caZ-hE-877" secondAttribute="centerX" id="pR4-bA-xVX"/>
@@ -623,7 +623,7 @@
         <scene sceneID="3Bh-yd-Zby">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fOx-0Y-6Xc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_tab_search" id="XDy-eW-Egz"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_tab_plants" id="XDy-eW-Egz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SXg-zR-8Tc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -725,8 +725,8 @@
         <image name="ic_plants_unique" width="23" height="23"/>
         <image name="ic_tab_garden" width="29.5" height="28"/>
         <image name="ic_tab_menu" width="22" height="14"/>
+        <image name="ic_tab_plants" width="30" height="28"/>
         <image name="ic_tab_schedule" width="21.5" height="25"/>
-        <image name="ic_tab_search" width="30" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

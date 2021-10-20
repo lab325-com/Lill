@@ -6,6 +6,7 @@ struct LoginModel: Codable {
 }
 
 struct UserModel: Codable {
+    let access: AccessModel
     let avatar: String
     let barer: String
     let id: String

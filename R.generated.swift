@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 11 files.
+  /// This `R.file` struct is generated, and contains static references to 14 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
@@ -163,6 +163,10 @@ struct R: Rswift.Validatable {
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Login.graphql`.
     static let loginGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Login", pathExtension: "graphql")
+    /// Resource file `Me.graphql`.
+    static let meGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Me", pathExtension: "graphql")
+    /// Resource file `RecognitionPhoto.graphql`.
+    static let recognitionPhotoGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognitionPhoto", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
     /// Resource file `SFProDisplay-Bold.ttf`.
@@ -173,6 +177,8 @@ struct R: Rswift.Validatable {
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
+    /// Resource file `UploadPhoto.graphql`.
+    static let uploadPhotoGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadPhoto", pathExtension: "graphql")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
@@ -206,6 +212,18 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "Me", withExtension: "graphql")`
+    static func meGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.meGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "RecognitionPhoto", withExtension: "graphql")`
+    static func recognitionPhotoGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.recognitionPhotoGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Release", withExtension: "xcconfig")`
     static func releaseXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.releaseXcconfig
@@ -233,6 +251,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Staging", withExtension: "xcconfig")`
     static func stagingXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.stagingXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "UploadPhoto", withExtension: "graphql")`
+    static func uploadPhotoGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.uploadPhotoGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -278,10 +302,38 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 31 images.
+  /// This `R.image` struct is generated, and contains static references to 46 images.
   struct image {
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
+    /// Image `ic_choose_identify_diagnosis`.
+    static let ic_choose_identify_diagnosis = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_diagnosis")
+    /// Image `ic_choose_identify_photo`.
+    static let ic_choose_identify_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_photo")
+    /// Image `ic_identify_checkmark`.
+    static let ic_identify_checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_checkmark")
+    /// Image `ic_identify_close`.
+    static let ic_identify_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_close")
+    /// Image `ic_identify_flash_off`.
+    static let ic_identify_flash_off = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_flash_off")
+    /// Image `ic_identify_flash_on`.
+    static let ic_identify_flash_on = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_flash_on")
+    /// Image `ic_identify_gallery`.
+    static let ic_identify_gallery = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_gallery")
+    /// Image `ic_identify_no_data`.
+    static let ic_identify_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_no_data")
+    /// Image `ic_identify_onboarding_1`.
+    static let ic_identify_onboarding_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_onboarding_1")
+    /// Image `ic_identify_onboarding_2`.
+    static let ic_identify_onboarding_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_onboarding_2")
+    /// Image `ic_identify_onboarding_3`.
+    static let ic_identify_onboarding_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_onboarding_3")
+    /// Image `ic_identify_photo_black`.
+    static let ic_identify_photo_black = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_black")
+    /// Image `ic_identify_photo_rectangle`.
+    static let ic_identify_photo_rectangle = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_rectangle")
+    /// Image `ic_identify_photo_white`.
+    static let ic_identify_photo_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_white")
     /// Image `ic_login_apple`.
     static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
     /// Image `ic_login_bg`.
@@ -330,6 +382,8 @@ struct R: Rswift.Validatable {
     static let ic_tab_schedule_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule_act")
     /// Image `ic_tab_schedule`.
     static let ic_tab_schedule = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule")
+    /// Image `ic_wishlist_no_data`.
+    static let ic_wishlist_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_wishlist_no_data")
     /// Image `temp_onboarding_1_ic`.
     static let temp_onboarding_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_1_ic")
     /// Image `temp_onboarding_2_ic`.
@@ -347,6 +401,104 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_back_ic", bundle: ..., traitCollection: ...)`
     static func garden_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_choose_identify_diagnosis", bundle: ..., traitCollection: ...)`
+    static func ic_choose_identify_diagnosis(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_choose_identify_diagnosis, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_choose_identify_photo", bundle: ..., traitCollection: ...)`
+    static func ic_choose_identify_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_choose_identify_photo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_checkmark", bundle: ..., traitCollection: ...)`
+    static func ic_identify_checkmark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_checkmark, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_close", bundle: ..., traitCollection: ...)`
+    static func ic_identify_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_close, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_flash_off", bundle: ..., traitCollection: ...)`
+    static func ic_identify_flash_off(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_flash_off, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_flash_on", bundle: ..., traitCollection: ...)`
+    static func ic_identify_flash_on(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_flash_on, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_gallery", bundle: ..., traitCollection: ...)`
+    static func ic_identify_gallery(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_gallery, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_no_data", bundle: ..., traitCollection: ...)`
+    static func ic_identify_no_data(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_no_data, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_onboarding_1", bundle: ..., traitCollection: ...)`
+    static func ic_identify_onboarding_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_onboarding_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_onboarding_2", bundle: ..., traitCollection: ...)`
+    static func ic_identify_onboarding_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_onboarding_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_onboarding_3", bundle: ..., traitCollection: ...)`
+    static func ic_identify_onboarding_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_onboarding_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_photo_black", bundle: ..., traitCollection: ...)`
+    static func ic_identify_photo_black(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_photo_black, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_photo_rectangle", bundle: ..., traitCollection: ...)`
+    static func ic_identify_photo_rectangle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_photo_rectangle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_photo_white", bundle: ..., traitCollection: ...)`
+    static func ic_identify_photo_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_photo_white, compatibleWith: traitCollection)
     }
     #endif
 
@@ -519,6 +671,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_wishlist_no_data", bundle: ..., traitCollection: ...)`
+    static func ic_wishlist_no_data(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_wishlist_no_data, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
     static func temp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp, compatibleWith: traitCollection)
@@ -563,12 +722,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
   struct nib {
+    /// Nib `ChooseIdentifyController`.
+    static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
+    /// Nib `DiagnosisController`.
+    static let diagnosisController = _R.nib._DiagnosisController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
     /// Nib `GardenViewCell`.
     static let gardenViewCell = _R.nib._GardenViewCell()
+    /// Nib `IdentifyController`.
+    static let identifyController = _R.nib._IdentifyController()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
     /// Nib `OnboardingFirsController`.
@@ -583,8 +748,26 @@ struct R: Rswift.Validatable {
     static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
+    /// Nib `SubcribeController`.
+    static let subcribeController = _R.nib._SubcribeController()
     /// Nib `WishListController`.
     static let wishListController = _R.nib._WishListController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ChooseIdentifyController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.chooseIdentifyController) instead")
+    static func chooseIdentifyController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.chooseIdentifyController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DiagnosisController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.diagnosisController) instead")
+    static func diagnosisController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.diagnosisController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardenButtonCell", in: bundle)`
@@ -599,6 +782,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenViewCell) instead")
     static func gardenViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "IdentifyController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.identifyController) instead")
+    static func identifyController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.identifyController)
     }
     #endif
 
@@ -659,6 +850,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SubcribeController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.subcribeController) instead")
+    static func subcribeController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.subcribeController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "WishListController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.wishListController) instead")
     static func wishListController(_: Void = ()) -> UIKit.UINib {
@@ -666,12 +865,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func chooseIdentifyController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.chooseIdentifyController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func diagnosisController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.diagnosisController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
       return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
     }
 
     static func gardenViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenViewCell? {
       return R.nib.gardenViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenViewCell
+    }
+
+    static func identifyController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.identifyController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -702,6 +913,10 @@ struct R: Rswift.Validatable {
       return R.nib.splashController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func subcribeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.subcribeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func wishListController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.wishListController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -716,12 +931,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 37 localization keys.
     struct localizable {
       /// en translation: Add Unique
       ///
       /// Locales: en
       static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Analyzing image
+      ///
+      /// Locales: en
+      static let identify_analize_image = Rswift.StringResource(key: "identify_analize_image", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Back
       ///
       /// Locales: en
@@ -730,10 +949,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let plants_backToTop = Rswift.StringResource(key: "plants_backToTop", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static let choose_identify_cancel = Rswift.StringResource(key: "choose_identify_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Can’t identify or find in catalog?
       ///
       /// Locales: en
       static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Capture
+      ///
+      /// Locales: en
+      static let identify_capture = Rswift.StringResource(key: "identify_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Diagnosis
+      ///
+      /// Locales: en
+      static let choose_identify_diagnosis = Rswift.StringResource(key: "choose_identify_diagnosis", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Do you want to start analyzing Photo?
+      ///
+      /// Locales: en
+      static let identify_result_info = Rswift.StringResource(key: "identify_result_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Explore Plants and create garden of your dream
       ///
       /// Locales: en
@@ -742,26 +977,110 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let plants_explore = Rswift.StringResource(key: "plants_explore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Full-size image of Plant
+      ///
+      /// Locales: en
+      static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identify
+      ///
+      /// Locales: en
+      static let choose_identify_identify = Rswift.StringResource(key: "choose_identify_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identify Photo
+      ///
+      /// Locales: en
+      static let identify_result_identify_photo = Rswift.StringResource(key: "identify_result_identify_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identify Results:
+      ///
+      /// Locales: en
+      static let identify_results = Rswift.StringResource(key: "identify_results", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Identify my Plants
       ///
       /// Locales: en
       static let plants_identifier = Rswift.StringResource(key: "plants_identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identifying
+      ///
+      /// Locales: en
+      static let identify_result_title = Rswift.StringResource(key: "identify_result_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identifying
+      ///
+      /// Locales: en
+      static let identify_title = Rswift.StringResource(key: "identify_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identifying Plant by Photo
+      ///
+      /// Locales: en
+      static let identify_info = Rswift.StringResource(key: "identify_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Identifying plant
+      ///
+      /// Locales: en
+      static let identify_analize_identify_plant = Rswift.StringResource(key: "identify_analize_identify_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Login with
       ///
       /// Locales: en
       static let login_loginWith = Rswift.StringResource(key: "login_loginWith", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Make Photo of Whole Plant
+      ///
+      /// Locales: en
+      static let identify_make_photo_title = Rswift.StringResource(key: "identify_make_photo_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Make sure that plant isolated from other plants
+      ///
+      /// Locales: en
+      static let identify_overview_info = Rswift.StringResource(key: "identify_overview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Make sure the photo is sharp and high-resolution
+      ///
+      /// Locales: en
+      static let identify_photo_quality_info = Rswift.StringResource(key: "identify_photo_quality_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Overview
+      ///
+      /// Locales: en
+      static let identify_overview_title = Rswift.StringResource(key: "identify_overview_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Photo quality
+      ///
+      /// Locales: en
+      static let identify_photo_quality_title = Rswift.StringResource(key: "identify_photo_quality_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Please wait
       ///
       /// Locales: en
       static let activity_title = Rswift.StringResource(key: "activity_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Premium
+      ///
+      /// Locales: en
+      static let choose_identify_premium = Rswift.StringResource(key: "choose_identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en
+      static let identify_result_retake_photo = Rswift.StringResource(key: "identify_result_retake_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Search by Name
       ///
       /// Locales: en
       static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Sorry,  no results found
+      ///
+      /// Locales: en
+      static let identify_no_data = Rswift.StringResource(key: "identify_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Start Identify
+      ///
+      /// Locales: en
+      static let identify_start_identify = Rswift.StringResource(key: "identify_start_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Wishlist
       ///
       /// Locales: en
       static let wish_list_title = Rswift.StringResource(key: "wish_list_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Wishlist is empty
+      ///
+      /// Locales: en
+      static let wish_list_no_data = Rswift.StringResource(key: "wish_list_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: free snaps
+      ///
+      /// Locales: en
+      static let identify_free_snaps = Rswift.StringResource(key: "identify_free_snaps", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: free snaps left
+      ///
+      /// Locales: en
+      static let identify_result_snaps_left = Rswift.StringResource(key: "identify_result_snaps_left", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: go premium
+      ///
+      /// Locales: en
+      static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
 
       /// en translation: Add Unique
       ///
@@ -776,6 +1095,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plants_uniquePlantButton", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Analyzing image
+      ///
+      /// Locales: en
+      static func identify_analize_image(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_analize_image", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_analize_image"
+        }
+
+        return NSLocalizedString("identify_analize_image", bundle: bundle, comment: "")
       }
 
       /// en translation: Back
@@ -808,6 +1142,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_backToTop", bundle: bundle, comment: "")
       }
 
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static func choose_identify_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_cancel"
+        }
+
+        return NSLocalizedString("choose_identify_cancel", bundle: bundle, comment: "")
+      }
+
       /// en translation: Can’t identify or find in catalog?
       ///
       /// Locales: en
@@ -821,6 +1170,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plants_uniquePlantLabel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Capture
+      ///
+      /// Locales: en
+      static func identify_capture(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_capture", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_capture"
+        }
+
+        return NSLocalizedString("identify_capture", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnosis
+      ///
+      /// Locales: en
+      static func choose_identify_diagnosis(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_diagnosis", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_diagnosis"
+        }
+
+        return NSLocalizedString("choose_identify_diagnosis", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Do you want to start analyzing Photo?
+      ///
+      /// Locales: en
+      static func identify_result_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_info"
+        }
+
+        return NSLocalizedString("identify_result_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Explore Plants and create garden of your dream
@@ -853,6 +1247,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_explore", bundle: bundle, comment: "")
       }
 
+      /// en translation: Full-size image of Plant
+      ///
+      /// Locales: en
+      static func identify_make_photo_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_make_photo_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_make_photo_info"
+        }
+
+        return NSLocalizedString("identify_make_photo_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identify
+      ///
+      /// Locales: en
+      static func choose_identify_identify(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_identify", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_identify"
+        }
+
+        return NSLocalizedString("choose_identify_identify", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identify Photo
+      ///
+      /// Locales: en
+      static func identify_result_identify_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_identify_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_identify_photo"
+        }
+
+        return NSLocalizedString("identify_result_identify_photo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identify Results:
+      ///
+      /// Locales: en
+      static func identify_results(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_results", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_results"
+        }
+
+        return NSLocalizedString("identify_results", bundle: bundle, comment: "")
+      }
+
       /// en translation: Identify my Plants
       ///
       /// Locales: en
@@ -866,6 +1320,66 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plants_identifier", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identifying
+      ///
+      /// Locales: en
+      static func identify_result_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_title"
+        }
+
+        return NSLocalizedString("identify_result_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identifying
+      ///
+      /// Locales: en
+      static func identify_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_title"
+        }
+
+        return NSLocalizedString("identify_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identifying Plant by Photo
+      ///
+      /// Locales: en
+      static func identify_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_info"
+        }
+
+        return NSLocalizedString("identify_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identifying plant
+      ///
+      /// Locales: en
+      static func identify_analize_identify_plant(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_analize_identify_plant", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_analize_identify_plant"
+        }
+
+        return NSLocalizedString("identify_analize_identify_plant", bundle: bundle, comment: "")
       }
 
       /// en translation: Login with
@@ -883,6 +1397,81 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login_loginWith", bundle: bundle, comment: "")
       }
 
+      /// en translation: Make Photo of Whole Plant
+      ///
+      /// Locales: en
+      static func identify_make_photo_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_make_photo_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_make_photo_title"
+        }
+
+        return NSLocalizedString("identify_make_photo_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Make sure that plant isolated from other plants
+      ///
+      /// Locales: en
+      static func identify_overview_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_overview_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_overview_info"
+        }
+
+        return NSLocalizedString("identify_overview_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Make sure the photo is sharp and high-resolution
+      ///
+      /// Locales: en
+      static func identify_photo_quality_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_photo_quality_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_photo_quality_info"
+        }
+
+        return NSLocalizedString("identify_photo_quality_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Overview
+      ///
+      /// Locales: en
+      static func identify_overview_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_overview_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_overview_title"
+        }
+
+        return NSLocalizedString("identify_overview_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Photo quality
+      ///
+      /// Locales: en
+      static func identify_photo_quality_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_photo_quality_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_photo_quality_title"
+        }
+
+        return NSLocalizedString("identify_photo_quality_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Please wait
       ///
       /// Locales: en
@@ -896,6 +1485,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("activity_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Premium
+      ///
+      /// Locales: en
+      static func choose_identify_premium(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_premium", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_premium"
+        }
+
+        return NSLocalizedString("choose_identify_premium", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en
+      static func identify_result_retake_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_retake_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_retake_photo"
+        }
+
+        return NSLocalizedString("identify_result_retake_photo", bundle: bundle, comment: "")
       }
 
       /// en translation: Search by Name
@@ -913,6 +1532,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_search", bundle: bundle, comment: "")
       }
 
+      /// en translation: Sorry,  no results found
+      ///
+      /// Locales: en
+      static func identify_no_data(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_data", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_data"
+        }
+
+        return NSLocalizedString("identify_no_data", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Start Identify
+      ///
+      /// Locales: en
+      static func identify_start_identify(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_start_identify", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_start_identify"
+        }
+
+        return NSLocalizedString("identify_start_identify", bundle: bundle, comment: "")
+      }
+
       /// en translation: Wishlist
       ///
       /// Locales: en
@@ -926,6 +1575,66 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("wish_list_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Wishlist is empty
+      ///
+      /// Locales: en
+      static func wish_list_no_data(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wish_list_no_data", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "wish_list_no_data"
+        }
+
+        return NSLocalizedString("wish_list_no_data", bundle: bundle, comment: "")
+      }
+
+      /// en translation: free snaps
+      ///
+      /// Locales: en
+      static func identify_free_snaps(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_free_snaps", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_free_snaps"
+        }
+
+        return NSLocalizedString("identify_free_snaps", bundle: bundle, comment: "")
+      }
+
+      /// en translation: free snaps left
+      ///
+      /// Locales: en
+      static func identify_result_snaps_left(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_snaps_left", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_snaps_left"
+        }
+
+        return NSLocalizedString("identify_result_snaps_left", bundle: bundle, comment: "")
+      }
+
+      /// en translation: go premium
+      ///
+      /// Locales: en
+      static func identify_premium(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_premium", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_premium"
+        }
+
+        return NSLocalizedString("identify_premium", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -960,14 +1669,53 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _ChooseIdentifyController.validate()
+      try _DiagnosisController.validate()
       try _GardenViewCell.validate()
+      try _IdentifyController.validate()
       try _LoginController.validate()
       try _OnboardingFirsController.validate()
       try _OnboardingSecondController.validate()
       try _OnboardingThreeController.validate()
       try _PlantCollectionCell.validate()
       try _SplashController.validate()
+      try _SubcribeController.validate()
       try _WishListController.validate()
+    }
+
+    struct _ChooseIdentifyController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ChooseIdentifyController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_choose_identify_diagnosis", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_diagnosis' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_choose_identify_photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_photo' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DiagnosisController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DiagnosisController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _GardenButtonCell: Rswift.NibResourceType {
@@ -991,6 +1739,34 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _IdentifyController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "IdentifyController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_identify_checkmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_checkmark' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_no_data", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_no_data' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_onboarding_1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_1' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_onboarding_2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_2' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_onboarding_3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_3' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_photo_black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_black' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "wish_list_back_ground_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wish_list_back_ground_ic' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -1120,6 +1896,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _SubcribeController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SubcribeController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'SubcribeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _WishListController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "WishListController"
@@ -1129,6 +1922,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_wishlist_no_data", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_wishlist_no_data' is used in nib 'WishListController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "wish_list_back_ground_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wish_list_back_ground_ic' is used in nib 'WishListController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
@@ -1212,8 +2006,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_plants_unique", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_unique' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_garden", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_garden' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_menu' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tab_plants", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_plants' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_schedule", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_schedule' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic_tab_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_search' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().gardenController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardenController' could not be loaded from storyboard 'Main' as 'GardenController'.") }

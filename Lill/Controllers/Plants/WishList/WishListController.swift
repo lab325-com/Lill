@@ -4,68 +4,76 @@ import UIKit
 class WishListController: BaseController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noDataImage: UIImageView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     //----------------------------------------------
-    // MARK: - Property
+    // MARK: - Private property
     //----------------------------------------------
     
-    private let cellIdentifier = String(describing: PlantCollectionCell.self)
+    private lazy var presenter = WishListPresenter(view: self)
+    
+    //----------------------------------------------
+    // MARK: - Gobal property
+    //----------------------------------------------
+    
+    let cellIdentifier = String(describing: PlantCollectionCell.self)
+    var wishList = [PlantsModel]()
     
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     
     override func viewDidLoad() {
-        transparentNavigationBar = true
         super.viewDidLoad()
+        
+        transparentNavigationBar = true
+        
         setup()
     }
     
     //----------------------------------------------
-    // MARK: - Setup
+    // MARK: - Private methods
     //----------------------------------------------
     
     private func setup() {
+        presenter.getWishList()
+        
         let backButton = UIBarButtonItem()
         backButton.title = RLocalization.wish_list_back()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         navigationItem.title = RLocalization.wish_list_title()
+        
+        noDataLabel.text = RLocalization.wish_list_no_data()
+        
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),
                                 forCellWithReuseIdentifier: cellIdentifier)
+        
         collectionView.reloadData()
     }
 }
 
 //----------------------------------------------
-// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: - PlantsOutputProtocol
 //----------------------------------------------
 
-extension WishListController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+extension WishListController: WishListOutputProtocol {
+    func success(model: CatalogPlantsModel) {
+        wishList = model.getCatalogPlants.plants
+        if wishList.count > 0 {
+            noDataImage.isHidden = true
+            noDataLabel.isHidden = true
+        } else {
+            noDataImage.isHidden = false
+            noDataLabel.isHidden = false
+        }
+        collectionView.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellIdentifier, for: indexPath) as! PlantCollectionCell
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("select itema")
-    }
-}
-
-//----------------------------------------------
-// MARK: - UICollectionViewDelegateFlowLayout
-//----------------------------------------------
-
-extension WishListController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width / 2 - 13 , height: UIScreen.main.bounds.size.width / 2 - 13)
+    func failure(error: String) {
+        noDataImage.isHidden = false
+        noDataLabel.isHidden = false
     }
 }

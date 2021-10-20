@@ -52,7 +52,6 @@
 		02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575F26F90FF000F19C41 /* LoginModel.swift */; };
 		02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFA8270A36500089CEF8 /* WishListController.swift */; };
 		02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FCBFA9270A36500089CEF8 /* WishListController.xib */; };
-		02FCBFAD270A36790089CEF8 /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFAC270A36790089CEF8 /* PlantsRouter.swift */; };
 		02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFAE270A40490089CEF8 /* KeychainService.swift */; };
 		02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */; };
 		02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFB4270A45410089CEF8 /* PreferencesManager.swift */; };
@@ -66,10 +65,21 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
+		FA8FCD2927182CAA00173725 /* UploadPhoto.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */; };
+		FA8FCD2B27182D3600173725 /* UploadPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */; };
+		FA8FCD2E27185FCD00173725 /* RecognitionPhoto.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */; };
+		FA8FCD302718601400173725 /* RecognitionPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */; };
+		FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3827196BD500173725 /* PlantsModel.swift */; };
+		FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3B27199CD100173725 /* SubcribeController.swift */; };
+		FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD3C27199CD100173725 /* SubcribeController.xib */; };
+		FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3F27199DCA00173725 /* DiagnosisController.swift */; };
+		FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD4027199DCA00173725 /* DiagnosisController.xib */; };
+		FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD462719C19D00173725 /* IdentifyController+CollectionView.swift */; };
 		FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA230F26F3624F00E10E89 /* AppDelegate.swift */; };
 		FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231826F3625200E10E89 /* Assets.xcassets */; };
 		FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */; };
 		FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FAAA234926F51A5800E10E89 /* Apollo */; };
+		FAB26ACF2716C89A00B3EFDF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB26ACE2716C89A00B3EFDF /* ShadowView.swift */; };
 		FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD242704AF210075C0C0 /* PlantsController.swift */; };
 		FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD262704AF3A0075C0C0 /* GardenController.swift */; };
 		FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD282704AF530075C0C0 /* ScheduleController.swift */; };
@@ -84,6 +94,18 @@
 		FAD49CE727033C15005D6E75 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE627033C15005D6E75 /* FirebaseAnalytics */; };
 		FAD49CE927033C15005D6E75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE827033C15005D6E75 /* FirebaseAuth */; };
 		FAD49CEB27033C15005D6E75 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CEA27033C15005D6E75 /* FirebaseMessaging */; };
+		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
+		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
+		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
+		FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */; };
+		FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */; };
+		FAFCF3522715760A00C3134E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3512715760A00C3134E /* GradientView.swift */; };
+		FAFCF35527157FE100C3134E /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35427157FE100C3134E /* Me.graphql */; };
+		FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */; };
+		FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeModel.swift */; };
+		FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF35E2715D0F800C3134E /* IdentifyController.swift */; };
+		FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35F2715D0F800C3134E /* IdentifyController.xib */; };
+		FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +153,6 @@
 		02E4575F26F90FF000F19C41 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		02FCBFA8270A36500089CEF8 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		02FCBFA9270A36500089CEF8 /* WishListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListController.xib; sourceTree = "<group>"; };
-		02FCBFAC270A36790089CEF8 /* PlantsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		02FCBFAE270A40490089CEF8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		02FCBFB4270A45410089CEF8 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		345C8D7B95F2127992B3CEF4 /* Pods-Lill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.debug.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +165,16 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadPhoto.graphql; sourceTree = "<group>"; };
+		FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoModel.swift; sourceTree = "<group>"; };
+		FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RecognitionPhoto.graphql; sourceTree = "<group>"; };
+		FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionPhotoModel.swift; sourceTree = "<group>"; };
+		FA8FCD3827196BD500173725 /* PlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModel.swift; sourceTree = "<group>"; };
+		FA8FCD3B27199CD100173725 /* SubcribeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcribeController.swift; sourceTree = "<group>"; };
+		FA8FCD3C27199CD100173725 /* SubcribeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubcribeController.xib; sourceTree = "<group>"; };
+		FA8FCD3F27199DCA00173725 /* DiagnosisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisController.swift; sourceTree = "<group>"; };
+		FA8FCD4027199DCA00173725 /* DiagnosisController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiagnosisController.xib; sourceTree = "<group>"; };
+		FA8FCD462719C19D00173725 /* IdentifyController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentifyController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAAA230C26F3624F00E10E89 /* Lill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA230F26F3624F00E10E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA231826F3625200E10E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +182,7 @@
 		FAAA231D26F3625200E10E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAA234326F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FAAA234426F499F400E10E89 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAB26ACE2716C89A00B3EFDF /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		FAB3BD242704AF210075C0C0 /* PlantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsController.swift; sourceTree = "<group>"; };
 		FAB3BD262704AF3A0075C0C0 /* GardenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenController.swift; sourceTree = "<group>"; };
 		FAB3BD282704AF530075C0C0 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
@@ -162,6 +194,18 @@
 		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		FAD49CE327033B0B005D6E75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
+		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
+		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
+		FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyController.swift; sourceTree = "<group>"; };
+		FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseIdentifyController.xib; sourceTree = "<group>"; };
+		FAFCF3512715760A00C3134E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		FAFCF35427157FE100C3134E /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
+		FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyPresenter.swift; sourceTree = "<group>"; };
+		FAFCF3592715830D00C3134E /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FAFCF35E2715D0F800C3134E /* IdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyController.swift; sourceTree = "<group>"; };
+		FAFCF35F2715D0F800C3134E /* IdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentifyController.xib; sourceTree = "<group>"; };
+		FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,9 +344,11 @@
 				02A8347E26F38F920009E147 /* Onboarding */,
 				02E0B1A22704315100A56840 /* TabBar */,
 				FAB3BD202704AB640075C0C0 /* Plants */,
+				FAFCF34A27148B8A00C3134E /* Identify Diagnosis */,
 				FAB3BD212704AB710075C0C0 /* Garden */,
 				FAB3BD222704AB7E0075C0C0 /* Schedule */,
 				FAB3BD232704AB8E0075C0C0 /* Menu */,
+				FA8FCD3A27199C4700173725 /* Subscribe */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +391,7 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAFCF350271575D400C3134E /* Views */,
 				FA7C8CF926FDFED8000D2976 /* Managers */,
 				02D04ED726F5E89800F86B87 /* BridgingHeaders */,
 				02D04EC926F5E7AE00F86B87 /* Application */,
@@ -404,8 +451,8 @@
 		02E0B1A22704315100A56840 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				02E0B1A3270431B400A56840 /* Main.storyboard */,
 				02E0B1A52704325300A56840 /* MainTabBarController.swift */,
+				02E0B1A3270431B400A56840 /* Main.storyboard */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -427,13 +474,17 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		02E4576526F9139000F19C41 /* GraphQl */ = {
+		02E4576526F9139000F19C41 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				FA8FCD3727196BC100173725 /* GlobalModels */,
+				FA8FCD2C27185F6200173725 /* RecognizePhoto */,
+				FA8FCD27271818DA00173725 /* UploadPhoto */,
+				FAFCF35327157FA900C3134E /* Me */,
 				FAC6D9962701E1E4000A551F /* GetPlants */,
 				02E4576426F9137C00F19C41 /* Login */,
 			);
-			path = GraphQl;
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		02FCBFA6270A36100089CEF8 /* Plants */ = {
@@ -441,6 +492,7 @@
 			children = (
 				FAB3BD242704AF210075C0C0 /* PlantsController.swift */,
 				0237862A2706ED5F0092F63A /* PlantsController+CollectionView.swift */,
+				FAFCF34427147D8D00C3134E /* Router */,
 				023786242706D7280092F63A /* Presenter */,
 				021C8EC42705B08F00F0F589 /* Cell */,
 			);
@@ -451,7 +503,9 @@
 			isa = PBXGroup;
 			children = (
 				02FCBFA8270A36500089CEF8 /* WishListController.swift */,
+				FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */,
 				02FCBFA9270A36500089CEF8 /* WishListController.xib */,
+				FAFCF34727147E1300C3134E /* Presenter */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -492,6 +546,41 @@
 				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA8FCD27271818DA00173725 /* UploadPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */,
+				FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */,
+			);
+			path = UploadPhoto;
+			sourceTree = "<group>";
+		};
+		FA8FCD2C27185F6200173725 /* RecognizePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */,
+				FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */,
+			);
+			path = RecognizePhoto;
+			sourceTree = "<group>";
+		};
+		FA8FCD3727196BC100173725 /* GlobalModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD3827196BD500173725 /* PlantsModel.swift */,
+			);
+			path = GlobalModels;
+			sourceTree = "<group>";
+		};
+		FA8FCD3A27199C4700173725 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD3B27199CD100173725 /* SubcribeController.swift */,
+				FA8FCD3C27199CD100173725 /* SubcribeController.xib */,
+			);
+			path = Subscribe;
 			sourceTree = "<group>";
 		};
 		FAAA230326F3624F00E10E89 = {
@@ -535,7 +624,6 @@
 		FAB3BD202704AB640075C0C0 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
-				02FCBFAC270A36790089CEF8 /* PlantsRouter.swift */,
 				02FCBFA6270A36100089CEF8 /* Plants */,
 				02FCBFA7270A36200089CEF8 /* WishList */,
 			);
@@ -580,7 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				02E4575B26F903A200F19C41 /* Network */,
-				02E4576526F9139000F19C41 /* GraphQl */,
+				02E4576526F9139000F19C41 /* GraphQL */,
 			);
 			path = Apollo;
 			sourceTree = "<group>";
@@ -593,6 +681,96 @@
 				FAD1833726F9DD2C007A67DC /* LoginController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		FAFCF34427147D8D00C3134E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF34527147DC800C3134E /* PlantsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAFCF34727147E1300C3134E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF34827147E4100C3134E /* WishListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAFCF34A27148B8A00C3134E /* Identify Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF34B27148BFC00C3134E /* Choose Identify */,
+				FAFCF35C2715CC6700C3134E /* Identify */,
+				FAFCF35D2715CC7000C3134E /* Diagnosis */,
+			);
+			path = "Identify Diagnosis";
+			sourceTree = "<group>";
+		};
+		FAFCF34B27148BFC00C3134E /* Choose Identify */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */,
+				FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */,
+				FAFCF3562715823000C3134E /* Presenter */,
+			);
+			path = "Choose Identify";
+			sourceTree = "<group>";
+		};
+		FAFCF350271575D400C3134E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAB26ACE2716C89A00B3EFDF /* ShadowView.swift */,
+				FAFCF3512715760A00C3134E /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAFCF35327157FA900C3134E /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF3592715830D00C3134E /* MeModel.swift */,
+				FAFCF35427157FE100C3134E /* Me.graphql */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		FAFCF3562715823000C3134E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAFCF35C2715CC6700C3134E /* Identify */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF35E2715D0F800C3134E /* IdentifyController.swift */,
+				FA8FCD462719C19D00173725 /* IdentifyController+CollectionView.swift */,
+				FAFCF35F2715D0F800C3134E /* IdentifyController.xib */,
+				FAFCF3622715D17600C3134E /* Presenter */,
+			);
+			path = Identify;
+			sourceTree = "<group>";
+		};
+		FAFCF35D2715CC7000C3134E /* Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD3F27199DCA00173725 /* DiagnosisController.swift */,
+				FA8FCD4027199DCA00173725 /* DiagnosisController.xib */,
+			);
+			path = Diagnosis;
+			sourceTree = "<group>";
+		};
+		FAFCF3622715D17600C3134E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -686,16 +864,22 @@
 				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
 				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
 				FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */,
+				FAFCF35527157FE100C3134E /* Me.graphql in Resources */,
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
+				FA8FCD2927182CAA00173725 /* UploadPhoto.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
 				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02AB244726F39D8E00309CFF /* Localizable.strings in Resources */,
 				02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */,
+				FA8FCD2E27185FCD00173725 /* RecognitionPhoto.graphql in Resources */,
 				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
+				FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */,
 				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
+				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
+				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
 				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
 				026CFC0D270C1FF8003A0687 /* GardenViewCell.xib in Resources */,
@@ -707,6 +891,7 @@
 				FAD49CE427033B0B005D6E75 /* GoogleService-Info.plist in Resources */,
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
+				FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,36 +1002,49 @@
 			files = (
 				026CFC0C270C1FF8003A0687 /* GardenViewCell.swift in Sources */,
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
+				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
+				FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
+				FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */,
+				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
+				FA8FCD302718601400173725 /* RecognitionPhotoModel.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
+				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
+				FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
+				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
+				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */,
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
+				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
 				022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */,
 				02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
+				FA8FCD2B27182D3600173725 /* UploadPhotoModel.swift in Sources */,
 				02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
-				02FCBFAD270A36790089CEF8 /* PlantsRouter.swift in Sources */,
 				FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
+				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
 				021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,
+				FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */,
 				02A4BA3E26FDD16C00DF6A08 /* UIPageViewController+Extension.swift in Sources */,
+				FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */,
 				02A4BA3626FDCFEF00DF6A08 /* OnboardingSecondController.swift in Sources */,
 				02A4BA2C26FDCF6700DF6A08 /* OnboardingFirsController.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
@@ -854,7 +1052,9 @@
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
+				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
+				FAB26ACF2716C89A00B3EFDF /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

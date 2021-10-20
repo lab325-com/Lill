@@ -36,7 +36,9 @@ class PlantCollectionCell: UICollectionViewCell {
     
     func configure(model: PlantsModel) {
         titleLabel.text = model.description.name
-        mainImageView.kf.setImage(with: URL(string: model.description.image.urlIosPrev), options: [.transition(.fade(0.25))])
+        
+        guard let urlIosPrev = model.description.image.urlIosPrev else { return }
+        mainImageView.kf.setImage(with: URL(string: urlIosPrev), options: [.transition(.fade(0.25))])
         
         favoriteImageView.image = model.description.is_favorite ? UIImage(named: "ic_plants_favorite") : UIImage(named: "ic_plants_unfavorite")
     }

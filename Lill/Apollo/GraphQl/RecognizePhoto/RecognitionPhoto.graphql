@@ -1,0 +1,16 @@
+query StartRecognition($img: RecognitionInput!) {
+	startRecognition(img: $img) {
+		plants {
+			id
+			description {
+				is_favorite
+				name
+				image {
+					media_id
+					urlIosFull
+					urlIosPrev
+				}
+			}
+		}
+	}
+}

@@ -8,11 +8,16 @@ mutation login($socialToken: String!,
 		  firebaseId: $firebaseId
 		  social: $social
 		  lang: $lang) {
+		access {
+			diagnosisAvaliable
+			identifyTotal
+			identifyUsed
+			isPremium
+		}
 		avatar
 		barer
 		id
 		lang
 		name
-		social
 	}
 }

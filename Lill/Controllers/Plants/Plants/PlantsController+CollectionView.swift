@@ -35,7 +35,7 @@ extension PlantsController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("select itema")
+        debugPrint("select item")
     }
 }
 

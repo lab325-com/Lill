@@ -1,0 +1,15 @@
+query Me {
+	me {
+		access {
+			diagnosisAvaliable
+			identifyTotal
+			identifyUsed
+			isPremium
+		}
+		avatar
+		barer
+		id
+		lang
+		name
+	}
+}

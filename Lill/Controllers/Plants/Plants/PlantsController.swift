@@ -84,7 +84,6 @@ class PlantsController: BaseController {
         faworiteView.layer.borderWidth = 1
         faworiteView.layer.borderColor = UIColor(rgb: 0xC36ED1).cgColor
         
-        //backToTopButton.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
         backToTopButton.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         backToTopButton.layer.borderColor = UIColor.white.cgColor
         backToTopButton.layer.borderWidth = 3
@@ -110,7 +109,7 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionWishList(_ sender: UIButton) {
-        //PlantsRouter(presenter: navigationController).pushWishList()
+        PlantsRouter(presenter: navigationController).pushWishList()
     }
     
     @IBAction func actionClear(_ sender: UIButton) {
@@ -120,7 +119,7 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionPhoto(_ sender: UIButton) {
-        debugPrint("actionPhoto")
+        PlantsRouter(presenter: navigationController).presentChooseIdentify()
     }
     
     @IBAction func actionBackToTop(_ sender: UIButton) {
@@ -221,7 +220,7 @@ extension PlantsController {
             self.navigationTralingToPhoto.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.topCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.heightCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 998 : 999)
-            self.uniqueViewBottomLayout.constant = isHidden ? 90.0 : 0.0
+            self.uniqueViewBottomLayout.constant = isHidden ? 8.0 : -50.0
             
             self.view.layoutIfNeeded()
             
