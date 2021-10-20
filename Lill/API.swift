@@ -553,12 +553,15 @@ public final class LoginMutation: GraphQLMutation {
         access {
           __typename
           diagnosisAvaliable
+          diagnosisTotal
+          diagnosisUsed
           identifyTotal
           identifyUsed
           isPremium
         }
         avatar
         barer
+        email
         id
         lang
         name
@@ -621,11 +624,12 @@ public final class LoginMutation: GraphQLMutation {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("access", type: .nonNull(.object(Access.selections))),
-          GraphQLField("avatar", type: .nonNull(.scalar(String.self))),
+          GraphQLField("avatar", type: .scalar(String.self)),
           GraphQLField("barer", type: .nonNull(.scalar(String.self))),
+          GraphQLField("email", type: .scalar(String.self)),
           GraphQLField("id", type: .nonNull(.scalar(String.self))),
           GraphQLField("lang", type: .nonNull(.scalar(Lang.self))),
-          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("name", type: .scalar(String.self)),
         ]
       }
 
@@ -635,8 +639,8 @@ public final class LoginMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(access: Access, avatar: String, barer: String, id: String, lang: Lang, name: String) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "access": access.resultMap, "avatar": avatar, "barer": barer, "id": id, "lang": lang, "name": name])
+      public init(access: Access, avatar: String? = nil, barer: String, email: String? = nil, id: String, lang: Lang, name: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "access": access.resultMap, "avatar": avatar, "barer": barer, "email": email, "id": id, "lang": lang, "name": name])
       }
 
       public var __typename: String {
@@ -660,9 +664,9 @@ public final class LoginMutation: GraphQLMutation {
       /// Ссылка на аватар юзера, который был получен из соц-сетей или загружен пользователем самостоятельно.
       /// Ссылка всегда ведет на файл на нашей стороне даже если получен из соц-сети.
       /// Тогда он выкачивается и сохраняется у нас.
-      public var avatar: String {
+      public var avatar: String? {
         get {
-          return resultMap["avatar"]! as! String
+          return resultMap["avatar"] as? String
         }
         set {
           resultMap.updateValue(newValue, forKey: "avatar")
@@ -675,6 +679,15 @@ public final class LoginMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "barer")
+        }
+      }
+
+      public var email: String? {
+        get {
+          return resultMap["email"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "email")
         }
       }
 
@@ -697,9 +710,9 @@ public final class LoginMutation: GraphQLMutation {
         }
       }
 
-      public var name: String {
+      public var name: String? {
         get {
-          return resultMap["name"]! as! String
+          return resultMap["name"] as? String
         }
         set {
           resultMap.updateValue(newValue, forKey: "name")
@@ -713,6 +726,8 @@ public final class LoginMutation: GraphQLMutation {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("diagnosisAvaliable", type: .nonNull(.scalar(Bool.self))),
+            GraphQLField("diagnosisTotal", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("diagnosisUsed", type: .nonNull(.scalar(Int.self))),
             GraphQLField("identifyTotal", type: .nonNull(.scalar(Int.self))),
             GraphQLField("identifyUsed", type: .nonNull(.scalar(Int.self))),
             GraphQLField("isPremium", type: .nonNull(.scalar(Bool.self))),
@@ -725,8 +740,8 @@ public final class LoginMutation: GraphQLMutation {
           self.resultMap = unsafeResultMap
         }
 
-        public init(diagnosisAvaliable: Bool, identifyTotal: Int, identifyUsed: Int, isPremium: Bool) {
-          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium])
+        public init(diagnosisAvaliable: Bool, diagnosisTotal: Int, diagnosisUsed: Int, identifyTotal: Int, identifyUsed: Int, isPremium: Bool) {
+          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "diagnosisTotal": diagnosisTotal, "diagnosisUsed": diagnosisUsed, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium])
         }
 
         public var __typename: String {
@@ -744,6 +759,24 @@ public final class LoginMutation: GraphQLMutation {
           }
           set {
             resultMap.updateValue(newValue, forKey: "diagnosisAvaliable")
+          }
+        }
+
+        public var diagnosisTotal: Int {
+          get {
+            return resultMap["diagnosisTotal"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "diagnosisTotal")
+          }
+        }
+
+        public var diagnosisUsed: Int {
+          get {
+            return resultMap["diagnosisUsed"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "diagnosisUsed")
           }
         }
 
@@ -788,12 +821,15 @@ public final class MeQuery: GraphQLQuery {
         access {
           __typename
           diagnosisAvaliable
+          diagnosisTotal
+          diagnosisUsed
           identifyTotal
           identifyUsed
           isPremium
         }
         avatar
         barer
+        email
         id
         lang
         name
@@ -842,11 +878,12 @@ public final class MeQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("access", type: .nonNull(.object(Access.selections))),
-          GraphQLField("avatar", type: .nonNull(.scalar(String.self))),
+          GraphQLField("avatar", type: .scalar(String.self)),
           GraphQLField("barer", type: .nonNull(.scalar(String.self))),
+          GraphQLField("email", type: .scalar(String.self)),
           GraphQLField("id", type: .nonNull(.scalar(String.self))),
           GraphQLField("lang", type: .nonNull(.scalar(Lang.self))),
-          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("name", type: .scalar(String.self)),
         ]
       }
 
@@ -856,8 +893,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(access: Access, avatar: String, barer: String, id: String, lang: Lang, name: String) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "access": access.resultMap, "avatar": avatar, "barer": barer, "id": id, "lang": lang, "name": name])
+      public init(access: Access, avatar: String? = nil, barer: String, email: String? = nil, id: String, lang: Lang, name: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "access": access.resultMap, "avatar": avatar, "barer": barer, "email": email, "id": id, "lang": lang, "name": name])
       }
 
       public var __typename: String {
@@ -881,9 +918,9 @@ public final class MeQuery: GraphQLQuery {
       /// Ссылка на аватар юзера, который был получен из соц-сетей или загружен пользователем самостоятельно.
       /// Ссылка всегда ведет на файл на нашей стороне даже если получен из соц-сети.
       /// Тогда он выкачивается и сохраняется у нас.
-      public var avatar: String {
+      public var avatar: String? {
         get {
-          return resultMap["avatar"]! as! String
+          return resultMap["avatar"] as? String
         }
         set {
           resultMap.updateValue(newValue, forKey: "avatar")
@@ -896,6 +933,15 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "barer")
+        }
+      }
+
+      public var email: String? {
+        get {
+          return resultMap["email"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "email")
         }
       }
 
@@ -918,9 +964,9 @@ public final class MeQuery: GraphQLQuery {
         }
       }
 
-      public var name: String {
+      public var name: String? {
         get {
-          return resultMap["name"]! as! String
+          return resultMap["name"] as? String
         }
         set {
           resultMap.updateValue(newValue, forKey: "name")
@@ -934,6 +980,8 @@ public final class MeQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("diagnosisAvaliable", type: .nonNull(.scalar(Bool.self))),
+            GraphQLField("diagnosisTotal", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("diagnosisUsed", type: .nonNull(.scalar(Int.self))),
             GraphQLField("identifyTotal", type: .nonNull(.scalar(Int.self))),
             GraphQLField("identifyUsed", type: .nonNull(.scalar(Int.self))),
             GraphQLField("isPremium", type: .nonNull(.scalar(Bool.self))),
@@ -946,8 +994,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(diagnosisAvaliable: Bool, identifyTotal: Int, identifyUsed: Int, isPremium: Bool) {
-          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium])
+        public init(diagnosisAvaliable: Bool, diagnosisTotal: Int, diagnosisUsed: Int, identifyTotal: Int, identifyUsed: Int, isPremium: Bool) {
+          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "diagnosisTotal": diagnosisTotal, "diagnosisUsed": diagnosisUsed, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium])
         }
 
         public var __typename: String {
@@ -965,6 +1013,24 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "diagnosisAvaliable")
+          }
+        }
+
+        public var diagnosisTotal: Int {
+          get {
+            return resultMap["diagnosisTotal"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "diagnosisTotal")
+          }
+        }
+
+        public var diagnosisUsed: Int {
+          get {
+            return resultMap["diagnosisUsed"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "diagnosisUsed")
           }
         }
 
@@ -1056,6 +1122,7 @@ public final class StartRecognitionQuery: GraphQLQuery {
       self.init(unsafeResultMap: ["__typename": "Query", "startRecognition": startRecognition.resultMap])
     }
 
+    /// Принимает ссылку на картинку плента которая уже загружена на сервер через uploadMediaRecognition и возвращает список распознанных plants. Или пустой массив если не получилось.
     public var startRecognition: StartRecognition {
       get {
         return StartRecognition(unsafeResultMap: resultMap["startRecognition"]! as! ResultMap)

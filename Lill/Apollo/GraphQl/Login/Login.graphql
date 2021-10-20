@@ -10,12 +10,15 @@ mutation login($socialToken: String!,
 		  lang: $lang) {
 		access {
 			diagnosisAvaliable
+			diagnosisTotal
+			diagnosisUsed
 			identifyTotal
 			identifyUsed
 			isPremium
 		}
 		avatar
 		barer
+		email
 		id
 		lang
 		name

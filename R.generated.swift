@@ -302,10 +302,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 46 images.
+  /// This `R.image` struct is generated, and contains static references to 47 images.
   struct image {
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
+    /// Image `ic_background`.
+    static let ic_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_background")
     /// Image `ic_choose_identify_diagnosis`.
     static let ic_choose_identify_diagnosis = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_diagnosis")
     /// Image `ic_choose_identify_photo`.
@@ -348,6 +350,8 @@ struct R: Rswift.Validatable {
     static let ic_login_instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_instagram")
     /// Image `ic_login_logo`.
     static let ic_login_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_logo")
+    /// Image `ic_phonendoscope`.
+    static let ic_phonendoscope = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_phonendoscope")
     /// Image `ic_plants_add`.
     static let ic_plants_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_add")
     /// Image `ic_plants_backToTop`.
@@ -394,13 +398,18 @@ struct R: Rswift.Validatable {
     static let temp_plants_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_plants_ic")
     /// Image `temp`.
     static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
-    /// Image `wish_list_back_ground_ic`.
-    static let wish_list_back_ground_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "wish_list_back_ground_ic")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "garden_back_ic", bundle: ..., traitCollection: ...)`
     static func garden_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_background", bundle: ..., traitCollection: ...)`
+    static func ic_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_background, compatibleWith: traitCollection)
     }
     #endif
 
@@ -548,6 +557,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_login_logo", bundle: ..., traitCollection: ...)`
     static func ic_login_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_login_logo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_phonendoscope", bundle: ..., traitCollection: ...)`
+    static func ic_phonendoscope(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_phonendoscope, compatibleWith: traitCollection)
     }
     #endif
 
@@ -709,13 +725,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "temp_plants_ic", bundle: ..., traitCollection: ...)`
     static func temp_plants_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp_plants_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "wish_list_back_ground_ic", bundle: ..., traitCollection: ...)`
-    static func wish_list_back_ground_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.wish_list_back_ground_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1710,7 +1719,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_background' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_phonendoscope", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_phonendoscope' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -1755,6 +1766,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_background' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_checkmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_checkmark' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'IdentifyController', but couldn't be loaded.") }
@@ -1766,7 +1778,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_identify_onboarding_3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_3' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_black' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'IdentifyController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "wish_list_back_ground_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wish_list_back_ground_ic' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -1922,8 +1933,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_background' is used in nib 'WishListController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_wishlist_no_data", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_wishlist_no_data' is used in nib 'WishListController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "wish_list_back_ground_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wish_list_back_ground_ic' is used in nib 'WishListController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

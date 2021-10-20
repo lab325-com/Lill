@@ -74,8 +74,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wish_list_back_ground_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Ods-Qu-cL0">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_background" translatesAutoresizingMaskIntoConstraints="NO" id="Ods-Qu-cL0">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IJ-EL-Oys">
                     <rect key="frame" x="0.0" y="64" width="414" height="577"/>
@@ -802,7 +802,7 @@
                 <constraint firstItem="Ods-Qu-cL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I8e-u9-ENR"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IUA-GA-chi"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="top" secondItem="glz-gi-Sph" secondAttribute="bottom" constant="40" id="Qvm-XP-eCb"/>
-                <constraint firstItem="Ods-Qu-cL0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="W6T-0w-7xa"/>
+                <constraint firstItem="Ods-Qu-cL0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W6T-0w-7xa"/>
                 <constraint firstItem="LAh-N1-W5x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YFM-we-qTA"/>
                 <constraint firstItem="LAh-N1-W5x" firstAttribute="top" secondItem="kDl-Ba-PNP" secondAttribute="bottom" constant="15" id="Yuu-Oi-r0B"/>
                 <constraint firstItem="kDl-Ba-PNP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aSF-GR-bZI"/>
@@ -828,6 +828,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_background" width="390" height="844"/>
         <image name="ic_identify_checkmark" width="32" height="32"/>
         <image name="ic_identify_close" width="17" height="17"/>
         <image name="ic_identify_flash_off" width="20" height="25"/>
@@ -839,7 +840,6 @@
         <image name="ic_identify_onboarding_3" width="116" height="112"/>
         <image name="ic_identify_photo_black" width="87.5" height="73"/>
         <image name="ic_identify_photo_white" width="38" height="38"/>
-        <image name="wish_list_back_ground_ic" width="390" height="844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

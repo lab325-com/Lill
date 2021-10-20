@@ -15,4 +15,8 @@ class DiagnosisController: UIViewController {
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    @IBAction func startDiagnosisAction(_ sender: Any) {
+        
+    }
 }

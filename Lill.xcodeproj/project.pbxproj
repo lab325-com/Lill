@@ -56,6 +56,7 @@
 		02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */; };
 		02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFB4270A45410089CEF8 /* PreferencesManager.swift */; };
 		E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */; };
+		FA64050B27205515000124A5 /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050A27205515000124A5 /* AccessModel.swift */; };
 		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
 		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
 		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
@@ -159,6 +160,7 @@
 		6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.release.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.release.xcconfig"; sourceTree = "<group>"; };
 		DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.staging.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.staging.xcconfig"; sourceTree = "<group>"; };
+		FA64050A27205515000124A5 /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialManager.swift; sourceTree = "<group>"; };
 		FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lill.entitlements; sourceTree = "<group>"; };
@@ -528,6 +530,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA640509272041FD000124A5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FA7C8CF926FDFED8000D2976 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8FCD3827196BD500173725 /* PlantsModel.swift */,
+				FA64050A27205515000124A5 /* AccessModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -676,7 +687,7 @@
 		FAD1833326F9DAB1007A67DC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */,
+				FA640509272041FD000124A5 /* Presenter */,
 				FAD1833626F9DD2C007A67DC /* LoginController.swift */,
 				FAD1833726F9DD2C007A67DC /* LoginController.xib */,
 			);
@@ -1039,6 +1050,7 @@
 				FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
+				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
 				021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,
