@@ -3,6 +3,7 @@
 "choose_identify_diagnosis" = "Diagnóstico";
 "choose_identify_identify" = "Identificar";
 "choose_identify_premium" = "Prima";
+"diagnosis_title" = "Diagnosticar";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";
@@ -33,5 +34,5 @@
 "plants_uniquePlantButton" = "Añadir unico";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";

@@ -110,10 +110,10 @@ class IdentifyController: BaseController {
         captureView.layer.borderColor = UIColor.white.cgColor
         capturedView.layer.borderColor = UIColor.white.cgColor
         
-//        identifyOnboardingView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
-//        identifyView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
-//        identifyRsultView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
-//        identifyAnalyzingView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
+        bottomView.layer.cornerRadius = 24.0
+        bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        topView.layer.cornerRadius = 24.0
+        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
                 
         titleLabel.text = RLocalization.identify_title()
         
@@ -196,9 +196,9 @@ class IdentifyController: BaseController {
     @IBAction func captureAction(_ sender: Any) {
         takePicture = true
         
-        self.identifyView.isHidden = true
-        self.identifyRsultView.isHidden = false
-        self.flashButton.isHidden = true
+        identifyView.isHidden = true
+        identifyRsultView.isHidden = false
+        flashButton.isHidden = true
     }
     
     @IBAction func subscribeAction(_ sender: Any) {
@@ -219,7 +219,7 @@ class IdentifyController: BaseController {
     
     @IBAction func retakePhotoAction(_ sender: Any) {
         capturedImage = nil
-        self.capturedImageView.image = nil
+        capturedImageView.image = nil
         
         identifyRsultView.isHidden = true
         identifyView.isHidden = false

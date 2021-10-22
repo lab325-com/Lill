@@ -51,8 +51,6 @@
 	<string>Lill</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>ITSAppUsesNonExemptEncryption - 2</key>
-	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

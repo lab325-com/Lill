@@ -302,7 +302,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 47 images.
+  /// This `R.image` struct is generated, and contains static references to 53 images.
   struct image {
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
@@ -312,6 +312,20 @@ struct R: Rswift.Validatable {
     static let ic_choose_identify_diagnosis = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_diagnosis")
     /// Image `ic_choose_identify_photo`.
     static let ic_choose_identify_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_photo")
+    /// Image `ic_diagnosis_checkmark`.
+    static let ic_diagnosis_checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_checkmark")
+    /// Image `ic_diagnosis_close`.
+    static let ic_diagnosis_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_close")
+    /// Image `ic_diagnosis_onboarding_1`.
+    static let ic_diagnosis_onboarding_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_onboarding_1")
+    /// Image `ic_diagnosis_onboarding_2`.
+    static let ic_diagnosis_onboarding_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_onboarding_2")
+    /// Image `ic_diagnosis_onboarding_3`.
+    static let ic_diagnosis_onboarding_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_onboarding_3")
+    /// Image `ic_diagnosis_onboarding_4`.
+    static let ic_diagnosis_onboarding_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_onboarding_4")
+    /// Image `ic_diagnosis_phonendoscope`.
+    static let ic_diagnosis_phonendoscope = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_phonendoscope")
     /// Image `ic_identify_checkmark`.
     static let ic_identify_checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_checkmark")
     /// Image `ic_identify_close`.
@@ -350,8 +364,6 @@ struct R: Rswift.Validatable {
     static let ic_login_instagram = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_instagram")
     /// Image `ic_login_logo`.
     static let ic_login_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_logo")
-    /// Image `ic_phonendoscope`.
-    static let ic_phonendoscope = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_phonendoscope")
     /// Image `ic_plants_add`.
     static let ic_plants_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_add")
     /// Image `ic_plants_backToTop`.
@@ -424,6 +436,55 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_choose_identify_photo", bundle: ..., traitCollection: ...)`
     static func ic_choose_identify_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_choose_identify_photo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_checkmark", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_checkmark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_checkmark, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_close", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_close, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_onboarding_1", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_onboarding_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_onboarding_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_onboarding_2", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_onboarding_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_onboarding_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_onboarding_3", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_onboarding_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_onboarding_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_onboarding_4", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_onboarding_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_onboarding_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_diagnosis_phonendoscope", bundle: ..., traitCollection: ...)`
+    static func ic_diagnosis_phonendoscope(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_diagnosis_phonendoscope, compatibleWith: traitCollection)
     }
     #endif
 
@@ -557,13 +618,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_login_logo", bundle: ..., traitCollection: ...)`
     static func ic_login_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_login_logo, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "ic_phonendoscope", bundle: ..., traitCollection: ...)`
-    static func ic_phonendoscope(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ic_phonendoscope, compatibleWith: traitCollection)
     }
     #endif
 
@@ -940,7 +994,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 37 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
     struct localizable {
       /// en translation: Add Unique
       ///
@@ -970,6 +1024,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_capture = Rswift.StringResource(key: "identify_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Diagnose
+      ///
+      /// Locales: en
+      static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Diagnosis
       ///
       /// Locales: en
@@ -1194,6 +1252,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_capture", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnose
+      ///
+      /// Locales: en
+      static func diagnosis_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_title"
+        }
+
+        return NSLocalizedString("diagnosis_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnosis
@@ -1720,8 +1793,18 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "ic_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_background' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_checkmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_checkmark' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_close' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_onboarding_1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_onboarding_1' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_onboarding_2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_onboarding_2' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_onboarding_3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_onboarding_3' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_onboarding_4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_onboarding_4' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_diagnosis_phonendoscope", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_diagnosis_phonendoscope' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'DiagnosisController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic_phonendoscope", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_phonendoscope' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

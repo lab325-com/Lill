@@ -3,6 +3,7 @@
 "choose_identify_diagnosis" = "Diagnosis";
 "choose_identify_identify" = "Identify";
 "choose_identify_premium" = "Premium";
+"diagnosis_title" = "Diagnose";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
 "identify_capture" = "Capture";

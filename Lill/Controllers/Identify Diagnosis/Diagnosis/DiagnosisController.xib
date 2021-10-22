@@ -12,10 +12,33 @@
         <array key="SFProDisplay-Bold.ttf">
             <string>SFProDisplay-Bold</string>
         </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiagnosisController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="bottomView" destination="N9w-mQ-NlZ" id="ODK-FV-ayN"/>
+                <outlet property="cameraView" destination="hEe-LB-Fmj" id="lTR-0b-tBm"/>
+                <outlet property="captureView" destination="kVu-gB-acw" id="L5t-R4-To4"/>
+                <outlet property="capturedImageView" destination="9WX-sV-UTM" id="67X-aW-o8l"/>
+                <outlet property="capturedView" destination="gFC-Bh-7RB" id="n5o-41-Y3B"/>
+                <outlet property="diagnoseButton" destination="o2y-D7-Yxg" id="jnw-8C-cdd"/>
+                <outlet property="diagnosingCaptureView" destination="Dl6-w7-TjT" id="bSK-qP-pq6"/>
+                <outlet property="diagnosingPreviewView" destination="yOX-mS-iqO" id="7uz-xH-0Vo"/>
+                <outlet property="diagnosingView" destination="KXk-hr-9wm" id="j25-zS-MmX"/>
+                <outlet property="flashButton" destination="q12-1h-waE" id="aQn-2r-6sz"/>
+                <outlet property="onboardingInfoLabel" destination="BdK-5d-zDx" id="Gef-Oq-Tpw"/>
+                <outlet property="previewInfoLabel" destination="3ye-UE-ynh" id="jpd-GM-U63"/>
+                <outlet property="retakeButton" destination="ipa-lW-iNd" id="jJ8-9K-kYk"/>
+                <outlet property="stackView" destination="r9g-xF-Uqs" id="YnZ-t1-00T"/>
+                <outlet property="startDiagnosingButton" destination="YKM-aD-AyR" id="K1n-RX-w0m"/>
+                <outlet property="titleLabel" destination="DKB-ms-zTr" id="tIm-s5-2jE"/>
+                <outlet property="topView" destination="wzJ-Bb-L6f" id="NBU-rM-MFx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,6 +50,10 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_background" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-9X-5B7">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-LB-Fmj">
+                    <rect key="frame" x="0.0" y="64" width="414" height="590"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzJ-Bb-L6f" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                     <subviews>
@@ -44,6 +71,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="ic_identify_close"/>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="UZ3-B4-ZX3"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,9 +85,6 @@
                         <constraint firstItem="DKB-ms-zTr" firstAttribute="leading" secondItem="wzJ-Bb-L6f" secondAttribute="leading" constant="15" id="pFM-fv-DAk"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
@@ -72,32 +99,65 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-Bh-7RB">
+                    <rect key="frame" x="57" y="209" width="300" height="300"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9WX-sV-UTM">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="9WX-sV-UTM" firstAttribute="leading" secondItem="gFC-Bh-7RB" secondAttribute="leading" id="AfA-Bt-Fhj"/>
+                        <constraint firstAttribute="width" constant="300" id="YW7-Xg-gr3"/>
+                        <constraint firstAttribute="trailing" secondItem="9WX-sV-UTM" secondAttribute="trailing" id="auU-ak-med"/>
+                        <constraint firstAttribute="bottom" secondItem="9WX-sV-UTM" secondAttribute="bottom" id="foH-RY-74k"/>
+                        <constraint firstAttribute="height" constant="300" id="nT5-AY-fo7"/>
+                        <constraint firstItem="9WX-sV-UTM" firstAttribute="top" secondItem="gFC-Bh-7RB" secondAttribute="top" id="oYt-TE-fJ2"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9w-mQ-NlZ" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="624" width="414" height="272"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXk-hr-9wm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phonendoscope" translatesAutoresizingMaskIntoConstraints="NO" id="UsX-cS-mtV">
-                                    <rect key="frame" x="169.5" y="51" width="75" height="91"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_phonendoscope" translatesAutoresizingMaskIntoConstraints="NO" id="UsX-cS-mtV">
+                                    <rect key="frame" x="169.5" y="57" width="75" height="91"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKM-aD-AyR">
-                                    <rect key="frame" x="25" y="192" width="364" height="50"/>
+                                    <rect key="frame" x="25" y="198" width="364" height="44"/>
                                     <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="ne9-pi-8NR"/>
+                                        <constraint firstAttribute="height" constant="44" id="ne9-pi-8NR"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Start Diagnosing"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="25"/>
+                                            <integer key="value" value="22"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="startDiagnosisAction:" destination="-1" eventType="touchUpInside" id="pR2-8J-No1"/>
+                                    </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="UsX-cS-mtV" firstAttribute="centerX" secondItem="KXk-hr-9wm" secondAttribute="centerX" id="Kx3-mH-7p4"/>
                                 <constraint firstAttribute="trailing" secondItem="YKM-aD-AyR" secondAttribute="trailing" constant="25" id="R4n-bu-xn0"/>
@@ -111,19 +171,183 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl6-w7-TjT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifying Plant by Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raj-IF-vlR">
+                                    <rect key="frame" x="135.5" y="48" width="143" height="16"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-NA-FgI">
+                                    <rect key="frame" x="25" y="94" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="h8d-Q3-YIL"/>
+                                        <constraint firstAttribute="height" constant="100" id="l9h-6b-FB8"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic_identify_gallery"/>
+                                    <connections>
+                                        <action selector="galleryAction:" destination="-1" eventType="touchUpInside" id="Rak-y8-Tjd"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVu-gB-acw" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="157" y="94" width="100" height="100"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_identify_photo_white" translatesAutoresizingMaskIntoConstraints="NO" id="DW3-UB-YAc">
+                                            <rect key="frame" x="31" y="31" width="38" height="38"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukz-SW-3bC">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="captureAction:" destination="-1" eventType="touchUpInside" id="ia0-y6-8Fs"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="0uQ-Br-5nw"/>
+                                        <constraint firstAttribute="width" constant="100" id="EbJ-Me-IEC"/>
+                                        <constraint firstItem="DW3-UB-YAc" firstAttribute="centerY" secondItem="kVu-gB-acw" secondAttribute="centerY" id="Ls7-Vy-jAW"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ukz-SW-3bC" secondAttribute="bottom" id="Plg-eK-5k3"/>
+                                        <constraint firstItem="Ukz-SW-3bC" firstAttribute="top" secondItem="kVu-gB-acw" secondAttribute="top" id="SUk-VV-YBd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ukz-SW-3bC" secondAttribute="trailing" id="jWr-BG-eJx"/>
+                                        <constraint firstItem="Ukz-SW-3bC" firstAttribute="leading" secondItem="kVu-gB-acw" secondAttribute="leading" id="qAy-i2-w3L"/>
+                                        <constraint firstItem="DW3-UB-YAc" firstAttribute="centerX" secondItem="kVu-gB-acw" secondAttribute="centerX" id="rWQ-lr-quS"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIs-MX-kMB">
+                                    <rect key="frame" x="179.5" y="224" width="55.5" height="18"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                    <color key="textColor" red="0.47843137250000001" green="0.85490196080000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="eDi-NA-FgI" firstAttribute="leading" secondItem="Dl6-w7-TjT" secondAttribute="leading" constant="25" id="1Bm-e8-CTV"/>
+                                <constraint firstAttribute="bottom" secondItem="iIs-MX-kMB" secondAttribute="bottom" constant="30" id="E7z-Xe-8mA"/>
+                                <constraint firstItem="eDi-NA-FgI" firstAttribute="centerY" secondItem="kVu-gB-acw" secondAttribute="centerY" id="Kci-RM-ZUj"/>
+                                <constraint firstItem="raj-IF-vlR" firstAttribute="centerX" secondItem="Dl6-w7-TjT" secondAttribute="centerX" id="VkR-ac-idE"/>
+                                <constraint firstItem="kVu-gB-acw" firstAttribute="top" secondItem="raj-IF-vlR" secondAttribute="bottom" constant="30" id="chd-hw-HCb"/>
+                                <constraint firstItem="iIs-MX-kMB" firstAttribute="top" secondItem="kVu-gB-acw" secondAttribute="bottom" constant="30" id="nzY-W2-DFX"/>
+                                <constraint firstItem="kVu-gB-acw" firstAttribute="centerX" secondItem="Dl6-w7-TjT" secondAttribute="centerX" id="ryk-cl-4MI"/>
+                                <constraint firstItem="iIs-MX-kMB" firstAttribute="centerX" secondItem="Dl6-w7-TjT" secondAttribute="centerX" id="xIH-vv-KSQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOX-mS-iqO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure that Photo is sharp and contains the diseased part" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ye-UE-ynh">
+                                    <rect key="frame" x="80" y="40" width="254" height="36"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                    <color key="textColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-lW-iNd">
+                                    <rect key="frame" x="25" y="134" width="364" height="50"/>
+                                    <color key="backgroundColor" red="0.96470588239999999" green="0.75686274509999996" blue="0.2156862745" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="SKW-Ie-Y55"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Retake Photo">
+                                        <color key="titleColor" red="0.49019607840000001" green="0.43529411759999997" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="retakeAction:" destination="-1" eventType="touchUpInside" id="I4y-b5-hfJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2y-D7-Yxg">
+                                    <rect key="frame" x="25" y="192" width="364" height="50"/>
+                                    <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="eA8-aE-6hP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Diagnose Photo">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="diagnoseAction:" destination="-1" eventType="touchUpInside" id="cAN-0L-2q0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="o2y-D7-Yxg" firstAttribute="top" secondItem="ipa-lW-iNd" secondAttribute="bottom" constant="8" id="0Q3-6i-KRw"/>
+                                <constraint firstItem="3ye-UE-ynh" firstAttribute="top" secondItem="yOX-mS-iqO" secondAttribute="top" constant="40" id="8ck-G7-0MY"/>
+                                <constraint firstItem="ipa-lW-iNd" firstAttribute="leading" secondItem="yOX-mS-iqO" secondAttribute="leading" constant="25" id="Hn0-nU-hcd"/>
+                                <constraint firstItem="3ye-UE-ynh" firstAttribute="leading" secondItem="yOX-mS-iqO" secondAttribute="leading" constant="80" id="Iow-xG-8oJ"/>
+                                <constraint firstAttribute="trailing" secondItem="ipa-lW-iNd" secondAttribute="trailing" constant="25" id="Y6E-Wr-vSE"/>
+                                <constraint firstAttribute="trailing" secondItem="3ye-UE-ynh" secondAttribute="trailing" constant="80" id="a5t-9n-Do1"/>
+                                <constraint firstAttribute="bottom" secondItem="o2y-D7-Yxg" secondAttribute="bottom" constant="30" id="hBc-3h-7oy"/>
+                                <constraint firstAttribute="trailing" secondItem="o2y-D7-Yxg" secondAttribute="trailing" constant="25" id="tcA-Se-Tzw"/>
+                                <constraint firstItem="o2y-D7-Yxg" firstAttribute="leading" secondItem="yOX-mS-iqO" secondAttribute="leading" constant="25" id="x6Q-Mi-vZ1"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="Dl6-w7-TjT" firstAttribute="leading" secondItem="N9w-mQ-NlZ" secondAttribute="leading" id="0Zq-G2-6b3"/>
                         <constraint firstItem="KXk-hr-9wm" firstAttribute="leading" secondItem="N9w-mQ-NlZ" secondAttribute="leading" id="3Fc-6b-wP6"/>
                         <constraint firstAttribute="bottom" secondItem="KXk-hr-9wm" secondAttribute="bottom" id="4HP-HX-ose"/>
+                        <constraint firstAttribute="bottom" secondItem="yOX-mS-iqO" secondAttribute="bottom" id="7Vs-FH-c89"/>
+                        <constraint firstItem="yOX-mS-iqO" firstAttribute="top" secondItem="N9w-mQ-NlZ" secondAttribute="top" id="HcR-gD-i5V"/>
+                        <constraint firstAttribute="bottom" secondItem="Dl6-w7-TjT" secondAttribute="bottom" id="Lrt-ul-WHs"/>
+                        <constraint firstAttribute="trailing" secondItem="yOX-mS-iqO" secondAttribute="trailing" id="PMY-57-13U"/>
                         <constraint firstItem="KXk-hr-9wm" firstAttribute="top" secondItem="N9w-mQ-NlZ" secondAttribute="top" id="Txe-3C-zMj"/>
                         <constraint firstAttribute="height" constant="272" id="aIE-Qh-gYd"/>
+                        <constraint firstItem="Dl6-w7-TjT" firstAttribute="top" secondItem="N9w-mQ-NlZ" secondAttribute="top" id="cqM-Qg-1UB"/>
+                        <constraint firstAttribute="trailing" secondItem="Dl6-w7-TjT" secondAttribute="trailing" id="izy-kI-ra9"/>
+                        <constraint firstItem="yOX-mS-iqO" firstAttribute="leading" secondItem="N9w-mQ-NlZ" secondAttribute="leading" id="ouC-GS-Rmi"/>
                         <constraint firstAttribute="trailing" secondItem="KXk-hr-9wm" secondAttribute="trailing" id="seW-aP-b2a"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
@@ -138,18 +362,273 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r9g-xF-Uqs">
+                    <rect key="frame" x="24" y="134" width="366" height="430"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prt-9V-h9n">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="205"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zkb-fQ-PFa" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_onboarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="lQu-rS-eLd">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="lQu-rS-eLd" secondAttribute="height" multiplier="1:1" id="esS-sv-brK"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Z4o-FZ-c0z">
+                                            <rect key="frame" x="177" y="-10" width="38" height="38"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="lQu-rS-eLd" firstAttribute="leading" secondItem="Zkb-fQ-PFa" secondAttribute="leading" id="9Bx-e4-vo7"/>
+                                        <constraint firstItem="lQu-rS-eLd" firstAttribute="top" secondItem="Zkb-fQ-PFa" secondAttribute="top" id="S7J-Gj-GY6"/>
+                                        <constraint firstAttribute="trailing" secondItem="lQu-rS-eLd" secondAttribute="trailing" id="hVI-zw-jbH"/>
+                                        <constraint firstAttribute="bottom" secondItem="lQu-rS-eLd" secondAttribute="bottom" id="iwz-vY-TrY"/>
+                                        <constraint firstItem="Z4o-FZ-c0z" firstAttribute="top" secondItem="Zkb-fQ-PFa" secondAttribute="top" constant="-10" id="j0i-j7-fEn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z4o-FZ-c0z" secondAttribute="trailing" constant="-10" id="xaQ-uF-oUa"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-iS-PND" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="161" y="0.0" width="205" height="205"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_onboarding_2" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-3x-MQh">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="rwj-3x-MQh" secondAttribute="height" multiplier="1:1" id="3El-2l-vjh"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_close" translatesAutoresizingMaskIntoConstraints="NO" id="6Ij-bY-uHa">
+                                            <rect key="frame" x="177" y="-10" width="38" height="38"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="rwj-3x-MQh" secondAttribute="bottom" id="2DP-fR-EV8"/>
+                                        <constraint firstItem="rwj-3x-MQh" firstAttribute="top" secondItem="vpg-iS-PND" secondAttribute="top" id="i1E-Dj-rai"/>
+                                        <constraint firstItem="6Ij-bY-uHa" firstAttribute="top" secondItem="vpg-iS-PND" secondAttribute="top" constant="-10" id="iYl-q0-Bpg"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Ij-bY-uHa" secondAttribute="trailing" constant="-10" id="qTV-e3-wZd"/>
+                                        <constraint firstAttribute="trailing" secondItem="rwj-3x-MQh" secondAttribute="trailing" id="wni-2D-dln"/>
+                                        <constraint firstItem="rwj-3x-MQh" firstAttribute="leading" secondItem="vpg-iS-PND" secondAttribute="leading" id="xlD-fw-Mdk"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="vpg-iS-PND" firstAttribute="centerY" secondItem="prt-9V-h9n" secondAttribute="centerY" id="FNb-9w-EqA"/>
+                                <constraint firstItem="Zkb-fQ-PFa" firstAttribute="leading" secondItem="prt-9V-h9n" secondAttribute="leading" id="PSD-Cl-mmf"/>
+                                <constraint firstItem="Zkb-fQ-PFa" firstAttribute="top" secondItem="prt-9V-h9n" secondAttribute="top" id="RJG-3b-Okl"/>
+                                <constraint firstItem="vpg-iS-PND" firstAttribute="top" secondItem="prt-9V-h9n" secondAttribute="top" id="TcZ-eq-Zom"/>
+                                <constraint firstItem="Zkb-fQ-PFa" firstAttribute="centerY" secondItem="prt-9V-h9n" secondAttribute="centerY" id="frQ-PP-7gi"/>
+                                <constraint firstAttribute="bottom" secondItem="Zkb-fQ-PFa" secondAttribute="bottom" id="hH4-2E-BeO"/>
+                                <constraint firstAttribute="bottom" secondItem="vpg-iS-PND" secondAttribute="bottom" id="qtO-W2-81B"/>
+                                <constraint firstAttribute="trailing" secondItem="vpg-iS-PND" secondAttribute="trailing" id="wnn-NJ-eWY"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHh-Bn-07Z">
+                            <rect key="frame" x="0.0" y="225" width="366" height="205"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsg-WW-eK2" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_onboarding_3" translatesAutoresizingMaskIntoConstraints="NO" id="Rh1-gj-gI7">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Rh1-gj-gI7" secondAttribute="height" multiplier="1:1" id="H0s-2r-V2Y"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-Hs-72t">
+                                            <rect key="frame" x="177" y="-10" width="38" height="38"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Rh1-gj-gI7" secondAttribute="bottom" id="HaI-3C-otI"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rh1-gj-gI7" secondAttribute="trailing" id="LD9-Ts-Fm2"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fu2-Hs-72t" secondAttribute="trailing" constant="-10" id="NPo-Jf-k6T"/>
+                                        <constraint firstItem="Rh1-gj-gI7" firstAttribute="top" secondItem="vsg-WW-eK2" secondAttribute="top" id="Rnn-XI-mWA"/>
+                                        <constraint firstItem="Rh1-gj-gI7" firstAttribute="leading" secondItem="vsg-WW-eK2" secondAttribute="leading" id="g7h-lU-VKF"/>
+                                        <constraint firstItem="Fu2-Hs-72t" firstAttribute="top" secondItem="vsg-WW-eK2" secondAttribute="top" constant="-10" id="gnd-jh-szL"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1x-LI-dNd" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="161" y="0.0" width="205" height="205"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_onboarding_4" translatesAutoresizingMaskIntoConstraints="NO" id="sgc-4w-0M0">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="sgc-4w-0M0" secondAttribute="height" multiplier="1:1" id="APc-ym-Yjy"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diagnosis_close" translatesAutoresizingMaskIntoConstraints="NO" id="GQn-B3-J2u">
+                                            <rect key="frame" x="177" y="-10" width="38" height="38"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="sgc-4w-0M0" secondAttribute="bottom" id="2hn-yR-RP9"/>
+                                        <constraint firstAttribute="trailing" secondItem="sgc-4w-0M0" secondAttribute="trailing" id="5UO-Er-oxE"/>
+                                        <constraint firstItem="sgc-4w-0M0" firstAttribute="top" secondItem="Q1x-LI-dNd" secondAttribute="top" id="95r-wA-z6k"/>
+                                        <constraint firstAttribute="trailing" secondItem="GQn-B3-J2u" secondAttribute="trailing" constant="-10" id="I4Q-TK-NVu"/>
+                                        <constraint firstItem="GQn-B3-J2u" firstAttribute="top" secondItem="Q1x-LI-dNd" secondAttribute="top" constant="-10" id="IGX-fo-efB"/>
+                                        <constraint firstItem="sgc-4w-0M0" firstAttribute="leading" secondItem="Q1x-LI-dNd" secondAttribute="leading" id="ajw-CA-dU1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Q1x-LI-dNd" secondAttribute="trailing" id="3Zy-hP-AYP"/>
+                                <constraint firstItem="vsg-WW-eK2" firstAttribute="centerY" secondItem="vHh-Bn-07Z" secondAttribute="centerY" id="Ba0-iy-zKY"/>
+                                <constraint firstItem="Q1x-LI-dNd" firstAttribute="centerY" secondItem="vHh-Bn-07Z" secondAttribute="centerY" id="FiV-U2-chf"/>
+                                <constraint firstAttribute="bottom" secondItem="Q1x-LI-dNd" secondAttribute="bottom" id="NOB-A8-vjt"/>
+                                <constraint firstAttribute="bottom" secondItem="vsg-WW-eK2" secondAttribute="bottom" id="P1P-MY-zEf"/>
+                                <constraint firstItem="vsg-WW-eK2" firstAttribute="leading" secondItem="vHh-Bn-07Z" secondAttribute="leading" id="QL2-rV-cHH"/>
+                                <constraint firstItem="Q1x-LI-dNd" firstAttribute="top" secondItem="vHh-Bn-07Z" secondAttribute="top" id="TR9-La-wVD"/>
+                                <constraint firstItem="vsg-WW-eK2" firstAttribute="top" secondItem="vHh-Bn-07Z" secondAttribute="top" id="jYE-2b-clF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure that Photo is sharp and contains the diseased part" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdK-5d-zDx">
+                    <rect key="frame" x="100" y="574" width="214" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="b7Y-rr-Ik7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                    <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q12-1h-waE">
+                    <rect key="frame" x="349" y="104" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="JlD-nx-Esc"/>
+                        <constraint firstAttribute="height" constant="50" id="svc-sn-cRh"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="ic_identify_flash_off"/>
+                    <state key="selected" image="ic_identify_flash_on"/>
+                    <state key="highlighted" image="ic_identify_flash_off"/>
+                    <connections>
+                        <action selector="flashAction:" destination="-1" eventType="touchUpInside" id="aFl-60-93O"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wzJ-Bb-L6f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3dt-Km-78F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nd5-9X-5B7" secondAttribute="trailing" id="4RD-6P-CbQ"/>
+                <constraint firstItem="hEe-LB-Fmj" firstAttribute="top" secondItem="wzJ-Bb-L6f" secondAttribute="bottom" constant="-30" id="9oY-PG-62l"/>
+                <constraint firstItem="N9w-mQ-NlZ" firstAttribute="top" secondItem="BdK-5d-zDx" secondAttribute="bottom" constant="10" id="Ac1-0G-2Mi"/>
                 <constraint firstItem="Nd5-9X-5B7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B8b-MP-M9o"/>
+                <constraint firstItem="hEe-LB-Fmj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Db2-fn-uVH"/>
                 <constraint firstAttribute="bottom" secondItem="Nd5-9X-5B7" secondAttribute="bottom" id="Dle-cg-1Dh"/>
+                <constraint firstItem="BdK-5d-zDx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="Ftm-2b-R8Q"/>
                 <constraint firstItem="wzJ-Bb-L6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ipb-Q6-13h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r9g-xF-Uqs" secondAttribute="trailing" constant="24" id="KRE-0u-fbs"/>
+                <constraint firstItem="r9g-xF-Uqs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="QCo-p5-N1O"/>
                 <constraint firstItem="wzJ-Bb-L6f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VdM-5r-Iev"/>
                 <constraint firstAttribute="bottom" secondItem="N9w-mQ-NlZ" secondAttribute="bottom" id="Xam-tH-tYT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BdK-5d-zDx" secondAttribute="trailing" constant="100" id="YTv-AK-hzS"/>
+                <constraint firstItem="gFC-Bh-7RB" firstAttribute="centerY" secondItem="hEe-LB-Fmj" secondAttribute="centerY" id="ZG1-s7-wM8"/>
+                <constraint firstItem="BdK-5d-zDx" firstAttribute="top" secondItem="r9g-xF-Uqs" secondAttribute="bottom" constant="10" id="bvY-aD-jTX"/>
+                <constraint firstItem="hEe-LB-Fmj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bzO-oF-kKk"/>
+                <constraint firstItem="gFC-Bh-7RB" firstAttribute="centerX" secondItem="hEe-LB-Fmj" secondAttribute="centerX" id="cs5-6w-waW"/>
+                <constraint firstItem="r9g-xF-Uqs" firstAttribute="top" secondItem="wzJ-Bb-L6f" secondAttribute="bottom" constant="40" id="hMz-jh-yBq"/>
+                <constraint firstItem="q12-1h-waE" firstAttribute="top" secondItem="hEe-LB-Fmj" secondAttribute="top" constant="40" id="ik5-Rj-711"/>
+                <constraint firstItem="N9w-mQ-NlZ" firstAttribute="top" secondItem="hEe-LB-Fmj" secondAttribute="bottom" constant="-30" id="lUa-LQ-SAL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N9w-mQ-NlZ" secondAttribute="trailing" id="m8M-SN-KrC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q12-1h-waE" secondAttribute="trailing" constant="15" id="mSy-0l-QUX"/>
                 <constraint firstItem="Nd5-9X-5B7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vQa-jF-C6v"/>
                 <constraint firstItem="N9w-mQ-NlZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zJf-oJ-ILP"/>
             </constraints>
@@ -158,8 +637,18 @@
     </objects>
     <resources>
         <image name="ic_background" width="390" height="844"/>
+        <image name="ic_diagnosis_checkmark" width="38" height="38"/>
+        <image name="ic_diagnosis_close" width="38" height="38"/>
+        <image name="ic_diagnosis_onboarding_1" width="142" height="142"/>
+        <image name="ic_diagnosis_onboarding_2" width="142" height="142"/>
+        <image name="ic_diagnosis_onboarding_3" width="142" height="142"/>
+        <image name="ic_diagnosis_onboarding_4" width="142" height="142"/>
+        <image name="ic_diagnosis_phonendoscope" width="75" height="91"/>
         <image name="ic_identify_close" width="17" height="17"/>
-        <image name="ic_phonendoscope" width="75" height="91"/>
+        <image name="ic_identify_flash_off" width="20" height="25"/>
+        <image name="ic_identify_flash_on" width="20" height="26"/>
+        <image name="ic_identify_gallery" width="35" height="32.5"/>
+        <image name="ic_identify_photo_white" width="38" height="38"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

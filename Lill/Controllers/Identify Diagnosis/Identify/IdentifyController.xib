@@ -192,9 +192,6 @@
                         <constraint firstAttribute="bottom" secondItem="fOM-6G-5ty" secondAttribute="bottom" id="cL4-EX-Zgp"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
@@ -219,17 +216,17 @@
                                     <rect key="frame" x="163.5" y="65" width="87.5" height="73"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-5e-AiD">
-                                    <rect key="frame" x="25" y="205" width="364" height="50"/>
+                                    <rect key="frame" x="25" y="211" width="364" height="44"/>
                                     <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="9dz-ut-UKq"/>
+                                        <constraint firstAttribute="height" constant="44" id="9dz-ut-UKq"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Start Identify"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="25"/>
+                                            <integer key="value" value="22"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -237,7 +234,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Bbx-sl-BXc" firstAttribute="centerX" secondItem="67w-Uq-hpn" secondAttribute="centerX" id="2zg-PG-jw0"/>
                                 <constraint firstAttribute="trailing" secondItem="G1w-5e-AiD" secondAttribute="trailing" constant="25" id="K8C-vl-sdw"/>
@@ -395,7 +392,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Dan-Cf-SIE" firstAttribute="centerY" secondItem="Gts-H9-ZCP" secondAttribute="centerY" id="0aP-Hp-9Vq"/>
                                 <constraint firstItem="6LT-LU-s2l" firstAttribute="centerY" secondItem="Gts-H9-ZCP" secondAttribute="centerY" id="5cC-d0-BiK"/>
@@ -476,10 +473,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imd-7x-AKj">
-                                    <rect key="frame" x="25" y="147" width="364" height="50"/>
+                                    <rect key="frame" x="25" y="159" width="364" height="44"/>
                                     <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="HSV-dA-PXX"/>
+                                        <constraint firstAttribute="height" constant="44" id="HSV-dA-PXX"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -488,7 +485,7 @@
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="25"/>
+                                            <integer key="value" value="22"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -496,10 +493,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-78-IpP">
-                                    <rect key="frame" x="25" y="205" width="364" height="50"/>
+                                    <rect key="frame" x="25" y="211" width="364" height="44"/>
                                     <color key="backgroundColor" red="0.96470588235294119" green="0.75686274509803919" blue="0.21568627450980393" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="D7f-AS-pZ5"/>
+                                        <constraint firstAttribute="height" constant="44" id="D7f-AS-pZ5"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -508,7 +505,7 @@
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="25"/>
+                                            <integer key="value" value="22"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -516,7 +513,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ZZ8-zb-mCf" firstAttribute="top" secondItem="8IR-ND-fAv" secondAttribute="bottom" constant="8" id="Ci5-HJ-K6O"/>
                                 <constraint firstItem="ZZ8-zb-mCf" firstAttribute="centerX" secondItem="5eq-vX-w4g" secondAttribute="centerX" id="J26-An-9nh"/>
@@ -594,7 +591,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="lTQ-23-TLc" firstAttribute="centerX" secondItem="esw-42-lD4" secondAttribute="centerX" id="A5m-tg-QtT"/>
                                 <constraint firstItem="lTQ-23-TLc" firstAttribute="centerY" secondItem="esw-42-lD4" secondAttribute="centerY" id="RYh-20-YJ9"/>
@@ -627,9 +624,6 @@
                         <constraint firstItem="67w-Uq-hpn" firstAttribute="leading" secondItem="C37-6P-6Gr" secondAttribute="leading" id="z0K-3B-gQk"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
@@ -799,6 +793,7 @@
                 <constraint firstItem="LAh-N1-W5x" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="D81-ZE-q2e"/>
                 <constraint firstAttribute="bottom" secondItem="Ods-Qu-cL0" secondAttribute="bottom" id="EOt-aW-YoS"/>
                 <constraint firstItem="Ods-Qu-cL0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FIz-BS-wyj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7kd-wV-KJM" secondAttribute="trailing" constant="15" id="FfN-Rs-fdp"/>
                 <constraint firstItem="Ods-Qu-cL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I8e-u9-ENR"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IUA-GA-chi"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="top" secondItem="glz-gi-Sph" secondAttribute="bottom" constant="40" id="Qvm-XP-eCb"/>
@@ -817,7 +812,6 @@
                 <constraint firstItem="WXa-ko-cAf" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="qRp-P9-Hd0"/>
                 <constraint firstItem="WXa-ko-cAf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sCe-4U-vcZ"/>
                 <constraint firstItem="H8a-ok-oH0" firstAttribute="top" secondItem="kDl-Ba-PNP" secondAttribute="bottom" constant="50" id="sQn-T6-jvu"/>
-                <constraint firstItem="7kd-wV-KJM" firstAttribute="trailing" secondItem="8IJ-EL-Oys" secondAttribute="trailing" constant="-15" id="u5c-XT-SQe"/>
                 <constraint firstItem="6Ov-jd-UiM" firstAttribute="centerX" secondItem="8IJ-EL-Oys" secondAttribute="centerX" id="ulo-c8-bYJ"/>
                 <constraint firstAttribute="trailing" secondItem="C37-6P-6Gr" secondAttribute="trailing" id="wri-ED-xMM"/>
                 <constraint firstItem="H8a-ok-oH0" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xOt-Xl-rlj"/>
