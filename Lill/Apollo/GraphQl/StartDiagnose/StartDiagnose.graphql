@@ -1,0 +1,19 @@
+query StartDiagnose($img: DiagnoseInput!) {
+	startDiagnose(img: $img) {
+		diagnoseDescription
+		diagnoseTitle
+		plant {
+			id
+			description {
+				is_favorite
+				name
+				names
+				image {
+					media_id
+					urlIosFull
+					urlIosPrev
+				}
+			}
+		}
+	}
+}

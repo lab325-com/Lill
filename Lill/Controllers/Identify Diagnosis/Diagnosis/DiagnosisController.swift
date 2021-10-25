@@ -2,7 +2,7 @@
 import UIKit
 import AVFoundation
 
-class DiagnosisController: UIViewController {
+class DiagnosisController: BaseController {
     
     //----------------------------------------------
     // MARK: - @IBOutlets
@@ -11,30 +11,58 @@ class DiagnosisController: UIViewController {
     @IBOutlet weak var topView: ShadowView!
     @IBOutlet weak var bottomView: ShadowView!
     @IBOutlet weak var captureView: ShadowView!
+    
     @IBOutlet weak var diagnosingView: UIView!
     @IBOutlet weak var diagnosingCaptureView: UIView!
     @IBOutlet weak var diagnosingPreviewView: UIView!
     @IBOutlet weak var diagnosingAnalyzeView: UIView!
+    @IBOutlet weak var diagnosingNoResultView: UIView!
     @IBOutlet weak var diagnosingResultView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var capturedView: UIView!
+    @IBOutlet weak var noDiagnoseView: UIView!
+    
+    @IBOutlet weak var bottomViewHeighConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet weak var capturedImageView: UIImageView!
+    @IBOutlet weak var noDiagnoseImageView: UIImageView!
+    @IBOutlet weak var diagnoseLargePlantImageView: UIImageView!
+    @IBOutlet weak var diagnoseSmallPlantImageView: UIImageView!
     
     @IBOutlet weak var startDiagnosingButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var diagnoseButton: UIButton!
     @IBOutlet weak var retakeButton: UIButton!
-    
-    @IBOutlet weak var stackView: UIStackView!
-    
+    @IBOutlet weak var restartDiagnosingButton: UIButton!
+        
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var onboardingInfoLabel: UILabel!
+    @IBOutlet weak var captureInfoLabel: UILabel!
+    @IBOutlet weak var captureLabel: UILabel!
     @IBOutlet weak var previewInfoLabel: UILabel!
+    @IBOutlet weak var analyzeInfoLabel: UILabel!
+    @IBOutlet weak var noDiagnoseLabel: UILabel!
+    @IBOutlet weak var diagnoseFirstPlantNameLabel: UILabel!
+    @IBOutlet weak var diagnoseSecondPlantNameLabel: UILabel!
+    @IBOutlet weak var diagnoseTimeLabel: UILabel!
+    @IBOutlet weak var diagnoseTitleLabel: UILabel!
+    @IBOutlet weak var diagnoseInfoLabel: UILabel!
+    
+    @IBOutlet weak var analizeActivity: UIActivityIndicatorView!
     
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
+    
+    private lazy var presenter = DiagnosisPresenter(view: self)
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.dateFormat = "dd MMM hh:ss"
+        return dateFormatter
+    }()
     
     var captureSession : AVCaptureSession!
     var backCamera : AVCaptureDevice!
@@ -62,6 +90,18 @@ class DiagnosisController: UIViewController {
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         topView.layer.cornerRadius = 24.0
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        titleLabel.text = RLocalization.diagnosis_title()
+        onboardingInfoLabel.text = RLocalization.diagnosis_onboarding_info()
+        captureInfoLabel.text = RLocalization.diagnosis_capture_info()
+        captureLabel.text = RLocalization.diagnosis_capture()
+        previewInfoLabel.text = RLocalization.diagnosis_preview_info()
+        analyzeInfoLabel.text = RLocalization.diagnosis_analyze_info()
+        noDiagnoseLabel.text = RLocalization.diagnosis_no_data()
+        
+        startDiagnosingButton.setTitle(RLocalization.diagnosis_start_diagnose(), for: .normal)
+        retakeButton.setTitle(RLocalization.diagnosis_preview_retake(), for: .normal)
+        restartDiagnosingButton.setTitle(RLocalization.diagnosis_restart_diagnosing(), for: .normal)
     }
     
     //----------------------------------------------
@@ -128,11 +168,32 @@ class DiagnosisController: UIViewController {
     }
 
     @IBAction func diagnoseAction(_ sender: Any) {
+        guard let image = capturedImage else { return }
         
+        presenter.uploadPhoto(img: image.description)
+        
+        analizeActivity.startAnimating()
+        
+        diagnosingPreviewView.isHidden = true
+        diagnosingAnalyzeView.isHidden = false
     }
 
     @IBAction func restartAction(_ sender: Any) {
+        diagnosingResultView.isHidden = true
+        diagnosingNoResultView.isHidden = true
+        diagnoseLargePlantImageView.isHidden = true
+        noDiagnoseView.isHidden = true
         
+        capturedImage = nil
+        capturedImageView.image = nil
+        noDiagnoseImageView.image = nil
+        
+        flashButton.isHidden = false
+        capturedView.isHidden = false
+        diagnosingCaptureView.isHidden = false
+        bottomViewHeighConstraint.constant = 272.0
+        
+        setupAndStartCaptureSession()
     }
 }
 
@@ -158,8 +219,51 @@ extension DiagnosisController: UIImagePickerControllerDelegate, UINavigationCont
             self.diagnosingPreviewView.isHidden = false
             self.capturedImageView.image = image
 
-//            self.presenter.uploadPhoto(img: image.description)
+            self.presenter.uploadPhoto(img: image.description)
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - DiagnosisOutputProtocol
+//----------------------------------------------
+
+extension DiagnosisController: DiagnosisOutputProtocol {
+    func successUpload(model: MediaDataModel) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.analizeActivity.stopAnimating()
+            self.diagnosingAnalyzeView.isHidden = true
+
+            self.presenter.diagnosePhoto(img: model.uploadMediaRecognition.urlIosFull)
+        }
+    }
+    
+    func successDiagnose(model: DiagnoseDataModel) {
+        
+        capturedView.isHidden = true
+        
+        if let result = model.startDiagnose {
+            diagnosingResultView.isHidden = false
+            bottomViewHeighConstraint.constant = 480.0
+            diagnoseLargePlantImageView.isHidden = false
+            diagnoseLargePlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
+            diagnoseSmallPlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
+            diagnoseFirstPlantNameLabel.text = result.plant.description.name
+            diagnoseSecondPlantNameLabel.text = result.plant.description.names ?? ""
+            diagnoseTimeLabel.text = dateFormatter.string(from: Date())
+            diagnoseTitleLabel.text = result.diagnoseTitle
+            diagnoseInfoLabel.text = result.diagnoseDescription
+        } else {
+            bottomViewHeighConstraint.constant = 120.0
+            diagnosingNoResultView.isHidden = false
+            noDiagnoseView.isHidden = false
+            noDiagnoseImageView.image = capturedImage
+        }
+    }
+    
+    func failure(error: String) {
+        
     }
 }
 

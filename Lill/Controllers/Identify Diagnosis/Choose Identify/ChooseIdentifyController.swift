@@ -72,11 +72,11 @@ class ChooseIdentifyController: BaseController {
         guard let model = meModel else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if model.me.access.isPremium || model.me.access.identifyUsed < 3 {
+//            if model.me.access.isPremium || model.me.access.identifyUsed < 3 {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify(model: model)
-            } else {
-                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
-            }
+//            } else {
+//                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+//            }
         }
     }
     
@@ -84,11 +84,11 @@ class ChooseIdentifyController: BaseController {
         guard let model = meModel else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if model.me.access.isPremium {
+//            if model.me.access.isPremium {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
-            } else {
-                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
-            }
+//            } else {
+//                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+//            }
         }
     }
 }

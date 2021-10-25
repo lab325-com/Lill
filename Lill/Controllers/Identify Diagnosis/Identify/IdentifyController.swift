@@ -257,7 +257,7 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 //----------------------------------------------
-// MARK: - PlantsOutputProtocol
+// MARK: - IdentifyOutputProtocol
 //----------------------------------------------
 
 extension IdentifyController: IdentifyOutputProtocol {

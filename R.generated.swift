@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 14 files.
+  /// This `R.file` struct is generated, and contains static references to 15 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
@@ -165,8 +165,6 @@ struct R: Rswift.Validatable {
     static let loginGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Login", pathExtension: "graphql")
     /// Resource file `Me.graphql`.
     static let meGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Me", pathExtension: "graphql")
-    /// Resource file `RecognitionPhoto.graphql`.
-    static let recognitionPhotoGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognitionPhoto", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
     /// Resource file `SFProDisplay-Bold.ttf`.
@@ -177,8 +175,12 @@ struct R: Rswift.Validatable {
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
-    /// Resource file `UploadPhoto.graphql`.
-    static let uploadPhotoGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadPhoto", pathExtension: "graphql")
+    /// Resource file `StartDiagnose.graphql`.
+    static let startDiagnoseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartDiagnose", pathExtension: "graphql")
+    /// Resource file `StartRecognition.graphql`.
+    static let startRecognitionGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartRecognition", pathExtension: "graphql")
+    /// Resource file `UploadMediaRecognition.graphql`.
+    static let uploadMediaRecognitionGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMediaRecognition", pathExtension: "graphql")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
@@ -218,12 +220,6 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "RecognitionPhoto", withExtension: "graphql")`
-    static func recognitionPhotoGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.recognitionPhotoGraphql
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "Release", withExtension: "xcconfig")`
     static func releaseXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.releaseXcconfig
@@ -254,9 +250,21 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "UploadPhoto", withExtension: "graphql")`
-    static func uploadPhotoGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.uploadPhotoGraphql
+    /// `bundle.url(forResource: "StartDiagnose", withExtension: "graphql")`
+    static func startDiagnoseGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.startDiagnoseGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "StartRecognition", withExtension: "graphql")`
+    static func startRecognitionGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.startRecognitionGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "UploadMediaRecognition", withExtension: "graphql")`
+    static func uploadMediaRecognitionGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.uploadMediaRecognitionGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -994,7 +1002,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 38 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 48 localization keys.
     struct localizable {
       /// en translation: Add Unique
       ///
@@ -1023,11 +1031,27 @@ struct R: Rswift.Validatable {
       /// en translation: Capture
       ///
       /// Locales: en
+      static let diagnosis_capture = Rswift.StringResource(key: "diagnosis_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Capture
+      ///
+      /// Locales: en
       static let identify_capture = Rswift.StringResource(key: "identify_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Capture sick part of Plant
+      ///
+      /// Locales: en
+      static let diagnosis_capture_info = Rswift.StringResource(key: "diagnosis_capture_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Diagnose
       ///
       /// Locales: en
       static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Diagnose Photo
+      ///
+      /// Locales: en
+      static let diagnosis_preview_diagnose = Rswift.StringResource(key: "diagnosis_preview_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Diagnosing in Progress
+      ///
+      /// Locales: en
+      static let diagnosis_analyze_info = Rswift.StringResource(key: "diagnosis_analyze_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Diagnosis
       ///
       /// Locales: en
@@ -1088,6 +1112,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_make_photo_title = Rswift.StringResource(key: "identify_make_photo_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Make sure that Photo is sharp and contains the diseased part
+      ///
+      /// Locales: en
+      static let diagnosis_onboarding_info = Rswift.StringResource(key: "diagnosis_onboarding_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Make sure that Photo is sharp and contains the diseased part
+      ///
+      /// Locales: en
+      static let diagnosis_preview_info = Rswift.StringResource(key: "diagnosis_preview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Make sure that plant isolated from other plants
       ///
       /// Locales: en
@@ -1096,6 +1128,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_photo_quality_info = Rswift.StringResource(key: "identify_photo_quality_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: No problems detected
+      ///
+      /// Locales: en
+      static let diagnosis_no_data = Rswift.StringResource(key: "diagnosis_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Overview
       ///
       /// Locales: en
@@ -1112,6 +1148,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let choose_identify_premium = Rswift.StringResource(key: "choose_identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Restart Diagnosing
+      ///
+      /// Locales: en
+      static let diagnosis_restart_diagnosing = Rswift.StringResource(key: "diagnosis_restart_diagnosing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en
+      static let diagnosis_preview_retake = Rswift.StringResource(key: "diagnosis_preview_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Retake Photo
       ///
       /// Locales: en
@@ -1124,6 +1168,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_no_data = Rswift.StringResource(key: "identify_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Start Diagnosing
+      ///
+      /// Locales: en
+      static let diagnosis_start_diagnose = Rswift.StringResource(key: "diagnosis_start_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Start Identify
       ///
       /// Locales: en
@@ -1242,6 +1290,21 @@ struct R: Rswift.Validatable {
       /// en translation: Capture
       ///
       /// Locales: en
+      static func diagnosis_capture(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_capture", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_capture"
+        }
+
+        return NSLocalizedString("diagnosis_capture", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Capture
+      ///
+      /// Locales: en
       static func identify_capture(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_capture", bundle: hostingBundle, comment: "")
@@ -1252,6 +1315,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_capture", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Capture sick part of Plant
+      ///
+      /// Locales: en
+      static func diagnosis_capture_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_capture_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_capture_info"
+        }
+
+        return NSLocalizedString("diagnosis_capture_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnose
@@ -1267,6 +1345,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnose Photo
+      ///
+      /// Locales: en
+      static func diagnosis_preview_diagnose(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_preview_diagnose", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_preview_diagnose"
+        }
+
+        return NSLocalizedString("diagnosis_preview_diagnose", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnosing in Progress
+      ///
+      /// Locales: en
+      static func diagnosis_analyze_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_analyze_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_analyze_info"
+        }
+
+        return NSLocalizedString("diagnosis_analyze_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnosis
@@ -1494,6 +1602,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_make_photo_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Make sure that Photo is sharp and contains the diseased part
+      ///
+      /// Locales: en
+      static func diagnosis_onboarding_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_onboarding_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_onboarding_info"
+        }
+
+        return NSLocalizedString("diagnosis_onboarding_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Make sure that Photo is sharp and contains the diseased part
+      ///
+      /// Locales: en
+      static func diagnosis_preview_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_preview_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_preview_info"
+        }
+
+        return NSLocalizedString("diagnosis_preview_info", bundle: bundle, comment: "")
+      }
+
       /// en translation: Make sure that plant isolated from other plants
       ///
       /// Locales: en
@@ -1522,6 +1660,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_photo_quality_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No problems detected
+      ///
+      /// Locales: en
+      static func diagnosis_no_data(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_no_data", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_no_data"
+        }
+
+        return NSLocalizedString("diagnosis_no_data", bundle: bundle, comment: "")
       }
 
       /// en translation: Overview
@@ -1584,6 +1737,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("choose_identify_premium", bundle: bundle, comment: "")
       }
 
+      /// en translation: Restart Diagnosing
+      ///
+      /// Locales: en
+      static func diagnosis_restart_diagnosing(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_restart_diagnosing", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_restart_diagnosing"
+        }
+
+        return NSLocalizedString("diagnosis_restart_diagnosing", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en
+      static func diagnosis_preview_retake(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_preview_retake", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_preview_retake"
+        }
+
+        return NSLocalizedString("diagnosis_preview_retake", bundle: bundle, comment: "")
+      }
+
       /// en translation: Retake Photo
       ///
       /// Locales: en
@@ -1627,6 +1810,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_no_data", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Start Diagnosing
+      ///
+      /// Locales: en
+      static func diagnosis_start_diagnose(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("diagnosis_start_diagnose", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "diagnosis_start_diagnose"
+        }
+
+        return NSLocalizedString("diagnosis_start_diagnose", bundle: bundle, comment: "")
       }
 
       /// en translation: Start Identify

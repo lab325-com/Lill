@@ -57,6 +57,9 @@
 		02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFB4270A45410089CEF8 /* PreferencesManager.swift */; };
 		E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */; };
 		FA64050B27205515000124A5 /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050A27205515000124A5 /* AccessModel.swift */; };
+		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
+		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
+		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
 		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
 		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
 		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
@@ -66,10 +69,10 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
-		FA8FCD2927182CAA00173725 /* UploadPhoto.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */; };
-		FA8FCD2B27182D3600173725 /* UploadPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */; };
-		FA8FCD2E27185FCD00173725 /* RecognitionPhoto.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */; };
-		FA8FCD302718601400173725 /* RecognitionPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */; };
+		FA8FCD2927182CAA00173725 /* UploadMediaRecognition.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */; };
+		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
+		FA8FCD2E27185FCD00173725 /* StartRecognition.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */; };
+		FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */; };
 		FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3827196BD500173725 /* PlantsModel.swift */; };
 		FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3B27199CD100173725 /* SubcribeController.swift */; };
 		FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD3C27199CD100173725 /* SubcribeController.xib */; };
@@ -161,16 +164,19 @@
 		7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.release.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.release.xcconfig"; sourceTree = "<group>"; };
 		DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.staging.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.staging.xcconfig"; sourceTree = "<group>"; };
 		FA64050A27205515000124A5 /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
+		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
+		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
+		FA6405122722FA97000124A5 /* StartDiagoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDiagoseModel.swift; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialManager.swift; sourceTree = "<group>"; };
 		FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lill.entitlements; sourceTree = "<group>"; };
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadPhoto.graphql; sourceTree = "<group>"; };
-		FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoModel.swift; sourceTree = "<group>"; };
-		FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RecognitionPhoto.graphql; sourceTree = "<group>"; };
-		FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionPhotoModel.swift; sourceTree = "<group>"; };
+		FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMediaRecognition.graphql; sourceTree = "<group>"; };
+		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
+		FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognition.graphql; sourceTree = "<group>"; };
+		FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecognitionModel.swift; sourceTree = "<group>"; };
 		FA8FCD3827196BD500173725 /* PlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModel.swift; sourceTree = "<group>"; };
 		FA8FCD3B27199CD100173725 /* SubcribeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcribeController.swift; sourceTree = "<group>"; };
 		FA8FCD3C27199CD100173725 /* SubcribeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubcribeController.xib; sourceTree = "<group>"; };
@@ -480,8 +486,9 @@
 			isa = PBXGroup;
 			children = (
 				FA8FCD3727196BC100173725 /* GlobalModels */,
-				FA8FCD2C27185F6200173725 /* RecognizePhoto */,
-				FA8FCD27271818DA00173725 /* UploadPhoto */,
+				FA64050F2722F9DE000124A5 /* StartDiagnose */,
+				FA8FCD2C27185F6200173725 /* StartRecognition */,
+				FA8FCD27271818DA00173725 /* UploadMediaRecognition */,
 				FAFCF35327157FA900C3134E /* Me */,
 				FAC6D9962701E1E4000A551F /* GetPlants */,
 				02E4576426F9137C00F19C41 /* Login */,
@@ -538,6 +545,23 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA64050E2722D220000124A5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA64050F2722F9DE000124A5 /* StartDiagnose */ = {
+			isa = PBXGroup;
+			children = (
+				FA6405122722FA97000124A5 /* StartDiagoseModel.swift */,
+				FA6405102722FA1C000124A5 /* StartDiagnose.graphql */,
+			);
+			path = StartDiagnose;
+			sourceTree = "<group>";
+		};
 		FA7C8CF926FDFED8000D2976 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,22 +582,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		FA8FCD27271818DA00173725 /* UploadPhoto */ = {
+		FA8FCD27271818DA00173725 /* UploadMediaRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				FA8FCD2A27182D3600173725 /* UploadPhotoModel.swift */,
-				FA8FCD2827182CAA00173725 /* UploadPhoto.graphql */,
+				FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */,
+				FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */,
 			);
-			path = UploadPhoto;
+			path = UploadMediaRecognition;
 			sourceTree = "<group>";
 		};
-		FA8FCD2C27185F6200173725 /* RecognizePhoto */ = {
+		FA8FCD2C27185F6200173725 /* StartRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				FA8FCD2F2718601400173725 /* RecognitionPhotoModel.swift */,
-				FA8FCD2D27185FCD00173725 /* RecognitionPhoto.graphql */,
+				FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */,
+				FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */,
 			);
-			path = RecognizePhoto;
+			path = StartRecognition;
 			sourceTree = "<group>";
 		};
 		FA8FCD3727196BC100173725 /* GlobalModels */ = {
@@ -772,6 +796,7 @@
 			children = (
 				FA8FCD3F27199DCA00173725 /* DiagnosisController.swift */,
 				FA8FCD4027199DCA00173725 /* DiagnosisController.xib */,
+				FA64050E2722D220000124A5 /* Presenter */,
 			);
 			path = Diagnosis;
 			sourceTree = "<group>";
@@ -877,12 +902,12 @@
 				FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */,
 				FAFCF35527157FE100C3134E /* Me.graphql in Resources */,
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
-				FA8FCD2927182CAA00173725 /* UploadPhoto.graphql in Resources */,
+				FA8FCD2927182CAA00173725 /* UploadMediaRecognition.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
 				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02AB244726F39D8E00309CFF /* Localizable.strings in Resources */,
 				02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */,
-				FA8FCD2E27185FCD00173725 /* RecognitionPhoto.graphql in Resources */,
+				FA8FCD2E27185FCD00173725 /* StartRecognition.graphql in Resources */,
 				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
 				FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */,
 				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
@@ -892,6 +917,7 @@
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
+				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
 				026CFC0D270C1FF8003A0687 /* GardenViewCell.xib in Resources */,
 				02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */,
@@ -1021,7 +1047,7 @@
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
-				FA8FCD302718601400173725 /* RecognitionPhotoModel.swift in Sources */,
+				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
@@ -1034,6 +1060,7 @@
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
+				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
@@ -1043,7 +1070,8 @@
 				022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */,
 				02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
-				FA8FCD2B27182D3600173725 /* UploadPhotoModel.swift in Sources */,
+				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
+				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
 				02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,

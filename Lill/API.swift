@@ -90,31 +90,31 @@ public enum Social: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.
 
 public enum Lang: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
-  case en
   case `is`
+  case en
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
-      case "EN": self = .en
       case "IS": self = .is
+      case "EN": self = .en
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
-      case .en: return "EN"
       case .is: return "IS"
+      case .en: return "EN"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: Lang, rhs: Lang) -> Bool {
     switch (lhs, rhs) {
-      case (.en, .en): return true
       case (.is, .is): return true
+      case (.en, .en): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -122,9 +122,28 @@ public enum Lang: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JS
 
   public static var allCases: [Lang] {
     return [
-      .en,
       .is,
+      .en,
     ]
+  }
+}
+
+public struct DiagnoseInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - img
+  public init(img: String) {
+    graphQLMap = ["img": img]
+  }
+
+  public var img: String {
+    get {
+      return graphQLMap["img"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "img")
+    }
   }
 }
 
@@ -1058,6 +1077,313 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "isPremium")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class StartDiagnoseQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query StartDiagnose($img: DiagnoseInput!) {
+      startDiagnose(img: $img) {
+        __typename
+        diagnoseDescription
+        diagnoseTitle
+        plant {
+          __typename
+          id
+          description {
+            __typename
+            is_favorite
+            name
+            names
+            image {
+              __typename
+              media_id
+              urlIosFull
+              urlIosPrev
+            }
+          }
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "StartDiagnose"
+
+  public var img: DiagnoseInput
+
+  public init(img: DiagnoseInput) {
+    self.img = img
+  }
+
+  public var variables: GraphQLMap? {
+    return ["img": img]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("startDiagnose", arguments: ["img": GraphQLVariable("img")], type: .object(StartDiagnose.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(startDiagnose: StartDiagnose? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "startDiagnose": startDiagnose.flatMap { (value: StartDiagnose) -> ResultMap in value.resultMap }])
+    }
+
+    public var startDiagnose: StartDiagnose? {
+      get {
+        return (resultMap["startDiagnose"] as? ResultMap).flatMap { StartDiagnose(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "startDiagnose")
+      }
+    }
+
+    public struct StartDiagnose: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["DiagnosResult"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("diagnoseDescription", type: .nonNull(.scalar(String.self))),
+          GraphQLField("diagnoseTitle", type: .nonNull(.scalar(String.self))),
+          GraphQLField("plant", type: .nonNull(.object(Plant.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(diagnoseDescription: String, diagnoseTitle: String, plant: Plant) {
+        self.init(unsafeResultMap: ["__typename": "DiagnosResult", "diagnoseDescription": diagnoseDescription, "diagnoseTitle": diagnoseTitle, "plant": plant.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var diagnoseDescription: String {
+        get {
+          return resultMap["diagnoseDescription"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "diagnoseDescription")
+        }
+      }
+
+      public var diagnoseTitle: String {
+        get {
+          return resultMap["diagnoseTitle"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "diagnoseTitle")
+        }
+      }
+
+      public var plant: Plant {
+        get {
+          return Plant(unsafeResultMap: resultMap["plant"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "plant")
+        }
+      }
+
+      public struct Plant: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["ShortPlantModel"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("description", type: .nonNull(.object(Description.selections))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, description: Description) {
+          self.init(unsafeResultMap: ["__typename": "ShortPlantModel", "id": id, "description": description.resultMap])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var description: Description {
+          get {
+            return Description(unsafeResultMap: resultMap["description"]! as! ResultMap)
+          }
+          set {
+            resultMap.updateValue(newValue.resultMap, forKey: "description")
+          }
+        }
+
+        public struct Description: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["PlantDescriptionShortModel"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("is_favorite", type: .nonNull(.scalar(Bool.self))),
+              GraphQLField("name", type: .nonNull(.scalar(String.self))),
+              GraphQLField("names", type: .scalar(String.self)),
+              GraphQLField("image", type: .nonNull(.object(Image.selections))),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(isFavorite: Bool, name: String, names: String? = nil, image: Image) {
+            self.init(unsafeResultMap: ["__typename": "PlantDescriptionShortModel", "is_favorite": isFavorite, "name": name, "names": names, "image": image.resultMap])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var isFavorite: Bool {
+            get {
+              return resultMap["is_favorite"]! as! Bool
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "is_favorite")
+            }
+          }
+
+          public var name: String {
+            get {
+              return resultMap["name"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var names: String? {
+            get {
+              return resultMap["names"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "names")
+            }
+          }
+
+          public var image: Image {
+            get {
+              return Image(unsafeResultMap: resultMap["image"]! as! ResultMap)
+            }
+            set {
+              resultMap.updateValue(newValue.resultMap, forKey: "image")
+            }
+          }
+
+          public struct Image: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["MediaModel"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("media_id", type: .nonNull(.scalar(GraphQLID.self))),
+                GraphQLField("urlIosFull", type: .nonNull(.scalar(String.self))),
+                GraphQLField("urlIosPrev", type: .nonNull(.scalar(String.self))),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(mediaId: GraphQLID, urlIosFull: String, urlIosPrev: String) {
+              self.init(unsafeResultMap: ["__typename": "MediaModel", "media_id": mediaId, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var mediaId: GraphQLID {
+              get {
+                return resultMap["media_id"]! as! GraphQLID
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "media_id")
+              }
+            }
+
+            public var urlIosFull: String {
+              get {
+                return resultMap["urlIosFull"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "urlIosFull")
+              }
+            }
+
+            public var urlIosPrev: String {
+              get {
+                return resultMap["urlIosPrev"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "urlIosPrev")
+              }
+            }
           }
         }
       }

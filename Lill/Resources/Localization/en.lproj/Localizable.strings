@@ -3,6 +3,16 @@
 "choose_identify_diagnosis" = "Diagnosis";
 "choose_identify_identify" = "Identify";
 "choose_identify_premium" = "Premium";
+"diagnosis_analyze_info" = "Diagnosing in Progress";
+"diagnosis_capture" = "Capture";
+"diagnosis_capture_info" = "Capture\nsick part of Plant";
+"diagnosis_no_data" = "No problems detected";
+"diagnosis_onboarding_info" = "Make sure that Photo is sharp and contains the diseased part";
+"diagnosis_preview_diagnose" = "Diagnose Photo";
+"diagnosis_preview_info" = "Make sure that Photo is sharp and contains the diseased part";
+"diagnosis_preview_retake" = "Retake Photo";
+"diagnosis_restart_diagnosing" = "Restart Diagnosing";
+"diagnosis_start_diagnose" = "Start Diagnosing";
 "diagnosis_title" = "Diagnose";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";

@@ -9,6 +9,7 @@ struct PlantsModel: Codable {
 struct DescriptionModel: Codable {
     let is_favorite: Bool
     let name: String
+    let names: String?
     let image: ImageModel
 }
 

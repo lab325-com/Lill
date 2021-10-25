@@ -3,6 +3,16 @@
 "choose_identify_diagnosis" = "Diagnóstico";
 "choose_identify_identify" = "Identificar";
 "choose_identify_premium" = "Prima";
+"diagnosis_analyze_info" = "Diagnosticando en progreso";
+"diagnosis_capture" = "Capturar";
+"diagnosis_capture_info" = "Captura \ Nsick Parte de la planta";
+"diagnosis_no_data" = "No hay problemas detectados";
+"diagnosis_onboarding_info" = "Asegúrese de que la foto sea afilada y contenga la parte enferma";
+"diagnosis_preview_diagnose" = "Diagnosticar foto";
+"diagnosis_preview_info" = "Asegúrese de que la foto sea afilada y contenga la parte enferma";
+"diagnosis_preview_retake" = "Volver a tomar foto";
+"diagnosis_restart_diagnosing" = "Reiniciar diagnosticación";
+"diagnosis_start_diagnose" = "Empezar a diagnosticar";
 "diagnosis_title" = "Diagnosticar";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
