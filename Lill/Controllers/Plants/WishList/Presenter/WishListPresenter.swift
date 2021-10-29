@@ -30,7 +30,7 @@ class WishListPresenter: WishListPresenterProtocol {
     func getWishList() {
         view?.startLoader()
                 
-        let query = GetCatalogPlantsQuery(pagination: InputPagination(ofset: 0, limit: 10), search: "", onlyFavorites: true)
+        let query = GetCatalogPlantsQuery(pagination: InputPagination(limit: 10, ofset: 0), search: "", onlyFavorites: true)
         Network.shared.query(model: CatalogPlantsModel.self, query) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)

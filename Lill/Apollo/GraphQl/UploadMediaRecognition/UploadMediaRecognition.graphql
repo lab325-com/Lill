@@ -1,5 +1,0 @@
-mutation UploadMediaRecognition($img: String!) {
-	uploadMediaRecognition(img: $img) {
-		urlIosFull
-	}
-}

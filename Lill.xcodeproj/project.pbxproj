@@ -82,7 +82,7 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
-		FA8FCD2927182CAA00173725 /* UploadMediaRecognition.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */; };
+		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
 		FA8FCD2E27185FCD00173725 /* StartRecognition.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */; };
 		FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */; };
@@ -199,7 +199,7 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMediaRecognition.graphql; sourceTree = "<group>"; };
+		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
 		FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognition.graphql; sourceTree = "<group>"; };
 		FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecognitionModel.swift; sourceTree = "<group>"; };
@@ -668,7 +668,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */,
-				FA8FCD2827182CAA00173725 /* UploadMediaRecognition.graphql */,
+				FA8FCD2827182CAA00173725 /* UploadMedia.graphql */,
 			);
 			path = UploadMediaRecognition;
 			sourceTree = "<group>";
@@ -989,7 +989,7 @@
 				FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */,
 				FAFCF35527157FE100C3134E /* Me.graphql in Resources */,
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
-				FA8FCD2927182CAA00173725 /* UploadMediaRecognition.graphql in Resources */,
+				FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
 				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02AB244726F39D8E00309CFF /* Localizable.strings in Resources */,

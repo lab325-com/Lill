@@ -35,7 +35,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = UploadMediaRecognitionMutation(img: img)
+        let mutation = UploadMediaMutation(img: img)
         
         request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
             self?.view?.stopLoading()

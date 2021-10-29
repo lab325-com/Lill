@@ -181,8 +181,8 @@ struct R: Rswift.Validatable {
     static let startDiagnoseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartDiagnose", pathExtension: "graphql")
     /// Resource file `StartRecognition.graphql`.
     static let startRecognitionGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartRecognition", pathExtension: "graphql")
-    /// Resource file `UploadMediaRecognition.graphql`.
-    static let uploadMediaRecognitionGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMediaRecognition", pathExtension: "graphql")
+    /// Resource file `UploadMedia.graphql`.
+    static let uploadMediaGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMedia", pathExtension: "graphql")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
@@ -270,9 +270,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "UploadMediaRecognition", withExtension: "graphql")`
-    static func uploadMediaRecognitionGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.uploadMediaRecognitionGraphql
+    /// `bundle.url(forResource: "UploadMedia", withExtension: "graphql")`
+    static func uploadMediaGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.uploadMediaGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
