@@ -2,13 +2,13 @@
 import Foundation
 
 struct ClimatModel: Codable {
-    let deciduous: ClimateDeciduous
-    let habit: ClimateHabit
-    let hardiness: Int
-    let height: Int
-    let moisture: ClimateMoisture
-    let ph: ClimatePh
-    let shade: ClimateShade
+    let deciduous: ClimateDeciduous?
+    let habit: ClimateHabit?
+    let hardiness: Int?
+    let height: Int?
+    let moisture: ClimateMoisture?
+    let ph: ClimatePh?
+    let shade: ClimateShade?
     let soil: ClimateSoil?
 }
 

@@ -17,7 +17,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutImageView" destination="QJy-Zb-pE9" id="9SX-cu-iDS"/>
+                <outlet property="aboutTitleLabel" destination="ZpV-BF-2RW" id="Lc9-fA-IDY"/>
+                <outlet property="aboutValueLabel" destination="Ht6-ds-eYV" id="C0B-dT-UlP"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="267" height="223"/>

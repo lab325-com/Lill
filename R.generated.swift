@@ -416,36 +416,36 @@ struct R: Rswift.Validatable {
     static let ic_tab_schedule = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule")
     /// Image `ic_wishlist_no_data`.
     static let ic_wishlist_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_wishlist_no_data")
-    /// Image `plants_detail_an_ic`.
-    static let plants_detail_an_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_an_ic")
+    /// Image `plants_detail_about_deciduous_ic`.
+    static let plants_detail_about_deciduous_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_deciduous_ic")
+    /// Image `plants_detail_about_habit_ic`.
+    static let plants_detail_about_habit_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_habit_ic")
+    /// Image `plants_detail_about_hardiness_ic`.
+    static let plants_detail_about_hardiness_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_hardiness_ic")
+    /// Image `plants_detail_about_height_ic`.
+    static let plants_detail_about_height_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_height_ic")
+    /// Image `plants_detail_about_moisture_ic`.
+    static let plants_detail_about_moisture_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_moisture_ic")
+    /// Image `plants_detail_about_ph_ic`.
+    static let plants_detail_about_ph_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_ph_ic")
+    /// Image `plants_detail_about_shade_ic`.
+    static let plants_detail_about_shade_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_shade_ic")
+    /// Image `plants_detail_about_soil_ic`.
+    static let plants_detail_about_soil_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_soil_ic")
     /// Image `plants_detail_back_ic`.
     static let plants_detail_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_back_ic")
-    /// Image `plants_detail_deciduous_ic`.
-    static let plants_detail_deciduous_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_deciduous_ic")
     /// Image `plants_detail_green_ic`.
     static let plants_detail_green_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_green_ic")
-    /// Image `plants_detail_habit_ic`.
-    static let plants_detail_habit_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_habit_ic")
-    /// Image `plants_detail_height_ic`.
-    static let plants_detail_height_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_height_ic")
     /// Image `plants_detail_humidity_ic`.
     static let plants_detail_humidity_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_humidity_ic")
-    /// Image `plants_detail_lmh_ic`.
-    static let plants_detail_lmh_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_lmh_ic")
-    /// Image `plants_detail_medium_ic`.
-    static let plants_detail_medium_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_medium_ic")
     /// Image `plants_detail_misting_ic`.
     static let plants_detail_misting_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_misting_ic")
     /// Image `plants_detail_no_wish_ic`.
     static let plants_detail_no_wish_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_no_wish_ic")
     /// Image `plants_detail_rotating_ic`.
     static let plants_detail_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_rotating_ic")
-    /// Image `plants_detail_sunny_ic`.
-    static let plants_detail_sunny_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_sunny_ic")
     /// Image `plants_detail_water_ic`.
     static let plants_detail_water_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_water_ic")
-    /// Image `plants_detail_watering_ic`.
-    static let plants_detail_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_watering_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
     /// Image `temp_onboarding_1_ic`.
@@ -796,9 +796,58 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_an_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_an_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_an_ic, compatibleWith: traitCollection)
+    /// `UIImage(named: "plants_detail_about_deciduous_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_deciduous_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_deciduous_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_habit_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_habit_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_habit_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_hardiness_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_hardiness_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_hardiness_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_height_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_height_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_height_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_moisture_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_moisture_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_moisture_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_ph_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_ph_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_ph_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_shade_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_shade_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_shade_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_about_soil_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_about_soil_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_about_soil_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -810,13 +859,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_deciduous_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_deciduous_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_deciduous_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plants_detail_green_ic", bundle: ..., traitCollection: ...)`
     static func plants_detail_green_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plants_detail_green_ic, compatibleWith: traitCollection)
@@ -824,37 +866,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_habit_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_habit_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_habit_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_height_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_height_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_height_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plants_detail_humidity_ic", bundle: ..., traitCollection: ...)`
     static func plants_detail_humidity_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plants_detail_humidity_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_lmh_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_lmh_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_lmh_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_medium_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_medium_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_medium_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -880,23 +894,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_sunny_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_sunny_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_sunny_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plants_detail_water_ic", bundle: ..., traitCollection: ...)`
     static func plants_detail_water_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plants_detail_water_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_watering_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_watering_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_watering_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1196,7 +1196,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 94 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 102 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1370,6 +1370,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Habit
+      ///
+      /// Locales: en
+      static let climate_habit = Rswift.StringResource(key: "climate_habit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Hardiness
+      ///
+      /// Locales: en
+      static let climate_hardiness = Rswift.StringResource(key: "climate_hardiness", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Height
+      ///
+      /// Locales: en
+      static let climate_height = Rswift.StringResource(key: "climate_height", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Identify
       ///
       /// Locales: en
@@ -1458,6 +1470,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_photo_quality_info = Rswift.StringResource(key: "identify_photo_quality_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Moisture
+      ///
+      /// Locales: en
+      static let climate_moisture = Rswift.StringResource(key: "climate_moisture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: N
       ///
       /// Locales: en
@@ -1478,6 +1494,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let identify_overview_title = Rswift.StringResource(key: "identify_overview_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: PH
+      ///
+      /// Locales: en
+      static let climate_ph = Rswift.StringResource(key: "climate_ph", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Perennial
       ///
       /// Locales: en
@@ -1522,10 +1542,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Shade
+      ///
+      /// Locales: en
+      static let climate_shade = Rswift.StringResource(key: "climate_shade", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Shrub
       ///
       /// Locales: en
       static let climate_habit_shrub = Rswift.StringResource(key: "climate_habit_shrub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Soil
+      ///
+      /// Locales: en
+      static let climate_soil = Rswift.StringResource(key: "climate_soil", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Sorry,  no results found
       ///
       /// Locales: en
@@ -1542,6 +1570,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let climate_habit_tree = Rswift.StringResource(key: "climate_habit_tree", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Type
+      ///
+      /// Locales: en
+      static let climate_deciduous = Rswift.StringResource(key: "climate_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: WA
       ///
       /// Locales: en
@@ -2220,6 +2252,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_make_photo_info", bundle: bundle, comment: "")
       }
 
+      /// en translation: Habit
+      ///
+      /// Locales: en
+      static func climate_habit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_habit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_habit"
+        }
+
+        return NSLocalizedString("climate_habit", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Hardiness
+      ///
+      /// Locales: en
+      static func climate_hardiness(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_hardiness", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_hardiness"
+        }
+
+        return NSLocalizedString("climate_hardiness", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Height
+      ///
+      /// Locales: en
+      static func climate_height(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_height", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_height"
+        }
+
+        return NSLocalizedString("climate_height", bundle: bundle, comment: "")
+      }
+
       /// en translation: Identify
       ///
       /// Locales: en
@@ -2550,6 +2627,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_photo_quality_info", bundle: bundle, comment: "")
       }
 
+      /// en translation: Moisture
+      ///
+      /// Locales: en
+      static func climate_moisture(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_moisture", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_moisture"
+        }
+
+        return NSLocalizedString("climate_moisture", bundle: bundle, comment: "")
+      }
+
       /// en translation: N
       ///
       /// Locales: en
@@ -2623,6 +2715,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_overview_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: PH
+      ///
+      /// Locales: en
+      static func climate_ph(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_ph", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_ph"
+        }
+
+        return NSLocalizedString("climate_ph", bundle: bundle, comment: "")
       }
 
       /// en translation: Perennial
@@ -2790,6 +2897,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_search", bundle: bundle, comment: "")
       }
 
+      /// en translation: Shade
+      ///
+      /// Locales: en
+      static func climate_shade(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_shade", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_shade"
+        }
+
+        return NSLocalizedString("climate_shade", bundle: bundle, comment: "")
+      }
+
       /// en translation: Shrub
       ///
       /// Locales: en
@@ -2803,6 +2925,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_shrub", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Soil
+      ///
+      /// Locales: en
+      static func climate_soil(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_soil", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_soil"
+        }
+
+        return NSLocalizedString("climate_soil", bundle: bundle, comment: "")
       }
 
       /// en translation: Sorry,  no results found
@@ -2863,6 +3000,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_tree", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Type
+      ///
+      /// Locales: en
+      static func climate_deciduous(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("climate_deciduous", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "climate_deciduous"
+        }
+
+        return NSLocalizedString("climate_deciduous", bundle: bundle, comment: "")
       }
 
       /// en translation: WA

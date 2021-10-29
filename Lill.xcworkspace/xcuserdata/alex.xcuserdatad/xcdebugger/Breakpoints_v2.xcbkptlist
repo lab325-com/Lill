@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3F32FE4A-D76A-4969-A986-BC87D54F9762"
-            shouldBeEnabled = "No"
+            uuid = "2F41466D-280E-4A46-A8E0-6C6B36EE8946"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Plants/PlantsDetail/PlantsDetailController.swift"
+            filePath = "Lill/Controllers/Plants/PlantsDetail/Presenter/PlantsDetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "success(model:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "createAbout(model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

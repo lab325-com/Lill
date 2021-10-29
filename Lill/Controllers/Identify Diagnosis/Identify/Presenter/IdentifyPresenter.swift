@@ -1,5 +1,6 @@
 
 import Foundation
+import Apollo
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -22,26 +23,42 @@ protocol IdentifyPresenterProtocol: AnyObject {
 class IdentifyPresenter: IdentifyPresenterProtocol {
     
     private weak var view: IdentifyOutputProtocol?
+    private var isLoaded = false
+    private var request: Cancellable?
     
     required init(view: IdentifyOutputProtocol) {
         self.view = view
     }
     
     func uploadPhoto(img: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
         let mutation = UploadMediaRecognitionMutation(img: img)
-        Network.shared.mutation(model: MediaDataModel.self, mutation) { model in
-            self.view?.successUpload(model: model)
-        } failureHandler: { error in
-            self.view?.failure(error: error.localizedDescription)
-        }
+        
+        request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successUpload(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
     
     func recognizePhoto(img: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
         let query = StartRecognitionQuery(img: RecognitionInput(img: img))
-        Network.shared.query(model: RecognitionDataModel.self, query) { model in
-            self.view?.successRecognize(model: model)
-        } failureHandler: { error in
-            self.view?.failure(error: error.localizedDescription)
-        }
+        
+        request = Network.shared.query(model: RecognitionDataModel.self, query, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successRecognize(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

@@ -4,8 +4,10 @@
 "choose_identify_identify" = "Identify";
 "choose_identify_premium" = "Premium";
 "climante_deciduous_unknown" = "Climate Deciduous Unknown";
+"climate_deciduous" = "Type";
 "climate_deciduous_deciduous" = "Deciduous";
 "climate_deciduous_evergreen" = "Evergreen";
+"climate_habit" = "Habit";
 "climate_habit_annual_climber" = "Annual Climber";
 "climate_habit_annual_perennial" = "Annual Perennial";
 "climate_habit_bamboo" = "Bamboo";
@@ -19,6 +21,9 @@
 "climate_habit_shrub" = "Shrub";
 "climate_habit_tree" = "Tree";
 "climate_habit_unknown" = "Climate Habit Unknown";
+"climate_hardiness" = "Hardiness";
+"climate_height" = "Height";
+"climate_moisture" = "Moisture";
 "climate_moisture_d" = "D";
 "climate_moisture_dm" = "DM";
 "climate_moisture_dmw" = "DMW";
@@ -30,6 +35,7 @@
 "climate_moisture_wa" = "WA";
 "climate_moisture_wem" = "WEM";
 "climate_moisture_wewa" = "WEWA";
+"climate_ph" = "PH";
 "climate_ph_a" = "A";
 "climate_ph_an" = "AN";
 "climate_ph_anb" = "ANB";
@@ -37,12 +43,14 @@
 "climate_ph_n" = "N";
 "climate_ph_nb" = "NB";
 "climate_ph_unknown" = "Climate PH Unknown";
+"climate_shade" = "Shade";
 "climate_shade_fs" = "FS";
 "climate_shade_fsn" = "FSN";
 "climate_shade_n" = "N";
 "climate_shade_s" = "S";
 "climate_shade_sn" = "SN";
 "climate_shade_unknown" = "Climate Shade Unknown";
+"climate_soil" = "Soil";
 "climate_soil_l" = "L";
 "climate_soil_lm" = "LM";
 "climate_soil_lmh" = "LMH";

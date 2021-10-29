@@ -1,6 +1,9 @@
 
 import UIKit
 
+
+
+
 class PlantsDetailController: BaseController {
     
     //----------------------------------------------
@@ -11,6 +14,11 @@ class PlantsDetailController: BaseController {
     @IBOutlet weak var moreOnWikiButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet var detailsView: [DetailAboutView]!
+    
+    
+    @IBOutlet var verticalStacks: [UIStackView]!
+    @IBOutlet var separeteViews: [UIView]!
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
@@ -37,6 +45,9 @@ class PlantsDetailController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter.getPlantDetail(id: id)
+        
         setup()
     }
     
@@ -48,6 +59,7 @@ class PlantsDetailController: BaseController {
         scrollView.alpha = 1.0
         
         navigationController?.navigationBar.tintColor = UIColor.white
+        
         wishButton.setTitle("", for: .normal)
         wishButton.layer.cornerRadius = 22
         wishButton.layer.borderWidth = 1
@@ -56,8 +68,6 @@ class PlantsDetailController: BaseController {
         moreOnWikiButton.layer.cornerRadius = 22
         moreOnWikiButton.layer.borderWidth = 1
         moreOnWikiButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
-        
-        //presenter.getPlantsDetail(id: id)
     }
 }
 
@@ -66,7 +76,28 @@ class PlantsDetailController: BaseController {
 //----------------------------------------------
 
 extension PlantsDetailController: PlantsDetailOutputProtocol {
-    func success(model: PlantDataModel) {
+    func success(model: PlantDataModel, abouts: [PlantsAboutType]) {
+        for view in detailsView {
+            view.isHidden = true
+        }
+        
+        for index in 0..<abouts.count {
+            if let about = abouts[safe: index],  let view = detailsView[safe: index] {
+                view.isHidden = false
+                view.setup(about: about, model: model)
+            }
+        }
+        
+        if abouts.count < 3 {
+            for index in 1...2 {
+                separeteViews.first(where: {$0.tag == index})?.isHidden = true
+            }
+            
+            for index in 1...3 {
+                verticalStacks.first(where: {$0.tag == index})?.isHidden = true
+            }
+        }
+        
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.scrollView.alpha  = 1.0
         }

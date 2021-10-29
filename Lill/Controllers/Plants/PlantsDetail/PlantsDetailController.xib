@@ -22,6 +22,21 @@
                 <outlet property="scrollView" destination="oSy-dc-sRC" id="YVE-La-LVS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wishButton" destination="eGV-5c-Bd7" id="yZ7-Qb-hMJ"/>
+                <outletCollection property="detailsView" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="fmt-VW-S1D"/>
+                <outletCollection property="detailsView" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="wTZ-Md-V6z"/>
+                <outletCollection property="detailsView" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="XBn-TZ-NP1"/>
+                <outletCollection property="detailsView" destination="Ysc-e2-SUY" collectionClass="NSMutableArray" id="plk-nC-Ve3"/>
+                <outletCollection property="detailsView" destination="5pk-3Q-R0a" collectionClass="NSMutableArray" id="3rx-FF-Mjw"/>
+                <outletCollection property="detailsView" destination="5qR-6o-IJr" collectionClass="NSMutableArray" id="ZxM-H2-425"/>
+                <outletCollection property="detailsView" destination="MC7-Df-soA" collectionClass="NSMutableArray" id="g2g-WB-w71"/>
+                <outletCollection property="detailsView" destination="GM0-Yt-jlh" collectionClass="NSMutableArray" id="IBR-gK-Hde"/>
+                <outletCollection property="separeteViews" destination="Gdm-GS-9nm" collectionClass="NSMutableArray" id="hhY-oZ-G03"/>
+                <outletCollection property="separeteViews" destination="LRt-Rr-paN" collectionClass="NSMutableArray" id="Man-Rl-ZAq"/>
+                <outletCollection property="separeteViews" destination="lcf-af-kNQ" collectionClass="NSMutableArray" id="1Xr-in-4Gi"/>
+                <outletCollection property="verticalStacks" destination="syS-t3-Uw0" collectionClass="NSMutableArray" id="Ueb-Vs-U25"/>
+                <outletCollection property="verticalStacks" destination="rFU-ZL-urU" collectionClass="NSMutableArray" id="Jme-XP-Uuc"/>
+                <outletCollection property="verticalStacks" destination="Aub-Ow-Mrn" collectionClass="NSMutableArray" id="IYt-E5-pzK"/>
+                <outletCollection property="verticalStacks" destination="cdq-lT-6SN" collectionClass="NSMutableArray" id="fwQ-OF-w7W"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -162,7 +177,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="e78-yO-CaD"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbY-n0-xbR" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbY-n0-xbR" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="193.5" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -179,10 +194,10 @@
                                                         <constraint firstAttribute="height" constant="1" id="B30-p7-G9k"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syS-t3-Uw0">
+                                                <stackView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syS-t3-Uw0">
                                                     <rect key="frame" x="0.0" y="141" width="386" height="140"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-D0-yr0" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-D0-yr0" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -193,7 +208,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="57N-Gj-3mx"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysc-e2-SUY" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysc-e2-SUY" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="193.5" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -203,17 +218,17 @@
                                                         <constraint firstItem="V0g-D0-yr0" firstAttribute="width" secondItem="Ysc-e2-SUY" secondAttribute="width" id="Jmb-G2-4oA"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-af-kNQ">
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-af-kNQ">
                                                     <rect key="frame" x="0.0" y="281" width="386" height="1"/>
                                                     <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="9Gb-2a-f1H"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-ZL-urU">
+                                                <stackView opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-ZL-urU">
                                                     <rect key="frame" x="0.0" y="282" width="386" height="140"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pk-3Q-R0a" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pk-3Q-R0a" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -224,7 +239,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="zWA-SY-zLz"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-6o-IJr" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-6o-IJr" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="193.5" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -234,17 +249,17 @@
                                                         <constraint firstItem="5pk-3Q-R0a" firstAttribute="width" secondItem="5qR-6o-IJr" secondAttribute="width" id="gV5-Vs-XJe"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRt-Rr-paN">
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRt-Rr-paN">
                                                     <rect key="frame" x="0.0" y="422" width="386" height="1"/>
                                                     <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="jaa-gJ-mRz"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-Ow-Mrn">
+                                                <stackView opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-Ow-Mrn">
                                                     <rect key="frame" x="0.0" y="423" width="386" height="140"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC7-Df-soA" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC7-Df-soA" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -255,7 +270,7 @@
                                                                 <constraint firstAttribute="width" constant="1" id="jYB-eJ-BTi"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-Yt-jlh" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
+                                                        <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-Yt-jlh" customClass="DetailAboutView" customModule="Lill" customModuleProvider="target">
                                                             <rect key="frame" x="193.5" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
