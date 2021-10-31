@@ -17,7 +17,7 @@ class MenuController: BaseController {
     }
     
     private func setup() {
-        titleLabel.text = "Menu".capitalized
+        titleLabel.text = RLocalization.menu_title().capitalized
         setupTable()
         presenter.getMe()
     }

@@ -23,11 +23,11 @@ extension MenuController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch (self.presenter.menuItems[section].type) {
         case .account:
-            return "account".uppercased()
+            return RLocalization.menu_section_archive_title().uppercased()
         case .archive:
-            return  "archive".uppercased()
+            return  RLocalization.menu_section_archive_title().uppercased()
         case .settings:
-            return "settings".uppercased()
+            return RLocalization.menu_section_settings_title().uppercased()
         }
     }
     

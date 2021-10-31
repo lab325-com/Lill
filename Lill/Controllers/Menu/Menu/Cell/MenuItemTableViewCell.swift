@@ -31,28 +31,28 @@ class MenuItemTableViewCell: UITableViewCell {
     func setup(type: MenuItemType, with model: MeDataModel?){
         switch (type){
         case .subscriptions:
-            self.titleLabel.text = "Subscriptions".capitalized
+            self.titleLabel.text = RLocalization.menu_item_subscriptions().capitalized
             self.accessoryType = .disclosureIndicator
         case .recognized:
-            self.titleLabel.text = "Recognized Archive".capitalized
+            self.titleLabel.text = RLocalization.menu_item_archive_recognized().capitalized
             self.subtitleLabel.text = "\(model?.me.access.diagnosisUsed ?? 0)/\(model?.me.access.diagnosisTotal ?? 0)"
             self.accessoryType = .disclosureIndicator
         case .disease:
-            self.titleLabel.text = "Disease Archive".capitalized
+            self.titleLabel.text = RLocalization.menu_item_archive_disease().capitalized
             self.subtitleLabel.text = "\(model?.me.access.identifyUsed ?? 0)/\(model?.me.access.identifyTotal ?? 0)"
             self.accessoryType = .disclosureIndicator
         case .lang:
-            self.titleLabel.text = "Language".capitalized
+            self.titleLabel.text = RLocalization.menu_item_language().capitalized
             self.subtitleLabel.text = "Eng"
             self.accessoryType = .disclosureIndicator
         case .share:
-            self.titleLabel.text = "Invite friends (share app)".capitalized
+            self.titleLabel.text = RLocalization.menu_item_share().capitalized
         case .rate:
-            self.titleLabel.text = "Rate app".capitalized
+            self.titleLabel.text = RLocalization.menu_item_rate().capitalized
         case .terms:
-            self.titleLabel.text = "Terms".capitalized
+            self.titleLabel.text = RLocalization.menu_item_terms().capitalized
         case .privacyPolice:
-            self.titleLabel.text = "Privacy policy".capitalized
+            self.titleLabel.text = RLocalization.menu_item_privacy_policy().capitalized
         default:
             return
         }

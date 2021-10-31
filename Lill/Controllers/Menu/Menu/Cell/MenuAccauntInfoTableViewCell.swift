@@ -18,7 +18,7 @@ class MenuAccauntInfoTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
         self.accessoryType = .disclosureIndicator
-        self.logoutLabel.text = "Log out".capitalized
+        self.logoutLabel.text = RLocalization.menu_log_out().capitalized
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
