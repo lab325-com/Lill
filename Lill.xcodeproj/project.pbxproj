@@ -64,6 +64,12 @@
 		02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */; };
 		02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFB4270A45410089CEF8 /* PreferencesManager.swift */; };
 		E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */; };
+		F3235D2E272E6CE100B4CE5E /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3235D2D272E6CE100B4CE5E /* MenuPresenter.swift */; };
+		F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3235D2F272E6D3B00B4CE5E /* MenuController+TableView.swift */; };
+		F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BED183272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift */; };
+		F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BED184272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib */; };
+		F3BED189272EFB8F00614DEE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BED187272EFB8F00614DEE /* MenuItemTableViewCell.swift */; };
+		F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
@@ -184,6 +190,12 @@
 		6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7908E3FF4B6BFB08E90717AD /* Pods-Lill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.release.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.release.xcconfig"; sourceTree = "<group>"; };
 		DBAE788BDB0E496ABBFD374C /* Pods-Lill.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lill.staging.xcconfig"; path = "Target Support Files/Pods-Lill/Pods-Lill.staging.xcconfig"; sourceTree = "<group>"; };
+		F3235D2D272E6CE100B4CE5E /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		F3235D2F272E6D3B00B4CE5E /* MenuController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuController+TableView.swift"; sourceTree = "<group>"; };
+		F3BED183272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAccauntInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F3BED184272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuAccauntInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F3BED187272EFB8F00614DEE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -610,6 +622,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3235D29272E6C8D00B4CE5E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3BD2A2704AF670075C0C0 /* MenuController.swift */,
+				F3235D2F272E6D3B00B4CE5E /* MenuController+TableView.swift */,
+				F3235D2C272E6CBA00B4CE5E /* Cell */,
+				F3235D2B272E6CB000B4CE5E /* Presenter */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F3235D2A272E6C9900B4CE5E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F3235D2B272E6CB000B4CE5E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F3235D2D272E6CE100B4CE5E /* MenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F3235D2C272E6CBA00B4CE5E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3BED183272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift */,
+				F3BED184272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib */,
+				F3BED187272EFB8F00614DEE /* MenuItemTableViewCell.swift */,
+				F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,7 +821,8 @@
 		FAB3BD232704AB8E0075C0C0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FAB3BD2A2704AF670075C0C0 /* MenuController.swift */,
+				F3235D2A272E6C9900B4CE5E /* Router */,
+				F3235D29272E6C8D00B4CE5E /* Menu */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1001,10 +1051,12 @@
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
+				F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */,
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
+				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
@@ -1136,6 +1188,7 @@
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */,
+				F3235D2E272E6CE100B4CE5E /* MenuPresenter.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
@@ -1147,6 +1200,8 @@
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
+				F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */,
+				F3BED189272EFB8F00614DEE /* MenuItemTableViewCell.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
 				FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
@@ -1179,6 +1234,7 @@
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
 				021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
+				F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,
 				FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */,
 				02A4BA3E26FDD16C00DF6A08 /* UIPageViewController+Extension.swift in Sources */,

@@ -318,8 +318,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 69 images.
+  /// This `R.image` struct is generated, and contains static references to 71 images.
   struct image {
+    /// Image `background_main`.
+    static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `ic_background`.
@@ -458,6 +460,15 @@ struct R: Rswift.Validatable {
     static let temp_plants_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_plants_ic")
     /// Image `temp`.
     static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
+    /// Image `userpic - avatar (m)`.
+    static let userpicAvatarM = Rswift.ImageResource(bundle: R.hostingBundle, name: "userpic - avatar (m)")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "background_main", bundle: ..., traitCollection: ...)`
+    static func background_main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background_main, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "garden_back_ic", bundle: ..., traitCollection: ...)`
@@ -942,10 +953,17 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "userpic - avatar (m)", bundle: ..., traitCollection: ...)`
+    static func userpicAvatarM(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userpicAvatarM, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
   struct nib {
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
@@ -963,6 +981,10 @@ struct R: Rswift.Validatable {
     static let identifyController = _R.nib._IdentifyController()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
+    /// Nib `MenuAccauntInfoTableViewCell`.
+    static let menuAccauntInfoTableViewCell = _R.nib._MenuAccauntInfoTableViewCell()
+    /// Nib `MenuItemTableViewCell`.
+    static let menuItemTableViewCell = _R.nib._MenuItemTableViewCell()
     /// Nib `OnboardingFirsController`.
     static let onboardingFirsController = _R.nib._OnboardingFirsController()
     /// Nib `OnboardingPageController`.
@@ -1043,6 +1065,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginController) instead")
     static func loginController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loginController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MenuAccauntInfoTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.menuAccauntInfoTableViewCell) instead")
+    static func menuAccauntInfoTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.menuAccauntInfoTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MenuItemTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.menuItemTableViewCell) instead")
+    static func menuItemTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.menuItemTableViewCell)
     }
     #endif
 
@@ -1148,6 +1186,14 @@ struct R: Rswift.Validatable {
 
     static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func menuAccauntInfoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuAccauntInfoTableViewCell? {
+      return R.nib.menuAccauntInfoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuAccauntInfoTableViewCell
+    }
+
+    static func menuItemTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuItemTableViewCell? {
+      return R.nib.menuItemTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuItemTableViewCell
     }
 
     static func onboardingFirsController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -3176,6 +3222,7 @@ struct _R: Rswift.Validatable {
       try _GardenViewCell.validate()
       try _IdentifyController.validate()
       try _LoginController.validate()
+      try _MenuAccauntInfoTableViewCell.validate()
       try _OnboardingFirsController.validate()
       try _OnboardingSecondController.validate()
       try _OnboardingThreeController.validate()
@@ -3341,6 +3388,34 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_login_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_logo' is used in nib 'LoginController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MenuAccauntInfoTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "MenuAccauntInfoTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuAccauntInfoTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuAccauntInfoTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "userpic - avatar (m)", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'userpic - avatar (m)' is used in nib 'MenuAccauntInfoTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MenuItemTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MenuItemTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuItemTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuItemTableViewCell
       }
 
       fileprivate init() {}
@@ -3564,6 +3639,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_backToTop", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_backToTop' is used in storyboard 'Main', but couldn't be loaded.") }
