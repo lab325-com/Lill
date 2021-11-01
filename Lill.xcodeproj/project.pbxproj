@@ -111,6 +111,8 @@
 		FAD49CE727033C15005D6E75 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE627033C15005D6E75 /* FirebaseAnalytics */; };
 		FAD49CE927033C15005D6E75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE827033C15005D6E75 /* FirebaseAuth */; };
 		FAD49CEB27033C15005D6E75 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CEA27033C15005D6E75 /* FirebaseMessaging */; };
+		FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */; };
+		FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -228,6 +230,8 @@
 		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		FAD49CE327033B0B005D6E75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SetFavoritePlant.graphql; sourceTree = "<group>"; };
+		FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlantModel.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 				FAFCF35327157FA900C3134E /* Me */,
 				FAC6D9962701E1E4000A551F /* GetPlants */,
 				FA40D70E27282F9C00A10C10 /* GetPlant */,
+				FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */,
 				02E4576426F9137C00F19C41 /* Login */,
 			);
 			path = GraphQL;
@@ -805,6 +810,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */ = {
+			isa = PBXGroup;
+			children = (
+				FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */,
+				FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */,
+			);
+			path = SetFavoritePlant;
+			sourceTree = "<group>";
+		};
 		FAFCF34427147D8D00C3134E /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1019,7 @@
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
+				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				FAD1832E26F8A458007A67DC /* schema.json in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
@@ -1137,6 +1152,7 @@
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
+				FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
 				02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */,

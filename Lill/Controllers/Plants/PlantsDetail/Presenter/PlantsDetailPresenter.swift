@@ -20,6 +20,7 @@ enum PlantsAboutType: Int, CaseIterable {
 
 protocol PlantsDetailOutputProtocol: BaseController {
     func success(model: PlantDataModel, abouts: [PlantsAboutType])
+    func success(model: FavoritePlantDataModel)
     func failure(error: String)
 }
 
@@ -31,6 +32,7 @@ protocol PlantsDetailPresenterProtocol: AnyObject {
     init(view: PlantsDetailOutputProtocol)
     
     func getPlantDetail(id: String)
+    func setFaviritePlant(id: String, isFavorite: Bool)
 }
 
 class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
@@ -40,6 +42,17 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
     
     required init(view: PlantsDetailOutputProtocol) {
         self.view = view
+    }
+    
+    func setFaviritePlant(id: String, isFavorite: Bool) {
+        request?.cancel()
+        
+        let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: isFavorite)
+        request = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, successHandler: { [weak self] model in
+            self?.view?.success(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
     
     func getPlantDetail(id: String) {
@@ -69,27 +82,27 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         if let _ = model.plantById.climate.shade {
             abouts.append(.shade)
         }
-        
+
         if let _ = model.plantById.climate.moisture {
             abouts.append(.moisture)
         }
-        
+
         if let _ = model.plantById.climate.height {
             abouts.append(.height)
         }
-        
+
         if let _ = model.plantById.climate.soil {
             abouts.append(.soil)
         }
-        
+
         if let _ = model.plantById.climate.ph {
             abouts.append(.ph)
         }
-        
+
         if let _ = model.plantById.climate.deciduous {
             abouts.append(.deciduous)
         }
-        
+
         if let _ = model.plantById.climate.hardiness {
             abouts.append(.hardiness)
         }

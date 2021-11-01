@@ -1,0 +1,5 @@
+mutation SetFavoritePlantById($id: String!,
+							  $isFavorite: Boolean!) {
+	setFavoritePlantById(id: $id,
+						 isFavorite: $isFavorite)
+}

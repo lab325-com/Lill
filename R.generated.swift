@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 16 files.
+  /// This `R.file` struct is generated, and contains static references to 17 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
@@ -175,6 +175,8 @@ struct R: Rswift.Validatable {
     static let sfProDisplayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Medium", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Regular.ttf`.
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
+    /// Resource file `SetFavoritePlant.graphql`.
+    static let setFavoritePlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SetFavoritePlant", pathExtension: "graphql")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
     /// Resource file `StartDiagnose.graphql`.
@@ -252,6 +254,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "SetFavoritePlant", withExtension: "graphql")`
+    static func setFavoritePlantGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.setFavoritePlantGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Staging", withExtension: "xcconfig")`
     static func stagingXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.stagingXcconfig
@@ -318,7 +326,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 69 images.
+  /// This `R.image` struct is generated, and contains static references to 72 images.
   struct image {
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
@@ -432,16 +440,22 @@ struct R: Rswift.Validatable {
     static let plants_detail_about_shade_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_shade_ic")
     /// Image `plants_detail_about_soil_ic`.
     static let plants_detail_about_soil_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_soil_ic")
+    /// Image `plants_detail_added_favorites_ic`.
+    static let plants_detail_added_favorites_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_added_favorites_ic")
     /// Image `plants_detail_back_ic`.
     static let plants_detail_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_back_ic")
+    /// Image `plants_detail_favorite_ic`.
+    static let plants_detail_favorite_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_favorite_ic")
     /// Image `plants_detail_green_ic`.
     static let plants_detail_green_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_green_ic")
     /// Image `plants_detail_humidity_ic`.
     static let plants_detail_humidity_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_humidity_ic")
     /// Image `plants_detail_misting_ic`.
     static let plants_detail_misting_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_misting_ic")
-    /// Image `plants_detail_no_wish_ic`.
-    static let plants_detail_no_wish_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_no_wish_ic")
+    /// Image `plants_detail_no_favorite_ic`.
+    static let plants_detail_no_favorite_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_no_favorite_ic")
+    /// Image `plants_detail_removed_favorites_ic`.
+    static let plants_detail_removed_favorites_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_removed_favorites_ic")
     /// Image `plants_detail_rotating_ic`.
     static let plants_detail_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_rotating_ic")
     /// Image `plants_detail_water_ic`.
@@ -852,9 +866,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_added_favorites_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_added_favorites_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_added_favorites_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plants_detail_back_ic", bundle: ..., traitCollection: ...)`
     static func plants_detail_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plants_detail_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_favorite_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_favorite_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_favorite_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -880,9 +908,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_no_wish_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_no_wish_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_no_wish_ic, compatibleWith: traitCollection)
+    /// `UIImage(named: "plants_detail_no_favorite_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_no_favorite_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_no_favorite_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plants_detail_removed_favorites_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_removed_favorites_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_removed_favorites_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3666,7 +3701,8 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "plants_detail_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_back_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "plants_detail_no_wish_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_no_wish_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plants_detail_no_favorite_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_no_favorite_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plants_detail_removed_favorites_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_removed_favorites_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
