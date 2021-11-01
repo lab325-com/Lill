@@ -1242,7 +1242,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 115 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 114 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1680,10 +1680,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let wish_list_no_data = Rswift.StringResource(key: "wish_list_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      /// en translation: account
-      ///
-      /// Locales: en
-      static let menu_section_account_title = Rswift.StringResource(key: "menu_section_account_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: archive
       ///
       /// Locales: en
@@ -3338,21 +3334,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("wish_list_no_data", bundle: bundle, comment: "")
-      }
-
-      /// en translation: account
-      ///
-      /// Locales: en
-      static func menu_section_account_title(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("menu_section_account_title", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "menu_section_account_title"
-        }
-
-        return NSLocalizedString("menu_section_account_title", bundle: bundle, comment: "")
       }
 
       /// en translation: archive

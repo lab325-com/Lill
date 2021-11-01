@@ -70,6 +70,7 @@
 		F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BED184272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib */; };
 		F3BED189272EFB8F00614DEE /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BED187272EFB8F00614DEE /* MenuItemTableViewCell.swift */; };
 		F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */; };
+		F3D378B0272F93490015C6EE /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378AF272F93490015C6EE /* MenuRouter.swift */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
@@ -196,6 +197,7 @@
 		F3BED184272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuAccauntInfoTableViewCell.xib; sourceTree = "<group>"; };
 		F3BED187272EFB8F00614DEE /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
+		F3D378AF272F93490015C6EE /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 		F3235D2A272E6C9900B4CE5E /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				F3D378AF272F93490015C6EE /* MenuRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -657,6 +660,20 @@
 				F3BED188272EFB8F00614DEE /* MenuItemTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F3D378B1272F98920015C6EE /* RecognizedArchive */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecognizedArchive;
+			sourceTree = "<group>";
+		};
+		F3D378B2272F98A00015C6EE /* DiseaseArchive */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DiseaseArchive;
 			sourceTree = "<group>";
 		};
 		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
@@ -821,6 +838,8 @@
 		FAB3BD232704AB8E0075C0C0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				F3D378B2272F98A00015C6EE /* DiseaseArchive */,
+				F3D378B1272F98920015C6EE /* RecognizedArchive */,
 				F3235D2A272E6C9900B4CE5E /* Router */,
 				F3235D29272E6C8D00B4CE5E /* Menu */,
 			);
@@ -1215,6 +1234,7 @@
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
+				F3D378B0272F93490015C6EE /* MenuRouter.swift in Sources */,
 				02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */,
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,

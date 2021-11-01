@@ -50,4 +50,18 @@ extension MenuController: UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let itemType  = self.presenter.menuItems[indexPath.section].items[indexPath.row].type
+        switch(itemType){
+        case .accountInfo:
+            MenuRouter(presenter: self.navigationController).logOut()
+        case .recognized:
+            MenuRouter(presenter: self.navigationController).pushRecognizedArchive()
+        case .disease:
+            MenuRouter(presenter: self.navigationController).pushDiseaseArchive()
+        default:
+            return
+        }
+    }
 }
