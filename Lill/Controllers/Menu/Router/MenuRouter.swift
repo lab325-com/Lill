@@ -18,6 +18,8 @@ class MenuRouter: BaseRouter {
     }
     
     func pushDiseaseArchive(){
-        print("pushDiseaseArchive")
+        let controller = DiseaseArchiveViewController()
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
     }
 }

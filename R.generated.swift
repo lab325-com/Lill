@@ -318,7 +318,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 71 images.
+  /// This `R.image` struct is generated, and contains static references to 72 images.
   struct image {
     /// Image `background_main`.
     static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
@@ -418,6 +418,8 @@ struct R: Rswift.Validatable {
     static let ic_tab_schedule = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_schedule")
     /// Image `ic_wishlist_no_data`.
     static let ic_wishlist_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_wishlist_no_data")
+    /// Image `icn_diagnose`.
+    static let icn_diagnose = Rswift.ImageResource(bundle: R.hostingBundle, name: "icn_diagnose")
     /// Image `plants_detail_about_deciduous_ic`.
     static let plants_detail_about_deciduous_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_deciduous_ic")
     /// Image `plants_detail_about_habit_ic`.
@@ -807,6 +809,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icn_diagnose", bundle: ..., traitCollection: ...)`
+    static func icn_diagnose(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icn_diagnose, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "plants_detail_about_deciduous_ic", bundle: ..., traitCollection: ...)`
     static func plants_detail_about_deciduous_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plants_detail_about_deciduous_ic, compatibleWith: traitCollection)
@@ -963,7 +972,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 21 nibs.
   struct nib {
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
@@ -973,6 +982,10 @@ struct R: Rswift.Validatable {
     static let detailCaresView = _R.nib._DetailCaresView()
     /// Nib `DiagnosisController`.
     static let diagnosisController = _R.nib._DiagnosisController()
+    /// Nib `DiseaseArchiveCollectionViewCell`.
+    static let diseaseArchiveCollectionViewCell = _R.nib._DiseaseArchiveCollectionViewCell()
+    /// Nib `DiseaseArchiveViewController`.
+    static let diseaseArchiveViewController = _R.nib._DiseaseArchiveViewController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
     /// Nib `GardenViewCell`.
@@ -1033,6 +1046,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.diagnosisController) instead")
     static func diagnosisController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.diagnosisController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DiseaseArchiveCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.diseaseArchiveCollectionViewCell) instead")
+    static func diseaseArchiveCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.diseaseArchiveCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DiseaseArchiveViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.diseaseArchiveViewController) instead")
+    static func diseaseArchiveViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.diseaseArchiveViewController)
     }
     #endif
 
@@ -1170,6 +1199,14 @@ struct R: Rswift.Validatable {
 
     static func diagnosisController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.diagnosisController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func diseaseArchiveCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCollectionViewCell? {
+      return R.nib.diseaseArchiveCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCollectionViewCell
+    }
+
+    static func diseaseArchiveViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.diseaseArchiveViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
@@ -3447,6 +3484,7 @@ struct _R: Rswift.Validatable {
       try _DetailAboutView.validate()
       try _DetailCaresView.validate()
       try _DiagnosisController.validate()
+      try _DiseaseArchiveViewController.validate()
       try _GardenViewCell.validate()
       try _IdentifyController.validate()
       try _LoginController.validate()
@@ -3535,6 +3573,35 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'DiagnosisController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'DiagnosisController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DiseaseArchiveCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DiseaseArchiveCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DiseaseArchiveViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DiseaseArchiveViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'DiseaseArchiveViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icn_diagnose", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icn_diagnose' is used in nib 'DiseaseArchiveViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
