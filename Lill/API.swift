@@ -6,35 +6,35 @@ import Foundation
 
 public enum PeriodType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
+  case periodTypeWeek
   case periodTypeDay
   case periodTypeMonth
-  case periodTypeWeek
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
+      case "PERIOD_TYPE_WEEK": self = .periodTypeWeek
       case "PERIOD_TYPE_DAY": self = .periodTypeDay
       case "PERIOD_TYPE_MONTH": self = .periodTypeMonth
-      case "PERIOD_TYPE_WEEK": self = .periodTypeWeek
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
+      case .periodTypeWeek: return "PERIOD_TYPE_WEEK"
       case .periodTypeDay: return "PERIOD_TYPE_DAY"
       case .periodTypeMonth: return "PERIOD_TYPE_MONTH"
-      case .periodTypeWeek: return "PERIOD_TYPE_WEEK"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: PeriodType, rhs: PeriodType) -> Bool {
     switch (lhs, rhs) {
+      case (.periodTypeWeek, .periodTypeWeek): return true
       case (.periodTypeDay, .periodTypeDay): return true
       case (.periodTypeMonth, .periodTypeMonth): return true
-      case (.periodTypeWeek, .periodTypeWeek): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -42,9 +42,9 @@ public enum PeriodType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
 
   public static var allCases: [PeriodType] {
     return [
+      .periodTypeWeek,
       .periodTypeDay,
       .periodTypeMonth,
-      .periodTypeWeek,
     ]
   }
 }
@@ -91,71 +91,71 @@ public enum ClimateDeciduous: RawRepresentable, Equatable, Hashable, CaseIterabl
 
 public enum ClimateHabit: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
-  case climateHabitAnnualPerennial
-  case climateHabitBiennialPerennial
-  case climateHabitBulb
-  case climateHabitFern
   case climateHabitPerennial
-  case climateHabitPerennialClimber
-  case climateHabitAnnualClimber
-  case climateHabitBamboo
-  case climateHabitBiennial
-  case climateHabitClimber
   case climateHabitShrub
   case climateHabitTree
+  case climateHabitBiennial
+  case climateHabitBiennialPerennial
+  case climateHabitClimber
+  case climateHabitFern
+  case climateHabitPerennialClimber
+  case climateHabitAnnualClimber
+  case climateHabitAnnualPerennial
+  case climateHabitBamboo
+  case climateHabitBulb
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
-      case "CLIMATE_HABIT_ANNUAL_PERENNIAL": self = .climateHabitAnnualPerennial
-      case "CLIMATE_HABIT_BIENNIAL_PERENNIAL": self = .climateHabitBiennialPerennial
-      case "CLIMATE_HABIT_BULB": self = .climateHabitBulb
-      case "CLIMATE_HABIT_FERN": self = .climateHabitFern
       case "CLIMATE_HABIT_PERENNIAL": self = .climateHabitPerennial
-      case "CLIMATE_HABIT_PERENNIAL_CLIMBER": self = .climateHabitPerennialClimber
-      case "CLIMATE_HABIT_ANNUAL_CLIMBER": self = .climateHabitAnnualClimber
-      case "CLIMATE_HABIT_BAMBOO": self = .climateHabitBamboo
-      case "CLIMATE_HABIT_BIENNIAL": self = .climateHabitBiennial
-      case "CLIMATE_HABIT_CLIMBER": self = .climateHabitClimber
       case "CLIMATE_HABIT_SHRUB": self = .climateHabitShrub
       case "CLIMATE_HABIT_TREE": self = .climateHabitTree
+      case "CLIMATE_HABIT_BIENNIAL": self = .climateHabitBiennial
+      case "CLIMATE_HABIT_BIENNIAL_PERENNIAL": self = .climateHabitBiennialPerennial
+      case "CLIMATE_HABIT_CLIMBER": self = .climateHabitClimber
+      case "CLIMATE_HABIT_FERN": self = .climateHabitFern
+      case "CLIMATE_HABIT_PERENNIAL_CLIMBER": self = .climateHabitPerennialClimber
+      case "CLIMATE_HABIT_ANNUAL_CLIMBER": self = .climateHabitAnnualClimber
+      case "CLIMATE_HABIT_ANNUAL_PERENNIAL": self = .climateHabitAnnualPerennial
+      case "CLIMATE_HABIT_BAMBOO": self = .climateHabitBamboo
+      case "CLIMATE_HABIT_BULB": self = .climateHabitBulb
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
-      case .climateHabitAnnualPerennial: return "CLIMATE_HABIT_ANNUAL_PERENNIAL"
-      case .climateHabitBiennialPerennial: return "CLIMATE_HABIT_BIENNIAL_PERENNIAL"
-      case .climateHabitBulb: return "CLIMATE_HABIT_BULB"
-      case .climateHabitFern: return "CLIMATE_HABIT_FERN"
       case .climateHabitPerennial: return "CLIMATE_HABIT_PERENNIAL"
-      case .climateHabitPerennialClimber: return "CLIMATE_HABIT_PERENNIAL_CLIMBER"
-      case .climateHabitAnnualClimber: return "CLIMATE_HABIT_ANNUAL_CLIMBER"
-      case .climateHabitBamboo: return "CLIMATE_HABIT_BAMBOO"
-      case .climateHabitBiennial: return "CLIMATE_HABIT_BIENNIAL"
-      case .climateHabitClimber: return "CLIMATE_HABIT_CLIMBER"
       case .climateHabitShrub: return "CLIMATE_HABIT_SHRUB"
       case .climateHabitTree: return "CLIMATE_HABIT_TREE"
+      case .climateHabitBiennial: return "CLIMATE_HABIT_BIENNIAL"
+      case .climateHabitBiennialPerennial: return "CLIMATE_HABIT_BIENNIAL_PERENNIAL"
+      case .climateHabitClimber: return "CLIMATE_HABIT_CLIMBER"
+      case .climateHabitFern: return "CLIMATE_HABIT_FERN"
+      case .climateHabitPerennialClimber: return "CLIMATE_HABIT_PERENNIAL_CLIMBER"
+      case .climateHabitAnnualClimber: return "CLIMATE_HABIT_ANNUAL_CLIMBER"
+      case .climateHabitAnnualPerennial: return "CLIMATE_HABIT_ANNUAL_PERENNIAL"
+      case .climateHabitBamboo: return "CLIMATE_HABIT_BAMBOO"
+      case .climateHabitBulb: return "CLIMATE_HABIT_BULB"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: ClimateHabit, rhs: ClimateHabit) -> Bool {
     switch (lhs, rhs) {
-      case (.climateHabitAnnualPerennial, .climateHabitAnnualPerennial): return true
-      case (.climateHabitBiennialPerennial, .climateHabitBiennialPerennial): return true
-      case (.climateHabitBulb, .climateHabitBulb): return true
-      case (.climateHabitFern, .climateHabitFern): return true
       case (.climateHabitPerennial, .climateHabitPerennial): return true
-      case (.climateHabitPerennialClimber, .climateHabitPerennialClimber): return true
-      case (.climateHabitAnnualClimber, .climateHabitAnnualClimber): return true
-      case (.climateHabitBamboo, .climateHabitBamboo): return true
-      case (.climateHabitBiennial, .climateHabitBiennial): return true
-      case (.climateHabitClimber, .climateHabitClimber): return true
       case (.climateHabitShrub, .climateHabitShrub): return true
       case (.climateHabitTree, .climateHabitTree): return true
+      case (.climateHabitBiennial, .climateHabitBiennial): return true
+      case (.climateHabitBiennialPerennial, .climateHabitBiennialPerennial): return true
+      case (.climateHabitClimber, .climateHabitClimber): return true
+      case (.climateHabitFern, .climateHabitFern): return true
+      case (.climateHabitPerennialClimber, .climateHabitPerennialClimber): return true
+      case (.climateHabitAnnualClimber, .climateHabitAnnualClimber): return true
+      case (.climateHabitAnnualPerennial, .climateHabitAnnualPerennial): return true
+      case (.climateHabitBamboo, .climateHabitBamboo): return true
+      case (.climateHabitBulb, .climateHabitBulb): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -163,81 +163,81 @@ public enum ClimateHabit: RawRepresentable, Equatable, Hashable, CaseIterable, A
 
   public static var allCases: [ClimateHabit] {
     return [
-      .climateHabitAnnualPerennial,
-      .climateHabitBiennialPerennial,
-      .climateHabitBulb,
-      .climateHabitFern,
       .climateHabitPerennial,
-      .climateHabitPerennialClimber,
-      .climateHabitAnnualClimber,
-      .climateHabitBamboo,
-      .climateHabitBiennial,
-      .climateHabitClimber,
       .climateHabitShrub,
       .climateHabitTree,
+      .climateHabitBiennial,
+      .climateHabitBiennialPerennial,
+      .climateHabitClimber,
+      .climateHabitFern,
+      .climateHabitPerennialClimber,
+      .climateHabitAnnualClimber,
+      .climateHabitAnnualPerennial,
+      .climateHabitBamboo,
+      .climateHabitBulb,
     ]
   }
 }
 
 public enum ClimateMoisture: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
-  case climateMoistureMwe
-  case climateMoistureMweWa
-  case climateMoistureWa
-  case climateMoistureWem
-  case climateMoistureM
   case climateMoistureWewa
-  case climateMoistureD
-  case climateMoistureDm
+  case climateMoistureM
+  case climateMoistureWa
   case climateMoistureDmw
   case climateMoistureDmwe
+  case climateMoistureMwe
+  case climateMoistureMweWa
+  case climateMoistureWem
+  case climateMoistureD
+  case climateMoistureDm
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
-      case "CLIMATE_MOISTURE_MWE": self = .climateMoistureMwe
-      case "CLIMATE_MOISTURE_MWEWa": self = .climateMoistureMweWa
-      case "CLIMATE_MOISTURE_WA": self = .climateMoistureWa
-      case "CLIMATE_MOISTURE_WEM": self = .climateMoistureWem
-      case "CLIMATE_MOISTURE_M": self = .climateMoistureM
       case "CLIMATE_MOISTURE_WEWA": self = .climateMoistureWewa
-      case "CLIMATE_MOISTURE_D": self = .climateMoistureD
-      case "CLIMATE_MOISTURE_DM": self = .climateMoistureDm
+      case "CLIMATE_MOISTURE_M": self = .climateMoistureM
+      case "CLIMATE_MOISTURE_WA": self = .climateMoistureWa
       case "CLIMATE_MOISTURE_DMW": self = .climateMoistureDmw
       case "CLIMATE_MOISTURE_DMWE": self = .climateMoistureDmwe
+      case "CLIMATE_MOISTURE_MWE": self = .climateMoistureMwe
+      case "CLIMATE_MOISTURE_MWEWa": self = .climateMoistureMweWa
+      case "CLIMATE_MOISTURE_WEM": self = .climateMoistureWem
+      case "CLIMATE_MOISTURE_D": self = .climateMoistureD
+      case "CLIMATE_MOISTURE_DM": self = .climateMoistureDm
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
-      case .climateMoistureMwe: return "CLIMATE_MOISTURE_MWE"
-      case .climateMoistureMweWa: return "CLIMATE_MOISTURE_MWEWa"
-      case .climateMoistureWa: return "CLIMATE_MOISTURE_WA"
-      case .climateMoistureWem: return "CLIMATE_MOISTURE_WEM"
-      case .climateMoistureM: return "CLIMATE_MOISTURE_M"
       case .climateMoistureWewa: return "CLIMATE_MOISTURE_WEWA"
-      case .climateMoistureD: return "CLIMATE_MOISTURE_D"
-      case .climateMoistureDm: return "CLIMATE_MOISTURE_DM"
+      case .climateMoistureM: return "CLIMATE_MOISTURE_M"
+      case .climateMoistureWa: return "CLIMATE_MOISTURE_WA"
       case .climateMoistureDmw: return "CLIMATE_MOISTURE_DMW"
       case .climateMoistureDmwe: return "CLIMATE_MOISTURE_DMWE"
+      case .climateMoistureMwe: return "CLIMATE_MOISTURE_MWE"
+      case .climateMoistureMweWa: return "CLIMATE_MOISTURE_MWEWa"
+      case .climateMoistureWem: return "CLIMATE_MOISTURE_WEM"
+      case .climateMoistureD: return "CLIMATE_MOISTURE_D"
+      case .climateMoistureDm: return "CLIMATE_MOISTURE_DM"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: ClimateMoisture, rhs: ClimateMoisture) -> Bool {
     switch (lhs, rhs) {
-      case (.climateMoistureMwe, .climateMoistureMwe): return true
-      case (.climateMoistureMweWa, .climateMoistureMweWa): return true
-      case (.climateMoistureWa, .climateMoistureWa): return true
-      case (.climateMoistureWem, .climateMoistureWem): return true
-      case (.climateMoistureM, .climateMoistureM): return true
       case (.climateMoistureWewa, .climateMoistureWewa): return true
-      case (.climateMoistureD, .climateMoistureD): return true
-      case (.climateMoistureDm, .climateMoistureDm): return true
+      case (.climateMoistureM, .climateMoistureM): return true
+      case (.climateMoistureWa, .climateMoistureWa): return true
       case (.climateMoistureDmw, .climateMoistureDmw): return true
       case (.climateMoistureDmwe, .climateMoistureDmwe): return true
+      case (.climateMoistureMwe, .climateMoistureMwe): return true
+      case (.climateMoistureMweWa, .climateMoistureMweWa): return true
+      case (.climateMoistureWem, .climateMoistureWem): return true
+      case (.climateMoistureD, .climateMoistureD): return true
+      case (.climateMoistureDm, .climateMoistureDm): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -245,63 +245,63 @@ public enum ClimateMoisture: RawRepresentable, Equatable, Hashable, CaseIterable
 
   public static var allCases: [ClimateMoisture] {
     return [
-      .climateMoistureMwe,
-      .climateMoistureMweWa,
-      .climateMoistureWa,
-      .climateMoistureWem,
-      .climateMoistureM,
       .climateMoistureWewa,
-      .climateMoistureD,
-      .climateMoistureDm,
+      .climateMoistureM,
+      .climateMoistureWa,
       .climateMoistureDmw,
       .climateMoistureDmwe,
+      .climateMoistureMwe,
+      .climateMoistureMweWa,
+      .climateMoistureWem,
+      .climateMoistureD,
+      .climateMoistureDm,
     ]
   }
 }
 
 public enum ClimatePh: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
+  case climatePhB
   case climatePhN
   case climatePhNb
   case climatePhA
   case climatePhAn
   case climatePhAnb
-  case climatePhB
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
+      case "CLIMATE_PH_B": self = .climatePhB
       case "CLIMATE_PH_N": self = .climatePhN
       case "CLIMATE_PH_NB": self = .climatePhNb
       case "CLIMATE_PH_A": self = .climatePhA
       case "CLIMATE_PH_AN": self = .climatePhAn
       case "CLIMATE_PH_ANB": self = .climatePhAnb
-      case "CLIMATE_PH_B": self = .climatePhB
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
+      case .climatePhB: return "CLIMATE_PH_B"
       case .climatePhN: return "CLIMATE_PH_N"
       case .climatePhNb: return "CLIMATE_PH_NB"
       case .climatePhA: return "CLIMATE_PH_A"
       case .climatePhAn: return "CLIMATE_PH_AN"
       case .climatePhAnb: return "CLIMATE_PH_ANB"
-      case .climatePhB: return "CLIMATE_PH_B"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: ClimatePh, rhs: ClimatePh) -> Bool {
     switch (lhs, rhs) {
+      case (.climatePhB, .climatePhB): return true
       case (.climatePhN, .climatePhN): return true
       case (.climatePhNb, .climatePhNb): return true
       case (.climatePhA, .climatePhA): return true
       case (.climatePhAn, .climatePhAn): return true
       case (.climatePhAnb, .climatePhAnb): return true
-      case (.climatePhB, .climatePhB): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -309,12 +309,12 @@ public enum ClimatePh: RawRepresentable, Equatable, Hashable, CaseIterable, Apol
 
   public static var allCases: [ClimatePh] {
     return [
+      .climatePhB,
       .climatePhN,
       .climatePhNb,
       .climatePhA,
       .climatePhAn,
       .climatePhAnb,
-      .climatePhB,
     ]
   }
 }
@@ -460,43 +460,43 @@ public struct InputPagination: GraphQLMapConvertible {
 
 public enum Social: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
+  case `none`
   case fb
   case google
   case apple
   case instagram
-  case `none`
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
+      case "NONE": self = .none
       case "FB": self = .fb
       case "GOOGLE": self = .google
       case "APPLE": self = .apple
       case "INSTAGRAM": self = .instagram
-      case "NONE": self = .none
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
+      case .none: return "NONE"
       case .fb: return "FB"
       case .google: return "GOOGLE"
       case .apple: return "APPLE"
       case .instagram: return "INSTAGRAM"
-      case .none: return "NONE"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: Social, rhs: Social) -> Bool {
     switch (lhs, rhs) {
+      case (.none, .none): return true
       case (.fb, .fb): return true
       case (.google, .google): return true
       case (.apple, .apple): return true
       case (.instagram, .instagram): return true
-      case (.none, .none): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -504,42 +504,42 @@ public enum Social: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.
 
   public static var allCases: [Social] {
     return [
+      .none,
       .fb,
       .google,
       .apple,
       .instagram,
-      .none,
     ]
   }
 }
 
 public enum Lang: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
-  case `is`
   case en
+  case `is`
   /// Auto generated constant for unknown enum values
   case __unknown(RawValue)
 
   public init?(rawValue: RawValue) {
     switch rawValue {
-      case "IS": self = .is
       case "EN": self = .en
+      case "IS": self = .is
       default: self = .__unknown(rawValue)
     }
   }
 
   public var rawValue: RawValue {
     switch self {
-      case .is: return "IS"
       case .en: return "EN"
+      case .is: return "IS"
       case .__unknown(let value): return value
     }
   }
 
   public static func == (lhs: Lang, rhs: Lang) -> Bool {
     switch (lhs, rhs) {
-      case (.is, .is): return true
       case (.en, .en): return true
+      case (.is, .is): return true
       case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -547,8 +547,8 @@ public enum Lang: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JS
 
   public static var allCases: [Lang] {
     return [
-      .is,
       .en,
+      .is,
     ]
   }
 }
@@ -2009,6 +2009,62 @@ public final class MeQuery: GraphQLQuery {
             resultMap.updateValue(newValue, forKey: "isPremium")
           }
         }
+      }
+    }
+  }
+}
+
+public final class SetFavoritePlantByIdMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SetFavoritePlantById($id: String!, $isFavorite: Boolean!) {
+      setFavoritePlantById(id: $id, isFavorite: $isFavorite)
+    }
+    """
+
+  public let operationName: String = "SetFavoritePlantById"
+
+  public var id: String
+  public var isFavorite: Bool
+
+  public init(id: String, isFavorite: Bool) {
+    self.id = id
+    self.isFavorite = isFavorite
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id, "isFavorite": isFavorite]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("setFavoritePlantById", arguments: ["id": GraphQLVariable("id"), "isFavorite": GraphQLVariable("isFavorite")], type: .nonNull(.scalar(Bool.self))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(setFavoritePlantById: Bool) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "setFavoritePlantById": setFavoritePlantById])
+    }
+
+    /// Резолвер добавляет или убирает плант из избранноего. Нужно передавать то значение була которое нужно установить.
+    /// Если передали true - значит элемент будет добавлен в избранное.
+    /// Возвращается значение этого була которое получилось после записи в базу.
+    public var setFavoritePlantById: Bool {
+      get {
+        return resultMap["setFavoritePlantById"]! as! Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "setFavoritePlantById")
       }
     }
   }

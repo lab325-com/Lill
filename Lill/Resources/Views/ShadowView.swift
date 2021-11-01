@@ -24,6 +24,25 @@ class ShadowView: UIView {
             self.updateView()
         }
     }
+    @IBInspectable var shadowBlur: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue / 2.0
+        }
+    }
+    @IBInspectable var shadowSpread: CGFloat = 0 {
+        didSet {
+            if shadowSpread == 0 {
+                layer.shadowPath = nil
+            } else {
+                let dx = -shadowSpread
+                let rect = bounds.insetBy(dx: dx, dy: dx)
+                layer.shadowPath = UIBezierPath(rect: rect).cgPath
+            }
+        }
+    }
 
     @IBInspectable var isRoundRadius: Bool = false {
         didSet {

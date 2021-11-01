@@ -18,10 +18,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantsDetailController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="aboutView" destination="PZu-Se-DMy" id="ABa-r8-4Hp"/>
+                <outlet property="addToGardenButton" destination="kxN-TC-u5w" id="ttj-c8-Vrv"/>
+                <outlet property="descriptionsLabels" destination="JHw-lH-yAz" id="vHu-EK-vsA"/>
+                <outlet property="favoriteButton" destination="eGV-5c-Bd7" id="Azd-RU-hKn"/>
+                <outlet property="favoriteStatusImage" destination="nbJ-XO-JPJ" id="a4H-mu-0w9"/>
+                <outlet property="favoriteStatusLabel" destination="aN1-1P-5uS" id="aTu-ej-Zfm"/>
+                <outlet property="favoriteStatusViewBottomLayout" destination="F3a-CK-4Ld" id="4ly-A5-6bk"/>
+                <outlet property="mainImageView" destination="YaP-BC-ua1" id="h4M-On-ysz"/>
                 <outlet property="moreOnWikiButton" destination="3T3-8h-CRL" id="Qz4-oj-zq1"/>
+                <outlet property="nameLabels" destination="78O-JT-7F4" id="wRS-NM-o51"/>
                 <outlet property="scrollView" destination="oSy-dc-sRC" id="YVE-La-LVS"/>
+                <outlet property="topAboutLayout" destination="kj2-rZ-dR6" id="PQW-Iq-teB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="wishButton" destination="eGV-5c-Bd7" id="yZ7-Qb-hMJ"/>
                 <outletCollection property="detailsView" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="fmt-VW-S1D"/>
                 <outletCollection property="detailsView" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="wTZ-Md-V6z"/>
                 <outletCollection property="detailsView" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="XBn-TZ-NP1"/>
@@ -37,6 +46,10 @@
                 <outletCollection property="verticalStacks" destination="rFU-ZL-urU" collectionClass="NSMutableArray" id="Jme-XP-Uuc"/>
                 <outletCollection property="verticalStacks" destination="Aub-Ow-Mrn" collectionClass="NSMutableArray" id="IYt-E5-pzK"/>
                 <outletCollection property="verticalStacks" destination="cdq-lT-6SN" collectionClass="NSMutableArray" id="fwQ-OF-w7W"/>
+                <outletCollection property="middleLinesViews" destination="B8C-bW-cla" collectionClass="NSMutableArray" id="r71-Mx-Nb9"/>
+                <outletCollection property="middleLinesViews" destination="PDi-uo-xwk" collectionClass="NSMutableArray" id="7I0-oW-mfB"/>
+                <outletCollection property="middleLinesViews" destination="8g6-le-7bn" collectionClass="NSMutableArray" id="ee7-VN-m3d"/>
+                <outletCollection property="middleLinesViews" destination="kLL-vy-jqh" collectionClass="NSMutableArray" id="qtL-u2-ZSe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -91,10 +104,10 @@
                                                         <constraint firstAttribute="width" constant="86" id="C2y-Zi-Bst"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="plants_detail_no_wish_ic"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
+                                                    <buttonConfiguration key="configuration" style="plain" image="plants_detail_no_favorite_ic"/>
+                                                    <connections>
+                                                        <action selector="plantFavoriteAction:" destination="-1" eventType="touchUpInside" id="RNn-nj-6jN"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-TC-u5w">
                                                     <rect key="frame" x="98" y="0.0" width="288" height="44"/>
@@ -116,11 +129,6 @@
                                                             </fragment>
                                                         </attributedString>
                                                     </buttonConfiguration>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="22"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -201,7 +209,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uo-xwk">
+                                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDi-uo-xwk">
                                                             <rect key="frame" x="192.5" y="0.0" width="1" height="140"/>
                                                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -232,7 +240,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g6-le-7bn">
+                                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g6-le-7bn">
                                                             <rect key="frame" x="192.5" y="0.0" width="1" height="140"/>
                                                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -263,7 +271,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="192.5" height="140"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-vy-jqh">
+                                                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLL-vy-jqh">
                                                             <rect key="frame" x="192.5" y="0.0" width="1" height="140"/>
                                                             <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -401,11 +409,54 @@
                         <constraint firstItem="pCH-Ba-jzf" firstAttribute="top" secondItem="oSy-dc-sRC" secondAttribute="top" id="zxL-5h-AaZ"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Is-Oa-8Bd" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="24" y="1435" width="386" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Removed from Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN1-1P-5uS">
+                            <rect key="frame" x="15" y="20" width="262" height="20.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_removed_favorites_ic" translatesAutoresizingMaskIntoConstraints="NO" id="nbJ-XO-JPJ">
+                            <rect key="frame" x="292" y="8" width="86" height="44"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="2aP-J7-ee6"/>
+                        <constraint firstItem="nbJ-XO-JPJ" firstAttribute="centerY" secondItem="7Is-Oa-8Bd" secondAttribute="centerY" id="NQM-rG-y26"/>
+                        <constraint firstItem="nbJ-XO-JPJ" firstAttribute="leading" secondItem="aN1-1P-5uS" secondAttribute="trailing" constant="15" id="OZl-MG-vxw"/>
+                        <constraint firstItem="aN1-1P-5uS" firstAttribute="leading" secondItem="7Is-Oa-8Bd" secondAttribute="leading" constant="15" id="Qsh-RZ-cL6"/>
+                        <constraint firstItem="aN1-1P-5uS" firstAttribute="centerY" secondItem="7Is-Oa-8Bd" secondAttribute="centerY" id="o5u-vx-kYY"/>
+                        <constraint firstAttribute="trailing" secondItem="nbJ-XO-JPJ" secondAttribute="trailing" constant="8" id="zhg-FO-hom"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.76470588235294112" green="0.43137254901960786" blue="0.81960784313725488" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="oSy-dc-sRC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2S3-u9-ih8"/>
+                <constraint firstAttribute="bottom" secondItem="7Is-Oa-8Bd" secondAttribute="bottom" constant="-65" id="F3a-CK-4Ld"/>
                 <constraint firstItem="oSy-dc-sRC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OSI-nS-6Jh"/>
+                <constraint firstAttribute="trailing" secondItem="7Is-Oa-8Bd" secondAttribute="trailing" constant="24" id="RB1-Ty-Waq"/>
+                <constraint firstItem="7Is-Oa-8Bd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="So4-0D-0rt"/>
                 <constraint firstAttribute="bottom" secondItem="oSy-dc-sRC" secondAttribute="bottom" id="Y7o-Gm-IOv"/>
                 <constraint firstAttribute="top" secondItem="YaP-BC-ua1" secondAttribute="top" priority="900" id="h65-Kx-2ly"/>
                 <constraint firstItem="oSy-dc-sRC" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="kdZ-Og-79U"/>
@@ -421,7 +472,8 @@
     <resources>
         <image name="plants_detail_back_ic" width="390" height="1041"/>
         <image name="plants_detail_green_ic" width="34" height="61"/>
-        <image name="plants_detail_no_wish_ic" width="25" height="22"/>
+        <image name="plants_detail_no_favorite_ic" width="25" height="22"/>
+        <image name="plants_detail_removed_favorites_ic" width="86" height="44"/>
         <image name="temp_detail_ic" width="390" height="349"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
