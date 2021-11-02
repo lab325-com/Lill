@@ -464,8 +464,8 @@ struct R: Rswift.Validatable {
     static let plants_detail_removed_favorites_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_removed_favorites_ic")
     /// Image `plants_detail_rotating_ic`.
     static let plants_detail_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_rotating_ic")
-    /// Image `plants_detail_water_ic`.
-    static let plants_detail_water_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_water_ic")
+    /// Image `plants_detail_watering_ic`.
+    static let plants_detail_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_watering_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
     /// Image `temp_onboarding_1_ic`.
@@ -956,9 +956,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_water_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_water_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_water_ic, compatibleWith: traitCollection)
+    /// `UIImage(named: "plants_detail_watering_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_watering_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_watering_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1345,7 +1345,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 126 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 132 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1487,6 +1487,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_moisture_dmwe = Rswift.StringResource(key: "climate_moisture_dmwe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Days
+      ///
+      /// Locales: en, es
+      static let care_period_type_days = Rswift.StringResource(key: "care_period_type_days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Deciduous
       ///
       /// Locales: en, es
@@ -1611,6 +1615,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_language = Rswift.StringResource(key: "menu_item_language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Language
+      ///
+      /// Locales: en, es
+      static let menu_laguage_title = Rswift.StringResource(key: "menu_laguage_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Log out
       ///
       /// Locales: en, es
@@ -1675,6 +1683,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_more_on_wiki = Rswift.StringResource(key: "plant_detail_more_on_wiki", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Mounths
+      ///
+      /// Locales: en, es
+      static let care_period_type_mounths = Rswift.StringResource(key: "care_period_type_mounths", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: N
       ///
       /// Locales: en, es
@@ -1747,14 +1759,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_result_retake_photo = Rswift.StringResource(key: "identify_result_retake_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Rotate
+      /// en translation: Rotating
       ///
       /// Locales: en, es
-      static let care_type_rotate = Rswift.StringResource(key: "care_type_rotate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      static let care_type_rotating = Rswift.StringResource(key: "care_type_rotating", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: S
       ///
       /// Locales: en, es
       static let climate_shade_s = Rswift.StringResource(key: "climate_shade_s", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: SELECT LANGUAGE
+      ///
+      /// Locales: en, es
+      static let menu_language_header = Rswift.StringResource(key: "menu_language_header", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: SN
       ///
       /// Locales: en, es
@@ -1803,6 +1819,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_deciduous = Rswift.StringResource(key: "climate_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Unknown
+      ///
+      /// Locales: en, es
+      static let care_period_type_unknown = Rswift.StringResource(key: "care_period_type_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: WA
       ///
       /// Locales: en, es
@@ -1819,6 +1839,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let care_type_watering = Rswift.StringResource(key: "care_type_watering", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Weeks
+      ///
+      /// Locales: en, es
+      static let care_period_type_weeks = Rswift.StringResource(key: "care_period_type_weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Wishlist
       ///
       /// Locales: en, es
@@ -2377,6 +2401,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_moisture_dmwe", bundle: bundle, comment: "")
       }
 
+      /// en translation: Days
+      ///
+      /// Locales: en, es
+      static func care_period_type_days(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("care_period_type_days", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "care_period_type_days"
+        }
+
+        return NSLocalizedString("care_period_type_days", bundle: bundle, comment: "")
+      }
+
       /// en translation: Deciduous
       ///
       /// Locales: en, es
@@ -2842,6 +2881,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_item_language", bundle: bundle, comment: "")
       }
 
+      /// en translation: Language
+      ///
+      /// Locales: en, es
+      static func menu_laguage_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("menu_laguage_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "menu_laguage_title"
+        }
+
+        return NSLocalizedString("menu_laguage_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Log out
       ///
       /// Locales: en, es
@@ -3080,6 +3134,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plant_detail_more_on_wiki", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Mounths
+      ///
+      /// Locales: en, es
+      static func care_period_type_mounths(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("care_period_type_mounths", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "care_period_type_mounths"
+        }
+
+        return NSLocalizedString("care_period_type_mounths", bundle: bundle, comment: "")
       }
 
       /// en translation: N
@@ -3352,19 +3421,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_result_retake_photo", bundle: bundle, comment: "")
       }
 
-      /// en translation: Rotate
+      /// en translation: Rotating
       ///
       /// Locales: en, es
-      static func care_type_rotate(preferredLanguages: [String]? = nil) -> String {
+      static func care_type_rotating(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("care_type_rotate", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("care_type_rotating", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "care_type_rotate"
+          return "care_type_rotating"
         }
 
-        return NSLocalizedString("care_type_rotate", bundle: bundle, comment: "")
+        return NSLocalizedString("care_type_rotating", bundle: bundle, comment: "")
       }
 
       /// en translation: S
@@ -3380,6 +3449,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_shade_s", bundle: bundle, comment: "")
+      }
+
+      /// en translation: SELECT LANGUAGE
+      ///
+      /// Locales: en, es
+      static func menu_language_header(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("menu_language_header", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "menu_language_header"
+        }
+
+        return NSLocalizedString("menu_language_header", bundle: bundle, comment: "")
       }
 
       /// en translation: SN
@@ -3562,6 +3646,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_deciduous", bundle: bundle, comment: "")
       }
 
+      /// en translation: Unknown
+      ///
+      /// Locales: en, es
+      static func care_period_type_unknown(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("care_period_type_unknown", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "care_period_type_unknown"
+        }
+
+        return NSLocalizedString("care_period_type_unknown", bundle: bundle, comment: "")
+      }
+
       /// en translation: WA
       ///
       /// Locales: en, es
@@ -3620,6 +3719,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("care_type_watering", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Weeks
+      ///
+      /// Locales: en, es
+      static func care_period_type_weeks(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("care_period_type_weeks", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "care_period_type_weeks"
+        }
+
+        return NSLocalizedString("care_period_type_weeks", bundle: bundle, comment: "")
       }
 
       /// en translation: Wishlist

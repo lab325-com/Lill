@@ -24,6 +24,7 @@
                 <outlet property="aboutTitleLabel" destination="J21-go-j76" id="r9Y-Ab-bg4"/>
                 <outlet property="aboutView" destination="PZu-Se-DMy" id="ABa-r8-4Hp"/>
                 <outlet property="addToGardenButton" destination="kxN-TC-u5w" id="1D1-d9-dba"/>
+                <outlet property="careView" destination="5vc-zO-TKz" id="d5x-3B-6oh"/>
                 <outlet property="caresTitleLabel" destination="Ngb-fQ-l8C" id="zYs-cn-akf"/>
                 <outlet property="descriptionLabel" destination="JHw-lH-yAz" id="1L0-md-Kha"/>
                 <outlet property="favoriteButton" destination="eGV-5c-Bd7" id="Azd-RU-hKn"/>
@@ -35,15 +36,8 @@
                 <outlet property="nameLabel" destination="78O-JT-7F4" id="xsu-Me-9Ge"/>
                 <outlet property="scrollView" destination="oSy-dc-sRC" id="YVE-La-LVS"/>
                 <outlet property="topAboutLayout" destination="kj2-rZ-dR6" id="PQW-Iq-teB"/>
+                <outlet property="topCareLayout" destination="Xq8-eH-goU" id="hqr-H7-72l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="detailsView" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="fmt-VW-S1D"/>
-                <outletCollection property="detailsView" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="wTZ-Md-V6z"/>
-                <outletCollection property="detailsView" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="XBn-TZ-NP1"/>
-                <outletCollection property="detailsView" destination="Ysc-e2-SUY" collectionClass="NSMutableArray" id="plk-nC-Ve3"/>
-                <outletCollection property="detailsView" destination="5pk-3Q-R0a" collectionClass="NSMutableArray" id="3rx-FF-Mjw"/>
-                <outletCollection property="detailsView" destination="5qR-6o-IJr" collectionClass="NSMutableArray" id="ZxM-H2-425"/>
-                <outletCollection property="detailsView" destination="MC7-Df-soA" collectionClass="NSMutableArray" id="g2g-WB-w71"/>
-                <outletCollection property="detailsView" destination="GM0-Yt-jlh" collectionClass="NSMutableArray" id="IBR-gK-Hde"/>
                 <outletCollection property="separeteViews" destination="Gdm-GS-9nm" collectionClass="NSMutableArray" id="hhY-oZ-G03"/>
                 <outletCollection property="separeteViews" destination="LRt-Rr-paN" collectionClass="NSMutableArray" id="Man-Rl-ZAq"/>
                 <outletCollection property="separeteViews" destination="lcf-af-kNQ" collectionClass="NSMutableArray" id="1Xr-in-4Gi"/>
@@ -55,6 +49,18 @@
                 <outletCollection property="middleLinesViews" destination="PDi-uo-xwk" collectionClass="NSMutableArray" id="7I0-oW-mfB"/>
                 <outletCollection property="middleLinesViews" destination="8g6-le-7bn" collectionClass="NSMutableArray" id="ee7-VN-m3d"/>
                 <outletCollection property="middleLinesViews" destination="kLL-vy-jqh" collectionClass="NSMutableArray" id="qtL-u2-ZSe"/>
+                <outletCollection property="caresViews" destination="MHw-ra-rYD" collectionClass="NSMutableArray" id="MHg-0e-yUh"/>
+                <outletCollection property="caresViews" destination="wDa-5n-mc4" collectionClass="NSMutableArray" id="kLP-ZF-Whr"/>
+                <outletCollection property="caresViews" destination="H2W-e8-XcL" collectionClass="NSMutableArray" id="RQw-9E-xHj"/>
+                <outletCollection property="caresViews" destination="skp-RX-ODv" collectionClass="NSMutableArray" id="zvo-vp-gGO"/>
+                <outletCollection property="aboutViews" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="vQX-aB-Tau"/>
+                <outletCollection property="aboutViews" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="cPt-rD-rG6"/>
+                <outletCollection property="aboutViews" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="wWx-wg-a7m"/>
+                <outletCollection property="aboutViews" destination="Ysc-e2-SUY" collectionClass="NSMutableArray" id="kyW-Ly-mE3"/>
+                <outletCollection property="aboutViews" destination="5pk-3Q-R0a" collectionClass="NSMutableArray" id="hx8-0N-aq5"/>
+                <outletCollection property="aboutViews" destination="5qR-6o-IJr" collectionClass="NSMutableArray" id="CQm-bf-OtA"/>
+                <outletCollection property="aboutViews" destination="MC7-Df-soA" collectionClass="NSMutableArray" id="IvI-2j-48K"/>
+                <outletCollection property="aboutViews" destination="GM0-Yt-jlh" collectionClass="NSMutableArray" id="lkF-bb-EHf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -333,15 +339,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100.5" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDa-5n-mc4" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDa-5n-mc4" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="103.5" y="0.0" width="100" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2W-e8-XcL" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2W-e8-XcL" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="206.5" y="0.0" width="100.5" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skp-RX-ODv" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skp-RX-ODv" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="310" y="0.0" width="100" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>

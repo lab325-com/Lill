@@ -14,12 +14,19 @@ enum PlantsAboutType: Int, CaseIterable {
     case hardiness
 }
 
+enum PlantsCareType: String, CaseIterable {
+    case humidity = "CARE_TYPE_HUMIDITY"
+    case misting = "CARE_TYPE_MISTING"
+    case rotating = "CARE_TYPE_ROTATE"
+    case watering = "CARE_TYPE_WATERING"
+}
+
 //----------------------------------------------
 // MARK: - Outputs Protocol
 //----------------------------------------------
 
 protocol PlantsDetailOutputProtocol: BaseController {
-    func success(model: PlantDataModel, abouts: [PlantsAboutType])
+    func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)])
     func success(model: FavoritePlantDataModel)
     func failure(error: String)
 }
@@ -65,7 +72,8 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
             guard let `self` = self else { return }
             self.view?.stopLoading()
             let about = self.createAbout(model: model)
-            self.view?.success(model: model, abouts: about)
+            let cares = self.createCares(model: model)
+            self.view?.success(model: model, abouts: about, cares: cares)
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
@@ -108,5 +116,20 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         }
         
         return abouts
+    }
+    
+    func createCares(model: PlantDataModel) -> [(type: PlantsCareType, care: CaresModel)] {
+        var caresType = [(type: PlantsCareType, care: CaresModel)]()
+        let cares = model.plantById.cares
+        for care in cares {
+            if let type = PlantsCareType(rawValue: care.type.name) {
+                caresType.append((type: type, care: care))
+                if caresType.count == 4 {
+                    return caresType
+                }
+            }
+        }
+        
+        return caresType
     }
 }

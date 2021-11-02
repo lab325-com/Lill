@@ -1,7 +1,11 @@
 "activity_title" = "Espere por favor";
+"care_period_type_days" = "Dias";
+"care_period_type_mounths" = "Montones";
+"care_period_type_unknown" = "Desconocido";
+"care_period_type_weeks" = "Semanas";
 "care_type_humidity" = "Humedad";
 "care_type_misting" = "Empañado";
-"care_type_rotate" = "Girar";
+"care_type_rotating" = "Giratorio";
 "care_type_watering" = "Riego";
 "choose_identify_cancel" = "Cancelar";
 "choose_identify_diagnosis" = "Diagnóstico";
@@ -104,6 +108,8 @@
 "menu_item_share" = "Invitar a tus amigos (compartir la aplicación)";
 "menu_item_subscriptions" = "Suscripciones";
 "menu_item_terms" = "Condiciones";
+"menu_laguage_title" = "Idioma";
+"menu_language_header" = "SELECCIONE EL IDIOMA";
 "menu_log_out" = "Cerrar sesión";
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";

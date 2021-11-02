@@ -1,7 +1,11 @@
 "activity_title" = "Please wait";
+"care_period_type_days" = "Days";
+"care_period_type_mounths" = "Mounths";
+"care_period_type_unknown" = "Unknown";
+"care_period_type_weeks" = "Weeks";
 "care_type_humidity" = "Humidity";
 "care_type_misting" = "Misting";
-"care_type_rotate" = "Rotate";
+"care_type_rotating" = "Rotating";
 "care_type_watering" = "Watering";
 "choose_identify_cancel" = "Cancel";
 "choose_identify_diagnosis" = "Diagnosis";
@@ -104,6 +108,8 @@
 "menu_item_share" = "Invite friends (share app)";
 "menu_item_subscriptions" = "Subscriptions";
 "menu_item_terms" = "Terms";
+"menu_laguage_title" = "Language";
+"menu_language_header" = "SELECT LANGUAGE";
 "menu_log_out" = "Log out";
 "menu_section_archive_title" = "archive";
 "menu_section_settings_title" = "settings";

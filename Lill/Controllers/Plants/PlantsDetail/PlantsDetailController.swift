@@ -16,14 +16,17 @@ class PlantsDetailController: BaseController {
     @IBOutlet weak var moreOnWikiButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet var detailsView: [DetailAboutView]!
+    @IBOutlet var aboutViews: [DetailAboutView]!
+    @IBOutlet var caresViews: [DetailCaresView]!
     
     @IBOutlet var verticalStacks: [UIStackView]!
     @IBOutlet var separeteViews: [UIView]!
-    
-    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet var middleLinesViews: [UIView]!
     
+    @IBOutlet weak var mainImageView: UIImageView!
+    
+    @IBOutlet weak var careView: UIView!
+    @IBOutlet weak var topCareLayout: NSLayoutConstraint!
     @IBOutlet weak var aboutView: UIView!
     @IBOutlet weak var topAboutLayout: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
@@ -151,7 +154,7 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
         showFavoriteStatusView(isFavorite: model.setFavoritePlantById)
     }
     
-    func success(model: PlantDataModel, abouts: [PlantsAboutType]) {
+    func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)]) {
                 
         mainImageView.kf.setImage(with: URL(string: model.plantById.mainImages.first?.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
         
@@ -173,12 +176,12 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
             updateFavoriteButton(isFavorite: isFavorite)
         }
         
-        for view in detailsView {
+        for view in aboutViews {
             view.isHidden = true
         }
         
         for index in 0..<abouts.count {
-            if let about = abouts[safe: index],  let view = detailsView[safe: index] {
+            if let about = abouts[safe: index],  let view = aboutViews[safe: index] {
                 view.isHidden = false
                 view.setup(about: about, model: model)
             }
@@ -217,6 +220,26 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
         case 7:
             middleLinesViews.first(where: {$0.tag == 3})?.isHidden = true
         default: break
+        }
+        
+        for view in caresViews {
+            view.isHidden = true
+        }
+        
+        for index in 0..<cares.count {
+            if let care = cares[safe: index], let view = caresViews[safe: index] {
+                view.isHidden = false
+                view.setup(care: care)
+            }
+        }
+        
+        if cares.count == 0 {
+            careView.isHidden = true
+            DispatchQueue.main.async {
+                self.topCareLayout.constant = -self.careView.frame.height
+                self.view.layoutIfNeeded()
+            }
+            return
         }
         
         UIView.animate(withDuration: 0.3) { [weak self] in
