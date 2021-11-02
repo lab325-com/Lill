@@ -1,4 +1,8 @@
 "activity_title" = "Please wait";
+"care_type_humidity" = "Humidity";
+"care_type_misting" = "Misting";
+"care_type_rotate" = "Rotate";
+"care_type_watering" = "Watering";
 "choose_identify_cancel" = "Cancel";
 "choose_identify_diagnosis" = "Diagnosis";
 "choose_identify_identify" = "Identify";
@@ -91,6 +95,7 @@
 "identify_title" = "Identifying";
 "login_info" = "Explore Plants and create garden of your dream";
 "login_loginWith" = "Login with";
+"menu_account" = "account";
 "menu_item_archive_disease" = "Disease Archive";
 "menu_item_archive_recognized" = "Recognized Archive";
 "menu_item_language" = "Language";

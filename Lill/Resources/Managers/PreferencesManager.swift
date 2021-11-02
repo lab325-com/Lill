@@ -8,6 +8,7 @@ class PreferencesManager : NSObject {
     
     //MARK: - Keys
     static let isFirstRun = "isFirstRun"
+    static let languageCode = "languageCode"
     
     var userDefaults: UserDefaults
     
@@ -99,4 +100,15 @@ class PreferencesManager : NSObject {
         }
     }
    
+    var languageCode: LanguageType {
+        get {
+            return LanguageType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.languageCode) ?? "english") ?? LanguageType.english
+        }
+        set {
+            userDefaults.set(newValue.rawValue, forKey: PreferencesManager.languageCode)
+            userDefaults.synchronize()
+        }
+    }
+    
+    
 }

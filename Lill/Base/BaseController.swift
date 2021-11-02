@@ -40,6 +40,9 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowMain(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideMain(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(changeLanguageNotifications),
+                                               name: Constants.Notifications.languageChangeNotifications,
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +56,19 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
             navigationController?.navigationBar.shadowImage = UIImage()
             navigationController?.navigationBar.isTranslucent = true
         }
+    }
+    
+    // MARK: - Deinit
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //----------------------------------------------
+    // MARK: - Notifications
+    //----------------------------------------------
+    
+    @objc func changeLanguageNotifications(_ notification: Notification) {
+        
     }
     
     //----------------------------------------------
