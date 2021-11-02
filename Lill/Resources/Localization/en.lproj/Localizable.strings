@@ -108,7 +108,12 @@
 "menu_section_archive_title" = "archive";
 "menu_section_settings_title" = "settings";
 "menu_title" = "Menu";
+"plant_detail_about" = "About";
+"plant_detail_add_to_my_garden" = "Add to My Garden";
 "plant_detail_added_to_wishlist" = "Added in Wishlist";
+"plant_detail_back" = "Back";
+"plant_detail_cares" = "Cares";
+"plant_detail_more_on_wiki" = "More on Wiki";
 "plant_detail_removed_from_wishlist" = "Removed from Wishlist";
 "plants_backToTop" = "Back to top";
 "plants_explore" = "Explore catalog";

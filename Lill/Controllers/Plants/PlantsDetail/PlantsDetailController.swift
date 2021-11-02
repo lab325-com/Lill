@@ -8,6 +8,9 @@ class PlantsDetailController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var aboutTitleLabel: UILabel!
+    @IBOutlet weak var caresTitleLabel: UILabel!
+    
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToGardenButton: UIButton!
     @IBOutlet weak var moreOnWikiButton: UIButton!
@@ -23,8 +26,8 @@ class PlantsDetailController: BaseController {
     
     @IBOutlet weak var aboutView: UIView!
     @IBOutlet weak var topAboutLayout: NSLayoutConstraint!
-    @IBOutlet weak var nameLabels: UILabel!
-    @IBOutlet weak var descriptionsLabels: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var favoriteStatusLabel: UILabel!
     @IBOutlet weak var favoriteStatusImage: UIImageView!
@@ -37,6 +40,7 @@ class PlantsDetailController: BaseController {
     private lazy var presenter = PlantsDetailPresenter(view: self)
     private var id: String
     private var isFavorite: Bool = false
+    private var wikiUrl: String = ""
     
     //----------------------------------------------
     // MARK: - Init
@@ -71,6 +75,13 @@ class PlantsDetailController: BaseController {
         scrollView.alpha = 1.0
         
         navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.topItem?.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        addToGardenButton.setTitle(RLocalization.plant_detail_add_to_my_garden.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        moreOnWikiButton.setTitle(RLocalization.plant_detail_more_on_wiki.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         addToGardenButton.layer.cornerRadius = 22
         
@@ -95,7 +106,7 @@ class PlantsDetailController: BaseController {
             self.view.layoutIfNeeded()
         }
         
-        favoriteStatusLabel.text = isFavorite ? "Added in Wishlist" : "Removed from Wishlist"
+        favoriteStatusLabel.text = isFavorite ? RLocalization.plant_detail_added_to_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.plant_detail_removed_from_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         favoriteStatusImage.image = UIImage(named: isFavorite ? "plants_detail_added_favorites_ic" : "plants_detail_removed_favorites_ic")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -106,6 +117,11 @@ class PlantsDetailController: BaseController {
         }
     }
     
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        updateLanguage()
+    }
+    
     //----------------------------------------------
     // MARK: - @IBActions
     //----------------------------------------------
@@ -113,21 +129,14 @@ class PlantsDetailController: BaseController {
     @IBAction func plantFavoriteAction(_ sender: Any) {
         presenter.setFaviritePlant(id: id, isFavorite: !isFavorite)
     }
-}
-
-extension UIView {
-    func applyShadow(color: UIColor, alpha: Float, x: CGFloat, y: CGFloat, blur: CGFloat, spread: CGFloat) {
-        layer.masksToBounds = false
-        layer.shadowColor = color.cgColor
-        layer.shadowOpacity = alpha
-        layer.shadowOffset = CGSize(width: x, height: y)
-        layer.shadowRadius = blur / UIScreen.main.scale
-        if spread == 0 {
-            layer.shadowPath = nil
-        } else {
-            let dx = -spread
-            let rect = bounds.insetBy(dx: dx, dy: dx)
-            layer.shadowPath = UIBezierPath(rect: rect).cgPath
+    
+    @IBAction func addToGardenAction(_ sender: Any) {
+        print("Add to garden ation")
+    }
+    
+    @IBAction func wikiAction(_ sender: Any) {
+        if let url = URL(string: wikiUrl) {
+            UIApplication.shared.open(url)
         }
     }
 }
@@ -146,8 +155,9 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
                 
         mainImageView.kf.setImage(with: URL(string: model.plantById.mainImages.first?.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
         
-        nameLabels.text = model.plantById.names
-        descriptionsLabels.text = model.plantById.descriptionFull
+        nameLabel.text = model.plantById.names
+        descriptionLabel.text = model.plantById.descriptionFull
+        wikiUrl = model.plantById.wikiUrl ?? ""
         
         if abouts.count == 0 {
             aboutView.isHidden = true
@@ -216,5 +226,11 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
     
     func failure(error: String) {
         
+    }
+}
+
+extension PlantsDetailController {
+    private func updateLanguage() {
+        setup()
     }
 }
