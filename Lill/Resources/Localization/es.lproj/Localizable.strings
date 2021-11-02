@@ -108,6 +108,8 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"plant_detail_added_to_wishlist" = "Añadido en la lista de deseos";
+"plant_detail_removed_from_wishlist" = "Eliminado de la lista de deseos";
 "plants_backToTop" = "Volver arriba";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar mis plantas";

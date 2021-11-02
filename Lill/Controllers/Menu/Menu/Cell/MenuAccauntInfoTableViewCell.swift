@@ -29,7 +29,7 @@ class MenuAccauntInfoTableViewCell: UITableViewCell {
     func setup(model: MeDataModel?){
         let url = URL(string: model?.me.avatar ?? "")
         avatarImage.kf.setImage(with: url, placeholder: UIImage(named: "avatar_ic"),  options: [.transition(.fade(0.25))])
-        userNameLabel.text = model?.me.name ?? ""
+        userNameLabel.text = model?.me.fullName ?? ""
         userEmailLabel.text = model?.me.email ?? ""
     }
     

@@ -1,9 +1,11 @@
+//
+//  MeModel.swift
+//  Lill
+//
+//  Created by Andrey S on 02.11.2021.
+//
 
 import Foundation
-
-struct MeDataModel: Codable {
-    let me: MeModel
-}
 
 struct MeModel: Codable {
     let access: AccessModel
@@ -11,6 +13,7 @@ struct MeModel: Codable {
     let barer: String
     let email: String?
     let id: String
-    let lang: String
-    let name: String
+    let fullName: String
+    let timezone: String?
+    let defaultGardenId: String?
 }

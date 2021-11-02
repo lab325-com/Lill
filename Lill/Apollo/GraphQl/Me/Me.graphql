@@ -1,5 +1,36 @@
 query Me {
 	me {
+		Gardens {
+			id
+			isDefault
+			isDefault
+			name
+			userDescription
+			userDescription
+			userGalleryImages {
+				media_id
+				type
+				urlAndroidPhone
+				urlAndroidTablet
+				urlIosFull
+				urlIosPrev
+			}
+			userMainImage {
+				media_id
+				type
+				urlAndroidPhone
+				urlAndroidTablet
+				urlIosFull
+				urlIosPrev
+			}
+		}
+		Language {
+			code
+			id
+			index
+			name
+			nativeName
+		}
 		access {
 			diagnosisAvaliable
 			diagnosisTotal
@@ -10,9 +41,11 @@ query Me {
 		}
 		avatar
 		barer
+		defaultGardenId
 		email
+		fullName
 		id
-		lang
-		name
+		timezone
+		
 	}
 }

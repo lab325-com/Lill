@@ -16,6 +16,7 @@
 		021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6CFB273118C000C73183 /* LanguageCell.swift */; };
 		021D6CFE273118C000C73183 /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021D6CFC273118C000C73183 /* LanguageCell.xib */; };
 		021D6D012731263D00C73183 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D002731263D00C73183 /* Constants.swift */; };
+		021D6D0527315D6200C73183 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0427315D6200C73183 /* MeModel.swift */; };
 		022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* CatalogPlantsModel.swift */; };
 		023786232706D7230092F63A /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023786222706D7230092F63A /* PlantsPresenter.swift */; };
 		023786272706DAEC0092F63A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 023786262706DAEC0092F63A /* Kingfisher */; };
@@ -139,7 +140,7 @@
 		FAFCF3522715760A00C3134E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3512715760A00C3134E /* GradientView.swift */; };
 		FAFCF35527157FE100C3134E /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35427157FE100C3134E /* Me.graphql */; };
 		FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */; };
-		FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeModel.swift */; };
+		FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeDataModel.swift */; };
 		FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF35E2715D0F800C3134E /* IdentifyController.swift */; };
 		FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35F2715D0F800C3134E /* IdentifyController.xib */; };
 		FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */; };
@@ -155,6 +156,7 @@
 		021D6CFB273118C000C73183 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		021D6CFC273118C000C73183 /* LanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
 		021D6D002731263D00C73183 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		021D6D0427315D6200C73183 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MeModel.swift; sourceTree = SOURCE_ROOT; };
 		022949932701E7F700003A3E /* CatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPlantsModel.swift; sourceTree = "<group>"; };
 		023786222706D7230092F63A /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		023786282706DD020092F63A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -275,7 +277,7 @@
 		FAFCF3512715760A00C3134E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FAFCF35427157FE100C3134E /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyPresenter.swift; sourceTree = "<group>"; };
-		FAFCF3592715830D00C3134E /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FAFCF3592715830D00C3134E /* MeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataModel.swift; sourceTree = "<group>"; };
 		FAFCF35E2715D0F800C3134E /* IdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyController.swift; sourceTree = "<group>"; };
 		FAFCF35F2715D0F800C3134E /* IdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentifyController.xib; sourceTree = "<group>"; };
 		FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPresenter.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				FA40D7132728534F00A10C10 /* MediaModel.swift */,
 				FA40D715272854CC00A10C10 /* ClimatModel.swift */,
 				FA40D717272854E200A10C10 /* CaresModel.swift */,
+				021D6D0427315D6200C73183 /* MeModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -992,7 +995,7 @@
 		FAFCF35327157FA900C3134E /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				FAFCF3592715830D00C3134E /* MeModel.swift */,
+				FAFCF3592715830D00C3134E /* MeDataModel.swift */,
 				FAFCF35427157FE100C3134E /* Me.graphql */,
 			);
 			path = Me;
@@ -1278,7 +1281,7 @@
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				FA40D718272854E200A10C10 /* CaresModel.swift in Sources */,
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
-				FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */,
+				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
 				F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
@@ -1311,6 +1314,7 @@
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
+				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,

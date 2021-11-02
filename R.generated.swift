@@ -1345,7 +1345,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 119 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 121 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1363,6 +1363,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Added in Wishlist
+      ///
+      /// Locales: en, es
+      static let plant_detail_added_to_wishlist = Rswift.StringResource(key: "plant_detail_added_to_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Analyzing image
       ///
       /// Locales: en, es
@@ -1707,6 +1711,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_archive_recognized = Rswift.StringResource(key: "menu_item_archive_recognized", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Removed from Wishlist
+      ///
+      /// Locales: en, es
+      static let plant_detail_removed_from_wishlist = Rswift.StringResource(key: "plant_detail_removed_from_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Restart Diagnosing
       ///
       /// Locales: en, es
@@ -1882,6 +1890,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plants_uniquePlantButton", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Added in Wishlist
+      ///
+      /// Locales: en, es
+      static func plant_detail_added_to_wishlist(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plant_detail_added_to_wishlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plant_detail_added_to_wishlist"
+        }
+
+        return NSLocalizedString("plant_detail_added_to_wishlist", bundle: bundle, comment: "")
       }
 
       /// en translation: Analyzing image
@@ -3172,6 +3195,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_item_archive_recognized", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Removed from Wishlist
+      ///
+      /// Locales: en, es
+      static func plant_detail_removed_from_wishlist(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plant_detail_removed_from_wishlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plant_detail_removed_from_wishlist"
+        }
+
+        return NSLocalizedString("plant_detail_removed_from_wishlist", bundle: bundle, comment: "")
       }
 
       /// en translation: Restart Diagnosing
