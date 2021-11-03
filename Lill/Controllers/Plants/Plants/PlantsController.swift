@@ -68,7 +68,7 @@ class PlantsController: BaseController {
     
     private func setup() {
         presenter.getPlants(search: "")
-        
+        navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         identifireLabel.text = RLocalization.plants_identifier()
         explorerLabel.text = RLocalization.plants_explore()
         uniquePlantLabel.text = RLocalization.plants_uniquePlantLabel()

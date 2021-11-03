@@ -79,7 +79,6 @@ class PlantsDetailController: BaseController {
         scrollView.alpha = 1.0
         
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.topItem?.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)

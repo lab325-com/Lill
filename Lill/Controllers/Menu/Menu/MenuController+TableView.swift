@@ -61,7 +61,20 @@ extension MenuController: UITableViewDelegate {
         let itemType  = self.presenter.menuItems[indexPath.section].items[indexPath.row].type
         switch(itemType){
         case .accountInfo:
-            MenuRouter(presenter: self.navigationController).logOut()
+            let title = RLocalization.allert_logout_message.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            let yesText = RLocalization.allert_yes.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            let noText = RLocalization.allert_no.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            
+            let alert = UIAlertController(title: "Lill", message: title, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: yesText, style: .default, handler: { action in
+                MenuRouter(presenter: self.navigationController).logOut()
+            }))
+            
+            alert.addAction(UIAlertAction(title: noText, style: .cancel, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         case .recognized:
             MenuRouter(presenter: self.navigationController).pushRecognizedArchive()
         case .disease:

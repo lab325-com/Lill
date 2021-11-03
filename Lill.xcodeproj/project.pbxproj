@@ -62,6 +62,11 @@
 		02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */; };
 		02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECB26F5E7AE00F86B87 /* AppConfiguration.swift */; };
 		02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */; };
+		02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */; };
+		02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */; };
+		02E0255C27326DDD00988F12 /* DiseaseArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */; };
+		02E0255E27326F0300988F12 /* Disease.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02E0255D27326F0300988F12 /* Disease.graphql */; };
+		02E02560273273D600988F12 /* MainPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255F273273D600988F12 /* MainPlantModel.swift */; };
 		02E0B1A4270431B400A56840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E0B1A3270431B400A56840 /* Main.storyboard */; };
 		02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0B1A52704325300A56840 /* MainTabBarController.swift */; };
 		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
@@ -82,8 +87,6 @@
 		F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */; };
 		F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */; };
 		F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */; };
-		F3D378BD272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378BB272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.swift */; };
-		F3D378BE272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D378BC272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.xib */; };
 		FA24A5962731CE830059AF6A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5952731CE830059AF6A /* schema.json */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
@@ -203,6 +206,11 @@
 		02D04ECD26F5E7AE00F86B87 /* AppConfigurationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigurationBridge.h; sourceTree = "<group>"; };
 		02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationBridge.m; sourceTree = "<group>"; };
 		02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lill-Bridging-Header.h"; sourceTree = "<group>"; };
+		02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveCell.swift; sourceTree = "<group>"; };
+		02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveCell.xib; sourceTree = "<group>"; };
+		02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiseaseArchiveModel.swift; path = Lill/Apollo/GraphQl/DiseaseArchiveModel/DiseaseArchiveModel.swift; sourceTree = SOURCE_ROOT; };
+		02E0255D27326F0300988F12 /* Disease.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = Disease.graphql; path = Lill/Apollo/GraphQl/DiseaseArchiveModel/Disease.graphql; sourceTree = SOURCE_ROOT; };
+		02E0255F273273D600988F12 /* MainPlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPlantModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MainPlantModel.swift; sourceTree = SOURCE_ROOT; };
 		02E0B1A3270431B400A56840 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02E0B1A52704325300A56840 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -225,8 +233,6 @@
 		F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveViewController.swift; sourceTree = "<group>"; };
 		F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveViewController.xib; sourceTree = "<group>"; };
 		F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchivePresenter.swift; sourceTree = "<group>"; };
-		F3D378BB272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveCollectionViewCell.swift; sourceTree = "<group>"; };
-		F3D378BC272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA24A5952731CE830059AF6A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
@@ -609,6 +615,24 @@
 			path = BridgingHeaders;
 			sourceTree = "<group>";
 		};
+		02E0255527326C6800988F12 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */,
+				02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		02E0255A27326DC300988F12 /* DiseaseArchiveModel */ = {
+			isa = PBXGroup;
+			children = (
+				02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */,
+				02E0255D27326F0300988F12 /* Disease.graphql */,
+			);
+			path = DiseaseArchiveModel;
+			sourceTree = "<group>";
+		};
 		02E0B1A22704315100A56840 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +663,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8FCD3727196BC100173725 /* GlobalModels */,
+				02E0255A27326DC300988F12 /* DiseaseArchiveModel */,
 				FA64050F2722F9DE000124A5 /* StartDiagnose */,
 				FA8FCD2C27185F6200173725 /* StartRecognition */,
 				FA8FCD27271818DA00173725 /* UploadMediaRecognition */,
@@ -724,10 +749,10 @@
 		F3D378B2272F98A00015C6EE /* DiseaseArchive */ = {
 			isa = PBXGroup;
 			children = (
-				F3D378BA272F9C4E0015C6EE /* Cell */,
-				F3D378B7272F9B410015C6EE /* Presenter */,
 				F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */,
 				F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */,
+				02E0255527326C6800988F12 /* Cell */,
+				F3D378B7272F9B410015C6EE /* Presenter */,
 			);
 			path = DiseaseArchive;
 			sourceTree = "<group>";
@@ -738,15 +763,6 @@
 				F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F3D378BA272F9C4E0015C6EE /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F3D378BB272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.swift */,
-				F3D378BC272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
@@ -830,6 +846,7 @@
 				FA40D715272854CC00A10C10 /* ClimatModel.swift */,
 				FA40D717272854E200A10C10 /* CaresModel.swift */,
 				021D6D0427315D6200C73183 /* MeModel.swift */,
+				02E0255F273273D600988F12 /* MainPlantModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -1151,6 +1168,7 @@
 				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
 				FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */,
 				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
+				02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
@@ -1171,6 +1189,7 @@
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
 				02E0B1A4270431B400A56840 /* Main.storyboard in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
+				02E0255E27326F0300988F12 /* Disease.graphql in Resources */,
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
@@ -1178,7 +1197,6 @@
 				0291DD9C27282944008E9F6F /* DetailCaresView.xib in Resources */,
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
-				F3D378BE272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.xib in Resources */,
 				FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,6 +1309,7 @@
 				026CFC0C270C1FF8003A0687 /* GardenViewCell.swift in Sources */,
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				FA40D718272854E200A10C10 /* CaresModel.swift in Sources */,
+				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
 				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
@@ -1313,7 +1332,6 @@
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
 				F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */,
 				F3BED189272EFB8F00614DEE /* MenuItemTableViewCell.swift in Sources */,
-				F3D378BD272FABEF0015C6EE /* DiseaseArchiveCollectionViewCell.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
 				FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
@@ -1325,6 +1343,7 @@
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
+				02E0255C27326DDD00988F12 /* DiseaseArchiveModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
@@ -1335,6 +1354,7 @@
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
+				02E02560273273D600988F12 /* MainPlantModel.swift in Sources */,
 				022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */,
 				02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,

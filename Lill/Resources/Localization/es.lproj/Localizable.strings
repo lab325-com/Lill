@@ -1,4 +1,7 @@
 "activity_title" = "Espere por favor";
+"allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
+"allert_no" = "NO";
+"allert_yes" = "SÍ";
 "care_period_type_days" = "Dias";
 "care_period_type_mounths" = "Montones";
 "care_period_type_unknown" = "Desconocido";
@@ -76,6 +79,7 @@
 "diagnosis_restart_diagnosing" = "Reiniciar diagnosticación";
 "diagnosis_start_diagnose" = "Empezar a diagnosticar";
 "diagnosis_title" = "Diagnosticando en progreso";
+"disease_archive_title" = "Archivado de la enfermedad";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";

@@ -1,4 +1,7 @@
 "activity_title" = "Please wait";
+"allert_logout_message" = "Are you sure want log out?";
+"allert_no" = "NO";
+"allert_yes" = "YES";
 "care_period_type_days" = "Days";
 "care_period_type_mounths" = "Mounths";
 "care_period_type_unknown" = "Unknown";
@@ -76,6 +79,7 @@
 "diagnosis_restart_diagnosing" = "Restart Diagnosing";
 "diagnosis_start_diagnose" = "Start Diagnosing";
 "diagnosis_title" = "Diagnose";
+"disease_archive_title" = "Disease Archive";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
 "identify_capture" = "Capture";

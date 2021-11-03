@@ -8,53 +8,106 @@
 import UIKit
 
 class DiseaseArchiveViewController: BaseController {
-    @IBOutlet weak var collection: UICollectionView!
+    
+    //----------------------------------------------
+    // MARK: - IBOutlet
+    //----------------------------------------------
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomContentView: UIView!
     @IBOutlet weak var diagnoseButton: UIButton!
-    private let cellIdentifire = "DiseaseArchiveCollectionViewCell"
+    
+    //----------------------------------------------
+    // MARK: - Private property
+    //----------------------------------------------
+    
+    private let cellIdentifier = "DiseaseArchiveCell"
+    private lazy var presenter = DiseaseArchivePresenter(view: self)
+    private var model: DiseaseArchiveModel?
+    
+    //----------------------------------------------
+    // MARK: - Life cycle
+    //----------------------------------------------
+    
     override func viewDidLoad() {
+        hiddenNavigationBar = false
+        colorTitleNavigation = UIColor.black
         super.viewDidLoad()
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
+    }
+    
     private func setup(){
-        self.title = "Disease Archive"
+        tableView.alpha = 0.0
+        bottomContentView.alpha = 0.0
+        
+        presenter.getDiseaseArchive()
+        navigationItem.title = RLocalization.disease_archive_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         self.bottomContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.bottomContentView.layer.cornerRadius = 24
         diagnoseButton.layer.cornerRadius = diagnoseButton.layer.frame.height / 2
-        
-        collection.register(UINib(nibName: cellIdentifire, bundle: nil), forCellWithReuseIdentifier: cellIdentifire)
-        collection.delegate = self
-        collection.dataSource = self
-        
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
+    
+    //----------------------------------------------
+    // MARK: - Action
+    //----------------------------------------------
     
     @IBAction func diagnoseButtonPressed(_ sender: Any) {
-        print("diagnoseButtonPressed")
+        PlantsRouter(presenter: navigationController).presentDiagnosis()
     }
 }
 
-extension DiseaseArchiveViewController: UICollectionViewDelegate {
-    
-}
+//----------------------------------------------
+// MARK: - UITableViewDataSource
+//----------------------------------------------
 
-extension DiseaseArchiveViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+extension DiseaseArchiveViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model?.diagnoseArhive.plant.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifire, for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) as? DiseaseArchiveCell else { return UITableViewCell() }
+        
+        if let plant = model?.diagnoseArhive.plant[safe: indexPath.row] {
+            cell.setupCell(plant: plant)
+        }
         return cell
+        
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let id = model?.diagnoseArhive.plant[safe: indexPath.row]?.plant.id {
+            PlantsRouter(presenter: navigationController).pushDetail(id: id)
+        }
+    }
 }
 
-extension DiseaseArchiveViewController: UICollectionViewDelegateFlowLayout {
+//----------------------------------------------
+// MARK: - DiseaseArchiveOutputProtocol
+//----------------------------------------------
+
+extension DiseaseArchiveViewController: DiseaseArchiveOutputProtocol {
+    func success(model: DiseaseArchiveModel) {
+        self.model = model
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.tableView.alpha = 1.0
+            self?.bottomContentView.alpha = 1.0
+        }
+        
+        tableView.reloadData()
+    }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width - 24 , height: UIScreen.main.bounds.size.width - 24)
+    func failure(error: String) {
+        
     }
 }

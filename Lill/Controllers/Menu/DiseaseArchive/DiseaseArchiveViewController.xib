@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,8 +16,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiseaseArchiveViewController" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="bottomContentView" destination="9Ma-Od-NSi" id="yko-1g-vI3"/>
-                <outlet property="collection" destination="sb5-eD-Egz" id="XkW-c9-HEL"/>
                 <outlet property="diagnoseButton" destination="MbS-eX-NuZ" id="E9M-vh-FK2"/>
+                <outlet property="tableView" destination="afN-o6-w1P" id="re7-JR-Pu5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -64,30 +63,28 @@
                         <constraint firstItem="dvT-Lo-IXc" firstAttribute="centerX" secondItem="9Ma-Od-NSi" secondAttribute="centerX" id="p67-xG-e07"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sb5-eD-Egz">
-                    <rect key="frame" x="12" y="44" width="390" height="630"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="afN-o6-w1P">
+                    <rect key="frame" x="0.0" y="44" width="414" height="630"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X5a-he-tJm">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="24" maxX="0.0" maxY="24"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6Hd-c7-1Rs"/>
+                        <outlet property="delegate" destination="-1" id="A0R-9S-hqR"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.91764705882352937" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="9Ma-Od-NSi" firstAttribute="top" secondItem="sb5-eD-Egz" secondAttribute="bottom" id="0SC-a1-Q8h"/>
                 <constraint firstItem="wY3-fR-GVj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5kz-Wz-lD1"/>
-                <constraint firstItem="sb5-eD-Egz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Ok-dD-cKU"/>
-                <constraint firstItem="sb5-eD-Egz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="AHn-WK-L0k"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sb5-eD-Egz" secondAttribute="trailing" constant="12" id="IRv-gw-kAz"/>
+                <constraint firstItem="afN-o6-w1P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J3k-Lh-U98"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="afN-o6-w1P" secondAttribute="trailing" id="LT8-cW-VCP"/>
                 <constraint firstItem="9Ma-Od-NSi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O2M-Rc-gjR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wY3-fR-GVj" secondAttribute="trailing" id="SHs-ci-e7O"/>
                 <constraint firstItem="wY3-fR-GVj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UiA-iu-4eC"/>
                 <constraint firstAttribute="bottom" secondItem="9Ma-Od-NSi" secondAttribute="bottom" id="Vue-Of-srW"/>
                 <constraint firstAttribute="bottom" secondItem="wY3-fR-GVj" secondAttribute="bottom" id="ciS-hr-rBY"/>
+                <constraint firstItem="afN-o6-w1P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dmj-uU-W6F"/>
+                <constraint firstItem="9Ma-Od-NSi" firstAttribute="top" secondItem="afN-o6-w1P" secondAttribute="bottom" id="dnk-im-po4"/>
                 <constraint firstItem="9Ma-Od-NSi" firstAttribute="right" secondItem="fnl-2z-Ty3" secondAttribute="right" id="fDP-fl-jdC"/>
             </constraints>
             <point key="canvasLocation" x="128.98550724637681" y="42.857142857142854"/>
@@ -96,8 +93,5 @@
     <resources>
         <image name="background_main" width="390" height="800"/>
         <image name="icn_diagnose" width="53" height="65"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

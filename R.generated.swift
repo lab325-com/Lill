@@ -151,10 +151,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 17 files.
+  /// This `R.file` struct is generated, and contains static references to 18 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
+    /// Resource file `Disease.graphql`.
+    static let diseaseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Disease", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
     static let generatorXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Generator", pathExtension: "xcconfig")
     /// Resource file `GetCatalogPlants.graphql`.
@@ -191,6 +193,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Debug", withExtension: "xcconfig")`
     static func debugXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.debugXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Disease", withExtension: "graphql")`
+    static func diseaseGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.diseaseGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1017,8 +1025,8 @@ struct R: Rswift.Validatable {
     static let detailCaresView = _R.nib._DetailCaresView()
     /// Nib `DiagnosisController`.
     static let diagnosisController = _R.nib._DiagnosisController()
-    /// Nib `DiseaseArchiveCollectionViewCell`.
-    static let diseaseArchiveCollectionViewCell = _R.nib._DiseaseArchiveCollectionViewCell()
+    /// Nib `DiseaseArchiveCell`.
+    static let diseaseArchiveCell = _R.nib._DiseaseArchiveCell()
     /// Nib `DiseaseArchiveViewController`.
     static let diseaseArchiveViewController = _R.nib._DiseaseArchiveViewController()
     /// Nib `GardenButtonCell`.
@@ -1089,10 +1097,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "DiseaseArchiveCollectionViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.diseaseArchiveCollectionViewCell) instead")
-    static func diseaseArchiveCollectionViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.diseaseArchiveCollectionViewCell)
+    /// `UINib(name: "DiseaseArchiveCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.diseaseArchiveCell) instead")
+    static func diseaseArchiveCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.diseaseArchiveCell)
     }
     #endif
 
@@ -1256,8 +1264,8 @@ struct R: Rswift.Validatable {
       return R.nib.diagnosisController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func diseaseArchiveCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCollectionViewCell? {
-      return R.nib.diseaseArchiveCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCollectionViewCell
+    static func diseaseArchiveCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCell? {
+      return R.nib.diseaseArchiveCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCell
     }
 
     static func diseaseArchiveViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1335,8 +1343,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `DiseaseArchiveCell`.
+    static let diseaseArchiveCell: Rswift.ReuseIdentifier<DiseaseArchiveCell> = Rswift.ReuseIdentifier(identifier: "DiseaseArchiveCell")
     /// Reuse identifier `LanguageCell`.
     static let languageCell: Rswift.ReuseIdentifier<LanguageCell> = Rswift.ReuseIdentifier(identifier: "LanguageCell")
 
@@ -1345,7 +1355,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 132 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 136 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1387,6 +1397,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_annual_perennial = Rswift.StringResource(key: "climate_habit_annual_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Are you sure want log out?
+      ///
+      /// Locales: en, es
+      static let allert_logout_message = Rswift.StringResource(key: "allert_logout_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: B
       ///
       /// Locales: en, es
@@ -1511,6 +1525,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let choose_identify_diagnosis = Rswift.StringResource(key: "choose_identify_diagnosis", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Disease Archive
+      ///
+      /// Locales: en, es
+      static let disease_archive_title = Rswift.StringResource(key: "disease_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Disease Archive
       ///
       /// Locales: en, es
@@ -1699,6 +1717,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_ph_nb = Rswift.StringResource(key: "climate_ph_nb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: NO
+      ///
+      /// Locales: en, es
+      static let allert_no = Rswift.StringResource(key: "allert_no", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -1851,6 +1873,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let wish_list_no_data = Rswift.StringResource(key: "wish_list_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: YES
+      ///
+      /// Locales: en, es
+      static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: account
       ///
       /// Locales: en, es
@@ -2024,6 +2050,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_annual_perennial", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Are you sure want log out?
+      ///
+      /// Locales: en, es
+      static func allert_logout_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_logout_message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_logout_message"
+        }
+
+        return NSLocalizedString("allert_logout_message", bundle: bundle, comment: "")
       }
 
       /// en translation: B
@@ -2489,6 +2530,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("choose_identify_diagnosis", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Disease Archive
+      ///
+      /// Locales: en, es
+      static func disease_archive_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("disease_archive_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "disease_archive_title"
+        }
+
+        return NSLocalizedString("disease_archive_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Disease Archive
@@ -3196,6 +3252,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_ph_nb", bundle: bundle, comment: "")
       }
 
+      /// en translation: NO
+      ///
+      /// Locales: en, es
+      static func allert_no(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_no", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_no"
+        }
+
+        return NSLocalizedString("allert_no", bundle: bundle, comment: "")
+      }
+
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -3766,6 +3837,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("wish_list_no_data", bundle: bundle, comment: "")
       }
 
+      /// en translation: YES
+      ///
+      /// Locales: en, es
+      static func allert_yes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_yes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_yes"
+        }
+
+        return NSLocalizedString("allert_yes", bundle: bundle, comment: "")
+      }
+
       /// en translation: account
       ///
       /// Locales: en, es
@@ -3989,12 +4075,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _DiseaseArchiveCollectionViewCell: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "DiseaseArchiveCollectionViewCell"
+    struct _DiseaseArchiveCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = DiseaseArchiveCell
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCollectionViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCollectionViewCell
+      let bundle = R.hostingBundle
+      let identifier = "DiseaseArchiveCell"
+      let name = "DiseaseArchiveCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DiseaseArchiveCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DiseaseArchiveCell
       }
 
       fileprivate init() {}
