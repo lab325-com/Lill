@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,6 +45,14 @@
                                     <constraint firstAttribute="height" constant="32" id="gpa-R2-UW2"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgR-EB-z1B">
+                                <rect key="frame" x="8" y="8" width="32" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="addToFavoriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6gA-gZ-Zlt"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-K1-XKS">
                                 <rect key="frame" x="128" y="8" width="32" height="32"/>
                                 <constraints>
@@ -59,13 +67,17 @@
                         <constraints>
                             <constraint firstItem="3ag-K1-XKS" firstAttribute="top" secondItem="ZOz-WJ-F6v" secondAttribute="top" constant="8" id="5WE-ll-uQh"/>
                             <constraint firstItem="chU-Qx-Bz2" firstAttribute="leading" secondItem="ZOz-WJ-F6v" secondAttribute="leading" constant="8" id="7aa-B0-P9r"/>
+                            <constraint firstItem="QgR-EB-z1B" firstAttribute="width" secondItem="vYA-Xv-JaC" secondAttribute="width" id="8hx-fr-iUw"/>
                             <constraint firstItem="SVS-rN-ces" firstAttribute="leading" secondItem="ZOz-WJ-F6v" secondAttribute="leading" id="9W3-aS-veE"/>
+                            <constraint firstItem="QgR-EB-z1B" firstAttribute="centerX" secondItem="vYA-Xv-JaC" secondAttribute="centerX" id="EpW-qf-I7O"/>
                             <constraint firstAttribute="trailing" secondItem="chU-Qx-Bz2" secondAttribute="trailing" constant="8" id="Fqd-3G-eBa"/>
+                            <constraint firstItem="QgR-EB-z1B" firstAttribute="centerY" secondItem="vYA-Xv-JaC" secondAttribute="centerY" id="GIi-KV-EKM"/>
                             <constraint firstItem="chU-Qx-Bz2" firstAttribute="top" secondItem="SVS-rN-ces" secondAttribute="bottom" constant="8" id="HlD-dh-Uht"/>
                             <constraint firstItem="vYA-Xv-JaC" firstAttribute="leading" secondItem="ZOz-WJ-F6v" secondAttribute="leading" constant="8" id="MFC-hV-kqS"/>
                             <constraint firstItem="SVS-rN-ces" firstAttribute="top" secondItem="ZOz-WJ-F6v" secondAttribute="top" id="Ukp-Z4-4ep"/>
                             <constraint firstAttribute="trailing" secondItem="SVS-rN-ces" secondAttribute="trailing" id="dUt-Oe-jO3"/>
                             <constraint firstAttribute="bottom" secondItem="chU-Qx-Bz2" secondAttribute="bottom" constant="8" id="dmz-h3-zFI"/>
+                            <constraint firstItem="QgR-EB-z1B" firstAttribute="height" secondItem="vYA-Xv-JaC" secondAttribute="height" id="fOB-mc-hhE"/>
                             <constraint firstItem="vYA-Xv-JaC" firstAttribute="top" secondItem="ZOz-WJ-F6v" secondAttribute="top" constant="8" id="nkK-DF-T5k"/>
                             <constraint firstAttribute="trailing" secondItem="3ag-K1-XKS" secondAttribute="trailing" constant="8" id="rqe-Jg-XkQ"/>
                         </constraints>
@@ -82,6 +94,7 @@
             <size key="customSize" width="168" height="214"/>
             <connections>
                 <outlet property="addButton" destination="3ag-K1-XKS" id="lvY-oF-InP"/>
+                <outlet property="addFavorite" destination="QgR-EB-z1B" id="alR-c9-rot"/>
                 <outlet property="containView" destination="ZOz-WJ-F6v" id="Zq2-fC-xEO"/>
                 <outlet property="favoriteImageView" destination="vYA-Xv-JaC" id="xQn-qa-4UD"/>
                 <outlet property="mainImageView" destination="SVS-rN-ces" id="tmj-tp-8vM"/>

@@ -46,6 +46,7 @@ class DiseaseArchiveViewController: BaseController {
         bottomContentView.alpha = 0.0
         
         presenter.getDiseaseArchive()
+        diagnoseButton.setTitle(RLocalization.disease_archive_button.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         navigationItem.title = RLocalization.disease_archive_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         self.bottomContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.bottomContentView.layer.cornerRadius = 24

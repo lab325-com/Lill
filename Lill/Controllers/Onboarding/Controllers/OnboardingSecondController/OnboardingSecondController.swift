@@ -31,6 +31,7 @@ class OnboardingSecondController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

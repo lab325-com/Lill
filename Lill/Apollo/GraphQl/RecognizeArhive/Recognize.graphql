@@ -1,0 +1,45 @@
+query RecognizedArhive($pagination: InputPagination!) {
+      recognizedArhive(pagination: $pagination) {
+    pagination {
+      limit
+      nextPageExist
+      ofset
+      prevPageExist
+      totalPages
+    }
+    plant {
+        cares {
+            count
+            id
+            period
+            type {
+                id
+                name
+            }
+        }
+        climate {
+            deciduous
+            habit
+            hardiness
+            height
+            moisture
+            ph
+            shade
+            soil
+        }
+        descriptionFull
+        descriptionWikiHtml
+        id
+        isFavourite
+        latinName
+        mainImages {
+            media_id
+            urlIosFull
+            urlIosPrev
+        }
+        names
+        wikiUrl
+    }
+  }
+}
+

@@ -14,7 +14,9 @@ class MenuRouter: BaseRouter {
     }
     
     func pushRecognizedArchive(){
-        print("pushRecognizedArchive")
+        let controller = RecognizeArchiveController()
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
     }
     
     func pushDiseaseArchive(){

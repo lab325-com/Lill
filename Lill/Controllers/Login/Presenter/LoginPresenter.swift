@@ -57,7 +57,7 @@ class LoginPresenter: LoginPresenterProtocol {
         view?.startLoader()
         let mutation = LoginMutation(socialToken: token, udid: uuid, firebaseId: firebaseId, social: social, lang: lang)
         Network.shared.mutation(model: LoginModel.self, mutation) { [weak self] model in
-            KeychainService.standard.token = model
+            KeychainService.standard.token = model.login
             self?.view?.stopLoading()
             self?.view?.success()
         } failureHandler: { [weak self] error in
