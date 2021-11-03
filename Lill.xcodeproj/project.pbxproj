@@ -17,6 +17,7 @@
 		021D6CFE273118C000C73183 /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021D6CFC273118C000C73183 /* LanguageCell.xib */; };
 		021D6D012731263D00C73183 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D002731263D00C73183 /* Constants.swift */; };
 		021D6D0527315D6200C73183 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0427315D6200C73183 /* MeModel.swift */; };
+		021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0C2731AE4B00C73183 /* SharingManager.swift */; };
 		022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* CatalogPlantsModel.swift */; };
 		023786232706D7230092F63A /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023786222706D7230092F63A /* PlantsPresenter.swift */; };
 		023786272706DAEC0092F63A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 023786262706DAEC0092F63A /* Kingfisher */; };
@@ -157,6 +158,7 @@
 		021D6CFC273118C000C73183 /* LanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
 		021D6D002731263D00C73183 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		021D6D0427315D6200C73183 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MeModel.swift; sourceTree = SOURCE_ROOT; };
+		021D6D0C2731AE4B00C73183 /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		022949932701E7F700003A3E /* CatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPlantsModel.swift; sourceTree = "<group>"; };
 		023786222706D7230092F63A /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		023786282706DD020092F63A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -341,6 +343,14 @@
 				021D6D002731263D00C73183 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		021D6D0B2731AE3B00C73183 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				021D6D0C2731AE4B00C73183 /* SharingManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		023786242706D7280092F63A /* Presenter */ = {
@@ -540,6 +550,7 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				021D6D0B2731AE3B00C73183 /* Service */,
 				021D6CFF2731261C00C73183 /* Constants */,
 				FAFCF350271575D400C3134E /* Views */,
 				FA7C8CF926FDFED8000D2976 /* Managers */,
@@ -1309,6 +1320,7 @@
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
+				021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,

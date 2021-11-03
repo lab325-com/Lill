@@ -56,6 +56,7 @@ class PlantsDetailController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
+        transparentNavigationBar = true
         super.viewDidLoad()
         
         presenter.getPlantDetail(id: id)

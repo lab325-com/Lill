@@ -19,7 +19,6 @@ class MenuAccauntInfoTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
         self.accessoryType = .disclosureIndicator
-        self.logoutLabel.text = RLocalization.menu_log_out.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,6 +30,7 @@ class MenuAccauntInfoTableViewCell: UITableViewCell {
         avatarImage.kf.setImage(with: url, placeholder: UIImage(named: "avatar_ic"),  options: [.transition(.fade(0.25))])
         userNameLabel.text = model?.me.fullName ?? ""
         userEmailLabel.text = model?.me.email ?? ""
+        logoutLabel.text = RLocalization.menu_log_out.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
     }
     
 }

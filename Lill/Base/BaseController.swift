@@ -20,6 +20,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     
     var transparentNavigationBar = false
     var hiddenNavigationBar = false
+    var colorTitleNavigation = UIColor(rgb: 0xC36ED1)
     
     /// property to keyboard settings
     var isShowKeyboard = false
@@ -49,12 +50,34 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0xC36ED1)]
         
-        if transparentNavigationBar {
-            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            navigationController?.navigationBar.shadowImage = UIImage()
-            navigationController?.navigationBar.isTranslucent = true
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
+            navBarAppearance.backgroundColor = transparentNavigationBar ? UIColor.clear : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
+            if transparentNavigationBar {
+                navBarAppearance.shadowColor = .clear
+            }
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.compactAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+            
+        } else {
+            
+            if transparentNavigationBar {
+                navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+                navigationController?.navigationBar.shadowImage = UIImage()
+                navigationController?.navigationBar.isTranslucent = true
+                navigationController?.navigationBar.backgroundColor = .clear
+                navigationController?.navigationBar.barTintColor = .clear
+            } else {
+                navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+                navigationController?.navigationBar.shadowImage = UINavigationBar().shadowImage
+                navigationController?.navigationBar.isTranslucent = true
+                navigationController?.navigationBar.backgroundColor = .white
+                navigationController?.navigationBar.barTintColor = .white
+            }
         }
     }
     

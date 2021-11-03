@@ -77,13 +77,17 @@ extension MenuController: UITableViewDelegate {
                 UIApplication.shared.open(url)
             }
         case .rate:
-            if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "id686449807") { ///ID => 1586099684
+            if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "id1586099684") { ///ID => 1586099684
                 if #available(iOS 10, *) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     
                 } else {
                     UIApplication.shared.openURL(url)
                 }
+            }
+        case .share:
+            if let url = URL(string: "https://apps.apple.com/ru/app/telegram/id686449807") {
+                SharingManager.sharedManager.sendSharingLink(url: url, controller: self)
             }
         default:
             return

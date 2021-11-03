@@ -34,20 +34,26 @@ class LanguageController: BaseController {
     //----------------------------------------------
     
     let cellIdentifier = "LanguageCell"
+    var titleText: String {
+        return RLocalization.menu_laguage_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+    } 
     
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = false
+        colorTitleNavigation = UIColor.black
         super.viewDidLoad()
         setup()
     }
     
     private func setup() {
+        navigationItem.title = titleText
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
-        
+        tableView.sectionHeaderHeight = 34
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
@@ -71,14 +77,31 @@ extension LanguageController: UITableViewDataSource {
         
         if indexPath.row == 0 {
             cell.languageLabel.text = "English"
+            cell.languageSubLabel.text = "English"
             cell.accessoryType = PreferencesManager.sharedManager.languageCode == .english ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
         } else {
             cell.languageLabel.text = "Spanish"
+            cell.languageSubLabel.text = "Español"
             cell.accessoryType = PreferencesManager.sharedManager.languageCode == .spanish ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
         }
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return RLocalization.menu_language_header.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.tintColor = .clear
+        header.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        header.textLabel?.textColor = UIColor(red: 60, green: 60, blue: 67).withAlphaComponent(0.6)
     }
 }
 
@@ -104,5 +127,6 @@ extension LanguageController: UITableViewDelegate {
                                         userInfo: nil)
         
         tableView.reloadData()
+        navigationItem.title = titleText
     }
 }

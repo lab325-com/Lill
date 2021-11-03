@@ -25,9 +25,10 @@ class WishListController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
+        transparentNavigationBar = true
         super.viewDidLoad()
         
-        transparentNavigationBar = true
+        
         
         setup()
     }

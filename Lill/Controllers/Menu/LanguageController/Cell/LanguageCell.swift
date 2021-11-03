@@ -10,6 +10,7 @@ import UIKit
 class LanguageCell: UITableViewCell {
 
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var languageSubLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,7 +13,7 @@ struct MeModel: Codable {
     let barer: String
     let email: String?
     let id: String
-    let fullName: String
+    let fullName: String?
     let timezone: String?
     let defaultGardenId: String?
 }
