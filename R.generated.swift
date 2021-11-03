@@ -464,8 +464,8 @@ struct R: Rswift.Validatable {
     static let plants_detail_removed_favorites_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_removed_favorites_ic")
     /// Image `plants_detail_rotating_ic`.
     static let plants_detail_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_rotating_ic")
-    /// Image `plants_detail_water_ic`.
-    static let plants_detail_water_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_water_ic")
+    /// Image `plants_detail_watering_ic`.
+    static let plants_detail_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_watering_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
     /// Image `temp_onboarding_1_ic`.
@@ -956,9 +956,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "plants_detail_water_ic", bundle: ..., traitCollection: ...)`
-    static func plants_detail_water_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.plants_detail_water_ic, compatibleWith: traitCollection)
+    /// `UIImage(named: "plants_detail_watering_ic", bundle: ..., traitCollection: ...)`
+    static func plants_detail_watering_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plants_detail_watering_ic, compatibleWith: traitCollection)
     }
     #endif
 

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SFProDisplay-Bold.ttf">
             <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
         </array>
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
@@ -18,27 +21,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlantsDetailController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="aboutTitleLabel" destination="J21-go-j76" id="r9Y-Ab-bg4"/>
                 <outlet property="aboutView" destination="PZu-Se-DMy" id="ABa-r8-4Hp"/>
-                <outlet property="addToGardenButton" destination="kxN-TC-u5w" id="ttj-c8-Vrv"/>
-                <outlet property="descriptionsLabels" destination="JHw-lH-yAz" id="vHu-EK-vsA"/>
+                <outlet property="addToGardenButton" destination="kxN-TC-u5w" id="1D1-d9-dba"/>
+                <outlet property="careView" destination="5vc-zO-TKz" id="d5x-3B-6oh"/>
+                <outlet property="caresTitleLabel" destination="Ngb-fQ-l8C" id="zYs-cn-akf"/>
+                <outlet property="descriptionLabel" destination="JHw-lH-yAz" id="1L0-md-Kha"/>
                 <outlet property="favoriteButton" destination="eGV-5c-Bd7" id="Azd-RU-hKn"/>
                 <outlet property="favoriteStatusImage" destination="nbJ-XO-JPJ" id="a4H-mu-0w9"/>
                 <outlet property="favoriteStatusLabel" destination="aN1-1P-5uS" id="aTu-ej-Zfm"/>
                 <outlet property="favoriteStatusViewBottomLayout" destination="F3a-CK-4Ld" id="4ly-A5-6bk"/>
                 <outlet property="mainImageView" destination="YaP-BC-ua1" id="h4M-On-ysz"/>
-                <outlet property="moreOnWikiButton" destination="3T3-8h-CRL" id="Qz4-oj-zq1"/>
-                <outlet property="nameLabels" destination="78O-JT-7F4" id="wRS-NM-o51"/>
+                <outlet property="moreOnWikiButton" destination="3T3-8h-CRL" id="gks-Up-wEX"/>
+                <outlet property="nameLabel" destination="78O-JT-7F4" id="xsu-Me-9Ge"/>
                 <outlet property="scrollView" destination="oSy-dc-sRC" id="YVE-La-LVS"/>
                 <outlet property="topAboutLayout" destination="kj2-rZ-dR6" id="PQW-Iq-teB"/>
+                <outlet property="topCareLayout" destination="Xq8-eH-goU" id="hqr-H7-72l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="detailsView" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="fmt-VW-S1D"/>
-                <outletCollection property="detailsView" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="wTZ-Md-V6z"/>
-                <outletCollection property="detailsView" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="XBn-TZ-NP1"/>
-                <outletCollection property="detailsView" destination="Ysc-e2-SUY" collectionClass="NSMutableArray" id="plk-nC-Ve3"/>
-                <outletCollection property="detailsView" destination="5pk-3Q-R0a" collectionClass="NSMutableArray" id="3rx-FF-Mjw"/>
-                <outletCollection property="detailsView" destination="5qR-6o-IJr" collectionClass="NSMutableArray" id="ZxM-H2-425"/>
-                <outletCollection property="detailsView" destination="MC7-Df-soA" collectionClass="NSMutableArray" id="g2g-WB-w71"/>
-                <outletCollection property="detailsView" destination="GM0-Yt-jlh" collectionClass="NSMutableArray" id="IBR-gK-Hde"/>
                 <outletCollection property="separeteViews" destination="Gdm-GS-9nm" collectionClass="NSMutableArray" id="hhY-oZ-G03"/>
                 <outletCollection property="separeteViews" destination="LRt-Rr-paN" collectionClass="NSMutableArray" id="Man-Rl-ZAq"/>
                 <outletCollection property="separeteViews" destination="lcf-af-kNQ" collectionClass="NSMutableArray" id="1Xr-in-4Gi"/>
@@ -50,6 +49,18 @@
                 <outletCollection property="middleLinesViews" destination="PDi-uo-xwk" collectionClass="NSMutableArray" id="7I0-oW-mfB"/>
                 <outletCollection property="middleLinesViews" destination="8g6-le-7bn" collectionClass="NSMutableArray" id="ee7-VN-m3d"/>
                 <outletCollection property="middleLinesViews" destination="kLL-vy-jqh" collectionClass="NSMutableArray" id="qtL-u2-ZSe"/>
+                <outletCollection property="caresViews" destination="MHw-ra-rYD" collectionClass="NSMutableArray" id="MHg-0e-yUh"/>
+                <outletCollection property="caresViews" destination="wDa-5n-mc4" collectionClass="NSMutableArray" id="kLP-ZF-Whr"/>
+                <outletCollection property="caresViews" destination="H2W-e8-XcL" collectionClass="NSMutableArray" id="RQw-9E-xHj"/>
+                <outletCollection property="caresViews" destination="skp-RX-ODv" collectionClass="NSMutableArray" id="zvo-vp-gGO"/>
+                <outletCollection property="aboutViews" destination="XFv-IP-jRc" collectionClass="NSMutableArray" id="vQX-aB-Tau"/>
+                <outletCollection property="aboutViews" destination="MbY-n0-xbR" collectionClass="NSMutableArray" id="cPt-rD-rG6"/>
+                <outletCollection property="aboutViews" destination="V0g-D0-yr0" collectionClass="NSMutableArray" id="wWx-wg-a7m"/>
+                <outletCollection property="aboutViews" destination="Ysc-e2-SUY" collectionClass="NSMutableArray" id="kyW-Ly-mE3"/>
+                <outletCollection property="aboutViews" destination="5pk-3Q-R0a" collectionClass="NSMutableArray" id="hx8-0N-aq5"/>
+                <outletCollection property="aboutViews" destination="5qR-6o-IJr" collectionClass="NSMutableArray" id="CQm-bf-OtA"/>
+                <outletCollection property="aboutViews" destination="MC7-Df-soA" collectionClass="NSMutableArray" id="IvI-2j-48K"/>
+                <outletCollection property="aboutViews" destination="GM0-Yt-jlh" collectionClass="NSMutableArray" id="lkF-bb-EHf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -109,26 +120,15 @@
                                                         <action selector="plantFavoriteAction:" destination="-1" eventType="touchUpInside" id="RNn-nj-6jN"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-TC-u5w">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-TC-u5w">
                                                     <rect key="frame" x="98" y="0.0" width="288" height="44"/>
                                                     <color key="backgroundColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="Add to My Garden">
-                                                                <attributes>
-                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.058819999999999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="15"/>
-                                                                    <real key="NSKern" value="0.0"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                        <tabStops/>
-                                                                    </paragraphStyle>
-                                                                    <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                    </buttonConfiguration>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Add to My Garden"/>
+                                                    <connections>
+                                                        <action selector="addToGardenAction:" destination="-1" eventType="touchUpInside" id="CbB-HX-gts"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -290,28 +290,19 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T3-8h-CRL">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3T3-8h-CRL">
                                             <rect key="frame" x="24" y="655" width="386" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="aRw-cO-eXc"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain">
-                                                <attributedString key="attributedTitle">
-                                                    <fragment content=" More on Wiki">
-                                                        <attributes>
-                                                            <color key="NSBackgroundColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="NSColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="15"/>
-                                                            <real key="NSKern" value="0.0"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                                <tabStops/>
-                                                            </paragraphStyle>
-                                                            <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                            </buttonConfiguration>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="More on Wiki">
+                                                <color key="titleColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="wikiAction:" destination="-1" eventType="touchUpInside" id="ly7-5W-bfU"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -348,15 +339,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100.5" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDa-5n-mc4" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDa-5n-mc4" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="103.5" y="0.0" width="100" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2W-e8-XcL" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2W-e8-XcL" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="206.5" y="0.0" width="100.5" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skp-RX-ODv" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skp-RX-ODv" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
                                                     <rect key="frame" x="310" y="0.0" width="100" height="107"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>

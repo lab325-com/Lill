@@ -20,6 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="backView" destination="pP0-Cf-VJ1" id="JTu-Rk-URB"/>
+                <outlet property="careImageView" destination="Vzo-Ma-FKc" id="Xk5-uJ-Kwn"/>
+                <outlet property="careTitleLabel" destination="vm1-Wq-QF4" id="Qgg-0W-dLV"/>
+                <outlet property="careValueLabel" destination="u2h-Ar-Qoi" id="bTI-mu-6RI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
