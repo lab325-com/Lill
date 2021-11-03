@@ -119,6 +119,9 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"plant_add_to_garden_great" = "¡Excelente!";
+"plant_add_to_garden_info" = "¡La planta se agrega en tu jardín!";
+"plant_add_to_garden_title" = "Confijas!";
 "plant_detail_about" = "Sobre";
 "plant_detail_add_to_my_garden" = "Añadir a mi jardín";
 "plant_detail_added_to_wishlist" = "Añadido en la lista de deseos";

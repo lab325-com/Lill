@@ -3602,6 +3602,60 @@ public final class MeQuery: GraphQLQuery {
   }
 }
 
+public final class PlantToGardenMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation PlantToGarden($plantId: String!, $gardenId: String!) {
+      plantToGarden(plantId: $plantId, gardenId: $gardenId)
+    }
+    """
+
+  public let operationName: String = "PlantToGarden"
+
+  public var plantId: String
+  public var gardenId: String
+
+  public init(plantId: String, gardenId: String) {
+    self.plantId = plantId
+    self.gardenId = gardenId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["plantId": plantId, "gardenId": gardenId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("plantToGarden", arguments: ["plantId": GraphQLVariable("plantId"), "gardenId": GraphQLVariable("gardenId")], type: .nonNull(.scalar(Bool.self))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(plantToGarden: Bool) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "plantToGarden": plantToGarden])
+    }
+
+    /// принимает id планта и если не указан id конкретного гардена то добавляет его в гарден по умолчанию (is Default)
+    public var plantToGarden: Bool {
+      get {
+        return resultMap["plantToGarden"]! as! Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "plantToGarden")
+      }
+    }
+  }
+}
+
 public final class RecognizedArhiveQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

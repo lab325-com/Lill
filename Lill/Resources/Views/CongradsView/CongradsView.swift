@@ -32,8 +32,9 @@ class CongradsView: UIView {
     //----------------------------------------------
     
     func setup() {
-        titleLabel.text = "Wefergerg"
-        infoLabel.text = "Tlkjvlkjfsv lksdflskdf jlsdkjls"
+        titleLabel.text = RLocalization.plant_add_to_garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        infoLabel.text = RLocalization.plant_add_to_garden_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        greatButton.setTitle(RLocalization.plant_add_to_garden_great.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------

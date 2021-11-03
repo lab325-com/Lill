@@ -134,7 +134,8 @@ class PlantsDetailController: BaseController {
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        CongradsViewPresenter.showCongradsView()
+        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
     }
     
     @IBAction func wikiAction(_ sender: Any) {
@@ -149,6 +150,14 @@ class PlantsDetailController: BaseController {
 //----------------------------------------------
 
 extension PlantsDetailController: PlantsDetailOutputProtocol {
+    func success(model: PlantToGardenDataModel) {
+        if model.plantToGarden {
+            CongradsViewPresenter.showCongradsView()
+        } else {
+            debugPrint("FALSE ADD PLANT TO GARDEN")
+        }
+    }
+    
     func success(model: FavoritePlantDataModel) {
         updateFavoriteButton(isFavorite: model.setFavoritePlantById)
         showFavoriteStatusView(isFavorite: model.setFavoritePlantById)

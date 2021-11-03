@@ -98,6 +98,8 @@
 		FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */; };
 		FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59D2732BCCE0059AF6A /* CongradsView.swift */; };
 		FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA24A59F2732BCD80059AF6A /* CongradsView.xib */; };
+		FA24A5A32732DB160059AF6A /* PlantToGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5A22732DB160059AF6A /* PlantToGarden.graphql */; };
+		FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5A42732DB950059AF6A /* PlantToGardenModel.swift */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
@@ -253,6 +255,8 @@
 		FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsViewPresenter.swift; sourceTree = "<group>"; };
 		FA24A59D2732BCCE0059AF6A /* CongradsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsView.swift; sourceTree = "<group>"; };
 		FA24A59F2732BCD80059AF6A /* CongradsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CongradsView.xib; sourceTree = "<group>"; };
+		FA24A5A22732DB160059AF6A /* PlantToGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantToGarden.graphql; sourceTree = "<group>"; };
+		FA24A5A42732DB950059AF6A /* PlantToGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantToGardenModel.swift; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -722,6 +726,7 @@
 				FAC6D9962701E1E4000A551F /* GetPlants */,
 				FA40D70E27282F9C00A10C10 /* GetPlant */,
 				FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */,
+				FA24A5A12732DAC10059AF6A /* PlantToGarden */,
 				02E4576426F9137C00F19C41 /* Login */,
 			);
 			path = GraphQL;
@@ -824,6 +829,15 @@
 				FA24A59F2732BCD80059AF6A /* CongradsView.xib */,
 			);
 			path = CongradsView;
+			sourceTree = "<group>";
+		};
+		FA24A5A12732DAC10059AF6A /* PlantToGarden */ = {
+			isa = PBXGroup;
+			children = (
+				FA24A5A22732DB160059AF6A /* PlantToGarden.graphql */,
+				FA24A5A42732DB950059AF6A /* PlantToGardenModel.swift */,
+			);
+			path = PlantToGarden;
 			sourceTree = "<group>";
 		};
 		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
@@ -1238,6 +1252,7 @@
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */,
+				FA24A5A32732DB160059AF6A /* PlantToGarden.graphql in Resources */,
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
@@ -1391,6 +1406,7 @@
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
 				02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
+				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
