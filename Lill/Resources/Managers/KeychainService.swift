@@ -125,7 +125,7 @@ class KeychainService {
 extension KeychainService {
     
     /// Saved session token model.
-    var token: LoginModel? {
+    var token: MeModel? {
         get {
             return self.model(forKey: .token)
         }

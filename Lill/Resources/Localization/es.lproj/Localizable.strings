@@ -79,6 +79,7 @@
 "diagnosis_restart_diagnosing" = "Reiniciar diagnosticación";
 "diagnosis_start_diagnose" = "Empezar a diagnosticar";
 "diagnosis_title" = "Diagnosticando en progreso";
+"disease_archive_button" = "Diagnosticar la enfermedad";
 "disease_archive_title" = "Archivado de la enfermedad";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
@@ -131,6 +132,8 @@
 "plants_search" = "Buscar por nombre";
 "plants_uniquePlantButton" = "Añadir unico";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
+"recognize_archive_button" = "Reconocer la planta";
+"recognize_archive_title" = "Archivo reconocido";
 "wish_list_back" = "atrás";
 "wish_list_no_data" = "Lista de deseos está vacía";
 "wish_list_title" = "De deseos";

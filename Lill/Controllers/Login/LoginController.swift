@@ -20,6 +20,7 @@ class LoginController: BaseController {
     // MARK: - Life cycle
     //----------------------------------------------
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
 
         configureView()

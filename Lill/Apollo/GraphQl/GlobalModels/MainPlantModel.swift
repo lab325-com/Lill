@@ -13,9 +13,13 @@ struct PlantModel: Codable {
     let descriptionFull: String
     let descriptionWikiHtml: String
     let id: String
-    let isFavourite: Bool?
+    var isFavourite: Bool?
     let latinName: String
     let mainImages: [MediaModel]
     let names: String
     let wikiUrl: String?
+    
+    mutating func changeIsFavorite(_ isFavourite: Bool) {
+        self.isFavourite = isFavourite
+    }
 }

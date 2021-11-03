@@ -31,6 +31,7 @@ class OnboardingFirsController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
     }
     

@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 18 files.
+  /// This `R.file` struct is generated, and contains static references to 19 files.
   struct file {
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
@@ -169,6 +169,8 @@ struct R: Rswift.Validatable {
     static let meGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Me", pathExtension: "graphql")
     /// Resource file `PlantById.graphql`.
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
+    /// Resource file `Recognize.graphql`.
+    static let recognizeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Recognize", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
     /// Resource file `SFProDisplay-Bold.ttf`.
@@ -235,6 +237,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "PlantById", withExtension: "graphql")`
     static func plantByIdGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.plantByIdGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Recognize", withExtension: "graphql")`
+    static func recognizeGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.recognizeGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -334,7 +342,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 75 images.
+  /// This `R.image` struct is generated, and contains static references to 76 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -474,6 +482,8 @@ struct R: Rswift.Validatable {
     static let plants_detail_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_rotating_ic")
     /// Image `plants_detail_watering_ic`.
     static let plants_detail_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_watering_ic")
+    /// Image `recognize_archive_ic`.
+    static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
     /// Image `temp_onboarding_1_ic`.
@@ -971,6 +981,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "recognize_archive_ic", bundle: ..., traitCollection: ...)`
+    static func recognize_archive_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recognize_archive_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
     static func temp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp, compatibleWith: traitCollection)
@@ -1015,7 +1032,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 23 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 24 nibs.
   struct nib {
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
@@ -1057,6 +1074,8 @@ struct R: Rswift.Validatable {
     static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `PlantsDetailController`.
     static let plantsDetailController = _R.nib._PlantsDetailController()
+    /// Nib `RecognizeArchiveController`.
+    static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
@@ -1225,6 +1244,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RecognizeArchiveController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.recognizeArchiveController) instead")
+    static func recognizeArchiveController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.recognizeArchiveController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SplashController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.splashController) instead")
     static func splashController(_: Void = ()) -> UIKit.UINib {
@@ -1328,6 +1355,10 @@ struct R: Rswift.Validatable {
       return R.nib.plantsDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func recognizeArchiveController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.recognizeArchiveController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func splashController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.splashController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1355,7 +1386,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 136 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 139 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1513,6 +1544,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Diagnose Disease
+      ///
+      /// Locales: en, es
+      static let disease_archive_button = Rswift.StringResource(key: "disease_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose Photo
       ///
       /// Locales: en, es
@@ -1761,10 +1796,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recognize Plant
+      ///
+      /// Locales: en, es
+      static let recognize_archive_button = Rswift.StringResource(key: "recognize_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognized Archive
       ///
       /// Locales: en, es
       static let menu_item_archive_recognized = Rswift.StringResource(key: "menu_item_archive_recognized", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recognized Archive
+      ///
+      /// Locales: en, es
+      static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -2485,6 +2528,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnose Disease
+      ///
+      /// Locales: en, es
+      static func disease_archive_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("disease_archive_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "disease_archive_button"
+        }
+
+        return NSLocalizedString("disease_archive_button", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnose Photo
@@ -3417,6 +3475,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_item_rate", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recognize Plant
+      ///
+      /// Locales: en, es
+      static func recognize_archive_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("recognize_archive_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "recognize_archive_button"
+        }
+
+        return NSLocalizedString("recognize_archive_button", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recognized Archive
       ///
       /// Locales: en, es
@@ -3430,6 +3503,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_item_archive_recognized", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Recognized Archive
+      ///
+      /// Locales: en, es
+      static func recognize_archive_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("recognize_archive_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "recognize_archive_title"
+        }
+
+        return NSLocalizedString("recognize_archive_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Removed from Wishlist
@@ -3989,6 +4077,7 @@ struct _R: Rswift.Validatable {
       try _OnboardingThreeController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
+      try _RecognizeArchiveController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
       try _WishListController.validate()
@@ -4340,6 +4429,24 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "plants_detail_no_favorite_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_no_favorite_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_removed_favorites_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_removed_favorites_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _RecognizeArchiveController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "RecognizeArchiveController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "recognize_archive_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'recognize_archive_ic' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

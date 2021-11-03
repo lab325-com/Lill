@@ -109,6 +109,4 @@ class PreferencesManager : NSObject {
             userDefaults.synchronize()
         }
     }
-    
-    
 }

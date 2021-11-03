@@ -73,7 +73,7 @@ class ChooseIdentifyController: BaseController {
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
 //            if model.me.access.isPremium || model.me.access.identifyUsed < 3 {
-                PlantsRouter(presenter: currentNavigationController).presentIdentify(model: model)
+            PlantsRouter(presenter: currentNavigationController).presentIdentify(model: model.me)
 //            } else {
 //                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
 //            }
