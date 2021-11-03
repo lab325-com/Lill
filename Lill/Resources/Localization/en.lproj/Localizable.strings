@@ -79,6 +79,7 @@
 "diagnosis_restart_diagnosing" = "Restart Diagnosing";
 "diagnosis_start_diagnose" = "Start Diagnosing";
 "diagnosis_title" = "Diagnose";
+"disease_archive_button" = "Diagnose Disease";
 "disease_archive_title" = "Disease Archive";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
@@ -131,6 +132,8 @@
 "plants_search" = "Search by Name";
 "plants_uniquePlantButton" = "Add Unique";
 "plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
+"recognize_archive_button" = "Recognize Plant";
+"recognize_archive_title" = "Recognized Archive";
 "wish_list_back" = "Back";
 "wish_list_no_data" = "Wishlist is empty";
 "wish_list_title" = "Wishlist";

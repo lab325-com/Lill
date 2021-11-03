@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CongradsView" customModule="Lill" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="364"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwR-fU-Wsj">
+                    <rect key="frame" x="95.5" y="38" width="109" height="29"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="congrads_view_flower_ic" translatesAutoresizingMaskIntoConstraints="NO" id="dqa-fj-yMt">
+                    <rect key="frame" x="106" y="89" width="88" height="108"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant is added in your Garden!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-Be-yB2">
+                    <rect key="frame" x="75.5" y="238.5" width="149" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5dB-It-gvh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-s3-Pxh">
+                    <rect key="frame" x="22" y="298.5" width="256" height="44"/>
+                    <color key="backgroundColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9xJ-xQ-Gnq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Great!"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="greatAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="lK2-dM-r2U"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fwR-fU-Wsj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="38" id="1eu-KA-0Va"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CN6-s3-Pxh" secondAttribute="trailing" constant="22" id="94s-pg-ae9"/>
+                <constraint firstItem="CN6-s3-Pxh" firstAttribute="top" secondItem="gc9-Be-yB2" secondAttribute="bottom" constant="20" id="9Xv-Rq-Qto"/>
+                <constraint firstItem="dqa-fj-yMt" firstAttribute="top" secondItem="fwR-fU-Wsj" secondAttribute="bottom" constant="22" id="IJp-Mh-MFT"/>
+                <constraint firstItem="fwR-fU-Wsj" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="J81-yr-55e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CN6-s3-Pxh" secondAttribute="bottom" constant="21.5" id="KQ9-Wa-c7D"/>
+                <constraint firstItem="dqa-fj-yMt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Tkv-8k-rBG"/>
+                <constraint firstItem="CN6-s3-Pxh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="cgg-Gq-jqc"/>
+                <constraint firstItem="gc9-Be-yB2" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="oes-Oh-2Ac"/>
+                <constraint firstItem="gc9-Be-yB2" firstAttribute="top" secondItem="dqa-fj-yMt" secondAttribute="bottom" constant="41.5" id="p4W-3t-gnJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="24"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="greatButton" destination="CN6-s3-Pxh" id="GmJ-b6-1C2"/>
+                <outlet property="infoLabel" destination="gc9-Be-yB2" id="SjX-WT-CMY"/>
+                <outlet property="titleLabel" destination="fwR-fU-Wsj" id="Pcy-oQ-Uhp"/>
+            </connections>
+            <point key="canvasLocation" x="272.46376811594206" y="-125.55803571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="congrads_view_flower_ic" width="88" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

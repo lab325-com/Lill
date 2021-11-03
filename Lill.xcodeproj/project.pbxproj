@@ -88,6 +88,10 @@
 		F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */; };
 		F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */; };
 		FA24A5962731CE830059AF6A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5952731CE830059AF6A /* schema.json */; };
+		FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA24A5982732B94A0059AF6A /* SwiftEntryKit */; };
+		FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */; };
+		FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59D2732BCCE0059AF6A /* CongradsView.swift */; };
+		FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA24A59F2732BCD80059AF6A /* CongradsView.xib */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
@@ -234,6 +238,9 @@
 		F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveViewController.xib; sourceTree = "<group>"; };
 		F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchivePresenter.swift; sourceTree = "<group>"; };
 		FA24A5952731CE830059AF6A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsViewPresenter.swift; sourceTree = "<group>"; };
+		FA24A59D2732BCCE0059AF6A /* CongradsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsView.swift; sourceTree = "<group>"; };
+		FA24A59F2732BCD80059AF6A /* CongradsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CongradsView.xib; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -304,6 +311,7 @@
 				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
 				02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
+				FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */,
 				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
@@ -510,6 +518,8 @@
 				02A8347E26F38F920009E147 /* Onboarding */,
 				02E0B1A22704315100A56840 /* TabBar */,
 				FAB3BD202704AB640075C0C0 /* Plants */,
+				02FCBFA7270A36200089CEF8 /* WishList */,
+				02493DD32727E35F008C2064 /* PlantsDetail */,
 				FAFCF34A27148B8A00C3134E /* Identify Diagnosis */,
 				FAB3BD212704AB710075C0C0 /* Garden */,
 				FAB3BD222704AB7E0075C0C0 /* Schedule */,
@@ -765,6 +775,16 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA24A59A2732BB870059AF6A /* CongradsView */ = {
+			isa = PBXGroup;
+			children = (
+				FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */,
+				FA24A59D2732BCCE0059AF6A /* CongradsView.swift */,
+				FA24A59F2732BCD80059AF6A /* CongradsView.xib */,
+			);
+			path = CongradsView;
+			sourceTree = "<group>";
+		};
 		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
 			isa = PBXGroup;
 			children = (
@@ -903,8 +923,6 @@
 			children = (
 				FAFCF34427147D8D00C3134E /* Router */,
 				02FCBFA6270A36100089CEF8 /* Plants */,
-				02493DD32727E35F008C2064 /* PlantsDetail */,
-				02FCBFA7270A36200089CEF8 /* WishList */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -1014,6 +1032,7 @@
 		FAFCF350271575D400C3134E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA24A59A2732BB870059AF6A /* CongradsView */,
 				FAB26ACE2716C89A00B3EFDF /* ShadowView.swift */,
 				FAFCF3512715760A00C3134E /* GradientView.swift */,
 			);
@@ -1100,6 +1119,7 @@
 				FAD49CEA27033C15005D6E75 /* FirebaseMessaging */,
 				023786262706DAEC0092F63A /* Kingfisher */,
 				02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */,
+				FA24A5982732B94A0059AF6A /* SwiftEntryKit */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -1138,6 +1158,7 @@
 				FAD49CE527033C14005D6E75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				023786252706DAEC0092F63A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -1180,6 +1201,7 @@
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
 				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */,
 				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
+				FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
 				FA24A5962731CE830059AF6A /* schema.json in Resources */,
@@ -1368,6 +1390,7 @@
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
 				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
+				FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */,
 				021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
 				F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */,
@@ -1379,6 +1402,7 @@
 				02A4BA3626FDCFEF00DF6A08 /* OnboardingSecondController.swift in Sources */,
 				021D6CF72731137C00C73183 /* LanguageController.swift in Sources */,
 				02A4BA2C26FDCF6700DF6A08 /* OnboardingFirsController.swift in Sources */,
+				FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
 				029C520527307F9300BD30B4 /* Rswift+Extension.swift in Sources */,
 				02493DD62727E38A008C2064 /* PlantsDetailController.swift in Sources */,
@@ -1740,6 +1764,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -1802,6 +1834,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		FA24A5982732B94A0059AF6A /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
 		};
 		FA7C8CD526FB6688000D2976 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;

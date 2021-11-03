@@ -334,12 +334,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 75 images.
+  /// This `R.image` struct is generated, and contains static references to 76 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
     /// Image `background_main`.
     static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
+    /// Image `congrads_view_flower_ic`.
+    static let congrads_view_flower_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "congrads_view_flower_ic")
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `ic_background`.
@@ -498,6 +500,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "background_main", bundle: ..., traitCollection: ...)`
     static func background_main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.background_main, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "congrads_view_flower_ic", bundle: ..., traitCollection: ...)`
+    static func congrads_view_flower_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.congrads_view_flower_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1015,10 +1024,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 23 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 24 nibs.
   struct nib {
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
+    /// Nib `CongradsView`.
+    static let congradsView = _R.nib._CongradsView()
     /// Nib `DetailAboutView`.
     static let detailAboutView = _R.nib._DetailAboutView()
     /// Nib `DetailCaresView`.
@@ -1069,6 +1080,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.chooseIdentifyController) instead")
     static func chooseIdentifyController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.chooseIdentifyController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CongradsView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.congradsView) instead")
+    static func congradsView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.congradsView)
     }
     #endif
 
@@ -1252,6 +1271,10 @@ struct R: Rswift.Validatable {
       return R.nib.chooseIdentifyController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func congradsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CongradsView? {
+      return R.nib.congradsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CongradsView
+    }
+
     static func detailAboutView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.detailAboutView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1355,7 +1378,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 136 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 139 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1513,6 +1536,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Diagnose Disease
+      ///
+      /// Locales: en, es
+      static let disease_archive_button = Rswift.StringResource(key: "disease_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose Photo
       ///
       /// Locales: en, es
@@ -1761,10 +1788,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recognize Plant
+      ///
+      /// Locales: en, es
+      static let recognize_archive_button = Rswift.StringResource(key: "recognize_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognized Archive
       ///
       /// Locales: en, es
       static let menu_item_archive_recognized = Rswift.StringResource(key: "menu_item_archive_recognized", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recognized Archive
+      ///
+      /// Locales: en, es
+      static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -2485,6 +2520,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Diagnose Disease
+      ///
+      /// Locales: en, es
+      static func disease_archive_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("disease_archive_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "disease_archive_button"
+        }
+
+        return NSLocalizedString("disease_archive_button", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnose Photo
@@ -3417,6 +3467,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_item_rate", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recognize Plant
+      ///
+      /// Locales: en, es
+      static func recognize_archive_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("recognize_archive_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "recognize_archive_button"
+        }
+
+        return NSLocalizedString("recognize_archive_button", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recognized Archive
       ///
       /// Locales: en, es
@@ -3430,6 +3495,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_item_archive_recognized", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Recognized Archive
+      ///
+      /// Locales: en, es
+      static func recognize_archive_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("recognize_archive_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "recognize_archive_title"
+        }
+
+        return NSLocalizedString("recognize_archive_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Removed from Wishlist
@@ -3975,6 +4055,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _ChooseIdentifyController.validate()
+      try _CongradsView.validate()
       try _DetailAboutView.validate()
       try _DetailCaresView.validate()
       try _DiagnosisController.validate()
@@ -4005,6 +4086,23 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "ic_choose_identify_diagnosis", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_diagnosis' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_choose_identify_photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_photo' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CongradsView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CongradsView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CongradsView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CongradsView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "congrads_view_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'congrads_view_flower_ic' is used in nib 'CongradsView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

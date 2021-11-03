@@ -134,7 +134,7 @@ class PlantsDetailController: BaseController {
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        print("Add to garden ation")
+        CongradsViewPresenter.showCongradsView()
     }
     
     @IBAction func wikiAction(_ sender: Any) {
