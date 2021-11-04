@@ -8,8 +8,6 @@ class GardenController: BaseController {
     //----------------------------------------------
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var addPlantShadowView: ShadowView!
-    @IBOutlet weak var addPlantGradientView: GradientView!
     @IBOutlet weak var addPantLabel: UILabel!
     
     @IBOutlet var stackViews: [ShadowView]!
@@ -49,10 +47,6 @@ class GardenController: BaseController {
     
     private func setup() {
         
-        for button in stackButtons {
-            button.setTitle("", for: .normal)
-        }
-        
         updateButtonsStack()
         
         collectionView.register(UINib.init(nibName: cellIdentifier,
@@ -62,6 +56,7 @@ class GardenController: BaseController {
                                            bundle: nil),
                                 forCellWithReuseIdentifier: cellButtonIdentifier)
         
+        collectionView.contentInset.top = 40
         collectionView.reloadData()
     }
     
@@ -83,6 +78,10 @@ class GardenController: BaseController {
                 label.textColor = UIColor(rgb: 0x666666)
             }
         }
+        
+        for button in stackButtons {
+            button.setTitle("", for: .normal)
+        }
     }
     
     //----------------------------------------------
@@ -90,6 +89,7 @@ class GardenController: BaseController {
     //----------------------------------------------
     
     @IBAction func selectStackAction(_ sender: UIButton) {
+        collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
         selectedType = sender.tag
         updateButtonsStack()
     }
