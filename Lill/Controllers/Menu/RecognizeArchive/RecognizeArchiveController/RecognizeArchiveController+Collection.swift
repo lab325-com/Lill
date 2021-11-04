@@ -52,6 +52,11 @@ extension RecognizeArchiveController: UICollectionViewDelegateFlowLayout {
 //----------------------------------------------
 
 extension RecognizeArchiveController: PlantCollectionDelegate {
+    func setToGarden(cell: PlantCollectionCell, id: String) {
+        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
+    }
+    
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
         presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
     }

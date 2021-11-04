@@ -80,6 +80,10 @@ class RecognizeArchiveController: BaseController {
 //----------------------------------------------
 
 extension RecognizeArchiveController: RecognizeArchiveOutputProtocol {
+    func successAddPlants(model: PlantToGardenDataModel) {
+        
+    }
+    
     func successFavorite(isFavorite: Bool, id: String) {
         if let index = models.firstIndex(where: {$0.id == id }) {
             models[index].changeIsFavorite(isFavorite)

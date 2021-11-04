@@ -3,14 +3,18 @@ import Foundation
 
 struct PlantsModel: Codable {
     let id: String
-    let description: DescriptionModel
+    var description: DescriptionModel
 }
 
 struct DescriptionModel: Codable {
-    let is_favorite: Bool
+    var is_favorite: Bool
     let name: String
     let names: String?
     let image: ImageModel
+    
+    mutating func changeIsFavorite(_ isFavourite: Bool) {
+        self.is_favorite = isFavourite
+    }
 }
 
 struct ImageModel: Codable {
