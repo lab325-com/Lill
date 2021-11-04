@@ -1417,7 +1417,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 142 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 153 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1483,6 +1483,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_bamboo = Rswift.StringResource(key: "climate_habit_bamboo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Become a Premium
+      ///
+      /// Locales: en
+      static let subscription_title = Rswift.StringResource(key: "subscription_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
+      ///
+      /// Locales: en
+      static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Biennial
       ///
       /// Locales: en, es
@@ -1491,6 +1499,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_biennial_perennial = Rswift.StringResource(key: "climate_habit_biennial_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Billed %@
+      ///
+      /// Locales: en
+      static let subscription_billed_with = Rswift.StringResource(key: "subscription_billed_with", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Bulb
       ///
       /// Locales: en, es
@@ -1499,6 +1511,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let choose_identify_cancel = Rswift.StringResource(key: "choose_identify_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel anytime
+      ///
+      /// Locales: en
+      static let subscription_cancel_any_time = Rswift.StringResource(key: "subscription_cancel_any_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Can’t identify or find in catalog?
       ///
       /// Locales: en, es
@@ -1635,6 +1651,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
+      ///
+      /// Locales: en
+      static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Great!
       ///
       /// Locales: en, es
@@ -1833,6 +1853,10 @@ struct R: Rswift.Validatable {
       static let choose_identify_premium = Rswift.StringResource(key: "choose_identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Privacy policy
       ///
+      /// Locales: en
+      static let subscription_privacy = Rswift.StringResource(key: "subscription_privacy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Privacy policy
+      ///
       /// Locales: en, es
       static let menu_item_privacy_policy = Rswift.StringResource(key: "menu_item_privacy_policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Rate app
@@ -1851,6 +1875,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recurring monthly billing
+      ///
+      /// Locales: en
+      static let subscription_recurring = Rswift.StringResource(key: "subscription_recurring", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -1859,6 +1887,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_restart_diagnosing = Rswift.StringResource(key: "diagnosis_restart_diagnosing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Restore Purchases
+      ///
+      /// Locales: en
+      static let subscription_restore = Rswift.StringResource(key: "subscription_restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Retake Photo
       ///
       /// Locales: en, es
@@ -1883,6 +1915,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_shade_sn = Rswift.StringResource(key: "climate_shade_sn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Save 33% Off
+      ///
+      /// Locales: en
+      static let subscription_save_33 = Rswift.StringResource(key: "subscription_save_33", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Search by Name
       ///
       /// Locales: en, es
@@ -1911,6 +1947,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_start_identify = Rswift.StringResource(key: "identify_start_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Subscribe
+      ///
+      /// Locales: en
+      static let subscription_subscribe = Rswift.StringResource(key: "subscription_subscribe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Subscriptions
       ///
       /// Locales: en, es
@@ -1919,6 +1959,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_terms = Rswift.StringResource(key: "menu_item_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Terms of use
+      ///
+      /// Locales: en
+      static let subscription_terms = Rswift.StringResource(key: "subscription_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Tree
       ///
       /// Locales: en, es
@@ -2228,6 +2272,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_habit_bamboo", bundle: bundle, comment: "")
       }
 
+      /// en translation: Become a Premium
+      ///
+      /// Locales: en
+      static func subscription_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_title"
+        }
+
+        return NSLocalizedString("subscription_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
+      ///
+      /// Locales: en
+      static func subscription_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_description"
+        }
+
+        return NSLocalizedString("subscription_description", bundle: bundle, comment: "")
+      }
+
       /// en translation: Biennial
       ///
       /// Locales: en, es
@@ -2258,6 +2332,23 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_habit_biennial_perennial", bundle: bundle, comment: "")
       }
 
+      /// en translation: Billed %@
+      ///
+      /// Locales: en
+      static func subscription_billed_with(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("subscription_billed_with", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_billed_with"
+        }
+
+        let format = NSLocalizedString("subscription_billed_with", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
       /// en translation: Bulb
       ///
       /// Locales: en, es
@@ -2286,6 +2377,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("choose_identify_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel anytime
+      ///
+      /// Locales: en
+      static func subscription_cancel_any_time(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_cancel_any_time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_cancel_any_time"
+        }
+
+        return NSLocalizedString("subscription_cancel_any_time", bundle: bundle, comment: "")
       }
 
       /// en translation: Can’t identify or find in catalog?
@@ -2796,6 +2902,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_make_photo_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
+      ///
+      /// Locales: en
+      static func subscription_sub_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_sub_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_sub_title"
+        }
+
+        return NSLocalizedString("subscription_sub_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Great!
@@ -3535,6 +3656,21 @@ struct R: Rswift.Validatable {
 
       /// en translation: Privacy policy
       ///
+      /// Locales: en
+      static func subscription_privacy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_privacy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_privacy"
+        }
+
+        return NSLocalizedString("subscription_privacy", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Privacy policy
+      ///
       /// Locales: en, es
       static func menu_item_privacy_policy(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -3608,6 +3744,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("recognize_archive_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recurring monthly billing
+      ///
+      /// Locales: en
+      static func subscription_recurring(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_recurring", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_recurring"
+        }
+
+        return NSLocalizedString("subscription_recurring", bundle: bundle, comment: "")
+      }
+
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -3636,6 +3787,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_restart_diagnosing", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Restore Purchases
+      ///
+      /// Locales: en
+      static func subscription_restore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_restore", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_restore"
+        }
+
+        return NSLocalizedString("subscription_restore", bundle: bundle, comment: "")
       }
 
       /// en translation: Retake Photo
@@ -3726,6 +3892,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_shade_sn", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Save 33% Off
+      ///
+      /// Locales: en
+      static func subscription_save_33(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_save_33", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_save_33"
+        }
+
+        return NSLocalizedString("subscription_save_33", bundle: bundle, comment: "")
       }
 
       /// en translation: Search by Name
@@ -3833,6 +4014,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_start_identify", bundle: bundle, comment: "")
       }
 
+      /// en translation: Subscribe
+      ///
+      /// Locales: en
+      static func subscription_subscribe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_subscribe", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_subscribe"
+        }
+
+        return NSLocalizedString("subscription_subscribe", bundle: bundle, comment: "")
+      }
+
       /// en translation: Subscriptions
       ///
       /// Locales: en, es
@@ -3861,6 +4057,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_item_terms", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Terms of use
+      ///
+      /// Locales: en
+      static func subscription_terms(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_terms", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_terms"
+        }
+
+        return NSLocalizedString("subscription_terms", bundle: bundle, comment: "")
       }
 
       /// en translation: Tree

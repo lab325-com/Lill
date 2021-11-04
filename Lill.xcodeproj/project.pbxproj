@@ -100,6 +100,7 @@
 		FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA24A59F2732BCD80059AF6A /* CongradsView.xib */; };
 		FA24A5A32732DB160059AF6A /* PlantToGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5A22732DB160059AF6A /* PlantToGarden.graphql */; };
 		FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5A42732DB950059AF6A /* PlantToGardenModel.swift */; };
+		FA24A5A7273417760059AF6A /* GardenController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
 		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
@@ -257,6 +258,7 @@
 		FA24A59F2732BCD80059AF6A /* CongradsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CongradsView.xib; sourceTree = "<group>"; };
 		FA24A5A22732DB160059AF6A /* PlantToGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantToGarden.graphql; sourceTree = "<group>"; };
 		FA24A5A42732DB950059AF6A /* PlantToGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantToGardenModel.swift; sourceTree = "<group>"; };
+		FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GardenController+CollectionView.swift"; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
 		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -582,9 +584,9 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAFCF350271575D400C3134E /* Views */,
 				021D6D0B2731AE3B00C73183 /* Service */,
 				021D6CFF2731261C00C73183 /* Constants */,
-				FAFCF350271575D400C3134E /* Views */,
 				FA7C8CF926FDFED8000D2976 /* Managers */,
 				02D04ED726F5E89800F86B87 /* BridgingHeaders */,
 				02D04EC926F5E7AE00F86B87 /* Application */,
@@ -986,6 +988,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
+				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
 				026CFC09270C1FD4003A0687 /* Cell */,
 			);
 			path = Garden;
@@ -1450,6 +1453,7 @@
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
 				02E025672732B72600988F12 /* RecognizeArchivePresenter.swift in Sources */,
 				FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */,
+				FA24A5A7273417760059AF6A /* GardenController+CollectionView.swift in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
 				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,

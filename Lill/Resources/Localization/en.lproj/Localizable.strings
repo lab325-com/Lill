@@ -137,6 +137,17 @@
 "plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
+"subscription_billed_with" = "Billed %@";
+"subscription_cancel_any_time" = "Cancel anytime";
+"subscription_description" = "Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.";
+"subscription_privacy" = "Privacy policy";
+"subscription_recurring" = "Recurring monthly billing";
+"subscription_restore" = "Restore Purchases";
+"subscription_save_33" = "Save 33% Off";
+"subscription_sub_title" = "Get access to unlimited Identify/nand Diagnosis Plants";
+"subscription_subscribe" = "Subscribe";
+"subscription_terms" = "Terms of use";
+"subscription_title" = "Become a Premium";
 "wish_list_back" = "Back";
 "wish_list_no_data" = "Wishlist is empty";
 "wish_list_title" = "Wishlist";
