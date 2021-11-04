@@ -43,12 +43,13 @@ class PlantsController: BaseController {
     
     private let searchText = RLocalization.plants_search()
     private var isNeedAnimate = true
-    private lazy var presenter = PlantsPresenter(view: self)
+    
     
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
     
+    lazy var presenter = PlantsPresenter(view: self)
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var plants = [PlantsModel]()
     
@@ -155,6 +156,17 @@ class PlantsController: BaseController {
 //----------------------------------------------
 
 extension PlantsController: PlantsOutputProtocol {
+    func successAddPlants(model: PlantToGardenDataModel) {
+        
+    }
+    
+    func successFavorite(isFavorite: Bool, id: String) {
+        if let index = plants.firstIndex(where: {$0.id == id }) {
+            plants[index].description.changeIsFavorite(isFavorite)
+            collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+        }
+    }
+    
     func success(model: CatalogPlantsModel) {
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
         plants = model.getCatalogPlants.plants

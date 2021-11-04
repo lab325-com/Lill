@@ -4,6 +4,7 @@ import Kingfisher
 
 protocol PlantCollectionDelegate: AnyObject {
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool)
+    func setToGarden(cell: PlantCollectionCell, id: String)
 }
 
 class PlantCollectionCell: UICollectionViewCell {
@@ -71,6 +72,13 @@ class PlantCollectionCell: UICollectionViewCell {
         } else if let modelTwo  =  modelTwo {
             delegate?.setFavorite(cell: self, id: modelTwo.id, isFavorite: modelTwo.isFavourite ?? false)
         }
-        
+    }
+    
+    @IBAction func actionAddToGarden(_ sender: UIButton) {
+        if let modelOne = modelOne {
+            delegate?.setToGarden(cell: self, id: modelOne.id)
+        } else if let modelTwo  =  modelTwo {
+            delegate?.setToGarden(cell: self, id: modelTwo.id)
+        }
     }
 }

@@ -14,6 +14,7 @@ extension PlantsController: UICollectionViewDataSource, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellIdentifier, for: indexPath) as! PlantCollectionCell
         
         if let model = plants[safe: indexPath.row] {
+            cell.delegate = self
             cell.configure(model: model)
         }
         
@@ -51,5 +52,16 @@ extension PlantsController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width / 2 - 13 , height: UIScreen.main.bounds.size.width / 2 - 13)
+    }
+}
+
+extension PlantsController: PlantCollectionDelegate {
+    func setToGarden(cell: PlantCollectionCell, id: String) {
+        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
+    }
+    
+    func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
+        presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
     }
 }
