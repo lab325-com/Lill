@@ -1,5 +1,7 @@
 mutation UploadMedia($img: String!) {
 	uploadMedia(img: $img) {
+		media_id
 		urlIosFull
+		urlIosPrev
 	}
 }

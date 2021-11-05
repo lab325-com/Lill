@@ -128,7 +128,7 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
-        debugPrint("actionAddUnique")
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

@@ -4947,7 +4947,9 @@ public final class UploadMediaMutation: GraphQLMutation {
     mutation UploadMedia($img: String!) {
       uploadMedia(img: $img) {
         __typename
+        media_id
         urlIosFull
+        urlIosPrev
       }
     }
     """
@@ -4999,7 +5001,9 @@ public final class UploadMediaMutation: GraphQLMutation {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("media_id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("urlIosFull", type: .nonNull(.scalar(String.self))),
+          GraphQLField("urlIosPrev", type: .nonNull(.scalar(String.self))),
         ]
       }
 
@@ -5009,8 +5013,8 @@ public final class UploadMediaMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(urlIosFull: String) {
-        self.init(unsafeResultMap: ["__typename": "MediaModel", "urlIosFull": urlIosFull])
+      public init(mediaId: GraphQLID, urlIosFull: String, urlIosPrev: String) {
+        self.init(unsafeResultMap: ["__typename": "MediaModel", "media_id": mediaId, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
       }
 
       public var __typename: String {
@@ -5022,12 +5026,30 @@ public final class UploadMediaMutation: GraphQLMutation {
         }
       }
 
+      public var mediaId: GraphQLID {
+        get {
+          return resultMap["media_id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "media_id")
+        }
+      }
+
       public var urlIosFull: String {
         get {
           return resultMap["urlIosFull"]! as! String
         }
         set {
           resultMap.updateValue(newValue, forKey: "urlIosFull")
+        }
+      }
+
+      public var urlIosPrev: String {
+        get {
+          return resultMap["urlIosPrev"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "urlIosPrev")
         }
       }
     }

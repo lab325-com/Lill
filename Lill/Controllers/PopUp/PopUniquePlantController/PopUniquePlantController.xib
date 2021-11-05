@@ -20,6 +20,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUniquePlantController" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="bottomViewConstraint" destination="zEE-uX-AhZ" id="Gii-4B-d0D"/>
+                <outlet property="closeButton" destination="w0g-Zr-935" id="cZ9-Y3-34W"/>
+                <outlet property="createPlanButton" destination="oS1-BZ-4pi" id="S8o-g7-uM8"/>
+                <outlet property="mainView" destination="SSq-Kh-EtM" id="OgF-q1-6gD"/>
+                <outlet property="namePlantstextField" destination="LuR-El-gsf" id="Ho6-G4-iNW"/>
+                <outlet property="subTitleLabel" destination="wRE-v6-CVE" id="ZBi-6v-HUr"/>
+                <outlet property="titleNameLabel" destination="1nH-yI-R0H" id="dzt-qs-2k7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,6 +45,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="sub_close_ic"/>
+                            <connections>
+                                <action selector="actionClose:" destination="-1" eventType="touchUpInside" id="inX-ag-3bu"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Unique Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nH-yI-R0H">
                             <rect key="frame" x="113" y="34.5" width="188.5" height="29"/>
@@ -49,13 +58,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-DB-Wwb">
                             <rect key="frame" x="60" y="88.5" width="294" height="42"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LuR-El-gsf">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LuR-El-gsf">
                                     <rect key="frame" x="10" y="2" width="274" height="38"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="19"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="0.51336973076624581" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="LuR-El-gsf" secondAttribute="trailing" constant="10" id="aGJ-6S-Eaf"/>
                                 <constraint firstAttribute="bottom" secondItem="LuR-El-gsf" secondAttribute="bottom" constant="2" id="fb0-U3-yl9"/>
@@ -106,14 +116,14 @@
                         <constraint firstItem="1nH-yI-R0H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SSq-Kh-EtM" secondAttribute="leading" constant="20" id="9nx-Uw-lhc"/>
                         <constraint firstAttribute="trailing" secondItem="UKz-DB-Wwb" secondAttribute="trailing" constant="60" id="D4O-ax-aZu"/>
                         <constraint firstItem="wRE-v6-CVE" firstAttribute="top" secondItem="UKz-DB-Wwb" secondAttribute="bottom" constant="24" id="HGv-v2-20P"/>
-                        <constraint firstItem="w0g-Zr-935" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1nH-yI-R0H" secondAttribute="trailing" constant="20" id="L96-8a-d54"/>
+                        <constraint firstItem="w0g-Zr-935" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1nH-yI-R0H" secondAttribute="trailing" constant="5" id="L96-8a-d54"/>
                         <constraint firstAttribute="trailing" secondItem="oS1-BZ-4pi" secondAttribute="trailing" constant="24" id="LIX-Gw-EmP"/>
                         <constraint firstItem="oS1-BZ-4pi" firstAttribute="leading" secondItem="SSq-Kh-EtM" secondAttribute="leading" constant="24" id="RE5-zm-wxr"/>
                         <constraint firstAttribute="bottom" secondItem="oS1-BZ-4pi" secondAttribute="bottom" constant="24" id="Z93-VV-l7a"/>
                         <constraint firstItem="wRE-v6-CVE" firstAttribute="leading" secondItem="SSq-Kh-EtM" secondAttribute="leading" constant="24" id="Zhu-lk-0rt"/>
                         <constraint firstItem="w0g-Zr-935" firstAttribute="top" secondItem="SSq-Kh-EtM" secondAttribute="top" constant="24" id="aT2-Mf-QpQ"/>
                         <constraint firstItem="UKz-DB-Wwb" firstAttribute="top" secondItem="1nH-yI-R0H" secondAttribute="bottom" constant="25" id="bV5-Ws-gKS"/>
-                        <constraint firstItem="1nH-yI-R0H" firstAttribute="centerX" secondItem="SSq-Kh-EtM" secondAttribute="centerX" id="epS-Kp-5FN"/>
+                        <constraint firstItem="1nH-yI-R0H" firstAttribute="centerX" secondItem="SSq-Kh-EtM" secondAttribute="centerX" priority="999" id="epS-Kp-5FN"/>
                         <constraint firstItem="1nH-yI-R0H" firstAttribute="centerY" secondItem="w0g-Zr-935" secondAttribute="centerY" id="f2I-db-6UH"/>
                         <constraint firstItem="UKz-DB-Wwb" firstAttribute="leading" secondItem="SSq-Kh-EtM" secondAttribute="leading" constant="60" id="kQu-l8-M98"/>
                         <constraint firstAttribute="trailing" secondItem="w0g-Zr-935" secondAttribute="trailing" constant="24" id="otS-7L-m5N"/>

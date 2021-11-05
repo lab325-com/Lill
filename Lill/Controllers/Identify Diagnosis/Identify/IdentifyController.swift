@@ -269,7 +269,7 @@ extension IdentifyController: IdentifyOutputProtocol {
             self.identifyActivity.startAnimating()
             self.identifyAnalyzeIdentifyPlantLabel.isHidden = false
             
-            self.presenter.recognizePhoto(img: model.uploadMediaRecognition.urlIosFull)
+            self.presenter.recognizePhoto(img: model.uploadMedia.urlIosFull)
         }
     }
     
