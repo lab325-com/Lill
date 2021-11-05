@@ -16,6 +16,7 @@ class PlantsRouter: BaseRouter {
     
     func presentChooseIdentify() {
         let controller = ChooseIdentifyController()
+        controller.hidesBottomBarWhenPushed = true
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }
     

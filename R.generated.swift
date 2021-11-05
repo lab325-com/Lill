@@ -358,7 +358,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 77 images.
+  /// This `R.image` struct is generated, and contains static references to 79 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -502,6 +502,10 @@ struct R: Rswift.Validatable {
     static let plants_detail_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_watering_ic")
     /// Image `recognize_archive_ic`.
     static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
+    /// Image `sub_back_ic`.
+    static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
+    /// Image `sub_close_ic`.
+    static let sub_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_close_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
     /// Image `temp_onboarding_1_ic`.
@@ -1013,6 +1017,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_back_ic", bundle: ..., traitCollection: ...)`
+    static func sub_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_close_ic", bundle: ..., traitCollection: ...)`
+    static func sub_close_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_close_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
     static func temp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp, compatibleWith: traitCollection)
@@ -1057,7 +1075,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 25 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 26 nibs.
   struct nib {
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
@@ -1101,6 +1119,8 @@ struct R: Rswift.Validatable {
     static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `PlantsDetailController`.
     static let plantsDetailController = _R.nib._PlantsDetailController()
+    /// Nib `PopUniquePlantController`.
+    static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
     static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
     /// Nib `SplashController`.
@@ -1279,6 +1299,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopUniquePlantController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popUniquePlantController) instead")
+    static func popUniquePlantController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popUniquePlantController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "RecognizeArchiveController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.recognizeArchiveController) instead")
     static func recognizeArchiveController(_: Void = ()) -> UIKit.UINib {
@@ -1392,6 +1420,10 @@ struct R: Rswift.Validatable {
 
     static func plantsDetailController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.plantsDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func popUniquePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popUniquePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func recognizeArchiveController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -4442,6 +4474,7 @@ struct _R: Rswift.Validatable {
       try _OnboardingThreeController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
+      try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
@@ -4818,6 +4851,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _PopUniquePlantController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PopUniquePlantController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopUniquePlantController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _RecognizeArchiveController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "RecognizeArchiveController"
@@ -4863,7 +4913,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_identify_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_close' is used in nib 'SubcribeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

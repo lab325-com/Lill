@@ -30,4 +30,9 @@ class MenuRouter: BaseRouter {
         controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }
+    
+    func presentSubscription() {
+        let controller = SubcribeController()
+        present(controller: controller)
+    }
 }

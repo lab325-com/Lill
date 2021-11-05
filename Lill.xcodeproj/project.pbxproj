@@ -32,6 +32,9 @@
 		026CFC0D270C1FF8003A0687 /* GardenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026CFC0B270C1FF8003A0687 /* GardenViewCell.xib */; };
 		026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CFC10270C221C003A0687 /* GardenButtonCell.swift */; };
 		026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026CFC11270C221C003A0687 /* GardenButtonCell.xib */; };
+		0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DAD8273523FF005E7880 /* PopUniquePlantController.swift */; };
+		0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0272DAD9273523FF005E7880 /* PopUniquePlantController.xib */; };
+		0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DADC27352770005E7880 /* PopUpRouter.swift */; };
 		0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291DD992728293B008E9F6F /* DetailCaresView.swift */; };
 		0291DD9C27282944008E9F6F /* DetailCaresView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0291DD9B27282944008E9F6F /* DetailCaresView.xib */; };
 		0291DDA027283C32008E9F6F /* PlantsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */; };
@@ -75,6 +78,9 @@
 		02E0256F2732C97500988F12 /* RecognizeArchiveController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0256E2732C97500988F12 /* RecognizeArchiveController+Collection.swift */; };
 		02E0B1A4270431B400A56840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E0B1A3270431B400A56840 /* Main.storyboard */; };
 		02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0B1A52704325300A56840 /* MainTabBarController.swift */; };
+		02E329A327342557004344C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E329A227342556004344C0 /* StoreKit.framework */; };
+		02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E329A427342586004344C0 /* SubscribePresenter.swift */; };
+		02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02E329A727342629004344C0 /* SwiftyStoreKit */; };
 		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
 		02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575F26F90FF000F19C41 /* LoginModel.swift */; };
 		02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFA8270A36500089CEF8 /* WishListController.swift */; };
@@ -192,6 +198,9 @@
 		026CFC0B270C1FF8003A0687 /* GardenViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenViewCell.xib; sourceTree = "<group>"; };
 		026CFC10270C221C003A0687 /* GardenButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenButtonCell.swift; sourceTree = "<group>"; };
 		026CFC11270C221C003A0687 /* GardenButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenButtonCell.xib; sourceTree = "<group>"; };
+		0272DAD8273523FF005E7880 /* PopUniquePlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUniquePlantController.swift; sourceTree = "<group>"; };
+		0272DAD9273523FF005E7880 /* PopUniquePlantController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUniquePlantController.xib; sourceTree = "<group>"; };
+		0272DADC27352770005E7880 /* PopUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRouter.swift; sourceTree = "<group>"; };
 		0291DD992728293B008E9F6F /* DetailCaresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCaresView.swift; sourceTree = "<group>"; };
 		0291DD9B27282944008E9F6F /* DetailCaresView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCaresView.xib; sourceTree = "<group>"; };
 		0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailPresenter.swift; sourceTree = "<group>"; };
@@ -236,6 +245,8 @@
 		02E0256E2732C97500988F12 /* RecognizeArchiveController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecognizeArchiveController+Collection.swift"; sourceTree = "<group>"; };
 		02E0B1A3270431B400A56840 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02E0B1A52704325300A56840 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		02E329A227342556004344C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		02E329A427342586004344C0 /* SubscribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePresenter.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		02E4575F26F90FF000F19C41 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		02FCBFA8270A36500089CEF8 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
@@ -338,9 +349,11 @@
 				02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
 				FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */,
+				02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */,
 				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
+				02E329A327342557004344C0 /* StoreKit.framework in Frameworks */,
 				FAD49CEB27033C15005D6E75 /* FirebaseMessaging in Frameworks */,
 				FAD49CE727033C15005D6E75 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -448,6 +461,24 @@
 			path = GardenButtonCell;
 			sourceTree = "<group>";
 		};
+		0272DAD727352385005E7880 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0272DADE2735279E005E7880 /* PopUniquePlantController */,
+				0272DADC27352770005E7880 /* PopUpRouter.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		0272DADE2735279E005E7880 /* PopUniquePlantController */ = {
+			isa = PBXGroup;
+			children = (
+				0272DAD8273523FF005E7880 /* PopUniquePlantController.swift */,
+				0272DAD9273523FF005E7880 /* PopUniquePlantController.xib */,
+			);
+			path = PopUniquePlantController;
+			sourceTree = "<group>";
+		};
 		0291DD9827282925008E9F6F /* DetailAboutView */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +581,7 @@
 				FAB3BD212704AB710075C0C0 /* Garden */,
 				FAB3BD222704AB7E0075C0C0 /* Schedule */,
 				FAB3BD232704AB8E0075C0C0 /* Menu */,
+				0272DAD727352385005E7880 /* PopUp */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -706,6 +738,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		02E329A927343270004344C0 /* SubcribeController */ = {
+			isa = PBXGroup;
+			children = (
+				FA8FCD3B27199CD100173725 /* SubcribeController.swift */,
+				FA8FCD3C27199CD100173725 /* SubcribeController.xib */,
+			);
+			path = SubcribeController;
+			sourceTree = "<group>";
+		};
 		02E4575B26F903A200F19C41 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +819,7 @@
 		2CF629EDA9F76ED1922AF67E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02E329A227342556004344C0 /* StoreKit.framework */,
 				6A3CA843B3FB19CA2CC01C6A /* Pods_Lill.framework */,
 			);
 			name = Frameworks;
@@ -958,8 +1000,8 @@
 		FA8FCD3A27199C4700173725 /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
-				FA8FCD3B27199CD100173725 /* SubcribeController.swift */,
-				FA8FCD3C27199CD100173725 /* SubcribeController.xib */,
+				02E329A427342586004344C0 /* SubscribePresenter.swift */,
+				02E329A927343270004344C0 /* SubcribeController */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -1207,6 +1249,7 @@
 				023786262706DAEC0092F63A /* Kingfisher */,
 				02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */,
 				FA24A5982732B94A0059AF6A /* SwiftEntryKit */,
+				02E329A727342629004344C0 /* SwiftyStoreKit */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -1246,6 +1289,7 @@
 				023786252706DAEC0092F63A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+				02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -1290,6 +1334,7 @@
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
 				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
 				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */,
+				0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */,
 				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
 				FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
@@ -1433,6 +1478,7 @@
 				F3235D2E272E6CE100B4CE5E /* MenuPresenter.swift in Sources */,
 				F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
+				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
 				FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FA24A5AE273475100059AF6A /* CaresByGardenModel.swift in Sources */,
@@ -1443,6 +1489,7 @@
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
+				0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */,
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
@@ -1507,6 +1554,7 @@
 				02493DD62727E38A008C2064 /* PlantsDetailController.swift in Sources */,
 				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
+				0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				FA24A5B1273476190059AF6A /* GardenPresenter.swift in Sources */,
 				FA40D7122728307000A10C10 /* PlantModel.swift in Sources */,
@@ -1856,6 +1904,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.3;
+			};
+		};
 		02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
@@ -1929,6 +1985,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		02E329A727342629004344C0 /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
 		};
 		02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;

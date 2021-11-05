@@ -235,7 +235,7 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             self.analizeActivity.stopAnimating()
             self.diagnosingAnalyzeView.isHidden = true
 
-            self.presenter.diagnosePhoto(img: model.uploadMediaRecognition.urlIosFull)
+            self.presenter.diagnosePhoto(img: model.uploadMedia.urlIosFull)
         }
     }
     
