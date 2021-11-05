@@ -41,10 +41,10 @@ class GardenController: BaseController {
         
         super.viewDidLoad()
         
-        if let gardenId = KeychainService.standard.token?.defaultGardenId {
-            //presenter.getCaresByGarden(gardenId: gardenId)
-            //presenter.getGardenPants(gardenId: gardenId, isHappy: false)
-        }
+//        if let gardenId = KeychainService.standard.token?.defaultGardenId {
+//            //presenter.getCaresByGarden(gardenId: gardenId)
+//            //presenter.getGardenPants(gardenId: gardenId, isHappy: false)
+//        }
         
         setup()
     }
@@ -118,9 +118,9 @@ extension GardenController: GardenOutputProtocol {
     
     func successGardenPlants(model: GardenPlantsDataModel) {
         needsCarePlantsCount = model.gardenPlants.GardenPlants.count
-        for plant in model.gardenPlants.GardenPlants {
-            gardenPlants.append(plant)
-        }
+//        for plant in model.gardenPlants.GardenPlants {
+//            gardenPlants.append(plant)
+//        }
     }
     
     func failure(error: String) {
