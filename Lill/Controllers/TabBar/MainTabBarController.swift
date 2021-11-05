@@ -29,8 +29,12 @@ class MainTabBarController: UITabBarController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        self.tabBar.layer.masksToBounds = true
-        self.tabBar.layer.cornerRadius = 24
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        tabBar.layer.cornerRadius = 24
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 4)
+        tabBar.layer.shadowRadius = 30
+        tabBar.layer.shadowColor = UIColor(rgb: 0xA4E2AD).cgColor
+        tabBar.layer.shadowOpacity = 0.5
     }
 }
