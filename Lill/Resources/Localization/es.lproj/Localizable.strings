@@ -137,6 +137,17 @@
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
+"subscription_billed_with" = "Facturado %@";
+"subscription_cancel_any_time" = "Cancelar en cualquier momento";
+"subscription_description" = "Antes de crear sus suscripciones, asegúrese de saber sobre los requisitos y las mejores prácticas que lo ayudarán a ofrecer una gran experiencia de usuario. Las directrices a continuación proporcionan detalles sobre lo que deben incluir sus suscripciones y cómo deben presentarse en su aplicación, así como información sobre cómo realizar cambios en las suscripciones existentes, ofrecer ensayos gratuitos y más. Antes de crear sus suscripciones, asegúrese de saber sobre sus suscripciones. Los requisitos y las mejores prácticas que lo ayudarán a ofrecer una gran experiencia de usuario. Las directrices a continuación proporcionan detalles sobre lo que deben incluir sus suscripciones y cómo deben presentarse en su aplicación, así como información sobre cómo realizar cambios en las suscripciones existentes, ofrecer ensayos gratuitos y más.";
+"subscription_privacy" = "Política de privacidad";
+"subscription_recurring" = "Facturación mensual recurrente";
+"subscription_restore" = "Restaurar las compras";
+"subscription_save_33" = "Ahorre un 33% de descuento";
+"subscription_sub_title" = "Obtenga acceso a las plantas de diagnóstico de identificación / nand ilimitadas";
+"subscription_subscribe" = "Suscribir";
+"subscription_terms" = "Condiciones de uso";
+"subscription_title" = "Convertirse en una prima";
 "wish_list_back" = "atrás";
 "wish_list_no_data" = "Lista de deseos está vacía";
 "wish_list_title" = "De deseos";

@@ -102,8 +102,8 @@ extension MenuController: UITableViewDelegate {
             if let url = URL(string: "https://apps.apple.com/ru/app/telegram/id686449807") {
                 SharingManager.sharedManager.sendSharingLink(url: url, controller: self)
             }
-        default:
-            return
+        case .subscriptions:
+            MenuRouter(presenter: navigationController).presentSubscription()
         }
     }
 }
