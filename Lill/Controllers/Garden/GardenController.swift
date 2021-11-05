@@ -22,6 +22,8 @@ class GardenController: BaseController {
     
     private lazy var presenter = GardenPresenter(view: self)
     private var selectedType = 0
+    private var gardenPlants = [GardenPlantsModel]()
+    private var needsCarePlantsCount = 0
     
     //----------------------------------------------
     // MARK: - Gobal property
@@ -40,7 +42,8 @@ class GardenController: BaseController {
         super.viewDidLoad()
         
         if let gardenId = KeychainService.standard.token?.defaultGardenId {
-            presenter.getCaresByGarden(gardenId: gardenId)
+            //presenter.getCaresByGarden(gardenId: gardenId)
+            //presenter.getGardenPants(gardenId: gardenId, isHappy: false)
         }
         
         setup()
@@ -109,8 +112,15 @@ class GardenController: BaseController {
 //----------------------------------------------
 
 extension GardenController: GardenOutputProtocol {
-    func success(model: CaresByGardenDataModel) {
+    func successCaresByGarden(model: CaresByGardenDataModel) {
         
+    }
+    
+    func successGardenPlants(model: GardenPlantsDataModel) {
+        needsCarePlantsCount = model.gardenPlants.GardenPlants.count
+        for plant in model.gardenPlants.GardenPlants {
+            gardenPlants.append(plant)
+        }
     }
     
     func failure(error: String) {

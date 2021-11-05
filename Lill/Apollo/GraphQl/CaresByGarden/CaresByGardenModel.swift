@@ -6,6 +6,6 @@ struct CaresByGardenDataModel: Codable {
 }
 
 struct CaresByGardenModel: Codable {
-    let careCount: Int
-    let careType: CareType
+    let careCount: Int?
+    let careType: CareType?
 }

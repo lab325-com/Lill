@@ -16,11 +16,3 @@ struct DataModel: Codable {
     let totalFavorites: Int
     let plants: [PlantsModel]
 }
-
-struct PaginationModel: Codable {
-    let limit: Int
-    let nextPageExist: Bool
-    let ofset: Int
-    let prevPageExist: Bool
-    let totalPages: Int
-}

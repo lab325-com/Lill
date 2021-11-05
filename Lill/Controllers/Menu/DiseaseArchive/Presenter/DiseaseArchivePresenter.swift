@@ -35,7 +35,7 @@ class DiseaseArchivePresenter: DiseaseArchivePresenterProtocol {
     func getDiseaseArchive() {
         view?.startLoader()
         
-        let query = DiagnoseArhiveQuery(pagination: InputPagination(limit: 10, ofset: 0))
+        let query = DiagnoseArhiveQuery(pagination: InputPagination(ofset: 0, limit: 10))
         
         let _ = Network.shared.query(model: DiseaseArchiveModel.self, query) { [weak self] model in
             self?.view?.stopLoading()
