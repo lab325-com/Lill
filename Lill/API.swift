@@ -636,6 +636,165 @@ public struct RecognitionInput: GraphQLMapConvertible {
   }
 }
 
+public final class CaresByGardenQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query CaresByGarden($gardenId: String!) {
+      caresByGarden(gardenId: $gardenId) {
+        __typename
+        careCount
+        CareType {
+          __typename
+          id
+          name
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "CaresByGarden"
+
+  public var gardenId: String
+
+  public init(gardenId: String) {
+    self.gardenId = gardenId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenId": gardenId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("caresByGarden", arguments: ["gardenId": GraphQLVariable("gardenId")], type: .nonNull(.list(.object(CaresByGarden.selections)))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(caresByGarden: [CaresByGarden?]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "caresByGarden": caresByGarden.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } }])
+    }
+
+    /// Возвращает список Cares для Garden которые еще необходимо выполнить - т.е. в статусе пропущены и т.д.
+    /// Именно по этим Care можно фильтровать Care внутри гардена. Собственно этот резолвер и нужен что бы получить список Care для фильтра
+    public var caresByGarden: [CaresByGarden?] {
+      get {
+        return (resultMap["caresByGarden"] as! [ResultMap?]).map { (value: ResultMap?) -> CaresByGarden? in value.flatMap { (value: ResultMap) -> CaresByGarden in CaresByGarden(unsafeResultMap: value) } }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } }, forKey: "caresByGarden")
+      }
+    }
+
+    public struct CaresByGarden: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["CareMeta"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("careCount", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("CareType", type: .nonNull(.object(CareType.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(careCount: Int, careType: CareType) {
+        self.init(unsafeResultMap: ["__typename": "CareMeta", "careCount": careCount, "CareType": careType.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var careCount: Int {
+        get {
+          return resultMap["careCount"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "careCount")
+        }
+      }
+
+      public var careType: CareType {
+        get {
+          return CareType(unsafeResultMap: resultMap["CareType"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "CareType")
+        }
+      }
+
+      public struct CareType: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["CareType"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, name: String) {
+          self.init(unsafeResultMap: ["__typename": "CareType", "id": id, "name": name])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class DiagnoseArhiveQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

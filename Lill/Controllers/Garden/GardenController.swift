@@ -20,6 +20,7 @@ class GardenController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
+    private lazy var presenter = GardenPresenter(view: self)
     private var selectedType = 0
     
     //----------------------------------------------
@@ -37,6 +38,10 @@ class GardenController: BaseController {
         hiddenNavigationBar = true
         
         super.viewDidLoad()
+        
+        if let gardenId = KeychainService.standard.token?.defaultGardenId {
+            presenter.getCaresByGarden(gardenId: gardenId)
+        }
         
         setup()
     }
@@ -96,5 +101,19 @@ class GardenController: BaseController {
     
     @IBAction func addPlantAction(_ sender: UIButton) {
         tabBarController?.selectedIndex = 0
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenOutputProtocol
+//----------------------------------------------
+
+extension GardenController: GardenOutputProtocol {
+    func success(model: CaresByGardenDataModel) {
+        
+    }
+    
+    func failure(error: String) {
+        
     }
 }

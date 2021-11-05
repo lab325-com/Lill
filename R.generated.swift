@@ -151,8 +151,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 20 files.
+  /// This `R.file` struct is generated, and contains static references to 21 files.
   struct file {
+    /// Resource file `CaresByGarden.graphql`.
+    static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
     /// Resource file `Disease.graphql`.
@@ -193,6 +195,12 @@ struct R: Rswift.Validatable {
     static let uploadMediaGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMedia", pathExtension: "graphql")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
+
+    /// `bundle.url(forResource: "CaresByGarden", withExtension: "graphql")`
+    static func caresByGardenGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.caresByGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "Debug", withExtension: "xcconfig")`
     static func debugXcconfig(_: Void = ()) -> Foundation.URL? {
@@ -1417,7 +1425,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 153 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 156 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1439,6 +1447,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Unique Plant
+      ///
+      /// Locales: en
+      static let uniquel_plan_name_title = Rswift.StringResource(key: "uniquel_plan_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Add to My Garden
       ///
       /// Locales: en, es
@@ -1567,6 +1579,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_add_to_garden_title = Rswift.StringResource(key: "plant_add_to_garden_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Create Plant name
+      ///
+      /// Locales: en
+      static let uniquel_plan_create = Rswift.StringResource(key: "uniquel_plan_create", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Create name for your plant
+      ///
+      /// Locales: en
+      static let uniquel_plan_name_sub_title = Rswift.StringResource(key: "uniquel_plan_name_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: D
       ///
       /// Locales: en, es
@@ -2107,6 +2127,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_uniquePlantButton", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add Unique Plant
+      ///
+      /// Locales: en
+      static func uniquel_plan_name_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uniquel_plan_name_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "uniquel_plan_name_title"
+        }
+
+        return NSLocalizedString("uniquel_plan_name_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add to My Garden
       ///
       /// Locales: en, es
@@ -2587,6 +2622,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plant_add_to_garden_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Create Plant name
+      ///
+      /// Locales: en
+      static func uniquel_plan_create(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uniquel_plan_create", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "uniquel_plan_create"
+        }
+
+        return NSLocalizedString("uniquel_plan_create", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Create name for your plant
+      ///
+      /// Locales: en
+      static func uniquel_plan_name_sub_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uniquel_plan_name_sub_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "uniquel_plan_name_sub_title"
+        }
+
+        return NSLocalizedString("uniquel_plan_name_sub_title", bundle: bundle, comment: "")
       }
 
       /// en translation: D

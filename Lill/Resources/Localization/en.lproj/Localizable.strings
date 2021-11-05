@@ -148,6 +148,9 @@
 "subscription_subscribe" = "Subscribe";
 "subscription_terms" = "Terms of use";
 "subscription_title" = "Become a Premium";
+"uniquel_plan_create" = "Create Plant name";
+"uniquel_plan_name_sub_title" = "Create name for your plant";
+"uniquel_plan_name_title" = "Add Unique Plant";
 "wish_list_back" = "Back";
 "wish_list_no_data" = "Wishlist is empty";
 "wish_list_title" = "Wishlist";
