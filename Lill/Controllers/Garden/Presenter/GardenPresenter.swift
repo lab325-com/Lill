@@ -9,7 +9,8 @@ import UIKit
 
 protocol GardenOutputProtocol: BaseController {
     func successCaresByGarden(model: CaresByGardenDataModel)
-    func successGardenPlants(model: GardenPlantsDataModel)
+    func successGardenPlants()
+    
     func failure(error: String)
 }
 
@@ -21,13 +22,17 @@ protocol GardenPresenterProtocol: AnyObject {
     init(view: GardenOutputProtocol)
     
     func getCaresByGarden(gardenId: String)
-    func getGardenPants(gardenId: String, isHappy: Bool)
+    func getGardenPants(gardenId: String)
 }
 
 class GardenPresenter: GardenPresenterProtocol {
 
     private weak var view: GardenOutputProtocol?
     private var request: Cancellable?
+    
+    var gardenPlants: [GardenPlantModel] = []
+    var sadGardenPlants: [GardenPlantModel] = []
+    var happyGardenPlants: [GardenPlantModel] = []
 
     required init(view: GardenOutputProtocol) {
         self.view = view
@@ -48,18 +53,35 @@ class GardenPresenter: GardenPresenterProtocol {
         })
     }
     
-    func getGardenPants(gardenId: String, isHappy: Bool) {
-        view?.startLoader()
-        
-        request?.cancel()
-        
-       let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(ofset: 0, limit: 10), careTypeId: nil, isHappy: isHappy)
-        request = Network.shared.query(model: GardenPlantsDataModel.self, query, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successGardenPlants(model: model)
+    func getGardenPants(gardenId: String) {
+        let group = DispatchGroup()
+
+        group.enter()
+        let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(ofset: 0, limit: 10), careTypeId: nil, isHappy: false)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
+            group.leave()
+            self?.sadGardenPlants = model.gardenPlants.GardenPlants
         }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
+            group.leave()
             self?.view?.failure(error: error.localizedDescription)
         })
+
+        group.enter()
+        let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(ofset: 0, limit: 10), careTypeId: nil, isHappy: true)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
+            group.leave()
+            self?.happyGardenPlants = model.gardenPlants.GardenPlants
+        }, failureHandler: { [weak self] error in
+            group.leave()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+
+        group.notify(queue: DispatchQueue.main) { [weak self] in
+            if let sadGardenPlants = self?.sadGardenPlants, let happyGardenPlants = self?.happyGardenPlants {
+                self?.gardenPlants = sadGardenPlants + happyGardenPlants
+            }
+            
+            self?.view?.successGardenPlants()
+        }
     }
 }

@@ -22,13 +22,13 @@ class GardenController: BaseController {
     
     private lazy var presenter = GardenPresenter(view: self)
     private var selectedType = 0
-    private var gardenPlants = [GardenPlantsModel]()
-    private var needsCarePlantsCount = 0
     
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
     
+    var gardenPlants = [GardenPlantModel]()
+    var sadGardenPlants = [GardenPlantModel]()
     let cellIdentifier = String(describing: GardenViewCell.self)
     let cellButtonIdentifier = String(describing: GardenButtonCell.self)
     
@@ -41,10 +41,10 @@ class GardenController: BaseController {
         
         super.viewDidLoad()
         
-//        if let gardenId = KeychainService.standard.token?.defaultGardenId {
-//            //presenter.getCaresByGarden(gardenId: gardenId)
-//            //presenter.getGardenPants(gardenId: gardenId, isHappy: false)
-//        }
+        if let gardenId = KeychainService.standard.token?.defaultGardenId {
+            //presenter.getCaresByGarden(gardenId: gardenId)
+            presenter.getGardenPants(gardenId: gardenId)
+        }
         
         setup()
     }
@@ -112,15 +112,16 @@ class GardenController: BaseController {
 //----------------------------------------------
 
 extension GardenController: GardenOutputProtocol {
+    
     func successCaresByGarden(model: CaresByGardenDataModel) {
         
     }
     
-    func successGardenPlants(model: GardenPlantsDataModel) {
-        needsCarePlantsCount = model.gardenPlants.GardenPlants.count
-//        for plant in model.gardenPlants.GardenPlants {
-//            gardenPlants.append(plant)
-//        }
+    func successGardenPlants() {
+        gardenPlants = presenter.gardenPlants
+        sadGardenPlants = presenter.sadGardenPlants
+        
+        collectionView.reloadData()
     }
     
     func failure(error: String) {
