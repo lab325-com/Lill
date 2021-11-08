@@ -29,6 +29,7 @@ class GardenController: BaseController {
     
     var gardenPlants = [GardenPlantModel]()
     var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
     let cellIdentifier = String(describing: GardenViewCell.self)
     let cellButtonIdentifier = String(describing: GardenButtonCell.self)
     
@@ -120,6 +121,7 @@ extension GardenController: GardenOutputProtocol {
     func successGardenPlants() {
         gardenPlants = presenter.gardenPlants
         sadGardenPlants = presenter.sadGardenPlants
+        happyGardenPlants = presenter.happyGardenPlants
         
         collectionView.reloadData()
     }

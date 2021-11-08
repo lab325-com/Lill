@@ -8,10 +8,16 @@ query GardenPlants($gardenId: String!,
 				 isHappy: $isHappy) {
 		GardenPlants {
 			name
+			isHappy
 			userMainImage {
 				urlIosFull
 				urlIosPrev
 				media_id
+			}
+			GardenPlantCares {
+				count
+				name
+				period
 			}
 		}
 		Pagination {

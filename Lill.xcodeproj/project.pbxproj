@@ -812,8 +812,8 @@
 		02E4576526F9139000F19C41 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				02E025692732B8A300988F12 /* RecognizeArhive */,
 				FA8FCD3727196BC100173725 /* GlobalModels */,
+				02E025692732B8A300988F12 /* RecognizeArhive */,
 				02E0255A27326DC300988F12 /* DiseaseArchiveModel */,
 				FA64050F2722F9DE000124A5 /* StartDiagnose */,
 				FA8FCD2C27185F6200173725 /* StartRecognition */,
