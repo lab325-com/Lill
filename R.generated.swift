@@ -1561,692 +1561,692 @@ struct R: Rswift.Validatable {
     struct localizable {
       /// en translation: A
       ///
-      /// Locales: en
-      static let climate_ph_a = Rswift.StringResource(key: "climate_ph_a", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_a = Rswift.StringResource(key: "climate_ph_a", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: AN
       ///
-      /// Locales: en
-      static let climate_ph_an = Rswift.StringResource(key: "climate_ph_an", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_an = Rswift.StringResource(key: "climate_ph_an", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: ANB
       ///
-      /// Locales: en
-      static let climate_ph_anb = Rswift.StringResource(key: "climate_ph_anb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_anb = Rswift.StringResource(key: "climate_ph_anb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: About
       ///
-      /// Locales: en
-      static let plant_detail_about = Rswift.StringResource(key: "plant_detail_about", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_about = Rswift.StringResource(key: "plant_detail_about", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Cares
       ///
-      /// Locales: en
-      static let uniques_add_care = Rswift.StringResource(key: "uniques_add_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_add_care = Rswift.StringResource(key: "uniques_add_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Cover
       ///
-      /// Locales: en
-      static let uniques_cover_add = Rswift.StringResource(key: "uniques_cover_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_add = Rswift.StringResource(key: "uniques_cover_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant
       ///
-      /// Locales: en
-      static let uniques_cover_title = Rswift.StringResource(key: "uniques_cover_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_title = Rswift.StringResource(key: "uniques_cover_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant Cares
       ///
-      /// Locales: en
-      static let uniques_cares_title = Rswift.StringResource(key: "uniques_cares_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cares_title = Rswift.StringResource(key: "uniques_cares_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Unique
       ///
-      /// Locales: en
-      static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_uniquePlantButton = Rswift.StringResource(key: "plants_uniquePlantButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Unique Plant
       ///
-      /// Locales: en
-      static let uniquel_plan_name_title = Rswift.StringResource(key: "uniquel_plan_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniquel_plan_name_title = Rswift.StringResource(key: "uniquel_plan_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add to My Garden
       ///
-      /// Locales: en
-      static let plant_detail_add_to_my_garden = Rswift.StringResource(key: "plant_detail_add_to_my_garden", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_add_to_my_garden = Rswift.StringResource(key: "plant_detail_add_to_my_garden", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Added in Wishlist
       ///
-      /// Locales: en
-      static let plant_detail_added_to_wishlist = Rswift.StringResource(key: "plant_detail_added_to_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_added_to_wishlist = Rswift.StringResource(key: "plant_detail_added_to_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Analyzing image
       ///
-      /// Locales: en
-      static let identify_analize_image = Rswift.StringResource(key: "identify_analize_image", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_analize_image = Rswift.StringResource(key: "identify_analize_image", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Annual Climber
       ///
-      /// Locales: en
-      static let climate_habit_annual_climber = Rswift.StringResource(key: "climate_habit_annual_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_annual_climber = Rswift.StringResource(key: "climate_habit_annual_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Annual Perennial
       ///
-      /// Locales: en
-      static let climate_habit_annual_perennial = Rswift.StringResource(key: "climate_habit_annual_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_annual_perennial = Rswift.StringResource(key: "climate_habit_annual_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Apply
       ///
-      /// Locales: en
-      static let uniques_cover_add_apply = Rswift.StringResource(key: "uniques_cover_add_apply", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_add_apply = Rswift.StringResource(key: "uniques_cover_add_apply", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Are you sure want log out?
       ///
-      /// Locales: en
-      static let allert_logout_message = Rswift.StringResource(key: "allert_logout_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let allert_logout_message = Rswift.StringResource(key: "allert_logout_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: B
       ///
-      /// Locales: en
-      static let climate_ph_b = Rswift.StringResource(key: "climate_ph_b", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_b = Rswift.StringResource(key: "climate_ph_b", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Back
       ///
-      /// Locales: en
-      static let plant_detail_back = Rswift.StringResource(key: "plant_detail_back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_back = Rswift.StringResource(key: "plant_detail_back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Back
       ///
-      /// Locales: en
-      static let wish_list_back = Rswift.StringResource(key: "wish_list_back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let wish_list_back = Rswift.StringResource(key: "wish_list_back", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Back to top
       ///
-      /// Locales: en
-      static let plants_backToTop = Rswift.StringResource(key: "plants_backToTop", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_backToTop = Rswift.StringResource(key: "plants_backToTop", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Bamboo
       ///
-      /// Locales: en
-      static let climate_habit_bamboo = Rswift.StringResource(key: "climate_habit_bamboo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_bamboo = Rswift.StringResource(key: "climate_habit_bamboo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Become a Premium
       ///
-      /// Locales: en
-      static let subscription_title = Rswift.StringResource(key: "subscription_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_title = Rswift.StringResource(key: "subscription_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
       ///
-      /// Locales: en
-      static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Biennial
       ///
-      /// Locales: en
-      static let climate_habit_biennial = Rswift.StringResource(key: "climate_habit_biennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_biennial = Rswift.StringResource(key: "climate_habit_biennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Biennial Perennial
       ///
-      /// Locales: en
-      static let climate_habit_biennial_perennial = Rswift.StringResource(key: "climate_habit_biennial_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_biennial_perennial = Rswift.StringResource(key: "climate_habit_biennial_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Billed %@
       ///
-      /// Locales: en
-      static let subscription_billed_with = Rswift.StringResource(key: "subscription_billed_with", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_billed_with = Rswift.StringResource(key: "subscription_billed_with", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Bulb
       ///
-      /// Locales: en
-      static let climate_habit_bulb = Rswift.StringResource(key: "climate_habit_bulb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_bulb = Rswift.StringResource(key: "climate_habit_bulb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
-      /// Locales: en
-      static let choose_identify_cancel = Rswift.StringResource(key: "choose_identify_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let choose_identify_cancel = Rswift.StringResource(key: "choose_identify_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
-      /// Locales: en
-      static let uniques_cover_cancel = Rswift.StringResource(key: "uniques_cover_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_cancel = Rswift.StringResource(key: "uniques_cover_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel anytime
       ///
-      /// Locales: en
-      static let subscription_cancel_any_time = Rswift.StringResource(key: "subscription_cancel_any_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_cancel_any_time = Rswift.StringResource(key: "subscription_cancel_any_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Can’t identify or find in catalog?
       ///
-      /// Locales: en
-      static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Capture
       ///
-      /// Locales: en
-      static let diagnosis_capture = Rswift.StringResource(key: "diagnosis_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_capture = Rswift.StringResource(key: "diagnosis_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Capture
       ///
-      /// Locales: en
-      static let identify_capture = Rswift.StringResource(key: "identify_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_capture = Rswift.StringResource(key: "identify_capture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Capture
       ///
-      /// Locales: en
-      static let unique_ident_cover_capture_title = Rswift.StringResource(key: "unique_ident_cover_capture_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let unique_ident_cover_capture_title = Rswift.StringResource(key: "unique_ident_cover_capture_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Capture sick part of Plant
       ///
-      /// Locales: en
-      static let diagnosis_capture_info = Rswift.StringResource(key: "diagnosis_capture_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_capture_info = Rswift.StringResource(key: "diagnosis_capture_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cares
       ///
-      /// Locales: en
-      static let plant_detail_cares = Rswift.StringResource(key: "plant_detail_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_cares = Rswift.StringResource(key: "plant_detail_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cares added:
       ///
-      /// Locales: en
-      static let uniques_cares_add = Rswift.StringResource(key: "uniques_cares_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cares_add = Rswift.StringResource(key: "uniques_cares_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate Deciduous Unknown
       ///
-      /// Locales: en
-      static let climante_deciduous_unknown = Rswift.StringResource(key: "climante_deciduous_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climante_deciduous_unknown = Rswift.StringResource(key: "climante_deciduous_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate Habit Unknown
       ///
-      /// Locales: en
-      static let climate_habit_unknown = Rswift.StringResource(key: "climate_habit_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_unknown = Rswift.StringResource(key: "climate_habit_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate Moisture Unknown
       ///
-      /// Locales: en
-      static let climate_moisture_unknown = Rswift.StringResource(key: "climate_moisture_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_unknown = Rswift.StringResource(key: "climate_moisture_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate PH Unknown
       ///
-      /// Locales: en
-      static let climate_ph_unknown = Rswift.StringResource(key: "climate_ph_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_unknown = Rswift.StringResource(key: "climate_ph_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate Shade Unknown
       ///
-      /// Locales: en
-      static let climate_shade_unknown = Rswift.StringResource(key: "climate_shade_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_unknown = Rswift.StringResource(key: "climate_shade_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climate Soial Unknown
       ///
-      /// Locales: en
-      static let climate_soil_unknown = Rswift.StringResource(key: "climate_soil_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_unknown = Rswift.StringResource(key: "climate_soil_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Climber
       ///
-      /// Locales: en
-      static let climate_habit_climber = Rswift.StringResource(key: "climate_habit_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_climber = Rswift.StringResource(key: "climate_habit_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Congrads!
       ///
-      /// Locales: en
-      static let plant_add_to_garden_title = Rswift.StringResource(key: "plant_add_to_garden_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_add_to_garden_title = Rswift.StringResource(key: "plant_add_to_garden_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cover
       ///
-      /// Locales: en
-      static let uniques_cares_back_title = Rswift.StringResource(key: "uniques_cares_back_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cares_back_title = Rswift.StringResource(key: "uniques_cares_back_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Create Cover for your new Place
       ///
-      /// Locales: en
-      static let unique_ident_cover_sub_title = Rswift.StringResource(key: "unique_ident_cover_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let unique_ident_cover_sub_title = Rswift.StringResource(key: "unique_ident_cover_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Create Plant name
       ///
-      /// Locales: en
-      static let uniquel_plan_create = Rswift.StringResource(key: "uniquel_plan_create", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniquel_plan_create = Rswift.StringResource(key: "uniquel_plan_create", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Create name for your plant
       ///
-      /// Locales: en
-      static let uniquel_plan_name_sub_title = Rswift.StringResource(key: "uniquel_plan_name_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniquel_plan_name_sub_title = Rswift.StringResource(key: "uniquel_plan_name_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: D
       ///
-      /// Locales: en
-      static let climate_moisture_d = Rswift.StringResource(key: "climate_moisture_d", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_d = Rswift.StringResource(key: "climate_moisture_d", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: DM
       ///
-      /// Locales: en
-      static let climate_moisture_dm = Rswift.StringResource(key: "climate_moisture_dm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_dm = Rswift.StringResource(key: "climate_moisture_dm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: DMW
       ///
-      /// Locales: en
-      static let climate_moisture_dmw = Rswift.StringResource(key: "climate_moisture_dmw", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_dmw = Rswift.StringResource(key: "climate_moisture_dmw", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: DMWE
       ///
-      /// Locales: en
-      static let climate_moisture_dmwe = Rswift.StringResource(key: "climate_moisture_dmwe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_dmwe = Rswift.StringResource(key: "climate_moisture_dmwe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Days
       ///
-      /// Locales: en
-      static let care_period_type_days = Rswift.StringResource(key: "care_period_type_days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_period_type_days = Rswift.StringResource(key: "care_period_type_days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Deciduous
       ///
-      /// Locales: en
-      static let climate_deciduous_deciduous = Rswift.StringResource(key: "climate_deciduous_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_deciduous_deciduous = Rswift.StringResource(key: "climate_deciduous_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose
       ///
-      /// Locales: en
-      static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_title = Rswift.StringResource(key: "diagnosis_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose Disease
       ///
-      /// Locales: en
-      static let disease_archive_button = Rswift.StringResource(key: "disease_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let disease_archive_button = Rswift.StringResource(key: "disease_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose Photo
       ///
-      /// Locales: en
-      static let diagnosis_preview_diagnose = Rswift.StringResource(key: "diagnosis_preview_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_preview_diagnose = Rswift.StringResource(key: "diagnosis_preview_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnosing in Progress
       ///
-      /// Locales: en
-      static let diagnosis_analyze_info = Rswift.StringResource(key: "diagnosis_analyze_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_analyze_info = Rswift.StringResource(key: "diagnosis_analyze_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnosis
       ///
-      /// Locales: en
-      static let choose_identify_diagnosis = Rswift.StringResource(key: "choose_identify_diagnosis", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let choose_identify_diagnosis = Rswift.StringResource(key: "choose_identify_diagnosis", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Disease Archive
       ///
-      /// Locales: en
-      static let disease_archive_title = Rswift.StringResource(key: "disease_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let disease_archive_title = Rswift.StringResource(key: "disease_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Disease Archive
       ///
-      /// Locales: en
-      static let menu_item_archive_disease = Rswift.StringResource(key: "menu_item_archive_disease", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_archive_disease = Rswift.StringResource(key: "menu_item_archive_disease", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Do you want to start analyzing Photo?
       ///
-      /// Locales: en
-      static let identify_result_info = Rswift.StringResource(key: "identify_result_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_result_info = Rswift.StringResource(key: "identify_result_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Evergreen
       ///
-      /// Locales: en
-      static let climate_deciduous_evergreen = Rswift.StringResource(key: "climate_deciduous_evergreen", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_deciduous_evergreen = Rswift.StringResource(key: "climate_deciduous_evergreen", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Explore Plants and create garden of your dream
       ///
-      /// Locales: en
-      static let login_info = Rswift.StringResource(key: "login_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let login_info = Rswift.StringResource(key: "login_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Explore catalog
       ///
-      /// Locales: en
-      static let plants_explore = Rswift.StringResource(key: "plants_explore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_explore = Rswift.StringResource(key: "plants_explore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: FS
       ///
-      /// Locales: en
-      static let climate_shade_fs = Rswift.StringResource(key: "climate_shade_fs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_fs = Rswift.StringResource(key: "climate_shade_fs", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: FSN
       ///
-      /// Locales: en
-      static let climate_shade_fsn = Rswift.StringResource(key: "climate_shade_fsn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_fsn = Rswift.StringResource(key: "climate_shade_fsn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Fern
       ///
-      /// Locales: en
-      static let climate_habit_fern = Rswift.StringResource(key: "climate_habit_fern", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_fern = Rswift.StringResource(key: "climate_habit_fern", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Full-size image of Plant
       ///
-      /// Locales: en
-      static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
       ///
-      /// Locales: en
-      static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Great!
       ///
-      /// Locales: en
-      static let plant_add_to_garden_great = Rswift.StringResource(key: "plant_add_to_garden_great", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_add_to_garden_great = Rswift.StringResource(key: "plant_add_to_garden_great", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Habit
       ///
-      /// Locales: en
-      static let climate_habit = Rswift.StringResource(key: "climate_habit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit = Rswift.StringResource(key: "climate_habit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Hardiness
       ///
-      /// Locales: en
-      static let climate_hardiness = Rswift.StringResource(key: "climate_hardiness", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_hardiness = Rswift.StringResource(key: "climate_hardiness", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Height
       ///
-      /// Locales: en
-      static let climate_height = Rswift.StringResource(key: "climate_height", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_height = Rswift.StringResource(key: "climate_height", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Humidity
       ///
-      /// Locales: en
-      static let care_type_humidity = Rswift.StringResource(key: "care_type_humidity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_type_humidity = Rswift.StringResource(key: "care_type_humidity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identify
       ///
-      /// Locales: en
-      static let choose_identify_identify = Rswift.StringResource(key: "choose_identify_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let choose_identify_identify = Rswift.StringResource(key: "choose_identify_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identify Photo
       ///
       /// Locales: en
       static let identify_result_identify_photo = Rswift.StringResource(key: "identify_result_identify_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Identify Results:
       ///
-      /// Locales: en
-      static let identify_results = Rswift.StringResource(key: "identify_results", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_results = Rswift.StringResource(key: "identify_results", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identify my Plants
       ///
-      /// Locales: en
-      static let plants_identifier = Rswift.StringResource(key: "plants_identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_identifier = Rswift.StringResource(key: "plants_identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identifying
       ///
-      /// Locales: en
-      static let identify_result_title = Rswift.StringResource(key: "identify_result_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_result_title = Rswift.StringResource(key: "identify_result_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identifying
       ///
-      /// Locales: en
-      static let identify_title = Rswift.StringResource(key: "identify_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_title = Rswift.StringResource(key: "identify_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identifying Plant by Photo
       ///
-      /// Locales: en
-      static let identify_info = Rswift.StringResource(key: "identify_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_info = Rswift.StringResource(key: "identify_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identifying plant
       ///
-      /// Locales: en
-      static let identify_analize_identify_plant = Rswift.StringResource(key: "identify_analize_identify_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_analize_identify_plant = Rswift.StringResource(key: "identify_analize_identify_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Invite friends (share app)
       ///
-      /// Locales: en
-      static let menu_item_share = Rswift.StringResource(key: "menu_item_share", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_share = Rswift.StringResource(key: "menu_item_share", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: L
       ///
-      /// Locales: en
-      static let climate_soil_l = Rswift.StringResource(key: "climate_soil_l", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_l = Rswift.StringResource(key: "climate_soil_l", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: LM
       ///
-      /// Locales: en
-      static let climate_soil_lm = Rswift.StringResource(key: "climate_soil_lm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_lm = Rswift.StringResource(key: "climate_soil_lm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: LMH
       ///
-      /// Locales: en
-      static let climate_soil_lmh = Rswift.StringResource(key: "climate_soil_lmh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_lmh = Rswift.StringResource(key: "climate_soil_lmh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Language
       ///
-      /// Locales: en
-      static let menu_item_language = Rswift.StringResource(key: "menu_item_language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_language = Rswift.StringResource(key: "menu_item_language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Language
       ///
-      /// Locales: en
-      static let menu_laguage_title = Rswift.StringResource(key: "menu_laguage_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_laguage_title = Rswift.StringResource(key: "menu_laguage_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Log out
       ///
-      /// Locales: en
-      static let menu_log_out = Rswift.StringResource(key: "menu_log_out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_log_out = Rswift.StringResource(key: "menu_log_out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Login with
       ///
-      /// Locales: en
-      static let login_loginWith = Rswift.StringResource(key: "login_loginWith", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let login_loginWith = Rswift.StringResource(key: "login_loginWith", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: M
       ///
-      /// Locales: en
-      static let climate_moisture_m = Rswift.StringResource(key: "climate_moisture_m", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_m = Rswift.StringResource(key: "climate_moisture_m", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: M
       ///
-      /// Locales: en
-      static let climate_soil_m = Rswift.StringResource(key: "climate_soil_m", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_m = Rswift.StringResource(key: "climate_soil_m", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: MH
       ///
-      /// Locales: en
-      static let climate_soil_mh = Rswift.StringResource(key: "climate_soil_mh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil_mh = Rswift.StringResource(key: "climate_soil_mh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: MWE
       ///
-      /// Locales: en
-      static let climate_moisture_mwe = Rswift.StringResource(key: "climate_moisture_mwe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_mwe = Rswift.StringResource(key: "climate_moisture_mwe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: MWEWA
       ///
-      /// Locales: en
-      static let climate_moisture_mwewa = Rswift.StringResource(key: "climate_moisture_mwewa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_mwewa = Rswift.StringResource(key: "climate_moisture_mwewa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Make Photo of Whole Plant
       ///
-      /// Locales: en
-      static let identify_make_photo_title = Rswift.StringResource(key: "identify_make_photo_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_make_photo_title = Rswift.StringResource(key: "identify_make_photo_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Make sure that Photo is sharp and contains the diseased part
       ///
-      /// Locales: en
-      static let diagnosis_onboarding_info = Rswift.StringResource(key: "diagnosis_onboarding_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_onboarding_info = Rswift.StringResource(key: "diagnosis_onboarding_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Make sure that Photo is sharp and contains the diseased part
       ///
-      /// Locales: en
-      static let diagnosis_preview_info = Rswift.StringResource(key: "diagnosis_preview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_preview_info = Rswift.StringResource(key: "diagnosis_preview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Make sure that plant isolated from other plants
       ///
-      /// Locales: en
-      static let identify_overview_info = Rswift.StringResource(key: "identify_overview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_overview_info = Rswift.StringResource(key: "identify_overview_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Make sure the photo is sharp and high-resolution
       ///
-      /// Locales: en
-      static let identify_photo_quality_info = Rswift.StringResource(key: "identify_photo_quality_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_photo_quality_info = Rswift.StringResource(key: "identify_photo_quality_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Menu
       ///
-      /// Locales: en
-      static let menu_title = Rswift.StringResource(key: "menu_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_title = Rswift.StringResource(key: "menu_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Misting
       ///
-      /// Locales: en
-      static let care_type_misting = Rswift.StringResource(key: "care_type_misting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_type_misting = Rswift.StringResource(key: "care_type_misting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Moisture
       ///
-      /// Locales: en
-      static let climate_moisture = Rswift.StringResource(key: "climate_moisture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture = Rswift.StringResource(key: "climate_moisture", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: More on Wiki
       ///
-      /// Locales: en
-      static let plant_detail_more_on_wiki = Rswift.StringResource(key: "plant_detail_more_on_wiki", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_more_on_wiki = Rswift.StringResource(key: "plant_detail_more_on_wiki", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Mounths
       ///
-      /// Locales: en
-      static let care_period_type_mounths = Rswift.StringResource(key: "care_period_type_mounths", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_period_type_mounths = Rswift.StringResource(key: "care_period_type_mounths", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: N
       ///
-      /// Locales: en
-      static let climate_ph_n = Rswift.StringResource(key: "climate_ph_n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_n = Rswift.StringResource(key: "climate_ph_n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: N
       ///
-      /// Locales: en
-      static let climate_shade_n = Rswift.StringResource(key: "climate_shade_n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_n = Rswift.StringResource(key: "climate_shade_n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: NB
       ///
-      /// Locales: en
-      static let climate_ph_nb = Rswift.StringResource(key: "climate_ph_nb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph_nb = Rswift.StringResource(key: "climate_ph_nb", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: NO
       ///
-      /// Locales: en
-      static let allert_no = Rswift.StringResource(key: "allert_no", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let allert_no = Rswift.StringResource(key: "allert_no", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: No problems detected
       ///
-      /// Locales: en
-      static let diagnosis_no_data = Rswift.StringResource(key: "diagnosis_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_no_data = Rswift.StringResource(key: "diagnosis_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Overview
       ///
-      /// Locales: en
-      static let identify_overview_title = Rswift.StringResource(key: "identify_overview_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_overview_title = Rswift.StringResource(key: "identify_overview_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: PH
       ///
-      /// Locales: en
-      static let climate_ph = Rswift.StringResource(key: "climate_ph", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_ph = Rswift.StringResource(key: "climate_ph", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Perennial
       ///
-      /// Locales: en
-      static let climate_habit_perenial = Rswift.StringResource(key: "climate_habit_perenial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_perenial = Rswift.StringResource(key: "climate_habit_perenial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Perennial Climber
       ///
-      /// Locales: en
-      static let climate_habit_perenial_climber = Rswift.StringResource(key: "climate_habit_perenial_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_perenial_climber = Rswift.StringResource(key: "climate_habit_perenial_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Photo quality
       ///
-      /// Locales: en
-      static let identify_photo_quality_title = Rswift.StringResource(key: "identify_photo_quality_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_photo_quality_title = Rswift.StringResource(key: "identify_photo_quality_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant Cover is captured
       ///
-      /// Locales: en
-      static let uniques_cover_add_captured = Rswift.StringResource(key: "uniques_cover_add_captured", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_add_captured = Rswift.StringResource(key: "uniques_cover_add_captured", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant is added in your Garden!
       ///
-      /// Locales: en
-      static let plant_add_to_garden_info = Rswift.StringResource(key: "plant_add_to_garden_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_add_to_garden_info = Rswift.StringResource(key: "plant_add_to_garden_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant name
       ///
-      /// Locales: en
-      static let uniques_cover_back_title = Rswift.StringResource(key: "uniques_cover_back_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_back_title = Rswift.StringResource(key: "uniques_cover_back_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Please Select Care you want to add to Plant Care Plan
       ///
-      /// Locales: en
-      static let uniques_cares_sub_title = Rswift.StringResource(key: "uniques_cares_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cares_sub_title = Rswift.StringResource(key: "uniques_cares_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Please wait
       ///
-      /// Locales: en
-      static let activity_title = Rswift.StringResource(key: "activity_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let activity_title = Rswift.StringResource(key: "activity_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Premium
       ///
-      /// Locales: en
-      static let choose_identify_premium = Rswift.StringResource(key: "choose_identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let choose_identify_premium = Rswift.StringResource(key: "choose_identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Privacy policy
       ///
-      /// Locales: en
-      static let menu_item_privacy_policy = Rswift.StringResource(key: "menu_item_privacy_policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_privacy_policy = Rswift.StringResource(key: "menu_item_privacy_policy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Privacy policy
       ///
-      /// Locales: en
-      static let subscription_privacy = Rswift.StringResource(key: "subscription_privacy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_privacy = Rswift.StringResource(key: "subscription_privacy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Rate app
       ///
-      /// Locales: en
-      static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognize Plant
       ///
-      /// Locales: en
-      static let recognize_archive_button = Rswift.StringResource(key: "recognize_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let recognize_archive_button = Rswift.StringResource(key: "recognize_archive_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognized Archive
       ///
-      /// Locales: en
-      static let menu_item_archive_recognized = Rswift.StringResource(key: "menu_item_archive_recognized", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_archive_recognized = Rswift.StringResource(key: "menu_item_archive_recognized", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognized Archive
       ///
-      /// Locales: en
-      static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recurring monthly billing
       ///
-      /// Locales: en
-      static let subscription_recurring = Rswift.StringResource(key: "subscription_recurring", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_recurring = Rswift.StringResource(key: "subscription_recurring", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
-      /// Locales: en
-      static let plant_detail_removed_from_wishlist = Rswift.StringResource(key: "plant_detail_removed_from_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plant_detail_removed_from_wishlist = Rswift.StringResource(key: "plant_detail_removed_from_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Restart Diagnosing
       ///
-      /// Locales: en
-      static let diagnosis_restart_diagnosing = Rswift.StringResource(key: "diagnosis_restart_diagnosing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_restart_diagnosing = Rswift.StringResource(key: "diagnosis_restart_diagnosing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Restore Purchases
       ///
-      /// Locales: en
-      static let subscription_restore = Rswift.StringResource(key: "subscription_restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_restore = Rswift.StringResource(key: "subscription_restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Retake Photo
       ///
-      /// Locales: en
-      static let diagnosis_preview_retake = Rswift.StringResource(key: "diagnosis_preview_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_preview_retake = Rswift.StringResource(key: "diagnosis_preview_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Retake Photo
       ///
-      /// Locales: en
-      static let identify_result_retake_photo = Rswift.StringResource(key: "identify_result_retake_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_result_retake_photo = Rswift.StringResource(key: "identify_result_retake_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Retake Photo
       ///
-      /// Locales: en
-      static let uniques_cover_add_retake = Rswift.StringResource(key: "uniques_cover_add_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_cover_add_retake = Rswift.StringResource(key: "uniques_cover_add_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Rotating
       ///
-      /// Locales: en
-      static let care_type_rotating = Rswift.StringResource(key: "care_type_rotating", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_type_rotating = Rswift.StringResource(key: "care_type_rotating", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: S
       ///
-      /// Locales: en
-      static let climate_shade_s = Rswift.StringResource(key: "climate_shade_s", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_s = Rswift.StringResource(key: "climate_shade_s", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: SELECT LANGUAGE
       ///
-      /// Locales: en
-      static let menu_language_header = Rswift.StringResource(key: "menu_language_header", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_language_header = Rswift.StringResource(key: "menu_language_header", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: SN
       ///
-      /// Locales: en
-      static let climate_shade_sn = Rswift.StringResource(key: "climate_shade_sn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade_sn = Rswift.StringResource(key: "climate_shade_sn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Save 33% Off
       ///
-      /// Locales: en
-      static let subscription_save_33 = Rswift.StringResource(key: "subscription_save_33", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_save_33 = Rswift.StringResource(key: "subscription_save_33", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Search by Name
       ///
-      /// Locales: en
-      static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Shade
       ///
-      /// Locales: en
-      static let climate_shade = Rswift.StringResource(key: "climate_shade", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_shade = Rswift.StringResource(key: "climate_shade", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Shrub
       ///
-      /// Locales: en
-      static let climate_habit_shrub = Rswift.StringResource(key: "climate_habit_shrub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_shrub = Rswift.StringResource(key: "climate_habit_shrub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Skip
       ///
-      /// Locales: en
-      static let uniques_skip_care = Rswift.StringResource(key: "uniques_skip_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let uniques_skip_care = Rswift.StringResource(key: "uniques_skip_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Soil
       ///
-      /// Locales: en
-      static let climate_soil = Rswift.StringResource(key: "climate_soil", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_soil = Rswift.StringResource(key: "climate_soil", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Sorry,  no results found
       ///
-      /// Locales: en
-      static let identify_no_data = Rswift.StringResource(key: "identify_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_no_data = Rswift.StringResource(key: "identify_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Start Diagnosing
       ///
-      /// Locales: en
-      static let diagnosis_start_diagnose = Rswift.StringResource(key: "diagnosis_start_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let diagnosis_start_diagnose = Rswift.StringResource(key: "diagnosis_start_diagnose", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Start Identify
       ///
-      /// Locales: en
-      static let identify_start_identify = Rswift.StringResource(key: "identify_start_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_start_identify = Rswift.StringResource(key: "identify_start_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Subscribe
       ///
-      /// Locales: en
-      static let subscription_subscribe = Rswift.StringResource(key: "subscription_subscribe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_subscribe = Rswift.StringResource(key: "subscription_subscribe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Subscriptions
       ///
-      /// Locales: en
-      static let menu_item_subscriptions = Rswift.StringResource(key: "menu_item_subscriptions", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_subscriptions = Rswift.StringResource(key: "menu_item_subscriptions", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Terms
       ///
-      /// Locales: en
-      static let menu_item_terms = Rswift.StringResource(key: "menu_item_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_item_terms = Rswift.StringResource(key: "menu_item_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Terms of use
       ///
-      /// Locales: en
-      static let subscription_terms = Rswift.StringResource(key: "subscription_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let subscription_terms = Rswift.StringResource(key: "subscription_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Tree
       ///
-      /// Locales: en
-      static let climate_habit_tree = Rswift.StringResource(key: "climate_habit_tree", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_habit_tree = Rswift.StringResource(key: "climate_habit_tree", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Type
       ///
-      /// Locales: en
-      static let climate_deciduous = Rswift.StringResource(key: "climate_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_deciduous = Rswift.StringResource(key: "climate_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Unknown
       ///
-      /// Locales: en
-      static let care_period_type_unknown = Rswift.StringResource(key: "care_period_type_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_period_type_unknown = Rswift.StringResource(key: "care_period_type_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: WA
       ///
-      /// Locales: en
-      static let climate_moisture_wa = Rswift.StringResource(key: "climate_moisture_wa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_wa = Rswift.StringResource(key: "climate_moisture_wa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: WEM
       ///
-      /// Locales: en
-      static let climate_moisture_wem = Rswift.StringResource(key: "climate_moisture_wem", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_wem = Rswift.StringResource(key: "climate_moisture_wem", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: WEWA
       ///
-      /// Locales: en
-      static let climate_moisture_wewa = Rswift.StringResource(key: "climate_moisture_wewa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let climate_moisture_wewa = Rswift.StringResource(key: "climate_moisture_wewa", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Watering
       ///
-      /// Locales: en
-      static let care_type_watering = Rswift.StringResource(key: "care_type_watering", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_type_watering = Rswift.StringResource(key: "care_type_watering", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Weeks
       ///
-      /// Locales: en
-      static let care_period_type_weeks = Rswift.StringResource(key: "care_period_type_weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let care_period_type_weeks = Rswift.StringResource(key: "care_period_type_weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Wishlist
       ///
-      /// Locales: en
-      static let wish_list_title = Rswift.StringResource(key: "wish_list_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let wish_list_title = Rswift.StringResource(key: "wish_list_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Wishlist is empty
       ///
-      /// Locales: en
-      static let wish_list_no_data = Rswift.StringResource(key: "wish_list_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let wish_list_no_data = Rswift.StringResource(key: "wish_list_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: YES
       ///
-      /// Locales: en
-      static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: account
       ///
-      /// Locales: en
-      static let menu_account = Rswift.StringResource(key: "menu_account", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_account = Rswift.StringResource(key: "menu_account", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: archive
       ///
-      /// Locales: en
-      static let menu_section_archive_title = Rswift.StringResource(key: "menu_section_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_section_archive_title = Rswift.StringResource(key: "menu_section_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: free snaps
       ///
-      /// Locales: en
-      static let identify_free_snaps = Rswift.StringResource(key: "identify_free_snaps", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_free_snaps = Rswift.StringResource(key: "identify_free_snaps", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: free snaps left
       ///
-      /// Locales: en
-      static let identify_result_snaps_left = Rswift.StringResource(key: "identify_result_snaps_left", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_result_snaps_left = Rswift.StringResource(key: "identify_result_snaps_left", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: go premium
       ///
-      /// Locales: en
-      static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: settings
       ///
-      /// Locales: en
-      static let menu_section_settings_title = Rswift.StringResource(key: "menu_section_settings_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, es
+      static let menu_section_settings_title = Rswift.StringResource(key: "menu_section_settings_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
 
       /// en translation: A
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_a(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_a", bundle: hostingBundle, comment: "")
@@ -2261,7 +2261,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: AN
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_an(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_an", bundle: hostingBundle, comment: "")
@@ -2276,7 +2276,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: ANB
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_anb(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_anb", bundle: hostingBundle, comment: "")
@@ -2291,7 +2291,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: About
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_about(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_about", bundle: hostingBundle, comment: "")
@@ -2306,7 +2306,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Cares
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_add_care(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_add_care", bundle: hostingBundle, comment: "")
@@ -2321,7 +2321,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Cover
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_add(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_add", bundle: hostingBundle, comment: "")
@@ -2336,7 +2336,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_title", bundle: hostingBundle, comment: "")
@@ -2351,7 +2351,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Plant Cares
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cares_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cares_title", bundle: hostingBundle, comment: "")
@@ -2366,7 +2366,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Unique
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_uniquePlantButton(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_uniquePlantButton", bundle: hostingBundle, comment: "")
@@ -2381,7 +2381,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add Unique Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniquel_plan_name_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniquel_plan_name_title", bundle: hostingBundle, comment: "")
@@ -2396,7 +2396,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Add to My Garden
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_add_to_my_garden(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_add_to_my_garden", bundle: hostingBundle, comment: "")
@@ -2411,7 +2411,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Added in Wishlist
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_added_to_wishlist(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_added_to_wishlist", bundle: hostingBundle, comment: "")
@@ -2426,7 +2426,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Analyzing image
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_analize_image(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_analize_image", bundle: hostingBundle, comment: "")
@@ -2441,7 +2441,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Annual Climber
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_annual_climber(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_annual_climber", bundle: hostingBundle, comment: "")
@@ -2456,7 +2456,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Annual Perennial
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_annual_perennial(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_annual_perennial", bundle: hostingBundle, comment: "")
@@ -2471,7 +2471,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Apply
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_add_apply(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_add_apply", bundle: hostingBundle, comment: "")
@@ -2486,7 +2486,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Are you sure want log out?
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func allert_logout_message(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("allert_logout_message", bundle: hostingBundle, comment: "")
@@ -2501,7 +2501,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: B
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_b(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_b", bundle: hostingBundle, comment: "")
@@ -2516,7 +2516,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Back
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_back(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_back", bundle: hostingBundle, comment: "")
@@ -2531,7 +2531,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Back
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func wish_list_back(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("wish_list_back", bundle: hostingBundle, comment: "")
@@ -2546,7 +2546,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Back to top
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_backToTop(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_backToTop", bundle: hostingBundle, comment: "")
@@ -2561,7 +2561,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Bamboo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_bamboo(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_bamboo", bundle: hostingBundle, comment: "")
@@ -2576,7 +2576,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Become a Premium
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_title", bundle: hostingBundle, comment: "")
@@ -2591,7 +2591,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_description(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_description", bundle: hostingBundle, comment: "")
@@ -2606,7 +2606,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Biennial
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_biennial(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_biennial", bundle: hostingBundle, comment: "")
@@ -2621,7 +2621,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Biennial Perennial
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_biennial_perennial(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_biennial_perennial", bundle: hostingBundle, comment: "")
@@ -2636,7 +2636,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Billed %@
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_billed_with(_ value1: String, preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           let format = NSLocalizedString("subscription_billed_with", bundle: hostingBundle, comment: "")
@@ -2653,7 +2653,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Bulb
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_bulb(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_bulb", bundle: hostingBundle, comment: "")
@@ -2668,7 +2668,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cancel
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func choose_identify_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("choose_identify_cancel", bundle: hostingBundle, comment: "")
@@ -2683,7 +2683,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cancel
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_cancel", bundle: hostingBundle, comment: "")
@@ -2698,7 +2698,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cancel anytime
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_cancel_any_time(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_cancel_any_time", bundle: hostingBundle, comment: "")
@@ -2713,7 +2713,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Can’t identify or find in catalog?
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_uniquePlantLabel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_uniquePlantLabel", bundle: hostingBundle, comment: "")
@@ -2728,7 +2728,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Capture
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_capture(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_capture", bundle: hostingBundle, comment: "")
@@ -2743,7 +2743,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Capture
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_capture(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_capture", bundle: hostingBundle, comment: "")
@@ -2758,7 +2758,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Capture
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func unique_ident_cover_capture_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("unique_ident_cover_capture_title", bundle: hostingBundle, comment: "")
@@ -2773,7 +2773,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Capture sick part of Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_capture_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_capture_info", bundle: hostingBundle, comment: "")
@@ -2788,7 +2788,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cares
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_cares(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_cares", bundle: hostingBundle, comment: "")
@@ -2803,7 +2803,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cares added:
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cares_add(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cares_add", bundle: hostingBundle, comment: "")
@@ -2818,7 +2818,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate Deciduous Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climante_deciduous_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climante_deciduous_unknown", bundle: hostingBundle, comment: "")
@@ -2833,7 +2833,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate Habit Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_unknown", bundle: hostingBundle, comment: "")
@@ -2848,7 +2848,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate Moisture Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_unknown", bundle: hostingBundle, comment: "")
@@ -2863,7 +2863,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate PH Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_unknown", bundle: hostingBundle, comment: "")
@@ -2878,7 +2878,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate Shade Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_unknown", bundle: hostingBundle, comment: "")
@@ -2893,7 +2893,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climate Soial Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_unknown", bundle: hostingBundle, comment: "")
@@ -2908,7 +2908,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Climber
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_climber(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_climber", bundle: hostingBundle, comment: "")
@@ -2923,7 +2923,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Congrads!
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_add_to_garden_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_add_to_garden_title", bundle: hostingBundle, comment: "")
@@ -2938,7 +2938,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Cover
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cares_back_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cares_back_title", bundle: hostingBundle, comment: "")
@@ -2953,7 +2953,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Create Cover for your new Place
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func unique_ident_cover_sub_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("unique_ident_cover_sub_title", bundle: hostingBundle, comment: "")
@@ -2968,7 +2968,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Create Plant name
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniquel_plan_create(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniquel_plan_create", bundle: hostingBundle, comment: "")
@@ -2983,7 +2983,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Create name for your plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniquel_plan_name_sub_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniquel_plan_name_sub_title", bundle: hostingBundle, comment: "")
@@ -2998,7 +2998,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: D
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_d(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_d", bundle: hostingBundle, comment: "")
@@ -3013,7 +3013,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: DM
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_dm(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_dm", bundle: hostingBundle, comment: "")
@@ -3028,7 +3028,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: DMW
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_dmw(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_dmw", bundle: hostingBundle, comment: "")
@@ -3043,7 +3043,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: DMWE
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_dmwe(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_dmwe", bundle: hostingBundle, comment: "")
@@ -3058,7 +3058,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Days
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_period_type_days(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_period_type_days", bundle: hostingBundle, comment: "")
@@ -3073,7 +3073,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Deciduous
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_deciduous_deciduous(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_deciduous_deciduous", bundle: hostingBundle, comment: "")
@@ -3088,7 +3088,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Diagnose
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_title", bundle: hostingBundle, comment: "")
@@ -3103,7 +3103,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Diagnose Disease
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func disease_archive_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("disease_archive_button", bundle: hostingBundle, comment: "")
@@ -3118,7 +3118,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Diagnose Photo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_preview_diagnose(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_preview_diagnose", bundle: hostingBundle, comment: "")
@@ -3133,7 +3133,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Diagnosing in Progress
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_analyze_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_analyze_info", bundle: hostingBundle, comment: "")
@@ -3148,7 +3148,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Diagnosis
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func choose_identify_diagnosis(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("choose_identify_diagnosis", bundle: hostingBundle, comment: "")
@@ -3163,7 +3163,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Disease Archive
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func disease_archive_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("disease_archive_title", bundle: hostingBundle, comment: "")
@@ -3178,7 +3178,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Disease Archive
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_archive_disease(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_archive_disease", bundle: hostingBundle, comment: "")
@@ -3193,7 +3193,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Do you want to start analyzing Photo?
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_result_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_result_info", bundle: hostingBundle, comment: "")
@@ -3208,7 +3208,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Evergreen
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_deciduous_evergreen(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_deciduous_evergreen", bundle: hostingBundle, comment: "")
@@ -3223,7 +3223,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Explore Plants and create garden of your dream
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func login_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("login_info", bundle: hostingBundle, comment: "")
@@ -3238,7 +3238,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Explore catalog
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_explore(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_explore", bundle: hostingBundle, comment: "")
@@ -3253,7 +3253,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: FS
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_fs(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_fs", bundle: hostingBundle, comment: "")
@@ -3268,7 +3268,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: FSN
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_fsn(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_fsn", bundle: hostingBundle, comment: "")
@@ -3283,7 +3283,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Fern
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_fern(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_fern", bundle: hostingBundle, comment: "")
@@ -3298,7 +3298,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Full-size image of Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_make_photo_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_make_photo_info", bundle: hostingBundle, comment: "")
@@ -3313,7 +3313,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_sub_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_sub_title", bundle: hostingBundle, comment: "")
@@ -3328,7 +3328,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Great!
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_add_to_garden_great(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_add_to_garden_great", bundle: hostingBundle, comment: "")
@@ -3343,7 +3343,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Habit
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit", bundle: hostingBundle, comment: "")
@@ -3358,7 +3358,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Hardiness
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_hardiness(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_hardiness", bundle: hostingBundle, comment: "")
@@ -3373,7 +3373,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Height
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_height(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_height", bundle: hostingBundle, comment: "")
@@ -3388,7 +3388,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Humidity
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_type_humidity(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_type_humidity", bundle: hostingBundle, comment: "")
@@ -3403,7 +3403,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identify
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func choose_identify_identify(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("choose_identify_identify", bundle: hostingBundle, comment: "")
@@ -3433,7 +3433,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identify Results:
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_results(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_results", bundle: hostingBundle, comment: "")
@@ -3448,7 +3448,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identify my Plants
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_identifier(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_identifier", bundle: hostingBundle, comment: "")
@@ -3463,7 +3463,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identifying
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_result_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_result_title", bundle: hostingBundle, comment: "")
@@ -3478,7 +3478,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identifying
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_title", bundle: hostingBundle, comment: "")
@@ -3493,7 +3493,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identifying Plant by Photo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_info", bundle: hostingBundle, comment: "")
@@ -3508,7 +3508,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Identifying plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_analize_identify_plant(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_analize_identify_plant", bundle: hostingBundle, comment: "")
@@ -3523,7 +3523,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Invite friends (share app)
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_share(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_share", bundle: hostingBundle, comment: "")
@@ -3538,7 +3538,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: L
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_l(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_l", bundle: hostingBundle, comment: "")
@@ -3553,7 +3553,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: LM
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_lm(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_lm", bundle: hostingBundle, comment: "")
@@ -3568,7 +3568,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: LMH
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_lmh(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_lmh", bundle: hostingBundle, comment: "")
@@ -3583,7 +3583,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Language
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_language(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_language", bundle: hostingBundle, comment: "")
@@ -3598,7 +3598,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Language
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_laguage_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_laguage_title", bundle: hostingBundle, comment: "")
@@ -3613,7 +3613,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Log out
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_log_out(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_log_out", bundle: hostingBundle, comment: "")
@@ -3628,7 +3628,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Login with
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func login_loginWith(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("login_loginWith", bundle: hostingBundle, comment: "")
@@ -3643,7 +3643,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: M
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_m(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_m", bundle: hostingBundle, comment: "")
@@ -3658,7 +3658,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: M
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_m(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_m", bundle: hostingBundle, comment: "")
@@ -3673,7 +3673,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: MH
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil_mh(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil_mh", bundle: hostingBundle, comment: "")
@@ -3688,7 +3688,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: MWE
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_mwe(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_mwe", bundle: hostingBundle, comment: "")
@@ -3703,7 +3703,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: MWEWA
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_mwewa(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_mwewa", bundle: hostingBundle, comment: "")
@@ -3718,7 +3718,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Make Photo of Whole Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_make_photo_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_make_photo_title", bundle: hostingBundle, comment: "")
@@ -3733,7 +3733,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Make sure that Photo is sharp and contains the diseased part
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_onboarding_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_onboarding_info", bundle: hostingBundle, comment: "")
@@ -3748,7 +3748,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Make sure that Photo is sharp and contains the diseased part
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_preview_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_preview_info", bundle: hostingBundle, comment: "")
@@ -3763,7 +3763,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Make sure that plant isolated from other plants
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_overview_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_overview_info", bundle: hostingBundle, comment: "")
@@ -3778,7 +3778,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Make sure the photo is sharp and high-resolution
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_photo_quality_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_photo_quality_info", bundle: hostingBundle, comment: "")
@@ -3793,7 +3793,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Menu
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_title", bundle: hostingBundle, comment: "")
@@ -3808,7 +3808,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Misting
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_type_misting(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_type_misting", bundle: hostingBundle, comment: "")
@@ -3823,7 +3823,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Moisture
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture", bundle: hostingBundle, comment: "")
@@ -3838,7 +3838,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: More on Wiki
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_more_on_wiki(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_more_on_wiki", bundle: hostingBundle, comment: "")
@@ -3853,7 +3853,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Mounths
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_period_type_mounths(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_period_type_mounths", bundle: hostingBundle, comment: "")
@@ -3868,7 +3868,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: N
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_n(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_n", bundle: hostingBundle, comment: "")
@@ -3883,7 +3883,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: N
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_n(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_n", bundle: hostingBundle, comment: "")
@@ -3898,7 +3898,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: NB
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph_nb(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph_nb", bundle: hostingBundle, comment: "")
@@ -3913,7 +3913,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: NO
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func allert_no(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("allert_no", bundle: hostingBundle, comment: "")
@@ -3928,7 +3928,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: No problems detected
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_no_data(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_no_data", bundle: hostingBundle, comment: "")
@@ -3943,7 +3943,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Overview
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_overview_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_overview_title", bundle: hostingBundle, comment: "")
@@ -3958,7 +3958,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: PH
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_ph(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_ph", bundle: hostingBundle, comment: "")
@@ -3973,7 +3973,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Perennial
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_perenial(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_perenial", bundle: hostingBundle, comment: "")
@@ -3988,7 +3988,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Perennial Climber
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_perenial_climber(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_perenial_climber", bundle: hostingBundle, comment: "")
@@ -4003,7 +4003,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Photo quality
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_photo_quality_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_photo_quality_title", bundle: hostingBundle, comment: "")
@@ -4018,7 +4018,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Plant Cover is captured
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_add_captured(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_add_captured", bundle: hostingBundle, comment: "")
@@ -4033,7 +4033,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Plant is added in your Garden!
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_add_to_garden_info(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_add_to_garden_info", bundle: hostingBundle, comment: "")
@@ -4048,7 +4048,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Plant name
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_back_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_back_title", bundle: hostingBundle, comment: "")
@@ -4063,7 +4063,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Please Select Care you want to add to Plant Care Plan
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cares_sub_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cares_sub_title", bundle: hostingBundle, comment: "")
@@ -4078,7 +4078,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Please wait
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func activity_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("activity_title", bundle: hostingBundle, comment: "")
@@ -4093,7 +4093,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Premium
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func choose_identify_premium(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("choose_identify_premium", bundle: hostingBundle, comment: "")
@@ -4108,7 +4108,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Privacy policy
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_privacy_policy(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_privacy_policy", bundle: hostingBundle, comment: "")
@@ -4123,7 +4123,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Privacy policy
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_privacy(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_privacy", bundle: hostingBundle, comment: "")
@@ -4138,7 +4138,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Rate app
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_rate(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_rate", bundle: hostingBundle, comment: "")
@@ -4153,7 +4153,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Recognize Plant
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func recognize_archive_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("recognize_archive_button", bundle: hostingBundle, comment: "")
@@ -4168,7 +4168,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Recognized Archive
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_archive_recognized(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_archive_recognized", bundle: hostingBundle, comment: "")
@@ -4183,7 +4183,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Recognized Archive
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func recognize_archive_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("recognize_archive_title", bundle: hostingBundle, comment: "")
@@ -4198,7 +4198,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Recurring monthly billing
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_recurring(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_recurring", bundle: hostingBundle, comment: "")
@@ -4213,7 +4213,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Removed from Wishlist
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plant_detail_removed_from_wishlist(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plant_detail_removed_from_wishlist", bundle: hostingBundle, comment: "")
@@ -4228,7 +4228,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Restart Diagnosing
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_restart_diagnosing(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_restart_diagnosing", bundle: hostingBundle, comment: "")
@@ -4243,7 +4243,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Restore Purchases
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_restore(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_restore", bundle: hostingBundle, comment: "")
@@ -4258,7 +4258,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Retake Photo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_preview_retake(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_preview_retake", bundle: hostingBundle, comment: "")
@@ -4273,7 +4273,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Retake Photo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_result_retake_photo(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_result_retake_photo", bundle: hostingBundle, comment: "")
@@ -4288,7 +4288,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Retake Photo
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_cover_add_retake(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_add_retake", bundle: hostingBundle, comment: "")
@@ -4303,7 +4303,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Rotating
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_type_rotating(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_type_rotating", bundle: hostingBundle, comment: "")
@@ -4318,7 +4318,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: S
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_s(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_s", bundle: hostingBundle, comment: "")
@@ -4333,7 +4333,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: SELECT LANGUAGE
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_language_header(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_language_header", bundle: hostingBundle, comment: "")
@@ -4348,7 +4348,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: SN
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade_sn(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade_sn", bundle: hostingBundle, comment: "")
@@ -4363,7 +4363,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Save 33% Off
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_save_33(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_save_33", bundle: hostingBundle, comment: "")
@@ -4378,7 +4378,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Search by Name
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func plants_search(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_search", bundle: hostingBundle, comment: "")
@@ -4393,7 +4393,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Shade
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_shade(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_shade", bundle: hostingBundle, comment: "")
@@ -4408,7 +4408,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Shrub
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_shrub(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_shrub", bundle: hostingBundle, comment: "")
@@ -4423,7 +4423,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Skip
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func uniques_skip_care(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_skip_care", bundle: hostingBundle, comment: "")
@@ -4438,7 +4438,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Soil
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_soil(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_soil", bundle: hostingBundle, comment: "")
@@ -4453,7 +4453,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Sorry,  no results found
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_no_data(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_no_data", bundle: hostingBundle, comment: "")
@@ -4468,7 +4468,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Start Diagnosing
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func diagnosis_start_diagnose(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("diagnosis_start_diagnose", bundle: hostingBundle, comment: "")
@@ -4483,7 +4483,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Start Identify
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_start_identify(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_start_identify", bundle: hostingBundle, comment: "")
@@ -4498,7 +4498,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Subscribe
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_subscribe(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_subscribe", bundle: hostingBundle, comment: "")
@@ -4513,7 +4513,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Subscriptions
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_subscriptions(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_subscriptions", bundle: hostingBundle, comment: "")
@@ -4528,7 +4528,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Terms
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_item_terms(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_item_terms", bundle: hostingBundle, comment: "")
@@ -4543,7 +4543,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Terms of use
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func subscription_terms(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_terms", bundle: hostingBundle, comment: "")
@@ -4558,7 +4558,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Tree
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_habit_tree(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_habit_tree", bundle: hostingBundle, comment: "")
@@ -4573,7 +4573,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Type
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_deciduous(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_deciduous", bundle: hostingBundle, comment: "")
@@ -4588,7 +4588,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Unknown
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_period_type_unknown(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_period_type_unknown", bundle: hostingBundle, comment: "")
@@ -4603,7 +4603,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: WA
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_wa(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_wa", bundle: hostingBundle, comment: "")
@@ -4618,7 +4618,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: WEM
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_wem(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_wem", bundle: hostingBundle, comment: "")
@@ -4633,7 +4633,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: WEWA
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func climate_moisture_wewa(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("climate_moisture_wewa", bundle: hostingBundle, comment: "")
@@ -4648,7 +4648,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Watering
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_type_watering(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_type_watering", bundle: hostingBundle, comment: "")
@@ -4663,7 +4663,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Weeks
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func care_period_type_weeks(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("care_period_type_weeks", bundle: hostingBundle, comment: "")
@@ -4678,7 +4678,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Wishlist
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func wish_list_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("wish_list_title", bundle: hostingBundle, comment: "")
@@ -4693,7 +4693,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Wishlist is empty
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func wish_list_no_data(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("wish_list_no_data", bundle: hostingBundle, comment: "")
@@ -4708,7 +4708,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: YES
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func allert_yes(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("allert_yes", bundle: hostingBundle, comment: "")
@@ -4723,7 +4723,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: account
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_account(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_account", bundle: hostingBundle, comment: "")
@@ -4738,7 +4738,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: archive
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_section_archive_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_section_archive_title", bundle: hostingBundle, comment: "")
@@ -4753,7 +4753,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: free snaps
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_free_snaps(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_free_snaps", bundle: hostingBundle, comment: "")
@@ -4768,7 +4768,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: free snaps left
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_result_snaps_left(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_result_snaps_left", bundle: hostingBundle, comment: "")
@@ -4783,7 +4783,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: go premium
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func identify_premium(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("identify_premium", bundle: hostingBundle, comment: "")
@@ -4798,7 +4798,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: settings
       ///
-      /// Locales: en
+      /// Locales: en, es
       static func menu_section_settings_title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("menu_section_settings_title", bundle: hostingBundle, comment: "")
