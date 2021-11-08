@@ -121,6 +121,11 @@ extension GardenController: GardenOutputProtocol {
         gardenPlants = presenter.gardenPlants
         sadGardenPlants = presenter.sadGardenPlants
         
+        debugPrint("*********")
+        debugPrint(sadGardenPlants.count)
+        debugPrint(presenter.happyGardenPlants.count)
+        debugPrint("*********")
+        
         collectionView.reloadData()
     }
     

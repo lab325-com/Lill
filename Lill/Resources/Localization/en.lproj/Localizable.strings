@@ -153,6 +153,11 @@
 "uniquel_plan_create" = "Create Plant name";
 "uniquel_plan_name_sub_title" = "Create name for your plant";
 "uniquel_plan_name_title" = "Add Unique Plant";
+"uniques_add_care" = "Add Cares";
+"uniques_cares_add" = "Cares added:";
+"uniques_cares_back_title" = "Cover";
+"uniques_cares_sub_title" = "Please Select Care you want to add to Plant Care Plan";
+"uniques_cares_title" = "Add Plant Cares";
 "uniques_cover_add" = "Add Cover";
 "uniques_cover_add_apply" = "Apply";
 "uniques_cover_add_captured" = "Plant Cover\nis captured";
@@ -160,6 +165,7 @@
 "uniques_cover_back_title" = "Plant name";
 "uniques_cover_cancel" = "Cancel";
 "uniques_cover_title" = "Add Plant";
+"uniques_skip_care" = "Skip";
 "wish_list_back" = "Back";
 "wish_list_no_data" = "Wishlist is empty";
 "wish_list_title" = "Wishlist";
