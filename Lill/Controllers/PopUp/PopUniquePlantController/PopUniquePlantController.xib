@@ -107,6 +107,9 @@
                                     <integer key="value" value="24"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionAddPlant:" destination="-1" eventType="touchUpInside" id="nAk-4U-o6u"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

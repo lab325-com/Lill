@@ -21,6 +21,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     var transparentNavigationBar = false
     var hiddenNavigationBar = false
     var colorTitleNavigation = UIColor(rgb: 0xC36ED1)
+    var backgroundNavigationColor = UIColor.clear
     
     /// property to keyboard settings
     var isShowKeyboard = false
@@ -55,7 +56,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
-            navBarAppearance.backgroundColor = transparentNavigationBar ? UIColor.clear : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
+            navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
             if transparentNavigationBar {
                 navBarAppearance.shadowColor = .clear
             }
@@ -83,6 +84,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     
     // MARK: - Deinit
     deinit {
+        debugPrint("------------------>>>>>>>>>>>>> deinit:\(String(describing: type(of: self)))")
         NotificationCenter.default.removeObserver(self)
     }
     

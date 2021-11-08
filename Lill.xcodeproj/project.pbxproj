@@ -35,6 +35,11 @@
 		0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DAD8273523FF005E7880 /* PopUniquePlantController.swift */; };
 		0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0272DAD9273523FF005E7880 /* PopUniquePlantController.xib */; };
 		0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DADC27352770005E7880 /* PopUpRouter.swift */; };
+		0272DAE227354170005E7880 /* AddCoverIdentifierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DAE027354170005E7880 /* AddCoverIdentifierController.swift */; };
+		0272DAE327354170005E7880 /* AddCoverIdentifierController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0272DAE127354170005E7880 /* AddCoverIdentifierController.xib */; };
+		0272DB0527358DF2005E7880 /* AddCoverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DB0427358DF2005E7880 /* AddCoverRouter.swift */; };
+		0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DB0827359DC9005E7880 /* AddCoverAddController.swift */; };
+		0272DB0B27359DC9005E7880 /* AddCoverAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0272DB0927359DC9005E7880 /* AddCoverAddController.xib */; };
 		0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291DD992728293B008E9F6F /* DetailCaresView.swift */; };
 		0291DD9C27282944008E9F6F /* DetailCaresView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0291DD9B27282944008E9F6F /* DetailCaresView.xib */; };
 		0291DDA027283C32008E9F6F /* PlantsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */; };
@@ -197,6 +202,11 @@
 		0272DAD8273523FF005E7880 /* PopUniquePlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUniquePlantController.swift; sourceTree = "<group>"; };
 		0272DAD9273523FF005E7880 /* PopUniquePlantController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUniquePlantController.xib; sourceTree = "<group>"; };
 		0272DADC27352770005E7880 /* PopUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpRouter.swift; sourceTree = "<group>"; };
+		0272DAE027354170005E7880 /* AddCoverIdentifierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoverIdentifierController.swift; sourceTree = "<group>"; };
+		0272DAE127354170005E7880 /* AddCoverIdentifierController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCoverIdentifierController.xib; sourceTree = "<group>"; };
+		0272DB0427358DF2005E7880 /* AddCoverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoverRouter.swift; sourceTree = "<group>"; };
+		0272DB0827359DC9005E7880 /* AddCoverAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoverAddController.swift; sourceTree = "<group>"; };
+		0272DB0927359DC9005E7880 /* AddCoverAddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCoverAddController.xib; sourceTree = "<group>"; };
 		0291DD992728293B008E9F6F /* DetailCaresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCaresView.swift; sourceTree = "<group>"; };
 		0291DD9B27282944008E9F6F /* DetailCaresView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCaresView.xib; sourceTree = "<group>"; };
 		0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailPresenter.swift; sourceTree = "<group>"; };
@@ -471,6 +481,34 @@
 			path = PopUniquePlantController;
 			sourceTree = "<group>";
 		};
+		0272DADF2735413A005E7880 /* AddCover */ = {
+			isa = PBXGroup;
+			children = (
+				0272DB0427358DF2005E7880 /* AddCoverRouter.swift */,
+				0272DB0627359D98005E7880 /* AddCoverIdentifierController */,
+				0272DB0727359DAE005E7880 /* AddCoverAddController */,
+			);
+			path = AddCover;
+			sourceTree = "<group>";
+		};
+		0272DB0627359D98005E7880 /* AddCoverIdentifierController */ = {
+			isa = PBXGroup;
+			children = (
+				0272DAE027354170005E7880 /* AddCoverIdentifierController.swift */,
+				0272DAE127354170005E7880 /* AddCoverIdentifierController.xib */,
+			);
+			path = AddCoverIdentifierController;
+			sourceTree = "<group>";
+		};
+		0272DB0727359DAE005E7880 /* AddCoverAddController */ = {
+			isa = PBXGroup;
+			children = (
+				0272DB0827359DC9005E7880 /* AddCoverAddController.swift */,
+				0272DB0927359DC9005E7880 /* AddCoverAddController.xib */,
+			);
+			path = AddCoverAddController;
+			sourceTree = "<group>";
+		};
 		0291DD9827282925008E9F6F /* DetailAboutView */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +611,7 @@
 				FAB3BD212704AB710075C0C0 /* Garden */,
 				FAB3BD222704AB7E0075C0C0 /* Schedule */,
 				FAB3BD232704AB8E0075C0C0 /* Menu */,
+				0272DADF2735413A005E7880 /* AddCover */,
 				0272DAD727352385005E7880 /* PopUp */,
 			);
 			path = Controllers;
@@ -1296,10 +1335,12 @@
 				02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
+				0272DB0B27359DC9005E7880 /* AddCoverAddController.xib in Resources */,
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */,
 				FA24A5A32732DB160059AF6A /* PlantToGarden.graphql in Resources */,
+				0272DAE327354170005E7880 /* AddCoverIdentifierController.xib in Resources */,
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
@@ -1455,6 +1496,7 @@
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
 				02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
+				0272DB0527358DF2005E7880 /* AddCoverRouter.swift in Sources */,
 				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
@@ -1487,6 +1529,7 @@
 				F3D378B0272F93490015C6EE /* MenuRouter.swift in Sources */,
 				02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */,
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
+				0272DAE227354170005E7880 /* AddCoverIdentifierController.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				02E02560273273D600988F12 /* MainPlantModel.swift in Sources */,
@@ -1527,6 +1570,7 @@
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				FA40D7122728307000A10C10 /* PlantModel.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
+				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
 				FAB26ACF2716C89A00B3EFDF /* ShadowView.swift in Sources */,
