@@ -12,5 +12,13 @@ struct GardenPlantsModel: Codable {
 
 struct GardenPlantModel: Codable {
     let name: String
+    let isHappy: Bool
     let userMainImage: MediaModel
+    let GardenPlantCares: [GardenPlantCaresModel]
+}
+
+struct GardenPlantCaresModel: Codable {
+    let count: Int
+    let name: String
+    let period: String
 }

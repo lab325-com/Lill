@@ -7,7 +7,7 @@ import UIKit
 
 extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gardenPlants.count
+        return gardenPlants.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -16,6 +16,9 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GardenViewCell
+            if let model = gardenPlants[safe: indexPath.row] {
+                cell.configure(model: model)
+            }
             return cell
         }
     }
