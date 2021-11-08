@@ -19,8 +19,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlantsCareController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="addCaresButton" destination="iUz-Jz-nmW" id="jnc-Ly-EKs"/>
+                <outlet property="addCaresLabel" destination="naI-pt-QG3" id="A5t-xx-B7b"/>
                 <outlet property="caresCountLabel" destination="ykA-tj-ER1" id="gKo-AV-1k0"/>
                 <outlet property="firstDetailCareView" destination="Jvf-z5-FG7" id="Eh3-6a-a3r"/>
+                <outlet property="mainTitle" destination="qnW-41-iTz" id="4Ae-kM-qKB"/>
+                <outlet property="skipButton" destination="PG3-87-96d" id="fji-Km-iRS"/>
+                <outlet property="subTitleLabel" destination="8jl-B6-dT2" id="xpj-a4-Mmy"/>
                 <outlet property="topView" destination="yYS-2a-wof" id="GOI-Av-JyZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="caresViews" destination="Jvf-z5-FG7" collectionClass="NSMutableArray" id="OfY-gc-qGy"/>
@@ -121,16 +126,16 @@
                     <rect key="frame" x="0.0" y="288" width="414" height="454"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-y6-EPc">
-                            <rect key="frame" x="16" y="217" width="422" height="60.5"/>
+                            <rect key="frame" x="166.5" y="217" width="81" height="20.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cares added:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-pt-QG3">
-                                    <rect key="frame" x="20" y="20" width="382" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykA-tj-ER1">
-                                    <rect key="frame" x="20" y="20" width="382" height="20.5"/>
+                                    <rect key="frame" x="72.5" y="0.0" width="8.5" height="20.5"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>

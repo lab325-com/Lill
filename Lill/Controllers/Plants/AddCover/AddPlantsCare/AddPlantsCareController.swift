@@ -13,10 +13,16 @@ class AddPlantsCareController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var addCaresLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var topView: ShadowView!
     @IBOutlet weak var firstDetailCareView: DetailCaresView!
     @IBOutlet var caresViews: [AddPlantCareView]!
     @IBOutlet weak var caresCountLabel: UILabel!
+    
+    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var addCaresButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -38,6 +44,11 @@ class AddPlantsCareController: BaseController {
     }
     
     private func setup() {
+        mainTitle.text = RLocalization.uniques_cares_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        subTitleLabel.text =  RLocalization.uniques_cares_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        addCaresButton.setTitle(RLocalization.uniques_add_care.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        skipButton.setTitle(RLocalization.uniques_skip_care.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        
         setNavigationBar()
         
         let cancel = UIBarButtonItem(title: RLocalization.uniques_cover_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .plain, target: self, action: #selector(playTapped))
@@ -70,7 +81,7 @@ class AddPlantsCareController: BaseController {
         imageView.contentMode = .center
         
         let label = UILabel(frame: CGRect(x: 25, y: 0, width: 120, height: 40))
-        label.text = "Cover"
+        label.text = RLocalization.uniques_cares_back_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         label.textColor = UIColor(rgb: 0x7CDAA3)
         label.textAlignment = .left
         
