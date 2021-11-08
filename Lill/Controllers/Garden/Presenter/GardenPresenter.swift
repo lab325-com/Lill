@@ -30,9 +30,9 @@ class GardenPresenter: GardenPresenterProtocol {
     private weak var view: GardenOutputProtocol?
     private var request: Cancellable?
     
-    var gardenPlants: [GardenPlantModel] = []
-    var sadGardenPlants: [GardenPlantModel] = []
-    var happyGardenPlants: [GardenPlantModel] = []
+    var gardenPlants = [GardenPlantModel]()
+    var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
 
     required init(view: GardenOutputProtocol) {
         self.view = view

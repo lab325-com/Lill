@@ -27,8 +27,10 @@ class GardenController: BaseController {
     // MARK: - Gobal property
     //----------------------------------------------
     
-    var gardenPlants = [GardenPlantModel]()
     var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
+    var gardenPlants = [GardenPlantModel]()
+    
     let cellIdentifier = String(describing: GardenViewCell.self)
     let cellButtonIdentifier = String(describing: GardenButtonCell.self)
     
@@ -120,11 +122,12 @@ extension GardenController: GardenOutputProtocol {
     func successGardenPlants() {
         gardenPlants = presenter.gardenPlants
         sadGardenPlants = presenter.sadGardenPlants
+        happyGardenPlants = presenter.happyGardenPlants
         
-        debugPrint("*********")
-        debugPrint(sadGardenPlants.count)
-        debugPrint(presenter.happyGardenPlants.count)
-        debugPrint("*********")
+//        debugPrint("*********")
+//        debugPrint(sadGardenPlants.count)
+//        debugPrint(happyGardenPlants.count)
+//        debugPrint("*********")
         
         collectionView.reloadData()
     }

@@ -24,6 +24,9 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
                 cell.containView.isHidden = false
                 cell.isUserInteractionEnabled = true
             }
+            if let model = gardenPlants[safe: indexPath.row] {
+                cell.configure(model: model)
+            }
             return cell
         }
     }

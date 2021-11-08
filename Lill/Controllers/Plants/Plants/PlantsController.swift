@@ -128,7 +128,7 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController)
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -204,6 +204,22 @@ extension PlantsController: UITextFieldDelegate {
         if textField.text?.count == 0 {
             textField.text = searchText
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopUniqePlanProtocol
+//----------------------------------------------
+
+extension PlantsController: PopUniqePlanProtocol {
+    func dissmiss(controller: PopUniquePlantController, text: String) {
+        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
+    }
+}
+
+extension PlantsController: AddCoverIdentifierProtocol {
+    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
 }
 

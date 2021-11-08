@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PopUniqePlanProtocol: AnyObject {
+    func dissmiss(controller: PopUniquePlantController, text: String)
+}
+
 class PopUniquePlantController: BaseController {
 
     //----------------------------------------------
@@ -20,6 +24,25 @@ class PopUniquePlantController: BaseController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var namePlantstextField: UITextField!
     @IBOutlet weak var mainView: UIView!
+    
+    //----------------------------------------------
+    // MARK: - Private property
+    //----------------------------------------------
+    
+    private weak var delegate: PopUniqePlanProtocol?
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(delegate: PopUniqePlanProtocol) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -57,6 +80,15 @@ class PopUniquePlantController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionClose(_ sender: UIButton) {
+        hideKeyboard()
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func actionAddPlant(_ sender: UIButton) {
+        if let text = namePlantstextField.text, text.count > 0 {
+            dismiss(animated: false) {
+                self.delegate?.dissmiss(controller: self, text: text)
+            }
+        }
     }
 }

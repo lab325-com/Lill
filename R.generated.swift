@@ -366,7 +366,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 79 images.
+  /// This `R.image` struct is generated, and contains static references to 83 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -526,6 +526,14 @@ struct R: Rswift.Validatable {
     static let temp_plants_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_plants_ic")
     /// Image `temp`.
     static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
+    /// Image `unique_add_back_ic`.
+    static let unique_add_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_add_back_ic")
+    /// Image `unique_arrow_back_ic`.
+    static let unique_arrow_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_arrow_back_ic")
+    /// Image `unique_cover_capture_ic`.
+    static let unique_cover_capture_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_cover_capture_ic")
+    /// Image `unique_cover_close_ic`.
+    static let unique_cover_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_cover_close_ic")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "avatar_ic", bundle: ..., traitCollection: ...)`
@@ -1080,11 +1088,47 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unique_add_back_ic", bundle: ..., traitCollection: ...)`
+    static func unique_add_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unique_add_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unique_arrow_back_ic", bundle: ..., traitCollection: ...)`
+    static func unique_arrow_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unique_arrow_back_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unique_cover_capture_ic", bundle: ..., traitCollection: ...)`
+    static func unique_cover_capture_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unique_cover_capture_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "unique_cover_close_ic", bundle: ..., traitCollection: ...)`
+    static func unique_cover_close_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unique_cover_close_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 26 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 30 nibs.
   struct nib {
+    /// Nib `AddCoverAddController`.
+    static let addCoverAddController = _R.nib._AddCoverAddController()
+    /// Nib `AddCoverIdentifierController`.
+    static let addCoverIdentifierController = _R.nib._AddCoverIdentifierController()
+    /// Nib `AddPlantCareView`.
+    static let addPlantCareView = _R.nib._AddPlantCareView()
+    /// Nib `AddPlantsCareController`.
+    static let addPlantsCareController = _R.nib._AddPlantsCareController()
     /// Nib `ChooseIdentifyController`.
     static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
     /// Nib `CongradsView`.
@@ -1137,6 +1181,38 @@ struct R: Rswift.Validatable {
     static let subcribeController = _R.nib._SubcribeController()
     /// Nib `WishListController`.
     static let wishListController = _R.nib._WishListController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddCoverAddController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addCoverAddController) instead")
+    static func addCoverAddController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addCoverAddController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddCoverIdentifierController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addCoverIdentifierController) instead")
+    static func addCoverIdentifierController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addCoverIdentifierController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlantCareView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantCareView) instead")
+    static func addPlantCareView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlantCareView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlantsCareController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantsCareController) instead")
+    static func addPlantsCareController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlantsCareController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ChooseIdentifyController", in: bundle)`
@@ -1345,6 +1421,22 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.wishListController)
     }
     #endif
+
+    static func addCoverAddController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addCoverAddController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addCoverIdentifierController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addCoverIdentifierController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addPlantCareView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addPlantCareView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addPlantsCareController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addPlantsCareController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func chooseIdentifyController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.chooseIdentifyController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -4751,6 +4843,10 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AddCoverAddController.validate()
+      try _AddCoverIdentifierController.validate()
+      try _AddPlantCareView.validate()
+      try _AddPlantsCareController.validate()
       try _ChooseIdentifyController.validate()
       try _CongradsView.validate()
       try _DetailAboutView.validate()
@@ -4772,6 +4868,79 @@ struct _R: Rswift.Validatable {
       try _SplashController.validate()
       try _SubcribeController.validate()
       try _WishListController.validate()
+    }
+
+    struct _AddCoverAddController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddCoverAddController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'AddCoverAddController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unique_add_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_add_back_ic' is used in nib 'AddCoverAddController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddCoverIdentifierController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddCoverIdentifierController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unique_cover_capture_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_capture_ic' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unique_cover_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_close_ic' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlantCareView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddPlantCareView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plants_detail_habit_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_habit_ic' is used in nib 'AddPlantCareView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlantsCareController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddPlantsCareController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "unique_add_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_add_back_ic' is used in nib 'AddPlantsCareController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _ChooseIdentifyController: Rswift.NibResourceType, Rswift.Validatable {
