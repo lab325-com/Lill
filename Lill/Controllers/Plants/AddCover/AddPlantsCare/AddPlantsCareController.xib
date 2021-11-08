@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlantsCareController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="caresCountLabel" destination="ykA-tj-ER1" id="gKo-AV-1k0"/>
+                <outlet property="firstDetailCareView" destination="Jvf-z5-FG7" id="Eh3-6a-a3r"/>
+                <outlet property="topView" destination="yYS-2a-wof" id="GOI-Av-JyZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="caresViews" destination="Jvf-z5-FG7" collectionClass="NSMutableArray" id="OfY-gc-qGy"/>
+                <outletCollection property="caresViews" destination="hSM-6D-fPN" collectionClass="NSMutableArray" id="egF-vI-TSV"/>
+                <outletCollection property="caresViews" destination="PGJ-ym-PWI" collectionClass="NSMutableArray" id="DEI-Xz-3DM"/>
+                <outletCollection property="caresViews" destination="KlR-kk-RHr" collectionClass="NSMutableArray" id="wMV-Lh-bvS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unique_add_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-9e-njt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUz-Jz-nmW">
+                    <rect key="frame" x="16" y="742" width="382" height="44"/>
+                    <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="mWV-eP-JhS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Add Cares">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYS-2a-wof" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="61"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Plant Cares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-41-iTz">
+                            <rect key="frame" x="16" y="10" width="382" height="41"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qnW-41-iTz" secondAttribute="trailing" constant="16" id="7pk-w8-QcZ"/>
+                        <constraint firstItem="qnW-41-iTz" firstAttribute="leading" secondItem="yYS-2a-wof" secondAttribute="leading" constant="16" id="CNM-js-sE2"/>
+                        <constraint firstItem="qnW-41-iTz" firstAttribute="top" secondItem="yYS-2a-wof" secondAttribute="top" constant="10" id="J3J-ui-NOK"/>
+                        <constraint firstAttribute="bottom" secondItem="qnW-41-iTz" secondAttribute="bottom" constant="10" id="fcn-Rl-3qH"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Care you want to add to Plant Care Plan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jl-B6-dT2">
+                    <rect key="frame" x="16" y="135" width="382" height="16"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="fM5-WT-IoE">
+                    <rect key="frame" x="12" y="181" width="390" height="107"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvf-z5-FG7" customClass="AddPlantCareView" customModule="Lill" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSM-6D-fPN" customClass="AddPlantCareView" customModule="Lill" customModuleProvider="target">
+                            <rect key="frame" x="98.5" y="0.0" width="95" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGJ-ym-PWI" customClass="AddPlantCareView" customModule="Lill" customModuleProvider="target">
+                            <rect key="frame" x="196.5" y="0.0" width="95.5" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlR-kk-RHr" customClass="AddPlantCareView" customModule="Lill" customModuleProvider="target">
+                            <rect key="frame" x="295" y="0.0" width="95" height="107"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="107" id="3Yc-YB-t11"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-Qq-dW7">
+                    <rect key="frame" x="0.0" y="288" width="414" height="454"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-y6-EPc">
+                            <rect key="frame" x="16" y="217" width="422" height="60.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cares added:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-pt-QG3">
+                                    <rect key="frame" x="20" y="20" width="382" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykA-tj-ER1">
+                                    <rect key="frame" x="20" y="20" width="382" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RX2-y6-EPc" secondAttribute="trailing" constant="16" id="QsQ-YV-ltB"/>
+                        <constraint firstItem="RX2-y6-EPc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JaD-Qq-dW7" secondAttribute="leading" constant="16" id="WnT-js-gMN"/>
+                        <constraint firstItem="RX2-y6-EPc" firstAttribute="centerY" secondItem="JaD-Qq-dW7" secondAttribute="centerY" id="oWH-iu-vnQ"/>
+                        <constraint firstItem="RX2-y6-EPc" firstAttribute="centerX" secondItem="JaD-Qq-dW7" secondAttribute="centerX" id="zJw-fh-72k"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PG3-87-96d">
+                    <rect key="frame" x="16" y="802" width="382" height="44"/>
+                    <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2XP-Jq-tfT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Skip">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JaD-Qq-dW7" firstAttribute="top" secondItem="fM5-WT-IoE" secondAttribute="bottom" id="0ws-eP-k1O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yR1-9e-njt" secondAttribute="trailing" id="B0H-R5-moq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yYS-2a-wof" secondAttribute="trailing" id="BRJ-6x-rEa"/>
+                <constraint firstItem="PG3-87-96d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Bky-9x-b2e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PG3-87-96d" secondAttribute="bottom" constant="16" id="EMa-RJ-3VD"/>
+                <constraint firstItem="iUz-Jz-nmW" firstAttribute="top" secondItem="JaD-Qq-dW7" secondAttribute="bottom" id="Ehb-5X-G5F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JaD-Qq-dW7" secondAttribute="trailing" id="GZx-uA-IEE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iUz-Jz-nmW" secondAttribute="trailing" constant="16" id="GqS-bo-Ade"/>
+                <constraint firstItem="PG3-87-96d" firstAttribute="top" secondItem="iUz-Jz-nmW" secondAttribute="bottom" constant="16" id="UbG-p7-Iap"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8jl-B6-dT2" secondAttribute="trailing" constant="16" id="UdV-N9-DcZ"/>
+                <constraint firstAttribute="trailing" secondItem="fM5-WT-IoE" secondAttribute="trailing" constant="12" id="XRR-Ea-7yz"/>
+                <constraint firstItem="8jl-B6-dT2" firstAttribute="top" secondItem="yYS-2a-wof" secondAttribute="bottom" constant="30" id="ZCA-Bi-Hri"/>
+                <constraint firstItem="iUz-Jz-nmW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aQg-b9-wlf"/>
+                <constraint firstItem="fM5-WT-IoE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="ajw-CC-CjA"/>
+                <constraint firstItem="yR1-9e-njt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="asN-f5-egJ"/>
+                <constraint firstItem="yR1-9e-njt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dix-nc-WfR"/>
+                <constraint firstItem="yYS-2a-wof" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fks-jq-F0O"/>
+                <constraint firstItem="8jl-B6-dT2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iof-py-pgi"/>
+                <constraint firstAttribute="bottom" secondItem="yR1-9e-njt" secondAttribute="bottom" id="jfw-sE-zwk"/>
+                <constraint firstItem="yYS-2a-wof" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k45-Am-72W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PG3-87-96d" secondAttribute="trailing" constant="16" id="pda-OP-X25"/>
+                <constraint firstItem="JaD-Qq-dW7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tYq-f2-h0Q"/>
+                <constraint firstItem="fM5-WT-IoE" firstAttribute="top" secondItem="8jl-B6-dT2" secondAttribute="bottom" constant="30" id="y4u-iq-SJv"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="unique_add_back_ic" width="390" height="844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

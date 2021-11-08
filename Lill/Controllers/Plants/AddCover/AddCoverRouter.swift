@@ -19,4 +19,11 @@ class AddCoverRouter: BaseRouter {
         let controller = AddCoverAddController(coverImage: coverImage, text: text, delegate: delegate)
         push(controller: controller)
     }
+    
+    func pushAddCare() {
+        let controller = AddPlantsCareController()
+        push(controller: controller)
+    }
+    
+    
 }

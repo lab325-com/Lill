@@ -149,7 +149,7 @@ class AddCoverAddController: BaseController {
     }
     
     @IBAction func actionApply(_ sender: UIButton) {
-        
+        AddCoverRouter(presenter: navigationController).pushAddCare()
     }
     
     @IBAction func actionRatekePhoto(_ sender: UIButton) {
