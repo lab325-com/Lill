@@ -8,11 +8,6 @@ struct CaresModel: Codable {
     let type: CareType
 }
 
-struct CareType: Codable {
-    let id: String
-    let name: String
-}
-
 extension PeriodType: Codable {
     var localization: String {
         switch self {

@@ -37,7 +37,7 @@ class RecognizeArchivePresenter: RecognizeArchivePresenterProtocol {
     func getRecognizeArchive() {
         view?.startLoader()
         
-        let query = RecognizedArhiveQuery(pagination: InputPagination(limit: 10, ofset: 0))
+        let query = RecognizedArhiveQuery(pagination: InputPagination(ofset: 0, limit: 10))
         
         let _ = Network.shared.query(model: RecognizeArchiveModel.self, query) { [weak self] model in
             self?.view?.stopLoading()

@@ -151,12 +151,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 20 files.
+  /// This `R.file` struct is generated, and contains static references to 22 files.
   struct file {
+    /// Resource file `CaresByGarden.graphql`.
+    static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
     /// Resource file `Disease.graphql`.
     static let diseaseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Disease", pathExtension: "graphql")
+    /// Resource file `GardenPlants.graphql`.
+    static let gardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlants", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
     static let generatorXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Generator", pathExtension: "xcconfig")
     /// Resource file `GetCatalogPlants.graphql`.
@@ -194,6 +198,12 @@ struct R: Rswift.Validatable {
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
+    /// `bundle.url(forResource: "CaresByGarden", withExtension: "graphql")`
+    static func caresByGardenGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.caresByGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Debug", withExtension: "xcconfig")`
     static func debugXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.debugXcconfig
@@ -203,6 +213,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Disease", withExtension: "graphql")`
     static func diseaseGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.diseaseGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlants", withExtension: "graphql")`
+    static func gardenPlantsGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantsGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 

@@ -1,0 +1,25 @@
+query GardenPlants($gardenId: String!,
+				   $pagination: InputPagination!,
+				   $careTypeId: Int,
+				   $isHappy: Boolean) {
+	gardenPlants(gardenId: $gardenId,
+				 pagination: $pagination,
+				 careTypeId: $careTypeId,
+				 isHappy: $isHappy) {
+		GardenPlants {
+			name
+			userMainImage {
+				urlIosFull
+				urlIosPrev
+				media_id
+			}
+		}
+		Pagination {
+			limit
+			nextPageExist
+			ofset
+			prevPageExist
+			totalPages
+		}
+	}
+}
