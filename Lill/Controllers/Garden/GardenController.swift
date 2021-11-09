@@ -20,12 +20,15 @@ class GardenController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private lazy var presenter = GardenPresenter(view: self)
-    private var selectedType = 0
+//    private var selectedType = 0
     
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
+    
+    var selectedCareType = 0
+    
+    lazy var presenter = GardenPresenter(view: self)
     
     var sadGardenPlants = [GardenPlantModel]()
     var happyGardenPlants = [GardenPlantModel]()
@@ -44,7 +47,7 @@ class GardenController: BaseController {
         super.viewDidLoad()
         
         if let gardenId = KeychainService.standard.token?.defaultGardenId {
-            //presenter.getCaresByGarden(gardenId: gardenId)
+            presenter.getCaresByGarden(gardenId: gardenId)
             presenter.getGardenPants(gardenId: gardenId)
         }
         
@@ -72,9 +75,9 @@ class GardenController: BaseController {
     
     private func updateButtonsStack() {
         for view in stackViews {
-            if view.tag == selectedType, selectedType == 0 {
+            if view.tag == selectedCareType, selectedCareType == 0 {
                 view.backgroundColor = UIColor(rgb: 0x7CDAA3)
-            } else if view.tag == selectedType {
+            } else if view.tag == selectedCareType {
                 view.backgroundColor = UIColor(rgb: 0xFF993C)
             } else {
                 view.backgroundColor = UIColor.white
@@ -82,7 +85,7 @@ class GardenController: BaseController {
         }
         
         for label in stackLabels {
-            if label.tag == selectedType {
+            if label.tag == selectedCareType {
                 label.textColor = UIColor.white
             } else {
                 label.textColor = UIColor(rgb: 0x666666)
@@ -100,8 +103,10 @@ class GardenController: BaseController {
     
     @IBAction func selectStackAction(_ sender: UIButton) {
         collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
-        selectedType = sender.tag
+        selectedCareType = sender.tag
         updateButtonsStack()
+        
+        collectionView.reloadData()
     }
     
     @IBAction func addPlantAction(_ sender: UIButton) {
@@ -130,6 +135,14 @@ extension GardenController: GardenOutputProtocol {
 //        debugPrint("*********")
         
         collectionView.reloadData()
+    }
+    
+    func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel) {
+        if model.doneAllCaresByGarden {
+            guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+            collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
+            presenter.getGardenPants(gardenId: gardenId)
+        }
     }
     
     func failure(error: String) {

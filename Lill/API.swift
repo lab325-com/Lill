@@ -1502,6 +1502,61 @@ public final class DiagnoseArhiveQuery: GraphQLQuery {
   }
 }
 
+public final class DoneAllCaresByGardenMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DoneAllCaresByGarden($gardenId: String!, $careTypeId: Int) {
+      doneAllCaresByGarden(gardenId: $gardenId, careTypeId: $careTypeId)
+    }
+    """
+
+  public let operationName: String = "DoneAllCaresByGarden"
+
+  public var gardenId: String
+  public var careTypeId: Int?
+
+  public init(gardenId: String, careTypeId: Int? = nil) {
+    self.gardenId = gardenId
+    self.careTypeId = careTypeId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenId": gardenId, "careTypeId": careTypeId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("doneAllCaresByGarden", arguments: ["gardenId": GraphQLVariable("gardenId"), "careTypeId": GraphQLVariable("careTypeId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(doneAllCaresByGarden: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "doneAllCaresByGarden": doneAllCaresByGarden])
+    }
+
+    /// Выполнение всех care одним действием. Принимает обязательным параметром gardenId и НЕ обязательным careTypeId (что бы выполнить только определенный тип care)
+    /// id care берем из фильтра.
+    public var doneAllCaresByGarden: Bool? {
+      get {
+        return resultMap["doneAllCaresByGarden"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "doneAllCaresByGarden")
+      }
+    }
+  }
+}
+
 public final class GardenPlantsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

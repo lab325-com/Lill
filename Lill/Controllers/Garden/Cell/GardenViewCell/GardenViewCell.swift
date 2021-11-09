@@ -26,9 +26,17 @@ class GardenViewCell: UICollectionViewCell {
         }
     }
     
+    //----------------------------------------------
+    // MARK: - Life cycle
+    //----------------------------------------------
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    //----------------------------------------------
+    // MARK: - Public methods
+    //----------------------------------------------
     
     func configure(model: GardenPlantModel) {
         plantNameLabel.text = model.name

@@ -6,6 +6,7 @@ import UIKit
 //----------------------------------------------
 
 extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gardenPlants.count + 1 + (sadGardenPlants.count % 2 == 0 ? 0 : 1)
     }
@@ -14,6 +15,12 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
         switch indexPath.row {
         case sadGardenPlants.count + (sadGardenPlants.count % 2 == 0 ? 0 : 1):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellButtonIdentifier, for: indexPath) as! GardenButtonCell
+            cell.delegate = self
+            switch selectedCareType {
+            case 1: cell.configure(title: "Done all Watering")
+            case 2: cell.configure(title: "Done all Misting")
+            default: cell.configure(title: "Done all Cares")
+            }
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GardenViewCell
@@ -51,5 +58,12 @@ extension GardenController: UICollectionViewDelegateFlowLayout {
         default:
             return CGSize(width: UIScreen.main.bounds.size.width / 2 - 13 , height: UIScreen.main.bounds.size.width / 2 - 13)
         }
+    }
+}
+
+extension GardenController: GardenButtonCellDelegate {
+    func doneCares() {
+        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        presenter.doneCares(gardenId: gardenId)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 protocol GardenOutputProtocol: BaseController {
     func successCaresByGarden(model: CaresByGardenDataModel)
     func successGardenPlants()
+    func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel)
     
     func failure(error: String)
 }
@@ -23,6 +24,7 @@ protocol GardenPresenterProtocol: AnyObject {
     
     func getCaresByGarden(gardenId: String)
     func getGardenPants(gardenId: String)
+    func doneCares(gardenId: String)
 }
 
 class GardenPresenter: GardenPresenterProtocol {
@@ -83,5 +85,20 @@ class GardenPresenter: GardenPresenterProtocol {
             
             self?.view?.successGardenPlants()
         }
+    }
+    
+    func doneCares(gardenId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = DoneAllCaresByGardenMutation(gardenId: gardenId)
+        request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successDoneAllCaresByGarden(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

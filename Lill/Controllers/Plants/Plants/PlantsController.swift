@@ -44,7 +44,6 @@ class PlantsController: BaseController {
     private let searchText = RLocalization.plants_search()
     private var isNeedAnimate = true
     
-    
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
