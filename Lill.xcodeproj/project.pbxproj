@@ -113,6 +113,8 @@
 		FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */; };
 		FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */; };
 		FA1CEC58273C59AB003A4F84 /* DiseaseArhiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC56273C59AB003A4F84 /* DiseaseArhiveModel.swift */; };
+		FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC59273C6488003A4F84 /* LanguageModel.swift */; };
+		FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */; };
 		FA24A5962731CE830059AF6A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5952731CE830059AF6A /* schema.json */; };
 		FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA24A5982732B94A0059AF6A /* SwiftEntryKit */; };
 		FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */; };
@@ -185,7 +187,7 @@
 		FAFCF3522715760A00C3134E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3512715760A00C3134E /* GradientView.swift */; };
 		FAFCF35527157FE100C3134E /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35427157FE100C3134E /* Me.graphql */; };
 		FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */; };
-		FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeModel.swift */; };
+		FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeDataModel.swift */; };
 		FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF35E2715D0F800C3134E /* IdentifyController.swift */; };
 		FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35F2715D0F800C3134E /* IdentifyController.xib */; };
 		FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */; };
@@ -298,6 +300,8 @@
 		FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeArchiveModel.swift; sourceTree = "<group>"; };
 		FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DiagnoseArhive.graphql; sourceTree = "<group>"; };
 		FA1CEC56273C59AB003A4F84 /* DiseaseArhiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiseaseArhiveModel.swift; sourceTree = "<group>"; };
+		FA1CEC59273C6488003A4F84 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenModel.swift; sourceTree = "<group>"; };
 		FA24A5952731CE830059AF6A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsViewPresenter.swift; sourceTree = "<group>"; };
 		FA24A59D2732BCCE0059AF6A /* CongradsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsView.swift; sourceTree = "<group>"; };
@@ -364,7 +368,7 @@
 		FAFCF3512715760A00C3134E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FAFCF35427157FE100C3134E /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyPresenter.swift; sourceTree = "<group>"; };
-		FAFCF3592715830D00C3134E /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FAFCF3592715830D00C3134E /* MeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataModel.swift; sourceTree = "<group>"; };
 		FAFCF35E2715D0F800C3134E /* IdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyController.swift; sourceTree = "<group>"; };
 		FAFCF35F2715D0F800C3134E /* IdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentifyController.xib; sourceTree = "<group>"; };
 		FAFCF3632715D1A500C3134E /* IdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyPresenter.swift; sourceTree = "<group>"; };
@@ -1147,6 +1151,8 @@
 				FA24A5AB273474E00059AF6A /* CareTypeModel.swift */,
 				021D6D0427315D6200C73183 /* MeModel.swift */,
 				02E0255F273273D600988F12 /* MainPlantModel.swift */,
+				FA1CEC59273C6488003A4F84 /* LanguageModel.swift */,
+				FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -1329,7 +1335,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFCF35427157FE100C3134E /* Me.graphql */,
-				FAFCF3592715830D00C3134E /* MeModel.swift */,
+				FAFCF3592715830D00C3134E /* MeDataModel.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1635,7 +1641,7 @@
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
 				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
-				FAFCF35A2715830D00C3134E /* MeModel.swift in Sources */,
+				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
 				F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
@@ -1679,6 +1685,7 @@
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
+				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
@@ -1730,6 +1737,7 @@
 				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
 				0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */,
+				FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				FA24A5B1273476190059AF6A /* GardenPresenter.swift in Sources */,
 				FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */,

@@ -1,33 +1,38 @@
 query Me {
 	me {
-		Gardens {
-			id
-			isDefault
-			isDefault
-			name
-			userDescription
-			userDescription
-			userGalleryImages {
-				id
-				urlAndroidPhone
-				urlAndroidTablet
-				urlIosFull
-				urlIosPrev
-			}
-			userMainImage {
-				id
-				urlAndroidPhone
-				urlAndroidTablet
-				urlIosFull
-				urlIosPrev
-			}
-		}
+		id
+		fullName
+		email
+		timezone
+		defaultGardenId
 		Language {
-			code
 			id
-			index
 			name
 			nativeName
+			code
+			index
+		}
+		Gardens {
+			id
+			name
+			userDescription
+			userMainImage {
+				id
+				urlIosFull
+				urlIosPrev
+				urlAndroidPhone
+				urlAndroidTablet
+				notes
+			}
+			userGalleryImages {
+				id
+				urlIosFull
+				urlIosPrev
+				urlAndroidPhone
+				urlAndroidTablet
+				notes
+			}
+			isDefault
 		}
 		access {
 			diagnosisAvaliable
@@ -37,11 +42,5 @@ query Me {
 			identifyUsed
 			isPremium
 		}
-		defaultGardenId
-		email
-		fullName
-		id
-		timezone
-		
 	}
 }

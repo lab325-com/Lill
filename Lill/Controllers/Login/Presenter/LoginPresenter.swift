@@ -60,7 +60,9 @@ class LoginPresenter: LoginPresenterProtocol {
             let query = MeQuery()
             let _ = Network.shared.query(model: MeDataModel.self, query) { model in
                 KeychainService.standard.me = model.me
-            } failureHandler: { error in }
+            } failureHandler: { error in
+                
+            }
             
             self?.view?.stopLoading()
             self?.view?.success()
