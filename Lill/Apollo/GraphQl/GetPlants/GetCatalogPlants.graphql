@@ -7,7 +7,7 @@ query GetCatalogPlants($pagination: InputPagination!,
 		pagination {
 			limit
 			nextPageExist
-			ofset
+			offset
 			prevPageExist
 			totalPages
 		}
@@ -18,7 +18,7 @@ query GetCatalogPlants($pagination: InputPagination!,
 				is_favorite
 				name
 				image {
-					media_id
+					id
 					urlIosFull
 					urlIosPrev
 				}

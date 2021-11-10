@@ -134,7 +134,7 @@ class PlantsDetailController: BaseController {
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
     }
     

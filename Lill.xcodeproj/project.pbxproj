@@ -68,6 +68,12 @@
 		02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A8347F26F38FA70009E147 /* OnboardingPageController.swift */; };
 		02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A8348026F38FA70009E147 /* OnboardingPageController.xib */; };
 		02AB244326F39BA400309CFF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB244226F39BA400309CFF /* R.generated.swift */; };
+		02C6C104273A684A003C47FF /* RestCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C103273A684A003C47FF /* RestCalls.swift */; };
+		02C6C108273A68BF003C47FF /* RestSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C107273A68BF003C47FF /* RestSuffix.swift */; };
+		02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C10A273A68F4003C47FF /* RestAuth.swift */; };
+		02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C10D273A6948003C47FF /* RestMethods.swift */; };
+		02C6C111273A69CF003C47FF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 02C6C110273A69CF003C47FF /* Alamofire */; };
+		02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C113273A6AA4003C47FF /* AuthModel.swift */; };
 		02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */; };
 		02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */; };
 		02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC726F5E7AD00F86B87 /* Release.xcconfig */; };
@@ -91,7 +97,6 @@
 		02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E329A427342586004344C0 /* SubscribePresenter.swift */; };
 		02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02E329A727342629004344C0 /* SwiftyStoreKit */; };
 		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
-		02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575F26F90FF000F19C41 /* LoginModel.swift */; };
 		02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFA8270A36500089CEF8 /* WishListController.swift */; };
 		02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FCBFA9270A36500089CEF8 /* WishListController.xib */; };
 		02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFAE270A40490089CEF8 /* KeychainService.swift */; };
@@ -161,7 +166,6 @@
 		FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD282704AF530075C0C0 /* ScheduleController.swift */; };
 		FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD2A2704AF670075C0C0 /* MenuController.swift */; };
 		FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */; };
-		FAD1832A26F899B4007A67DC /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAD1832926F899B4007A67DC /* Login.graphql */; };
 		FAD1833226F8A5CA007A67DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833126F8A5CA007A67DC /* API.swift */; };
 		FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833626F9DD2C007A67DC /* LoginController.swift */; };
 		FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1833726F9DD2C007A67DC /* LoginController.xib */; };
@@ -245,6 +249,11 @@
 		02A8348026F38FA70009E147 /* OnboardingPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageController.xib; sourceTree = "<group>"; };
 		02AB244226F39BA400309CFF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		02AB244826F39D8E00309CFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02C6C103273A684A003C47FF /* RestCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCalls.swift; sourceTree = "<group>"; };
+		02C6C107273A68BF003C47FF /* RestSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSuffix.swift; sourceTree = "<group>"; };
+		02C6C10A273A68F4003C47FF /* RestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuth.swift; sourceTree = "<group>"; };
+		02C6C10D273A6948003C47FF /* RestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethods.swift; sourceTree = "<group>"; };
+		02C6C113273A6AA4003C47FF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
 		02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		02D04EC726F5E7AD00F86B87 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -269,7 +278,6 @@
 		02E329A227342556004344C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		02E329A427342586004344C0 /* SubscribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePresenter.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		02E4575F26F90FF000F19C41 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		02FCBFA8270A36500089CEF8 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		02FCBFA9270A36500089CEF8 /* WishListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListController.xib; sourceTree = "<group>"; };
 		02FCBFAE270A40490089CEF8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
@@ -338,7 +346,6 @@
 		FAB3BD282704AF530075C0C0 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		FAB3BD2A2704AF670075C0C0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCatalogPlants.graphql; sourceTree = "<group>"; };
-		FAD1832926F899B4007A67DC /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		FAD1833126F8A5CA007A67DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
@@ -376,6 +383,7 @@
 				02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */,
 				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
+				02C6C111273A69CF003C47FF /* Alamofire in Frameworks */,
 				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
 				02E329A327342557004344C0 /* StoreKit.framework in Frameworks */,
 				FAD49CEB27033C15005D6E75 /* FirebaseMessaging in Frameworks */,
@@ -710,6 +718,58 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		02C6C102273A6821003C47FF /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C105273A687F003C47FF /* Calls */,
+				02C6C106273A68B2003C47FF /* Suffix */,
+				02C6C109273A68E1003C47FF /* Operations */,
+				02C6C10C273A692D003C47FF /* Constant */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+		02C6C105273A687F003C47FF /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C103273A684A003C47FF /* RestCalls.swift */,
+			);
+			path = Calls;
+			sourceTree = "<group>";
+		};
+		02C6C106273A68B2003C47FF /* Suffix */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C107273A68BF003C47FF /* RestSuffix.swift */,
+			);
+			path = Suffix;
+			sourceTree = "<group>";
+		};
+		02C6C109273A68E1003C47FF /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C112273A6A8E003C47FF /* Auth */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		02C6C10C273A692D003C47FF /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C10D273A6948003C47FF /* RestMethods.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		02C6C112273A6A8E003C47FF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02C6C10A273A68F4003C47FF /* RestAuth.swift */,
+				02C6C113273A6AA4003C47FF /* AuthModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		02D04EC426F5E7AD00F86B87 /* ConfigFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,15 +887,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		02E4576426F9137C00F19C41 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				02E4575F26F90FF000F19C41 /* LoginModel.swift */,
-				FAD1832926F899B4007A67DC /* Login.graphql */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		02E4576526F9139000F19C41 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,7 +903,6 @@
 				FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */,
 				FA24A5A12732DAC10059AF6A /* PlantToGarden */,
 				FA24A5A8273473C20059AF6A /* CaresByGarden */,
-				02E4576426F9137C00F19C41 /* Login */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -1114,6 +1164,7 @@
 				FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */,
 				FAD1833126F8A5CA007A67DC /* API.swift */,
 				02AB244226F39BA400309CFF /* R.generated.swift */,
+				02C6C102273A6821003C47FF /* REST */,
 				FAD1832826F899A8007A67DC /* Apollo */,
 				02AB244B26F3B8C100309CFF /* Resources */,
 				02A8346A26F38AF50009E147 /* Base */,
@@ -1326,6 +1377,7 @@
 				02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */,
 				FA24A5982732B94A0059AF6A /* SwiftEntryKit */,
 				02E329A727342629004344C0 /* SwiftyStoreKit */,
+				02C6C110273A69CF003C47FF /* Alamofire */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -1366,6 +1418,7 @@
 				02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 				02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+				02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -1412,7 +1465,6 @@
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
-				FAD1832A26F899B4007A67DC /* Login.graphql in Resources */,
 				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */,
 				0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */,
 				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
@@ -1550,6 +1602,7 @@
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				FA40D718272854E200A10C10 /* CaresModel.swift in Sources */,
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
+				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
 				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
@@ -1559,6 +1612,7 @@
 				FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */,
 				F3235D2E272E6CE100B4CE5E /* MenuPresenter.swift in Sources */,
 				F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */,
+				02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
 				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
 				FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */,
@@ -1570,6 +1624,7 @@
 				0272DB0527358DF2005E7880 /* AddCoverRouter.swift in Sources */,
 				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
+				02C6C104273A684A003C47FF /* RestCalls.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
 				0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */,
@@ -1584,6 +1639,7 @@
 				02E025642732B39500988F12 /* RecognizeArchiveController.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
+				02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */,
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
 				021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */,
@@ -1612,7 +1668,6 @@
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
 				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
-				02E4576026F90FF000F19C41 /* LoginModel.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
 				02E025672732B72600988F12 /* RecognizeArchivePresenter.swift in Sources */,
@@ -1638,6 +1693,7 @@
 				FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
 				029C520527307F9300BD30B4 /* Rswift+Extension.swift in Sources */,
+				02C6C108273A68BF003C47FF /* RestSuffix.swift in Sources */,
 				02493DD62727E38A008C2064 /* PlantsDetailController.swift in Sources */,
 				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
@@ -1992,6 +2048,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
@@ -2073,6 +2137,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		02C6C110273A69CF003C47FF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		02E329A727342629004344C0 /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;

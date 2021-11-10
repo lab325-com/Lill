@@ -1,5 +1,6 @@
 
 import UIKit
+import Toast
 
 class SubcribeController: BaseController {
 
@@ -46,6 +47,8 @@ class SubcribeController: BaseController {
         .underlineStyle: NSUnderlineStyle.single.rawValue
     ]
     
+    private let yearProduct = "com.lill.subscription.yearly"
+    
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
@@ -60,10 +63,10 @@ class SubcribeController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        yearView.alpha = 1.0
-        mounthView.alpha = 1.0
+        yearView.alpha = 0.0
+        mounthView.alpha = 0.0
         
-        presenter.retriveProduct(id: ["com.lill.subscription.yearly"])
+        presenter.retriveProduct(id: [yearProduct])
         
         let attributeString = NSMutableAttributedString(
             string: RLocalization.subscription_restore.localized(PreferencesManager.sharedManager.languageCode.rawValue),
@@ -91,12 +94,47 @@ class SubcribeController: BaseController {
         rulesLabel.text = RLocalization.subscription_description.localized(PreferencesManager.sharedManager.languageCode.rawValue)
     }
     
+    // Specify the decimal place to round to using an enum
+    public enum RoundingPrecision {
+        case ones
+        case tenths
+        case hundredths
+    }
+
+    // Round to the specific decimal place
+    public func preciseRound(
+        _ value: Double,
+        precision: RoundingPrecision = .ones) -> Double
+    {
+        switch precision {
+        case .ones:
+            return round(value)
+        case .tenths:
+            return round(value * 10) / 10.0
+        case .hundredths:
+            return round(value * 100) / 100.0
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - @IBActions
     //----------------------------------------------
     
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func actionYearSubscription(_ sender: UIButton) {
+        presenter.purchase(id: yearProduct) { [weak self] result, error in
+            if result {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.view.makeToast(error)
+            }
+        }
+    }
+    
+    @IBAction func actionMonthSubscription(_ sender: UIButton) {
     }
 }
 
@@ -107,9 +145,21 @@ class SubcribeController: BaseController {
 extension SubcribeController: SubscribeOutputProtocol {
     func successRetrive() {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.yearView.alpha = 1.0
-            self?.mounthView.alpha = 1.0
+            guard let `self` = self else { return }
+            if let yearSub = self.presenter.paymentsInfo.first(where: {$0.product == self.yearProduct}) {
+                self.yearTitleLabel.text = yearSub.period
+                self.yearBilledLabel.text = RLocalization.subscription_billed_with("\(yearSub.period) - \(yearSub.prettyPrice)")
+                
+                let value = yearSub.price / 12
+                
+                self.yearPriceLabel.text = "\(yearSub.currencySymbol ?? "$") \(self.preciseRound(value, precision: .tenths) - 0.01)/month"
+                self.yearView.alpha = 1.0
+            }
+           
+            self.mounthView.alpha = 1.0
         }
+        
+        
     }
     
     func failure(error: String) {

@@ -12,7 +12,7 @@ query GardenPlants($gardenId: String!,
 			userMainImage {
 				urlIosFull
 				urlIosPrev
-				media_id
+				id
 			}
 			GardenPlantCares {
 				count
@@ -23,7 +23,7 @@ query GardenPlants($gardenId: String!,
 		Pagination {
 			limit
 			nextPageExist
-			ofset
+			offset
 			prevPageExist
 			totalPages
 		}

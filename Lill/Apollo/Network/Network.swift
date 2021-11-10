@@ -170,13 +170,13 @@ extension Network {
         
         /// Helper function to add the token then move on to the next step
         private func addTokenAndProceed<Operation: GraphQLOperation>(
-            _ token: Token,
+            _ token: AuthModel,
             to request: HTTPRequest<Operation>,
             chain: RequestChain,
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
             
-            request.addHeader(name: "Authorization", value: "Bearer \(token.token)")
+                request.addHeader(name: "Authorization", value: "Bearer \(token.token)")
             chain.proceedAsync(request: request,
                                response: response,
                                completion: completion)
@@ -188,7 +188,7 @@ extension Network {
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
             
-            guard let token = UserManager.shared.token else {
+                guard let token = KeychainService.standard.newAuthToken else {
                 // In this instance, no user is logged in, so we want to call
                 // the error handler, then return to prevent further work
                 chain.handleErrorAsync(UserError.noUserLoggedIn,
@@ -199,7 +199,7 @@ extension Network {
             }
             
             // If we've gotten here, there is a token!
-            if token.isExpired {
+            if token.isExpired == true {
                 // Call an async method to renew the token
 //                UserManager.shared.renewToken { [weak self] tokenRenewResult in
 //                    guard let self = self else {
@@ -262,24 +262,5 @@ extension Network {
                 CacheWriteInterceptor(store: self.store)
             ]
         }
-    }
-}
-
-
-/// Temp class
-extension Network {
-    class UserManager {
-        
-        var token: Token? = Token()
-        
-        static let shared: UserManager = {
-            let sharedInstance = UserManager()
-            return sharedInstance
-        }()
-    }
-    
-    struct Token {
-        var isExpired: Bool = false
-        var token: String?
     }
 }

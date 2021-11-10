@@ -1,6 +1,6 @@
 query PlantById($id: String!) {
 	plantById(id: $id) {
-		cares {
+		PlantCares {
 			count
 			id
 			period
@@ -9,7 +9,7 @@ query PlantById($id: String!) {
 				name
 			}
 		}
-		climate {
+		Climate {
 			deciduous
 			habit
 			hardiness
@@ -24,7 +24,7 @@ query PlantById($id: String!) {
 		id
 		isFavourite
 		latinName
-		mainImages {
+		plantImages {
 			media_id
 			urlIosFull
 			urlIosPrev

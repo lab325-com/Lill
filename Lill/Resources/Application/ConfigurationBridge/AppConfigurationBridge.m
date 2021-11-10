@@ -5,6 +5,7 @@
 
 @property(nonnull, copy) NSString *configurationDescription;
 @property(nonnull, copy) NSString *hostName;
+@property(nonnull, copy) NSString *hostRestName;
 @property(nonnull, copy) NSString *supportEmail;
 @property(nonnull, copy) NSString *appName;
 
@@ -38,6 +39,12 @@
         [self setAppName: APP_NAME];
     #else
         #error Cant find APP_NAME. Please setup xcconfig file
+    #endif
+        
+    #ifdef HOST_REST_NAME
+        [self setHostRestName: HOST_REST_NAME];
+    #else
+        #error Cant find HOST_REST_NAME. Please setup xcconfig file
     #endif
     }
     return self;

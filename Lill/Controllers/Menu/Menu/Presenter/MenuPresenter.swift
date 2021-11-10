@@ -54,6 +54,7 @@ class MenuPresenter: MenuPresenterProtocol {
         let query = MeQuery()
         
         let _ = Network.shared.query(model: MeDataModel.self, query) { [weak self] model in
+            KeychainService.standard.me = model.me
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         } failureHandler: { [weak self] error in

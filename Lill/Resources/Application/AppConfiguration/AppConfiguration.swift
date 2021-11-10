@@ -16,6 +16,7 @@ class AppConfiguration {
     //----------------------------------------------
     let configurationName: String
     let hostName: String
+    let hostRestName: String
     let supportEmail: String
     let appName: String
     
@@ -26,6 +27,7 @@ class AppConfiguration {
         let bridge = AppConfigurationBridge()
         self.configurationName = bridge.configurationDescription
         self.hostName = bridge.hostName
+        self.hostRestName = bridge.hostRestName
         self.supportEmail = bridge.supportEmail
         self.appName = bridge.appName
     }

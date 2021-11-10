@@ -42,8 +42,7 @@ class GardenController: BaseController {
         
         super.viewDidLoad()
         
-        if let gardenId = KeychainService.standard.token?.defaultGardenId {
-            //presenter.getCaresByGarden(gardenId: gardenId)
+        if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getGardenPants(gardenId: gardenId)
         }
         

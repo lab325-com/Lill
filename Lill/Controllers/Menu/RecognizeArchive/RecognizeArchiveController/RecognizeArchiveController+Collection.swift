@@ -53,7 +53,7 @@ extension RecognizeArchiveController: UICollectionViewDelegateFlowLayout {
 
 extension RecognizeArchiveController: PlantCollectionDelegate {
     func setToGarden(cell: PlantCollectionCell, id: String) {
-        guard let gardenId = KeychainService.standard.token?.defaultGardenId else { return }
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
     }
     

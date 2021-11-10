@@ -31,7 +31,8 @@ class RootRouter {
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow) -> Bool {
         
         if PreferencesManager.sharedManager.isFirstRun == false {
-            KeychainService.standard.removeObject(forKey: .token)
+            KeychainService.standard.removeObject(forKey: .newAuthToken)
+            KeychainService.standard.removeObject(forKey: .me)
             PreferencesManager.sharedManager.isFirstRun = true
         }
         

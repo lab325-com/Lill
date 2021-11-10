@@ -55,14 +55,18 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func loginUser(token: String, udid: String, firebaseId: String, social: Social, lang: Lang) {
         view?.startLoader()
-        let mutation = LoginMutation(socialToken: token, udid: uuid, firebaseId: firebaseId, social: social, lang: lang)
-        Network.shared.mutation(model: LoginModel.self, mutation) { [weak self] model in
-            KeychainService.standard.token = model.login
+    
+        RestAuth().login(token: token, social: social) { [weak self] model in
+            KeychainService.standard.newAuthToken = model
+            
+            let query = MeQuery()
+            let _ = Network.shared.query(model: MeDataModel.self, query) { _ in } failureHandler: { error in }
+            
             self?.view?.stopLoading()
             self?.view?.success()
-        } failureHandler: { [weak self] error in
+        } failure: { [weak self] message, error in
             self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
+            self?.view?.failure(error: (message ?? "") + (error?.localizedDescription ?? ""))
         }
     }
 }

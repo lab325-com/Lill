@@ -13,8 +13,10 @@ import StoreKit
 
 struct PaymentsModel {
     let product: String
-    let price: String
+    let prettyPrice: String
     let period: String
+    let price: Double
+    let currencySymbol: String?
     let daysTrial: Int? = nil
 }
 
@@ -43,7 +45,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
         self.view = view
     }
     
-    func purchase(id: String, purchaseSuccess: @escaping () -> Void) {
+    func purchase(id: String, purchaseSuccess: @escaping (Bool, String?) -> Void) {
         view?.startLoader()
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
             self?.view?.stopLoading()
@@ -56,19 +58,24 @@ class SubscribePresenter: SubscribePresenterProtocol {
                     SwiftyStoreKit.finishTransaction(product.transaction)
                 }
                 print("Purchase Success: \(product.productId)")
+                purchaseSuccess(true, nil)
             case .error(let error):
+                var errorMessage = ""
                 switch error.code {
-                case .unknown: print("Unknown error. Please contact support")
-                case .clientInvalid: print("Not allowed to make the payment")
-                case .paymentCancelled: break
-                case .paymentInvalid: print("The purchase identifier was invalid")
-                case .paymentNotAllowed: print("The device is not allowed to make the payment")
-                case .storeProductNotAvailable: print("The product is not available in the current storefront")
-                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-                default: print((error as NSError).localizedDescription)
+                case .unknown: errorMessage = "Unknown error. Please contact support"
+                case .clientInvalid: errorMessage = "Not allowed to make the payment"
+                case .paymentCancelled:
+                    return
+                case .paymentInvalid: errorMessage = "The purchase identifier was invalid"
+                case .paymentNotAllowed: errorMessage = "The device is not allowed to make the payment"
+                case .storeProductNotAvailable: errorMessage = "The product is not available in the current storefront"
+                case .cloudServicePermissionDenied: errorMessage = "Access to cloud service information is not allowed"
+                case .cloudServiceNetworkConnectionFailed: errorMessage = "Could not connect to the network"
+                case .cloudServiceRevoked: errorMessage = "User has revoked permission to use this cloud service"
+                default: errorMessage = (error as NSError).localizedDescription
                 }
+                
+                purchaseSuccess(false, errorMessage)
             }
         }
     }
@@ -113,10 +120,10 @@ class SubscribePresenter: SubscribePresenterProtocol {
             
             for product in results.retrievedProducts {
                 if let priceString = product.localizedPrice,
-                   let number = product.subscriptionPeriod?.numberOfUnits,
+                   let _ = product.subscriptionPeriod?.numberOfUnits,
                    let period = self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
                     
-                    let model = PaymentsModel(product: product.productIdentifier, price: priceString, period: period)
+                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
                     self?.paymentsInfo.append(model)
                 } else {
                     debugPrint(">>>>>>>>>>>>>>>>>>>incorrect product!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -147,3 +154,4 @@ class SubscribePresenter: SubscribePresenterProtocol {
         }
     }
 }
+

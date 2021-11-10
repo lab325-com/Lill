@@ -8,16 +8,14 @@ query Me {
 			userDescription
 			userDescription
 			userGalleryImages {
-				media_id
-				type
+				id
 				urlAndroidPhone
 				urlAndroidTablet
 				urlIosFull
 				urlIosPrev
 			}
 			userMainImage {
-				media_id
-				type
+				id
 				urlAndroidPhone
 				urlAndroidTablet
 				urlIosFull
@@ -39,8 +37,6 @@ query Me {
 			identifyUsed
 			isPremium
 		}
-		avatar
-		barer
 		defaultGardenId
 		email
 		fullName

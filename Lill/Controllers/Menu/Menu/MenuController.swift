@@ -64,7 +64,6 @@ class MenuController: BaseController {
 
 extension MenuController: MenuOutputProtocol {
     func success(model: MeDataModel) {
-        KeychainService.standard.token = model.me
         self.meModel = model
         self.menuTable.reloadData()
     }

@@ -125,12 +125,21 @@ class KeychainService {
 extension KeychainService {
     
     /// Saved session token model.
-    var token: MeModel? {
+    var me: MeModel? {
         get {
-            return self.model(forKey: .token)
+            return self.model(forKey: .me)
         }
         set {
-            self.set(newValue, forKey: .token)
+            self.set(newValue, forKey: .me)
+        }
+    }
+    
+    var newAuthToken: AuthModel? {
+        get {
+            return self.model(forKey: .newAuthToken)
+        }
+        set {
+            self.set(newValue, forKey: .newAuthToken)
         }
     }
 }
@@ -139,6 +148,7 @@ extension KeychainService {
 extension KeychainService {
     
     enum Key: String {
-        case token = "ArchiveTokenModel"
+        case me = "ArchiveMeModel"
+        case newAuthToken = "ArchiveNewAuthModel"
     }
 }

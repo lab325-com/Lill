@@ -2,7 +2,7 @@
 import Foundation
 
 struct MediaModel: Codable {
-    let media_id: String
+    let id: String
     let type: String?
     let urlAndroidPhone: String?
     let urlAndroidTablet: String?
