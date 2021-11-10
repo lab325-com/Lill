@@ -31,7 +31,7 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
     }
     
     func uploadPhoto(img: UIImage) {
-        view?.startLoader()
+        //view?.startLoader()
         
         request?.cancel()
         
@@ -39,9 +39,9 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         
         let avaimg = img.jpegData(compressionQuality: 0.1)!
 
-        let file = GraphQLFile(fieldName: "avatar", originalName: "avatar.jpeg", mimeType: "image/jpeg", data: avaimg)
+        let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: avaimg)
         
-        let mutation = UploadMediaMutation(image: "avatar")
+        let mutation = UploadMediaMutation(image: "image")
         
         Network.shared.apollo.upload(operation: mutation, files: [file], queue: DispatchQueue.main) { result in
             switch result {
