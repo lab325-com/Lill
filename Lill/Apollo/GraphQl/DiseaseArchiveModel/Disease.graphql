@@ -3,7 +3,7 @@ query DiagnoseArhive($pagination: InputPagination!) {
     pagination {
       limit
       nextPageExist
-      ofset
+      offset
       prevPageExist
       totalPages
     }
@@ -11,16 +11,16 @@ query DiagnoseArhive($pagination: InputPagination!) {
       diagnoseDescription
       diagnoseTitle
       plant {
-        cares {
+		PlantCares {
             count
             id
             period
-            type {
+			CareType {
                 id
                 name
             }
         }
-        climate {
+		Climate {
             deciduous
             habit
             hardiness
@@ -35,8 +35,8 @@ query DiagnoseArhive($pagination: InputPagination!) {
         id
         isFavourite
         latinName
-        mainImages {
-            media_id
+		plantImages {
+            id
             urlIosFull
             urlIosPrev
         }

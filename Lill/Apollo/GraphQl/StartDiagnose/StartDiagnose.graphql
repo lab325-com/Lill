@@ -1,19 +1,42 @@
-query StartDiagnose($img: DiagnoseInput!) {
-	startDiagnose(img: $img) {
-		diagnoseDescription
-		diagnoseTitle
-		plant {
-			id
-			description {
-				is_favorite
-				name
-				names
-				image {
-					media_id
-					urlIosFull
-					urlIosPrev
+query StartDiagnose($mediaId: String!) {
+	startDiagnose(mediaId: $mediaId) {
+		id
+		Plant {
+			PlantCares {
+				count
+				id
+				period
+				CareType {
+					id
+					name
 				}
 			}
+			Climate {
+				deciduous
+				habit
+				hardiness
+				height
+				moisture
+				ph
+				shade
+				soil
+			}
+			descriptionFull
+			descriptionWikiHtml
+			id
+			isFavourite
+			latinName
+			plantImages {
+				id
+				urlIosFull
+				urlIosPrev
+			}
+			names
+			wikiUrl
+		}
+		Disease {
+			id
+			name
 		}
 	}
 }

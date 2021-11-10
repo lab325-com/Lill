@@ -4,7 +4,7 @@ query PlantById($id: String!) {
 			count
 			id
 			period
-			type {
+			CareType {
 				id
 				name
 			}
@@ -25,7 +25,7 @@ query PlantById($id: String!) {
 		isFavourite
 		latinName
 		plantImages {
-			media_id
+			id
 			urlIosFull
 			urlIosPrev
 		}

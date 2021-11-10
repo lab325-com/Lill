@@ -15,11 +15,24 @@ struct PlantModel: Codable {
     let id: String
     var isFavourite: Bool?
     let latinName: String
-    let mainImages: [MediaModel]
+    let plantImages: [MediaModel]
     let names: String
     let wikiUrl: String?
     
     mutating func changeIsFavorite(_ isFavourite: Bool) {
         self.isFavourite = isFavourite
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case cares = "PlantCares"
+        case climate = "Climate"
+        case descriptionFull = "descriptionFull"
+        case descriptionWikiHtml = "descriptionWikiHtml"
+        case id = "id"
+        case isFavourite = "isFavourite"
+        case latinName = "latinName"
+        case plantImages = "plantImages"
+        case names = "names"
+        case wikiUrl = "wikiUrl"
     }
 }

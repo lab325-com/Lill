@@ -9,8 +9,6 @@ import Foundation
 
 struct MeModel: Codable {
     let access: AccessModel
-    let avatar: String
-    let barer: String
     let email: String?
     let id: String
     let fullName: String?

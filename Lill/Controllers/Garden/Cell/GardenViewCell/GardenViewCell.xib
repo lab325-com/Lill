@@ -42,10 +42,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="263" height="130"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJH-LW-kzh">
-                                <rect key="frame" x="162" y="8" width="93" height="24"/>
+                                <rect key="frame" x="170" y="8" width="85" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POM-Ho-E5m">
-                                        <rect key="frame" x="22" y="4" width="49" height="16"/>
+                                        <rect key="frame" x="18" y="4" width="49" height="16"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,8 +55,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="4lW-py-fI5"/>
                                     <constraint firstItem="POM-Ho-E5m" firstAttribute="centerY" secondItem="BJH-LW-kzh" secondAttribute="centerY" id="aOc-17-0jd"/>
-                                    <constraint firstAttribute="trailing" secondItem="POM-Ho-E5m" secondAttribute="trailing" constant="22" id="aWG-72-ucd"/>
-                                    <constraint firstItem="POM-Ho-E5m" firstAttribute="leading" secondItem="BJH-LW-kzh" secondAttribute="leading" constant="22" id="lGP-aA-Xuy"/>
+                                    <constraint firstAttribute="trailing" secondItem="POM-Ho-E5m" secondAttribute="trailing" constant="18" id="aWG-72-ucd"/>
+                                    <constraint firstItem="POM-Ho-E5m" firstAttribute="leading" secondItem="BJH-LW-kzh" secondAttribute="leading" constant="18" id="lGP-aA-Xuy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

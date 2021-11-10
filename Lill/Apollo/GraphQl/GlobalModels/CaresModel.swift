@@ -6,6 +6,14 @@ struct CaresModel: Codable {
     let id: String?
     let period: PeriodType
     let type: CareType
+    
+    enum CodingKeys: String, CodingKey {
+        case count = "count"
+        case id = "id"
+        case period = "period"
+        case type = "CareType"
+    }
+    
 }
 
 extension PeriodType: Codable {

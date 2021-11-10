@@ -18,7 +18,7 @@ struct DescriptionModel: Codable {
 }
 
 struct ImageModel: Codable {
-    let media_id: String?
+    let id: String?
     let urlIosFull: String?
     let urlIosPrev: String?
 }

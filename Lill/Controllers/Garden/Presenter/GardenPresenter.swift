@@ -10,6 +10,7 @@ import UIKit
 protocol GardenOutputProtocol: BaseController {
     func successCaresByGarden(model: CaresByGardenDataModel)
     func successGardenPlants()
+    func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel)
     
     func failure(error: String)
 }
@@ -23,6 +24,7 @@ protocol GardenPresenterProtocol: AnyObject {
     
     func getCaresByGarden(gardenId: String)
     func getGardenPants(gardenId: String)
+    func doneCares(gardenId: String)
 }
 
 class GardenPresenter: GardenPresenterProtocol {
@@ -30,9 +32,9 @@ class GardenPresenter: GardenPresenterProtocol {
     private weak var view: GardenOutputProtocol?
     private var request: Cancellable?
     
-    var gardenPlants: [GardenPlantModel] = []
-    var sadGardenPlants: [GardenPlantModel] = []
-    var happyGardenPlants: [GardenPlantModel] = []
+    var gardenPlants = [GardenPlantModel]()
+    var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
 
     required init(view: GardenOutputProtocol) {
         self.view = view
@@ -57,7 +59,7 @@ class GardenPresenter: GardenPresenterProtocol {
         let group = DispatchGroup()
 
         group.enter()
-        let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(ofset: 0, limit: 10), careTypeId: nil, isHappy: false)
+        let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
             group.leave()
             self?.sadGardenPlants = model.gardenPlants.GardenPlants
@@ -67,7 +69,7 @@ class GardenPresenter: GardenPresenterProtocol {
         })
 
         group.enter()
-        let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(ofset: 0, limit: 10), careTypeId: nil, isHappy: true)
+        let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: true)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
             group.leave()
             self?.happyGardenPlants = model.gardenPlants.GardenPlants
@@ -83,5 +85,20 @@ class GardenPresenter: GardenPresenterProtocol {
             
             self?.view?.successGardenPlants()
         }
+    }
+    
+    func doneCares(gardenId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = DoneAllCaresByGardenMutation(gardenId: gardenId)
+        request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successDoneAllCaresByGarden(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

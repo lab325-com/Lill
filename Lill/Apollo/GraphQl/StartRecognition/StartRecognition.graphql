@@ -1,16 +1,35 @@
-query StartRecognition($img: RecognitionInput!) {
-	startRecognition(img: $img) {
-		plants {
-			id
-			description {
-				is_favorite
-				name
-				image {
-					media_id
-					urlIosFull
-					urlIosPrev
-				}
-			}
-		}
-	}
+query StartRecognize($mediaId: String!) {
+	startRecognize(mediaId: $mediaId) {
+		PlantCares {
+			   count
+			   id
+			   period
+			   CareType {
+				   id
+				   name
+			   }
+		   }
+		   Climate {
+			   deciduous
+			   habit
+			   hardiness
+			   height
+			   moisture
+			   ph
+			   shade
+			   soil
+		   }
+		   descriptionFull
+		   descriptionWikiHtml
+		   id
+		   isFavourite
+		   latinName
+		   plantImages {
+			   id
+			   urlIosFull
+			   urlIosPrev
+		   }
+		   names
+		   wikiUrl
+	   }
 }

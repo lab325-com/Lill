@@ -34,7 +34,7 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = UploadMediaMutation(img: img)
+        let mutation = UploadMediaMutation(image: img)
         
         request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
             self?.view?.stopLoading()
@@ -50,7 +50,7 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         
         request?.cancel()
         
-        let query = StartDiagnoseQuery(img: DiagnoseInput(img: img))
+        let query = StartDiagnoseQuery(mediaId: img)
         
         request = Network.shared.query(model: DiagnoseDataModel.self, query, successHandler: { [weak self] model in
             self?.view?.stopLoading()

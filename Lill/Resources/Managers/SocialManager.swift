@@ -4,6 +4,14 @@ import FBSDKLoginKit
 import GoogleSignIn
 import AuthenticationServices
 
+enum Social: String {
+    case apple
+    case fb
+    case google
+    case instagram
+    case none
+}
+
 protocol SocialManagerDelegate: AnyObject {
     func login(service: SocialManager, token: String, social: Social)
     func login(service: SocialManager, error: Error?)

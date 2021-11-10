@@ -3,21 +3,21 @@ query RecognizedArhive($pagination: InputPagination!) {
     pagination {
       limit
       nextPageExist
-      ofset
+      offset
       prevPageExist
       totalPages
     }
     plant {
-        cares {
+		PlantCares {
             count
             id
             period
-            type {
+			CareType {
                 id
                 name
             }
         }
-        climate {
+		Climate {
             deciduous
             habit
             hardiness
@@ -32,8 +32,8 @@ query RecognizedArhive($pagination: InputPagination!) {
         id
         isFavourite
         latinName
-        mainImages {
-            media_id
+		plantImages {
+            id
             urlIosFull
             urlIosPrev
         }
