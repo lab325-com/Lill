@@ -80,13 +80,14 @@ class SubscribePresenter: SubscribePresenterProtocol {
         }
     }
     
-    func restore(_ restoreSuccess: @escaping () -> Void) {
+    func restore(_ restoreCompletion: @escaping (Bool) -> Void) {
         view?.startLoader()
         SwiftyStoreKit.restorePurchases(atomically: true) {[weak self] results in
             self?.view?.stopLoading()
             
             if results.restoreFailedPurchases.count > 0 {
                 print("Restore Failed: \(results.restoreFailedPurchases)")
+                restoreCompletion(false)
             }
             else if results.restoredPurchases.count > 0 {
                 for purchase in results.restoredPurchases {
@@ -98,10 +99,10 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 }
                 print("Restore Success: \(results.restoredPurchases)")
                
-                restoreSuccess()
+                restoreCompletion(true)
             }
             else {
-                print("Nothing to Restore")
+                restoreCompletion(false)
             }
         }
     }

@@ -170,7 +170,7 @@ class DiagnosisController: BaseController {
     @IBAction func diagnoseAction(_ sender: Any) {
         guard let image = capturedImage else { return }
         
-        presenter.uploadPhoto(img: image.description)
+        presenter.uploadPhoto(img: image)
         
         analizeActivity.startAnimating()
         
@@ -219,7 +219,7 @@ extension DiagnosisController: UIImagePickerControllerDelegate, UINavigationCont
             self.diagnosingPreviewView.isHidden = false
             self.capturedImageView.image = image
 
-            self.presenter.uploadPhoto(img: image.description)
+            self.presenter.uploadPhoto(img: image)
         }
     }
 }

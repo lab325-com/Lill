@@ -1,6 +1,7 @@
 
 import Foundation
 import Apollo
+import UIKit
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -17,7 +18,7 @@ protocol DiagnosisOutputProtocol: BaseController {
 protocol DiagnosisPresenterProtocol: AnyObject {
     init(view: DiagnosisOutputProtocol)
     
-    func uploadPhoto(img: String)
+    func uploadPhoto(img: UIImage)
 }
 
 class DiagnosisPresenter: DiagnosisPresenterProtocol {
@@ -29,20 +30,37 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         self.view = view
     }
     
-    func uploadPhoto(img: String) {
+    func uploadPhoto(img: UIImage) {
         view?.startLoader()
         
         request?.cancel()
         
-        let mutation = UploadMediaMutation(image: img)
         
-        request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successUpload(model: model)
-        }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        })
+        
+        let avaimg = img.jpegData(compressionQuality: 0.1)!
+
+        let file = GraphQLFile(fieldName: "avatar", originalName: "avatar.jpeg", mimeType: "image/jpeg", data: avaimg)
+        
+        let mutation = UploadMediaMutation(image: "avatar")
+        
+        Network.shared.apollo.upload(operation: mutation, files: [file], queue: DispatchQueue.main) { result in
+            switch result {
+            case .success(let success):
+                debugPrint("")
+            case .failure(let  error):
+                debugPrint("")
+            }
+        }
+        
+        
+        
+//        request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
+//            self?.view?.stopLoading()
+//            self?.view?.successUpload(model: model)
+//        }, failureHandler: { [weak self] error in
+//            self?.view?.stopLoading()
+//            self?.view?.failure(error: error.localizedDescription)
+//        })
     }
     
     func diagnosePhoto(img: String) {

@@ -48,6 +48,7 @@ class SubcribeController: BaseController {
     ]
     
     private let yearProduct = "com.lill.subscription.yearly"
+    private let monthProduct = "com.lill.subscription.monthly"
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -66,7 +67,7 @@ class SubcribeController: BaseController {
         yearView.alpha = 0.0
         mounthView.alpha = 0.0
         
-        presenter.retriveProduct(id: [yearProduct])
+        presenter.retriveProduct(id: [yearProduct, monthProduct])
         
         let attributeString = NSMutableAttributedString(
             string: RLocalization.subscription_restore.localized(PreferencesManager.sharedManager.languageCode.rawValue),
@@ -135,6 +136,18 @@ class SubcribeController: BaseController {
     }
     
     @IBAction func actionMonthSubscription(_ sender: UIButton) {
+        presenter.purchase(id: monthProduct) { [weak self] result, error in
+            if result {
+                self?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.view.makeToast(error)
+            }
+        }
+    }
+    @IBAction func actionRestore(_ sender: UIButton) {
+        presenter.restore { result in
+            
+        }
     }
 }
 
@@ -155,8 +168,14 @@ extension SubcribeController: SubscribeOutputProtocol {
                 self.yearPriceLabel.text = "\(yearSub.currencySymbol ?? "$") \(self.preciseRound(value, precision: .tenths) - 0.01)/month"
                 self.yearView.alpha = 1.0
             }
-           
-            self.mounthView.alpha = 1.0
+            
+            if let monthSub = self.presenter.paymentsInfo.first(where: {$0.product == self.monthProduct}) {
+                self.monthTitleLabel.text = monthSub.period
+                
+                self.monthPriceLabel.text = "\(monthSub.currencySymbol ?? "$") \(monthSub.price)/month"
+                
+                self.mounthView.alpha = 1.0
+            }
         }
         
         
