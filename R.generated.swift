@@ -157,8 +157,8 @@ struct R: Rswift.Validatable {
     static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
-    /// Resource file `Disease.graphql`.
-    static let diseaseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Disease", pathExtension: "graphql")
+    /// Resource file `DiagnoseArhive.graphql`.
+    static let diagnoseArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DiagnoseArhive", pathExtension: "graphql")
     /// Resource file `DoneAllCaresByGarden.graphql`.
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
@@ -175,8 +175,8 @@ struct R: Rswift.Validatable {
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
     /// Resource file `PlantToGarden.graphql`.
     static let plantToGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantToGarden", pathExtension: "graphql")
-    /// Resource file `Recognize.graphql`.
-    static let recognizeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Recognize", pathExtension: "graphql")
+    /// Resource file `RecognizeArhive.graphql`.
+    static let recognizeArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognizeArhive", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
     /// Resource file `SFProDisplay-Bold.ttf`.
@@ -185,14 +185,14 @@ struct R: Rswift.Validatable {
     static let sfProDisplayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Medium", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Regular.ttf`.
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
-    /// Resource file `SetFavoritePlant.graphql`.
-    static let setFavoritePlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SetFavoritePlant", pathExtension: "graphql")
+    /// Resource file `SetFavoritePlantById.graphql`.
+    static let setFavoritePlantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SetFavoritePlantById", pathExtension: "graphql")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
     /// Resource file `StartDiagnose.graphql`.
     static let startDiagnoseGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartDiagnose", pathExtension: "graphql")
-    /// Resource file `StartRecognition.graphql`.
-    static let startRecognitionGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartRecognition", pathExtension: "graphql")
+    /// Resource file `StartRecognize.graphql`.
+    static let startRecognizeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "StartRecognize", pathExtension: "graphql")
     /// Resource file `UploadMedia.graphql`.
     static let uploadMediaGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMedia", pathExtension: "graphql")
     /// Resource file `schema.json`.
@@ -210,9 +210,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "Disease", withExtension: "graphql")`
-    static func diseaseGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.diseaseGraphql
+    /// `bundle.url(forResource: "DiagnoseArhive", withExtension: "graphql")`
+    static func diagnoseArhiveGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.diagnoseArhiveGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -264,9 +264,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "Recognize", withExtension: "graphql")`
-    static func recognizeGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.recognizeGraphql
+    /// `bundle.url(forResource: "RecognizeArhive", withExtension: "graphql")`
+    static func recognizeArhiveGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.recognizeArhiveGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -294,9 +294,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SetFavoritePlant", withExtension: "graphql")`
-    static func setFavoritePlantGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.setFavoritePlantGraphql
+    /// `bundle.url(forResource: "SetFavoritePlantById", withExtension: "graphql")`
+    static func setFavoritePlantByIdGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.setFavoritePlantByIdGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -312,9 +312,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "StartRecognition", withExtension: "graphql")`
-    static func startRecognitionGraphql(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.startRecognitionGraphql
+    /// `bundle.url(forResource: "StartRecognize", withExtension: "graphql")`
+    static func startRecognizeGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.startRecognizeGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
