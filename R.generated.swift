@@ -366,7 +366,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 83 images.
+  /// This `R.image` struct is generated, and contains static references to 85 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -472,6 +472,10 @@ struct R: Rswift.Validatable {
     static let ic_wishlist_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_wishlist_no_data")
     /// Image `icn_diagnose`.
     static let icn_diagnose = Rswift.ImageResource(bundle: R.hostingBundle, name: "icn_diagnose")
+    /// Image `placeholder_big_ic`.
+    static let placeholder_big_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder_big_ic")
+    /// Image `placeholder_little_ic`.
+    static let placeholder_little_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder_little_ic")
     /// Image `plants_detail_about_deciduous_ic`.
     static let plants_detail_about_deciduous_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_detail_about_deciduous_ic")
     /// Image `plants_detail_about_habit_ic`.
@@ -896,6 +900,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icn_diagnose", bundle: ..., traitCollection: ...)`
     static func icn_diagnose(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icn_diagnose, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "placeholder_big_ic", bundle: ..., traitCollection: ...)`
+    static func placeholder_big_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.placeholder_big_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "placeholder_little_ic", bundle: ..., traitCollection: ...)`
+    static func placeholder_little_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.placeholder_little_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -5301,11 +5319,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_back_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_no_favorite_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_no_favorite_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_removed_favorites_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_removed_favorites_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

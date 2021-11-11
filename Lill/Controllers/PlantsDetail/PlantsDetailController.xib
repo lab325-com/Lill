@@ -80,7 +80,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIh-3G-2AS">
                                     <rect key="frame" x="0.0" y="0.0" width="434" height="280"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_detail_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YaP-BC-ua1">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YaP-BC-ua1">
                                             <rect key="frame" x="0.0" y="0.0" width="434" height="280"/>
                                         </imageView>
                                     </subviews>
@@ -461,11 +461,11 @@
         </view>
     </objects>
     <resources>
+        <image name="placeholder_big_ic" width="390" height="241"/>
         <image name="plants_detail_back_ic" width="390" height="1041"/>
         <image name="plants_detail_green_ic" width="34" height="61"/>
         <image name="plants_detail_no_favorite_ic" width="25" height="22"/>
         <image name="plants_detail_removed_favorites_ic" width="86" height="44"/>
-        <image name="temp_detail_ic" width="390" height="349"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

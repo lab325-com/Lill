@@ -50,7 +50,7 @@ class PlantCollectionCell: UICollectionViewCell {
         modelOne = model
         titleLabel.text = model.description.name
         
-        mainImageView.kf.setImage(with: URL(string: model.description.image.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
+        mainImageView.kf.setImage(with: URL(string: model.description.image.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
         
         favoriteImageView.image = model.description.is_favorite ? UIImage(named: "ic_plants_favorite") : UIImage(named: "ic_plants_unfavorite")
     }
@@ -58,7 +58,7 @@ class PlantCollectionCell: UICollectionViewCell {
     func configure(model: PlantModel) {
         modelTwo = model
         titleLabel.text = model.latinName
-        mainImageView.kf.setImage(with: URL(string: model.plantImages.first?.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
+        mainImageView.kf.setImage(with: URL(string: model.plantImages.first?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
         favoriteImageView.image = model.isFavourite == true ? UIImage(named: "ic_plants_favorite") : UIImage(named: "ic_plants_unfavorite")
     }
     

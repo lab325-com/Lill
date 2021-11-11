@@ -165,7 +165,7 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
     
     func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)]) {
                 
-        mainImageView.kf.setImage(with: URL(string: model.plantById.plantImages.first?.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
+        mainImageView.kf.setImage(with: URL(string: model.plantById.plantImages.first?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
         
         nameLabel.text = model.plantById.names
         descriptionLabel.text = model.plantById.descriptionFull

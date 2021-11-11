@@ -71,7 +71,7 @@ class IdentifyController: BaseController {
     //----------------------------------------------
     
     let cellIdentifier = String(describing: PlantCollectionCell.self)
-    var identifyResults = [PlantsModel]()
+    var identifyResults = [PlantModel]()
     var meModel: MeModel?
     
     var captureSession : AVCaptureSession!
@@ -211,7 +211,7 @@ class IdentifyController: BaseController {
     @IBAction func identifyAction(_ sender: Any) {
         guard let image = capturedImage else { return }
         
-        presenter.uploadPhoto(img: image.description)
+        presenter.uploadPhoto(img: image)
         
         identifyRsultView.isHidden = true
         identifyAnalyzingView.isHidden = false
@@ -251,7 +251,7 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
             self.capturedView.isHidden = false
             self.capturedImageView.image = image
             
-            self.presenter.uploadPhoto(img: image.description)
+            self.presenter.uploadPhoto(img: image)
         }
     }
 }
@@ -269,7 +269,7 @@ extension IdentifyController: IdentifyOutputProtocol {
             self.identifyActivity.startAnimating()
             self.identifyAnalyzeIdentifyPlantLabel.isHidden = false
             
-            self.presenter.recognizePhoto(img: model.uploadMedia.urlIosFull)
+            self.presenter.recognizePhoto(id: model.uploadMedia.id)
         }
     }
     
@@ -283,9 +283,9 @@ extension IdentifyController: IdentifyOutputProtocol {
                 self.bottomView.isHidden = true
                 self.capturedView.isHidden = true
                 self.identifyResultsLabel.isHidden = false
-                self.identifyResultsLabel.text = RLocalization.identify_results() + " " + String(model.startRecognition.plants.count)
+                self.identifyResultsLabel.text = RLocalization.identify_results()
                 
-                self.identifyResults = model.startRecognition.plants
+                self.identifyResults = model.startRecognize
                 self.noDataImage.isHidden = self.identifyResults.count > 0
                 self.noDataImage.isHidden = self.identifyResults.count > 0
                 

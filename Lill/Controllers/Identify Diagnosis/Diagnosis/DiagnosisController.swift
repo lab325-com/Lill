@@ -218,8 +218,8 @@ extension DiagnosisController: UIImagePickerControllerDelegate, UINavigationCont
             self.diagnosingCaptureView.isHidden = true
             self.diagnosingPreviewView.isHidden = false
             self.capturedImageView.image = image
-
-            self.presenter.uploadPhoto(img: image)
+            self.capturedImage = image
+            
         }
     }
 }
@@ -235,7 +235,7 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             self.analizeActivity.stopAnimating()
             self.diagnosingAnalyzeView.isHidden = true
 
-            self.presenter.diagnosePhoto(img: model.uploadMedia.urlIosFull)
+            self.presenter.diagnosePhoto(id: model.uploadMedia.id)
         }
     }
     

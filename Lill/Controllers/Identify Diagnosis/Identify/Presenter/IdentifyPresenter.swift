@@ -1,6 +1,7 @@
 
 import Foundation
 import Apollo
+import UIKit
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -17,7 +18,7 @@ protocol IdentifyOutputProtocol: BaseController {
 protocol IdentifyPresenterProtocol: AnyObject {
     init(view: IdentifyOutputProtocol)
     
-    func uploadPhoto(img: String)
+    func uploadPhoto(img: UIImage)
 }
 
 class IdentifyPresenter: IdentifyPresenterProtocol {
@@ -30,28 +31,32 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
         self.view = view
     }
     
-    func uploadPhoto(img: String) {
+    func uploadPhoto(img: UIImage) {
         view?.startLoader()
         
         request?.cancel()
         
-        let mutation = UploadMediaMutation(image: img)
+        let plantsImage = img.jpegData(compressionQuality: 0.9)!
+
+        let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: plantsImage)
         
-        request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
+        let mutation = UploadMediaMutation(image: "image")
+        
+        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, files: [file]) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successUpload(model: model)
-        }, failureHandler: { [weak self] error in
+        } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
-        })
+        }
     }
     
-    func recognizePhoto(img: String) {
+    func recognizePhoto(id: String) {
         view?.startLoader()
         
         request?.cancel()
         
-        let query = StartRecognizeQuery(mediaId: img)
+        let query = StartRecognizeQuery(mediaId: id)
         
         request = Network.shared.query(model: RecognitionDataModel.self, query, successHandler: { [weak self] model in
             self?.view?.stopLoading()

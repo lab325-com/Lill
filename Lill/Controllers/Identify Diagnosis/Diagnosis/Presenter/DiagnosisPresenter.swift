@@ -35,40 +35,27 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         
         request?.cancel()
         
-        
-        
-        let avaimg = img.jpegData(compressionQuality: 0.1)!
+        let plantsImage = img.jpegData(compressionQuality: 0.9)!
 
-        let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: avaimg)
+        let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: plantsImage)
         
         let mutation = UploadMediaMutation(image: "image")
         
-        Network.shared.apollo.upload(operation: mutation, files: [file], queue: DispatchQueue.main) { result in
-            switch result {
-            case .success(let success):
-                debugPrint("")
-            case .failure(let  error):
-                debugPrint("")
-            }
+        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, files: [file]) { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successUpload(model: model)
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         }
-        
-        
-        
-//        request = Network.shared.mutation(model: MediaDataModel.self, mutation, successHandler: { [weak self] model in
-//            self?.view?.stopLoading()
-//            self?.view?.successUpload(model: model)
-//        }, failureHandler: { [weak self] error in
-//            self?.view?.stopLoading()
-//            self?.view?.failure(error: error.localizedDescription)
-//        })
     }
     
-    func diagnosePhoto(img: String) {
+    func diagnosePhoto(id: String) {
         view?.startLoader()
         
         request?.cancel()
         
-        let query = StartDiagnoseQuery(mediaId: img)
+        let query = StartDiagnoseQuery(mediaId: id)
         
         request = Network.shared.query(model: DiagnoseDataModel.self, query, successHandler: { [weak self] model in
             self?.view?.stopLoading()
