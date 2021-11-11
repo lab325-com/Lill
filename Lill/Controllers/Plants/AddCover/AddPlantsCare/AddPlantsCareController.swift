@@ -113,7 +113,10 @@ class AddPlantsCareController: BaseController {
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
-
+    @IBAction func actionAddCares(_ sender: UIButton) {
+        AddCoverRouter(presenter: navigationController).pushAddTime()
+    }
+    
     @objc func playTapped() {
         dismiss(animated: true)
     }

@@ -1280,6 +1280,57 @@ public final class PlantToGardenMutation: GraphQLMutation {
   }
 }
 
+public final class OrderCreateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation OrderCreate($unifiedReceipt: GraphQLJSON!) {
+      orderCreate(unifiedReceipt: $unifiedReceipt)
+    }
+    """
+
+  public let operationName: String = "OrderCreate"
+
+  public var unifiedReceipt: String
+
+  public init(unifiedReceipt: String) {
+    self.unifiedReceipt = unifiedReceipt
+  }
+
+  public var variables: GraphQLMap? {
+    return ["unifiedReceipt": unifiedReceipt]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("orderCreate", arguments: ["unifiedReceipt": GraphQLVariable("unifiedReceipt")], type: .scalar(String.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(orderCreate: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "orderCreate": orderCreate])
+    }
+
+    public var orderCreate: String? {
+      get {
+        return resultMap["orderCreate"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "orderCreate")
+      }
+    }
+  }
+}
+
 public final class SetFavoritePlantByIdMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

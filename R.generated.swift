@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 22 files.
+  /// This `R.file` struct is generated, and contains static references to 23 files.
   struct file {
     /// Resource file `CaresByGarden.graphql`.
     static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
@@ -171,6 +171,8 @@ struct R: Rswift.Validatable {
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Me.graphql`.
     static let meGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Me", pathExtension: "graphql")
+    /// Resource file `OrderCreate.graphql`.
+    static let orderCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "OrderCreate", pathExtension: "graphql")
     /// Resource file `PlantById.graphql`.
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
     /// Resource file `PlantToGarden.graphql`.
@@ -249,6 +251,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Me", withExtension: "graphql")`
     static func meGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.meGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OrderCreate", withExtension: "graphql")`
+    static func orderCreateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.orderCreateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1137,7 +1145,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 30 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 32 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1145,6 +1153,10 @@ struct R: Rswift.Validatable {
     static let addCoverIdentifierController = _R.nib._AddCoverIdentifierController()
     /// Nib `AddPlantCareView`.
     static let addPlantCareView = _R.nib._AddPlantCareView()
+    /// Nib `AddPlantTimeCell`.
+    static let addPlantTimeCell = _R.nib._AddPlantTimeCell()
+    /// Nib `AddPlantTimeController`.
+    static let addPlantTimeController = _R.nib._AddPlantTimeController()
     /// Nib `AddPlantsCareController`.
     static let addPlantsCareController = _R.nib._AddPlantsCareController()
     /// Nib `ChooseIdentifyController`.
@@ -1221,6 +1233,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantCareView) instead")
     static func addPlantCareView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addPlantCareView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlantTimeCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantTimeCell) instead")
+    static func addPlantTimeCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlantTimeCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlantTimeController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantTimeController) instead")
+    static func addPlantTimeController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlantTimeController)
     }
     #endif
 
@@ -1452,6 +1480,14 @@ struct R: Rswift.Validatable {
       return R.nib.addPlantCareView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func addPlantTimeCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlantTimeCell? {
+      return R.nib.addPlantTimeCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlantTimeCell
+    }
+
+    static func addPlantTimeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addPlantTimeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func addPlantsCareController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.addPlantsCareController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1563,8 +1599,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `AddPlantTimeCell`.
+    static let addPlantTimeCell: Rswift.ReuseIdentifier<AddPlantTimeCell> = Rswift.ReuseIdentifier(identifier: "AddPlantTimeCell")
     /// Reuse identifier `DiseaseArchiveCell`.
     static let diseaseArchiveCell: Rswift.ReuseIdentifier<DiseaseArchiveCell> = Rswift.ReuseIdentifier(identifier: "DiseaseArchiveCell")
     /// Reuse identifier `LanguageCell`.
@@ -4864,6 +4902,7 @@ struct _R: Rswift.Validatable {
       try _AddCoverAddController.validate()
       try _AddCoverIdentifierController.validate()
       try _AddPlantCareView.validate()
+      try _AddPlantTimeController.validate()
       try _AddPlantsCareController.validate()
       try _ChooseIdentifyController.validate()
       try _CongradsView.validate()
@@ -4937,6 +4976,37 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "plants_detail_habit_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_habit_ic' is used in nib 'AddPlantCareView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlantTimeCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = AddPlantTimeCell
+
+      let bundle = R.hostingBundle
+      let identifier = "AddPlantTimeCell"
+      let name = "AddPlantTimeCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlantTimeCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlantTimeCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlantTimeController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddPlantTimeController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "unique_add_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_add_back_ic' is used in nib 'AddPlantTimeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

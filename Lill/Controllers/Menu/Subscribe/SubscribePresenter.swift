@@ -48,7 +48,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
     func purchase(id: String, purchaseSuccess: @escaping (Bool, String?) -> Void) {
         view?.startLoader()
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
-            self?.view?.stopLoading()
+            
             
             switch result {
             case .success(let product):
@@ -58,8 +58,23 @@ class SubscribePresenter: SubscribePresenterProtocol {
                     SwiftyStoreKit.finishTransaction(product.transaction)
                 }
                 print("Purchase Success: \(product.productId)")
-                purchaseSuccess(true, nil)
+                
+                let receiptData = SwiftyStoreKit.localReceiptData
+                if let receiptString = receiptData?.base64EncodedString(options: []) {
+                    let mutation = OrderCreateMutation(unifiedReceipt: receiptString)
+                    let _ = Network.shared.mutation(model: OrderCreate.self, mutation, successHandler: { [weak self] model in
+                        self?.view?.stopLoading()
+                        purchaseSuccess(true, nil)
+                    }, failureHandler: { [weak self] error in
+                        self?.view?.stopLoading()
+                        purchaseSuccess(false, error.localizedDescription)
+                    })
+                } else {
+                    purchaseSuccess(true, nil)
+                }
+                
             case .error(let error):
+                self?.view?.stopLoading()
                 var errorMessage = ""
                 switch error.code {
                 case .unknown: errorMessage = "Unknown error. Please contact support"

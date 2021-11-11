@@ -25,5 +25,8 @@ class AddCoverRouter: BaseRouter {
         push(controller: controller)
     }
     
-    
+    func pushAddTime() {
+        let controller = AddPlantTimeController()
+        push(controller: controller)
+    }
 }

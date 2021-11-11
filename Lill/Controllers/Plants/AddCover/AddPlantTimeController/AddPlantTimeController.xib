@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlantTimeController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="0Rt-be-Y6J" id="P6E-px-OYs"/>
+                <outlet property="topView" destination="Stb-NA-o45" id="COE-B2-H3f"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unique_add_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="ht5-0K-zbX">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stb-NA-o45" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="61"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Plant Cares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-L4-W42">
+                            <rect key="frame" x="16" y="10" width="382" height="41"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Ype-L4-W42" firstAttribute="top" secondItem="Stb-NA-o45" secondAttribute="top" constant="10" id="UEh-UT-TgU"/>
+                        <constraint firstAttribute="trailing" secondItem="Ype-L4-W42" secondAttribute="trailing" constant="16" id="Xcl-gm-a37"/>
+                        <constraint firstAttribute="bottom" secondItem="Ype-L4-W42" secondAttribute="bottom" constant="10" id="tr3-eq-vMx"/>
+                        <constraint firstItem="Ype-L4-W42" firstAttribute="leading" secondItem="Stb-NA-o45" secondAttribute="leading" constant="16" id="x6u-bP-yik"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nq5-NJ-e8k">
+                    <rect key="frame" x="24" y="794" width="366" height="44"/>
+                    <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="mcV-RY-44V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-be-Y6J">
+                    <rect key="frame" x="0.0" y="105" width="414" height="681"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Kdp-da-nfT"/>
+                        <outlet property="delegate" destination="-1" id="cV5-FI-tL7"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Stb-NA-o45" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="09K-Zu-203"/>
+                <constraint firstItem="nq5-NJ-e8k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3zY-qZ-rOJ"/>
+                <constraint firstAttribute="bottom" secondItem="ht5-0K-zbX" secondAttribute="bottom" id="4UR-ef-zBl"/>
+                <constraint firstItem="0Rt-be-Y6J" firstAttribute="top" secondItem="Stb-NA-o45" secondAttribute="bottom" id="Fi9-6S-rhh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Rt-be-Y6J" secondAttribute="trailing" id="Iaa-hb-pyh"/>
+                <constraint firstItem="Stb-NA-o45" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KIg-qr-a71"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nq5-NJ-e8k" secondAttribute="bottom" constant="24" id="Se3-hq-U4L"/>
+                <constraint firstAttribute="trailing" secondItem="ht5-0K-zbX" secondAttribute="trailing" id="dCo-sv-arm"/>
+                <constraint firstItem="Stb-NA-o45" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gmH-jx-pno"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nq5-NJ-e8k" secondAttribute="trailing" constant="24" id="hMq-vM-b2C"/>
+                <constraint firstItem="ht5-0K-zbX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="haT-BO-lNz"/>
+                <constraint firstItem="ht5-0K-zbX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mog-Kd-0lp"/>
+                <constraint firstItem="nq5-NJ-e8k" firstAttribute="top" secondItem="0Rt-be-Y6J" secondAttribute="bottom" constant="8" symbolic="YES" id="qZ8-Y1-cMg"/>
+                <constraint firstItem="0Rt-be-Y6J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rN9-Ym-XP0"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="unique_add_back_ic" width="390" height="844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
