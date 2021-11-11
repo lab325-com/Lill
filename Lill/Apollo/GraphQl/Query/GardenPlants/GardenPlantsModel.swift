@@ -6,7 +6,7 @@ struct GardenPlantsDataModel: Codable {
 }
 
 struct GardenPlantsModel: Codable {
-    let GardenPlants: [GardenPlantModel]
+    let GardenPlants: [GardenPlantModel]?
     let Pagination: PaginationModel
 }
 
@@ -19,6 +19,6 @@ struct GardenPlantModel: Codable {
 
 struct GardenPlantCaresModel: Codable {
     let count: Int
-    let name: String
     let period: String
+    let CareType: CareType
 }

@@ -1508,15 +1508,17 @@ public final class GardenPlantsQuery: GraphQLQuery {
           isHappy
           userMainImage {
             __typename
-            urlIosFull
             urlIosPrev
-            id
+            urlIosFull
           }
           GardenPlantCares {
             __typename
             count
-            name
             period
+            CareType {
+              __typename
+              name
+            }
           }
         }
         Pagination {
@@ -1699,9 +1701,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("urlIosFull", type: .scalar(String.self)),
               GraphQLField("urlIosPrev", type: .scalar(String.self)),
-              GraphQLField("id", type: .scalar(GraphQLID.self)),
+              GraphQLField("urlIosFull", type: .scalar(String.self)),
             ]
           }
 
@@ -1711,8 +1712,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(urlIosFull: String? = nil, urlIosPrev: String? = nil, id: GraphQLID? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaModel", "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev, "id": id])
+          public init(urlIosPrev: String? = nil, urlIosFull: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaModel", "urlIosPrev": urlIosPrev, "urlIosFull": urlIosFull])
           }
 
           public var __typename: String {
@@ -1721,15 +1722,6 @@ public final class GardenPlantsQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "__typename")
-            }
-          }
-
-          public var urlIosFull: String? {
-            get {
-              return resultMap["urlIosFull"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "urlIosFull")
             }
           }
 
@@ -1742,12 +1734,12 @@ public final class GardenPlantsQuery: GraphQLQuery {
             }
           }
 
-          public var id: GraphQLID? {
+          public var urlIosFull: String? {
             get {
-              return resultMap["id"] as? GraphQLID
+              return resultMap["urlIosFull"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "id")
+              resultMap.updateValue(newValue, forKey: "urlIosFull")
             }
           }
         }
@@ -1759,8 +1751,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
               GraphQLField("count", type: .scalar(Int.self)),
-              GraphQLField("name", type: .scalar(String.self)),
               GraphQLField("period", type: .scalar(PeriodType.self)),
+              GraphQLField("CareType", type: .object(CareType.selections)),
             ]
           }
 
@@ -1770,8 +1762,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(count: Int? = nil, name: String? = nil, period: PeriodType? = nil) {
-            self.init(unsafeResultMap: ["__typename": "GardenPlantCare", "count": count, "name": name, "period": period])
+          public init(count: Int? = nil, period: PeriodType? = nil, careType: CareType? = nil) {
+            self.init(unsafeResultMap: ["__typename": "GardenPlantCare", "count": count, "period": period, "CareType": careType.flatMap { (value: CareType) -> ResultMap in value.resultMap }])
           }
 
           public var __typename: String {
@@ -1792,21 +1784,60 @@ public final class GardenPlantsQuery: GraphQLQuery {
             }
           }
 
-          public var name: String? {
-            get {
-              return resultMap["name"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "name")
-            }
-          }
-
           public var period: PeriodType? {
             get {
               return resultMap["period"] as? PeriodType
             }
             set {
               resultMap.updateValue(newValue, forKey: "period")
+            }
+          }
+
+          public var careType: CareType? {
+            get {
+              return (resultMap["CareType"] as? ResultMap).flatMap { CareType(unsafeResultMap: $0) }
+            }
+            set {
+              resultMap.updateValue(newValue?.resultMap, forKey: "CareType")
+            }
+          }
+
+          public struct CareType: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["CareType"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("name", type: .scalar(String.self)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(name: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "CareType", "name": name])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var name: String? {
+              get {
+                return resultMap["name"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "name")
+              }
             }
           }
         }
