@@ -58,14 +58,14 @@ class LoginPresenter: LoginPresenterProtocol {
             KeychainService.standard.newAuthToken = model
             
             let query = MeQuery()
-            let _ = Network.shared.query(model: MeDataModel.self, query) { model in
+            let _ = Network.shared.query(model: MeDataModel.self, query) { [weak self] model in
                 KeychainService.standard.me = model.me
-            } failureHandler: { error in
-                
+                self?.view?.stopLoading()
+                self?.view?.success()
+            } failureHandler: { [weak self] error in
+                self?.view?.stopLoading()
+                self?.view?.success()
             }
-            
-            self?.view?.stopLoading()
-            self?.view?.success()
         } failure: { [weak self] message, error in
             self?.view?.stopLoading()
             self?.view?.failure(error: (message ?? "") + (error?.localizedDescription ?? ""))
