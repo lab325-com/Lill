@@ -18,7 +18,7 @@
 		021D6D012731263D00C73183 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D002731263D00C73183 /* Constants.swift */; };
 		021D6D0527315D6200C73183 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0427315D6200C73183 /* MeModel.swift */; };
 		021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0C2731AE4B00C73183 /* SharingManager.swift */; };
-		022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* CatalogPlantsModel.swift */; };
+		022949942701E7F700003A3E /* GetCatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* GetCatalogPlantsModel.swift */; };
 		023786232706D7230092F63A /* PlantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023786222706D7230092F63A /* PlantsPresenter.swift */; };
 		023786272706DAEC0092F63A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 023786262706DAEC0092F63A /* Kingfisher */; };
 		023786292706DD020092F63A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023786282706DD020092F63A /* Collection+Extension.swift */; };
@@ -82,14 +82,10 @@
 		02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */; };
 		02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */; };
 		02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */; };
-		02E0255C27326DDD00988F12 /* DiseaseArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */; };
-		02E0255E27326F0300988F12 /* Disease.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02E0255D27326F0300988F12 /* Disease.graphql */; };
 		02E02560273273D600988F12 /* MainPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255F273273D600988F12 /* MainPlantModel.swift */; };
 		02E025642732B39500988F12 /* RecognizeArchiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E025622732B39500988F12 /* RecognizeArchiveController.swift */; };
 		02E025652732B39500988F12 /* RecognizeArchiveController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E025632732B39500988F12 /* RecognizeArchiveController.xib */; };
 		02E025672732B72600988F12 /* RecognizeArchivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E025662732B72600988F12 /* RecognizeArchivePresenter.swift */; };
-		02E0256B2732B8B900988F12 /* Recognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02E0256A2732B8B900988F12 /* Recognize.graphql */; };
-		02E0256D2732B90300988F12 /* RecognizeArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0256C2732B90300988F12 /* RecognizeArchiveModel.swift */; };
 		02E0256F2732C97500988F12 /* RecognizeArchiveController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0256E2732C97500988F12 /* RecognizeArchiveController+Collection.swift */; };
 		02E0B1A4270431B400A56840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02E0B1A3270431B400A56840 /* Main.storyboard */; };
 		02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0B1A52704325300A56840 /* MainTabBarController.swift */; };
@@ -113,6 +109,12 @@
 		F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */; };
 		F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */; };
 		F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */; };
+		FA1CEC53273C572E003A4F84 /* RecognizeArhive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1CEC51273C572E003A4F84 /* RecognizeArhive.graphql */; };
+		FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */; };
+		FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */; };
+		FA1CEC58273C59AB003A4F84 /* DiseaseArhiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC56273C59AB003A4F84 /* DiseaseArhiveModel.swift */; };
+		FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC59273C6488003A4F84 /* LanguageModel.swift */; };
+		FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */; };
 		FA24A5962731CE830059AF6A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5952731CE830059AF6A /* schema.json */; };
 		FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA24A5982732B94A0059AF6A /* SwiftEntryKit */; };
 		FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */; };
@@ -129,7 +131,7 @@
 		FA24A5B6273564C80059AF6A /* GardenPlants.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5B5273564C80059AF6A /* GardenPlants.graphql */; };
 		FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */; };
 		FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA40D70F27282FE800A10C10 /* PlantById.graphql */; };
-		FA40D7122728307000A10C10 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantModel.swift */; };
+		FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7112728307000A10C10 /* PlantByIdModel.swift */; };
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
 		FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D715272854CC00A10C10 /* ClimatModel.swift */; };
 		FA40D718272854E200A10C10 /* CaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D717272854E200A10C10 /* CaresModel.swift */; };
@@ -148,8 +150,8 @@
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
-		FA8FCD2E27185FCD00173725 /* StartRecognition.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */; };
-		FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */; };
+		FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */; };
+		FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2F2718601400173725 /* StartRecognizeModel.swift */; };
 		FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3827196BD500173725 /* PlantsModel.swift */; };
 		FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD3B27199CD100173725 /* SubcribeController.swift */; };
 		FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD3C27199CD100173725 /* SubcribeController.xib */; };
@@ -173,10 +175,10 @@
 		FAD49CE727033C15005D6E75 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE627033C15005D6E75 /* FirebaseAnalytics */; };
 		FAD49CE927033C15005D6E75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CE827033C15005D6E75 /* FirebaseAuth */; };
 		FAD49CEB27033C15005D6E75 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FAD49CEA27033C15005D6E75 /* FirebaseMessaging */; };
-		FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */; };
-		FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */; };
+		FADC80CF272FF5B100CA9ED3 /* SetFavoritePlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */; };
+		FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */; };
 		FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */; };
-		FAE8C939273A7E8600685D85 /* DoneAllCaresByGarden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGarden.swift */; };
+		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -203,7 +205,7 @@
 		021D6D002731263D00C73183 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		021D6D0427315D6200C73183 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MeModel.swift; sourceTree = SOURCE_ROOT; };
 		021D6D0C2731AE4B00C73183 /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
-		022949932701E7F700003A3E /* CatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPlantsModel.swift; sourceTree = "<group>"; };
+		022949932701E7F700003A3E /* GetCatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCatalogPlantsModel.swift; sourceTree = "<group>"; };
 		023786222706D7230092F63A /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		023786282706DD020092F63A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		0237862A2706ED5F0092F63A /* PlantsController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantsController+CollectionView.swift"; sourceTree = "<group>"; };
@@ -266,14 +268,10 @@
 		02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lill-Bridging-Header.h"; sourceTree = "<group>"; };
 		02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveCell.swift; sourceTree = "<group>"; };
 		02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveCell.xib; sourceTree = "<group>"; };
-		02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiseaseArchiveModel.swift; path = Lill/Apollo/GraphQl/DiseaseArchiveModel/DiseaseArchiveModel.swift; sourceTree = SOURCE_ROOT; };
-		02E0255D27326F0300988F12 /* Disease.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = Disease.graphql; path = Lill/Apollo/GraphQl/DiseaseArchiveModel/Disease.graphql; sourceTree = SOURCE_ROOT; };
 		02E0255F273273D600988F12 /* MainPlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPlantModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MainPlantModel.swift; sourceTree = SOURCE_ROOT; };
 		02E025622732B39500988F12 /* RecognizeArchiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeArchiveController.swift; sourceTree = "<group>"; };
 		02E025632732B39500988F12 /* RecognizeArchiveController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecognizeArchiveController.xib; sourceTree = "<group>"; };
 		02E025662732B72600988F12 /* RecognizeArchivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeArchivePresenter.swift; sourceTree = "<group>"; };
-		02E0256A2732B8B900988F12 /* Recognize.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = Recognize.graphql; path = Lill/Apollo/GraphQl/RecognizeArhive/Recognize.graphql; sourceTree = SOURCE_ROOT; };
-		02E0256C2732B90300988F12 /* RecognizeArchiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecognizeArchiveModel.swift; path = Lill/Apollo/GraphQl/RecognizeArhive/RecognizeArchiveModel.swift; sourceTree = SOURCE_ROOT; };
 		02E0256E2732C97500988F12 /* RecognizeArchiveController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecognizeArchiveController+Collection.swift"; sourceTree = "<group>"; };
 		02E0B1A3270431B400A56840 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02E0B1A52704325300A56840 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -298,6 +296,12 @@
 		F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveViewController.swift; sourceTree = "<group>"; };
 		F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveViewController.xib; sourceTree = "<group>"; };
 		F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchivePresenter.swift; sourceTree = "<group>"; };
+		FA1CEC51273C572E003A4F84 /* RecognizeArhive.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RecognizeArhive.graphql; sourceTree = "<group>"; };
+		FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeArchiveModel.swift; sourceTree = "<group>"; };
+		FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DiagnoseArhive.graphql; sourceTree = "<group>"; };
+		FA1CEC56273C59AB003A4F84 /* DiseaseArhiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiseaseArhiveModel.swift; sourceTree = "<group>"; };
+		FA1CEC59273C6488003A4F84 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenModel.swift; sourceTree = "<group>"; };
 		FA24A5952731CE830059AF6A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsViewPresenter.swift; sourceTree = "<group>"; };
 		FA24A59D2732BCCE0059AF6A /* CongradsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongradsView.swift; sourceTree = "<group>"; };
@@ -313,7 +317,7 @@
 		FA24A5B5273564C80059AF6A /* GardenPlants.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlants.graphql; sourceTree = "<group>"; };
 		FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantsModel.swift; sourceTree = "<group>"; };
 		FA40D70F27282FE800A10C10 /* PlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlantById.graphql; sourceTree = "<group>"; };
-		FA40D7112728307000A10C10 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
+		FA40D7112728307000A10C10 /* PlantByIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantByIdModel.swift; sourceTree = "<group>"; };
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		FA40D715272854CC00A10C10 /* ClimatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimatModel.swift; sourceTree = "<group>"; };
 		FA40D717272854E200A10C10 /* CaresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaresModel.swift; sourceTree = "<group>"; };
@@ -329,8 +333,8 @@
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
-		FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognition.graphql; sourceTree = "<group>"; };
-		FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecognitionModel.swift; sourceTree = "<group>"; };
+		FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognize.graphql; sourceTree = "<group>"; };
+		FA8FCD2F2718601400173725 /* StartRecognizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecognizeModel.swift; sourceTree = "<group>"; };
 		FA8FCD3827196BD500173725 /* PlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModel.swift; sourceTree = "<group>"; };
 		FA8FCD3B27199CD100173725 /* SubcribeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcribeController.swift; sourceTree = "<group>"; };
 		FA8FCD3C27199CD100173725 /* SubcribeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubcribeController.xib; sourceTree = "<group>"; };
@@ -352,10 +356,10 @@
 		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		FAD49CE327033B0B005D6E75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SetFavoritePlant.graphql; sourceTree = "<group>"; };
-		FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlantModel.swift; sourceTree = "<group>"; };
+		FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SetFavoritePlantById.graphql; sourceTree = "<group>"; };
+		FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoritePlantByIdModel.swift; sourceTree = "<group>"; };
 		FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGarden.graphql; sourceTree = "<group>"; };
-		FAE8C938273A7E8600685D85 /* DoneAllCaresByGarden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGarden.swift; sourceTree = "<group>"; };
+		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -828,13 +832,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		02E0255A27326DC300988F12 /* DiseaseArchiveModel */ = {
+		02E0255A27326DC300988F12 /* DiagnoseArhive */ = {
 			isa = PBXGroup;
 			children = (
-				02E0255B27326DDD00988F12 /* DiseaseArchiveModel.swift */,
-				02E0255D27326F0300988F12 /* Disease.graphql */,
+				FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */,
+				FA1CEC56273C59AB003A4F84 /* DiseaseArhiveModel.swift */,
 			);
-			path = DiseaseArchiveModel;
+			path = DiagnoseArhive;
 			sourceTree = "<group>";
 		};
 		02E025612732B37000988F12 /* RecognizeArchive */ = {
@@ -859,8 +863,8 @@
 		02E025692732B8A300988F12 /* RecognizeArhive */ = {
 			isa = PBXGroup;
 			children = (
-				02E0256A2732B8B900988F12 /* Recognize.graphql */,
-				02E0256C2732B90300988F12 /* RecognizeArchiveModel.swift */,
+				FA1CEC51273C572E003A4F84 /* RecognizeArhive.graphql */,
+				FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */,
 			);
 			path = RecognizeArhive;
 			sourceTree = "<group>";
@@ -894,21 +898,10 @@
 		02E4576526F9139000F19C41 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				FA1CEC4F273C559C003A4F84 /* Query */,
+				FA1CEC50273C55A8003A4F84 /* Mutation */,
 				FA8FCD3727196BC100173725 /* GlobalModels */,
-				02E025692732B8A300988F12 /* RecognizeArhive */,
-				02E0255A27326DC300988F12 /* DiseaseArchiveModel */,
-				FA64050F2722F9DE000124A5 /* StartDiagnose */,
-				FA8FCD2C27185F6200173725 /* StartRecognition */,
-				FA8FCD27271818DA00173725 /* UploadMediaRecognition */,
-				FAFCF35327157FA900C3134E /* Me */,
-				FAC6D9962701E1E4000A551F /* GetPlants */,
-				FA40D70E27282F9C00A10C10 /* GetPlant */,
-				FA24A5B4273564840059AF6A /* GardenPlants */,
-				FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */,
-				FA24A5A12732DAC10059AF6A /* PlantToGarden */,
-				FA24A5A8273473C20059AF6A /* CaresByGarden */,
-				FAE8C935273A78C800685D85 /* DoneAllCaresByGarden */,
-				02E4576426F9137C00F19C41 /* Login */,
+				02E0255A27326DC300988F12 /* DiagnoseArhive */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -1003,6 +996,32 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA1CEC4F273C559C003A4F84 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCF35327157FA900C3134E /* Me */,
+				FA64050F2722F9DE000124A5 /* StartDiagnose */,
+				FA8FCD2C27185F6200173725 /* StartRecognize */,
+				02E025692732B8A300988F12 /* RecognizeArhive */,
+				FA8FCD27271818DA00173725 /* UploadMedia */,
+				FAC6D9962701E1E4000A551F /* GetCatalogPlants */,
+				FA24A5B4273564840059AF6A /* GardenPlants */,
+				FA40D70E27282F9C00A10C10 /* PlantById */,
+				FA24A5A8273473C20059AF6A /* CaresByGarden */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
+			isa = PBXGroup;
+			children = (
+				FA24A5A12732DAC10059AF6A /* PlantToGarden */,
+				FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */,
+				FAE8C935273A78C800685D85 /* DoneAllCaresByGarden */,
+			);
+			path = Mutation;
+			sourceTree = "<group>";
+		};
 		FA24A59A2732BB870059AF6A /* CongradsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,19 +1061,19 @@
 		FA24A5B4273564840059AF6A /* GardenPlants */ = {
 			isa = PBXGroup;
 			children = (
-				FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */,
 				FA24A5B5273564C80059AF6A /* GardenPlants.graphql */,
+				FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */,
 			);
 			path = GardenPlants;
 			sourceTree = "<group>";
 		};
-		FA40D70E27282F9C00A10C10 /* GetPlant */ = {
+		FA40D70E27282F9C00A10C10 /* PlantById */ = {
 			isa = PBXGroup;
 			children = (
-				FA40D7112728307000A10C10 /* PlantModel.swift */,
 				FA40D70F27282FE800A10C10 /* PlantById.graphql */,
+				FA40D7112728307000A10C10 /* PlantByIdModel.swift */,
 			);
-			path = GetPlant;
+			path = PlantById;
 			sourceTree = "<group>";
 		};
 		FA640509272041FD000124A5 /* Presenter */ = {
@@ -1076,8 +1095,8 @@
 		FA64050F2722F9DE000124A5 /* StartDiagnose */ = {
 			isa = PBXGroup;
 			children = (
-				FA6405122722FA97000124A5 /* StartDiagoseModel.swift */,
 				FA6405102722FA1C000124A5 /* StartDiagnose.graphql */,
+				FA6405122722FA97000124A5 /* StartDiagoseModel.swift */,
 			);
 			path = StartDiagnose;
 			sourceTree = "<group>";
@@ -1102,22 +1121,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		FA8FCD27271818DA00173725 /* UploadMediaRecognition */ = {
+		FA8FCD27271818DA00173725 /* UploadMedia */ = {
 			isa = PBXGroup;
 			children = (
-				FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */,
 				FA8FCD2827182CAA00173725 /* UploadMedia.graphql */,
+				FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */,
 			);
-			path = UploadMediaRecognition;
+			path = UploadMedia;
 			sourceTree = "<group>";
 		};
-		FA8FCD2C27185F6200173725 /* StartRecognition */ = {
+		FA8FCD2C27185F6200173725 /* StartRecognize */ = {
 			isa = PBXGroup;
 			children = (
-				FA8FCD2F2718601400173725 /* StartRecognitionModel.swift */,
-				FA8FCD2D27185FCD00173725 /* StartRecognition.graphql */,
+				FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */,
+				FA8FCD2F2718601400173725 /* StartRecognizeModel.swift */,
 			);
-			path = StartRecognition;
+			path = StartRecognize;
 			sourceTree = "<group>";
 		};
 		FA8FCD3727196BC100173725 /* GlobalModels */ = {
@@ -1132,6 +1151,8 @@
 				FA24A5AB273474E00059AF6A /* CareTypeModel.swift */,
 				021D6D0427315D6200C73183 /* MeModel.swift */,
 				02E0255F273273D600988F12 /* MainPlantModel.swift */,
+				FA1CEC59273C6488003A4F84 /* LanguageModel.swift */,
+				FA1CEC5B273C64FC003A4F84 /* GardenModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -1226,13 +1247,13 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		FAC6D9962701E1E4000A551F /* GetPlants */ = {
+		FAC6D9962701E1E4000A551F /* GetCatalogPlants */ = {
 			isa = PBXGroup;
 			children = (
-				022949932701E7F700003A3E /* CatalogPlantsModel.swift */,
 				FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */,
+				022949932701E7F700003A3E /* GetCatalogPlantsModel.swift */,
 			);
-			path = GetPlants;
+			path = GetCatalogPlants;
 			sourceTree = "<group>";
 		};
 		FAD1832826F899A8007A67DC /* Apollo */ = {
@@ -1257,8 +1278,8 @@
 		FADC80CD272FF50400CA9ED3 /* SetFavoritePlant */ = {
 			isa = PBXGroup;
 			children = (
-				FADC80CE272FF5B100CA9ED3 /* SetFavoritePlant.graphql */,
-				FADC80D0272FF64E00CA9ED3 /* FavoritePlantModel.swift */,
+				FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */,
+				FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */,
 			);
 			path = SetFavoritePlant;
 			sourceTree = "<group>";
@@ -1267,7 +1288,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */,
-				FAE8C938273A7E8600685D85 /* DoneAllCaresByGarden.swift */,
+				FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */,
 			);
 			path = DoneAllCaresByGarden;
 			sourceTree = "<group>";
@@ -1313,8 +1334,8 @@
 		FAFCF35327157FA900C3134E /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				FAFCF3592715830D00C3134E /* MeDataModel.swift */,
 				FAFCF35427157FE100C3134E /* Me.graphql */,
+				FAFCF3592715830D00C3134E /* MeDataModel.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1458,16 +1479,18 @@
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
 				02E025652732B39500988F12 /* RecognizeArchiveController.xib in Resources */,
 				FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */,
+				FA1CEC53273C572E003A4F84 /* RecognizeArhive.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
 				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */,
-				FA8FCD2E27185FCD00173725 /* StartRecognition.graphql in Resources */,
+				FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */,
 				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
 				FA24A5AA273474190059AF6A /* CaresByGarden.graphql in Resources */,
 				FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */,
 				02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */,
 				02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */,
 				025A18BD273915FE00AFA581 /* AddPlantsCareController.xib in Resources */,
+				FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */,
 				025A18C32739243500AFA581 /* AddPlantCareView.xib in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
@@ -1481,7 +1504,7 @@
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
-				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlant.graphql in Resources */,
+				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlantById.graphql in Resources */,
 				0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */,
 				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
 				FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */,
@@ -1494,9 +1517,7 @@
 				02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */,
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
 				02E0B1A4270431B400A56840 /* Main.storyboard in Resources */,
-				02E0256B2732B8B900988F12 /* Recognize.graphql in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
-				02E0255E27326F0300988F12 /* Disease.graphql in Resources */,
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
@@ -1631,15 +1652,15 @@
 				02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
 				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
-				FADC80D1272FF64E00CA9ED3 /* FavoritePlantModel.swift in Sources */,
+				FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FA24A5AE273475100059AF6A /* CaresByGardenModel.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
 				02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */,
-				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
+				FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */,
 				0272DB0527358DF2005E7880 /* AddCoverRouter.swift in Sources */,
 				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
-				FA8FCD302718601400173725 /* StartRecognitionModel.swift in Sources */,
+				FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */,
 				02C6C104273A684A003C47FF /* RestCalls.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
@@ -1655,17 +1676,17 @@
 				02E025642732B39500988F12 /* RecognizeArchiveController.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
+				FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */,
 				02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */,
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
 				021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */,
-				FAE8C939273A7E8600685D85 /* DoneAllCaresByGarden.swift in Sources */,
+				FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
+				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
-				02E0255C27326DDD00988F12 /* DiseaseArchiveModel.swift in Sources */,
-				02E0256D2732B90300988F12 /* RecognizeArchiveModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
@@ -1680,7 +1701,8 @@
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
 				02E02560273273D600988F12 /* MainPlantModel.swift in Sources */,
-				022949942701E7F700003A3E /* CatalogPlantsModel.swift in Sources */,
+				022949942701E7F700003A3E /* GetCatalogPlantsModel.swift in Sources */,
+				FA1CEC58273C59AB003A4F84 /* DiseaseArhiveModel.swift in Sources */,
 				02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
@@ -1715,9 +1737,10 @@
 				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
 				0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */,
+				FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				FA24A5B1273476190059AF6A /* GardenPresenter.swift in Sources */,
-				FA40D7122728307000A10C10 /* PlantModel.swift in Sources */,
+				FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
 				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
