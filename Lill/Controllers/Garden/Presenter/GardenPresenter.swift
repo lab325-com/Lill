@@ -62,7 +62,7 @@ class GardenPresenter: GardenPresenterProtocol {
         let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
             group.leave()
-            self?.sadGardenPlants = model.gardenPlants.GardenPlants
+            self?.sadGardenPlants = model.gardenPlants.GardenPlants ?? []
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)
@@ -72,7 +72,7 @@ class GardenPresenter: GardenPresenterProtocol {
         let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: true)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
             group.leave()
-            self?.happyGardenPlants = model.gardenPlants.GardenPlants
+            self?.happyGardenPlants = model.gardenPlants.GardenPlants ?? []
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)

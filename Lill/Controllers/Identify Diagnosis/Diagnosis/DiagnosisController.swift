@@ -235,7 +235,8 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             self.analizeActivity.stopAnimating()
             self.diagnosingAnalyzeView.isHidden = true
 
-            self.presenter.diagnosePhoto(id: model.uploadMedia.id)
+            guard let id = model.uploadMedia.id else { return }
+            self.presenter.diagnosePhoto(id: id)
         }
     }
     

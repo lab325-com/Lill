@@ -269,7 +269,8 @@ extension IdentifyController: IdentifyOutputProtocol {
             self.identifyActivity.startAnimating()
             self.identifyAnalyzeIdentifyPlantLabel.isHidden = false
             
-            self.presenter.recognizePhoto(id: model.uploadMedia.id)
+            guard let id = model.uploadMedia.id else { return }
+            self.presenter.recognizePhoto(id: id)
         }
     }
     

@@ -10,14 +10,15 @@ query GardenPlants($gardenId: String!,
 			name
 			isHappy
 			userMainImage {
-				urlIosFull
 				urlIosPrev
-				id
+				urlIosFull
 			}
 			GardenPlantCares {
 				count
-				name
 				period
+				CareType {
+					name
+				}
 			}
 		}
 		Pagination {
