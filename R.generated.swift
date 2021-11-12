@@ -1613,7 +1613,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 171 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 174 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2283,6 +2283,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_section_archive_title = Rswift.StringResource(key: "menu_section_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: days
+      ///
+      /// Locales: en
+      static let period_type_day = Rswift.StringResource(key: "period_type_day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: free snaps
       ///
       /// Locales: en, es
@@ -2295,10 +2299,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: months
+      ///
+      /// Locales: en
+      static let period_type_month = Rswift.StringResource(key: "period_type_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: settings
       ///
       /// Locales: en, es
       static let menu_section_settings_title = Rswift.StringResource(key: "menu_section_settings_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: weeks
+      ///
+      /// Locales: en
+      static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
 
       /// en translation: A
       ///
@@ -4807,6 +4819,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_section_archive_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: days
+      ///
+      /// Locales: en
+      static func period_type_day(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_day", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_day"
+        }
+
+        return NSLocalizedString("period_type_day", bundle: bundle, comment: "")
+      }
+
       /// en translation: free snaps
       ///
       /// Locales: en, es
@@ -4852,6 +4879,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_premium", bundle: bundle, comment: "")
       }
 
+      /// en translation: months
+      ///
+      /// Locales: en
+      static func period_type_month(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_month", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_month"
+        }
+
+        return NSLocalizedString("period_type_month", bundle: bundle, comment: "")
+      }
+
       /// en translation: settings
       ///
       /// Locales: en, es
@@ -4865,6 +4907,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_section_settings_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: weeks
+      ///
+      /// Locales: en
+      static func period_type_week(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_week", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_week"
+        }
+
+        return NSLocalizedString("period_type_week", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

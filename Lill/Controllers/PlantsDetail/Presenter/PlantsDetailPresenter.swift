@@ -14,7 +14,7 @@ enum PlantsAboutType: Int, CaseIterable {
     case hardiness
 }
 
-enum PlantsCareType: String, CaseIterable {
+enum PlantsCareType: String, CaseIterable, Codable {
     case humidity = "CARE_TYPE_HUMIDITY"
     case misting = "CARE_TYPE_MISTING"
     case rotating = "CARE_TYPE_ROTATE"
@@ -139,11 +139,10 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         var caresType = [(type: PlantsCareType, care: CaresModel)]()
         let cares = model.plantById.cares
         for care in cares {
-            if let type = PlantsCareType(rawValue: care.type.name) {
-                caresType.append((type: type, care: care))
-                if caresType.count == 4 {
-                    return caresType
-                }
+            
+            caresType.append((type: care.type.name, care: care))
+            if caresType.count == 4 {
+                return caresType
             }
         }
         

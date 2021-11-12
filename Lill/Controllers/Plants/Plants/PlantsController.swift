@@ -100,7 +100,7 @@ class PlantsController: BaseController {
         uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton(), for: .normal)
         
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        
+        collectionView.contentInset.bottom = 54
         collectionView.reloadData()
     }
     

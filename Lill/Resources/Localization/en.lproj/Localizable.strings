@@ -119,6 +119,9 @@
 "menu_section_archive_title" = "archive";
 "menu_section_settings_title" = "settings";
 "menu_title" = "Menu";
+"period_type_day" = "days";
+"period_type_month" = "months";
+"period_type_week" = "weeks";
 "plant_add_to_garden_great" = "Great!";
 "plant_add_to_garden_info" = "Plant is added in your Garden!";
 "plant_add_to_garden_title" = "Congrads!";
