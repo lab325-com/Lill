@@ -228,7 +228,7 @@
 		025ECF1B273D59A80041A7BD /* AddPlantTimeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlantTimeController.xib; sourceTree = "<group>"; };
 		025ECF1F273D5CFE0041A7BD /* AddPlantTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantTimeCell.swift; sourceTree = "<group>"; };
 		025ECF20273D5CFE0041A7BD /* AddPlantTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlantTimeCell.xib; sourceTree = "<group>"; };
-		025ECF24273D821C0041A7BD /* OrderCreate.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = OrderCreate.graphql; path = Lill/Apollo/GraphQl/Mutation/SendRecept/OrderCreate.graphql; sourceTree = SOURCE_ROOT; };
+		025ECF24273D821C0041A7BD /* OrderCreate.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = OrderCreate.graphql; path = Lill/Apollo/GraphQl/Mutation/SendRecept/OrderCreate.graphql; sourceTree = SOURCE_ROOT; };
 		025ECF26273D82E20041A7BD /* OrderCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderCreate.swift; path = Lill/Apollo/GraphQl/Mutation/SendRecept/OrderCreate.swift; sourceTree = SOURCE_ROOT; };
 		026CFC0A270C1FF8003A0687 /* GardenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewCell.swift; sourceTree = "<group>"; };
 		026CFC0B270C1FF8003A0687 /* GardenViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenViewCell.xib; sourceTree = "<group>"; };
@@ -1892,7 +1892,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2042,7 +2042,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2072,7 +2072,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
