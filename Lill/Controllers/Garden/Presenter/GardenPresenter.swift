@@ -59,20 +59,20 @@ class GardenPresenter: GardenPresenterProtocol {
         let group = DispatchGroup()
 
         group.enter()
-        let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: false)
+        let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
             group.leave()
-            self?.sadGardenPlants = model.gardenPlants.GardenPlants ?? []
+            self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)
         })
 
         group.enter()
-        let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 10), careTypeId: nil, isHappy: true)
+        let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: true)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
             group.leave()
-            self?.happyGardenPlants = model.gardenPlants.GardenPlants ?? []
+            self?.happyGardenPlants = model.gardenPlants.gardenPlants ?? []
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)

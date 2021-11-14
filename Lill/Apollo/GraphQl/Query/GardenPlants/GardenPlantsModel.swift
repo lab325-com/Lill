@@ -6,15 +6,27 @@ struct GardenPlantsDataModel: Codable {
 }
 
 struct GardenPlantsModel: Codable {
-    let GardenPlants: [GardenPlantModel]?
-    let Pagination: PaginationModel
+    let gardenPlants: [GardenPlantModel]?
+    let pagination: PaginationModel
+    
+    enum CodingKeys: String, CodingKey {
+        case gardenPlants = "GardenPlants"
+        case pagination = "Pagination"
+    }
 }
 
 struct GardenPlantModel: Codable {
-    let name: String
+    let name: String?
     let isHappy: Bool
     let userMainImage: MediaModel?
-    let GardenPlantCares: [GardenPlantCaresModel]
+    let gardenPlantCares: [GardenPlantCaresModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case isHappy = "isHappy"
+        case userMainImage = "userMainImage"
+        case gardenPlantCares = "GardenPlantCares"
+    }
 }
 
 struct GardenPlantCaresModel: Codable {

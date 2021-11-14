@@ -131,7 +131,7 @@
                                     <outlet property="delegate" destination="iQY-JI-GAl" id="TE5-Nb-mkd"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oww-s0-Vyv">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oww-s0-Vyv">
                                 <rect key="frame" x="12" y="114" width="390" height="40"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-oF-rkT">
@@ -173,13 +173,13 @@
                                                                 <integer key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                <color key="value" red="0.47843137254901957" green="0.85490196078431369" blue="0.65098039215686276" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -216,13 +216,13 @@
                                                                 <integer key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                <color key="value" red="0.97647058823529409" green="0.83137254901960778" blue="0.59215686274509804" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -259,13 +259,13 @@
                                                                 <integer key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                <color key="value" red="0.97647058819999999" green="0.83137254900000002" blue="0.59215686270000001" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -302,13 +302,13 @@
                                                                 <integer key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                <color key="value" red="0.97647058819999999" green="0.83137254900000002" blue="0.59215686270000001" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -345,13 +345,13 @@
                                                                 <integer key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                <color key="value" red="0.97647058819999999" green="0.83137254900000002" blue="0.59215686270000001" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                 <size key="value" width="0.0" height="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                <integer key="value" value="12"/>
+                                                                <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -409,24 +409,24 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addPantLabel" destination="Ex2-0Q-37V" id="VXp-sh-VwL"/>
+                        <outlet property="careSectionView" destination="oww-s0-Vyv" id="RVW-P5-70W"/>
                         <outlet property="collectionView" destination="oVi-wF-CxS" id="mrf-lH-tC7"/>
-                        <outlet property="mainStack" destination="ixc-Dx-dON" id="eWP-ZV-N9D"/>
                         <outlet property="titleLabel" destination="c36-uV-4Rf" id="MAf-Xq-2Jb"/>
-                        <outletCollection property="stackLabels" destination="rzf-uM-Uzg" collectionClass="NSMutableArray" id="Biz-jW-qdh"/>
-                        <outletCollection property="stackButtons" destination="81t-b8-Yyw" collectionClass="NSMutableArray" id="9Iv-Pa-Rva"/>
-                        <outletCollection property="stackLabels" destination="DBV-W4-dNf" collectionClass="NSMutableArray" id="aGF-Oo-er1"/>
-                        <outletCollection property="stackViews" destination="soP-wp-FH8" collectionClass="NSMutableArray" id="8b2-4Z-qgM"/>
-                        <outletCollection property="stackViews" destination="q4b-qw-dwq" collectionClass="NSMutableArray" id="hAc-hn-p3r"/>
-                        <outletCollection property="stackLabels" destination="jWc-hQ-oMj" collectionClass="NSMutableArray" id="mF3-Op-tOc"/>
-                        <outletCollection property="stackButtons" destination="hQz-Qs-5Ej" collectionClass="NSMutableArray" id="RGF-8c-NWr"/>
-                        <outletCollection property="stackButtons" destination="H30-Jj-Uz4" collectionClass="NSMutableArray" id="Om9-dQ-xXG"/>
-                        <outletCollection property="stackViews" destination="9rf-vp-cnj" collectionClass="NSMutableArray" id="dy5-q2-rRM"/>
-                        <outletCollection property="stackViews" destination="rtb-lc-LQl" collectionClass="NSMutableArray" id="p2y-l4-OFS"/>
-                        <outletCollection property="stackViews" destination="BMz-Re-E7H" collectionClass="NSMutableArray" id="eea-mw-8x7"/>
-                        <outletCollection property="stackButtons" destination="EWS-X2-Edn" collectionClass="NSMutableArray" id="yXL-AI-KaM"/>
-                        <outletCollection property="stackButtons" destination="XqD-PX-fGd" collectionClass="NSMutableArray" id="yjq-X1-p90"/>
-                        <outletCollection property="stackLabels" destination="gTt-Cb-8hK" collectionClass="NSMutableArray" id="6ez-Ij-2vO"/>
-                        <outletCollection property="stackLabels" destination="KAy-kp-TpP" collectionClass="NSMutableArray" id="Jw8-OQ-ETZ"/>
+                        <outletCollection property="careButtons" destination="H30-Jj-Uz4" collectionClass="NSMutableArray" id="UOA-wC-9mR"/>
+                        <outletCollection property="careButtons" destination="hQz-Qs-5Ej" collectionClass="NSMutableArray" id="Dbv-w0-380"/>
+                        <outletCollection property="careButtons" destination="81t-b8-Yyw" collectionClass="NSMutableArray" id="jRv-sO-jks"/>
+                        <outletCollection property="careButtons" destination="EWS-X2-Edn" collectionClass="NSMutableArray" id="xGE-cU-ozf"/>
+                        <outletCollection property="careButtons" destination="XqD-PX-fGd" collectionClass="NSMutableArray" id="qDY-Vd-daj"/>
+                        <outletCollection property="careLabels" destination="DBV-W4-dNf" collectionClass="NSMutableArray" id="6Vx-Th-aGK"/>
+                        <outletCollection property="careLabels" destination="jWc-hQ-oMj" collectionClass="NSMutableArray" id="1H1-8m-NgR"/>
+                        <outletCollection property="careLabels" destination="rzf-uM-Uzg" collectionClass="NSMutableArray" id="QUA-3e-D5w"/>
+                        <outletCollection property="careLabels" destination="gTt-Cb-8hK" collectionClass="NSMutableArray" id="Srg-Jw-UL7"/>
+                        <outletCollection property="careLabels" destination="KAy-kp-TpP" collectionClass="NSMutableArray" id="Hga-F8-2c9"/>
+                        <outletCollection property="careViews" destination="soP-wp-FH8" collectionClass="NSMutableArray" id="HyO-PW-enP"/>
+                        <outletCollection property="careViews" destination="q4b-qw-dwq" collectionClass="NSMutableArray" id="2TP-on-1tj"/>
+                        <outletCollection property="careViews" destination="9rf-vp-cnj" collectionClass="NSMutableArray" id="8eP-59-2yH"/>
+                        <outletCollection property="careViews" destination="rtb-lc-LQl" collectionClass="NSMutableArray" id="HKh-PH-wu0"/>
+                        <outletCollection property="careViews" destination="BMz-Re-E7H" collectionClass="NSMutableArray" id="BlD-h6-CCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ri-xr-45h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
