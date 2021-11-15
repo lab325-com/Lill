@@ -19,6 +19,8 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
             switch selectedCareType {
             case 1: cell.configure(title: "Done all Watering")
             case 2: cell.configure(title: "Done all Misting")
+            case 3: cell.configure(title: "Done all Humidity")
+            case 4: cell.configure(title: "Done all Rotate")
             default: cell.configure(title: "Done all Cares")
             }
             return cell

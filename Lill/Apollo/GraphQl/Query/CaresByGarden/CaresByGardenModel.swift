@@ -7,5 +7,10 @@ struct CaresByGardenDataModel: Codable {
 
 struct CaresByGardenModel: Codable {
     let careCount: Int
-    let CareType: CareType
+    let careType: CareType
+    
+    enum CodingKeys: String, CodingKey {
+        case careCount = "careCount"
+        case careType = "CareType"
+    }
 }

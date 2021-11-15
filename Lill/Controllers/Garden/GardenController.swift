@@ -10,9 +10,11 @@ class GardenController: BaseController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addPantLabel: UILabel!
 
-    @IBOutlet var stackViews: [ShadowView]!
-    @IBOutlet var stackButtons: [UIButton]!
-    @IBOutlet var stackLabels: [UILabel]!
+    @IBOutlet weak var careSectionView: UIView!
+    
+    @IBOutlet var careViews: [ShadowView]!
+    @IBOutlet var careButtons: [UIButton]!
+    @IBOutlet var careLabels: [UILabel]!
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -46,12 +48,16 @@ class GardenController: BaseController {
 
         super.viewDidLoad()
 
+        setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
             presenter.getGardenPants(gardenId: gardenId)
         }
-
-        setup()
     }
 
     //----------------------------------------------
@@ -74,7 +80,7 @@ class GardenController: BaseController {
     }
 
     private func updateButtonsStack() {
-        for view in stackViews {
+        for view in careViews {
             if view.tag == selectedCareType, selectedCareType == 0 {
                 view.backgroundColor = UIColor(rgb: 0x7CDAA3)
             } else if view.tag == selectedCareType {
@@ -84,7 +90,7 @@ class GardenController: BaseController {
             }
         }
 
-        for label in stackLabels {
+        for label in careLabels {
             if label.tag == selectedCareType {
                 label.textColor = UIColor.white
             } else {
@@ -92,9 +98,9 @@ class GardenController: BaseController {
             }
         }
 
-        for button in stackButtons {
-            button.setTitle("", for: .normal)
-        }
+//        for button in stackButtons {
+//            button.setTitle("", for: .normal)
+//        }
     }
 
     //----------------------------------------------
@@ -121,7 +127,25 @@ class GardenController: BaseController {
 extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
-
+        
+        careSectionView.isHidden = model.caresByGarden.count > 0 ? false : true
+        
+        for item in model.caresByGarden {
+            switch item.careType.name {
+            case .watering:
+                careViews.first(where:{$0.tag == 1})?.isHidden = false
+                careLabels.first(where: {$0.tag == 1})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+            case .misting:
+                careViews.first(where:{$0.tag == 2})?.isHidden = false
+                careLabels.first(where: {$0.tag == 2})?.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+            case .humidity:
+                careViews.first(where:{$0.tag == 3})?.isHidden = false
+                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+            case .rotating:
+                careViews.first(where:{$0.tag == 4})?.isHidden = false
+                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+            }
+        }
     }
 
     func successGardenPlants() {

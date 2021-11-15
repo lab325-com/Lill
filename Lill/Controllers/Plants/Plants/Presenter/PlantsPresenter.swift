@@ -37,7 +37,7 @@ class PlantsPresenter: PlantsPresenterProtocol {
         
         request?.cancel()
         
-        let query = GetCatalogPlantsQuery(pagination: InputPagination(offset: 0, limit: 10), search: search, onlyFavorites: false)
+        let query = GetCatalogPlantsQuery(pagination: InputPagination(offset: 0, limit: 100), search: search, onlyFavorites: false)
         request = Network.shared.query(model: CatalogPlantsModel.self, query) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)
