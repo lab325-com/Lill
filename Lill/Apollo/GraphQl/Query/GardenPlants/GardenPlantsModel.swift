@@ -16,12 +16,14 @@ struct GardenPlantsModel: Codable {
 }
 
 struct GardenPlantModel: Codable {
+    let id: String
     let name: String?
     let isHappy: Bool
     let userMainImage: MediaModel?
     let gardenPlantCares: [GardenPlantCaresModel]
     
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case name = "name"
         case isHappy = "isHappy"
         case userMainImage = "userMainImage"

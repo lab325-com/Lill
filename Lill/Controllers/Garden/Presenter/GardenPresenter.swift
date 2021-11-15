@@ -23,8 +23,10 @@ protocol GardenPresenterProtocol: AnyObject {
     init(view: GardenOutputProtocol)
     
     func getCaresByGarden(gardenId: String)
-    func getGardenPants(gardenId: String)
+    func getGardenPlants(gardenId: String)
+    func getGardenPlants(gardenId: String, careTypeId: Int)
     func doneCares(gardenId: String)
+    func clearData()
 }
 
 class GardenPresenter: GardenPresenterProtocol {
@@ -55,9 +57,10 @@ class GardenPresenter: GardenPresenterProtocol {
         })
     }
     
-    func getGardenPants(gardenId: String) {
+    func getGardenPlants(gardenId: String) {
+        
         let group = DispatchGroup()
-
+        
         group.enter()
         let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
@@ -87,6 +90,20 @@ class GardenPresenter: GardenPresenterProtocol {
         }
     }
     
+    func getGardenPlants(gardenId: String, careTypeId: Int) {
+        
+        request?.cancel()
+        
+        let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query, successHandler: { [weak self] model in
+            self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
+            self?.gardenPlants = self?.sadGardenPlants ?? []
+            self?.view?.successGardenPlants()
+        }, failureHandler: { [weak self] error in
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
     func doneCares(gardenId: String) {
         view?.startLoader()
         
@@ -100,5 +117,11 @@ class GardenPresenter: GardenPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func clearData() {
+        gardenPlants.removeAll()
+        sadGardenPlants.removeAll()
+        happyGardenPlants.removeAll()
     }
 }

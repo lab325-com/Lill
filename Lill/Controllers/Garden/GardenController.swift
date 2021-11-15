@@ -54,9 +54,11 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        presenter.clearData()
+        
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
-            presenter.getGardenPants(gardenId: gardenId)
+            presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 
@@ -97,10 +99,6 @@ class GardenController: BaseController {
                 label.textColor = UIColor(rgb: 0x666666)
             }
         }
-
-//        for button in stackButtons {
-//            button.setTitle("", for: .normal)
-//        }
     }
 
     //----------------------------------------------
@@ -108,11 +106,24 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     @IBAction func selectStackAction(_ sender: UIButton) {
+        presenter.clearData()
         collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
         selectedCareType = sender.tag
         updateButtonsStack()
 
-        collectionView.reloadData()
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        switch sender.tag {  
+        case 1:
+            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 1)
+        case 2:
+            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 2)
+        case 3:
+            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 3)
+        case 4:
+            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 4)
+        default:
+            presenter.getGardenPlants(gardenId: gardenId)
+        }
     }
 
     @IBAction func addPlantAction(_ sender: UIButton) {
@@ -127,23 +138,23 @@ class GardenController: BaseController {
 extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
-        
+                
         careSectionView.isHidden = model.caresByGarden.count > 0 ? false : true
         
         for item in model.caresByGarden {
             switch item.careType.name {
-            case .watering:
+            case .humidity :
                 careViews.first(where:{$0.tag == 1})?.isHidden = false
                 careLabels.first(where: {$0.tag == 1})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
             case .misting:
                 careViews.first(where:{$0.tag == 2})?.isHidden = false
                 careLabels.first(where: {$0.tag == 2})?.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
-            case .humidity:
-                careViews.first(where:{$0.tag == 3})?.isHidden = false
-                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
             case .rotating:
+                careViews.first(where:{$0.tag == 3})?.isHidden = false
+                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+            case .watering:
                 careViews.first(where:{$0.tag == 4})?.isHidden = false
-                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
             }
         }
     }
@@ -153,11 +164,6 @@ extension GardenController: GardenOutputProtocol {
         sadGardenPlants = presenter.sadGardenPlants
         happyGardenPlants = presenter.happyGardenPlants
 
-//        debugPrint("*********")
-//        debugPrint(sadGardenPlants.count)
-//        debugPrint(happyGardenPlants.count)
-//        debugPrint("*********")
-
         collectionView.reloadData()
     }
 
@@ -165,7 +171,7 @@ extension GardenController: GardenOutputProtocol {
         if model.doneAllCaresByGarden {
             guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
             collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
-            presenter.getGardenPants(gardenId: gardenId)
+            presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 
