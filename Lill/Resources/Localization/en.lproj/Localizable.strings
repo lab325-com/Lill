@@ -1,3 +1,10 @@
+"action_edit_add_photo" = "Add Photo";
+"action_edit_cancel" = "Cancel";
+"action_edit_care_plan" = "Edit Care Plan";
+"action_edit_change_name" = "Change Name";
+"action_edit_clone_plant" = "Clone Plant";
+"action_edit_delete_plant" = "Delete Plant";
+"action_edit_title" = "Actions with Plant";
 "activity_title" = "Please wait";
 "add_plant_done" = "Done";
 "add_plant_every" = "every";
