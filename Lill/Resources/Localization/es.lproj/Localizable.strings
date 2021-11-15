@@ -1,4 +1,11 @@
 "activity_title" = "Espere por favor";
+"add_plant_done" = "Hecho";
+"add_plant_every" = "cada";
+"add_plant_frequency" = "Frecuencia";
+"add_plant_next_date" = "Proxima fecha";
+"add_plant_time" = "Tiempo";
+"add_plant_time_subtitle" = "Por favor, configure su cuidado de nueva planta";
+"add_plants_success" = "¡Se agrega tu planta única!";
 "allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
 "allert_no" = "NO";
 "allert_yes" = "SÍ";
@@ -118,6 +125,9 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"period_type_day" = "dias";
+"period_type_month" = "meses";
+"period_type_week" = "semanas";
 "plant_add_to_garden_great" = "¡Excelente!";
 "plant_add_to_garden_info" = "¡La planta se agrega en tu jardín!";
 "plant_add_to_garden_title" = "Confijas!";
@@ -132,7 +142,7 @@
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar mis plantas";
 "plants_search" = "Buscar por nombre";
-"plants_uniquePlantButton" = "Añadir un único";
+"plants_uniquePlantButton" = "Añadir unico";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
@@ -166,5 +176,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacío";
+"wish_list_no_data" = "Lista de deseos está vacía";
 "wish_list_title" = "De deseos";

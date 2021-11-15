@@ -1145,7 +1145,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 32 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 34 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1157,6 +1157,8 @@ struct R: Rswift.Validatable {
     static let addPlantTimeCell = _R.nib._AddPlantTimeCell()
     /// Nib `AddPlantTimeController`.
     static let addPlantTimeController = _R.nib._AddPlantTimeController()
+    /// Nib `AddPlantTitleCell`.
+    static let addPlantTitleCell = _R.nib._AddPlantTitleCell()
     /// Nib `AddPlantsCareController`.
     static let addPlantsCareController = _R.nib._AddPlantsCareController()
     /// Nib `ChooseIdentifyController`.
@@ -1197,6 +1199,8 @@ struct R: Rswift.Validatable {
     static let onboardingSecondController = _R.nib._OnboardingSecondController()
     /// Nib `OnboardingThreeController`.
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
+    /// Nib `PickerCaresController`.
+    static let pickerCaresController = _R.nib._PickerCaresController()
     /// Nib `PlantCollectionCell`.
     static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `PlantsDetailController`.
@@ -1249,6 +1253,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantTimeController) instead")
     static func addPlantTimeController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addPlantTimeController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlantTitleCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlantTitleCell) instead")
+    static func addPlantTitleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlantTitleCell)
     }
     #endif
 
@@ -1413,6 +1425,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PickerCaresController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.pickerCaresController) instead")
+    static func pickerCaresController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.pickerCaresController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PlantCollectionCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.plantCollectionCell) instead")
     static func plantCollectionCell(_: Void = ()) -> UIKit.UINib {
@@ -1486,6 +1506,10 @@ struct R: Rswift.Validatable {
 
     static func addPlantTimeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.addPlantTimeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addPlantTitleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlantTitleCell? {
+      return R.nib.addPlantTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlantTitleCell
     }
 
     static func addPlantsCareController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1568,6 +1592,10 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingThreeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func pickerCaresController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.pickerCaresController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func plantCollectionCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PlantCollectionCell? {
       return R.nib.plantCollectionCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PlantCollectionCell
     }
@@ -1599,10 +1627,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AddPlantTimeCell`.
     static let addPlantTimeCell: Rswift.ReuseIdentifier<AddPlantTimeCell> = Rswift.ReuseIdentifier(identifier: "AddPlantTimeCell")
+    /// Reuse identifier `AddPlantTitleCell`.
+    static let addPlantTitleCell: Rswift.ReuseIdentifier<AddPlantTitleCell> = Rswift.ReuseIdentifier(identifier: "AddPlantTitleCell")
     /// Reuse identifier `DiseaseArchiveCell`.
     static let diseaseArchiveCell: Rswift.ReuseIdentifier<DiseaseArchiveCell> = Rswift.ReuseIdentifier(identifier: "DiseaseArchiveCell")
     /// Reuse identifier `LanguageCell`.
@@ -1613,7 +1643,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 171 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 181 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1871,6 +1901,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_result_info = Rswift.StringResource(key: "identify_result_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static let add_plant_done = Rswift.StringResource(key: "add_plant_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Evergreen
       ///
       /// Locales: en, es
@@ -1895,6 +1929,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_fern = Rswift.StringResource(key: "climate_habit_fern", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Frequency
+      ///
+      /// Locales: en, es
+      static let add_plant_frequency = Rswift.StringResource(key: "add_plant_frequency", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Full-size image of Plant
       ///
       /// Locales: en, es
@@ -2063,6 +2101,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let allert_no = Rswift.StringResource(key: "allert_no", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Next Date
+      ///
+      /// Locales: en, es
+      static let add_plant_next_date = Rswift.StringResource(key: "add_plant_next_date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -2103,6 +2145,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cares_sub_title = Rswift.StringResource(key: "uniques_cares_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Please Setup your Care for new Plant
+      ///
+      /// Locales: en, es
+      static let add_plant_time_subtitle = Rswift.StringResource(key: "add_plant_time_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Please wait
       ///
       /// Locales: en, es
@@ -2231,6 +2277,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_terms = Rswift.StringResource(key: "subscription_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Time
+      ///
+      /// Locales: en, es
+      static let add_plant_time = Rswift.StringResource(key: "add_plant_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Tree
       ///
       /// Locales: en, es
@@ -2275,6 +2325,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Your unique Plant is added!
+      ///
+      /// Locales: en, es
+      static let add_plants_success = Rswift.StringResource(key: "add_plants_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: account
       ///
       /// Locales: en, es
@@ -2283,6 +2337,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_section_archive_title = Rswift.StringResource(key: "menu_section_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: days
+      ///
+      /// Locales: en, es
+      static let period_type_day = Rswift.StringResource(key: "period_type_day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: every
+      ///
+      /// Locales: en, es
+      static let add_plant_every = Rswift.StringResource(key: "add_plant_every", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: free snaps
       ///
       /// Locales: en, es
@@ -2295,10 +2357,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: months
+      ///
+      /// Locales: en, es
+      static let period_type_month = Rswift.StringResource(key: "period_type_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: settings
       ///
       /// Locales: en, es
       static let menu_section_settings_title = Rswift.StringResource(key: "menu_section_settings_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: weeks
+      ///
+      /// Locales: en, es
+      static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
 
       /// en translation: A
       ///
@@ -3262,6 +3332,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_result_info", bundle: bundle, comment: "")
       }
 
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static func add_plant_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_done"
+        }
+
+        return NSLocalizedString("add_plant_done", bundle: bundle, comment: "")
+      }
+
       /// en translation: Evergreen
       ///
       /// Locales: en, es
@@ -3350,6 +3435,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_fern", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Frequency
+      ///
+      /// Locales: en, es
+      static func add_plant_frequency(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_frequency", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_frequency"
+        }
+
+        return NSLocalizedString("add_plant_frequency", bundle: bundle, comment: "")
       }
 
       /// en translation: Full-size image of Plant
@@ -3982,6 +4082,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("allert_no", bundle: bundle, comment: "")
       }
 
+      /// en translation: Next Date
+      ///
+      /// Locales: en, es
+      static func add_plant_next_date(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_next_date", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_next_date"
+        }
+
+        return NSLocalizedString("add_plant_next_date", bundle: bundle, comment: "")
+      }
+
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -4130,6 +4245,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("uniques_cares_sub_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please Setup your Care for new Plant
+      ///
+      /// Locales: en, es
+      static func add_plant_time_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_time_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_time_subtitle"
+        }
+
+        return NSLocalizedString("add_plant_time_subtitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Please wait
@@ -4612,6 +4742,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_terms", bundle: bundle, comment: "")
       }
 
+      /// en translation: Time
+      ///
+      /// Locales: en, es
+      static func add_plant_time(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_time"
+        }
+
+        return NSLocalizedString("add_plant_time", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tree
       ///
       /// Locales: en, es
@@ -4777,6 +4922,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("allert_yes", bundle: bundle, comment: "")
       }
 
+      /// en translation: Your unique Plant is added!
+      ///
+      /// Locales: en, es
+      static func add_plants_success(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plants_success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plants_success"
+        }
+
+        return NSLocalizedString("add_plants_success", bundle: bundle, comment: "")
+      }
+
       /// en translation: account
       ///
       /// Locales: en, es
@@ -4805,6 +4965,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_section_archive_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: days
+      ///
+      /// Locales: en, es
+      static func period_type_day(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_day", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_day"
+        }
+
+        return NSLocalizedString("period_type_day", bundle: bundle, comment: "")
+      }
+
+      /// en translation: every
+      ///
+      /// Locales: en, es
+      static func add_plant_every(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_plant_every", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_plant_every"
+        }
+
+        return NSLocalizedString("add_plant_every", bundle: bundle, comment: "")
       }
 
       /// en translation: free snaps
@@ -4852,6 +5042,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_premium", bundle: bundle, comment: "")
       }
 
+      /// en translation: months
+      ///
+      /// Locales: en, es
+      static func period_type_month(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_month", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_month"
+        }
+
+        return NSLocalizedString("period_type_month", bundle: bundle, comment: "")
+      }
+
       /// en translation: settings
       ///
       /// Locales: en, es
@@ -4865,6 +5070,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_section_settings_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: weeks
+      ///
+      /// Locales: en, es
+      static func period_type_week(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("period_type_week", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "period_type_week"
+        }
+
+        return NSLocalizedString("period_type_week", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -4902,6 +5122,7 @@ struct _R: Rswift.Validatable {
       try _AddCoverAddController.validate()
       try _AddCoverIdentifierController.validate()
       try _AddPlantCareView.validate()
+      try _AddPlantTimeCell.validate()
       try _AddPlantTimeController.validate()
       try _AddPlantsCareController.validate()
       try _ChooseIdentifyController.validate()
@@ -4983,7 +5204,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _AddPlantTimeCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+    struct _AddPlantTimeCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = AddPlantTimeCell
 
       let bundle = R.hostingBundle
@@ -4992,6 +5213,12 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlantTimeCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlantTimeCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plants_detail_humidity_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_humidity_ic' is used in nib 'AddPlantTimeCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -5009,6 +5236,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "unique_add_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_add_back_ic' is used in nib 'AddPlantTimeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlantTitleCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = AddPlantTitleCell
+
+      let bundle = R.hostingBundle
+      let identifier = "AddPlantTitleCell"
+      let name = "AddPlantTitleCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlantTitleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlantTitleCell
       }
 
       fileprivate init() {}
@@ -5356,6 +5597,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "temp_onboarding_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_3_ic' is used in nib 'OnboardingThreeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PickerCaresController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PickerCaresController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

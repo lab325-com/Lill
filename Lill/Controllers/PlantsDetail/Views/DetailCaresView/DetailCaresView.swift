@@ -27,6 +27,8 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
     }
 
     func setup(care: (type: PlantsCareType, care: CaresModel)) {
+        careImageView.tintColor = UIColor(rgb: 0x7CDAA3)
+        
         switch care.type {
         case .humidity:
             careImageView.image = UIImage(named: "plants_detail_humidity_ic")

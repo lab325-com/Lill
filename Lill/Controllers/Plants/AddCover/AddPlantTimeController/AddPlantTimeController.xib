@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlantTimeController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="doneButton" destination="nq5-NJ-e8k" id="4W4-3w-ibo"/>
                 <outlet property="tableView" destination="0Rt-be-Y6J" id="P6E-px-OYs"/>
                 <outlet property="topView" destination="Stb-NA-o45" id="COE-B2-H3f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -77,6 +78,9 @@
                             <integer key="value" value="22"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionDone:" destination="-1" eventType="touchUpInside" id="4ZH-sM-B7l"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-be-Y6J">
                     <rect key="frame" x="0.0" y="105" width="414" height="681"/>

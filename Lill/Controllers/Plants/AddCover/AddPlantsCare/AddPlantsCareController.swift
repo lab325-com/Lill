@@ -114,7 +114,9 @@ class AddPlantsCareController: BaseController {
     // MARK: - Actions
     //----------------------------------------------
     @IBAction func actionAddCares(_ sender: UIButton) {
-        AddCoverRouter(presenter: navigationController).pushAddTime()
+        if selectedCares.count > 0 {
+            AddCoverRouter(presenter: navigationController).pushAddTime(selectedCares: selectedCares)
+        }
     }
     
     @objc func playTapped() {

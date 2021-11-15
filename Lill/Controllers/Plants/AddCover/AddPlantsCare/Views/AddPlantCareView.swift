@@ -39,20 +39,8 @@ class AddPlantCareView: UIView, LoadFromXibProtocol {
     func setup(type: PlantsCareType, isSelected: Bool) {
         selectedType = type
         
-        switch type {
-        case .humidity:
-            careImageView.image = UIImage(named: "plants_detail_humidity_ic")
-            careTitleLabel.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .misting:
-            careImageView.image = UIImage(named: "plants_detail_misting_ic")
-            careTitleLabel.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .rotating:
-            careImageView.image = UIImage(named: "plants_detail_rotating_ic")
-            careTitleLabel.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .watering:
-            careImageView.image = UIImage(named: "plants_detail_watering_ic")
-            careTitleLabel.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        }
+        careImageView.image = type.image
+        careTitleLabel.text = type.text
         
         careImageView.tintColor = isSelected ? UIColor(rgb: 0x7CDAA3) : UIColor.black
         careTitleLabel.textColor = isSelected ? UIColor(rgb: 0x7CDAA3) : UIColor.black

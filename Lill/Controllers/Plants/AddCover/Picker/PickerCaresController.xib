@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerCaresController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="datePickerView" destination="2ba-Or-cX0" id="KMO-D9-5XA"/>
+                <outlet property="pickerView" destination="OUw-Pb-Tbu" id="ltc-UQ-9tP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bt-fH-cqU">
+                    <rect key="frame" x="16" y="345" width="382" height="216"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-Pb-Tbu">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="216"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="F2Z-fS-XW0"/>
+                                <outlet property="delegate" destination="-1" id="hMT-SB-oDI"/>
+                            </connections>
+                        </pickerView>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="2ba-Or-cX0">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="216"/>
+                            <connections>
+                                <action selector="actionValueChange:" destination="-1" eventType="valueChanged" id="6dQ-9H-njG"/>
+                            </connections>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="OUw-Pb-Tbu" firstAttribute="top" secondItem="7Bt-fH-cqU" secondAttribute="top" id="Cq9-aP-A7l"/>
+                        <constraint firstItem="2ba-Or-cX0" firstAttribute="top" secondItem="7Bt-fH-cqU" secondAttribute="top" id="ImW-a3-mgV"/>
+                        <constraint firstAttribute="bottom" secondItem="2ba-Or-cX0" secondAttribute="bottom" id="WG3-bJ-S8B"/>
+                        <constraint firstAttribute="trailing" secondItem="OUw-Pb-Tbu" secondAttribute="trailing" id="hDK-Sb-C0T"/>
+                        <constraint firstItem="2ba-Or-cX0" firstAttribute="leading" secondItem="7Bt-fH-cqU" secondAttribute="leading" id="nF7-Cm-v8a"/>
+                        <constraint firstAttribute="trailing" secondItem="2ba-Or-cX0" secondAttribute="trailing" id="r4a-8s-PAA"/>
+                        <constraint firstAttribute="bottom" secondItem="OUw-Pb-Tbu" secondAttribute="bottom" id="sUd-Vl-ldI"/>
+                        <constraint firstItem="OUw-Pb-Tbu" firstAttribute="leading" secondItem="7Bt-fH-cqU" secondAttribute="leading" id="v6F-77-Z7l"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7Bt-fH-cqU" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5YI-Pw-qiN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Bt-fH-cqU" secondAttribute="trailing" constant="16" id="5aw-bz-koG"/>
+                <constraint firstItem="7Bt-fH-cqU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ECU-Gv-MoK"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

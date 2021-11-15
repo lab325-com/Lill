@@ -25,8 +25,16 @@ class AddCoverRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func pushAddTime() {
-        let controller = AddPlantTimeController()
+    func pushAddTime(selectedCares: Set<PlantsCareType>) {
+        let controller = AddPlantTimeController(selectedCares: selectedCares)
         push(controller: controller)
     }
+    
+    func presentPickerCares(model: AddPlantTimeModel, delegate: PickerCareDelegate, isDatePicker: Bool) {
+        let controller = PickerCaresController(model: model, delegate: delegate, isDatePicker: isDatePicker)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overCurrentContext)
+    }
+
 }

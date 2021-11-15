@@ -1,4 +1,11 @@
 "activity_title" = "Please wait";
+"add_plant_done" = "Done";
+"add_plant_every" = "every";
+"add_plant_frequency" = "Frequency";
+"add_plant_next_date" = "Next Date";
+"add_plant_time" = "Time";
+"add_plant_time_subtitle" = "Please Setup your Care for new Plant";
+"add_plants_success" = "Your unique Plant is added!";
 "allert_logout_message" = "Are you sure want log out?";
 "allert_no" = "NO";
 "allert_yes" = "YES";
@@ -119,6 +126,9 @@
 "menu_section_archive_title" = "archive";
 "menu_section_settings_title" = "settings";
 "menu_title" = "Menu";
+"period_type_day" = "days";
+"period_type_month" = "months";
+"period_type_week" = "weeks";
 "plant_add_to_garden_great" = "Great!";
 "plant_add_to_garden_info" = "Plant is added in your Garden!";
 "plant_add_to_garden_title" = "Congrads!";

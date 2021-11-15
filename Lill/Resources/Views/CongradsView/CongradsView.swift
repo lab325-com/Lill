@@ -18,6 +18,12 @@ class CongradsView: UIView {
     @IBOutlet private weak var greatButton: UIButton!
     
     //----------------------------------------------
+    // MARK: - Property
+    //----------------------------------------------
+    
+    private var isAddUniquesPlant = false
+    
+    //----------------------------------------------
     // MARK: - Override
     //----------------------------------------------
     
@@ -37,14 +43,20 @@ class CongradsView: UIView {
         greatButton.setTitle(RLocalization.plant_add_to_garden_great.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
+    func changeText(textSubtitle: String? = nil ) {
+        if let text = textSubtitle {
+            infoLabel.text = text
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Public methods
     //----------------------------------------------
     
-    class func defaultView() -> CongradsView {
+    class func defaultView(textSubtitle: String? = nil) -> CongradsView {
         let className = String(describing: CongradsView.self)
         let congradsView = Bundle.main.loadNibNamed(className, owner: self, options: nil)!.first as! CongradsView
-
+        congradsView.changeText(textSubtitle: textSubtitle)
         return congradsView
     }
     
