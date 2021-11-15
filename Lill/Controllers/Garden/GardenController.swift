@@ -54,9 +54,11 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        presenter.clearData()
+        
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
-            presenter.getGardenPants(gardenId: gardenId)
+            presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 
@@ -104,6 +106,7 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     @IBAction func selectStackAction(_ sender: UIButton) {
+        presenter.clearData()
         collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
         selectedCareType = sender.tag
         updateButtonsStack()
@@ -119,7 +122,7 @@ class GardenController: BaseController {
         case 4:
             presenter.getGardenPlants(gardenId: gardenId, careTypeId: 4)
         default:
-            presenter.getCaresByGarden(gardenId: gardenId)
+            presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 
@@ -168,7 +171,7 @@ extension GardenController: GardenOutputProtocol {
         if model.doneAllCaresByGarden {
             guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
             collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
-            presenter.getGardenPants(gardenId: gardenId)
+            presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 

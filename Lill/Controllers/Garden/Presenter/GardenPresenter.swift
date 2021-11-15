@@ -23,8 +23,10 @@ protocol GardenPresenterProtocol: AnyObject {
     init(view: GardenOutputProtocol)
     
     func getCaresByGarden(gardenId: String)
-    func getGardenPants(gardenId: String)
+    func getGardenPlants(gardenId: String)
+    func getGardenPlants(gardenId: String, careTypeId: Int)
     func doneCares(gardenId: String)
+    func clearData()
 }
 
 class GardenPresenter: GardenPresenterProtocol {
@@ -55,10 +57,7 @@ class GardenPresenter: GardenPresenterProtocol {
         })
     }
     
-    func getGardenPants(gardenId: String) {
-        gardenPlants.removeAll()
-        sadGardenPlants.removeAll()
-        happyGardenPlants.removeAll()
+    func getGardenPlants(gardenId: String) {
         
         let group = DispatchGroup()
         
@@ -92,15 +91,13 @@ class GardenPresenter: GardenPresenterProtocol {
     }
     
     func getGardenPlants(gardenId: String, careTypeId: Int) {
-        gardenPlants.removeAll()
-        sadGardenPlants.removeAll()
-        happyGardenPlants.removeAll()
         
         request?.cancel()
         
         let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query, successHandler: { [weak self] model in
-            self?.gardenPlants = model.gardenPlants.gardenPlants ?? []
+            self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
+            self?.gardenPlants = self?.sadGardenPlants ?? []
             self?.view?.successGardenPlants()
         }, failureHandler: { [weak self] error in
             self?.view?.failure(error: error.localizedDescription)
@@ -120,5 +117,11 @@ class GardenPresenter: GardenPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func clearData() {
+        gardenPlants.removeAll()
+        sadGardenPlants.removeAll()
+        happyGardenPlants.removeAll()
     }
 }
