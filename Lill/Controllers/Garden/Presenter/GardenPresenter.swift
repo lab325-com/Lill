@@ -56,8 +56,12 @@ class GardenPresenter: GardenPresenterProtocol {
     }
     
     func getGardenPants(gardenId: String) {
+        gardenPlants.removeAll()
+        sadGardenPlants.removeAll()
+        happyGardenPlants.removeAll()
+        
         let group = DispatchGroup()
-
+        
         group.enter()
         let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
@@ -85,6 +89,22 @@ class GardenPresenter: GardenPresenterProtocol {
             
             self?.view?.successGardenPlants()
         }
+    }
+    
+    func getGardenPlants(gardenId: String, careTypeId: Int) {
+        gardenPlants.removeAll()
+        sadGardenPlants.removeAll()
+        happyGardenPlants.removeAll()
+        
+        request?.cancel()
+        
+        let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query, successHandler: { [weak self] model in
+            self?.gardenPlants = model.gardenPlants.gardenPlants ?? []
+            self?.view?.successGardenPlants()
+        }, failureHandler: { [weak self] error in
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
     
     func doneCares(gardenId: String) {

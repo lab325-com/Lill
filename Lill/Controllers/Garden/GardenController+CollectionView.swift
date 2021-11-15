@@ -17,10 +17,10 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellButtonIdentifier, for: indexPath) as! GardenButtonCell
             cell.delegate = self
             switch selectedCareType {
-            case 1: cell.configure(title: "Done all Watering")
+            case 1: cell.configure(title: "Done all Humidity")
             case 2: cell.configure(title: "Done all Misting")
-            case 3: cell.configure(title: "Done all Humidity")
-            case 4: cell.configure(title: "Done all Rotate")
+            case 3: cell.configure(title: "Done all Rotate")
+            case 4: cell.configure(title: "Done all Watering")
             default: cell.configure(title: "Done all Cares")
             }
             return cell

@@ -1555,6 +1555,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
         __typename
         GardenPlants {
           __typename
+          id
           name
           isHappy
           userMainImage {
@@ -1684,6 +1685,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("isHappy", type: .scalar(Bool.self)),
             GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
@@ -1697,8 +1699,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(name: String? = nil, isHappy: Bool? = nil, userMainImage: UserMainImage? = nil, gardenPlantCares: [GardenPlantCare?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "GardenPlant", "name": name, "isHappy": isHappy, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "GardenPlantCares": gardenPlantCares.flatMap { (value: [GardenPlantCare?]) -> [ResultMap?] in value.map { (value: GardenPlantCare?) -> ResultMap? in value.flatMap { (value: GardenPlantCare) -> ResultMap in value.resultMap } } }])
+        public init(id: GraphQLID? = nil, name: String? = nil, isHappy: Bool? = nil, userMainImage: UserMainImage? = nil, gardenPlantCares: [GardenPlantCare?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "GardenPlant", "id": id, "name": name, "isHappy": isHappy, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "GardenPlantCares": gardenPlantCares.flatMap { (value: [GardenPlantCare?]) -> [ResultMap?] in value.map { (value: GardenPlantCare?) -> ResultMap? in value.flatMap { (value: GardenPlantCare) -> ResultMap in value.resultMap } } }])
         }
 
         public var __typename: String {
@@ -1707,6 +1709,15 @@ public final class GardenPlantsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
           }
         }
 

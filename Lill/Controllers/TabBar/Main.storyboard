@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ixc-Dx-dON">
-                                                <rect key="frame" x="0.0" y="2" width="413.5" height="28"/>
+                                                <rect key="frame" x="0.0" y="2" width="50" height="28"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soP-wp-FH8" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="28"/>
@@ -183,17 +183,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-qw-dwq" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="56" y="0.0" width="91" height="28"/>
+                                                    <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-qw-dwq" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watering: 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-hQ-oMj">
-                                                                <rect key="frame" x="14" y="0.0" width="63" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQz-Qs-5Ej">
-                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="RSM-Zx-qqs"/>
@@ -226,17 +226,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-vp-cnj" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="153" y="0.0" width="80" height="28"/>
+                                                    <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-vp-cnj" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misting: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzf-uM-Uzg">
-                                                                <rect key="frame" x="14" y="0.0" width="52" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81t-b8-Yyw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="23P-1e-Wzc"/>
@@ -269,17 +269,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-lc-LQl" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="239" y="0.0" width="91" height="28"/>
+                                                    <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-lc-LQl" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity: 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTt-Cb-8hK">
-                                                                <rect key="frame" x="14" y="0.0" width="63" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-X2-Edn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="y5Q-4P-8P9"/>
@@ -312,17 +312,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-Re-E7H" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="336" y="0.0" width="77.5" height="28"/>
+                                                    <view hidden="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-Re-E7H" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAy-kp-TpP">
-                                                                <rect key="frame" x="14" y="0.0" width="49.5" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqD-PX-fGd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="h6w-Tl-rwR"/>
