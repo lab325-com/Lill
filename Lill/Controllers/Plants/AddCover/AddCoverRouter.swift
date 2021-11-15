@@ -20,13 +20,13 @@ class AddCoverRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func pushAddCare() {
-        let controller = AddPlantsCareController()
+    func pushAddCare(coverImage: UIImage, text: String) {
+        let controller = AddPlantsCareController(coverImage: coverImage, text: text)
         push(controller: controller)
     }
     
-    func pushAddTime(selectedCares: Set<PlantsCareType>) {
-        let controller = AddPlantTimeController(selectedCares: selectedCares)
+    func pushAddTime(coverImage: UIImage, text: String, selectedCares: Set<CareType>) {
+        let controller = AddPlantTimeController(coverImage: coverImage, text: text, selectedCares: selectedCares)
         push(controller: controller)
     }
     

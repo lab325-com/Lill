@@ -151,8 +151,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 23 files.
+  /// This `R.file` struct is generated, and contains static references to 25 files.
   struct file {
+    /// Resource file `CareType.graphql`.
+    static let careTypeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CareType", pathExtension: "graphql")
     /// Resource file `CaresByGarden.graphql`.
     static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
     /// Resource file `Debug.xcconfig`.
@@ -161,6 +163,8 @@ struct R: Rswift.Validatable {
     static let diagnoseArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DiagnoseArhive", pathExtension: "graphql")
     /// Resource file `DoneAllCaresByGarden.graphql`.
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
+    /// Resource file `GardenPlantCreate.graphql`.
+    static let gardenPlantCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCreate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
     static let gardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlants", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
@@ -200,6 +204,12 @@ struct R: Rswift.Validatable {
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
+    /// `bundle.url(forResource: "CareType", withExtension: "graphql")`
+    static func careTypeGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.careTypeGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "CaresByGarden", withExtension: "graphql")`
     static func caresByGardenGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.caresByGardenGraphql
@@ -221,6 +231,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "DoneAllCaresByGarden", withExtension: "graphql")`
     static func doneAllCaresByGardenGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.doneAllCaresByGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantCreate", withExtension: "graphql")`
+    static func gardenPlantCreateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantCreateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddPlantCareProtocol: AnyObject {
-    func addPlantCareSelect(view: AddPlantCareView, selectedType: PlantsCareType)
+    func addPlantCareSelect(view: AddPlantCareView, selectedType: CareType)
 }
 
 class AddPlantCareView: UIView, LoadFromXibProtocol {
@@ -20,7 +20,7 @@ class AddPlantCareView: UIView, LoadFromXibProtocol {
     
     weak var delegate: AddPlantCareProtocol?
     
-    private var selectedType: PlantsCareType?
+    private var selectedType: CareType?
     
     //----------------------------------------------
     // MARK: - Init
@@ -36,11 +36,11 @@ class AddPlantCareView: UIView, LoadFromXibProtocol {
         selectView.setTitle("", for: .normal)
     }
     
-    func setup(type: PlantsCareType, isSelected: Bool) {
+    func setup(type: CareType, isSelected: Bool) {
         selectedType = type
         
-        careImageView.image = type.image
-        careTitleLabel.text = type.text
+        careImageView.image = type.name.image
+        careTitleLabel.text = type.name.text
         
         careImageView.tintColor = isSelected ? UIColor(rgb: 0x7CDAA3) : UIColor.black
         careTitleLabel.textColor = isSelected ? UIColor(rgb: 0x7CDAA3) : UIColor.black

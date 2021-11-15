@@ -8,7 +8,7 @@
 import UIKit
 
 struct AddPlantTimeModel {
-    let plan: PlantsCareType
+    let plan: CareType
     var time: Date?
     var frequency: Int = 7
     var period: PeriodType = .periodTypeDay
@@ -85,20 +85,24 @@ class AddPlantTimeController: BaseController {
     
     private let cellIdentifier = "AddPlantTimeCell"
     private let cellTitleIdentifier = "AddPlantTitleCell"
-    private var selectedCares: Set<PlantsCareType>
+    private var selectedCares: Set<CareType>
     private var plantsTime: [AddPlantTimeModel]
+    private let coverImage: UIImage
+    private let text: String
+    private lazy var presenter = AddPlantsCarePresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(selectedCares: Set<PlantsCareType>) {
+    init(coverImage: UIImage, text: String, selectedCares: Set<CareType>) {
         self.plantsTime = []
         
         for selectedCare in selectedCares {
             plantsTime.append(AddPlantTimeModel(plan: selectedCare))
         }
-        
+        self.coverImage = coverImage
+        self.text = text
         self.selectedCares = selectedCares
         super.init(nibName: nil, bundle: nil)
     }
@@ -152,9 +156,7 @@ class AddPlantTimeController: BaseController {
     }
     
     @IBAction func actionDone(_ sender: UIButton) {
-        dismiss(animated: true) {
-            CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
-        }
+        presenter.sendUniquesPlants(img: coverImage, text: text, plantsTime: plantsTime)
     }
 }
 
@@ -205,5 +207,21 @@ extension AddPlantTimeController: PickerCareDelegate {
             plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date)
             tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - AddPlantsCareOutputProtocol
+//----------------------------------------------
+
+extension AddPlantTimeController: AddPlantsCareOutputProtocol {
+    func successSaveUniquesPlant() {
+        dismiss(animated: true) {
+            CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+        }
+    }
+    
+    func failure(error: String) {
+        
     }
 }

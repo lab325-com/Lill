@@ -28,8 +28,25 @@ class AddPlantsCareController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private var cares = PlantsCareType.allCases
-    private var selectedCares = Set<PlantsCareType>()
+    private var cares: [CareType] = []
+    private var selectedCares = Set<CareType>()
+    private lazy var presenter = AddPlantsCarePresenter(view: self)
+    private let coverImage: UIImage
+    private let text: String
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(coverImage: UIImage, text: String) {
+        self.coverImage = coverImage
+        self.text = text
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -60,15 +77,14 @@ class AddPlantsCareController: BaseController {
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
         navigationItem.title = RLocalization.uniques_cover_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        for index in 0..<cares.count {
-            caresViews.first(where: {$0.tag == index})?.setup(type: cares[index], isSelected: false)
-        }
-        
         for view in caresViews {
+            view.isHidden = true
             view.delegate = self
         }
         
         caresCountLabel.text = "0"
+        
+        presenter.getCares()
     }
     
     private func setNavigationBar() {
@@ -115,7 +131,7 @@ class AddPlantsCareController: BaseController {
     //----------------------------------------------
     @IBAction func actionAddCares(_ sender: UIButton) {
         if selectedCares.count > 0 {
-            AddCoverRouter(presenter: navigationController).pushAddTime(selectedCares: selectedCares)
+            AddCoverRouter(presenter: navigationController).pushAddTime(coverImage: coverImage, text: text, selectedCares: selectedCares)
         }
     }
     
@@ -133,7 +149,7 @@ class AddPlantsCareController: BaseController {
 //----------------------------------------------
 
 extension AddPlantsCareController: AddPlantCareProtocol {
-    func addPlantCareSelect(view: AddPlantCareView, selectedType: PlantsCareType) {
+    func addPlantCareSelect(view: AddPlantCareView, selectedType: CareType) {
         if selectedCares.contains(selectedType) {
             selectedCares.remove(selectedType)
         } else {
@@ -141,5 +157,26 @@ extension AddPlantsCareController: AddPlantCareProtocol {
         }
         
         changesView()
+    }
+}
+
+//----------------------------------------------
+// MARK: - AddPlantsCareOutputProtocol
+//----------------------------------------------
+
+extension AddPlantsCareController: AddPlantsCareOutputProtocol {
+    func successCares(models: [CareType]) {
+        cares = models
+        
+        for index in 0..<cares.count {
+            let view = caresViews.first(where: {$0.tag == index})
+            view?.isHidden = false
+            view?.setup(type: cares[index], isSelected: false)
+        }
+        
+    }
+    
+    func failure(error: String) {
+        
     }
 }
