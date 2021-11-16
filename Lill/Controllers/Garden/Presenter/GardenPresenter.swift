@@ -58,7 +58,6 @@ class GardenPresenter: GardenPresenterProtocol {
     }
     
     func getGardenPlants(gardenId: String) {
-        
         let group = DispatchGroup()
         
         group.enter()

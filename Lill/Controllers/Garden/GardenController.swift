@@ -22,8 +22,6 @@ class GardenController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
 
-//    private var selectedType = 0
-
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
@@ -146,7 +144,8 @@ extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
                 
-        careSectionView.isHidden = model.caresByGarden.count > 0 ? false : true
+        careSectionView.isHidden = false
+        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = sadGardenPlants.count == 0 ? false : true
         
         for item in model.caresByGarden {
             switch item.careType.name {
