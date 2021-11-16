@@ -44,8 +44,6 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     override func viewDidLoad() {
-        hiddenNavigationBar = true
-
         super.viewDidLoad()
 
         setup()
@@ -54,29 +52,33 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.clearData()
+        getData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        scrollToTop(animated: true)
+    }
+
+    //----------------------------------------------
+    // MARK: - Setup
+    //----------------------------------------------
+    
+    private func getData() {
+        presenter.clearData()
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
             presenter.getGardenPlants(gardenId: gardenId)
         }
     }
 
-    //----------------------------------------------
-    // MARK: - Setup
-    //----------------------------------------------
-
     private func setup() {
-
+        hiddenNavigationBar = true
         updateButtonsStack()
 
-        collectionView.register(UINib.init(nibName: cellIdentifier,
-                                           bundle: nil),
-                                forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.register(UINib.init(nibName: cellButtonIdentifier,
-                                           bundle: nil),
-                                forCellWithReuseIdentifier: cellButtonIdentifier)
-
+        collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UINib.init(nibName: cellButtonIdentifier, bundle: nil), forCellWithReuseIdentifier: cellButtonIdentifier)
         collectionView.contentInset.top = 40
         collectionView.reloadData()
     }
@@ -100,6 +102,10 @@ class GardenController: BaseController {
             }
         }
     }
+    
+    private func scrollToTop(animated: Bool) {
+        collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: animated)
+    }
 
     //----------------------------------------------
     // MARK: - Actions
@@ -107,8 +113,9 @@ class GardenController: BaseController {
 
     @IBAction func selectStackAction(_ sender: UIButton) {
         presenter.clearData()
-        collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
+        
         selectedCareType = sender.tag
+        scrollToTop(animated: true)
         updateButtonsStack()
 
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
@@ -169,9 +176,8 @@ extension GardenController: GardenOutputProtocol {
 
     func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel) {
         if model.doneAllCaresByGarden {
-            guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-            collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: true)
-            presenter.getGardenPlants(gardenId: gardenId)
+            getData()
+            scrollToTop(animated: true)
         }
     }
 
