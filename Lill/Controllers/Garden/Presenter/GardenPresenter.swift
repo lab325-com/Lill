@@ -34,9 +34,9 @@ class GardenPresenter: GardenPresenterProtocol {
     private weak var view: GardenOutputProtocol?
     private var request: Cancellable?
     
-    var gardenPlants = [GardenPlantModel]()
-    var sadGardenPlants = [GardenPlantModel]()
-    var happyGardenPlants = [GardenPlantModel]()
+    var gardenPlants: [GardenPlantModel] = []
+    var sadGardenPlants: [GardenPlantModel] = []
+    var happyGardenPlants: [GardenPlantModel] = []
 
     required init(view: GardenOutputProtocol) {
         self.view = view
@@ -85,13 +85,11 @@ class GardenPresenter: GardenPresenterProtocol {
             if let sadGardenPlants = self?.sadGardenPlants, let happyGardenPlants = self?.happyGardenPlants {
                 self?.gardenPlants = sadGardenPlants + happyGardenPlants
             }
-            
             self?.view?.successGardenPlants()
         }
     }
     
     func getGardenPlants(gardenId: String, careTypeId: Int) {
-        
         request?.cancel()
         
         let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
