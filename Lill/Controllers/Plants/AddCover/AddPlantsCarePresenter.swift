@@ -57,17 +57,26 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
         }
     }
     
+    
+    
     func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel]) {
+        func dateToString(fromDate date: Date) -> String {
+            let dateFormmater = DateFormatter()
+            //dateFormmater.timeZone = TimeZone(identifier: "UTC")
+            dateFormmater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            return dateFormmater.string(from: date)
+        }
         
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         
         view?.startLoader()
         
-        var cares: [PlantCareCreateInput] = []
+        var cares: [GPCareCreateInput] = []
         
         for plantsTime in plantsTime {
+            let dateString = dateToString(fromDate: plantsTime.time ?? Date())
             if let id = Int(plantsTime.plan.id ?? "") {
-                cares.append(PlantCareCreateInput(count: plantsTime.frequency, period: plantsTime.period, careTypeId: id))
+                cares.append(GPCareCreateInput(count: plantsTime.frequency, period: plantsTime.period, sendNotificationAt: dateString, careTypeId: id))
             }
         }
         

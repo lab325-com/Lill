@@ -9,7 +9,7 @@ import UIKit
 
 struct AddPlantTimeModel {
     let plan: CareType
-    var time: Date?
+    var time: Date? = Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date())
     var frequency: Int = 7
     var period: PeriodType = .periodTypeDay
     
@@ -204,7 +204,7 @@ extension AddPlantTimeController: AddPlantTimeProtocol {
 extension AddPlantTimeController: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
         if let index = plantsTime.firstIndex(where: {$0.plan == model.plan}) {
-            plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date)
+            plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
             tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
         }
     }

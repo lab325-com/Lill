@@ -474,7 +474,7 @@ public struct GardenPlantCreateRecordInput: GraphQLMapConvertible {
   /// - Parameters:
   ///   - plant
   ///   - cares
-  public init(plant: GardenPlantCreateInput, cares: Swift.Optional<[PlantCareCreateInput?]?> = nil) {
+  public init(plant: GardenPlantCreateInput, cares: Swift.Optional<[GPCareCreateInput?]?> = nil) {
     graphQLMap = ["plant": plant, "cares": cares]
   }
 
@@ -487,9 +487,9 @@ public struct GardenPlantCreateRecordInput: GraphQLMapConvertible {
     }
   }
 
-  public var cares: Swift.Optional<[PlantCareCreateInput?]?> {
+  public var cares: Swift.Optional<[GPCareCreateInput?]?> {
     get {
-      return graphQLMap["cares"] as? Swift.Optional<[PlantCareCreateInput?]?> ?? Swift.Optional<[PlantCareCreateInput?]?>.none
+      return graphQLMap["cares"] as? Swift.Optional<[GPCareCreateInput?]?> ?? Swift.Optional<[GPCareCreateInput?]?>.none
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "cares")
@@ -505,9 +505,8 @@ public struct GardenPlantCreateInput: GraphQLMapConvertible {
   ///   - userDescription
   ///   - gardenId
   ///   - userMainImageId
-  ///   - cares
-  public init(name: Swift.Optional<String?> = nil, userDescription: Swift.Optional<String?> = nil, gardenId: Swift.Optional<String?> = nil, userMainImageId: Swift.Optional<String?> = nil, cares: Swift.Optional<[PlantCareCreateInput?]?> = nil) {
-    graphQLMap = ["name": name, "userDescription": userDescription, "gardenId": gardenId, "userMainImageId": userMainImageId, "cares": cares]
+  public init(name: Swift.Optional<String?> = nil, userDescription: Swift.Optional<String?> = nil, gardenId: Swift.Optional<String?> = nil, userMainImageId: Swift.Optional<String?> = nil) {
+    graphQLMap = ["name": name, "userDescription": userDescription, "gardenId": gardenId, "userMainImageId": userMainImageId]
   }
 
   public var name: Swift.Optional<String?> {
@@ -545,27 +544,19 @@ public struct GardenPlantCreateInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "userMainImageId")
     }
   }
-
-  public var cares: Swift.Optional<[PlantCareCreateInput?]?> {
-    get {
-      return graphQLMap["cares"] as? Swift.Optional<[PlantCareCreateInput?]?> ?? Swift.Optional<[PlantCareCreateInput?]?>.none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "cares")
-    }
-  }
 }
 
-public struct PlantCareCreateInput: GraphQLMapConvertible {
+public struct GPCareCreateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
   ///   - count
+  ///   - name
   ///   - period
+  ///   - sendNotificationAt
   ///   - careTypeId
-  ///   - index
-  public init(count: Int, period: PeriodType, careTypeId: Int, index: Swift.Optional<Int?> = nil) {
-    graphQLMap = ["count": count, "period": period, "careTypeId": careTypeId, "index": index]
+  public init(count: Int, name: Swift.Optional<String?> = nil, period: PeriodType, sendNotificationAt: String, careTypeId: Int) {
+    graphQLMap = ["count": count, "name": name, "period": period, "sendNotificationAt": sendNotificationAt, "careTypeId": careTypeId]
   }
 
   public var count: Int {
@@ -574,6 +565,15 @@ public struct PlantCareCreateInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "count")
+    }
+  }
+
+  public var name: Swift.Optional<String?> {
+    get {
+      return graphQLMap["name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
     }
   }
 
@@ -586,21 +586,21 @@ public struct PlantCareCreateInput: GraphQLMapConvertible {
     }
   }
 
+  public var sendNotificationAt: String {
+    get {
+      return graphQLMap["sendNotificationAt"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "sendNotificationAt")
+    }
+  }
+
   public var careTypeId: Int {
     get {
       return graphQLMap["careTypeId"] as! Int
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "careTypeId")
-    }
-  }
-
-  public var index: Swift.Optional<Int?> {
-    get {
-      return graphQLMap["index"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "index")
     }
   }
 }
