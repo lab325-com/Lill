@@ -26,7 +26,7 @@ class LanguageController: BaseController {
     //----------------------------------------------
     // MARK: - IBOutlet
     //----------------------------------------------
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     //----------------------------------------------
@@ -36,7 +36,7 @@ class LanguageController: BaseController {
     let cellIdentifier = "LanguageCell"
     var titleText: String {
         return RLocalization.menu_laguage_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-    } 
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -49,7 +49,9 @@ class LanguageController: BaseController {
         setup()
     }
     
+    
     private func setup() {
+        
         navigationItem.title = titleText
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension

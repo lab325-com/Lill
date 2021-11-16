@@ -75,6 +75,8 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
     
     private weak var view: PlantsDetailOutputProtocol?
     private var request: Cancellable?
+
+    var model: PlantDataModel?
     
     required init(view: PlantsDetailOutputProtocol) {
         self.view = view
@@ -114,6 +116,7 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         let query = PlantByIdQuery(id: id)
         request = Network.shared.query(model: PlantDataModel.self, query, successHandler: { [weak self] model in
             guard let `self` = self else { return }
+            self.model = model
             self.view?.stopLoading()
             let about = self.createAbout(model: model)
             let cares = self.createCares(model: model)

@@ -605,6 +605,45 @@ public struct PlantCareCreateInput: GraphQLMapConvertible {
   }
 }
 
+public struct GardenPlantUpdateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  ///   - name
+  ///   - userMainImageId
+  public init(id: String, name: Swift.Optional<String?> = nil, userMainImageId: Swift.Optional<String?> = nil) {
+    graphQLMap = ["id": id, "name": name, "userMainImageId": userMainImageId]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: Swift.Optional<String?> {
+    get {
+      return graphQLMap["name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var userMainImageId: Swift.Optional<String?> {
+    get {
+      return graphQLMap["userMainImageId"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userMainImageId")
+    }
+  }
+}
+
 public final class DiagnoseArhiveQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -1417,6 +1456,99 @@ public final class GardenPlantCreateMutation: GraphQLMutation {
     }
 
     public struct GardenPlantCreate: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["GardenPlant"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil) {
+        self.init(unsafeResultMap: ["__typename": "GardenPlant", "id": id])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+    }
+  }
+}
+
+public final class GardenPlantUpdateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenPlantUpdate($record: GardenPlantUpdateInput!) {
+      gardenPlantUpdate(record: $record) {
+        __typename
+        id
+      }
+    }
+    """
+
+  public let operationName: String = "GardenPlantUpdate"
+
+  public var record: GardenPlantUpdateInput
+
+  public init(record: GardenPlantUpdateInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenPlantUpdate", arguments: ["record": GraphQLVariable("record")], type: .object(GardenPlantUpdate.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenPlantUpdate: GardenPlantUpdate? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenPlantUpdate": gardenPlantUpdate.flatMap { (value: GardenPlantUpdate) -> ResultMap in value.resultMap }])
+    }
+
+    public var gardenPlantUpdate: GardenPlantUpdate? {
+      get {
+        return (resultMap["gardenPlantUpdate"] as? ResultMap).flatMap { GardenPlantUpdate(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "gardenPlantUpdate")
+      }
+    }
+
+    public struct GardenPlantUpdate: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["GardenPlant"]
 
       public static var selections: [GraphQLSelection] {

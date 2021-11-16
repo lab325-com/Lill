@@ -1,0 +1,5 @@
+mutation GardenPlantUpdate($record: GardenPlantUpdateInput!) {
+	gardenPlantUpdate(record: $record) {
+		id
+	}
+}

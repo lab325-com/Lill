@@ -160,8 +160,10 @@ class PlantsDetailController: BaseController {
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
-        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
+        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            
+            PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.plantById.names, plantID: self.id)
         }
         
         let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { (action: UIAlertAction) in
@@ -311,5 +313,15 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
 extension PlantsDetailController {
     private func updateLanguage() {
         setup()
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopChangeNameProtocol
+//----------------------------------------------
+
+extension PlantsDetailController: PopChangeNameProtocol {
+    func dissmiss(controller: PopChangeNameController, text: String) {
+        nameLabel.text = text
     }
 }

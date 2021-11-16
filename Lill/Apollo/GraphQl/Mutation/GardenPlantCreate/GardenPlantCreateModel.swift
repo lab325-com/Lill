@@ -10,7 +10,3 @@ import Foundation
 struct GardenPlantCreateModel: Codable {
     let gardenPlantCreate: GardenRecordCreateModel
 }
-
-struct GardenRecordCreateModel: Codable {
-    let id: String
-}

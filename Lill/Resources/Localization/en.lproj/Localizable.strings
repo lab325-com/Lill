@@ -152,6 +152,9 @@
 "plants_search" = "Search by Name";
 "plants_uniquePlantButton" = "Add Unique";
 "plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
+"pop_change_name_button" = "Change";
+"pop_change_name_subtitle" = "Give your plant name";
+"pop_change_name_title" = "Change Name";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
 "subscription_billed_with" = "Billed %@";

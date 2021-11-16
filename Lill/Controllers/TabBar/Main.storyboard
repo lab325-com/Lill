@@ -441,7 +441,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-hE-877">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKl-L3-pLw" customClass="AnimationBackGroundSwipeLeftView" customModule="Lill" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-hE-877">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-co-mj3">
@@ -681,6 +685,7 @@
                         <viewLayoutGuide key="safeArea" id="B1r-u0-q8d"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HKl-L3-pLw" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" id="2bQ-Ve-HGW"/>
                             <constraint firstAttribute="bottom" secondItem="d10-0g-iQ9" secondAttribute="bottom" id="8Pr-OI-XYC"/>
                             <constraint firstItem="d10-0g-iQ9" firstAttribute="top" secondItem="q5Q-i6-jlZ" secondAttribute="bottom" priority="998" constant="12" id="AxK-4s-HvR"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="T7y-Mu-cvf" secondAttribute="trailing" constant="20" id="B4i-TQ-1eP"/>
@@ -698,6 +703,8 @@
                             <constraint firstItem="77e-li-0WU" firstAttribute="top" secondItem="h6Z-co-mj3" secondAttribute="bottom" constant="15" id="bV0-5f-Dzs"/>
                             <constraint firstItem="caZ-hE-877" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" id="cM8-z5-PPu"/>
                             <constraint firstItem="PGc-IL-8F9" firstAttribute="centerY" secondItem="B1r-u0-q8d" secondAttribute="centerY" id="dVV-5X-fW8"/>
+                            <constraint firstItem="HKl-L3-pLw" firstAttribute="trailing" secondItem="B1r-u0-q8d" secondAttribute="trailing" id="dmo-6E-h7J"/>
+                            <constraint firstItem="HKl-L3-pLw" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="eP5-KA-SSK"/>
                             <constraint firstItem="d10-0g-iQ9" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="fTW-Eb-Qv4"/>
                             <constraint firstAttribute="bottom" secondItem="caZ-hE-877" secondAttribute="bottom" id="gof-rL-wyZ"/>
                             <constraint firstItem="zyc-OB-Vey" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" constant="10" id="jCw-Mv-t7c"/>
@@ -707,12 +714,14 @@
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" constant="70" id="lH4-PJ-2fz"/>
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="centerX" secondItem="caZ-hE-877" secondAttribute="centerX" id="pR4-bA-xVX"/>
                             <constraint firstItem="NZo-Js-jvq" firstAttribute="centerX" secondItem="caZ-hE-877" secondAttribute="centerX" id="ydA-8x-1OD"/>
+                            <constraint firstAttribute="bottom" secondItem="HKl-L3-pLw" secondAttribute="bottom" id="ysy-u7-fbS"/>
                             <constraint firstItem="caZ-hE-877" firstAttribute="trailing" secondItem="B1r-u0-q8d" secondAttribute="trailing" id="zgO-ZZ-DSB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a07-dX-j3k"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="animationBackGroundSwipeLeftView" destination="HKl-L3-pLw" id="8VC-8Z-I6Y"/>
                         <outlet property="backToTopButton" destination="PGc-IL-8F9" id="BlO-oq-qQ7"/>
                         <outlet property="backToTopTrailingLayout" destination="IKj-if-kck" id="SZi-dQ-x0E"/>
                         <outlet property="bottomViewConstraint" destination="8Pr-OI-XYC" id="7VP-DN-1sz"/>
@@ -826,9 +835,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_main" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-e2-TLy">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_main" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-e2-TLy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <view clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gA-R0-pP8" customClass="AnimationBackGroundSwipeLeftView" customModule="Lill" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="843"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gN0-aj-abz">
                                 <rect key="frame" x="0.0" y="168" width="414" height="645"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -843,12 +856,16 @@
                         <viewLayoutGuide key="safeArea" id="T18-nQ-7rH"/>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.97254901960784312" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="1gA-R0-pP8" firstAttribute="leading" secondItem="T18-nQ-7rH" secondAttribute="leading" id="2S6-IV-yGi"/>
                             <constraint firstItem="T18-nQ-7rH" firstAttribute="bottom" secondItem="gN0-aj-abz" secondAttribute="bottom" id="3Gg-R2-3BU"/>
+                            <constraint firstItem="1gA-R0-pP8" firstAttribute="bottom" secondItem="T18-nQ-7rH" secondAttribute="bottom" constant="30" id="9zi-NB-sXN"/>
                             <constraint firstItem="Fz4-e2-TLy" firstAttribute="trailing" secondItem="T18-nQ-7rH" secondAttribute="trailing" id="Ddl-Jy-oAW"/>
                             <constraint firstItem="T18-nQ-7rH" firstAttribute="trailing" secondItem="gN0-aj-abz" secondAttribute="trailing" id="FYQ-Aq-yIV"/>
                             <constraint firstItem="gN0-aj-abz" firstAttribute="top" secondItem="X6P-0F-8ZD" secondAttribute="bottom" constant="15" id="Ygq-J9-ARe"/>
                             <constraint firstAttribute="bottom" secondItem="Fz4-e2-TLy" secondAttribute="bottom" id="dJy-SQ-pYs"/>
                             <constraint firstItem="X6P-0F-8ZD" firstAttribute="leading" secondItem="T18-nQ-7rH" secondAttribute="leading" constant="16" id="e35-W5-lIt"/>
+                            <constraint firstItem="1gA-R0-pP8" firstAttribute="trailing" secondItem="T18-nQ-7rH" secondAttribute="trailing" id="gax-kM-d2G"/>
+                            <constraint firstItem="1gA-R0-pP8" firstAttribute="top" secondItem="fTg-0i-B7C" secondAttribute="top" id="h8K-jd-Mzw"/>
                             <constraint firstItem="X6P-0F-8ZD" firstAttribute="top" secondItem="T18-nQ-7rH" secondAttribute="top" constant="24" id="iud-MQ-nTv"/>
                             <constraint firstItem="Fz4-e2-TLy" firstAttribute="leading" secondItem="T18-nQ-7rH" secondAttribute="leading" id="odc-yt-gUt"/>
                             <constraint firstItem="T18-nQ-7rH" firstAttribute="trailing" secondItem="X6P-0F-8ZD" secondAttribute="trailing" constant="16" id="qgx-oe-B2Z"/>
@@ -858,6 +875,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="geE-4w-j7W"/>
                     <connections>
+                        <outlet property="animationBackGroundSwipeLeftView" destination="1gA-R0-pP8" id="Udt-VA-dwb"/>
                         <outlet property="menuTable" destination="gN0-aj-abz" id="ezz-hU-71N"/>
                         <outlet property="titleLabel" destination="X6P-0F-8ZD" id="VQb-Yk-Gyx"/>
                     </connections>

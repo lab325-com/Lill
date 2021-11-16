@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 25 files.
+  /// This `R.file` struct is generated, and contains static references to 26 files.
   struct file {
     /// Resource file `CareType.graphql`.
     static let careTypeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CareType", pathExtension: "graphql")
@@ -165,6 +165,8 @@ struct R: Rswift.Validatable {
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
     /// Resource file `GardenPlantCreate.graphql`.
     static let gardenPlantCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCreate", pathExtension: "graphql")
+    /// Resource file `GardenPlantUpdate.graphql`.
+    static let gardenPlantUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantUpdate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
     static let gardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlants", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
@@ -237,6 +239,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlantCreate", withExtension: "graphql")`
     static func gardenPlantCreateGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantCreateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantUpdate", withExtension: "graphql")`
+    static func gardenPlantUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantUpdateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1170,7 +1178,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 34 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 35 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1230,6 +1238,8 @@ struct R: Rswift.Validatable {
     static let plantCollectionCell = _R.nib._PlantCollectionCell()
     /// Nib `PlantsDetailController`.
     static let plantsDetailController = _R.nib._PlantsDetailController()
+    /// Nib `PopChangeNameController`.
+    static let popChangeNameController = _R.nib._PopChangeNameController()
     /// Nib `PopUniquePlantController`.
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
@@ -1474,6 +1484,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopChangeNameController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popChangeNameController) instead")
+    static func popChangeNameController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popChangeNameController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopUniquePlantController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popUniquePlantController) instead")
     static func popUniquePlantController(_: Void = ()) -> UIKit.UINib {
@@ -1629,6 +1647,10 @@ struct R: Rswift.Validatable {
       return R.nib.plantsDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func popChangeNameController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popChangeNameController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func popUniquePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.popUniquePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1668,7 +1690,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 188 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 191 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -1834,10 +1856,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cares_add = Rswift.StringResource(key: "uniques_cares_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Change
+      ///
+      /// Locales: en
+      static let pop_change_name_button = Rswift.StringResource(key: "pop_change_name_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Change Name
       ///
       /// Locales: en
       static let action_edit_change_name = Rswift.StringResource(key: "action_edit_change_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Change Name
+      ///
+      /// Locales: en
+      static let pop_change_name_title = Rswift.StringResource(key: "pop_change_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Climate Deciduous Unknown
       ///
       /// Locales: en, es
@@ -1994,6 +2024,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Give your plant name
+      ///
+      /// Locales: en
+      static let pop_change_name_subtitle = Rswift.StringResource(key: "pop_change_name_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Great!
       ///
       /// Locales: en, es
@@ -3040,6 +3074,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("uniques_cares_add", bundle: bundle, comment: "")
       }
 
+      /// en translation: Change
+      ///
+      /// Locales: en
+      static func pop_change_name_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_change_name_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_change_name_button"
+        }
+
+        return NSLocalizedString("pop_change_name_button", bundle: bundle, comment: "")
+      }
+
       /// en translation: Change Name
       ///
       /// Locales: en
@@ -3053,6 +3102,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_change_name", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Name
+      ///
+      /// Locales: en
+      static func pop_change_name_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_change_name_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_change_name_title"
+        }
+
+        return NSLocalizedString("pop_change_name_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Climate Deciduous Unknown
@@ -3638,6 +3702,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscription_sub_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Give your plant name
+      ///
+      /// Locales: en
+      static func pop_change_name_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_change_name_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_change_name_subtitle"
+        }
+
+        return NSLocalizedString("pop_change_name_subtitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Great!
@@ -5299,6 +5378,7 @@ struct _R: Rswift.Validatable {
       try _OnboardingThreeController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
+      try _PopChangeNameController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
       try _SplashController.validate()
@@ -5804,6 +5884,23 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_no_favorite_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_no_favorite_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_removed_favorites_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_removed_favorites_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PopChangeNameController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PopChangeNameController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopChangeNameController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

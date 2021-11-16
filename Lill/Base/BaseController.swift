@@ -16,6 +16,8 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     //----------------------------------------------
     
     @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var animationBackGroundSwipeRightView: AnimationBackGroundSwipeRightView!
+    @IBOutlet weak var animationBackGroundSwipeLeftView: AnimationBackGroundSwipeLeftView!
     
     
     var transparentNavigationBar = false
@@ -30,11 +32,24 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     var isNeedBottomPagging = true
     var addTapOnScreen = true
     
+    
+    var timeline: Timeline?
+    
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let swipeRightView = animationBackGroundSwipeRightView {
+            view.clipsToBounds = true
+            swipeRightView.alpha = 0.7
+            timeline = TimelineSwipeRight(view: swipeRightView, duration: 2)
+        } else if let swipeLeftView = animationBackGroundSwipeLeftView {
+            view.clipsToBounds = true
+            swipeLeftView.alpha = 0.7
+            timeline = TimelineSwipeLeft(view: swipeLeftView, duration: 2)
+        }
         
         if addTapOnScreen {
             setupTapOnScreen()
@@ -49,7 +64,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        timeline?.play()
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
         
         if #available(iOS 13.0, *) {
