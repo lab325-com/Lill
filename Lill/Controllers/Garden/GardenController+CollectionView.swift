@@ -62,7 +62,7 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter.gardenPlants[safe: indexPath.row] {
-            GardenRouter(presenter: navigationController).pushGardenDetail(id: model.id)
+            GardenRouter(presenter: navigationController).pushGardenDetail(id: model.id, delegate: self)
         }
     }
 }
@@ -93,5 +93,20 @@ extension GardenController: GardenButtonCellDelegate {
     func doneCares() {
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         presenter.doneCares(gardenId: gardenId, careTypeId: selectedCareType)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailProtocolo
+//----------------------------------------------
+
+extension GardenController: GardenDetailProtocolo {
+    func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String) {
+        
+        /// not working because reload data in view will appear
+        if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
+            presenter.gardenPlants[index].changeName(text)
+            collectionView.reloadData()
+        }
     }
 }

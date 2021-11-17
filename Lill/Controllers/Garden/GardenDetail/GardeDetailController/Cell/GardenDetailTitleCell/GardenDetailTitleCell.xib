@@ -93,7 +93,7 @@
                             <constraint firstItem="Y6T-An-t0M" firstAttribute="top" secondItem="vV6-nm-fV7" secondAttribute="top" constant="21" id="6Yd-mx-yMS"/>
                             <constraint firstItem="Far-d3-Zp2" firstAttribute="leading" secondItem="Y6T-An-t0M" secondAttribute="trailing" constant="10" id="9JU-dP-93O"/>
                             <constraint firstAttribute="bottom" secondItem="cCT-GR-aj3" secondAttribute="bottom" constant="20" id="AHz-1o-8yT"/>
-                            <constraint firstItem="cCT-GR-aj3" firstAttribute="top" secondItem="Y6T-An-t0M" secondAttribute="bottom" constant="10" id="DJM-QE-4T0"/>
+                            <constraint firstItem="cCT-GR-aj3" firstAttribute="top" secondItem="Y6T-An-t0M" secondAttribute="bottom" priority="999" constant="10" id="DJM-QE-4T0"/>
                             <constraint firstItem="Far-d3-Zp2" firstAttribute="centerY" secondItem="fbn-14-0tC" secondAttribute="centerY" id="O7x-bi-FaD"/>
                             <constraint firstItem="czF-gV-rXr" firstAttribute="leading" secondItem="vV6-nm-fV7" secondAttribute="leading" id="OY1-CZ-9pC"/>
                             <constraint firstItem="cCT-GR-aj3" firstAttribute="leading" secondItem="vV6-nm-fV7" secondAttribute="leading" constant="20" id="e6J-fC-3GJ"/>
@@ -119,11 +119,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="bellButton" destination="Far-d3-Zp2" id="NBB-M2-Z8U"/>
                 <outlet property="desciptionLabel" destination="aWc-a0-weg" id="yrZ-aG-xMw"/>
                 <outlet property="locationLabel" destination="LE8-kM-fHq" id="t6v-Ul-D6J"/>
                 <outlet property="mainTitleLabel" destination="fbn-14-0tC" id="ONW-ag-Gvu"/>
+                <outlet property="topStackLayout" destination="DJM-QE-4T0" id="Ovm-VP-l2w"/>
                 <outletCollection property="topCaresViews" destination="lxR-xX-sIG" collectionClass="NSMutableArray" id="vcr-Vc-kMj"/>
                 <outletCollection property="topCaresViews" destination="jrv-hJ-fZO" collectionClass="NSMutableArray" id="CM3-84-06H"/>
                 <outletCollection property="topCaresViews" destination="HEj-0a-ofl" collectionClass="NSMutableArray" id="ffI-fq-4U4"/>

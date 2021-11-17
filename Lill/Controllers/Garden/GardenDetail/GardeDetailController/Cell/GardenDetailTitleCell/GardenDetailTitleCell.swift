@@ -9,6 +9,8 @@ import UIKit
 
 class GardenDetailTitleCell: UITableViewCell {
 
+    @IBOutlet weak var topStackLayout: NSLayoutConstraint!
+    
     @IBOutlet weak var bellButton: UIButton!
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var desciptionLabel: UILabel!
@@ -19,6 +21,7 @@ class GardenDetailTitleCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionStyle = .none
         bellButton.setTitle("", for: .normal)
     }
 
@@ -48,6 +51,15 @@ class GardenDetailTitleCell: UITableViewCell {
         for view in topCaresViews {
             view.isHidden = true
         }
+        
+        if cares.count == 0 {
+            topStackLayout.constant = -107
+            layoutIfNeeded()
+            return
+        } else {
+            topStackLayout.constant = 10
+        }
+        
         
         for index in 0..<cares.count {
             if let care = cares[safe: index],
