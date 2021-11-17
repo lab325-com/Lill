@@ -3651,14 +3651,14 @@
             "description": "",
             "args": [
               {
-                "name": "unifiedReceipt",
+                "name": "receipt",
                 "description": "",
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "GraphQLJSON",
+                    "name": "String",
                     "ofType": null
                   }
                 },
@@ -3669,7 +3669,7 @@
             ],
             "type": {
               "kind": "SCALAR",
-              "name": "String",
+              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -4331,17 +4331,6 @@
             "deprecationReason": null
           }
         ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "GraphQLJSON",
-        "description": "",
-        "specifiedByUrl": null,
-        "fields": null,
-        "inputFields": null,
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
@@ -5179,7 +5168,20 @@
           {
             "name": "args",
             "description": null,
-            "args": [],
+            "args": [
+              {
+                "name": "includeDeprecated",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": "false",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -5670,6 +5672,17 @@
             "deprecationReason": null
           }
         ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "GraphQLJSON",
+        "description": "",
+        "specifiedByUrl": null,
+        "fields": null,
+        "inputFields": null,
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null

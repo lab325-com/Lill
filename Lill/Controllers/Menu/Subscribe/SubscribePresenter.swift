@@ -61,7 +61,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 
                 let receiptData = SwiftyStoreKit.localReceiptData
                 if let receiptString = receiptData?.base64EncodedString(options: []) {
-                    let mutation = OrderCreateMutation(unifiedReceipt: receiptString)
+                    let mutation = OrderCreateMutation(receipt: receiptString)
                     let _ = Network.shared.mutation(model: OrderCreate.self, mutation, successHandler: { [weak self] model in
                         self?.view?.stopLoading()
                         purchaseSuccess(true, nil)

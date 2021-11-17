@@ -61,7 +61,7 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let model = gardenPlants[safe: indexPath.row] {
+        if let model = presenter.gardenPlants[safe: indexPath.row] {
             GardenRouter(presenter: navigationController).pushGardenDetail(id: model.id)
         }
     }

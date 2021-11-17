@@ -1646,21 +1646,21 @@ public final class OrderCreateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation OrderCreate($unifiedReceipt: GraphQLJSON!) {
-      orderCreate(unifiedReceipt: $unifiedReceipt)
+    mutation OrderCreate($receipt: String!) {
+      orderCreate(receipt: $receipt)
     }
     """
 
   public let operationName: String = "OrderCreate"
 
-  public var unifiedReceipt: String
+  public var receipt: String
 
-  public init(unifiedReceipt: String) {
-    self.unifiedReceipt = unifiedReceipt
+  public init(receipt: String) {
+    self.receipt = receipt
   }
 
   public var variables: GraphQLMap? {
-    return ["unifiedReceipt": unifiedReceipt]
+    return ["receipt": receipt]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -1668,7 +1668,7 @@ public final class OrderCreateMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("orderCreate", arguments: ["unifiedReceipt": GraphQLVariable("unifiedReceipt")], type: .scalar(String.self)),
+        GraphQLField("orderCreate", arguments: ["receipt": GraphQLVariable("receipt")], type: .scalar(Bool.self)),
       ]
     }
 
@@ -1678,13 +1678,13 @@ public final class OrderCreateMutation: GraphQLMutation {
       self.resultMap = unsafeResultMap
     }
 
-    public init(orderCreate: String? = nil) {
+    public init(orderCreate: Bool? = nil) {
       self.init(unsafeResultMap: ["__typename": "Mutation", "orderCreate": orderCreate])
     }
 
-    public var orderCreate: String? {
+    public var orderCreate: Bool? {
       get {
-        return resultMap["orderCreate"] as? String
+        return resultMap["orderCreate"] as? Bool
       }
       set {
         resultMap.updateValue(newValue, forKey: "orderCreate")
