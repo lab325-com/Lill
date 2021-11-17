@@ -30,10 +30,6 @@ class GardenController: BaseController {
 
     lazy var presenter = GardenPresenter(view: self)
 
-    var sadGardenPlants = [GardenPlantModel]()
-    var happyGardenPlants = [GardenPlantModel]()
-    var gardenPlants = [GardenPlantModel]()
-
     let cellIdentifier = String(describing: GardenViewCell.self)
     let cellButtonIdentifier = String(describing: GardenButtonCell.self)
 
@@ -64,7 +60,6 @@ class GardenController: BaseController {
     //----------------------------------------------
     
     private func getData() {
-        presenter.clearData()
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
             presenter.getGardenPlants(gardenId: gardenId)
@@ -109,9 +104,7 @@ class GardenController: BaseController {
     // MARK: - Actions
     //----------------------------------------------
 
-    @IBAction func selectStackAction(_ sender: UIButton) {
-        presenter.clearData()
-        
+    @IBAction func selectStackAction(_ sender: UIButton) {        
         selectedCareType = sender.tag
         scrollToTop(animated: true)
         updateButtonsStack()
@@ -145,31 +138,29 @@ extension GardenController: GardenOutputProtocol {
     func successCaresByGarden(model: CaresByGardenDataModel) {
                 
         careSectionView.isHidden = false
-        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = sadGardenPlants.count == 0 ? false : true
+        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
         
-        for item in model.caresByGarden {
-            switch item.careType.name {
+        for care in model.caresByGarden {
+            switch care.careType.name {
             case .humidity :
                 careViews.first(where:{$0.tag == 1})?.isHidden = false
-                careLabels.first(where: {$0.tag == 1})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+                careLabels.first(where: {$0.tag == 1})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
             case .misting:
                 careViews.first(where:{$0.tag == 2})?.isHidden = false
-                careLabels.first(where: {$0.tag == 2})?.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+                careLabels.first(where: {$0.tag == 2})?.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
             case .rotating:
                 careViews.first(where:{$0.tag == 3})?.isHidden = false
-                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
             case .watering:
                 careViews.first(where:{$0.tag == 4})?.isHidden = false
-                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(item.careCount)"
+                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
             }
         }
     }
 
     func successGardenPlants() {
-        gardenPlants = presenter.gardenPlants
-        sadGardenPlants = presenter.sadGardenPlants
-        happyGardenPlants = presenter.happyGardenPlants
-
+        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
+        
         collectionView.reloadData()
     }
 

@@ -25,7 +25,7 @@ protocol GardenPresenterProtocol: AnyObject {
     func getCaresByGarden(gardenId: String)
     func getGardenPlants(gardenId: String)
     func getGardenPlants(gardenId: String, careTypeId: Int)
-    func doneCares(gardenId: String)
+    func doneCares(gardenId: String, careTypeId: Int)
     func clearData()
 }
 
@@ -34,9 +34,9 @@ class GardenPresenter: GardenPresenterProtocol {
     private weak var view: GardenOutputProtocol?
     private var request: Cancellable?
     
-    var gardenPlants: [GardenPlantModel] = []
-    var sadGardenPlants: [GardenPlantModel] = []
-    var happyGardenPlants: [GardenPlantModel] = []
+    var gardenPlants = [GardenPlantModel]()
+    var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
 
     required init(view: GardenOutputProtocol) {
         self.view = view
@@ -58,13 +58,17 @@ class GardenPresenter: GardenPresenterProtocol {
     }
     
     func getGardenPlants(gardenId: String) {
+        clearData()
+        
         let group = DispatchGroup()
         
         group.enter()
         let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
             group.leave()
-            self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
+            if let sadPlants = model.gardenPlants.gardenPlants {
+                self?.sadGardenPlants = sadPlants
+            }
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)
@@ -74,7 +78,9 @@ class GardenPresenter: GardenPresenterProtocol {
         let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: true)
         request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
             group.leave()
-            self?.happyGardenPlants = model.gardenPlants.gardenPlants ?? []
+            if let happyPlants = model.gardenPlants.gardenPlants {
+                self?.happyGardenPlants = happyPlants
+            }
         }, failureHandler: { [weak self] error in
             group.leave()
             self?.view?.failure(error: error.localizedDescription)
@@ -89,6 +95,8 @@ class GardenPresenter: GardenPresenterProtocol {
     }
     
     func getGardenPlants(gardenId: String, careTypeId: Int) {
+        clearData()
+        
         request?.cancel()
         
         let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
@@ -101,12 +109,18 @@ class GardenPresenter: GardenPresenterProtocol {
         })
     }
     
-    func doneCares(gardenId: String) {
+    func doneCares(gardenId: String, careTypeId: Int) {
+        clearData()
+        
         view?.startLoader()
         
         request?.cancel()
         
-        let mutation = DoneAllCaresByGardenMutation(gardenId: gardenId)
+        var mutation = DoneAllCaresByGardenMutation(gardenId: gardenId)
+        if careTypeId == 0 {
+            mutation = DoneAllCaresByGardenMutation(gardenId: gardenId, careTypeId: careTypeId)
+        }
+        
         request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successDoneAllCaresByGarden(model: model)

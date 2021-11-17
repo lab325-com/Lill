@@ -2028,6 +2028,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
             period
             CareType {
               __typename
+              id
               name
             }
           }
@@ -2329,6 +2330,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .scalar(GraphQLID.self)),
                 GraphQLField("name", type: .scalar(String.self)),
               ]
             }
@@ -2339,8 +2341,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(name: String? = nil) {
-              self.init(unsafeResultMap: ["__typename": "CareType", "name": name])
+            public init(id: GraphQLID? = nil, name: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "CareType", "id": id, "name": name])
             }
 
             public var __typename: String {
@@ -2349,6 +2351,15 @@ public final class GardenPlantsQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var id: GraphQLID? {
+              get {
+                return resultMap["id"] as? GraphQLID
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
               }
             }
 
