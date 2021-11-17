@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 public class AnimationBackGroundSwipeLeftView: UIView {
     public struct Defaults {
         public static let size = CGSize(width: 390, height: 844)
