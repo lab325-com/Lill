@@ -257,7 +257,7 @@
 		023BBB16274413EF00DCFFF1 /* GardeDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardeDetailController.xib; sourceTree = "<group>"; };
 		023BBB192744150900DCFFF1 /* GardenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenRouter.swift; sourceTree = "<group>"; };
 		023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenDetailPresenter.swift; sourceTree = "<group>"; };
-		023BBB1F27441C7F00DCFFF1 /* GardenPlanById.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlanById.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlanById/GardenPlanById.graphql; sourceTree = SOURCE_ROOT; };
+		023BBB1F27441C7F00DCFFF1 /* GardenPlanById.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlanById.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlanById/GardenPlanById.graphql; sourceTree = SOURCE_ROOT; };
 		023BBB2127441D3C00DCFFF1 /* GardenPlanByIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlanByIDModel.swift; path = Lill/Apollo/GraphQl/Query/GardenPlanById/GardenPlanByIDModel.swift; sourceTree = SOURCE_ROOT; };
 		02493DD42727E38A008C2064 /* PlantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailController.swift; sourceTree = "<group>"; };
 		02493DD52727E38A008C2064 /* PlantsDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantsDetailController.xib; sourceTree = "<group>"; };
@@ -1855,7 +1855,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2164,7 +2164,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2314,7 +2314,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2344,7 +2344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
