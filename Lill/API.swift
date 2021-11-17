@@ -1668,7 +1668,7 @@ public final class OrderCreateMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("orderCreate", arguments: ["unifiedReceipt": GraphQLVariable("unifiedReceipt")], type: .scalar(String.self)),
+        GraphQLField("orderCreate", arguments: ["unifiedReceipt": GraphQLVariable("unifiedReceipt")], type: .scalar(Bool.self)),
       ]
     }
 
@@ -1678,13 +1678,13 @@ public final class OrderCreateMutation: GraphQLMutation {
       self.resultMap = unsafeResultMap
     }
 
-    public init(orderCreate: String? = nil) {
+    public init(orderCreate: Bool? = nil) {
       self.init(unsafeResultMap: ["__typename": "Mutation", "orderCreate": orderCreate])
     }
 
-    public var orderCreate: String? {
+    public var orderCreate: Bool? {
       get {
-        return resultMap["orderCreate"] as? String
+        return resultMap["orderCreate"] as? Bool
       }
       set {
         resultMap.updateValue(newValue, forKey: "orderCreate")

@@ -35,6 +35,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
     private var request: Cancellable?
     
     var model: GardenPlanByIDModel?
+    var cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]?
     
     required init(view: GardenDetailOutputProtocol) {
         self.view = view
@@ -53,6 +54,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
             
             let about = self.createAbout(model: model.gardenPlantById.plant?.climate)
             let cares = self.createCares(model: model)
+            self.cares = cares
             self.view?.success(model: model, abouts: about, cares: cares)
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()

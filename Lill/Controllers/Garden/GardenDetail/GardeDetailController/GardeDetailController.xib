@@ -31,6 +31,7 @@
                 <outlet property="moreOnWikiButton" destination="WVs-wY-Uu6" id="6qd-gb-XWn"/>
                 <outlet property="nameLabel" destination="j7Y-ih-6U4" id="M5l-Ud-o9R"/>
                 <outlet property="scrollView" destination="a5h-Ng-j1J" id="ADE-cO-wXa"/>
+                <outlet property="tableView" destination="zFK-7O-Wbd" id="nU3-dR-4eY"/>
                 <outlet property="topAboutLayout" destination="fHu-xB-3Be" id="aWL-Yj-dvv"/>
                 <outlet property="topCareLayout" destination="aa7-KY-8B8" id="tum-se-7KH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -71,7 +72,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Mgd-Pk-cnL">
                     <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5h-Ng-j1J">
+                <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5h-Ng-j1J">
                     <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI2-kn-nKV">
@@ -418,14 +419,42 @@
                         <constraint firstAttribute="bottom" secondItem="JI2-kn-nKV" secondAttribute="bottom" id="hOs-w2-ypR"/>
                     </constraints>
                 </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zFK-7O-Wbd">
+                    <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="nez-Ct-6PW">
+                        <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-hv-YoW">
+                                <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.0039215686269999999" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bsv-hv-YoW" firstAttribute="leading" secondItem="nez-Ct-6PW" secondAttribute="leading" id="Ge6-Ys-Qzi"/>
+                            <constraint firstAttribute="bottom" secondItem="bsv-hv-YoW" secondAttribute="bottom" id="QbA-pS-fnH"/>
+                            <constraint firstAttribute="trailing" secondItem="bsv-hv-YoW" secondAttribute="trailing" id="V6V-9n-Caj"/>
+                            <constraint firstItem="bsv-hv-YoW" firstAttribute="top" secondItem="nez-Ct-6PW" secondAttribute="top" id="hLa-yj-XkG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="kkQ-bA-GHK"/>
+                        <outlet property="delegate" destination="-1" id="eeu-5h-a5T"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="zFK-7O-Wbd" secondAttribute="bottom" id="2MP-49-7On"/>
                 <constraint firstAttribute="bottom" secondItem="a5h-Ng-j1J" secondAttribute="bottom" id="4zC-oj-4Jh"/>
                 <constraint firstAttribute="trailing" secondItem="a5h-Ng-j1J" secondAttribute="trailing" id="77a-cs-6jy"/>
+                <constraint firstItem="zFK-7O-Wbd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8za-3n-l3a"/>
                 <constraint firstItem="Mgd-Pk-cnL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Z9-ST-dUG"/>
                 <constraint firstItem="a5h-Ng-j1J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BkJ-5L-zod"/>
+                <constraint firstAttribute="trailing" secondItem="zFK-7O-Wbd" secondAttribute="trailing" id="Qy9-4C-Ixt"/>
                 <constraint firstItem="Mgd-Pk-cnL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBY-kw-O5N"/>
+                <constraint firstItem="zFK-7O-Wbd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uwp-pd-4Lx"/>
                 <constraint firstItem="a5h-Ng-j1J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jhn-oi-kw5"/>
                 <constraint firstItem="yBk-wA-veq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="900" id="lvu-LE-PTq"/>
                 <constraint firstItem="fyk-Ar-pQ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nwp-df-gKy"/>

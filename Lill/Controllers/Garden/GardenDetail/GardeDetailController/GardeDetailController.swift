@@ -14,6 +14,21 @@ import Kingfisher
 
 class GardeDetailController: BaseController {
 
+    var kTableHeaderHeight:CGFloat = 250.0
+    var headerView: UIView!
+    private let cellTitleIdentifier = "GardenDetailTitleCell"
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //----------------------------------------------
     // MARK: - IBOutlet
     //----------------------------------------------
@@ -84,6 +99,18 @@ class GardeDetailController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        updateHeaderView()
+        
+        tableView.register(UINib(nibName: cellTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellTitleIdentifier)
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableView.automaticDimension
         
         
         bellButton.setTitle("", for: .normal)
@@ -104,6 +131,29 @@ class GardeDetailController: BaseController {
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
         updateLanguage()
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateHeaderView()
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    
+    func updateHeaderView() {
+        
+        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
+        if tableView.contentOffset.y < -kTableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
+        
+        headerView.frame = headerRect
     }
     
     //----------------------------------------------
@@ -171,22 +221,7 @@ extension GardeDetailController: GardenDetailOutputProtocol {
                 
         mainImageView.kf.setImage(with: URL(string: model.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
 
-        nameLabel.text = model.gardenPlantById.name ?? ""
-        
-        if let userDescription = model.gardenPlantById.userDescription {
-            descriptionLabel.isHidden = false
-            descriptionLabel.text = userDescription
-        } else {
-            descriptionLabel.isHidden = true
-        }
-        
-        if let locationName = model.gardenPlantById.garden?.name {
-            locationLabel.isHidden = false
-            locationLabel.text = locationName
-        } else {
-            locationLabel.isHidden = true
-        }
-        
+       
         wikiUrl = model.gardenPlantById.plant?.wikiUrl ?? ""
 
         UIView.animate(withDuration: 0.3) { [weak self] in
@@ -295,5 +330,27 @@ extension GardeDetailController {
 extension GardeDetailController: PopChangeNameProtocol {
     func dissmiss(controller: PopChangeNameController, text: String) {
         nameLabel.text = text
+    }
+}
+
+extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
+        
+        if let model = presenter.model, let cares = presenter.cares {
+            cell.setupCell(model: model, cares: cares)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            tableView.bringSubviewToFront(cell)
+        }
     }
 }
