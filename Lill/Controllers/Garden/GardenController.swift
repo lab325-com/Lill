@@ -10,7 +10,7 @@ class GardenController: BaseController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addPantLabel: UILabel!
 
-    @IBOutlet weak var careSectionView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var careViews: [ShadowView]!
     @IBOutlet var careButtons: [UIButton]!
@@ -46,20 +46,14 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        scrollToTop(animated: true)
+        getGardenPlants()
     }
 
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
     
-    private func getData() {
+    private func getGardenPlants() {
         if let gardenId = KeychainService.standard.me?.defaultGardenId {
             presenter.getCaresByGarden(gardenId: gardenId)
             presenter.getGardenPlants(gardenId: gardenId)
@@ -68,6 +62,7 @@ class GardenController: BaseController {
 
     private func setup() {
         hiddenNavigationBar = true
+        scrollView.contentInset.left = 12
         updateButtonsStack()
 
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
@@ -137,8 +132,14 @@ extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
                 
-        careSectionView.isHidden = false
-        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
+//        careSectionView.isHidden = false
+        
+        for careView in careViews {
+            switch careView.tag {
+            case 0: careView.isHidden = false
+            default: careView.isHidden = true
+            }
+        }
         
         for care in model.caresByGarden {
             switch care.careType.name {
@@ -159,14 +160,12 @@ extension GardenController: GardenOutputProtocol {
     }
 
     func successGardenPlants() {
-        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
-        
         collectionView.reloadData()
     }
 
     func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel) {
         if model.doneAllCaresByGarden {
-            getData()
+            getGardenPlants()
             scrollToTop(animated: true)
         }
     }
