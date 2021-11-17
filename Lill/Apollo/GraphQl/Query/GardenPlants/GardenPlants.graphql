@@ -18,6 +18,7 @@ query GardenPlants($gardenId: String!,
 				count
 				period
 				CareType {
+					id
 					name
 				}
 			}

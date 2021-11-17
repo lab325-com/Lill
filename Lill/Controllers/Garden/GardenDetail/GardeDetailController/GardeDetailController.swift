@@ -218,7 +218,7 @@ class GardeDetailController: BaseController {
 
 extension GardeDetailController: GardenDetailOutputProtocol {
     func success(model: GardenPlanByIDModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
-                
+        tableView.reloadData()
         mainImageView.kf.setImage(with: URL(string: model.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
 
        

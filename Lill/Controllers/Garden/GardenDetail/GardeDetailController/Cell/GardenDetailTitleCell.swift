@@ -45,9 +45,14 @@ class GardenDetailTitleCell: UITableViewCell {
             locationLabel.isHidden = true
         }
         
+        for view in topCaresViews {
+            view.isHidden = true
+        }
+        
         for index in 0..<cares.count {
             if let care = cares[safe: index],
                let topView = topCaresViews[safe:index] {
+                topView.isHidden = false
                 topView.setupWithDate(care: care)
             }
         }

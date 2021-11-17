@@ -1646,21 +1646,21 @@ public final class OrderCreateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation OrderCreate($unifiedReceipt: GraphQLJSON!) {
-      orderCreate(unifiedReceipt: $unifiedReceipt)
+    mutation OrderCreate($receipt: String!) {
+      orderCreate(receipt: $receipt)
     }
     """
 
   public let operationName: String = "OrderCreate"
 
-  public var unifiedReceipt: String
+  public var receipt: String
 
-  public init(unifiedReceipt: String) {
-    self.unifiedReceipt = unifiedReceipt
+  public init(receipt: String) {
+    self.receipt = receipt
   }
 
   public var variables: GraphQLMap? {
-    return ["unifiedReceipt": unifiedReceipt]
+    return ["receipt": receipt]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -1668,7 +1668,7 @@ public final class OrderCreateMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("orderCreate", arguments: ["unifiedReceipt": GraphQLVariable("unifiedReceipt")], type: .scalar(Bool.self)),
+        GraphQLField("orderCreate", arguments: ["receipt": GraphQLVariable("receipt")], type: .scalar(Bool.self)),
       ]
     }
 
@@ -2917,6 +2917,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
             period
             CareType {
               __typename
+              id
               name
             }
           }
@@ -3218,6 +3219,7 @@ public final class GardenPlantsQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .scalar(GraphQLID.self)),
                 GraphQLField("name", type: .scalar(String.self)),
               ]
             }
@@ -3228,8 +3230,8 @@ public final class GardenPlantsQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(name: String? = nil) {
-              self.init(unsafeResultMap: ["__typename": "CareType", "name": name])
+            public init(id: GraphQLID? = nil, name: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "CareType", "id": id, "name": name])
             }
 
             public var __typename: String {
@@ -3238,6 +3240,15 @@ public final class GardenPlantsQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var id: GraphQLID? {
+              get {
+                return resultMap["id"] as? GraphQLID
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
               }
             }
 
