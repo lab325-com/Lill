@@ -23,6 +23,12 @@
 		023786272706DAEC0092F63A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 023786262706DAEC0092F63A /* Kingfisher */; };
 		023786292706DD020092F63A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023786282706DD020092F63A /* Collection+Extension.swift */; };
 		0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0237862A2706ED5F0092F63A /* PlantsController+CollectionView.swift */; };
+		023BBB17274413EF00DCFFF1 /* GardeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BBB15274413EF00DCFFF1 /* GardeDetailController.swift */; };
+		023BBB18274413EF00DCFFF1 /* GardeDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023BBB16274413EF00DCFFF1 /* GardeDetailController.xib */; };
+		023BBB1A2744150900DCFFF1 /* GardenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BBB192744150900DCFFF1 /* GardenRouter.swift */; };
+		023BBB1D2744173200DCFFF1 /* GardenDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */; };
+		023BBB2027441C7F00DCFFF1 /* GardenPlanById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 023BBB1F27441C7F00DCFFF1 /* GardenPlanById.graphql */; };
+		023BBB2227441D3C00DCFFF1 /* GardenPlanByIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BBB2127441D3C00DCFFF1 /* GardenPlanByIDModel.swift */; };
 		02493DD62727E38A008C2064 /* PlantsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02493DD42727E38A008C2064 /* PlantsDetailController.swift */; };
 		02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02493DD52727E38A008C2064 /* PlantsDetailController.xib */; };
 		02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02493DD92727F125008C2064 /* DetailAboutView.swift */; };
@@ -247,6 +253,12 @@
 		023786222706D7230092F63A /* PlantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsPresenter.swift; sourceTree = "<group>"; };
 		023786282706DD020092F63A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		0237862A2706ED5F0092F63A /* PlantsController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantsController+CollectionView.swift"; sourceTree = "<group>"; };
+		023BBB15274413EF00DCFFF1 /* GardeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardeDetailController.swift; sourceTree = "<group>"; };
+		023BBB16274413EF00DCFFF1 /* GardeDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardeDetailController.xib; sourceTree = "<group>"; };
+		023BBB192744150900DCFFF1 /* GardenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenRouter.swift; sourceTree = "<group>"; };
+		023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenDetailPresenter.swift; sourceTree = "<group>"; };
+		023BBB1F27441C7F00DCFFF1 /* GardenPlanById.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlanById.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlanById/GardenPlanById.graphql; sourceTree = SOURCE_ROOT; };
+		023BBB2127441D3C00DCFFF1 /* GardenPlanByIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlanByIDModel.swift; path = Lill/Apollo/GraphQl/Query/GardenPlanById/GardenPlanByIDModel.swift; sourceTree = SOURCE_ROOT; };
 		02493DD42727E38A008C2064 /* PlantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailController.swift; sourceTree = "<group>"; };
 		02493DD52727E38A008C2064 /* PlantsDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantsDetailController.xib; sourceTree = "<group>"; };
 		02493DD92727F125008C2064 /* DetailAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAboutView.swift; sourceTree = "<group>"; };
@@ -528,6 +540,33 @@
 				023786222706D7230092F63A /* PlantsPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		023BBB14274413D500DCFFF1 /* GardeDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				023BBB15274413EF00DCFFF1 /* GardeDetailController.swift */,
+				023BBB16274413EF00DCFFF1 /* GardeDetailController.xib */,
+			);
+			path = GardeDetailController;
+			sourceTree = "<group>";
+		};
+		023BBB1B2744171100DCFFF1 /* GardenDetail */ = {
+			isa = PBXGroup;
+			children = (
+				023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */,
+				023BBB14274413D500DCFFF1 /* GardeDetailController */,
+			);
+			path = GardenDetail;
+			sourceTree = "<group>";
+		};
+		023BBB1E27441C5000DCFFF1 /* GardenPlanById */ = {
+			isa = PBXGroup;
+			children = (
+				023BBB1F27441C7F00DCFFF1 /* GardenPlanById.graphql */,
+				023BBB2127441D3C00DCFFF1 /* GardenPlanByIDModel.swift */,
+			);
+			path = GardenPlanById;
 			sourceTree = "<group>";
 		};
 		02493DD32727E35F008C2064 /* PlantsDetail */ = {
@@ -1227,6 +1266,7 @@
 		FA1CEC4F273C559C003A4F84 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				023BBB1E27441C5000DCFFF1 /* GardenPlanById */,
 				02A4604C274279C200D5D931 /* CareType */,
 				FAFCF35327157FA900C3134E /* Me */,
 				FA64050F2722F9DE000124A5 /* StartDiagnose */,
@@ -1452,6 +1492,8 @@
 		FAB3BD212704AB710075C0C0 /* Garden */ = {
 			isa = PBXGroup;
 			children = (
+				023BBB192744150900DCFFF1 /* GardenRouter.swift */,
+				023BBB1B2744171100DCFFF1 /* GardenDetail */,
 				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
 				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
 				026CFC09270C1FD4003A0687 /* Cell */,
@@ -1762,12 +1804,14 @@
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
+				023BBB2027441C7F00DCFFF1 /* GardenPlanById.graphql in Resources */,
 				FAD49CE427033B0B005D6E75 /* GoogleService-Info.plist in Resources */,
 				0291DD9C27282944008E9F6F /* DetailCaresView.xib in Resources */,
 				02A4B64E2742C91C007E0DA2 /* GardenPlantUpdate.graphql in Resources */,
 				02A4604E274279E300D5D931 /* CareType.graphql in Resources */,
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
+				023BBB18274413EF00DCFFF1 /* GardeDetailController.xib in Resources */,
 				FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1868,7 +1912,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://faker.graphqleditor.com/3knbh/lill/graphql\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://api.front.dev.lill.mob325.com/graphql\"\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://faker.graphqleditor.com/3knbh/lill/graphql\"\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://api.front.dev.lill.mob325.com/graphql\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1884,6 +1928,7 @@
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
 				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
 				02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */,
+				023BBB2227441D3C00DCFFF1 /* GardenPlanByIDModel.swift in Sources */,
 				02D4BFC92743BC7800B9322B /* TimelineSwipeRight.swift in Sources */,
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
 				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
@@ -1894,6 +1939,7 @@
 				02D4BFB82743B94D00B9322B /* Timeline.swift in Sources */,
 				FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */,
 				02D4BFB92743B94D00B9322B /* CAKeyframeAnimation+Extension.swift in Sources */,
+				023BBB1D2744173200DCFFF1 /* GardenDetailPresenter.swift in Sources */,
 				FAFCF3642715D1A500C3134E /* IdentifyPresenter.swift in Sources */,
 				02A46059274297C000D5D931 /* GardenPlantCreateModel.swift in Sources */,
 				F3235D2E272E6CE100B4CE5E /* MenuPresenter.swift in Sources */,
@@ -1917,6 +1963,7 @@
 				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */,
 				02C6C104273A684A003C47FF /* RestCalls.swift in Sources */,
+				023BBB1A2744150900DCFFF1 /* GardenRouter.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
 				02D4BFBD2743B94D00B9322B /* Sound.swift in Sources */,
 				02BBBE75273E5FC200E97712 /* AddPlantTitleCell.swift in Sources */,
@@ -1937,6 +1984,7 @@
 				02D4BFB62743B94D00B9322B /* UIViewFlow+Extension.swift in Sources */,
 				02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */,
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
+				023BBB17274413EF00DCFFF1 /* GardeDetailController.swift in Sources */,
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
 				021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */,
 				025ECF21273D5CFE0041A7BD /* AddPlantTimeCell.swift in Sources */,

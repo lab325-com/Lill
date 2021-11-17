@@ -29,20 +29,42 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
     func setup(care: (type: PlantsCareType, care: CaresModel)) {
         careImageView.tintColor = UIColor(rgb: 0x7CDAA3)
         
-        switch care.type {
-        case .humidity:
-            careImageView.image = UIImage(named: "plants_detail_humidity_ic")
-            careTitleLabel.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .misting:
-            careImageView.image = UIImage(named: "plants_detail_misting_ic")
-            careTitleLabel.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .rotating:
-            careImageView.image = UIImage(named: "plants_detail_rotating_ic")
-            careTitleLabel.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .watering:
-            careImageView.image = UIImage(named: "plants_detail_watering_ic")
-            careTitleLabel.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        }
+        careImageView.image = care.type.image
+        careTitleLabel.text = care.type.text
+        
         careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
+    }
+    
+    func setup(care: (type: PlantsCareType, care: GardenShortPlantCaresModel)) {
+        careImageView.tintColor = UIColor(rgb: 0x7CDAA3)
+        
+        careImageView.image = care.type.image
+        careTitleLabel.text = care.type.text
+        careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
+    }
+    
+    func setupWithDate(care: (type: PlantsCareType, care: GardenShortPlantCaresModel)) {
+        careImageView.tintColor = UIColor.white
+        careTitleLabel.textColor = UIColor.white
+        careValueLabel.textColor = UIColor.white
+        
+        let days = Calendar.current.dateComponents([.day], from: Date(), to: care.care.date).day ?? 0
+        
+        backView.backgroundColor = care.care.status.color
+        
+        careImageView.image = care.type.image
+        careTitleLabel.text = care.type.text
+        
+        
+        if days < 0 {
+            careValueLabel.text = "\(days * -1) days"
+        } else if days == 0 {
+            careValueLabel.text = "today"
+        } else {
+            careValueLabel.text = "\(days) days"
+        }
+        
+        
+        
     }
 }

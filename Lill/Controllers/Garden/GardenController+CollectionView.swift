@@ -41,7 +41,9 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("select item")
+        if let model = gardenPlants[safe: indexPath.row] {
+            GardenRouter(presenter: navigationController).pushGardenDetail(id: model.id)
+        }
     }
 }
 

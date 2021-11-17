@@ -96,10 +96,7 @@ class PlantsDetailController: BaseController {
         moreOnWikiButton.layer.cornerRadius = 22
         moreOnWikiButton.layer.borderWidth = 1
         moreOnWikiButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
-        
-        
-        let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
-        navigationItem.rightBarButtonItems = [dots]
+    
     }
     
     private func updateFavoriteButton(isFavorite: Bool) {
@@ -146,51 +143,6 @@ class PlantsDetailController: BaseController {
         if let url = URL(string: wikiUrl) {
             UIApplication.shared.open(url)
         }
-    }
-    
-    @objc func editTapped() {
-        
-        let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let changeNameTitle = RLocalization.action_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let addPhotoTitle = RLocalization.action_edit_add_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let editTitle = RLocalization.action_edit_care_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let cloneTitle = RLocalization.action_edit_clone_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let deleteTitle = RLocalization.action_edit_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        
-        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            
-            PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.plantById.names, plantID: self.id)
-        }
-        
-        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
-        }
-        
-        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
-        }
-        
-        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
-        }
-        
-        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { (action: UIAlertAction) in
-            // Code to unfollow
-        }
-        
-        let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
-        
-        alert.addAction(changeName)
-        alert.addAction(addPhoto)
-        alert.addAction(editCarePlan)
-        alert.addAction(clonePlant)
-        alert.addAction(deletePlant)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -241,7 +193,7 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
         for index in 0..<abouts.count {
             if let about = abouts[safe: index],  let view = aboutViews[safe: index] {
                 view.isHidden = false
-                view.setup(about: about, model: model)
+                view.setup(about: about, model: model.plantById.climate)
             }
         }
         
@@ -313,15 +265,5 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
 extension PlantsDetailController {
     private func updateLanguage() {
         setup()
-    }
-}
-
-//----------------------------------------------
-// MARK: - PopChangeNameProtocol
-//----------------------------------------------
-
-extension PlantsDetailController: PopChangeNameProtocol {
-    func dissmiss(controller: PopChangeNameController, text: String) {
-        nameLabel.text = text
     }
 }
