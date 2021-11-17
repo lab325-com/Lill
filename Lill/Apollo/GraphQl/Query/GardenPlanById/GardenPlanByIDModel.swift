@@ -27,17 +27,21 @@ enum StatusGardenCareType: String, Codable {
 }
 
 struct GardenPlanByIDModel: Codable {
-    let gardenPlantById:  GardenIDModel
+    var gardenPlantById:  GardenIDModel
 }
 
 struct GardenIDModel: Codable {
     let id:  String
-    let name: String?
+    var name: String?
     let userDescription: String?
     let userMainImage: MediaModel?
     let plant: GardenShortPlantModel?
     let garden: GardenMiniModel?
     let gardenPlantCares: [GardenShortPlantCaresModel]
+    
+    mutating func changeName(_ name: String) {
+        self.name = name
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

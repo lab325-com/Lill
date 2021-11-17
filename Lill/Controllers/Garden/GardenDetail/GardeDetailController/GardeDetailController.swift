@@ -7,42 +7,20 @@
 
 import UIKit
 import Kingfisher
+import SwiftUI
 
-//protocol GardenDetailPresenter: AnyObject {
-//    func gardeDetailChangeName(con)
-//}
+protocol GardenDetailProtocolo: AnyObject {
+    func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String)
+}
 
 class GardeDetailController: BaseController {
-
+    
     //----------------------------------------------
     // MARK: - IBOutlet
     //----------------------------------------------
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var bellButton: UIButton!
-    @IBOutlet weak var locationLabel: UILabel!
-    
-    @IBOutlet var topCaresViews: [DetailCaresView]!
-    
-    @IBOutlet weak var caresTitleLabel: UILabel!
-    
-    @IBOutlet weak var careView: UIView!
-    @IBOutlet weak var topCareLayout: NSLayoutConstraint!
-    
-    @IBOutlet weak var aboutView: UIView!
-    @IBOutlet weak var topAboutLayout: NSLayoutConstraint!
-    
-    @IBOutlet var aboutViews: [DetailAboutView]!
-    @IBOutlet var caresViews: [DetailCaresView]!
-    
-    @IBOutlet var verticalStacks: [UIStackView]!
-    @IBOutlet var separeteViews: [UIView]!
-    @IBOutlet var middleLinesViews: [UIView]!
-    
-    @IBOutlet weak var moreOnWikiButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topImageView: UIImageView!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -50,15 +28,24 @@ class GardeDetailController: BaseController {
     
     private lazy var presenter = GardenDetailPresenter(view: self)
     private var id: String
-    private var isFavorite: Bool = false
     private var wikiUrl: String = ""
+    private var kTableHeaderHeight:CGFloat = 300.0
+    private var headerView: UIView!
+    
+    private let cellTitleIdentifier = "GardenDetailTitleCell"
+    private let cellSegmentIdentifier = "GardenDetailSegmentCell"
+    private let cellAboutIdentifier = "GardenDetailAboutCell"
+    private let cellCaresIdentifier = "GardenDetailCaresCell"
+    
+    weak var delegate: GardenDetailProtocolo?
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(id: String) {
+    init(id: String, delegate: GardenDetailProtocolo) {
         self.id = id
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -74,7 +61,7 @@ class GardeDetailController: BaseController {
         transparentNavigationBar = true
         super.viewDidLoad()
         
-        scrollView.alpha = 0.0
+        tableView.alpha = 0.0
         presenter.getDetailGarden(gardenId: id)
         setup()
     }
@@ -84,18 +71,24 @@ class GardeDetailController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        tableView.rowHeight = UITableView.automaticDimension
         
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        updateHeaderView()
         
-        bellButton.setTitle("", for: .normal)
+        tableView.register(UINib(nibName: cellCaresIdentifier, bundle: nil), forCellReuseIdentifier: cellCaresIdentifier)
+        tableView.register(UINib(nibName: cellAboutIdentifier, bundle: nil), forCellReuseIdentifier: cellAboutIdentifier)
+        tableView.register(UINib(nibName: cellTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellTitleIdentifier)
+        tableView.register(UINib(nibName: cellSegmentIdentifier, bundle: nil), forCellReuseIdentifier: cellSegmentIdentifier)
+        
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableView.automaticDimension
+        
         navigationController?.navigationBar.tintColor = UIColor.white
-        
-        moreOnWikiButton.setTitle(RLocalization.plant_detail_more_on_wiki.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
-        caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        moreOnWikiButton.layer.cornerRadius = 22
-        moreOnWikiButton.layer.borderWidth = 1
-        moreOnWikiButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
-        
         
         let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
         navigationItem.rightBarButtonItems = [dots]
@@ -104,6 +97,17 @@ class GardeDetailController: BaseController {
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
         updateLanguage()
+    }
+    
+    private func updateHeaderView() {
+        
+        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
+        if tableView.contentOffset.y < -kTableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
+        
+        headerView.frame = headerRect
     }
     
     //----------------------------------------------
@@ -115,7 +119,144 @@ class GardeDetailController: BaseController {
             UIApplication.shared.open(url)
         }
     }
+}
+
+//----------------------------------------------
+// MARK: - PlantsDetailOutputProtocol
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailOutputProtocol {
+    func success(model: GardenPlanByIDModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
+        tableView.reloadData()
+        topImageView.kf.setImage(with: URL(string: model.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
+        
+        wikiUrl = model.gardenPlantById.plant?.wikiUrl ?? ""
+
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.tableView.alpha  = 1.0
+        }
+    }
     
+    func failure(error: String) {
+        
+    }
+}
+
+extension GardeDetailController {
+    private func updateLanguage() {
+        setup()
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopChangeNameProtocol
+//----------------------------------------------
+
+extension GardeDetailController: PopChangeNameProtocol {
+    func dissmiss(controller: PopChangeNameController, text: String) {
+        presenter.model?.gardenPlantById.changeName(text)
+        tableView.reloadData()
+        delegate?.gardenDetailChangeName(controller: self, text: text, id: id)
+    }
+}
+
+//----------------------------------------------
+// MARK: - UITableViewDataSource, UITableViewDelegate
+//----------------------------------------------
+
+extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = 1
+        
+        if presenter.about.count != 0 {
+            count += 2
+        }
+        
+        if presenter.cares.count != 0 {
+            count += 1
+        }
+        
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
+            
+            if let model = presenter.model {
+                cell.setupCell(model: model, cares: presenter.cares)
+            }
+            return cell
+        case 1:
+            if presenter.about.count != 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellSegmentIdentifier) as? GardenDetailSegmentCell else { return UITableViewCell() }
+                
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
+                
+                if let model = presenter.model {
+                    cell.setupCell(model: model, cares: presenter.cares)
+                }
+                
+                return cell
+            }
+        case 2:
+            if presenter.about.count != 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAboutIdentifier) as? GardenDetailAboutCell else { return UITableViewCell() }
+                
+                if let model = presenter.model {
+                    cell.setupCell(model: model, abouts: presenter.about)
+                }
+                
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
+                
+                if let model = presenter.model {
+                    cell.setupCell(model: model, cares: presenter.cares)
+                }
+                
+                return cell
+            }
+        
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
+            
+            if let model = presenter.model {
+                cell.setupCell(model: model, cares: presenter.cares)
+            }
+            
+            return cell
+            
+        default:
+            return UITableViewCell()
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            tableView.bringSubviewToFront(cell)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateHeaderView()
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+//----------------------------------------------
+// MARK: - Editable
+//----------------------------------------------
+
+extension GardeDetailController {
     @objc func editTapped() {
         
         let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -159,141 +300,5 @@ class GardeDetailController: BaseController {
         alert.addAction(deletePlant)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
-    }
-}
-
-//----------------------------------------------
-// MARK: - PlantsDetailOutputProtocol
-//----------------------------------------------
-
-extension GardeDetailController: GardenDetailOutputProtocol {
-    func success(model: GardenPlanByIDModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
-                
-        mainImageView.kf.setImage(with: URL(string: model.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
-
-        nameLabel.text = model.gardenPlantById.name ?? ""
-        
-        if let userDescription = model.gardenPlantById.userDescription {
-            descriptionLabel.isHidden = false
-            descriptionLabel.text = userDescription
-        } else {
-            descriptionLabel.isHidden = true
-        }
-        
-        if let locationName = model.gardenPlantById.garden?.name {
-            locationLabel.isHidden = false
-            locationLabel.text = locationName
-        } else {
-            locationLabel.isHidden = true
-        }
-        
-        wikiUrl = model.gardenPlantById.plant?.wikiUrl ?? ""
-
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.scrollView.alpha  = 1.0
-        }
-        
-        if abouts.count == 0 {
-            aboutView.isHidden = true
-            DispatchQueue.main.async {
-                self.topAboutLayout.constant = -self.aboutView.frame.height
-                self.view.layoutIfNeeded()
-            }
-        } else {
-            
-            for view in aboutViews {
-                view.isHidden = true
-            }
-            
-            for index in 0..<abouts.count {
-                if let about = abouts[safe: index],  let view = aboutViews[safe: index] {
-                    view.isHidden = false
-                    view.setup(about: about, model: model.gardenPlantById.plant?.climate)
-                }
-            }
-            
-            if abouts.count < 3 {
-                for index in 1...2 {
-                    separeteViews.first(where: {$0.tag == index})?.isHidden = true
-                }
-                
-                for index in 1...3 {
-                    verticalStacks.first(where: {$0.tag == index})?.isHidden = true
-                }
-            }
-            
-            if abouts.count < 5 {
-                separeteViews.first(where: {$0.tag == 1})?.isHidden = true
-                
-                for index in 2...3 {
-                    verticalStacks.first(where: {$0.tag == index})?.isHidden = true
-                }
-            }
-            
-            if abouts.count < 7 {
-                separeteViews.first(where: {$0.tag == 2})?.isHidden = true
-                verticalStacks.first(where: {$0.tag == 3})?.isHidden = true
-            }
-            
-            switch abouts.count {
-            case 1:
-                middleLinesViews.first(where: {$0.tag == 0})?.isHidden = true
-            case 3:
-                middleLinesViews.first(where: {$0.tag == 1})?.isHidden = true
-            case 5:
-                middleLinesViews.first(where: {$0.tag == 2})?.isHidden = true
-            case 7:
-                middleLinesViews.first(where: {$0.tag == 3})?.isHidden = true
-            default: break
-            }
-        }
-        
-        for view in caresViews {
-            view.isHidden = true
-        }
-
-        for view in topCaresViews {
-            view.isHidden = true
-        }
-        
-        for index in 0..<cares.count {
-            if let care = cares[safe: index],
-               let view = caresViews[safe: index],
-               let topView = topCaresViews[safe:index] {
-                topView.isHidden = false
-                topView.setupWithDate(care: care)
-                
-                view.isHidden = false
-                view.setup(care: care)
-            }
-        }
-
-        if cares.count == 0 {
-            careView.isHidden = true
-            DispatchQueue.main.async {
-                self.topCareLayout.constant = -self.careView.frame.height
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    func failure(error: String) {
-        
-    }
-}
-
-extension GardeDetailController {
-    private func updateLanguage() {
-        setup()
-    }
-}
-
-//----------------------------------------------
-// MARK: - PopChangeNameProtocol
-//----------------------------------------------
-
-extension GardeDetailController: PopChangeNameProtocol {
-    func dissmiss(controller: PopChangeNameController, text: String) {
-        nameLabel.text = text
     }
 }

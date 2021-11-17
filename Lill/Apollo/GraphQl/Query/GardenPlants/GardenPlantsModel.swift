@@ -17,10 +17,14 @@ struct GardenPlantsModel: Codable {
 
 struct GardenPlantModel: Codable {
     let id: String
-    let name: String?
+    var name: String?
     let isHappy: Bool
     let userMainImage: MediaModel?
     let gardenPlantCares: [GardenPlantCaresModel]
+    
+    mutating func changeName(_ name: String) {
+        self.name = name
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
