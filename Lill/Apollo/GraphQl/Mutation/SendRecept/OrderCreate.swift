@@ -8,5 +8,5 @@
 import Foundation
 
 struct OrderCreate: Codable {
-    var orderCreate: String
+    var orderCreate: Bool
 }
