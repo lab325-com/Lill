@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GardenDetailAboutDelegate: AnyObject {
+    func gardenDetailWiki(cell: GardenDetailAboutCell)
+}
+
 class GardenDetailAboutCell: UITableViewCell {
 
     @IBOutlet var aboutViews: [DetailAboutView]!
@@ -16,6 +20,8 @@ class GardenDetailAboutCell: UITableViewCell {
     @IBOutlet var middleLinesViews: [UIView]!
     @IBOutlet weak var moreOnWikiButton: UIButton!
     @IBOutlet weak var mainView: UIView!
+    
+    weak var delegate: GardenDetailAboutDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -85,5 +91,9 @@ class GardenDetailAboutCell: UITableViewCell {
             middleLinesViews.first(where: {$0.tag == 3})?.isHidden = true
         default: break
         }
+    }
+    
+    @IBAction func actionWiki(_ sender: UIButton) {
+        delegate?.gardenDetailWiki(cell: self)
     }
 }

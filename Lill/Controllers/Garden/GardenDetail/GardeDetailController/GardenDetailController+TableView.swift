@@ -66,7 +66,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
                     if let model = presenter.model {
                         cell.setupCell(model: model, abouts: presenter.about)
                     }
-                    
+                    cell.delegate = self
                     return cell
                 } else {
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
@@ -171,5 +171,17 @@ extension GardeDetailController: GardenDetailSegmentDelegate {
     func changeSegment(cell: GardenDetailSegmentCell, selectedTag: Int) {
         self.selectedTag = selectedTag
         tableView.reloadData()
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailAboutDelegate
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailAboutDelegate {
+    func gardenDetailWiki(cell: GardenDetailAboutCell) {
+        if let url = URL(string: wikiUrl) {
+            UIApplication.shared.open(url)
+        }
     }
 }

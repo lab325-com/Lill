@@ -27,7 +27,7 @@ class GardeDetailController: BaseController {
     //----------------------------------------------
     
     private var id: String
-    private var wikiUrl: String = ""
+    
     private var kTableHeaderHeight:CGFloat = 300.0
     private var headerView: UIView!
     
@@ -43,9 +43,10 @@ class GardeDetailController: BaseController {
     let cellScheldureIdentifier = "GardenDetailScheduleCell"
     let cellAllWaitingIdentifier = "GardenDetailAllWaitingCell"
     
+    var wikiUrl: String = ""
     var selectedTag = 0
-    lazy var presenter = GardenDetailPresenter(view: self)
     
+    lazy var presenter = GardenDetailPresenter(view: self)
     weak var delegate: GardenDetailProtocolo?
     
     //----------------------------------------------
@@ -120,16 +121,6 @@ class GardeDetailController: BaseController {
         }
         
         headerView.frame = headerRect
-    }
-    
-    //----------------------------------------------
-    // MARK: - @IBActions
-    //----------------------------------------------
-    
-    @IBAction func wikiAction(_ sender: Any) {
-        if let url = URL(string: wikiUrl) {
-            UIApplication.shared.open(url)
-        }
     }
 }
 
