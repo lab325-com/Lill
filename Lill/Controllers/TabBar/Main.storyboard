@@ -132,13 +132,13 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oww-s0-Vyv">
-                                <rect key="frame" x="0.0" y="104" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="48"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-oF-rkT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-oF-rkT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ixc-Dx-dON">
-                                                <rect key="frame" x="0.0" y="6" width="50" height="28"/>
+                                                <rect key="frame" x="0.0" y="10" width="413.5" height="28"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soP-wp-FH8" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="28"/>
@@ -183,17 +183,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-qw-dwq" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-qw-dwq" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="56" y="0.0" width="91" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watering: 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-hQ-oMj">
-                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="63" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQz-Qs-5Ej">
-                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="RSM-Zx-qqs"/>
@@ -226,17 +226,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-vp-cnj" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-vp-cnj" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="153" y="0.0" width="80" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misting: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzf-uM-Uzg">
-                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="52" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81t-b8-Yyw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="23P-1e-Wzc"/>
@@ -269,17 +269,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-lc-LQl" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-lc-LQl" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="239" y="0.0" width="91" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity: 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTt-Cb-8hK">
-                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="63" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-X2-Edn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="y5Q-4P-8P9"/>
@@ -312,17 +312,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-Re-E7H" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-Re-E7H" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                                                        <rect key="frame" x="336" y="0.0" width="77.5" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate: 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAy-kp-TpP">
-                                                                <rect key="frame" x="14" y="0.0" width="0.0" height="28"/>
+                                                                <rect key="frame" x="14" y="0.0" width="49.5" height="28"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqD-PX-fGd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="28"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="selectStackAction:" destination="iQY-JI-GAl" eventType="touchUpInside" id="h6w-Tl-rwR"/>
@@ -358,16 +358,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="28" id="rct-dY-T4L"/>
+                                                    <constraint firstAttribute="height" constant="48" id="rct-dY-T4L"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="ixc-Dx-dON" firstAttribute="bottom" secondItem="2AC-vQ-iGl" secondAttribute="bottom" constant="34" id="02j-5S-mOY"/>
                                             <constraint firstItem="ixc-Dx-dON" firstAttribute="trailing" secondItem="2AC-vQ-iGl" secondAttribute="trailing" id="BSS-PM-liG"/>
-                                            <constraint firstItem="FL7-R3-T70" firstAttribute="bottom" secondItem="ixc-Dx-dON" secondAttribute="bottom" constant="6" id="IFx-8q-1ZP"/>
+                                            <constraint firstItem="FL7-R3-T70" firstAttribute="bottom" secondItem="ixc-Dx-dON" secondAttribute="bottom" constant="10" id="IFx-8q-1ZP"/>
                                             <constraint firstItem="ixc-Dx-dON" firstAttribute="leading" secondItem="2AC-vQ-iGl" secondAttribute="leading" id="Nbf-vt-sKD"/>
-                                            <constraint firstItem="ixc-Dx-dON" firstAttribute="top" secondItem="FL7-R3-T70" secondAttribute="top" constant="6" id="kmb-cb-T77"/>
+                                            <constraint firstItem="ixc-Dx-dON" firstAttribute="top" secondItem="2AC-vQ-iGl" secondAttribute="top" constant="10" id="hLF-8v-bGA"/>
                                         </constraints>
                                         <viewLayoutGuide key="contentLayoutGuide" id="2AC-vQ-iGl"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="FL7-R3-T70"/>
@@ -382,7 +383,7 @@
                                     <constraint firstItem="zdG-oF-rkT" firstAttribute="leading" secondItem="oww-s0-Vyv" secondAttribute="leading" id="D0R-aj-qrL"/>
                                     <constraint firstAttribute="trailing" secondItem="zdG-oF-rkT" secondAttribute="trailing" id="DBE-Vj-wCp"/>
                                     <constraint firstAttribute="bottom" secondItem="zdG-oF-rkT" secondAttribute="bottom" id="ezm-je-5dx"/>
-                                    <constraint firstAttribute="height" constant="40" id="lPl-u2-jLA"/>
+                                    <constraint firstAttribute="height" constant="48" id="lPl-u2-jLA"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -116,11 +116,7 @@ class GardenPresenter: GardenPresenterProtocol {
         
         request?.cancel()
         
-        var mutation = DoneAllCaresByGardenMutation(gardenId: gardenId)
-        if careTypeId == 0 {
-            mutation = DoneAllCaresByGardenMutation(gardenId: gardenId, careTypeId: careTypeId)
-        }
-        
+        let mutation = DoneAllCaresByGardenMutation(gardenId: gardenId, careTypeId: careTypeId)
         request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successDoneAllCaresByGarden(model: model)
