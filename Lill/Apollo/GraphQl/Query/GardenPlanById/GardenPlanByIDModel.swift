@@ -24,6 +24,32 @@ enum StatusGardenCareType: String, Codable {
             return UIColor(rgb: 0xF96161)
         }
     }
+    
+    var colorScheldure: UIColor {
+        switch self {
+        case .done:
+            return UIColor(rgb: 0x7CDAA3)
+        case .upcoming:
+            return UIColor(rgb: 0xC4C4C4)
+        case .waiting:
+            return UIColor(rgb: 0xFFA654)
+        case .missed:
+            return UIColor(rgb: 0xF96161)
+        }
+    }
+
+    var text: String {
+        switch self {
+        case .done:
+            return RLocalization.garden_plan_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        case .upcoming:
+            return RLocalization.garden_plan_upcoming.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        case .waiting:
+            return RLocalization.garden_plan_waiting.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        case .missed:
+            return RLocalization.garden_plan_missed.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        }
+    }
 }
 
 struct GardenPlanByIDModel: Codable {

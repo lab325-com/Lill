@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GardenDetailEditCareCell" rowHeight="59" id="KGk-i7-Jjw" customClass="GardenDetailEditCareCell" customModule="Lill" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPr-5e-b5G">
+                        <rect key="frame" x="24" y="5" width="302" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ioy-92-j1Y">
+                                <rect key="frame" x="85" y="0.0" width="132.5" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit My Care Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW1-f2-6CA">
+                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="44"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garde_edit_ic" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-dv-9za">
+                                        <rect key="frame" x="116.5" y="0.0" width="16" height="44"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.75686274509803919" blue="0.21568627450980393" alpha="0.24413799765883692" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NPr-5e-b5G" secondAttribute="leading" constant="16" id="4ro-VY-0k9"/>
+                            <constraint firstAttribute="height" constant="44" id="Afv-9i-tmE"/>
+                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="centerX" secondItem="NPr-5e-b5G" secondAttribute="centerX" id="GLc-5E-5Ih"/>
+                            <constraint firstAttribute="bottom" secondItem="Ioy-92-j1Y" secondAttribute="bottom" id="MUX-rV-hcM"/>
+                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="top" secondItem="NPr-5e-b5G" secondAttribute="top" id="g81-fR-37i"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ioy-92-j1Y" secondAttribute="trailing" constant="16" id="kXT-5G-oEn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="NPr-5e-b5G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3qh-Uf-YZY"/>
+                    <constraint firstAttribute="trailing" secondItem="NPr-5e-b5G" secondAttribute="trailing" constant="24" id="bXb-7k-0MM"/>
+                    <constraint firstAttribute="bottom" secondItem="NPr-5e-b5G" secondAttribute="bottom" constant="16" id="iS4-XT-8RO"/>
+                    <constraint firstItem="NPr-5e-b5G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="j8P-Fl-akj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="editLabel" destination="xW1-f2-6CA" id="4EK-Z6-OR6"/>
+                <outlet property="editView" destination="NPr-5e-b5G" id="jrJ-Q6-cmk"/>
+            </connections>
+            <point key="canvasLocation" x="159.42028985507247" y="113.50446428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="garde_edit_ic" width="16" height="16"/>
+    </resources>
+</document>

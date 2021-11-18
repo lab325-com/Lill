@@ -1,3 +1,10 @@
+"action_edit_add_photo" = "Añadir foto";
+"action_edit_cancel" = "Cancelar";
+"action_edit_care_plan" = "Editar plan de atención";
+"action_edit_change_name" = "Cambiar nombre";
+"action_edit_clone_plant" = "Planta de clon";
+"action_edit_delete_plant" = "Borrar la planta";
+"action_edit_title" = "Acciones con la planta.";
 "activity_title" = "Espere por favor";
 "add_plant_done" = "Hecho";
 "add_plant_every" = "cada";
@@ -88,6 +95,14 @@
 "diagnosis_title" = "Diagnosticando en progreso";
 "disease_archive_button" = "Diagnosticar la enfermedad";
 "disease_archive_title" = "Archivado de la enfermedad";
+"garden_detail_about" = "Sobre";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
+"garden_detail_care_plan" = "Plan de cuidado";
+"garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
+"garden_plan_done" = "Hecho";
+"garden_plan_missed" = "Omitido";
+"garden_plan_upcoming" = "Próximo";
+"garden_plan_waiting" = "Esperando";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";
@@ -144,6 +159,9 @@
 "plants_search" = "Buscar por nombre";
 "plants_uniquePlantButton" = "Añadir un único";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
+"pop_change_name_button" = "Cambio";
+"pop_change_name_subtitle" = "Dale el nombre de tu planta";
+"pop_change_name_title" = "Cambiar nombre";
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
 "subscription_billed_with" = "Facturado %@";

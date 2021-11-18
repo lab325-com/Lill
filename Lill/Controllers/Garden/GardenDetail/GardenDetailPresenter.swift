@@ -14,7 +14,7 @@ import UIKit
 //----------------------------------------------
 
 protocol GardenDetailOutputProtocol: BaseController {
-    func success(model: GardenPlanByIDModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)])
+    func success()
     func failure(error: String)
 }
 
@@ -32,11 +32,13 @@ protocol GardenDetailPresenterProtocol: AnyObject {
 class GardenDetailPresenter: GardenDetailPresenterProtocol {
 
     private weak var view: GardenDetailOutputProtocol?
-    private var request: Cancellable?
     
     var model: GardenPlanByIDModel?
     var cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)] = []
     var about: [PlantsAboutType] = []
+    
+    var scheduleFuture: [ScheduleByGardenPlantMainModel] = []
+    var scheduleNoFuture: [ScheduleByGardenPlantMainModel] = []
     
     required init(view: GardenDetailOutputProtocol) {
         self.view = view
@@ -44,26 +46,59 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
     
     func getDetailGarden(gardenId: String) {
         view?.startLoader()
+        var errors: [Error?] = []
         
-        request?.cancel()
+        let group = DispatchGroup()
         
+        group.enter()
         let query = GardenPlantByIdQuery(id: gardenId)
-        request = Network.shared.query(model: GardenPlanByIDModel.self, query, successHandler: { [weak self] model in
-            guard let `self` = self else { return }
-            self.model = model
-            self.view?.stopLoading()
+        let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, successHandler: { [weak self] model in
+            guard let `self` = self else {
+                group.leave()
+                return
+            }
             
+            self.model = model
+
             let about = self.createAbout(model: model.gardenPlantById.plant?.climate)
             self.about = about
             
             let cares = self.createCares(model: model)
             self.cares = cares
-            
-            self.view?.success(model: model, abouts: about, cares: cares)
-        }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
         })
+
+        group.enter()
+        let query2 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: true)
+        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query2, successHandler: { [weak self] model in
+            self?.scheduleFuture = model.scheduleByGardenPlant
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
+        })
+
+        group.enter()
+        let query3 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: false)
+        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, successHandler: { [weak self] model in
+            self?.scheduleNoFuture = model.scheduleByGardenPlant
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
+        })
+        
+        group.notify(queue: DispatchQueue.main) { [weak self] in
+            self?.view?.stopLoading()
+            if let error = errors.first??.localizedDescription {
+                self?.view?.failure(error: error)
+            } else {
+                self?.view?.success()
+            }
+        }
     }
     
     private func createAbout(model: ClimatModel?) -> [PlantsAboutType] {

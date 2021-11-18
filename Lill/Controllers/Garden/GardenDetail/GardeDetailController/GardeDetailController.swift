@@ -26,16 +26,25 @@ class GardeDetailController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private lazy var presenter = GardenDetailPresenter(view: self)
     private var id: String
     private var wikiUrl: String = ""
     private var kTableHeaderHeight:CGFloat = 300.0
     private var headerView: UIView!
     
-    private let cellTitleIdentifier = "GardenDetailTitleCell"
-    private let cellSegmentIdentifier = "GardenDetailSegmentCell"
-    private let cellAboutIdentifier = "GardenDetailAboutCell"
-    private let cellCaresIdentifier = "GardenDetailCaresCell"
+    //----------------------------------------------
+    // MARK: - Global property
+    //----------------------------------------------
+    
+    let cellTitleIdentifier = "GardenDetailTitleCell"
+    let cellSegmentIdentifier = "GardenDetailSegmentCell"
+    let cellAboutIdentifier = "GardenDetailAboutCell"
+    let cellCaresIdentifier = "GardenDetailCaresCell"
+    let cellEditIdentifier = "GardenDetailEditCareCell"
+    let cellScheldureIdentifier = "GardenDetailScheduleCell"
+    let cellAllWaitingIdentifier = "GardenDetailAllWaitingCell"
+    
+    var selectedTag = 0
+    lazy var presenter = GardenDetailPresenter(view: self)
     
     weak var delegate: GardenDetailProtocolo?
     
@@ -84,6 +93,9 @@ class GardeDetailController: BaseController {
         tableView.register(UINib(nibName: cellAboutIdentifier, bundle: nil), forCellReuseIdentifier: cellAboutIdentifier)
         tableView.register(UINib(nibName: cellTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellTitleIdentifier)
         tableView.register(UINib(nibName: cellSegmentIdentifier, bundle: nil), forCellReuseIdentifier: cellSegmentIdentifier)
+        tableView.register(UINib(nibName: cellEditIdentifier, bundle: nil), forCellReuseIdentifier: cellEditIdentifier)
+        tableView.register(UINib(nibName: cellScheldureIdentifier, bundle: nil), forCellReuseIdentifier: cellScheldureIdentifier)
+        tableView.register(UINib(nibName: cellAllWaitingIdentifier, bundle: nil), forCellReuseIdentifier: cellAllWaitingIdentifier)
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
@@ -99,7 +111,7 @@ class GardeDetailController: BaseController {
         updateLanguage()
     }
     
-    private func updateHeaderView() {
+    func updateHeaderView() {
         
         var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
         if tableView.contentOffset.y < -kTableHeaderHeight {
@@ -126,11 +138,15 @@ class GardeDetailController: BaseController {
 //----------------------------------------------
 
 extension GardeDetailController: GardenDetailOutputProtocol {
-    func success(model: GardenPlanByIDModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
-        tableView.reloadData()
-        topImageView.kf.setImage(with: URL(string: model.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
+    func success() {
+        if presenter.about.count == 0 && presenter.cares.count != 0 {
+            selectedTag = 1
+        }
         
-        wikiUrl = model.gardenPlantById.plant?.wikiUrl ?? ""
+        tableView.reloadData()
+        topImageView.kf.setImage(with: URL(string: presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
+        
+        wikiUrl = presenter.model?.gardenPlantById.plant?.wikiUrl ?? ""
 
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.tableView.alpha  = 1.0
@@ -157,98 +173,6 @@ extension GardeDetailController: PopChangeNameProtocol {
         presenter.model?.gardenPlantById.changeName(text)
         tableView.reloadData()
         delegate?.gardenDetailChangeName(controller: self, text: text, id: id)
-    }
-}
-
-//----------------------------------------------
-// MARK: - UITableViewDataSource, UITableViewDelegate
-//----------------------------------------------
-
-extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 1
-        
-        if presenter.about.count != 0 {
-            count += 2
-        }
-        
-        if presenter.cares.count != 0 {
-            count += 1
-        }
-        
-        return count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
-            
-            if let model = presenter.model {
-                cell.setupCell(model: model, cares: presenter.cares)
-            }
-            return cell
-        case 1:
-            if presenter.about.count != 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellSegmentIdentifier) as? GardenDetailSegmentCell else { return UITableViewCell() }
-                
-                return cell
-            } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
-                
-                if let model = presenter.model {
-                    cell.setupCell(model: model, cares: presenter.cares)
-                }
-                
-                return cell
-            }
-        case 2:
-            if presenter.about.count != 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAboutIdentifier) as? GardenDetailAboutCell else { return UITableViewCell() }
-                
-                if let model = presenter.model {
-                    cell.setupCell(model: model, abouts: presenter.about)
-                }
-                
-                return cell
-            } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
-                
-                if let model = presenter.model {
-                    cell.setupCell(model: model, cares: presenter.cares)
-                }
-                
-                return cell
-            }
-        
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCaresIdentifier) as? GardenDetailCaresCell else { return UITableViewCell() }
-            
-            if let model = presenter.model {
-                cell.setupCell(model: model, cares: presenter.cares)
-            }
-            
-            return cell
-            
-        default:
-            return UITableViewCell()
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            tableView.bringSubviewToFront(cell)
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateHeaderView()
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
 }
 

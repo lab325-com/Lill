@@ -27,6 +27,9 @@
                                     <segment title="About"/>
                                     <segment title="Care Plan"/>
                                 </segments>
+                                <connections>
+                                    <action selector="actionChangeSegment:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Zxg-uT-ou9"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,6 +54,7 @@
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="mainView" destination="MBV-ia-KKw" id="yLb-41-J0B"/>
+                <outlet property="segmentControl" destination="dTE-LS-wQN" id="8UM-sx-cPc"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="101.11607142857143"/>
         </tableViewCell>

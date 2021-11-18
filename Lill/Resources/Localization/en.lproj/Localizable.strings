@@ -95,6 +95,14 @@
 "diagnosis_title" = "Diagnose";
 "disease_archive_button" = "Diagnose Disease";
 "disease_archive_title" = "Disease Archive";
+"garden_detail_about" = "About";
+"garden_detail_care_edit_my_plan" = "Edit My Care Plan";
+"garden_detail_care_plan" = "Care Plan";
+"garden_detail_check_all" = "Check all Waiting Cares as done";
+"garden_plan_done" = "Done";
+"garden_plan_missed" = "Missed";
+"garden_plan_upcoming" = "Upcoming";
+"garden_plan_waiting" = "Waiting";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
 "identify_capture" = "Capture";
