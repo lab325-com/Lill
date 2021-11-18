@@ -10,7 +10,7 @@ class GardenController: BaseController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addPantLabel: UILabel!
 
-    @IBOutlet weak var careSectionView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var careViews: [ShadowView]!
     @IBOutlet var careButtons: [UIButton]!
@@ -46,29 +46,26 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        scrollToTop(animated: true)
+        getGardenPlants()
     }
 
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
     
-    private func getData() {
-        if let gardenId = KeychainService.standard.me?.defaultGardenId {
-            presenter.getCaresByGarden(gardenId: gardenId)
-            presenter.getGardenPlants(gardenId: gardenId)
-        }
+    private func getGardenPlants() {
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        presenter.getCaresByGarden(gardenId: gardenId)
+        presenter.getGardenPlants(gardenId: gardenId)
     }
 
     private func setup() {
         hiddenNavigationBar = true
-        updateButtonsStack()
+        
+        scrollView.contentInset.left = 12
+        scrollView.contentInset.right = 12
+        
+        updateCaresSection()
 
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.register(UINib.init(nibName: cellButtonIdentifier, bundle: nil), forCellWithReuseIdentifier: cellButtonIdentifier)
@@ -76,7 +73,7 @@ class GardenController: BaseController {
         collectionView.reloadData()
     }
 
-    private func updateButtonsStack() {
+    private func updateCaresSection() {
         for view in careViews {
             if view.tag == selectedCareType, selectedCareType == 0 {
                 view.backgroundColor = UIColor(rgb: 0x7CDAA3)
@@ -107,7 +104,7 @@ class GardenController: BaseController {
     @IBAction func selectStackAction(_ sender: UIButton) {        
         selectedCareType = sender.tag
         scrollToTop(animated: true)
-        updateButtonsStack()
+        updateCaresSection()
 
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         switch sender.tag {  
@@ -136,9 +133,13 @@ class GardenController: BaseController {
 extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
-                
-        careSectionView.isHidden = false
-        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
+                        
+        for careView in careViews {
+            switch careView.tag {
+            case 0: careView.isHidden = false
+            default: careView.isHidden = true
+            }
+        }
         
         for care in model.caresByGarden {
             switch care.careType.name {
@@ -159,15 +160,18 @@ extension GardenController: GardenOutputProtocol {
     }
 
     func successGardenPlants() {
-        careButtons.first(where:{$0.tag == 0})?.isUserInteractionEnabled = presenter.sadGardenPlants.count == 0 ? false : true
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        presenter.getCaresByGarden(gardenId: gardenId)
         
         collectionView.reloadData()
     }
 
     func successDoneAllCaresByGarden(model: DoneAllCaresByGardenDataModel) {
         if model.doneAllCaresByGarden {
-            getData()
+            selectedCareType = 0
+            updateCaresSection()
             scrollToTop(animated: true)
+            getGardenPlants()
         }
     }
 
