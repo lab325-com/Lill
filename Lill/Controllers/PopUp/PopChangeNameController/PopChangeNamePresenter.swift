@@ -42,7 +42,7 @@ class PopChangeNamePresenter: PopChangeNamePresenterProtocol {
         request?.cancel()
         
         let mutation = GardenPlantUpdateMutation(record: GardenPlantUpdateInput(id: id, name: name))
-        request = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation) { [weak self] _ in
+        request = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation, controller: view) { [weak self] _ in
             self?.view?.stopLoading()
             self?.view?.success(text: name)
         } failureHandler: { [weak self] error in

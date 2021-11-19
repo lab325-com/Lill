@@ -1912,7 +1912,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 202 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 207 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2049,6 +2049,10 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static let garden_delete_cancel = Rswift.StringResource(key: "garden_delete_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static let uniques_cover_cancel = Rswift.StringResource(key: "uniques_cover_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel anytime
       ///
@@ -2142,6 +2146,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_clone_plant = Rswift.StringResource(key: "action_edit_clone_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Confirm deleting Plant from your Garden
+      ///
+      /// Locales: en, es
+      static let garden_delete_sub_title = Rswift.StringResource(key: "garden_delete_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Congrads!
       ///
       /// Locales: en, es
@@ -2190,6 +2198,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_delete_plant = Rswift.StringResource(key: "action_edit_delete_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Delete Plant
+      ///
+      /// Locales: en, es
+      static let garden_delete_plant = Rswift.StringResource(key: "garden_delete_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Deleting Plant
+      ///
+      /// Locales: en, es
+      static let garden_delete_title = Rswift.StringResource(key: "garden_delete_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Diagnose
       ///
       /// Locales: en, es
@@ -2478,6 +2494,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cover_add_captured = Rswift.StringResource(key: "uniques_cover_add_captured", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plant has been Deleted
+      ///
+      /// Locales: en, es
+      static let garden_delete_success = Rswift.StringResource(key: "garden_delete_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant is added in your Garden!
       ///
       /// Locales: en, es
@@ -3223,6 +3243,21 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static func garden_delete_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_delete_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_delete_cancel"
+        }
+
+        return NSLocalizedString("garden_delete_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static func uniques_cover_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_cancel", bundle: hostingBundle, comment: "")
@@ -3580,6 +3615,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("action_edit_clone_plant", bundle: bundle, comment: "")
       }
 
+      /// en translation: Confirm deleting Plant from your Garden
+      ///
+      /// Locales: en, es
+      static func garden_delete_sub_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_delete_sub_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_delete_sub_title"
+        }
+
+        return NSLocalizedString("garden_delete_sub_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Congrads!
       ///
       /// Locales: en, es
@@ -3758,6 +3808,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_delete_plant", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete Plant
+      ///
+      /// Locales: en, es
+      static func garden_delete_plant(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_delete_plant", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_delete_plant"
+        }
+
+        return NSLocalizedString("garden_delete_plant", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Deleting Plant
+      ///
+      /// Locales: en, es
+      static func garden_delete_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_delete_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_delete_title"
+        }
+
+        return NSLocalizedString("garden_delete_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Diagnose
@@ -4838,6 +4918,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("uniques_cover_add_captured", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plant has been Deleted
+      ///
+      /// Locales: en, es
+      static func garden_delete_success(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_delete_success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_delete_success"
+        }
+
+        return NSLocalizedString("garden_delete_success", bundle: bundle, comment: "")
       }
 
       /// en translation: Plant is added in your Garden!

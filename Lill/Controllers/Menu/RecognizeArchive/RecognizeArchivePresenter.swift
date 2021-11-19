@@ -39,7 +39,7 @@ class RecognizeArchivePresenter: RecognizeArchivePresenterProtocol {
         
         let query = RecognizedArhiveQuery(pagination: InputPagination(offset: 0, limit: 10))
         
-        let _ = Network.shared.query(model: RecognizeArchiveModel.self, query) { [weak self] model in
+        let _ = Network.shared.query(model: RecognizeArchiveModel.self, query, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         } failureHandler: { [weak self] error in
@@ -52,7 +52,7 @@ class RecognizeArchivePresenter: RecognizeArchivePresenterProtocol {
         view?.startLoader()
         
         let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: isFavorite)
-        let _ = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, successHandler: { [weak self] model in
+        let _ = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successFavorite(isFavorite: !isFavorite, id: id)
         }, failureHandler: { [weak self] error in
@@ -65,7 +65,7 @@ class RecognizeArchivePresenter: RecognizeArchivePresenterProtocol {
         view?.startLoader()
         
         let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
-        let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, successHandler: { [weak self] model in
+        let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successAddPlants(model: model)
         }, failureHandler: { [weak self] error in

@@ -11,6 +11,7 @@
 		02017AAE2747922000EE093C /* GardenDetailDeletePlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */; };
 		02017AB12747DBD400EE093C /* GardenPlantDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */; };
 		02017AB32747DBE400EE093C /* GardenPlantDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */; };
+		02017AB52747FF1900EE093C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02017AB42747FF1900EE093C /* BaseErrorModel.swift */; };
 		021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C8EC52705B0B200F0F589 /* PlantCollectionCell.swift */; };
 		021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021C8EC62705B0B200F0F589 /* PlantCollectionCell.xib */; };
 		021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C8EC92705D54800F0F589 /* UIView+Extension.swift */; };
@@ -264,8 +265,9 @@
 /* Begin PBXFileReference section */
 		02017AAB2747922000EE093C /* GardenDetailDeletePlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenDetailDeletePlanController.swift; sourceTree = "<group>"; };
 		02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailDeletePlanController.xib; sourceTree = "<group>"; };
-		02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlantDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDelete.graphql; sourceTree = SOURCE_ROOT; };
+		02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDelete.graphql; sourceTree = SOURCE_ROOT; };
 		02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDeleteModel.swift; sourceTree = SOURCE_ROOT; };
+		02017AB42747FF1900EE093C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
 		021C8EC52705B0B200F0F589 /* PlantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionCell.swift; sourceTree = "<group>"; };
 		021C8EC62705B0B200F0F589 /* PlantCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionCell.xib; sourceTree = "<group>"; };
 		021C8EC92705D54800F0F589 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -1322,6 +1324,7 @@
 			isa = PBXGroup;
 			children = (
 				02E4575C26F903B000F19C41 /* Network.swift */,
+				02017AB42747FF1900EE093C /* BaseErrorModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2175,6 +2178,7 @@
 				025ECF21273D5CFE0041A7BD /* AddPlantTimeCell.swift in Sources */,
 				FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
+				02017AB52747FF1900EE093C /* BaseErrorModel.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
 				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,

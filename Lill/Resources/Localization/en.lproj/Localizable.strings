@@ -98,6 +98,11 @@
 "garden_choose_add_plant_cancel" = "Cancel";
 "garden_choose_add_plant_catalog" = "Catalog";
 "garden_choose_add_plant_identify" = "Identify";
+"garden_delete_cancel" = "Cancel";
+"garden_delete_plant" = "Delete Plant";
+"garden_delete_sub_title" = "Confirm deleting Plant\nfrom your Garden";
+"garden_delete_success" = "Plant\nhas been Deleted";
+"garden_delete_title" = "Deleting Plant";
 "garden_detail_about" = "About";
 "garden_detail_care_edit_my_plan" = "Edit My Care Plan";
 "garden_detail_care_plan" = "Care Plan";

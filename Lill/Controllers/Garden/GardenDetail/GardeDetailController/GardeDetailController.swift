@@ -242,6 +242,7 @@ extension GardeDetailController: GardenDetailDeleteDelegate {
     func gardeDetailDeleteSuccess(controller: GardenDetailDeletePlanController) {
         self.dismiss(animated: true) { [weak self] in
             guard let `self` = self else { return }
+            self.navigationController?.popViewController(animated: true)
             self.delegate?.gardenDetailDelete(controller: self, id: self.id)
         }
     }

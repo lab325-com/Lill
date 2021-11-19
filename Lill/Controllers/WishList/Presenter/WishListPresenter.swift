@@ -31,7 +31,7 @@ class WishListPresenter: WishListPresenterProtocol {
         view?.startLoader()
                 
         let query = GetCatalogPlantsQuery(pagination: InputPagination(offset: 0, limit: 10), search: "", onlyFavorites: true)
-        Network.shared.query(model: CatalogPlantsModel.self, query) { [weak self] model in
+        Network.shared.query(model: CatalogPlantsModel.self, query, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         } failureHandler: { [weak self] error in

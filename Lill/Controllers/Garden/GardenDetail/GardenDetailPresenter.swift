@@ -61,7 +61,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         
         group.enter()
         let query = GardenPlantByIdQuery(id: gardenId)
-        let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, successHandler: { [weak self] model in
+        let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, controller: view, successHandler: { [weak self] model in
             guard let `self` = self else {
                 group.leave()
                 return
@@ -82,7 +82,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
 
         group.enter()
         let query2 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: true)
-        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query2, successHandler: { [weak self] model in
+        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query2, controller: view, successHandler: { [weak self] model in
             self?.scheduleFuture = model.scheduleByGardenPlant
             group.leave()
         }, failureHandler: { error in
@@ -92,7 +92,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
 
         group.enter()
         let query3 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: false)
-        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, successHandler: { [weak self] model in
+        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, controller: view, successHandler: { [weak self] model in
             self?.scheduleNoFuture = model.scheduleByGardenPlant
             group.leave()
         }, failureHandler: { error in
@@ -119,11 +119,11 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         
         let mutation = UploadMediaMutation(image: "image")
         
-        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, files: [file]) { [weak self] model in
+        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, controller: view, files: [file]) { [weak self] model in
             self?.view?.stopLoading()
             
             let mutation2 = GardenPlantUpdateMutation(record: GardenPlantUpdateInput(id: id, userMainImageId: model.uploadMedia.id  ?? ""))
-            let _ = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation2) { [weak self] model in
+            let _ = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation2, controller: self?.view) { [weak self] model in
                 self?.view?.stopLoading()
                 self?.view?.successUploadMedia(imageUrl: model.gardenPlantUpdate.userMainImage?.urlIosFull ?? "")
             } failureHandler: { [weak self] error in
@@ -141,7 +141,7 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         view?.startLoader()
         
         let mutation = GardenPlantDeleteMutation(id: plantId)
-        let _ = Network.shared.mutation(model: GardenPlantDeleteModel.self, mutation) { [weak self] _ in
+        let _ = Network.shared.mutation(model: GardenPlantDeleteModel.self, mutation, controller: view) { [weak self] _ in
             self?.view?.stopLoading()
             self?.view?.successDelete()
         } failureHandler: { [weak self] error in

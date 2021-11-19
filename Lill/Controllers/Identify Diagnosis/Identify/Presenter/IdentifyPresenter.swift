@@ -42,7 +42,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
         
         let mutation = UploadMediaMutation(image: "image")
         
-        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, files: [file]) { [weak self] model in
+        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, controller: view, files: [file]) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successUpload(model: model)
         } failureHandler: { [weak self] error in
@@ -58,7 +58,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
         
         let query = StartRecognizeQuery(mediaId: id)
         
-        request = Network.shared.query(model: RecognitionDataModel.self, query, successHandler: { [weak self] model in
+        request = Network.shared.query(model: RecognitionDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successRecognize(model: model)
         }, failureHandler: { [weak self] error in

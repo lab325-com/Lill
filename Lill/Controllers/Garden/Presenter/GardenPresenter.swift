@@ -48,7 +48,7 @@ class GardenPresenter: GardenPresenterProtocol {
         request?.cancel()
         
         let query = CaresByGardenQuery(gardenId: gardenId)
-        request = Network.shared.query(model: CaresByGardenDataModel.self, query, successHandler: { [weak self] model in
+        request = Network.shared.query(model: CaresByGardenDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successCaresByGarden(model: model)
         }, failureHandler: { [weak self] error in
@@ -64,7 +64,7 @@ class GardenPresenter: GardenPresenterProtocol {
         
         group.enter()
         let query1 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
-        request = Network.shared.query(model: GardenPlantsDataModel.self, query1, successHandler: { [weak self] model in
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query1, controller: view, successHandler: { [weak self] model in
             group.leave()
             if let sadPlants = model.gardenPlants.gardenPlants {
                 self?.sadGardenPlants = sadPlants
@@ -76,7 +76,7 @@ class GardenPresenter: GardenPresenterProtocol {
 
         group.enter()
         let query2 = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: true)
-        request = Network.shared.query(model: GardenPlantsDataModel.self, query2, successHandler: { [weak self] model in
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query2, controller: view, successHandler: { [weak self] model in
             group.leave()
             if let happyPlants = model.gardenPlants.gardenPlants {
                 self?.happyGardenPlants = happyPlants
@@ -100,7 +100,7 @@ class GardenPresenter: GardenPresenterProtocol {
         request?.cancel()
         
         let query = GardenPlantsQuery(gardenId: gardenId, pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
-        request = Network.shared.query(model: GardenPlantsDataModel.self, query, successHandler: { [weak self] model in
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
             self?.gardenPlants = self?.sadGardenPlants ?? []
             self?.view?.successGardenPlants()
@@ -117,7 +117,7 @@ class GardenPresenter: GardenPresenterProtocol {
         request?.cancel()
         
         let mutation = DoneAllCaresByGardenMutation(gardenId: gardenId, careTypeId: careTypeId)
-        request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, successHandler: { [weak self] model in
+        request = Network.shared.mutation(model: DoneAllCaresByGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successDoneAllCaresByGarden(model: model)
         }, failureHandler: { [weak self] error in

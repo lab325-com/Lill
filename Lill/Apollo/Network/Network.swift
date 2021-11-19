@@ -1,6 +1,7 @@
 
 import Apollo
 import Foundation
+import Toast
 
 class Network {
     static let shared = Network()
@@ -23,6 +24,7 @@ class Network {
     
     func mutation<T: GraphQLMutation, Model: Codable>(model type: Model.Type,
                                                       _ mutation: T,
+                                                      controller: BaseController?,
                                                       successHandler: @escaping ((_ model :Model) -> Void),
                                                       failureHandler: @escaping ((_ error: Error) -> Void)) -> Cancellable {
         
@@ -35,10 +37,21 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    failureHandler(error)
+                    do {
+                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
+                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
+                        if model.errors.message == "Not authenticated" {
+                            KeychainService.standard.removeAll()
+                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        }
+                    } catch {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
+                controller?.view?.makeToast(error.localizedDescription)
                 failureHandler(error)
             }
         }
@@ -46,6 +59,7 @@ class Network {
     
     func query<T: GraphQLQuery, Model: Codable>(model type: Model.Type,
                                                 _ guery: T,
+                                                controller: BaseController?,
                                                 cash: CachePolicy = .fetchIgnoringCacheData,
                                                 successHandler: @escaping ((_ model :Model) -> Void),
                                                 failureHandler: @escaping ((_ error: Error) -> Void)) -> Cancellable {
@@ -59,10 +73,21 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    failureHandler(error)
+                    do {
+                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
+                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
+                        if model.errors.message == "Not authenticated" {
+                            KeychainService.standard.removeAll()
+                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        }
+                    } catch {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
+                controller?.view?.makeToast(error.localizedDescription)
                 failureHandler(error)
             }
         }
@@ -70,6 +95,7 @@ class Network {
     
     func upload<T: GraphQLMutation, Model: Codable>(model type: Model.Type,
                                                 _ guery: T,
+                                                 controller: BaseController?,
                                                  files: [GraphQLFile],
                                                 successHandler: @escaping ((_ model :Model) -> Void),
                                                 failureHandler: @escaping ((_ error: Error) -> Void)) -> Cancellable {
@@ -83,10 +109,21 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    failureHandler(error)
+                    do {
+                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
+                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
+                        if model.errors.message == "Not authenticated" {
+                            KeychainService.standard.removeAll()
+                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        }
+                    } catch {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
+                controller?.view?.makeToast(error.localizedDescription)
                 failureHandler(error)
             }
         }

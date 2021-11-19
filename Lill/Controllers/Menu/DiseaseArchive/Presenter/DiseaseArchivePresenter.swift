@@ -37,7 +37,7 @@ class DiseaseArchivePresenter: DiseaseArchivePresenterProtocol {
         
         let query = DiagnoseArhiveQuery(pagination: InputPagination(offset: 0, limit: 10))
         
-        let _ = Network.shared.query(model: DiseaseArchiveModel.self, query) { [weak self] model in
+        let _ = Network.shared.query(model: DiseaseArchiveModel.self, query, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         } failureHandler: { [weak self] error in

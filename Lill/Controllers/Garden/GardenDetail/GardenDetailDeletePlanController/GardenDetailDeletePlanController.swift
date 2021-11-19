@@ -73,6 +73,12 @@ class GardenDetailDeletePlanController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        deletingPlantLabel.text = RLocalization.garden_delete_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        subTitleLabel.text = RLocalization.garden_delete_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        deleteButton.setTitle(RLocalization.garden_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        cancelButton.setTitle(RLocalization.garden_delete_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        
+        
         coverView.layer.cornerRadius = 24
         coverView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
         mainImageView.layer.cornerRadius = 24
@@ -111,7 +117,7 @@ extension GardenDetailDeletePlanController: GardenDetailOutputProtocol {
         UIView.animate(withDuration: 0.4) {
             self.deleteButton.alpha = 0.0
             self.cancelButton.alpha = 0.0
-            self.subTitleLabel.text = "Plant has been Deleted"
+            self.subTitleLabel.text = RLocalization.garden_delete_success.localized(PreferencesManager.sharedManager.languageCode.rawValue)
             self.subTitleLabel.textColor = UIColor(rgb: 0xF96161)
             self.coverView.alpha = 0.7
             self.gardenDeleteImageView.alpha = 1.0

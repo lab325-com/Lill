@@ -48,7 +48,7 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
         
         request?.cancel()
         
-        request = Network.shared.query(model: CareTypesModel.self, CareTypesQuery()) { [weak self] model in
+        request = Network.shared.query(model: CareTypesModel.self, CareTypesQuery(), controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successCares(models: model.careTypes)
         } failureHandler: { [weak self] error in
@@ -84,13 +84,13 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
         let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: plantsImage)
         let uploadMedia = UploadMediaMutation(image: "image")
         
-        let _ = Network.shared.upload(model: MediaDataModel.self, uploadMedia, files: [file]) { [weak self] model in
+        let _ = Network.shared.upload(model: MediaDataModel.self, uploadMedia, controller: view, files: [file]) { [weak self] model in
             if let userMainImageId = model.uploadMedia.id {
                 let input = GardenPlantCreateInput(name: text, gardenId: gardenId, userMainImageId: userMainImageId)
                 let record = GardenPlantCreateRecordInput(plant: input, cares: cares)
                 let mutation = GardenPlantCreateMutation(record: record)
                 
-                let _ = Network.shared.mutation(model: GardenPlantCreateModel.self, mutation) { [weak self] _ in
+                let _ = Network.shared.mutation(model: GardenPlantCreateModel.self, mutation, controller: self?.view) { [weak self] _ in
                     self?.view?.stopLoading()
                     self?.view?.successSaveUniquesPlant()
                 } failureHandler: { [weak self] error in

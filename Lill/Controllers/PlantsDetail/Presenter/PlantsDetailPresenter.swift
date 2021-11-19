@@ -88,7 +88,7 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         request?.cancel()
         
         let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
-        request = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, successHandler: { [weak self] model in
+        request = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         }, failureHandler: { [weak self] error in
@@ -101,7 +101,7 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         request?.cancel()
         
         let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: isFavorite)
-        request = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, successHandler: { [weak self] model in
+        request = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.success(model: model)
         }, failureHandler: { [weak self] error in
             self?.view?.failure(error: error.localizedDescription)
@@ -114,7 +114,7 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         request?.cancel()
         
         let query = PlantByIdQuery(id: id)
-        request = Network.shared.query(model: PlantDataModel.self, query, successHandler: { [weak self] model in
+        request = Network.shared.query(model: PlantDataModel.self, query, controller: view, successHandler: { [weak self] model in
             guard let `self` = self else { return }
             self.model = model
             self.view?.stopLoading()
