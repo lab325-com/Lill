@@ -9,4 +9,5 @@ import Foundation
 
 struct GardenRecordCreateModel: Codable {
     let id: String
+    let userMainImage: MediaModel?
 }

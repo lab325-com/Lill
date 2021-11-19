@@ -11,6 +11,7 @@ import SwiftUI
 
 protocol GardenDetailProtocolo: AnyObject {
     func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String)
+    func gardenDetailChangePhoto(controller: GardeDetailController, imageUrl: String, id: String)
 }
 
 class GardeDetailController: BaseController {
@@ -190,8 +191,9 @@ extension GardeDetailController {
             PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
         }
         
-        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
+        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
         }
         
         let editCarePlan = UIAlertAction(title: editTitle, style: .default) { (action: UIAlertAction) in
@@ -202,8 +204,9 @@ extension GardeDetailController {
             // Code to unfollow
         }
         
-        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { (action: UIAlertAction) in
-            // Code to unfollow
+        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            GardenRouter(presenter: self.navigationController).presentDeletePlan()
         }
         
         let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
@@ -215,5 +218,16 @@ extension GardeDetailController {
         alert.addAction(deletePlant)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+//----------------------------------------------
+// MARK: - AddCoverIdentifierProtocol
+//----------------------------------------------
+
+extension GardeDetailController: AddCoverIdentifierProtocol {
+    func addCoverIdentifierSuccessUpload(controller: AddCoverIdentifierController, imageUrl: String) {
+        delegate?.gardenDetailChangePhoto(controller: self, imageUrl: imageUrl, id: id)
+        topImageView.kf.setImage(with: URL(string: imageUrl), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
     }
 }

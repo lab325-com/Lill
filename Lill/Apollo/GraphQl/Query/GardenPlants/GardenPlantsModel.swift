@@ -19,7 +19,7 @@ struct GardenPlantModel: Codable {
     let id: String
     var name: String?
     let isHappy: Bool
-    let userMainImage: MediaModel?
+    var userMainImage: MediaModel?
     let gardenPlantCares: [GardenPlantCaresModel]
     
     mutating func changeName(_ name: String) {

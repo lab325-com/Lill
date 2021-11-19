@@ -1,0 +1,5 @@
+mutation AddImageToGallery($gardenPlantId: String!,
+						   $mediaId: String!) {
+	addImageToGallery(gardenPlantId: $gardenPlantId,
+					  mediaId: $mediaId)
+}

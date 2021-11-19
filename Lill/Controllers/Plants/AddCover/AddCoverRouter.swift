@@ -15,6 +15,13 @@ class AddCoverRouter: BaseRouter {
         tabBarController?.present(nc, animated: true, completion: nil)
     }
     
+    func presentAddCoverIdentifier(sendToGardenId: String, delegate: AddCoverIdentifierProtocol) {
+        let controller = AddCoverIdentifierController(sendToGardenId: sendToGardenId, text: "", delegate: delegate)
+        let nc = UINavigationController(rootViewController: controller)
+        nc.modalPresentationStyle = .fullScreen
+        present(controller: nc, presentStyle: .fullScreen)
+    }
+    
     func pushAddCover(coverImage: UIImage, text: String, delegate: AddCoverAddProtocol) {
         let controller = AddCoverAddController(coverImage: coverImage, text: text, delegate: delegate)
         push(controller: controller)

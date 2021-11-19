@@ -151,8 +151,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 28 files.
+  /// This `R.file` struct is generated, and contains static references to 29 files.
   struct file {
+    /// Resource file `AddImageToGallery.graphql`.
+    static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
     /// Resource file `CareType.graphql`.
     static let careTypeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CareType", pathExtension: "graphql")
     /// Resource file `CaresByGarden.graphql`.
@@ -209,6 +211,12 @@ struct R: Rswift.Validatable {
     static let uploadMediaGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMedia", pathExtension: "graphql")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
+
+    /// `bundle.url(forResource: "AddImageToGallery", withExtension: "graphql")`
+    static func addImageToGalleryGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.addImageToGalleryGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "CareType", withExtension: "graphql")`
     static func careTypeGraphql(_: Void = ()) -> Foundation.URL? {
@@ -1221,7 +1229,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 43 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 44 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1261,6 +1269,8 @@ struct R: Rswift.Validatable {
     static let gardenDetailAllWaitingCell = _R.nib._GardenDetailAllWaitingCell()
     /// Nib `GardenDetailCaresCell`.
     static let gardenDetailCaresCell = _R.nib._GardenDetailCaresCell()
+    /// Nib `GardenDetailDeletePlanController`.
+    static let gardenDetailDeletePlanController = _R.nib._GardenDetailDeletePlanController()
     /// Nib `GardenDetailEditCareCell`.
     static let gardenDetailEditCareCell = _R.nib._GardenDetailEditCareCell()
     /// Nib `GardenDetailScheduleCell`.
@@ -1459,6 +1469,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailCaresCell) instead")
     static func gardenDetailCaresCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenDetailCaresCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailDeletePlanController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailDeletePlanController) instead")
+    static func gardenDetailDeletePlanController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailDeletePlanController)
     }
     #endif
 
@@ -1730,6 +1748,10 @@ struct R: Rswift.Validatable {
       return R.nib.gardenDetailCaresCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailCaresCell
     }
 
+    static func gardenDetailDeletePlanController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenDetailDeletePlanController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenDetailEditCareCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailEditCareCell? {
       return R.nib.gardenDetailEditCareCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailEditCareCell
     }
@@ -1893,10 +1915,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cover_add = Rswift.StringResource(key: "uniques_cover_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Add Photo
-      ///
-      /// Locales: en, es
-      static let action_edit_add_photo = Rswift.StringResource(key: "action_edit_add_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -2045,6 +2063,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let pop_change_name_title = Rswift.StringResource(key: "pop_change_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Change Photo
+      ///
+      /// Locales: en, es
+      static let action_edit_add_photo = Rswift.StringResource(key: "action_edit_add_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Check all Waiting Cares as done
       ///
       /// Locales: en, es
@@ -2778,21 +2800,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("uniques_cover_add", bundle: bundle, comment: "")
       }
 
-      /// en translation: Add Photo
-      ///
-      /// Locales: en, es
-      static func action_edit_add_photo(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("action_edit_add_photo", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "action_edit_add_photo"
-        }
-
-        return NSLocalizedString("action_edit_add_photo", bundle: bundle, comment: "")
-      }
-
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -3348,6 +3355,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("pop_change_name_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Photo
+      ///
+      /// Locales: en, es
+      static func action_edit_add_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("action_edit_add_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "action_edit_add_photo"
+        }
+
+        return NSLocalizedString("action_edit_add_photo", bundle: bundle, comment: "")
       }
 
       /// en translation: Check all Waiting Cares as done
@@ -5690,6 +5712,7 @@ struct _R: Rswift.Validatable {
       try _DiagnosisController.validate()
       try _DiseaseArchiveViewController.validate()
       try _GardeDetailController.validate()
+      try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
@@ -6031,6 +6054,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailCaresCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailCaresCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailDeletePlanController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenDetailDeletePlanController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

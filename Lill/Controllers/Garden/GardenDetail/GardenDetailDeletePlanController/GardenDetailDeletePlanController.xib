@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenDetailDeletePlanController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="coverView" destination="dC5-JK-6V9" id="zVL-kj-9my"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dq-UY-eG4">
+                    <rect key="frame" x="12" y="210.5" width="390" height="485.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deleting Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-my-ohn">
+                            <rect key="frame" x="16" y="39" width="358" height="27.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-JK-6V9" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                            <rect key="frame" x="93" y="101.5" width="204" height="204"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My First Violet Orchid with long name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0u-Zx-E4P">
+                                    <rect key="frame" x="8" y="164.5" width="188" height="31.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31.5" id="ILu-Du-u8i"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <color key="textColor" red="0.17254901959999999" green="0.1764705882" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
+                                    <rect key="frame" x="0.0" y="0.0" width="204" height="156.5"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="u0u-Zx-E4P" secondAttribute="bottom" constant="8" id="41d-rE-kKa"/>
+                                <constraint firstAttribute="trailing" secondItem="WdF-VD-UQ9" secondAttribute="trailing" id="Sx0-TY-LQF"/>
+                                <constraint firstItem="u0u-Zx-E4P" firstAttribute="top" secondItem="WdF-VD-UQ9" secondAttribute="bottom" constant="8" id="aHp-hl-2F1"/>
+                                <constraint firstItem="u0u-Zx-E4P" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" constant="8" id="bxR-n9-eKV"/>
+                                <constraint firstItem="WdF-VD-UQ9" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="top" id="e9r-GM-0av"/>
+                                <constraint firstItem="WdF-VD-UQ9" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" id="is4-rl-47m"/>
+                                <constraint firstAttribute="trailing" secondItem="u0u-Zx-E4P" secondAttribute="trailing" constant="8" id="s83-GL-ziB"/>
+                                <constraint firstAttribute="width" secondItem="dC5-JK-6V9" secondAttribute="height" multiplier="1:1" id="tRA-RS-I6Q"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.1202237969202711" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="0.0" height="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm deleting Plant from your Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-vv-VcM">
+                            <rect key="frame" x="22" y="327.5" width="346" height="18"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
+                            <rect key="frame" x="12" y="375.5" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="prm-mt-8ff"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Delete Plant">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
+                            <rect key="frame" x="12" y="428.5" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="wYf-ZN-PpU"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Cancel">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="13" name="SFProDisplay-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="Ptd-xi-AUs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="dC5-JK-6V9" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="93" id="1ax-Q0-Cy0"/>
+                        <constraint firstAttribute="trailing" secondItem="RfM-vv-VcM" secondAttribute="trailing" constant="22" id="7QD-6M-rSL"/>
+                        <constraint firstItem="lv5-my-ohn" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="16" id="Az8-kM-rcH"/>
+                        <constraint firstItem="RfM-vv-VcM" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="22" id="BxB-hE-zwM"/>
+                        <constraint firstItem="bRe-Hx-sHo" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="12" id="GSa-ja-31s"/>
+                        <constraint firstAttribute="trailing" secondItem="g3c-us-geH" secondAttribute="trailing" constant="12" id="O3D-W9-I53"/>
+                        <constraint firstAttribute="bottom" secondItem="g3c-us-geH" secondAttribute="bottom" constant="13" id="PiN-gy-nL6"/>
+                        <constraint firstItem="RfM-vv-VcM" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="bottom" constant="22" id="QDJ-ay-Spp"/>
+                        <constraint firstItem="bRe-Hx-sHo" firstAttribute="top" secondItem="RfM-vv-VcM" secondAttribute="bottom" constant="30" id="VIR-qN-y0F"/>
+                        <constraint firstAttribute="trailing" secondItem="lv5-my-ohn" secondAttribute="trailing" constant="16" id="eCd-bU-LdF"/>
+                        <constraint firstItem="g3c-us-geH" firstAttribute="top" secondItem="bRe-Hx-sHo" secondAttribute="bottom" constant="9" id="fZX-HR-Wy7"/>
+                        <constraint firstItem="dC5-JK-6V9" firstAttribute="top" secondItem="lv5-my-ohn" secondAttribute="bottom" constant="35" id="iiT-LS-AMn"/>
+                        <constraint firstAttribute="trailing" secondItem="bRe-Hx-sHo" secondAttribute="trailing" constant="12" id="kKa-lf-ah3"/>
+                        <constraint firstItem="dC5-JK-6V9" firstAttribute="centerX" secondItem="9dq-UY-eG4" secondAttribute="centerX" id="o8X-Mf-d7h"/>
+                        <constraint firstAttribute="trailing" secondItem="dC5-JK-6V9" secondAttribute="trailing" constant="93" id="rrf-f7-kaC"/>
+                        <constraint firstItem="lv5-my-ohn" firstAttribute="top" secondItem="9dq-UY-eG4" secondAttribute="top" constant="39" id="uT7-5e-7TR"/>
+                        <constraint firstItem="g3c-us-geH" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="12" id="wPz-87-4GA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.79719149355856789" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9dq-UY-eG4" secondAttribute="trailing" constant="12" id="2Sm-jn-SvC"/>
+                <constraint firstItem="9dq-UY-eG4" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Jbr-jj-Qlk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9dq-UY-eG4" secondAttribute="bottom" constant="30" id="KVF-RI-SU7"/>
+                <constraint firstItem="9dq-UY-eG4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Mp8-hy-rjH"/>
+                <constraint firstItem="9dq-UY-eG4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="hE7-Vt-WBw"/>
+                <constraint firstItem="9dq-UY-eG4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="hpT-S0-C2R"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="temp_plants_ic" width="400" height="267"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

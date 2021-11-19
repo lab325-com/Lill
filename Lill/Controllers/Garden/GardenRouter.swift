@@ -14,4 +14,11 @@ class GardenRouter: BaseRouter {
         controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }
+    
+    func presentDeletePlan() {
+        let controller = GardenDetailDeletePlanController()
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overCurrentContext)
+    }
 }

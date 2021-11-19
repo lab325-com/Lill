@@ -10,6 +10,12 @@ import AVFoundation
 
 protocol AddCoverIdentifierProtocol: AnyObject {
     func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController)
+    func addCoverIdentifierSuccessUpload(controller: AddCoverIdentifierController, imageUrl:  String)
+}
+
+extension AddCoverIdentifierProtocol {
+    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {}
+    func addCoverIdentifierSuccessUpload(controller: AddCoverIdentifierController, imageUrl:  String) {}
 }
 
 class AddCoverIdentifierController: BaseController {
@@ -41,14 +47,18 @@ class AddCoverIdentifierController: BaseController {
     private var takePicture = false
     private var capturedImage: UIImage?
     private let text: String
+    private let sendToGardenId: String?
     
     weak var delegate: AddCoverIdentifierProtocol?
+    
+    lazy var presenter = GardenDetailPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(text: String, delegate: AddCoverIdentifierProtocol) {
+    init(sendToGardenId: String? = nil, text: String, delegate: AddCoverIdentifierProtocol) {
+        self.sendToGardenId = sendToGardenId
         self.delegate = delegate
         self.text = text
         super.init(nibName: nil, bundle: nil)
@@ -151,8 +161,14 @@ extension AddCoverIdentifierController: UIImagePickerControllerDelegate, UINavig
             return
         }
         
+        self.capturedImage = image
+        
         DispatchQueue.main.async {
-            AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: image, text: self.text, delegate: self)
+            if let id = self.sendToGardenId {
+                self.presenter.uploadMedia(id: id, img: image)
+            } else {
+                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: image, text: self.text, delegate: self)
+            }
         }
     }
 }
@@ -171,7 +187,11 @@ extension AddCoverIdentifierController: AVCaptureVideoDataOutputSampleBufferDele
         let uiImage = UIImage(ciImage: ciImage)
         
         DispatchQueue.main.async {
-            AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
+            if let id = self.sendToGardenId {
+                self.presenter.uploadMedia(id: id, img: uiImage)
+            }  else {
+                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
+            }
             self.capturedImage = uiImage
             self.takePicture = false
         }
@@ -258,5 +278,18 @@ extension AddCoverIdentifierController {
         }
         
         videoOutput.connections.first?.videoOrientation = .portrait
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailOutputProtocol
+//----------------------------------------------
+
+extension AddCoverIdentifierController: GardenDetailOutputProtocol {
+    func successUploadMedia(imageUrl: String) {
+        dismiss(animated: true) { [weak self] in
+            guard let `self` = self else { return }
+            self.delegate?.addCoverIdentifierSuccessUpload(controller: self, imageUrl: imageUrl)
+        }
     }
 }

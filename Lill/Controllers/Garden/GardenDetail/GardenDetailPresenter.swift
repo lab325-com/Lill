@@ -15,7 +15,14 @@ import UIKit
 
 protocol GardenDetailOutputProtocol: BaseController {
     func success()
+    func successUploadMedia(imageUrl: String)
     func failure(error: String)
+}
+
+extension GardenDetailOutputProtocol {
+    func success() {}
+    func successUploadMedia(imageUrl: String) {}
+    func failure(error: String) {}
 }
 
 //----------------------------------------------
@@ -98,6 +105,33 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
             } else {
                 self?.view?.success()
             }
+        }
+    }
+    
+    func uploadMedia(id: String, img: UIImage) {
+        view?.startLoader()
+        
+        let plantsImage = img.jpegData(compressionQuality: 0.9)!
+
+        let file = GraphQLFile(fieldName: "image", originalName: "image.jpeg", mimeType: "image/jpeg", data: plantsImage)
+        
+        let mutation = UploadMediaMutation(image: "image")
+        
+        let _ = Network.shared.upload(model: MediaDataModel.self, mutation, files: [file]) { [weak self] model in
+            self?.view?.stopLoading()
+            
+            let mutation2 = GardenPlantUpdateMutation(record: GardenPlantUpdateInput(id: id, userMainImageId: model.uploadMedia.id  ?? ""))
+            let _ = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation2) { [weak self] model in
+                self?.view?.stopLoading()
+                self?.view?.successUploadMedia(imageUrl: model.gardenPlantUpdate.userMainImage?.urlIosFull ?? "")
+            } failureHandler: { [weak self] error in
+                self?.view?.stopLoading()
+                self?.view?.failure(error: error.localizedDescription)
+            }
+            
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         }
     }
     

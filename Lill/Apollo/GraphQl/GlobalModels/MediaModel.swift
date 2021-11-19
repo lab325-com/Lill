@@ -6,6 +6,10 @@ struct MediaModel: Codable {
     let type: String?
     let urlAndroidPhone: String?
     let urlAndroidTablet: String?
-    let urlIosFull: String
+    var urlIosFull: String
     let urlIosPrev: String
+    
+    mutating func changeUrlIosFull(_ urlIosFull: String) {
+        self.urlIosFull = urlIosFull
+    }
 }

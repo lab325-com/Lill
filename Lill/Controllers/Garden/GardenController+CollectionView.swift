@@ -101,6 +101,14 @@ extension GardenController: GardenButtonCellDelegate {
 //----------------------------------------------
 
 extension GardenController: GardenDetailProtocolo {
+    func gardenDetailChangePhoto(controller: GardeDetailController, imageUrl: String, id: String) {
+        /// not working because reload data in view will appear
+        if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
+            presenter.gardenPlants[index].userMainImage?.changeUrlIosFull(imageUrl)
+            collectionView.reloadData()
+        }
+    }
+    
     func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String) {
         
         /// not working because reload data in view will appear
