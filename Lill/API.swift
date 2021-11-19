@@ -1549,6 +1549,57 @@ public final class GardenPlantCreateMutation: GraphQLMutation {
   }
 }
 
+public final class GardenPlantDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenPlantDelete($id: String!) {
+      gardenPlantDelete(id: $id)
+    }
+    """
+
+  public let operationName: String = "GardenPlantDelete"
+
+  public var id: String
+
+  public init(id: String) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenPlantDelete", arguments: ["id": GraphQLVariable("id")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenPlantDelete: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenPlantDelete": gardenPlantDelete])
+    }
+
+    public var gardenPlantDelete: Bool? {
+      get {
+        return resultMap["gardenPlantDelete"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "gardenPlantDelete")
+      }
+    }
+  }
+}
+
 public final class GardenPlantUpdateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

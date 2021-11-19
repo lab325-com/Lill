@@ -12,6 +12,7 @@ import SwiftUI
 protocol GardenDetailProtocolo: AnyObject {
     func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String)
     func gardenDetailChangePhoto(controller: GardeDetailController, imageUrl: String, id: String)
+    func gardenDetailDelete(controller: GardeDetailController, id: String)
 }
 
 class GardeDetailController: BaseController {
@@ -206,7 +207,7 @@ extension GardeDetailController {
         
         let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
-            GardenRouter(presenter: self.navigationController).presentDeletePlan()
+            GardenRouter(presenter: self.navigationController).presentDeletePlan(plantID: self.id, imageUrl: self.presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? "", text: self.presenter.model?.gardenPlantById.name ?? "", delegate: self)
         }
         
         let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
@@ -227,7 +228,21 @@ extension GardeDetailController {
 
 extension GardeDetailController: AddCoverIdentifierProtocol {
     func addCoverIdentifierSuccessUpload(controller: AddCoverIdentifierController, imageUrl: String) {
+        presenter.model?.gardenPlantById.userMainImage?.changeUrlIosFull(imageUrl)
         delegate?.gardenDetailChangePhoto(controller: self, imageUrl: imageUrl, id: id)
         topImageView.kf.setImage(with: URL(string: imageUrl), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailDeletePlanController
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailDeleteDelegate {
+    func gardeDetailDeleteSuccess(controller: GardenDetailDeletePlanController) {
+        self.dismiss(animated: true) { [weak self] in
+            guard let `self` = self else { return }
+            self.delegate?.gardenDetailDelete(controller: self, id: self.id)
+        }
     }
 }

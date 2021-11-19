@@ -19,7 +19,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenDetailDeletePlanController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="g3c-us-geH" id="8aQ-oM-4E8"/>
                 <outlet property="coverView" destination="dC5-JK-6V9" id="zVL-kj-9my"/>
+                <outlet property="deleteButton" destination="bRe-Hx-sHo" id="lkL-NL-tXJ"/>
+                <outlet property="deletingPlantLabel" destination="lv5-my-ohn" id="aNG-yv-HeD"/>
+                <outlet property="gardenDeleteImageView" destination="9ZN-0B-yJg" id="Yyx-1h-JcC"/>
+                <outlet property="mainImageView" destination="hzJ-66-yUY" id="r7Q-mW-r3s"/>
+                <outlet property="plantImageView" destination="WdF-VD-UQ9" id="d2J-yq-Jch"/>
+                <outlet property="subTitleLabel" destination="RfM-vv-VcM" id="W5v-bK-bPu"/>
+                <outlet property="titleTextLabel" destination="u0u-Zx-E4P" id="34g-hK-4P7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +45,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-JK-6V9" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-JK-6V9" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                             <rect key="frame" x="93" y="101.5" width="204" height="204"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My First Violet Orchid with long name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0u-Zx-E4P">
@@ -49,24 +57,47 @@
                                     <color key="textColor" red="0.17254901959999999" green="0.1764705882" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
-                                    <rect key="frame" x="0.0" y="0.0" width="204" height="156.5"/>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-66-yUY">
+                                    <rect key="frame" x="0.0" y="0.0" width="224" height="177"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
+                                            <rect key="frame" x="20" y="20" width="204" height="156.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="WdF-VD-UQ9" secondAttribute="bottom" id="2fH-0N-dmn"/>
+                                        <constraint firstItem="WdF-VD-UQ9" firstAttribute="top" secondItem="hzJ-66-yUY" secondAttribute="top" id="Cy0-DX-hcc"/>
+                                        <constraint firstItem="WdF-VD-UQ9" firstAttribute="leading" secondItem="hzJ-66-yUY" secondAttribute="leading" id="jE4-g1-xtK"/>
+                                        <constraint firstAttribute="trailing" secondItem="WdF-VD-UQ9" secondAttribute="trailing" id="z94-oe-VU3"/>
+                                    </constraints>
+                                </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_delete_ic" translatesAutoresizingMaskIntoConstraints="NO" id="9ZN-0B-yJg">
+                                    <rect key="frame" x="-18" y="38" width="240" height="128"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="height" constant="204" id="2Ty-fe-dCy"/>
                                 <constraint firstAttribute="bottom" secondItem="u0u-Zx-E4P" secondAttribute="bottom" constant="8" id="41d-rE-kKa"/>
-                                <constraint firstAttribute="trailing" secondItem="WdF-VD-UQ9" secondAttribute="trailing" id="Sx0-TY-LQF"/>
-                                <constraint firstItem="u0u-Zx-E4P" firstAttribute="top" secondItem="WdF-VD-UQ9" secondAttribute="bottom" constant="8" id="aHp-hl-2F1"/>
+                                <constraint firstAttribute="trailing" secondItem="9ZN-0B-yJg" secondAttribute="trailing" constant="45" id="9Zj-bY-l6R"/>
+                                <constraint firstAttribute="width" constant="204" id="BcP-Ld-Unz"/>
+                                <constraint firstItem="hzJ-66-yUY" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="top" id="EgZ-2t-yXL"/>
+                                <constraint firstItem="9ZN-0B-yJg" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="top" constant="37" id="Nth-U1-Jht"/>
+                                <constraint firstItem="9ZN-0B-yJg" firstAttribute="centerY" secondItem="dC5-JK-6V9" secondAttribute="centerY" id="XLo-YG-OeM"/>
                                 <constraint firstItem="u0u-Zx-E4P" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" constant="8" id="bxR-n9-eKV"/>
-                                <constraint firstItem="WdF-VD-UQ9" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="top" id="e9r-GM-0av"/>
-                                <constraint firstItem="WdF-VD-UQ9" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" id="is4-rl-47m"/>
+                                <constraint firstAttribute="trailing" secondItem="hzJ-66-yUY" secondAttribute="trailing" id="jS5-g1-BvJ"/>
+                                <constraint firstItem="u0u-Zx-E4P" firstAttribute="top" secondItem="hzJ-66-yUY" secondAttribute="bottom" constant="8" id="l8i-C7-z19"/>
+                                <constraint firstItem="9ZN-0B-yJg" firstAttribute="centerX" secondItem="dC5-JK-6V9" secondAttribute="centerX" id="oRy-RK-hOe"/>
+                                <constraint firstItem="hzJ-66-yUY" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" id="pJg-Yx-fAX"/>
                                 <constraint firstAttribute="trailing" secondItem="u0u-Zx-E4P" secondAttribute="trailing" constant="8" id="s83-GL-ziB"/>
+                                <constraint firstAttribute="bottom" secondItem="9ZN-0B-yJg" secondAttribute="bottom" constant="37" id="sOa-AM-fKv"/>
                                 <constraint firstAttribute="width" secondItem="dC5-JK-6V9" secondAttribute="height" multiplier="1:1" id="tRA-RS-I6Q"/>
+                                <constraint firstItem="9ZN-0B-yJg" firstAttribute="leading" secondItem="dC5-JK-6V9" secondAttribute="leading" constant="45" id="wyj-Jh-kze"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.1202237969202711" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12092984433205711" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                     <real key="value" value="1"/>
@@ -79,87 +110,101 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm deleting Plant from your Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-vv-VcM">
-                            <rect key="frame" x="22" y="327.5" width="346" height="18"/>
-                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
-                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
-                            <rect key="frame" x="12" y="375.5" width="366" height="44"/>
-                            <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="prm-mt-8ff"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Delete Plant">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="SFProDisplay-Medium"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                            </buttonConfiguration>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="24"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
-                            <rect key="frame" x="12" y="428.5" width="366" height="44"/>
-                            <color key="backgroundColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="wYf-ZN-PpU"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Cancel">
-                                        <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="13" name="SFProDisplay-Bold"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                            </buttonConfiguration>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="24"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="Ptd-xi-AUs"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Oya-EJ-4ql">
+                            <rect key="frame" x="22" y="327.5" width="406" height="185"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-eT-yVL">
+                                    <rect key="frame" x="10" y="0.0" width="386" height="58"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm deleting Plant from your Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-vv-VcM">
+                                            <rect key="frame" x="20" y="20" width="346" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RfM-vv-VcM" secondAttribute="trailing" id="3UW-yd-qzJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="RfM-vv-VcM" secondAttribute="bottom" constant="20" id="RPz-nq-zMJ"/>
+                                        <constraint firstItem="RfM-vv-VcM" firstAttribute="top" secondItem="4Z8-eT-yVL" secondAttribute="top" id="ULW-T9-6wV"/>
+                                        <constraint firstItem="RfM-vv-VcM" firstAttribute="leading" secondItem="4Z8-eT-yVL" secondAttribute="leading" id="rjC-vR-e3H"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
+                                    <rect key="frame" x="20" y="68" width="366" height="44"/>
+                                    <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="prm-mt-8ff"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Delete Plant">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="15" name="SFProDisplay-Medium"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="24"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="actionDeletePlant:" destination="-1" eventType="touchUpInside" id="fNG-Lq-7NQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
+                                    <rect key="frame" x="20" y="121" width="366" height="44"/>
+                                    <color key="backgroundColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="wYf-ZN-PpU"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Cancel">
+                                                <attributes>
+                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="13" name="SFProDisplay-Bold"/>
+                                                    <real key="NSKern" value="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="24"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="Ptd-xi-AUs"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="dC5-JK-6V9" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="93" id="1ax-Q0-Cy0"/>
-                        <constraint firstAttribute="trailing" secondItem="RfM-vv-VcM" secondAttribute="trailing" constant="22" id="7QD-6M-rSL"/>
+                        <constraint firstItem="Oya-EJ-4ql" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="12" id="9zZ-DK-M6L"/>
                         <constraint firstItem="lv5-my-ohn" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="16" id="Az8-kM-rcH"/>
-                        <constraint firstItem="RfM-vv-VcM" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="22" id="BxB-hE-zwM"/>
-                        <constraint firstItem="bRe-Hx-sHo" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="12" id="GSa-ja-31s"/>
-                        <constraint firstAttribute="trailing" secondItem="g3c-us-geH" secondAttribute="trailing" constant="12" id="O3D-W9-I53"/>
-                        <constraint firstAttribute="bottom" secondItem="g3c-us-geH" secondAttribute="bottom" constant="13" id="PiN-gy-nL6"/>
-                        <constraint firstItem="RfM-vv-VcM" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="bottom" constant="22" id="QDJ-ay-Spp"/>
-                        <constraint firstItem="bRe-Hx-sHo" firstAttribute="top" secondItem="RfM-vv-VcM" secondAttribute="bottom" constant="30" id="VIR-qN-y0F"/>
+                        <constraint firstItem="Oya-EJ-4ql" firstAttribute="top" secondItem="dC5-JK-6V9" secondAttribute="bottom" constant="22" id="SlC-qh-7wK"/>
                         <constraint firstAttribute="trailing" secondItem="lv5-my-ohn" secondAttribute="trailing" constant="16" id="eCd-bU-LdF"/>
-                        <constraint firstItem="g3c-us-geH" firstAttribute="top" secondItem="bRe-Hx-sHo" secondAttribute="bottom" constant="9" id="fZX-HR-Wy7"/>
+                        <constraint firstAttribute="trailing" secondItem="Oya-EJ-4ql" secondAttribute="trailing" constant="12" id="gC3-R2-fOW"/>
                         <constraint firstItem="dC5-JK-6V9" firstAttribute="top" secondItem="lv5-my-ohn" secondAttribute="bottom" constant="35" id="iiT-LS-AMn"/>
-                        <constraint firstAttribute="trailing" secondItem="bRe-Hx-sHo" secondAttribute="trailing" constant="12" id="kKa-lf-ah3"/>
                         <constraint firstItem="dC5-JK-6V9" firstAttribute="centerX" secondItem="9dq-UY-eG4" secondAttribute="centerX" id="o8X-Mf-d7h"/>
+                        <constraint firstAttribute="bottom" secondItem="Oya-EJ-4ql" secondAttribute="bottom" constant="12" id="osd-8g-rZP"/>
                         <constraint firstAttribute="trailing" secondItem="dC5-JK-6V9" secondAttribute="trailing" constant="93" id="rrf-f7-kaC"/>
                         <constraint firstItem="lv5-my-ohn" firstAttribute="top" secondItem="9dq-UY-eG4" secondAttribute="top" constant="39" id="uT7-5e-7TR"/>
-                        <constraint firstItem="g3c-us-geH" firstAttribute="leading" secondItem="9dq-UY-eG4" secondAttribute="leading" constant="12" id="wPz-87-4GA"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -178,10 +223,11 @@
                 <constraint firstItem="9dq-UY-eG4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="hE7-Vt-WBw"/>
                 <constraint firstItem="9dq-UY-eG4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="hpT-S0-C2R"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="94"/>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </view>
     </objects>
     <resources>
+        <image name="garden_delete_ic" width="118" height="118"/>
         <image name="temp_plants_ic" width="400" height="267"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -60,7 +60,7 @@ struct GardenIDModel: Codable {
     let id:  String
     var name: String?
     let userDescription: String?
-    let userMainImage: MediaModel?
+    var userMainImage: MediaModel?
     let plant: GardenShortPlantModel?
     let garden: GardenMiniModel?
     let gardenPlantCares: [GardenShortPlantCaresModel]

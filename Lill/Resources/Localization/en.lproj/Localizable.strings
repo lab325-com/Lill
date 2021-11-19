@@ -95,6 +95,9 @@
 "diagnosis_title" = "Diagnose";
 "disease_archive_button" = "Diagnose Disease";
 "disease_archive_title" = "Disease Archive";
+"garden_choose_add_plant_cancel" = "Cancel";
+"garden_choose_add_plant_catalog" = "Catalog";
+"garden_choose_add_plant_identify" = "Identify";
 "garden_detail_about" = "About";
 "garden_detail_care_edit_my_plan" = "Edit My Care Plan";
 "garden_detail_care_plan" = "Care Plan";

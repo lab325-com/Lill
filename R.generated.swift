@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 29 files.
+  /// This `R.file` struct is generated, and contains static references to 30 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -169,6 +169,8 @@ struct R: Rswift.Validatable {
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantCreate.graphql`.
     static let gardenPlantCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCreate", pathExtension: "graphql")
+    /// Resource file `GardenPlantDelete.graphql`.
+    static let gardenPlantDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantDelete", pathExtension: "graphql")
     /// Resource file `GardenPlantUpdate.graphql`.
     static let gardenPlantUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantUpdate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
@@ -257,6 +259,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlantCreate", withExtension: "graphql")`
     static func gardenPlantCreateGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantCreateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantDelete", withExtension: "graphql")`
+    static func gardenPlantDeleteGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantDeleteGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -422,7 +430,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 89 images.
+  /// This `R.image` struct is generated, and contains static references to 90 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -436,6 +444,8 @@ struct R: Rswift.Validatable {
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `garden_bell_ic`.
     static let garden_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_bell_ic")
+    /// Image `garden_delete_ic`.
+    static let garden_delete_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_ic")
     /// Image `garden_schelure_ic`.
     static let garden_schelure_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_schelure_ic")
     /// Image `ic_background`.
@@ -642,6 +652,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_bell_ic", bundle: ..., traitCollection: ...)`
     static func garden_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_bell_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_delete_ic", bundle: ..., traitCollection: ...)`
+    static func garden_delete_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_delete_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1881,7 +1898,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 199 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 202 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2014,6 +2031,10 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static let garden_choose_add_plant_cancel = Rswift.StringResource(key: "garden_choose_add_plant_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static let uniques_cover_cancel = Rswift.StringResource(key: "uniques_cover_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel anytime
       ///
@@ -2051,6 +2072,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cares_add = Rswift.StringResource(key: "uniques_cares_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Catalog
+      ///
+      /// Locales: en, es
+      static let garden_choose_add_plant_catalog = Rswift.StringResource(key: "garden_choose_add_plant_catalog", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Change
       ///
       /// Locales: en, es
@@ -2263,6 +2288,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let choose_identify_identify = Rswift.StringResource(key: "choose_identify_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Identify
+      ///
+      /// Locales: en, es
+      static let garden_choose_add_plant_identify = Rswift.StringResource(key: "garden_choose_add_plant_identify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identify Photo
       ///
       /// Locales: en
@@ -3165,6 +3194,21 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static func garden_choose_add_plant_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_choose_add_plant_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_choose_add_plant_cancel"
+        }
+
+        return NSLocalizedString("garden_choose_add_plant_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static func uniques_cover_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("uniques_cover_cancel", bundle: hostingBundle, comment: "")
@@ -3310,6 +3354,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("uniques_cares_add", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Catalog
+      ///
+      /// Locales: en, es
+      static func garden_choose_add_plant_catalog(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_choose_add_plant_catalog", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_choose_add_plant_catalog"
+        }
+
+        return NSLocalizedString("garden_choose_add_plant_catalog", bundle: bundle, comment: "")
       }
 
       /// en translation: Change
@@ -4105,6 +4164,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("choose_identify_identify", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Identify
+      ///
+      /// Locales: en, es
+      static func garden_choose_add_plant_identify(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_choose_add_plant_identify", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_choose_add_plant_identify"
+        }
+
+        return NSLocalizedString("garden_choose_add_plant_identify", bundle: bundle, comment: "")
       }
 
       /// en translation: Identify Photo
@@ -6068,6 +6142,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "garden_delete_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_delete_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

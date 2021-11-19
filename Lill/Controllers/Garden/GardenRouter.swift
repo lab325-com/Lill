@@ -15,8 +15,8 @@ class GardenRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func presentDeletePlan() {
-        let controller = GardenDetailDeletePlanController()
+    func presentDeletePlan(plantID: String, imageUrl: String, text: String, delegate: GardenDetailDeleteDelegate) {
+        let controller = GardenDetailDeletePlanController(plantID: plantID, imageUrl: imageUrl, text: text, delegate: delegate)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overCurrentContext)

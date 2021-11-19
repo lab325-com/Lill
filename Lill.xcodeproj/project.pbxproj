@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02017AAD2747922000EE093C /* GardenDetailDeletePlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02017AAB2747922000EE093C /* GardenDetailDeletePlanController.swift */; };
 		02017AAE2747922000EE093C /* GardenDetailDeletePlanController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */; };
+		02017AB12747DBD400EE093C /* GardenPlantDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */; };
+		02017AB32747DBE400EE093C /* GardenPlantDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */; };
 		021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C8EC52705B0B200F0F589 /* PlantCollectionCell.swift */; };
 		021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021C8EC62705B0B200F0F589 /* PlantCollectionCell.xib */; };
 		021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C8EC92705D54800F0F589 /* UIView+Extension.swift */; };
@@ -261,6 +263,8 @@
 /* Begin PBXFileReference section */
 		02017AAB2747922000EE093C /* GardenDetailDeletePlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenDetailDeletePlanController.swift; sourceTree = "<group>"; };
 		02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailDeletePlanController.xib; sourceTree = "<group>"; };
+		02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlantDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDelete.graphql; sourceTree = SOURCE_ROOT; };
+		02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDeleteModel.swift; sourceTree = SOURCE_ROOT; };
 		021C8EC52705B0B200F0F589 /* PlantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionCell.swift; sourceTree = "<group>"; };
 		021C8EC62705B0B200F0F589 /* PlantCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantCollectionCell.xib; sourceTree = "<group>"; };
 		021C8EC92705D54800F0F589 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -539,6 +543,15 @@
 				02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */,
 			);
 			path = GardenDetailDeletePlanController;
+			sourceTree = "<group>";
+		};
+		02017AAF2747DB9F00EE093C /* GardenPlantDelete */ = {
+			isa = PBXGroup;
+			children = (
+				02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */,
+				02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */,
+			);
+			path = GardenPlantDelete;
 			sourceTree = "<group>";
 		};
 		021C8EC42705B08F00F0F589 /* Cell */ = {
@@ -1434,6 +1447,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				02017AAF2747DB9F00EE093C /* GardenPlantDelete */,
 				02527D9C2746DC9200126022 /* AddImageToGallery */,
 				02A4B64C2742C8F4007E0DA2 /* GardenPlantUpdate */,
 				02A46055274294A500D5D931 /* GardenPlantCreate */,
@@ -1928,6 +1942,7 @@
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
 				02527D8D274639A600126022 /* ScheduleByGardenPlant.graphql in Resources */,
 				FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */,
+				02017AB12747DBD400EE093C /* GardenPlantDelete.graphql in Resources */,
 				0272DB0B27359DC9005E7880 /* AddCoverAddController.xib in Resources */,
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
 				02527D94274642E900126022 /* GardenDetailScheduleCell.xib in Resources */,
@@ -2227,6 +2242,7 @@
 				FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */,
 				025ECF1C273D59A80041A7BD /* AddPlantTimeController.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
+				02017AB32747DBE400EE093C /* GardenPlantDeleteModel.swift in Sources */,
 				FA24A5B1273476190059AF6A /* GardenPresenter.swift in Sources */,
 				FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */,
 				02527D8F27463A5100126022 /* ScheduleByGardenPlantModel.swift in Sources */,

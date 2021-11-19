@@ -15,12 +15,14 @@ import UIKit
 
 protocol GardenDetailOutputProtocol: BaseController {
     func success()
+    func successDelete()
     func successUploadMedia(imageUrl: String)
     func failure(error: String)
 }
 
 extension GardenDetailOutputProtocol {
     func success() {}
+    func successDelete() {}
     func successUploadMedia(imageUrl: String) {}
     func failure(error: String) {}
 }
@@ -129,6 +131,19 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
                 self?.view?.failure(error: error.localizedDescription)
             }
             
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
+    }
+    
+    func deletePlant(plantId: String) {
+        view?.startLoader()
+        
+        let mutation = GardenPlantDeleteMutation(id: plantId)
+        let _ = Network.shared.mutation(model: GardenPlantDeleteModel.self, mutation) { [weak self] _ in
+            self?.view?.stopLoading()
+            self?.view?.successDelete()
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
