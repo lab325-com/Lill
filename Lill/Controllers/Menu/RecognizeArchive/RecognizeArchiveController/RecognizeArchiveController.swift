@@ -69,9 +69,7 @@ class RecognizeArchiveController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionRecognizePlant(_ sender: UIButton) {
-        if let model = KeychainService.standard.me {
-            PlantsRouter(presenter: navigationController).presentIdentify(model: model)
-        }
+        PlantsRouter(presenter: navigationController).presentIdentify()
     }
 }
 

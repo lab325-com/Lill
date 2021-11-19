@@ -57,7 +57,7 @@
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="ccx-PR-0qB"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPh-DH-JEq" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPh-DH-JEq" customClass="GradientView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="25" y="707" width="173.5" height="100"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choose_identify_photo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ji-J2-XeD">
@@ -77,7 +77,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="XMG-yV-psz" firstAttribute="centerX" secondItem="oPh-DH-JEq" secondAttribute="centerX" id="2Ug-Eo-M8n"/>
                         <constraint firstItem="Ve4-fA-1kd" firstAttribute="leading" secondItem="oPh-DH-JEq" secondAttribute="leading" id="I90-LS-om3"/>
@@ -147,7 +147,7 @@
                         <constraint firstAttribute="height" constant="100" id="nOz-gz-6Ap"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-AH-zoz">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-AH-zoz">
                     <rect key="frame" x="215.5" y="707" width="173.5" height="100"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choose_identify_diagnosis" translatesAutoresizingMaskIntoConstraints="NO" id="AaB-AP-tvz">

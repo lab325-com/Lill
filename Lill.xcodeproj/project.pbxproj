@@ -200,6 +200,8 @@
 		FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D7132728534F00A10C10 /* MediaModel.swift */; };
 		FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D715272854CC00A10C10 /* ClimatModel.swift */; };
 		FA40D718272854E200A10C10 /* CaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D717272854E200A10C10 /* CaresModel.swift */; };
+		FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F7FA72747BA7100E4B873 /* GardenChooseAddPlantController.swift */; };
+		FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */; };
 		FA64050B27205515000124A5 /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050A27205515000124A5 /* AccessModel.swift */; };
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
@@ -251,7 +253,6 @@
 		FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */; };
 		FAFCF3522715760A00C3134E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3512715760A00C3134E /* GradientView.swift */; };
 		FAFCF35527157FE100C3134E /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35427157FE100C3134E /* Me.graphql */; };
-		FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */; };
 		FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeDataModel.swift */; };
 		FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF35E2715D0F800C3134E /* IdentifyController.swift */; };
 		FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35F2715D0F800C3134E /* IdentifyController.xib */; };
@@ -451,6 +452,8 @@
 		FA40D7132728534F00A10C10 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		FA40D715272854CC00A10C10 /* ClimatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimatModel.swift; sourceTree = "<group>"; };
 		FA40D717272854E200A10C10 /* CaresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaresModel.swift; sourceTree = "<group>"; };
+		FA4F7FA72747BA7100E4B873 /* GardenChooseAddPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenChooseAddPlantController.swift; sourceTree = "<group>"; };
+		FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenChooseAddPlantController.xib; sourceTree = "<group>"; };
 		FA64050A27205515000124A5 /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
@@ -497,7 +500,6 @@
 		FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseIdentifyController.xib; sourceTree = "<group>"; };
 		FAFCF3512715760A00C3134E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FAFCF35427157FE100C3134E /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
-		FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyPresenter.swift; sourceTree = "<group>"; };
 		FAFCF3592715830D00C3134E /* MeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataModel.swift; sourceTree = "<group>"; };
 		FAFCF35E2715D0F800C3134E /* IdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyController.swift; sourceTree = "<group>"; };
 		FAFCF35F2715D0F800C3134E /* IdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentifyController.xib; sourceTree = "<group>"; };
@@ -1499,6 +1501,15 @@
 			path = PlantById;
 			sourceTree = "<group>";
 		};
+		FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F7FA72747BA7100E4B873 /* GardenChooseAddPlantController.swift */,
+				FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */,
+			);
+			path = GardenChooseAddPlant;
+			sourceTree = "<group>";
+		};
 		FA640509272041FD000124A5 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1644,6 +1655,7 @@
 			isa = PBXGroup;
 			children = (
 				023BBB192744150900DCFFF1 /* GardenRouter.swift */,
+				FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */,
 				023BBB1B2744171100DCFFF1 /* GardenDetail */,
 				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
 				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
@@ -1743,7 +1755,6 @@
 			children = (
 				FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */,
 				FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */,
-				FAFCF3562715823000C3134E /* Presenter */,
 			);
 			path = "Choose Identify";
 			sourceTree = "<group>";
@@ -1765,14 +1776,6 @@
 				FAFCF3592715830D00C3134E /* MeDataModel.swift */,
 			);
 			path = Me;
-			sourceTree = "<group>";
-		};
-		FAFCF3562715823000C3134E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				FAFCF3572715825600C3134E /* ChooseIdentifyPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		FAFCF35C2715CC6700C3134E /* Identify */ = {
@@ -1932,6 +1935,7 @@
 				FA40D71027282FE800A10C10 /* PlantById.graphql in Resources */,
 				02527D94274642E900126022 /* GardenDetailScheduleCell.xib in Resources */,
 				025ECF25273D821D0041A7BD /* OrderCreate.graphql in Resources */,
+				FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */,
 				0273B8C12745584A009A2247 /* GardenDetailAboutCell.xib in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */,
@@ -2175,6 +2179,7 @@
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
+				FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */,
 				02E02560273273D600988F12 /* MainPlantModel.swift in Sources */,
 				022949942701E7F700003A3E /* GetCatalogPlantsModel.swift in Sources */,
 				02D4BFBE2743B94D00B9322B /* CAMediaTimingFunction+Extension.swift in Sources */,
@@ -2206,7 +2211,6 @@
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
 				F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,
-				FAFCF3582715825600C3134E /* ChooseIdentifyPresenter.swift in Sources */,
 				02A4BA3E26FDD16C00DF6A08 /* UIPageViewController+Extension.swift in Sources */,
 				0291DDA027283C32008E9F6F /* PlantsDetailPresenter.swift in Sources */,
 				FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */,
