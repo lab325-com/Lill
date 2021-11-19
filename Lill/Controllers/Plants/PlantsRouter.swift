@@ -20,9 +20,8 @@ class PlantsRouter: BaseRouter {
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }
     
-    func presentIdentify(model: MeModel) {
+    func presentIdentify() {
         let controller = IdentifyController()
-        controller.meModel = model
         present(controller: controller)
     }
     

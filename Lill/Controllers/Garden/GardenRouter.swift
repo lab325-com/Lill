@@ -21,4 +21,9 @@ class GardenRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overCurrentContext)
     }
+    
+    func presentChooseAddPlant() {
+        let controller = GardenChooseAddPlantController()
+        present(controller: controller, animated: false, presentStyle: .overFullScreen)
+    }
 }

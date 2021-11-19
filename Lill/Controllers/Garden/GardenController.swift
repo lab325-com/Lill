@@ -122,7 +122,7 @@ class GardenController: BaseController {
     }
 
     @IBAction func addPlantAction(_ sender: UIButton) {
-        tabBarController?.selectedIndex = 0
+        GardenRouter(presenter: navigationController).presentChooseAddPlant()
     }
 }
 

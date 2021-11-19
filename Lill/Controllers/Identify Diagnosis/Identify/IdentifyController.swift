@@ -72,7 +72,6 @@ class IdentifyController: BaseController {
     
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var identifyResults = [PlantModel]()
-    var meModel: MeModel?
     
     var captureSession : AVCaptureSession!
     var backCamera : AVCaptureDevice!
@@ -143,11 +142,11 @@ class IdentifyController: BaseController {
         identifyPhotoButton.setTitle(RLocalization.identify_result_identify_photo(), for: .normal)
         retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo(), for: .normal)
         
-        guard let model = meModel else { return }
-        identifyCountLabel.text = "\(model.access.identifyUsed)" + "/" + "\(model.access.identifyTotal)"
-        identifyResultCountLabel.text = "\(model.access.identifyUsed)" + "/" + "\(model.access.identifyTotal)"
-        identifyPremiumView.isHidden = model.access.isPremium
-        identifyRsultPremiumView.isHidden = model.access.isPremium
+        guard let meModel = KeychainService.standard.me else { return }
+        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
+        identifyResultCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
+        identifyPremiumView.isHidden = meModel.access.isPremium
+        identifyRsultPremiumView.isHidden = meModel.access.isPremium
     }
     
     //----------------------------------------------

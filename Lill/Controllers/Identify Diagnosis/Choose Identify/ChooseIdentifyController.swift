@@ -22,9 +22,8 @@ class ChooseIdentifyController: BaseController {
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
+
     
-    private lazy var presenter = ChooseIdentifyPresenter(view: self)
-    private var meModel: MeDataModel?
 
     //----------------------------------------------
     // MARK: - Life cycle
@@ -32,9 +31,7 @@ class ChooseIdentifyController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter.getMe()
-        
+
         configureView()
     }
     
@@ -48,17 +45,12 @@ class ChooseIdentifyController: BaseController {
         premiumLabel.text = RLocalization.choose_identify_premium()
         
         cancelButton.setTitle(RLocalization.choose_identify_cancel(), for: .normal)
+        
+        guard let meModel = KeychainService.standard.me else { return }
+        identifyCountView.isHidden = meModel.access.isPremium
+        premiumView.isHidden = meModel.access.isPremium
+        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
     }
-    
-    func updateView() {
-        identifyView.isHidden = false
-        diagnosisView.isHidden = false
-        guard let model = meModel else { return }
-        identifyCountView.isHidden = model.me.access.isPremium
-        premiumView.isHidden = model.me.access.isPremium
-        identifyCountLabel.text = "\(model.me.access.identifyUsed)" + "/" + "\(model.me.access.identifyTotal)"
-    }
-    
     
     //----------------------------------------------
     // MARK: - @IBActions
@@ -69,11 +61,11 @@ class ChooseIdentifyController: BaseController {
     }
     
     @IBAction func identifyAction(_ sender: Any) {
-        guard let model = meModel else { return }
+        guard let meModel = KeychainService.standard.me else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if model.me.access.isPremium || model.me.access.identifyUsed < 3 {
-                PlantsRouter(presenter: currentNavigationController).presentIdentify(model: model.me)
+            if meModel.access.isPremium || meModel.access.identifyUsed < 3 {
+                PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
             }
@@ -81,29 +73,14 @@ class ChooseIdentifyController: BaseController {
     }
     
     @IBAction func diagnosisAction(_ sender: Any) {
-        guard let model = meModel else { return }
+        guard let meModel = KeychainService.standard.me else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if model.me.access.isPremium {
+            if meModel.access.isPremium {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
             }
         }
-    }
-}
-
-//----------------------------------------------
-// MARK: - PlantsOutputProtocol
-//----------------------------------------------
-
-extension ChooseIdentifyController: ChooseIdentifyOutputProtocol {
-    func success(model: MeDataModel) {
-        meModel = model
-        updateView()
-    }
-    
-    func failure(error: String) {
-
     }
 }
