@@ -1246,7 +1246,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 45 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 46 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1280,6 +1280,8 @@ struct R: Rswift.Validatable {
     static let gardeDetailController = _R.nib._GardeDetailController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
+    /// Nib `GardenCaresDetail`.
+    static let gardenCaresDetail = _R.nib._GardenCaresDetail()
     /// Nib `GardenChooseAddPlantController`.
     static let gardenChooseAddPlantController = _R.nib._GardenChooseAddPlantController()
     /// Nib `GardenDetailAboutCell`.
@@ -1464,6 +1466,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenButtonCell) instead")
     static func gardenButtonCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenButtonCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenCaresDetail", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenCaresDetail) instead")
+    static func gardenCaresDetail(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenCaresDetail)
     }
     #endif
 
@@ -1763,6 +1773,10 @@ struct R: Rswift.Validatable {
       return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
     }
 
+    static func gardenCaresDetail(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenCaresDetail.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenChooseAddPlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenChooseAddPlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1912,7 +1926,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 207 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 210 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2146,6 +2160,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_clone_plant = Rswift.StringResource(key: "action_edit_clone_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_button = Rswift.StringResource(key: "garden_clone_plant_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_title = Rswift.StringResource(key: "garden_clone_plant_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Confirm deleting Plant from your Garden
       ///
       /// Locales: en, es
@@ -2290,6 +2312,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Give name for clone of this plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_subtitle = Rswift.StringResource(key: "garden_clone_plant_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Give your plant name
       ///
       /// Locales: en, es
@@ -3615,6 +3641,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("action_edit_clone_plant", bundle: bundle, comment: "")
       }
 
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_button"
+        }
+
+        return NSLocalizedString("garden_clone_plant_button", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_title"
+        }
+
+        return NSLocalizedString("garden_clone_plant_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Confirm deleting Plant from your Garden
       ///
       /// Locales: en, es
@@ -4153,6 +4209,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscription_sub_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Give name for clone of this plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_subtitle"
+        }
+
+        return NSLocalizedString("garden_clone_plant_subtitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Give your plant name
@@ -6196,6 +6267,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenCaresDetail: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GardenCaresDetail"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

@@ -37,7 +37,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dq-UY-eG4">
-                    <rect key="frame" x="12" y="210.5" width="390" height="485.5"/>
+                    <rect key="frame" x="12" y="201.5" width="390" height="503.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deleting Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-my-ohn">
                             <rect key="frame" x="16" y="39" width="358" height="27.5"/>
@@ -61,7 +61,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="224" height="177"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
-                                            <rect key="frame" x="20" y="20" width="204" height="156.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="204" height="156.5"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,7 +73,7 @@
                                     </constraints>
                                 </view>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_delete_ic" translatesAutoresizingMaskIntoConstraints="NO" id="9ZN-0B-yJg">
-                                    <rect key="frame" x="-18" y="38" width="240" height="128"/>
+                                    <rect key="frame" x="45" y="37" width="114" height="130"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,13 +111,13 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Oya-EJ-4ql">
-                            <rect key="frame" x="22" y="327.5" width="406" height="185"/>
+                            <rect key="frame" x="12" y="327.5" width="366" height="164"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-eT-yVL">
-                                    <rect key="frame" x="10" y="0.0" width="386" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm deleting Plant from your Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-vv-VcM">
-                                            <rect key="frame" x="20" y="20" width="346" height="18"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="38"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
                                             <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
-                                    <rect key="frame" x="20" y="68" width="366" height="44"/>
+                                    <rect key="frame" x="0.0" y="67" width="366" height="44"/>
                                     <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="prm-mt-8ff"/>
@@ -143,7 +143,7 @@
                                             <fragment content="Delete Plant">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="15" name="SFProDisplay-Medium"/>
+                                                    <font key="NSFont" metaFont="system" size="15"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -158,7 +158,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
-                                    <rect key="frame" x="20" y="121" width="366" height="44"/>
+                                    <rect key="frame" x="0.0" y="120" width="366" height="44"/>
                                     <color key="backgroundColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="wYf-ZN-PpU"/>
@@ -170,7 +170,7 @@
                                                 <attributes>
                                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="13" name="SFProDisplay-Bold"/>
+                                                    <font key="NSFont" metaFont="system"/>
                                                     <real key="NSKern" value="0.0"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                         <tabStops/>

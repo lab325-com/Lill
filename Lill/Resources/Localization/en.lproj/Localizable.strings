@@ -98,6 +98,9 @@
 "garden_choose_add_plant_cancel" = "Cancel";
 "garden_choose_add_plant_catalog" = "Catalog";
 "garden_choose_add_plant_identify" = "Identify";
+"garden_clone_plant_button" = "Clone Plant";
+"garden_clone_plant_subtitle" = "Give name for clone of this plant";
+"garden_clone_plant_title" = "Clone Plant";
 "garden_delete_cancel" = "Cancel";
 "garden_delete_plant" = "Delete Plant";
 "garden_delete_sub_title" = "Confirm deleting Plant\nfrom your Garden";

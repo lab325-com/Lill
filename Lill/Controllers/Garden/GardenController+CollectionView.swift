@@ -89,15 +89,29 @@ extension GardenController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//----------------------------------------------
+// MARK: - GardenButtonCellDelegate
+//----------------------------------------------
+
 extension GardenController: GardenButtonCellDelegate {
-    func doneCares() {
+    func didTappedDoneCaresButton() {
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         presenter.doneCares(gardenId: gardenId, careTypeId: selectedCareType)
     }
 }
 
 //----------------------------------------------
-// MARK: - GardenDetailProtocolo
+// MARK: - GardenViewCellDelegate
+//----------------------------------------------
+
+extension GardenController: GardenViewCellDelegate {
+    func didTappedCaresDetailButton() {
+        
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailProtocol
 //----------------------------------------------
 
 extension GardenController: GardenDetailProtocolo {

@@ -56,5 +56,4 @@ class DetailAboutView: UIView, LoadFromXibProtocol {
             aboutTitleLabel.text = RLocalization.climate_hardiness()
         }
     }
-    
 }
