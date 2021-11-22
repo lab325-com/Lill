@@ -21,5 +21,12 @@ class PopUpRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         tabBarController?.present(controller, animated: true, completion: nil)
     }
+    
+    func presentPopClonePlant(delegate: PopClonePlantDelegate, id: String){
+        let controller = PopClonePlantController(delegate: delegate, id: id)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller,animated: true, presentStyle: .overCurrentContext)
+    }
 }
 

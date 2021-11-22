@@ -1330,6 +1330,8 @@ struct R: Rswift.Validatable {
     static let plantsDetailController = _R.nib._PlantsDetailController()
     /// Nib `PopChangeNameController`.
     static let popChangeNameController = _R.nib._PopChangeNameController()
+    /// Nib `PopClonePlantController`.
+    static let popClonePlantController = _R.nib._PopClonePlantController()
     /// Nib `PopUniquePlantController`.
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
@@ -1670,6 +1672,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopClonePlantController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popClonePlantController) instead")
+    static func popClonePlantController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popClonePlantController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopUniquePlantController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popUniquePlantController) instead")
     static func popUniquePlantController(_: Void = ()) -> UIKit.UINib {
@@ -1871,6 +1881,10 @@ struct R: Rswift.Validatable {
 
     static func popChangeNameController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.popChangeNameController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func popClonePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popClonePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func popUniquePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -5982,6 +5996,7 @@ struct _R: Rswift.Validatable {
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
       try _PopChangeNameController.validate()
+      try _PopClonePlantController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
       try _SplashController.validate()
@@ -6687,6 +6702,23 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopChangeNameController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PopClonePlantController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PopClonePlantController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopClonePlantController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

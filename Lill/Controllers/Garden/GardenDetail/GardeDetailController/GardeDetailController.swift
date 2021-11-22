@@ -201,8 +201,10 @@ extension GardeDetailController {
             // Code to unfollow
         }
         
-        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
+        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            
+            PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
         }
         
         let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
@@ -245,5 +247,15 @@ extension GardeDetailController: GardenDetailDeleteDelegate {
             self.navigationController?.popViewController(animated: true)
             self.delegate?.gardenDetailDelete(controller: self, id: self.id)
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopClonePlantDelegate
+//----------------------------------------------
+
+extension GardeDetailController: PopClonePlantDelegate {
+    func popClonePlantSuccess(controller: PopClonePlantController) {
+        
     }
 }

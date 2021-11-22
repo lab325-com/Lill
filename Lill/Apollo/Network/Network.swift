@@ -37,16 +37,9 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
-                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
-                        if model.errors.message == "Not authenticated" {
-                            KeychainService.standard.removeAll()
-                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
-                        }
-                    } catch {
-                        controller?.view?.makeToast(error.localizedDescription)
-                        failureHandler(error)
+                    if queryResult.errors?.first?.message == "Not authenticated" {
+                        KeychainService.standard.removeAll()
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                 }
             case .failure(let error):
@@ -73,16 +66,9 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
-                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
-                        if model.errors.message == "Not authenticated" {
-                            KeychainService.standard.removeAll()
-                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
-                        }
-                    } catch {
-                        controller?.view?.makeToast(error.localizedDescription)
-                        failureHandler(error)
+                    if queryResult.errors?.first?.message == "Not authenticated" {
+                        KeychainService.standard.removeAll()
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                 }
             case .failure(let error):
@@ -109,16 +95,9 @@ class Network {
                     successHandler(model)
                 } catch {
                     debugPrint("Failure! Error: \(error)")
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: queryResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
-                        let model = try JSONDecoder().decode(BaseErrorModel.self, from: data)
-                        if model.errors.message == "Not authenticated" {
-                            KeychainService.standard.removeAll()
-                            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
-                        }
-                    } catch {
-                        controller?.view?.makeToast(error.localizedDescription)
-                        failureHandler(error)
+                    if queryResult.errors?.first?.message == "Not authenticated" {
+                        KeychainService.standard.removeAll()
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                 }
             case .failure(let error):

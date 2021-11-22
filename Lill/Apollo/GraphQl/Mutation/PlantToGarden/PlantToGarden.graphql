@@ -1,5 +1,7 @@
 mutation PlantToGarden($plantId: String!,
 					   $gardenId: String!) {
 	plantToGarden(plantId: $plantId,
-				  gardenId: $gardenId)
+				  gardenId: $gardenId) {
+		id
+	}
 }
