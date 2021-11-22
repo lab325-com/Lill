@@ -152,11 +152,7 @@ class PlantsDetailController: BaseController {
 
 extension PlantsDetailController: PlantsDetailOutputProtocol {
     func success(model: PlantToGardenDataModel) {
-        if model.plantToGarden {
-            CongradsViewPresenter.showCongradsView()
-        } else {
-            debugPrint("FALSE ADD PLANT TO GARDEN")
-        }
+        CongradsViewPresenter.showCongradsView()
     }
     
     func success(model: FavoritePlantDataModel) {

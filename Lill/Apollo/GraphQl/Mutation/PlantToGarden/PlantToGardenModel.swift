@@ -2,5 +2,9 @@
 import Foundation
 
 struct PlantToGardenDataModel: Codable {
-    let plantToGarden: Bool
+    let plantToGarden: PlantToGardenMainModel
+}
+
+struct PlantToGardenMainModel: Codable {
+    let id: String
 }

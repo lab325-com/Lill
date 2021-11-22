@@ -30,8 +30,9 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
             
             return count
         } else {
+            count += 2
             if presenter.cares.count != 0 {
-                count += 2
+                
                 if presenter.scheduleFuture.count != 0 {
                     count += presenter.scheduleFuture.count
                 }

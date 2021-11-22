@@ -1246,7 +1246,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 45 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 46 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1328,6 +1328,8 @@ struct R: Rswift.Validatable {
     static let plantsDetailController = _R.nib._PlantsDetailController()
     /// Nib `PopChangeNameController`.
     static let popChangeNameController = _R.nib._PopChangeNameController()
+    /// Nib `PopClonePlantController`.
+    static let popClonePlantController = _R.nib._PopClonePlantController()
     /// Nib `PopUniquePlantController`.
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
@@ -1660,6 +1662,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopClonePlantController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popClonePlantController) instead")
+    static func popClonePlantController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popClonePlantController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopUniquePlantController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popUniquePlantController) instead")
     static func popUniquePlantController(_: Void = ()) -> UIKit.UINib {
@@ -1859,6 +1869,10 @@ struct R: Rswift.Validatable {
       return R.nib.popChangeNameController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func popClonePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popClonePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func popUniquePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.popUniquePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1912,7 +1926,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 207 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 210 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2146,6 +2160,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_clone_plant = Rswift.StringResource(key: "action_edit_clone_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_button = Rswift.StringResource(key: "garden_clone_plant_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_title = Rswift.StringResource(key: "garden_clone_plant_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Confirm deleting Plant from your Garden
       ///
       /// Locales: en, es
@@ -2290,6 +2312,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Give name for clone of this plant
+      ///
+      /// Locales: en, es
+      static let garden_clone_plant_subtitle = Rswift.StringResource(key: "garden_clone_plant_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Give your plant name
       ///
       /// Locales: en, es
@@ -3615,6 +3641,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("action_edit_clone_plant", bundle: bundle, comment: "")
       }
 
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_button"
+        }
+
+        return NSLocalizedString("garden_clone_plant_button", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clone Plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_title"
+        }
+
+        return NSLocalizedString("garden_clone_plant_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Confirm deleting Plant from your Garden
       ///
       /// Locales: en, es
@@ -4153,6 +4209,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscription_sub_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Give name for clone of this plant
+      ///
+      /// Locales: en, es
+      static func garden_clone_plant_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_clone_plant_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_clone_plant_subtitle"
+        }
+
+        return NSLocalizedString("garden_clone_plant_subtitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Give your plant name
@@ -5911,6 +5982,7 @@ struct _R: Rswift.Validatable {
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
       try _PopChangeNameController.validate()
+      try _PopClonePlantController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
       try _SplashController.validate()
@@ -6605,6 +6677,23 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopChangeNameController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PopClonePlantController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PopClonePlantController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopClonePlantController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
