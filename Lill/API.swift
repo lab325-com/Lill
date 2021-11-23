@@ -1456,6 +1456,107 @@ public final class DoneAllCaresByGardenMutation: GraphQLMutation {
   }
 }
 
+public final class GardenPlantCloneMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenPlantClone($gardenPlantId: String!, $name: String!, $gardenId: String) {
+      gardenPlantClone(
+        gardenPlantId: $gardenPlantId
+        name: $name
+        gardenId: $gardenId
+      ) {
+        __typename
+        id
+      }
+    }
+    """
+
+  public let operationName: String = "GardenPlantClone"
+
+  public var gardenPlantId: String
+  public var name: String
+  public var gardenId: String?
+
+  public init(gardenPlantId: String, name: String, gardenId: String? = nil) {
+    self.gardenPlantId = gardenPlantId
+    self.name = name
+    self.gardenId = gardenId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenPlantId": gardenPlantId, "name": name, "gardenId": gardenId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenPlantClone", arguments: ["gardenPlantId": GraphQLVariable("gardenPlantId"), "name": GraphQLVariable("name"), "gardenId": GraphQLVariable("gardenId")], type: .object(GardenPlantClone.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenPlantClone: GardenPlantClone? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenPlantClone": gardenPlantClone.flatMap { (value: GardenPlantClone) -> ResultMap in value.resultMap }])
+    }
+
+    public var gardenPlantClone: GardenPlantClone? {
+      get {
+        return (resultMap["gardenPlantClone"] as? ResultMap).flatMap { GardenPlantClone(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "gardenPlantClone")
+      }
+    }
+
+    public struct GardenPlantClone: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["GardenPlant"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil) {
+        self.init(unsafeResultMap: ["__typename": "GardenPlant", "id": id])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+    }
+  }
+}
+
 public final class GardenPlantCreateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -2292,7 +2393,6 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
             urlIosPrev
           }
           names
-          wikiUrl
         }
       }
     }
@@ -2707,7 +2807,6 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
             GraphQLField("latinName", type: .scalar(String.self)),
             GraphQLField("plantImages", type: .list(.object(PlantImage.selections))),
             GraphQLField("names", type: .scalar(String.self)),
-            GraphQLField("wikiUrl", type: .scalar(String.self)),
           ]
         }
 
@@ -2717,8 +2816,8 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(plantCares: [PlantCare?]? = nil, climate: Climate? = nil, descriptionFull: String? = nil, descriptionWikiHtml: String? = nil, id: GraphQLID? = nil, isFavourite: Bool? = nil, latinName: String? = nil, plantImages: [PlantImage?]? = nil, names: String? = nil, wikiUrl: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Plant", "PlantCares": plantCares.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, "Climate": climate.flatMap { (value: Climate) -> ResultMap in value.resultMap }, "descriptionFull": descriptionFull, "descriptionWikiHtml": descriptionWikiHtml, "id": id, "isFavourite": isFavourite, "latinName": latinName, "plantImages": plantImages.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, "names": names, "wikiUrl": wikiUrl])
+        public init(plantCares: [PlantCare?]? = nil, climate: Climate? = nil, descriptionFull: String? = nil, descriptionWikiHtml: String? = nil, id: GraphQLID? = nil, isFavourite: Bool? = nil, latinName: String? = nil, plantImages: [PlantImage?]? = nil, names: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Plant", "PlantCares": plantCares.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, "Climate": climate.flatMap { (value: Climate) -> ResultMap in value.resultMap }, "descriptionFull": descriptionFull, "descriptionWikiHtml": descriptionWikiHtml, "id": id, "isFavourite": isFavourite, "latinName": latinName, "plantImages": plantImages.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, "names": names])
         }
 
         public var __typename: String {
@@ -2808,15 +2907,6 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "names")
-          }
-        }
-
-        public var wikiUrl: String? {
-          get {
-            return resultMap["wikiUrl"] as? String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "wikiUrl")
           }
         }
 

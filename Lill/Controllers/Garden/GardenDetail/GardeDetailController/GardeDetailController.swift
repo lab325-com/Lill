@@ -101,7 +101,6 @@ class GardeDetailController: BaseController {
         tableView.register(UINib(nibName: cellAllWaitingIdentifier, bundle: nil), forCellReuseIdentifier: cellAllWaitingIdentifier)
         
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = UITableView.automaticDimension
         
         navigationController?.navigationBar.tintColor = UIColor.white
         
@@ -139,7 +138,7 @@ extension GardeDetailController: GardenDetailOutputProtocol {
         tableView.reloadData()
         topImageView.kf.setImage(with: URL(string: presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
         
-        wikiUrl = presenter.model?.gardenPlantById.plant?.wikiUrl ?? ""
+        //wikiUrl = presenter.model?.gardenPlantById.plant?.wikiUrl?.first
 
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.tableView.alpha  = 1.0

@@ -46,23 +46,36 @@ class PopClonePresenter: PopClonePresenterProtocol {
         
         view?.startLoader()
         
-        getIDPlant(gardenId: gardenId) {[weak self] plantID in
-            self?.plantToGarden(plantId: plantID, ownGardenId: ownGardenId, success: { [weak self] newGardenID in
-                self?.changeName(id: newGardenID, name: name, success: { [weak self] in
-                    self?.view?.stopLoading()
-                    self?.view?.success()
-                }, failure: { [weak self] error in
-                    self?.view?.stopLoading()
-                    self?.view?.failure(error: error)
-                })
-            }, failure: { [weak self] error in
-                self?.view?.stopLoading()
-                self?.view?.failure(error: error)
-            })
-        } failure: { [weak self] error in
+        
+        let mutation = GardenPlantCloneMutation(gardenPlantId: gardenId, name: name, gardenId: ownGardenId)
+        
+        
+        let _ = Network.shared.mutation(model: GardenPlantClone.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            self?.view?.failure(error: error)
-        }
+            self?.view?.success()
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+        
+//
+//        getIDPlant(gardenId: gardenId) {[weak self] plantID in
+//            self?.plantToGarden(plantId: plantID, ownGardenId: ownGardenId, success: { [weak self] newGardenID in
+//                self?.changeName(id: newGardenID, name: name, success: { [weak self] in
+//                    self?.view?.stopLoading()
+//                    self?.view?.success()
+//                }, failure: { [weak self] error in
+//                    self?.view?.stopLoading()
+//                    self?.view?.failure(error: error)
+//                })
+//            }, failure: { [weak self] error in
+//                self?.view?.stopLoading()
+//                self?.view?.failure(error: error)
+//            })
+//        } failure: { [weak self] error in
+//            self?.view?.stopLoading()
+//            self?.view?.failure(error: error)
+//        }
 
     }
     
