@@ -1282,6 +1282,8 @@ struct R: Rswift.Validatable {
     static let gardeDetailController = _R.nib._GardeDetailController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
+    /// Nib `GardenCaresDetail`.
+    static let gardenCaresDetail = _R.nib._GardenCaresDetail()
     /// Nib `GardenChooseAddPlantController`.
     static let gardenChooseAddPlantController = _R.nib._GardenChooseAddPlantController()
     /// Nib `GardenDetailAboutCell`.
@@ -1468,6 +1470,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenButtonCell) instead")
     static func gardenButtonCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenButtonCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenCaresDetail", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenCaresDetail) instead")
+    static func gardenCaresDetail(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenCaresDetail)
     }
     #endif
 
@@ -1773,6 +1783,10 @@ struct R: Rswift.Validatable {
 
     static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
       return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
+    }
+
+    static func gardenCaresDetail(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenCaresDetail.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenChooseAddPlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -6270,6 +6284,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenCaresDetail: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GardenCaresDetail"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

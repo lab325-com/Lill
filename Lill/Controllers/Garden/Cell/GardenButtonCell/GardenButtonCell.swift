@@ -2,7 +2,7 @@
 import UIKit
 
 protocol GardenButtonCellDelegate: AnyObject {
-    func doneCares()
+    func didTappedDoneCaresButton()
 }
 
 class GardenButtonCell: UICollectionViewCell {
@@ -40,6 +40,6 @@ class GardenButtonCell: UICollectionViewCell {
     //----------------------------------------------
     
     @IBAction func doneCaresAction(_ sender: Any) {
-        delegate?.doneCares()
+        delegate?.didTappedDoneCaresButton()
     }
 }
