@@ -98,9 +98,10 @@ class SubscribePresenter: SubscribePresenterProtocol {
     func restore(_ restoreCompletion: @escaping (Bool) -> Void) {
         view?.startLoader()
         SwiftyStoreKit.restorePurchases(atomically: true) {[weak self] results in
-            self?.view?.stopLoading()
+            
             
             if results.restoreFailedPurchases.count > 0 {
+                self?.view?.stopLoading()
                 print("Restore Failed: \(results.restoreFailedPurchases)")
                 restoreCompletion(false)
             }
@@ -112,11 +113,26 @@ class SubscribePresenter: SubscribePresenterProtocol {
                     }
                     
                 }
+                let receiptData = SwiftyStoreKit.localReceiptData
+                if let receiptString = receiptData?.base64EncodedString(options: []) {
+                    let mutation = OrderCreateMutation(receipt: receiptString)
+                    let _ = Network.shared.mutation(model: OrderCreate.self, mutation, controller: self?.view, successHandler: { [weak self] model in
+                        self?.view?.stopLoading()
+                        restoreCompletion(true)
+                    }, failureHandler: { [weak self] error in
+                        self?.view?.stopLoading()
+                        restoreCompletion(false)
+                    })
+                } else {
+                    self?.view?.stopLoading()
+                    restoreCompletion(false)
+                }
                 print("Restore Success: \(results.restoredPurchases)")
                
-                restoreCompletion(true)
+                
             }
             else {
+                self?.view?.stopLoading()
                 restoreCompletion(false)
             }
         }
