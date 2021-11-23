@@ -19,6 +19,8 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if presenter.sadGardenPlants.count == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GardenViewCell
+            cell.delegate = self
+            cell.indexPath = indexPath
             if presenter.sadGardenPlants.count % 2 != 0, indexPath.row == presenter.sadGardenPlants.count + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1) - 1 {
                 cell.containView.isHidden = true
                 cell.isUserInteractionEnabled = false
@@ -45,6 +47,8 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! GardenViewCell
+                cell.delegate = self
+                cell.indexPath = indexPath
                 if presenter.sadGardenPlants.count % 2 != 0, indexPath.row == presenter.sadGardenPlants.count + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1) - 1 {
                     cell.containView.isHidden = true
                     cell.isUserInteractionEnabled = false
@@ -105,8 +109,9 @@ extension GardenController: GardenButtonCellDelegate {
 //----------------------------------------------
 
 extension GardenController: GardenViewCellDelegate {
-    func didTappedCaresDetailButton() {
-        
+    func didTappedCaresDetailButton(cell: GardenViewCell) {
+        let plantId = presenter.sadGardenPlants[cell.indexPath!.row].id
+        GardenRouter(presenter: navigationController).presentGadrenCaresDetail(plantId: plantId)
     }
 }
 
@@ -132,7 +137,6 @@ extension GardenController: GardenDetailProtocolo {
     }
     
     func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String) {
-        
         /// not working because reload data in view will appear
         if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
             presenter.gardenPlants[index].changeName(text)

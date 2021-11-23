@@ -99,7 +99,7 @@
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";
@@ -107,7 +107,7 @@
 "garden_delete_success" = "Planta \ NHA ha sido eliminado";
 "garden_delete_title" = "Plante";
 "garden_detail_about" = "Sobre";
-"garden_detail_care_edit_my_plan" = "Editar mi plan de cuidado";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
 "garden_plan_done" = "Hecho";

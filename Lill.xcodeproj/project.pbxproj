@@ -1353,7 +1353,6 @@
 				FA1CEC4F273C559C003A4F84 /* Query */,
 				FA1CEC50273C55A8003A4F84 /* Mutation */,
 				FA8FCD3727196BC100173725 /* GlobalModels */,
-				02E0255A27326DC300988F12 /* DiagnoseArhive */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -1451,6 +1450,7 @@
 		FA1CEC4F273C559C003A4F84 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				02E0255A27326DC300988F12 /* DiagnoseArhive */,
 				02527D8B2746397300126022 /* ScheduleByGardenPlant */,
 				023BBB1E27441C5000DCFFF1 /* GardenPlanById */,
 				02A4604C274279C200D5D931 /* CareType */,
