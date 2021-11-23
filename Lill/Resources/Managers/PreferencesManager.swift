@@ -9,6 +9,7 @@ class PreferencesManager : NSObject {
     //MARK: - Keys
     static let isFirstRun = "isFirstRun"
     static let languageCode = "languageCode"
+    static let fcmToken = "fcmToken"
     
     var userDefaults: UserDefaults
     
@@ -107,6 +108,15 @@ class PreferencesManager : NSObject {
         set {
             userDefaults.set(newValue.rawValue, forKey: PreferencesManager.languageCode)
             userDefaults.synchronize()
+        }
+    }
+    
+    var fcmToken: String? {
+        get {
+            return self.model(forKey: PreferencesManager.fcmToken)
+        }
+        set {
+            self.set(newValue, forKey: PreferencesManager.fcmToken)
         }
     }
 }
