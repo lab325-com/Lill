@@ -3,7 +3,7 @@ import UIKit
 import Kingfisher
 
 protocol GardenViewCellDelegate: AnyObject {
-    func didTappedCaresDetailButton()
+    func didTappedCaresDetailButton(cell: GardenViewCell)
 }
 
 class GardenViewCell: UICollectionViewCell {
@@ -22,6 +22,7 @@ class GardenViewCell: UICollectionViewCell {
     //----------------------------------------------
     
     weak var delegate: GardenViewCellDelegate?
+    var indexPath: IndexPath?
     
     //----------------------------------------------
     // MARK: - Layouts
@@ -52,13 +53,14 @@ class GardenViewCell: UICollectionViewCell {
         plantImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
         plantCareButton.setTitle(model.isHappy ? "Plant is happy" : model.gardenPlantCares.count == 1 ? model.gardenPlantCares.first?.careType.name.text : "Need Cares: \(model.gardenPlantCares.count)", for: .normal)
         plantCareButton.backgroundColor = model.isHappy ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)
+        plantCareButton.isUserInteractionEnabled = !model.isHappy
     }
     
     //----------------------------------------------
     // MARK: - IBActions
     //----------------------------------------------
     
-    @IBAction func caresAction(_ sender: Any) {
-        delegate?.didTappedCaresDetailButton()
+    @IBAction func caresDetailAction(_ sender: Any) {
+        delegate?.didTappedCaresDetailButton(cell: self)
     }
 }

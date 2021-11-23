@@ -57,7 +57,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="caresAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="o0q-Wb-dsc"/>
+                                    <action selector="caresDetailAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="4WB-vh-y71"/>
                                 </connections>
                             </button>
                         </subviews>
