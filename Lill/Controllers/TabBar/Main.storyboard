@@ -12,6 +12,9 @@
         <array key="SFProDisplay-Bold.ttf">
             <string>SFProDisplay-Bold</string>
         </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
@@ -792,6 +795,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-VJ-ts5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvi-LB-y22">
+                                        <rect key="frame" x="0.0" y="105" width="414" height="620"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-4g-h1P">
+                                                <rect key="frame" x="97.5" y="240.5" width="219" height="139.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheldure_bell_ic" translatesAutoresizingMaskIntoConstraints="NO" id="io2-eA-dqP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="46"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-VH-tPB">
+                                                        <rect key="frame" x="0.0" y="71" width="219" height="68.5"/>
+                                                        <string key="text">To have daily schedule and
+notifications - turn ON
+Ring icon in Plant card</string>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="u8y-4g-h1P" firstAttribute="centerX" secondItem="Wvi-LB-y22" secondAttribute="centerX" id="oT5-UG-XIX"/>
+                                            <constraint firstItem="u8y-4g-h1P" firstAttribute="centerY" secondItem="Wvi-LB-y22" secondAttribute="centerY" id="w05-4l-Su0"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-Aq-6Ni">
                                         <rect key="frame" x="20" y="18" width="146" height="41"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
@@ -799,8 +829,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dtc-kE-xCX">
-                                        <rect key="frame" x="0.0" y="131" width="414" height="584"/>
+                                        <rect key="frame" x="0.0" y="125" width="414" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                         <connections>
                                             <outlet property="dataSource" destination="wfN-Lx-kdK" id="rLi-VW-1PV"/>
                                             <outlet property="delegate" destination="wfN-Lx-kdK" id="z7r-q0-IQO"/>
@@ -813,19 +844,37 @@
                                             <segment title="Today"/>
                                             <segment title="Next 7 days"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="actionChangeSheldure:" destination="wfN-Lx-kdK" eventType="valueChanged" id="Ttt-7f-hHf"/>
+                                        </connections>
                                     </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ika-O3-Znk">
+                                        <rect key="frame" x="364" y="18.5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="DQJ-il-SJE"/>
+                                            <constraint firstAttribute="height" constant="40" id="wgw-VX-4iB"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="scheldure_settings_ic"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="abg-ff-jZI" secondAttribute="trailing" constant="14" id="3VW-3Q-AV5"/>
-                                    <constraint firstAttribute="bottom" secondItem="dtc-kE-xCX" secondAttribute="bottom" constant="10" id="G7h-1L-PEa"/>
+                                    <constraint firstItem="Wvi-LB-y22" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" id="F6f-yL-VVe"/>
+                                    <constraint firstAttribute="bottom" secondItem="dtc-kE-xCX" secondAttribute="bottom" id="G7h-1L-PEa"/>
                                     <constraint firstItem="KRj-Aq-6Ni" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="20" symbolic="YES" id="Hfk-5L-bbn"/>
                                     <constraint firstItem="KRj-Aq-6Ni" firstAttribute="top" secondItem="eBv-VJ-ts5" secondAttribute="top" constant="18" id="Mdq-ME-8qR"/>
+                                    <constraint firstItem="Wvi-LB-y22" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" id="RRN-Hr-ZCn"/>
                                     <constraint firstAttribute="trailing" secondItem="dtc-kE-xCX" secondAttribute="trailing" id="TtL-Mu-6bM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wvi-LB-y22" secondAttribute="trailing" id="Wz3-4f-qRn"/>
                                     <constraint firstItem="dtc-kE-xCX" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" id="YYr-GV-OWL"/>
-                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" constant="26" id="Yw6-Ce-qaD"/>
+                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" constant="20" id="Yw6-Ce-qaD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wvi-LB-y22" secondAttribute="bottom" id="as6-RH-hto"/>
                                     <constraint firstItem="abg-ff-jZI" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="14" id="d3r-ak-qyR"/>
                                     <constraint firstItem="abg-ff-jZI" firstAttribute="top" secondItem="KRj-Aq-6Ni" secondAttribute="bottom" constant="15" id="eGm-2G-UKE"/>
+                                    <constraint firstItem="Ika-O3-Znk" firstAttribute="centerY" secondItem="KRj-Aq-6Ni" secondAttribute="centerY" id="fhb-r4-UEM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ika-O3-Znk" secondAttribute="trailing" constant="10" id="lEW-AD-gWV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -845,6 +894,7 @@
                     <navigationItem key="navigationItem" id="U2F-Zg-SW6"/>
                     <connections>
                         <outlet property="animationBackGroundSwipeLeftView" destination="GYP-X8-Iot" id="vcj-wS-7vh"/>
+                        <outlet property="scheldureSegment" destination="abg-ff-jZI" id="Ng8-tO-id2"/>
                         <outlet property="tableView" destination="dtc-kE-xCX" id="f4m-R2-BRy"/>
                     </connections>
                 </viewController>
@@ -1006,6 +1056,8 @@
         <image name="ic_tab_menu" width="22" height="14"/>
         <image name="ic_tab_plants" width="30" height="28"/>
         <image name="ic_tab_schedule" width="21.5" height="25"/>
+        <image name="scheldure_bell_ic" width="42.5" height="46"/>
+        <image name="scheldure_settings_ic" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

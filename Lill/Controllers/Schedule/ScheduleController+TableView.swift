@@ -10,7 +10,7 @@ import UIKit
 
 extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return scheldureSegment.selectedSegmentIndex == 0 ? array1.count : array2.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
