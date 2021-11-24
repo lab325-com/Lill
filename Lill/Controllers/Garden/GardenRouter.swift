@@ -31,6 +31,6 @@ class GardenRouter: BaseRouter {
         let controller = GardenCaresDetail(plantID: plantId)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .overCurrentContext
-        present(controller: controller, presentStyle: .overCurrentContext)
+        present(controller: controller, presentStyle: .overFullScreen)
     }
 }

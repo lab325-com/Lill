@@ -225,6 +225,7 @@
 		FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */; };
 		FA545474274BCF53006B52F4 /* GardenCaresDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545472274BCF53006B52F4 /* GardenCaresDetail.swift */; };
 		FA545475274BCF53006B52F4 /* GardenCaresDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA545473274BCF53006B52F4 /* GardenCaresDetail.xib */; };
+		FA545478274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545477274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift */; };
 		FA64050B27205515000124A5 /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050A27205515000124A5 /* AccessModel.swift */; };
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
@@ -490,6 +491,7 @@
 		FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenChooseAddPlantController.xib; sourceTree = "<group>"; };
 		FA545472274BCF53006B52F4 /* GardenCaresDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCaresDetail.swift; sourceTree = "<group>"; };
 		FA545473274BCF53006B52F4 /* GardenCaresDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenCaresDetail.xib; sourceTree = "<group>"; };
+		FA545477274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrdenCaresDetailPresenter.swift; sourceTree = "<group>"; };
 		FA64050A27205515000124A5 /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
@@ -1628,6 +1630,7 @@
 			children = (
 				FA545472274BCF53006B52F4 /* GardenCaresDetail.swift */,
 				FA545473274BCF53006B52F4 /* GardenCaresDetail.xib */,
+				FA545477274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift */,
 			);
 			path = GardenCaresDetail;
 			sourceTree = "<group>";
@@ -2278,6 +2281,7 @@
 				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
 				02BBBE7A273E623900E97712 /* PickerCaresController.swift in Sources */,
 				02D4BFBC2743B94D00B9322B /* TextView.swift in Sources */,
+				FA545478274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift in Sources */,
 				FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */,
 				02D4BFB42743B94D00B9322B /* ShapeView.swift in Sources */,
 				02A4B6502742C942007E0DA2 /* GardenRecordCreateModel.swift in Sources */,
@@ -2506,7 +2510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -2657,7 +2661,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -2688,7 +2692,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;

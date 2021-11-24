@@ -1,5 +1,7 @@
-query GardenPlantById($id: String!) {
-	gardenPlantById(id: $id) {
+query GardenPlantById($id: String!,
+					  $withoutDoneCares: Boolean) {
+	gardenPlantById(id: $id,
+					withoutDoneCares: $withoutDoneCares) {
 		id
 		name
 		userDescription
@@ -55,6 +57,7 @@ query GardenPlantById($id: String!) {
 				urlIosPrev
 			}
 			names
+			wikiUrl
 		}
 	}
 }

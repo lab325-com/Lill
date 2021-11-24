@@ -440,7 +440,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 90 images.
+  /// This `R.image` struct is generated, and contains static references to 96 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -454,6 +454,18 @@ struct R: Rswift.Validatable {
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `garden_bell_ic`.
     static let garden_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_bell_ic")
+    /// Image `garden_care_humidity_ic`.
+    static let garden_care_humidity_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_humidity_ic")
+    /// Image `garden_care_missed_ic`.
+    static let garden_care_missed_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_missed_ic")
+    /// Image `garden_care_misting_ic`.
+    static let garden_care_misting_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_misting_ic")
+    /// Image `garden_care_rotating_ic`.
+    static let garden_care_rotating_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_rotating_ic")
+    /// Image `garden_care_waiting_ic`.
+    static let garden_care_waiting_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_waiting_ic")
+    /// Image `garden_care_watering_ic`.
+    static let garden_care_watering_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_care_watering_ic")
     /// Image `garden_delete_ic`.
     static let garden_delete_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_ic")
     /// Image `garden_schelure_ic`.
@@ -662,6 +674,48 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_bell_ic", bundle: ..., traitCollection: ...)`
     static func garden_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_bell_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_humidity_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_humidity_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_humidity_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_missed_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_missed_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_missed_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_misting_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_misting_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_misting_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_rotating_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_rotating_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_rotating_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_waiting_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_waiting_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_waiting_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_care_watering_ic", bundle: ..., traitCollection: ...)`
+    static func garden_care_watering_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_care_watering_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -6034,6 +6088,7 @@ struct _R: Rswift.Validatable {
       try _DiagnosisController.validate()
       try _DiseaseArchiveViewController.validate()
       try _GardeDetailController.validate()
+      try _GardenCaresDetail.validate()
       try _GardenChooseAddPlantController.validate()
       try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
@@ -6343,12 +6398,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GardenCaresDetail: Rswift.NibResourceType {
+    struct _GardenCaresDetail: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GardenCaresDetail"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_care_humidity_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_humidity_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_missed_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_missed_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_misting_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_misting_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_rotating_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_rotating_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_waiting_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_waiting_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_watering_ic' is used in nib 'GardenCaresDetail', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
