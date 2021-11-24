@@ -41,6 +41,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    failureHandler(error)
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
@@ -70,6 +71,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    failureHandler(error)
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
@@ -99,6 +101,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    failureHandler(error)
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")

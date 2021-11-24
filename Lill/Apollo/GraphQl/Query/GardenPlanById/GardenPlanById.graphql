@@ -57,7 +57,7 @@ query GardenPlantById($id: String!,
 				urlIosPrev
 			}
 			names
-			#wikiUrl
+			wikiUrl
 		}
 	}
 }

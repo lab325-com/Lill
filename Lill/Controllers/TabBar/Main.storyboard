@@ -784,14 +784,73 @@
                     <view key="view" contentMode="scaleToFill" id="Lnk-PP-B9g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYP-X8-Iot" customClass="AnimationBackGroundSwipeLeftView" customModule="Lill" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-VJ-ts5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-Aq-6Ni">
+                                        <rect key="frame" x="20" y="18" width="146" height="41"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dtc-kE-xCX">
+                                        <rect key="frame" x="0.0" y="131" width="414" height="584"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wfN-Lx-kdK" id="rLi-VW-1PV"/>
+                                            <outlet property="delegate" destination="wfN-Lx-kdK" id="z7r-q0-IQO"/>
+                                        </connections>
+                                    </tableView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="abg-ff-jZI">
+                                        <rect key="frame" x="14" y="74" width="386" height="32"/>
+                                        <color key="backgroundColor" red="0.59607843137254901" green="0.85490196078431369" blue="0.47843137254901957" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <segments>
+                                            <segment title="Today"/>
+                                            <segment title="Next 7 days"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="abg-ff-jZI" secondAttribute="trailing" constant="14" id="3VW-3Q-AV5"/>
+                                    <constraint firstAttribute="bottom" secondItem="dtc-kE-xCX" secondAttribute="bottom" constant="10" id="G7h-1L-PEa"/>
+                                    <constraint firstItem="KRj-Aq-6Ni" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="20" symbolic="YES" id="Hfk-5L-bbn"/>
+                                    <constraint firstItem="KRj-Aq-6Ni" firstAttribute="top" secondItem="eBv-VJ-ts5" secondAttribute="top" constant="18" id="Mdq-ME-8qR"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtc-kE-xCX" secondAttribute="trailing" id="TtL-Mu-6bM"/>
+                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" id="YYr-GV-OWL"/>
+                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" constant="26" id="Yw6-Ce-qaD"/>
+                                    <constraint firstItem="abg-ff-jZI" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="14" id="d3r-ak-qyR"/>
+                                    <constraint firstItem="abg-ff-jZI" firstAttribute="top" secondItem="KRj-Aq-6Ni" secondAttribute="bottom" constant="15" id="eGm-2G-UKE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RPD-Gm-Nxc"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RPD-Gm-Nxc" firstAttribute="bottom" secondItem="eBv-VJ-ts5" secondAttribute="bottom" id="8Ia-S1-niU"/>
+                            <constraint firstItem="GYP-X8-Iot" firstAttribute="top" secondItem="Lnk-PP-B9g" secondAttribute="top" id="BUu-0r-lm6"/>
+                            <constraint firstAttribute="bottom" secondItem="GYP-X8-Iot" secondAttribute="bottom" id="FS9-p2-PqA"/>
+                            <constraint firstItem="eBv-VJ-ts5" firstAttribute="leading" secondItem="RPD-Gm-Nxc" secondAttribute="leading" id="TRp-z3-DI0"/>
+                            <constraint firstItem="GYP-X8-Iot" firstAttribute="trailing" secondItem="RPD-Gm-Nxc" secondAttribute="trailing" id="efg-7B-qea"/>
+                            <constraint firstItem="RPD-Gm-Nxc" firstAttribute="trailing" secondItem="eBv-VJ-ts5" secondAttribute="trailing" id="gYE-qP-C6j"/>
+                            <constraint firstItem="eBv-VJ-ts5" firstAttribute="top" secondItem="RPD-Gm-Nxc" secondAttribute="top" id="ga6-SO-zek"/>
+                            <constraint firstItem="GYP-X8-Iot" firstAttribute="leading" secondItem="RPD-Gm-Nxc" secondAttribute="leading" id="ryg-IS-5Bw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U2F-Zg-SW6"/>
+                    <connections>
+                        <outlet property="animationBackGroundSwipeLeftView" destination="GYP-X8-Iot" id="vcj-wS-7vh"/>
+                        <outlet property="tableView" destination="dtc-kE-xCX" id="f4m-R2-BRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajS-Fk-DC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386.95652173913044" y="1028.5714285714284"/>
+            <point key="canvasLocation" x="386.95652173913044" y="1027.9017857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Bh-yd-Zby">
@@ -949,9 +1008,6 @@
         <image name="ic_tab_schedule" width="21.5" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

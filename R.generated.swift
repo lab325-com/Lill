@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 30 files.
+  /// This `R.file` struct is generated, and contains static references to 31 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -169,6 +169,8 @@ struct R: Rswift.Validatable {
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
+    /// Resource file `GardenPlantClone.graphql`.
+    static let gardenPlantCloneGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantClone", pathExtension: "graphql")
     /// Resource file `GardenPlantCreate.graphql`.
     static let gardenPlantCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCreate", pathExtension: "graphql")
     /// Resource file `GardenPlantDelete.graphql`.
@@ -255,6 +257,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlanById", withExtension: "graphql")`
     static func gardenPlanByIdGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlanByIdGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantClone", withExtension: "graphql")`
+    static func gardenPlantCloneGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantCloneGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1302,7 +1310,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 47 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 49 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1392,6 +1400,10 @@ struct R: Rswift.Validatable {
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
     static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
+    /// Nib `ScheduleCell`.
+    static let scheduleCell = _R.nib._ScheduleCell()
+    /// Nib `ScheduleColapsView`.
+    static let scheduleColapsView = _R.nib._ScheduleColapsView()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
@@ -1752,6 +1764,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ScheduleCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleCell) instead")
+    static func scheduleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scheduleCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ScheduleColapsView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleColapsView) instead")
+    static func scheduleColapsView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scheduleColapsView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SplashController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.splashController) instead")
     static func splashController(_: Void = ()) -> UIKit.UINib {
@@ -1951,6 +1979,14 @@ struct R: Rswift.Validatable {
       return R.nib.recognizeArchiveController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func scheduleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleCell? {
+      return R.nib.scheduleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleCell
+    }
+
+    static func scheduleColapsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.scheduleColapsView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func splashController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.splashController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1966,7 +2002,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 12 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AddPlantTimeCell`.
     static let addPlantTimeCell: Rswift.ReuseIdentifier<AddPlantTimeCell> = Rswift.ReuseIdentifier(identifier: "AddPlantTimeCell")
@@ -1990,6 +2026,8 @@ struct R: Rswift.Validatable {
     static let gardenDetailTitleCell: Rswift.ReuseIdentifier<GardenDetailTitleCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailTitleCell")
     /// Reuse identifier `LanguageCell`.
     static let languageCell: Rswift.ReuseIdentifier<LanguageCell> = Rswift.ReuseIdentifier(identifier: "LanguageCell")
+    /// Reuse identifier `ScheduleCell`.
+    static let scheduleCell: Rswift.ReuseIdentifier<ScheduleCell> = Rswift.ReuseIdentifier(identifier: "ScheduleCell")
 
     fileprivate init() {}
   }
@@ -6056,6 +6094,8 @@ struct _R: Rswift.Validatable {
       try _PopClonePlantController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
+      try _ScheduleCell.validate()
+      try _ScheduleColapsView.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
       try _WishListController.validate()
@@ -6822,6 +6862,44 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "recognize_archive_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'recognize_archive_ic' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ScheduleCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ScheduleCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ScheduleCell"
+      let name = "ScheduleCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_schelure_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_schelure_ic' is used in nib 'ScheduleCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plants_detail_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_watering_ic' is used in nib 'ScheduleCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ScheduleColapsView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ScheduleColapsView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'ScheduleColapsView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
