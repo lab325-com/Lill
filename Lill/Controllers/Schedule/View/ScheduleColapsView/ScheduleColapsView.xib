@@ -59,17 +59,27 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-6L-QCM">
+                            <rect key="frame" x="68" y="53.5" width="315" height="0.5"/>
+                            <color key="backgroundColor" red="0.85098039215686272" green="0.80392156862745101" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="tAl-pp-CUm"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="It7-aA-9UC" firstAttribute="leading" secondItem="5sx-bs-uvm" secondAttribute="leading" constant="14" id="7AE-Kd-0Jt"/>
                         <constraint firstAttribute="height" priority="998" constant="54" id="9lY-SH-rvG"/>
+                        <constraint firstItem="ZH2-6L-QCM" firstAttribute="leading" secondItem="TMY-DK-vQe" secondAttribute="leading" id="IYW-ZW-SSn"/>
+                        <constraint firstAttribute="bottom" secondItem="ZH2-6L-QCM" secondAttribute="bottom" id="SSw-qu-oSs"/>
                         <constraint firstItem="It7-aA-9UC" firstAttribute="top" secondItem="5sx-bs-uvm" secondAttribute="top" constant="7" id="Tye-7y-GXT"/>
                         <constraint firstItem="9mA-Xw-U0M" firstAttribute="leading" secondItem="TMY-DK-vQe" secondAttribute="trailing" constant="10" id="Wur-4k-NML"/>
                         <constraint firstAttribute="trailing" secondItem="9mA-Xw-U0M" secondAttribute="trailing" constant="16" id="YuK-9D-2it"/>
                         <constraint firstItem="9mA-Xw-U0M" firstAttribute="centerY" secondItem="TMY-DK-vQe" secondAttribute="centerY" id="iuZ-yH-GFT"/>
                         <constraint firstItem="TMY-DK-vQe" firstAttribute="leading" secondItem="It7-aA-9UC" secondAttribute="trailing" constant="14" id="oKg-FA-RYz"/>
                         <constraint firstItem="TMY-DK-vQe" firstAttribute="centerY" secondItem="It7-aA-9UC" secondAttribute="centerY" id="uBT-1O-4od"/>
+                        <constraint firstAttribute="trailing" secondItem="ZH2-6L-QCM" secondAttribute="trailing" constant="16" id="vvq-Cb-DJX"/>
                     </constraints>
                 </view>
             </subviews>
