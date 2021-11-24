@@ -122,7 +122,7 @@ struct GardenShortPlantModel: Codable {
     let latinName: String
     let plantImages: [MediaModel]?
     let names: String
-    let wikiUrl: String?
+    //let wikiUrl: String?
     
     mutating func changeIsFavorite(_ isFavourite: Bool) {
         self.isFavourite = isFavourite
@@ -138,6 +138,6 @@ struct GardenShortPlantModel: Codable {
         case latinName = "latinName"
         case plantImages = "plantImages"
         case names = "names"
-        case wikiUrl = "wikiUrl"
+        //case wikiUrl = "wikiUrl"
     }
 }
