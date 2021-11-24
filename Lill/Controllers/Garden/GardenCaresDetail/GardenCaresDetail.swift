@@ -8,21 +8,15 @@ class GardenCaresDetail: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var caresStackView: UIStackView!
-
-    @IBOutlet var careViews: [ShadowView]!
-    @IBOutlet var careTimeLabels: [UILabel]!
-    @IBOutlet var careTypeImages: [UIImageView]!
-    @IBOutlet var careTypeLabels: [UILabel]!
-    @IBOutlet var careStatusLabels: [UILabel]!
-    @IBOutlet var careStatusImages: [UIImageView]!
-    
-    @IBOutlet var plantNameLabel: UILabel!
-    @IBOutlet var plantImageView: UIImageView!
-    @IBOutlet var caresCountLabel: UILabel!
-    @IBOutlet var caresInfoLabel: UILabel!
-    @IBOutlet var doneCaresButton: UIButton!
-    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var careViews: [GardenCareDetailView]!
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var caresCountLabel: UILabel!
+    @IBOutlet weak var caresInfoLabel: UILabel!
+    @IBOutlet weak var doneCaresButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Gobal property
@@ -56,6 +50,12 @@ class GardenCaresDetail: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        popupView.alpha = 0.0
+        
+        for view in careViews {
+            view.isHidden = true
+        }
+        
         presenter.getCaresDetailGarden(gardenId: plantID)
     }
     
@@ -64,7 +64,7 @@ class GardenCaresDetail: BaseController {
     //----------------------------------------------
     
     @IBAction func doneCaresAction(_ sender: Any) {
-        
+        //guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -79,12 +79,21 @@ class GardenCaresDetail: BaseController {
 extension GardenCaresDetail: GardenCaresDetailOutputProtocol {
     func success() {
         guard let model = presenter.model else { return }
-        //let cares = presenter.cares
+        let cares = presenter.cares
+        
+        popupView.alpha = 1.0
         
         plantNameLabel.text = model.name
         plantImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
-        caresCountLabel.text = "\(model.gardenPlantCares.count) Cares"
-        caresInfoLabel.text = "Are you sure want to mark as done?"
+        caresCountLabel.text = "\(model.gardenPlantCares.count) " + RLocalization.garden_cares_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        caresInfoLabel.text = RLocalization.garden_cares_detail_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        for index in 0..<cares.count {
+            if let care = cares[safe: index], let view = careViews[safe: index] {
+                view.isHidden = false
+                view.setup(care: care)
+            }
+        }
     }
     
     func failure(error: String) {

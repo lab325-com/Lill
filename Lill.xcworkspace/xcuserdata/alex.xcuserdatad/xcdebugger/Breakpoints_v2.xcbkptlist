@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16595488-CF1E-4E78-B2FF-9B8911032850"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenController+CollectionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "didTappedCaresDetailButton(cell:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "97EADA39-4197-42E1-A737-4B47D9D9B4D6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "Lill/Controllers/Garden/GardenCaresDetail/GardenCaresDetail.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "init(plantID:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38160FD0-ECCA-4D7A-BAA0-444B6FF627F9"
+            uuid = "947A3EA9-1B90-4E34-A8A0-82D95673F06C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenCaresDetail/GardenCaresDetail.swift"
+            filePath = "Lill/Controllers/Garden/GardenCaresDetail/GardenCareDetailView/GardenCareDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "success()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setup(care:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

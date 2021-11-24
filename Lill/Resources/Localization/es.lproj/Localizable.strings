@@ -95,6 +95,8 @@
 "diagnosis_title" = "Diagnosticando en progreso";
 "disease_archive_button" = "Diagnosticar la enfermedad";
 "disease_archive_title" = "Archivado de la enfermedad";
+"garden_cares_detail_cares" = "Cuidar";
+"garden_cares_detail_info" = "¿Seguro que quieres marcar como se hace?";
 "garden_choose_add_plant_cancel" = "Cancelar";
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";

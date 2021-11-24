@@ -1,7 +1,7 @@
 query GardenPlantById($id: String!,
-					  $withoutDoneCares: Boolean) {
+					  $withoutFutureCares: Boolean) {
 	gardenPlantById(id: $id,
-					withoutDoneCares: $withoutDoneCares) {
+					withoutFutureCares: $withoutFutureCares) {
 		id
 		name
 		userDescription

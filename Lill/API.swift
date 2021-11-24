@@ -2326,8 +2326,8 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query GardenPlantById($id: String!, $withoutDoneCares: Boolean) {
-      gardenPlantById(id: $id, withoutDoneCares: $withoutDoneCares) {
+    query GardenPlantById($id: String!, $withoutFutureCares: Boolean) {
+      gardenPlantById(id: $id, withoutFutureCares: $withoutFutureCares) {
         __typename
         id
         name
@@ -2402,15 +2402,15 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
   public let operationName: String = "GardenPlantById"
 
   public var id: String
-  public var withoutDoneCares: Bool?
+  public var withoutFutureCares: Bool?
 
-  public init(id: String, withoutDoneCares: Bool? = nil) {
+  public init(id: String, withoutFutureCares: Bool? = nil) {
     self.id = id
-    self.withoutDoneCares = withoutDoneCares
+    self.withoutFutureCares = withoutFutureCares
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id, "withoutDoneCares": withoutDoneCares]
+    return ["id": id, "withoutFutureCares": withoutFutureCares]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -2418,7 +2418,7 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("gardenPlantById", arguments: ["id": GraphQLVariable("id"), "withoutDoneCares": GraphQLVariable("withoutDoneCares")], type: .object(GardenPlantById.selections)),
+        GraphQLField("gardenPlantById", arguments: ["id": GraphQLVariable("id"), "withoutFutureCares": GraphQLVariable("withoutFutureCares")], type: .object(GardenPlantById.selections)),
       ]
     }
 

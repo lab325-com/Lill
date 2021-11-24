@@ -1,6 +1,7 @@
 
 import Foundation
 import Apollo
+import UIKit
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -26,7 +27,7 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
     private var request: Cancellable?
     
     var model: GardenIDModel?
-    var cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)] = []
+    var cares: [(type: PlantsCareType, model: GardenShortPlantCaresModel)] = []
 
     required init(view: GardenCaresDetailOutputProtocol) {
         self.view = view
@@ -35,7 +36,7 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
     func getCaresDetailGarden(gardenId: String) {
         view?.startLoader()
         
-        let query = GardenPlantByIdQuery(id: gardenId, withoutDoneCares: true)
+        let query = GardenPlantByIdQuery(id: gardenId, withoutFutureCares: true)
         
         request?.cancel()
         
@@ -52,11 +53,11 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
         })
     }
     
-    func createCares(model: GardenPlanByIDModel) -> [(type: PlantsCareType, care: GardenShortPlantCaresModel)] {
-        var caresType = [(type: PlantsCareType, care: GardenShortPlantCaresModel)]()
+    func createCares(model: GardenPlanByIDModel) -> [(type: PlantsCareType, model: GardenShortPlantCaresModel)] {
+        var caresType = [(type: PlantsCareType, model: GardenShortPlantCaresModel)]()
         let cares = model.gardenPlantById.gardenPlantCares
         for care in cares {
-            caresType.append((type: care.type.name, care: care))
+            caresType.append((type: care.type.name, model: care))
             if caresType.count == 4 {
                 return caresType
             }
