@@ -1256,7 +1256,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 49 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 50 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1348,6 +1348,8 @@ struct R: Rswift.Validatable {
     static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
     /// Nib `ScheduleCell`.
     static let scheduleCell = _R.nib._ScheduleCell()
+    /// Nib `ScheduleColapsBottomView`.
+    static let scheduleColapsBottomView = _R.nib._ScheduleColapsBottomView()
     /// Nib `ScheduleColapsView`.
     static let scheduleColapsView = _R.nib._ScheduleColapsView()
     /// Nib `SplashController`.
@@ -1718,6 +1720,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ScheduleColapsBottomView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleColapsBottomView) instead")
+    static func scheduleColapsBottomView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scheduleColapsBottomView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ScheduleColapsView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleColapsView) instead")
     static func scheduleColapsView(_: Void = ()) -> UIKit.UINib {
@@ -1927,6 +1937,10 @@ struct R: Rswift.Validatable {
 
     static func scheduleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleCell? {
       return R.nib.scheduleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleCell
+    }
+
+    static func scheduleColapsBottomView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.scheduleColapsBottomView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func scheduleColapsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -6819,6 +6833,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "plants_detail_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_watering_ic' is used in nib 'ScheduleCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ScheduleColapsBottomView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ScheduleColapsBottomView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
