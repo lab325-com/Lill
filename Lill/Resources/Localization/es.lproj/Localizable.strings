@@ -170,7 +170,7 @@
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar mis plantas";
 "plants_search" = "Buscar por nombre";
-"plants_uniquePlantButton" = "Añadir unico";
+"plants_uniquePlantButton" = "Añadir un único";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "pop_change_name_button" = "Cambio";
 "pop_change_name_subtitle" = "Dale el nombre de tu planta";

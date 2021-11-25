@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 31 files.
+  /// This `R.file` struct is generated, and contains static references to 32 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -167,6 +167,8 @@ struct R: Rswift.Validatable {
     static let diagnoseArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DiagnoseArhive", pathExtension: "graphql")
     /// Resource file `DoneAllCaresByGarden.graphql`.
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
+    /// Resource file `DoneAllCaresByGardenPlant.graphql`.
+    static let doneAllCaresByGardenPlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGardenPlant", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantClone.graphql`.
@@ -251,6 +253,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "DoneAllCaresByGarden", withExtension: "graphql")`
     static func doneAllCaresByGardenGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.doneAllCaresByGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DoneAllCaresByGardenPlant", withExtension: "graphql")`
+    static func doneAllCaresByGardenPlantGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.doneAllCaresByGardenPlantGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -440,7 +448,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 96 images.
+  /// This `R.image` struct is generated, and contains static references to 98 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -610,6 +618,10 @@ struct R: Rswift.Validatable {
     static let plants_dots_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_dots_ic")
     /// Image `recognize_archive_ic`.
     static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
+    /// Image `scheldure_bell_ic`.
+    static let scheldure_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_bell_ic")
+    /// Image `scheldure_settings_ic`.
+    static let scheldure_settings_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_ic")
     /// Image `sub_back_ic`.
     static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
     /// Image `sub_close_ic`.
@@ -1224,6 +1236,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "scheldure_bell_ic", bundle: ..., traitCollection: ...)`
+    static func scheldure_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.scheldure_bell_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "scheldure_settings_ic", bundle: ..., traitCollection: ...)`
+    static func scheldure_settings_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.scheldure_settings_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "sub_back_ic", bundle: ..., traitCollection: ...)`
     static func sub_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.sub_back_ic, compatibleWith: traitCollection)
@@ -1310,7 +1336,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 50 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 51 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -7123,6 +7149,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_tab_menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_menu' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_plants", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_plants' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_schedule", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_schedule' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scheldure_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_bell_ic' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scheldure_settings_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_settings_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().gardenController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardenController' could not be loaded from storyboard 'Main' as 'GardenController'.") }

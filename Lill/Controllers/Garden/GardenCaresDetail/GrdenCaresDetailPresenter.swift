@@ -8,7 +8,8 @@ import UIKit
 //----------------------------------------------
 
 protocol GardenCaresDetailOutputProtocol: BaseController {
-    func success()
+    func successGetPlantCares()
+    func successDoneAllCares()
     func failure(error: String)
 }
 
@@ -19,7 +20,8 @@ protocol GardenCaresDetailOutputProtocol: BaseController {
 protocol GardenCaresDetailPresenterProtocol: AnyObject {
     init(view: GardenCaresDetailOutputProtocol)
     
-    func getCaresDetailGarden(gardenId: String)
+    func getPlantCares(plantId: String)
+    func doneAllCares(plantId: String)
 }
 
 class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
@@ -33,10 +35,10 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
         self.view = view
     }
     
-    func getCaresDetailGarden(gardenId: String) {
+    func getPlantCares(plantId: String) {
         view?.startLoader()
         
-        let query = GardenPlantByIdQuery(id: gardenId, withoutFutureCares: true)
+        let query = GardenPlantByIdQuery(id: plantId, withoutFutureCares: true)
         
         request?.cancel()
         
@@ -46,7 +48,7 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
             self.model = model.gardenPlantById
             let cares = self.createCares(model: model)
             self.cares = cares
-            self.view?.success()
+            self.view?.successGetPlantCares()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
@@ -64,5 +66,22 @@ class GardenCaresDetailPresenter: GardenCaresDetailPresenterProtocol {
         }
         
         return caresType
+    }
+    
+    func doneAllCares(plantId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = DoneAllCaresByGardenPlantMutation(gardenPlantId: plantId)
+        request = Network.shared.mutation(model: DoneAllCaresByGardenPlantModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.doneAllCaresByGardenPlant {
+                self?.view?.successDoneAllCares()
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

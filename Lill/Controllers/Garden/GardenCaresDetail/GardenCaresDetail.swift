@@ -56,7 +56,7 @@ class GardenCaresDetail: BaseController {
             view.isHidden = true
         }
         
-        presenter.getCaresDetailGarden(gardenId: plantID)
+        presenter.getPlantCares(plantId: plantID)
     }
     
     //----------------------------------------------
@@ -64,7 +64,7 @@ class GardenCaresDetail: BaseController {
     //----------------------------------------------
     
     @IBAction func doneCaresAction(_ sender: Any) {
-        //guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        presenter.doneAllCares(plantId: plantID)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -77,7 +77,7 @@ class GardenCaresDetail: BaseController {
 //----------------------------------------------
 
 extension GardenCaresDetail: GardenCaresDetailOutputProtocol {
-    func success() {
+    func successGetPlantCares() {
         guard let model = presenter.model else { return }
         let cares = presenter.cares
         
@@ -93,6 +93,12 @@ extension GardenCaresDetail: GardenCaresDetailOutputProtocol {
                 view.isHidden = false
                 view.setup(care: care)
             }
+        }
+    }
+    
+    func successDoneAllCares() {
+        dismiss(animated: false) {
+            dele
         }
     }
     
