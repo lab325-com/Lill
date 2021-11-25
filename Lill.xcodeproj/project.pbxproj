@@ -179,6 +179,11 @@
 		02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E329A427342586004344C0 /* SubscribePresenter.swift */; };
 		02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02E329A727342629004344C0 /* SwiftyStoreKit */; };
 		02E4575D26F903B000F19C41 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4575C26F903B000F19C41 /* Network.swift */; };
+		02F3ADEB274E958900A07FEA /* ScheduleByGardens.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */; };
+		02F3ADED274E961C00A07FEA /* ScheduleByGardensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3ADEC274E961C00A07FEA /* ScheduleByGardensModel.swift */; };
+		02F3ADF0274E982700A07FEA /* SchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3ADEF274E982700A07FEA /* SchedulePresenter.swift */; };
+		02F3ADF4274E9E4C00A07FEA /* ScheduleDoneAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3ADF2274E9E4C00A07FEA /* ScheduleDoneAllCell.swift */; };
+		02F3ADF5274E9E4C00A07FEA /* ScheduleDoneAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F3ADF3274E9E4C00A07FEA /* ScheduleDoneAllCell.xib */; };
 		02FCBFAA270A36500089CEF8 /* WishListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFA8270A36500089CEF8 /* WishListController.swift */; };
 		02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FCBFA9270A36500089CEF8 /* WishListController.xib */; };
 		02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCBFAE270A40490089CEF8 /* KeychainService.swift */; };
@@ -444,6 +449,11 @@
 		02E329A227342556004344C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		02E329A427342586004344C0 /* SubscribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePresenter.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = ScheduleByGardens.graphql; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardens.graphql; sourceTree = SOURCE_ROOT; };
+		02F3ADEC274E961C00A07FEA /* ScheduleByGardensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleByGardensModel.swift; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardensModel.swift; sourceTree = SOURCE_ROOT; };
+		02F3ADEF274E982700A07FEA /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
+		02F3ADF2274E9E4C00A07FEA /* ScheduleDoneAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDoneAllCell.swift; sourceTree = "<group>"; };
+		02F3ADF3274E9E4C00A07FEA /* ScheduleDoneAllCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleDoneAllCell.xib; sourceTree = "<group>"; };
 		02FCBFA8270A36500089CEF8 /* WishListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListController.swift; sourceTree = "<group>"; };
 		02FCBFA9270A36500089CEF8 /* WishListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListController.xib; sourceTree = "<group>"; };
 		02FCBFAE270A40490089CEF8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
@@ -954,6 +964,7 @@
 		028C9BF0274D1A910043EA31 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				02F3ADF1274E9E2800A07FEA /* ScheduleDoneAllCell */,
 				028C9BF1274D1AE20043EA31 /* ScheduleCell */,
 			);
 			path = Cell;
@@ -1436,6 +1447,24 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
+		02F3ADE9274E956900A07FEA /* ScheduleByGardens */ = {
+			isa = PBXGroup;
+			children = (
+				02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */,
+				02F3ADEC274E961C00A07FEA /* ScheduleByGardensModel.swift */,
+			);
+			path = ScheduleByGardens;
+			sourceTree = "<group>";
+		};
+		02F3ADF1274E9E2800A07FEA /* ScheduleDoneAllCell */ = {
+			isa = PBXGroup;
+			children = (
+				02F3ADF2274E9E4C00A07FEA /* ScheduleDoneAllCell.swift */,
+				02F3ADF3274E9E4C00A07FEA /* ScheduleDoneAllCell.xib */,
+			);
+			path = ScheduleDoneAllCell;
+			sourceTree = "<group>";
+		};
 		02FCBFA6270A36100089CEF8 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1529,6 +1558,7 @@
 		FA1CEC4F273C559C003A4F84 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				02F3ADE9274E956900A07FEA /* ScheduleByGardens */,
 				02E0255A27326DC300988F12 /* DiagnoseArhive */,
 				02527D8B2746397300126022 /* ScheduleByGardenPlant */,
 				023BBB1E27441C5000DCFFF1 /* GardenPlanById */,
@@ -1794,6 +1824,7 @@
 		FAB3BD222704AB7E0075C0C0 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				02F3ADEF274E982700A07FEA /* SchedulePresenter.swift */,
 				FAB3BD282704AF530075C0C0 /* ScheduleController.swift */,
 				028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */,
 				028C9BF8274D22D50043EA31 /* View */,
@@ -2047,6 +2078,7 @@
 				02A46057274294E100D5D931 /* GardenPlantCreate.graphql in Resources */,
 				02E025652732B39500988F12 /* RecognizeArchiveController.xib in Resources */,
 				FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */,
+				02F3ADEB274E958900A07FEA /* ScheduleByGardens.graphql in Resources */,
 				02527D9E2746DCB700126022 /* AddImageToGallery.graphql in Resources */,
 				FA1CEC53273C572E003A4F84 /* RecognizeArhive.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
@@ -2064,6 +2096,7 @@
 				FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */,
 				025A18C32739243500AFA581 /* AddPlantCareView.xib in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
+				02F3ADF5274E9E4C00A07FEA /* ScheduleDoneAllCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
 				02527D8D274639A600126022 /* ScheduleByGardenPlant.graphql in Resources */,
 				FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */,
@@ -2282,6 +2315,7 @@
 				02BBBE7A273E623900E97712 /* PickerCaresController.swift in Sources */,
 				02D4BFBC2743B94D00B9322B /* TextView.swift in Sources */,
 				FA545478274CF61C006B52F4 /* GrdenCaresDetailPresenter.swift in Sources */,
+				02F3ADF0274E982700A07FEA /* SchedulePresenter.swift in Sources */,
 				FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */,
 				02D4BFB42743B94D00B9322B /* ShapeView.swift in Sources */,
 				02A4B6502742C942007E0DA2 /* GardenRecordCreateModel.swift in Sources */,
@@ -2306,6 +2340,7 @@
 				0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */,
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
+				02F3ADED274E961C00A07FEA /* ScheduleByGardensModel.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
 				F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */,
 				025A18BC273915FE00AFA581 /* AddPlantsCareController.swift in Sources */,
@@ -2404,6 +2439,7 @@
 				FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */,
 				02527D8F27463A5100126022 /* ScheduleByGardenPlantModel.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
+				02F3ADF4274E9E4C00A07FEA /* ScheduleDoneAllCell.swift in Sources */,
 				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,

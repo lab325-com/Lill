@@ -95,6 +95,8 @@
 "diagnosis_title" = "Diagnose";
 "disease_archive_button" = "Diagnose Disease";
 "disease_archive_title" = "Disease Archive";
+"garden_cares_detail_cares" = "Cares";
+"garden_cares_detail_info" = "Are you sure want to mark as done?";
 "garden_choose_add_plant_cancel" = "Cancel";
 "garden_choose_add_plant_catalog" = "Catalog";
 "garden_choose_add_plant_identify" = "Identify";
@@ -176,6 +178,13 @@
 "pop_change_name_title" = "Change Name";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
+"scheldure_days" = "days";
+"scheldure_done_all" = "Done all Waiting Cares";
+"scheldure_empty_title" = "To have daily schedule and\nnotifications - turn ON\nRing icon in Plant card";
+"scheldure_next_days" = "Next 7 days";
+"scheldure_plants" = "Plants";
+"scheldure_title" = "Schedule";
+"scheldure_today" = "Today";
 "subscription_billed_with" = "Billed %@";
 "subscription_cancel_any_time" = "Cancel anytime";
 "subscription_description" = "Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.";

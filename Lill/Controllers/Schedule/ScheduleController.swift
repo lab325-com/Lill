@@ -9,15 +9,21 @@ class ScheduleController: BaseController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scheldureSegment: UISegmentedControl!
+    @IBOutlet weak var emptyView: UIView!
     
+    @IBOutlet weak var scheduleTitleLabel: UILabel!
+    @IBOutlet weak var emptyTextLabel: UILabel!
     
+    //----------------------------------------------
+    // MARK: - Property
+    //----------------------------------------------
+    
+    lazy var presenter = SchedulePresenter(view: self)
     let cellScheduleIdentifier = "ScheduleCell"
+    let cellScheduleDoneIdentifier = "ScheduleDoneAllCell"
     
     var indexSelected: Set<Int> = []
-    
-    var array1 = Array(0...20)
-    var array2 = Array(0...3)
-    
+
     //----------------------------------------------
     // MARK: - Life Cycle
     //----------------------------------------------
@@ -29,16 +35,53 @@ class ScheduleController: BaseController {
     }
     
     private func setup() {
+        scheduleTitleLabel.text = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        emptyTextLabel.text = RLocalization.scheldure_empty_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        scheldureSegment.setTitle(RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
+        scheldureSegment.setTitle(RLocalization.scheldure_next_days.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+        
+        presenter.getScheduleAll()
+        tableView.alpha = 0
+        
         tableView.contentInset.bottom = 10
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
+        
         tableView.register(UINib(nibName: cellScheduleIdentifier, bundle: nil), forCellReuseIdentifier: cellScheduleIdentifier)
+        tableView.register(UINib(nibName: cellScheduleDoneIdentifier, bundle: nil), forCellReuseIdentifier: cellScheduleDoneIdentifier)
+        
         tableView.tableFooterView = UIView()
         
         tableView.reloadData()
+    }
+    
+    
+    private func changeViews() {
+        if scheldureSegment.selectedSegmentIndex == 0 {
+            if presenter.currentSchedule.count == 0 && presenter.futureSchedule.count == 0 {
+                emptyView.isHidden = false
+                tableView.alpha = 0
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.emptyView.isHidden = true
+                    self.tableView.alpha = 1.0
+                }
+            }
+        } else {
+            if presenter.nextWeekSchedule.count == 0 {
+                emptyView.isHidden = false
+                tableView.alpha = 0
+            } else {
+                UIView.animate(withDuration: 0.3) {
+                    self.emptyView.isHidden = true
+                    self.tableView.alpha = 1.0
+                }
+            }
+        }
         
-        
+        tableView.reloadData()
     }
     
     //----------------------------------------------
@@ -46,7 +89,19 @@ class ScheduleController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionChangeSheldure(_ sender: UISegmentedControl) {
-        indexSelected.removeAll()
-        tableView.reloadData()
+        changeViews()
+    }
+}
+
+//----------------------------------------------
+// MARK: - ScheduleOutputProtocol
+//----------------------------------------------
+
+extension ScheduleController: ScheduleOutputProtocol {
+    func success() {
+        changeViews()
+    }
+    
+    func failure(error: String) {
     }
 }

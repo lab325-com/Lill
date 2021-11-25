@@ -1,0 +1,10 @@
+query ScheduleByGardens($onlyFuture: Boolean, $nextWeek: Boolean) {
+	scheduleByGardens(onlyFuture: $onlyFuture, nextWeek: $nextWeek) {
+		careTypeId
+		careTypeName
+		nextDate
+		status
+		gardenName
+		gardenPlantIds
+	}
+}

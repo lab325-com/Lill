@@ -894,6 +894,9 @@ Ring icon in Plant card</string>
                     <navigationItem key="navigationItem" id="U2F-Zg-SW6"/>
                     <connections>
                         <outlet property="animationBackGroundSwipeLeftView" destination="GYP-X8-Iot" id="vcj-wS-7vh"/>
+                        <outlet property="emptyTextLabel" destination="tbO-VH-tPB" id="hhK-cO-scn"/>
+                        <outlet property="emptyView" destination="Wvi-LB-y22" id="7UJ-BZ-HW0"/>
+                        <outlet property="scheduleTitleLabel" destination="KRj-Aq-6Ni" id="kS2-Ls-Lqu"/>
                         <outlet property="scheldureSegment" destination="abg-ff-jZI" id="Ng8-tO-id2"/>
                         <outlet property="tableView" destination="dtc-kE-xCX" id="f4m-R2-BRy"/>
                     </connections>

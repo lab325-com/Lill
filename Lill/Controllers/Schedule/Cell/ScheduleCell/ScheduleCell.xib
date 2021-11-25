@@ -160,8 +160,14 @@
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="bottomView" destination="bvO-WZ-OmB" id="cqR-Ga-MA0"/>
+                <outlet property="careImageView" destination="koM-FN-jXs" id="9nT-7b-W8i"/>
+                <outlet property="careLabel" destination="coc-1H-Veu" id="YJJ-px-9JO"/>
                 <outlet property="careView" destination="kKL-yo-EFV" id="NxH-0f-UfM"/>
+                <outlet property="dateLabel" destination="bmE-eV-yhh" id="VFX-VL-Wrj"/>
+                <outlet property="placeLabel" destination="5uw-r2-GXY" id="cqG-XA-I35"/>
                 <outlet property="stackView" destination="P8u-Wh-4oe" id="LuV-3D-n2l"/>
+                <outlet property="statusImageView" destination="Bq2-Qa-f3x" id="EMo-Vi-S2N"/>
+                <outlet property="statusLabel" destination="nMI-Qj-yvx" id="M33-65-Dhd"/>
                 <outlet property="topStackLayout" destination="ZFi-Qd-Icq" id="Prd-xJ-W63"/>
             </connections>
             <point key="canvasLocation" x="192.0289855072464" y="55.915178571428569"/>
