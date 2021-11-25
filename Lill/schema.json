@@ -265,7 +265,7 @@
                 "deprecationReason": null
               },
               {
-                "name": "withoutDoneCares",
+                "name": "withoutFutureCares",
                 "description": "",
                 "type": {
                   "kind": "SCALAR",
@@ -4220,7 +4220,7 @@
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Time",
                 "ofType": null
               }
             },

@@ -1,5 +1,6 @@
 
 import UIKit
+import Foundation
 
 class GardenController: BaseController {
 
@@ -45,6 +46,13 @@ class GardenController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        for careView in careViews {
+            switch careView.tag {
+            case 0: careView.isHidden = false
+            default: careView.isHidden = true
+            }
+        }
         
         getGardenPlants()
     }
@@ -134,13 +142,6 @@ extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
                         
-        for careView in careViews {
-            switch careView.tag {
-            case 0: careView.isHidden = false
-            default: careView.isHidden = true
-            }
-        }
-        
         for care in model.caresByGarden {
             switch care.careType.name {
             case .humidity :
