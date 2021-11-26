@@ -2,6 +2,7 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import Firebase
 import AuthenticationServices
 
 enum Social: String {
@@ -59,11 +60,11 @@ class SocialManager: NSObject {
     }
 
     func loginGoogle() {
-        let signInConfig = GIDConfiguration.init(clientID: "56234342754-rlsko0abgguc69b3lt3l5pb8ku21sf0l.apps.googleusercontent.com",
-                                                 serverClientID: "56234342754-i3ohbtdini1f9cf12q0gq5gi9lonpls8.apps.googleusercontent.com")
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        let signInConfig = GIDConfiguration.init(clientID: clientID, serverClientID: "1031354065646-4cs83oecmt3rh972ilr9hct01m357gld.apps.googleusercontent.com")
         guard let controller = controller else { return }
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: controller) { (user, error) in
-            if let user = user, let token =  user.serverAuthCode {
+            if let user = user, let token = user.serverAuthCode {
                 self.delegate?.login(service: self, token: token, social: .google)
             } else {
                 self.delegate?.login(service: self, error: error)

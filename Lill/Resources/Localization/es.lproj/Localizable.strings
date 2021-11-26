@@ -109,7 +109,7 @@
 "garden_delete_success" = "Planta \ NHA ha sido eliminado";
 "garden_delete_title" = "Plante";
 "garden_detail_about" = "Sobre";
-"garden_detail_care_edit_my_plan" = "Editar mi plan de cuidado";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
 "garden_plan_done" = "Hecho";
@@ -170,7 +170,7 @@
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar mis plantas";
 "plants_search" = "Buscar por nombre";
-"plants_uniquePlantButton" = "Añadir un único";
+"plants_uniquePlantButton" = "Añadir unico";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "pop_change_name_button" = "Cambio";
 "pop_change_name_subtitle" = "Dale el nombre de tu planta";
@@ -214,5 +214,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";

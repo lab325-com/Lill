@@ -456,7 +456,7 @@
 		02E329A227342556004344C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		02E329A427342586004344C0 /* SubscribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePresenter.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = ScheduleByGardens.graphql; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardens.graphql; sourceTree = SOURCE_ROOT; };
+		02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = ScheduleByGardens.graphql; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardens.graphql; sourceTree = SOURCE_ROOT; };
 		02F3ADEC274E961C00A07FEA /* ScheduleByGardensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleByGardensModel.swift; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardensModel.swift; sourceTree = SOURCE_ROOT; };
 		02F3ADEF274E982700A07FEA /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
 		02F3ADF2274E9E4C00A07FEA /* ScheduleDoneAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDoneAllCell.swift; sourceTree = "<group>"; };
