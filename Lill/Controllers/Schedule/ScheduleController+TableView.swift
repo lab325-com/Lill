@@ -40,6 +40,7 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
                     cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row))
                 }
                 
+                cell.delegate = self
                 return cell
             case presenter.currentSchedule.count:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleDoneIdentifier) as? ScheduleDoneAllCell else { return UITableViewCell() }
@@ -53,6 +54,7 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     debugPrint("ERROR: ->>>>>>>>>>> CELL INDEX")
                 }
+                cell.delegate = self
                 return cell
             }
         }
@@ -63,9 +65,56 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexSelected.contains(indexPath.row) {
             indexSelected.remove(indexPath.row)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
         } else {
-            indexSelected.insert(indexPath.row)
+            var model: ScheduleMainModel?
+            
+            if scheldureSegment.selectedSegmentIndex == 1 {
+                model = presenter.nextWeekSchedule[safe: indexPath.row]
+            } else {
+                switch indexPath.row {
+                case 0..<presenter.currentSchedule.count:
+                    model = presenter.currentSchedule[safe: indexPath.row]
+                case presenter.currentSchedule.count:
+                    break
+                default:
+                    model = presenter.futureSchedule[safe: indexPath.row - presenter.currentSchedule.count - 1]
+                }
+            }
+            
+            if let model = model {
+                if model.customGardens?.count ?? 0 > 0 {
+                    indexSelected.insert(indexPath.row)
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                } else {
+                    presenter.gardensById(ids: model.gardenPlantIds, modelSchedule: model, row: indexPath.row)
+                }
+            }
+           
         }
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+}
+
+//----------------------------------------------
+// MARK: - ScheduleCellDelegate
+//----------------------------------------------
+
+extension ScheduleController: ScheduleCellDelegate {
+    func scheduleCellCare(cell: ScheduleCell, model: ScheduleMainModel, gardenModel: GardenPlantByMainIdsModel) {
+        if let index = presenter.futureSchedule.firstIndex(where: {$0.id == model.id}) {
+            if let indexGarden = presenter.futureSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenModel.id}) {
+                presenter.futureSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+                UIView.performWithoutAnimation {
+                    self.tableView.reloadRows(at: [IndexPath(row: index + 1 + presenter.currentSchedule.count, section: 0)], with: .none)
+                }
+            }
+        } else if let index = presenter.currentSchedule.firstIndex(where: {$0.id == model.id}) {
+            if let indexGarden = presenter.currentSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenModel.id}) {
+                presenter.currentSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+                UIView.performWithoutAnimation {
+                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                  }
+            }
+        }
     }
 }

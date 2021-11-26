@@ -30,8 +30,12 @@ class RestAuth: RestCalls {
                success: @escaping (AuthModel) -> (),
                failure: ((String?, Error?)->())?) {
         
-        let params = ["token": token,
+        var params = ["token": token,
                       "social" : social.valueApiRest]
+        
+        if let fcmToken = PreferencesManager.sharedManager.fcmToken {
+            params["firebaseId"] = fcmToken
+        }
         
         self.call(model: AuthModel.self, path: RestSuffix.Auth.login().getURL(), method: .post, name: name, params: params, success: { (model) in
             success(model)

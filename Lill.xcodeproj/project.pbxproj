@@ -143,6 +143,8 @@
 		02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C10D273A6948003C47FF /* RestMethods.swift */; };
 		02C6C111273A69CF003C47FF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 02C6C110273A69CF003C47FF /* Alamofire */; };
 		02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C113273A6AA4003C47FF /* AuthModel.swift */; };
+		02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */; };
+		02CF963F274FBFBF00F356C2 /* GardenPlantByIdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */; };
 		02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */; };
 		02D04ED026F5E7B000F86B87 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */; };
 		02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC726F5E7AD00F86B87 /* Release.xcconfig */; };
@@ -419,6 +421,8 @@
 		02C6C10A273A68F4003C47FF /* RestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuth.swift; sourceTree = "<group>"; };
 		02C6C10D273A6948003C47FF /* RestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethods.swift; sourceTree = "<group>"; };
 		02C6C113273A6AA4003C47FF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlantByIds.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIds.graphql; sourceTree = SOURCE_ROOT; };
+		02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantByIdsModel.swift; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIdsModel.swift; sourceTree = SOURCE_ROOT; };
 		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
 		02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		02D04EC726F5E7AD00F86B87 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -456,7 +460,7 @@
 		02E329A227342556004344C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		02E329A427342586004344C0 /* SubscribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePresenter.swift; sourceTree = "<group>"; };
 		02E4575C26F903B000F19C41 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = ScheduleByGardens.graphql; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardens.graphql; sourceTree = SOURCE_ROOT; };
+		02F3ADEA274E958900A07FEA /* ScheduleByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = ScheduleByGardens.graphql; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardens.graphql; sourceTree = SOURCE_ROOT; };
 		02F3ADEC274E961C00A07FEA /* ScheduleByGardensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleByGardensModel.swift; path = Lill/Apollo/GraphQl/Query/ScheduleByGardens/ScheduleByGardensModel.swift; sourceTree = SOURCE_ROOT; };
 		02F3ADEF274E982700A07FEA /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
 		02F3ADF2274E9E4C00A07FEA /* ScheduleDoneAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDoneAllCell.swift; sourceTree = "<group>"; };
@@ -1287,6 +1291,15 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		02CF963B274FBF7F00F356C2 /* GardenPlantByIds */ = {
+			isa = PBXGroup;
+			children = (
+				02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */,
+				02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */,
+			);
+			path = GardenPlantByIds;
+			sourceTree = "<group>";
+		};
 		02D04EC426F5E7AD00F86B87 /* ConfigFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1573,6 +1586,7 @@
 		FA1CEC4F273C559C003A4F84 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				02CF963B274FBF7F00F356C2 /* GardenPlantByIds */,
 				02F3ADE9274E956900A07FEA /* ScheduleByGardens */,
 				02E0255A27326DC300988F12 /* DiagnoseArhive */,
 				02527D8B2746397300126022 /* ScheduleByGardenPlant */,
@@ -2169,6 +2183,7 @@
 				FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */,
 				FA24A5B6273564C80059AF6A /* GardenPlants.graphql in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
+				02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */,
 				02527D9B27467FF900126022 /* GardenDetailAllWaitingCell.xib in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
 				02527D8827462DDF00126022 /* GardenDetailEditCareCell.xib in Resources */,
@@ -2344,6 +2359,7 @@
 				FAFCF3522715760A00C3134E /* GradientView.swift in Sources */,
 				FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */,
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
+				02CF963F274FBFBF00F356C2 /* GardenPlantByIdsModel.swift in Sources */,
 				F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */,
 				02D4BFB52743B94D00B9322B /* Animation.swift in Sources */,
 				FA545485274E89C6006B52F4 /* PlantsAboutType.swift in Sources */,

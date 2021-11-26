@@ -15,6 +15,7 @@ import UIKit
 
 protocol ScheduleOutputProtocol: BaseController {
     func success()
+    func successId(model: [GardenPlantByMainIdsModel], modelSchedule: ScheduleMainModel, row: Int)
     func failure(error: String)
 }
 
@@ -85,5 +86,18 @@ class SchedulePresenter: SchedulePresenterProtocol {
                 self?.view?.success()
             }
         }
+    }
+    
+    func gardensById(ids: [String], modelSchedule: ScheduleMainModel, row: Int) {
+        view?.startLoader()
+        
+        let query = GardenPlantByIdsQuery(ids: ids)
+        let _ = Network.shared.query(model: GardenPlantByIdsModel.self, query, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successId(model: model.gardenPlantByIds, modelSchedule: modelSchedule, row: row)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

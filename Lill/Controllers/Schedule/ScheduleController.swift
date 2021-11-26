@@ -98,6 +98,20 @@ class ScheduleController: BaseController {
 //----------------------------------------------
 
 extension ScheduleController: ScheduleOutputProtocol {
+    func successId(model: [GardenPlantByMainIdsModel], modelSchedule: ScheduleMainModel, row: Int) {
+        
+        if let index = presenter.futureSchedule.firstIndex(where: {$0.id == modelSchedule.id}) {
+            presenter.futureSchedule[index].setGardens(model)
+        } else if let index = presenter.nextWeekSchedule.firstIndex(where: {$0.id == modelSchedule.id}) {
+            presenter.nextWeekSchedule[index].setGardens(model)
+        } else if let index = presenter.currentSchedule.firstIndex(where: {$0.id == modelSchedule.id}) {
+            presenter.currentSchedule[index].setGardens(model)
+        }
+        
+        indexSelected.insert(row)
+        tableView.reloadRows(at: [IndexPath(item: row, section: 0)], with: .automatic)
+    }
+    
     func success() {
         changeViews()
     }

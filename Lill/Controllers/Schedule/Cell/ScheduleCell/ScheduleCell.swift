@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ScheduleCellDelegate: AnyObject {
+    func scheduleCellCare(cell: ScheduleCell, model: ScheduleMainModel, gardenModel: GardenPlantByMainIdsModel)
+}
+
 class ScheduleCell: UITableViewCell {
 
     @IBOutlet weak var stackView: UIStackView!
@@ -23,6 +27,10 @@ class ScheduleCell: UITableViewCell {
     
     @IBOutlet weak var placeLabel: UILabel!
     
+    weak var delegate: ScheduleCellDelegate?
+    
+    var model: ScheduleMainModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,6 +45,7 @@ class ScheduleCell: UITableViewCell {
     
     
     func setupCell(model: ScheduleMainModel, needCornerBottom: Bool) {
+        self.model = model
         careImageView.image = model.careTypeName.image
         careLabel.text = model.careTypeName.text
         
@@ -81,8 +90,10 @@ class ScheduleCell: UITableViewCell {
             
             topStackLayout.constant = 0.0
             
-            for _ in model.gardenPlantIds {
+            for model in model.customGardens ?? [] {
                 let view = ScheduleColapsView()
+                view.delegate = self
+                view.updateView(model: model)
                 stackView.addArrangedSubview(view)
             }
             
@@ -94,5 +105,16 @@ class ScheduleCell: UITableViewCell {
         }
         
         bottomView.layoutIfNeeded()
+    }
+}
+
+//----------------------------------------------
+// MARK: - ScheduleColapsDelegate
+//----------------------------------------------
+
+extension ScheduleCell: ScheduleColapsDelegate {
+    func scheduleColapsCare(view: ScheduleColapsView, model: GardenPlantByMainIdsModel) {
+        guard let mainModel = self.model else { return }
+        delegate?.scheduleCellCare(cell: self, model: mainModel, gardenModel: model)
     }
 }
