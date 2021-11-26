@@ -155,8 +155,8 @@ class PlantsController: BaseController {
 //----------------------------------------------
 
 extension PlantsController: PlantsOutputProtocol {
-    func successAddPlants(model: PlantToGardenDataModel) {
-        
+    func successAddToGarden() {
+        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
     func successFavorite(isFavorite: Bool, id: String) {

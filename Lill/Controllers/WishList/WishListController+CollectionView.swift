@@ -14,6 +14,7 @@ extension WishListController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellIdentifier, for: indexPath) as! PlantCollectionCell
         
         if let model = wishList[safe: indexPath.row] {
+            cell.delegate = self
             cell.configure(model: model)
         }
         
@@ -21,7 +22,9 @@ extension WishListController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("select item")
+        if let model = wishList[safe: indexPath.row] {
+            WishListRouter(presenter: navigationController).pushDetail(id: model.id)
+        }
     }
 }
 
@@ -35,5 +38,20 @@ extension WishListController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width / 2 - 13 , height: UIScreen.main.bounds.size.width / 2 - 13)
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantCollectionDelegate
+//----------------------------------------------
+
+extension WishListController: PlantCollectionDelegate {
+    func setToGarden(cell: PlantCollectionCell, id: String) {
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        presenter.addPlantToGarden(gardenId: gardenId, plantId: id)
+    }
+    
+    func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
+        presenter.setFavoritePlant(id: id)
     }
 }

@@ -7,7 +7,7 @@ import UIKit
 // MARK: - Outputs Protocol
 //----------------------------------------------
 protocol PlantsOutputProtocol: BaseController {
-    func successAddPlants(model: PlantToGardenDataModel)
+    func successAddToGarden()
     func successFavorite(isFavorite: Bool, id: String)
     func success(model: CatalogPlantsModel)
     func failure(error: String)
@@ -66,7 +66,7 @@ class PlantsPresenter: PlantsPresenterProtocol {
         let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
         let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            self?.view?.successAddPlants(model: model)
+            self?.view?.successAddToGarden()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)

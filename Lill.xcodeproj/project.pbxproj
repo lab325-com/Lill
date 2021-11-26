@@ -253,6 +253,7 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
+		FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AD938275125FB00B0104C /* WishListRouter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
 		FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */; };
@@ -421,7 +422,7 @@
 		02C6C10A273A68F4003C47FF /* RestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuth.swift; sourceTree = "<group>"; };
 		02C6C10D273A6948003C47FF /* RestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethods.swift; sourceTree = "<group>"; };
 		02C6C113273A6AA4003C47FF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
-		02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlantByIds.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIds.graphql; sourceTree = SOURCE_ROOT; };
+		02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantByIds.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIds.graphql; sourceTree = SOURCE_ROOT; };
 		02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantByIdsModel.swift; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIdsModel.swift; sourceTree = SOURCE_ROOT; };
 		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
 		02D04EC626F5E7AD00F86B87 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -530,6 +531,7 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		FA8AD938275125FB00B0104C /* WishListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRouter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
 		FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognize.graphql; sourceTree = "<group>"; };
@@ -1511,6 +1513,7 @@
 				FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */,
 				02FCBFA9270A36500089CEF8 /* WishListController.xib */,
 				FAFCF34727147E1300C3134E /* Presenter */,
+				FA8AD937275125DF00B0104C /* Router */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -1767,6 +1770,14 @@
 				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA8AD937275125DF00B0104C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA8AD938275125FB00B0104C /* WishListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		FA8FCD27271818DA00173725 /* UploadMedia */ = {
@@ -2447,6 +2458,7 @@
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
 				0272DAE227354170005E7880 /* AddCoverIdentifierController.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
+				FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
 				FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */,
