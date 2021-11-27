@@ -11,7 +11,6 @@ class WishListController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private lazy var presenter = WishListPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Gobal property
@@ -19,6 +18,7 @@ class WishListController: BaseController {
     
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var wishList = [PlantsModel]()
+    lazy var presenter = WishListPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -28,8 +28,7 @@ class WishListController: BaseController {
         transparentNavigationBar = true
         super.viewDidLoad()
         
-        
-        
+        presenter.getWishList()
         setup()
     }
     
@@ -38,8 +37,6 @@ class WishListController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        presenter.getWishList()
-        
         let backButton = UIBarButtonItem()
         backButton.title = RLocalization.wish_list_back()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
@@ -61,16 +58,21 @@ class WishListController: BaseController {
 //----------------------------------------------
 
 extension WishListController: WishListOutputProtocol {
-    func success(model: CatalogPlantsModel) {
+    func successGetWishList(model: CatalogPlantsModel) {
         wishList = model.getCatalogPlants.plants
-        if wishList.count > 0 {
-            noDataImage.isHidden = true
-            noDataLabel.isHidden = true
-        } else {
-            noDataImage.isHidden = false
-            noDataLabel.isHidden = false
-        }
+        
+        noDataImage.isHidden = wishList.count > 0 ? true : false
+        noDataLabel.isHidden = wishList.count > 0 ? true : false
+        
         collectionView.reloadData()
+    }
+    
+    func succesRemoveFromFavorite() {
+        presenter.getWishList()
+    }
+    
+    func successAddToGarden() {
+        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
     func failure(error: String) {
