@@ -3,13 +3,13 @@ import Foundation
 
 class PlantsRouter: BaseRouter {
     
-    func pushWishList() {
-        let controller = WishListController()
+    func pushWishList(delegate: WishListDelegate) {
+        let controller = WishListController(delegate: delegate)
         push(controller: controller)
     }
     
-    func pushDetail(id: String) {
-        let controller = PlantsDetailController(id: id)
+    func pushDetail(id: String, delegate: PlantsDetailDelegate? = nil) {
+        let controller = PlantsDetailController(id: id, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }

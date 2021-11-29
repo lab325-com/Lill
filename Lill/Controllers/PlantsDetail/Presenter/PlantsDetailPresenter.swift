@@ -9,7 +9,7 @@ import UIKit
 
 protocol PlantsDetailOutputProtocol: BaseController {
     func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)])
-    func success(model: FavoritePlantDataModel)
+    func successSetFavorite()
     func success(model: PlantToGardenDataModel)
     func failure(error: String)
 }
@@ -22,7 +22,7 @@ protocol PlantsDetailPresenterProtocol: AnyObject {
     init(view: PlantsDetailOutputProtocol)
     
     func getPlantDetail(id: String)
-    func setFaviritePlant(id: String, isFavorite: Bool)
+    func setFavoritePlant(id: String, isFavorite: Bool)
     func addPlantToGarden(plantId: String, gardenId: String)
 }
 
@@ -52,12 +52,12 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
         })
     }
     
-    func setFaviritePlant(id: String, isFavorite: Bool) {
+    func setFavoritePlant(id: String, isFavorite: Bool) {
         request?.cancel()
         
         let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: isFavorite)
         request = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
-            self?.view?.success(model: model)
+            self?.view?.successSetFavorite()
         }, failureHandler: { [weak self] error in
             self?.view?.failure(error: error.localizedDescription)
         })

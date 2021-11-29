@@ -1,16 +1,15 @@
 
 import UIKit
 
+protocol WishListDelegate: AnyObject {
+    func updatePlants()
+}
+
 class WishListController: BaseController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var noDataLabel: UILabel!
-    
-    //----------------------------------------------
-    // MARK: - Private property
-    //----------------------------------------------
-    
     
     //----------------------------------------------
     // MARK: - Gobal property
@@ -19,6 +18,20 @@ class WishListController: BaseController {
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var wishList = [PlantsModel]()
     lazy var presenter = WishListPresenter(view: self)
+    weak var delegate: WishListDelegate?
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(delegate: WishListDelegate) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -69,6 +82,7 @@ extension WishListController: WishListOutputProtocol {
     
     func succesRemoveFromFavorite() {
         presenter.getWishList()
+        delegate?.updatePlants()
     }
     
     func successAddToGarden() {

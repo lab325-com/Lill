@@ -51,6 +51,7 @@ class PlantsController: BaseController {
     lazy var presenter = PlantsPresenter(view: self)
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var plants = [PlantsModel]()
+    weak var delegate: WishListDelegate?
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -109,7 +110,7 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionWishList(_ sender: UIButton) {
-        PlantsRouter(presenter: navigationController).pushWishList()
+        PlantsRouter(presenter: navigationController).pushWishList(delegate: self)
     }
     
     @IBAction func actionClear(_ sender: UIButton) {
@@ -179,6 +180,32 @@ extension PlantsController: PlantsOutputProtocol {
 }
 
 //----------------------------------------------
+// MARK: - PopUniqePlanProtocol
+//----------------------------------------------
+
+extension PlantsController: PopUniqePlanProtocol {
+    func dissmiss(controller: PopUniquePlantController, text: String) {
+        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
+    }
+}
+
+extension PlantsController: AddCoverIdentifierProtocol {
+    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantsDetailDelegate
+//----------------------------------------------
+
+extension PlantsController: PlantsDetailDelegate, WishListDelegate {
+    func updatePlants() {
+        presenter.getPlants(search: "")
+    }
+}
+
+//----------------------------------------------
 // MARK: - UITextFieldDelegate
 //----------------------------------------------
 
@@ -203,22 +230,6 @@ extension PlantsController: UITextFieldDelegate {
         if textField.text?.count == 0 {
             textField.text = searchText
         }
-    }
-}
-
-//----------------------------------------------
-// MARK: - PopUniqePlanProtocol
-//----------------------------------------------
-
-extension PlantsController: PopUniqePlanProtocol {
-    func dissmiss(controller: PopUniquePlantController, text: String) {
-        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
-    }
-}
-
-extension PlantsController: AddCoverIdentifierProtocol {
-    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
 }
 
