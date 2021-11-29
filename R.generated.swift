@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 34 files.
+  /// This `R.file` struct is generated, and contains static references to 37 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -169,6 +169,12 @@ struct R: Rswift.Validatable {
     static let doneAllCaresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGarden", pathExtension: "graphql")
     /// Resource file `DoneAllCaresByGardenPlant.graphql`.
     static let doneAllCaresByGardenPlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGardenPlant", pathExtension: "graphql")
+    /// Resource file `DoneAllCaresByGardens.graphql`.
+    static let doneAllCaresByGardensGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneAllCaresByGardens", pathExtension: "graphql")
+    /// Resource file `DoneCareByGardenPlant.graphql`.
+    static let doneCareByGardenPlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneCareByGardenPlant", pathExtension: "graphql")
+    /// Resource file `DoneCareByGardenPlants.graphql`.
+    static let doneCareByGardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneCareByGardenPlants", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantByIds.graphql`.
@@ -263,6 +269,24 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "DoneAllCaresByGardenPlant", withExtension: "graphql")`
     static func doneAllCaresByGardenPlantGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.doneAllCaresByGardenPlantGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DoneAllCaresByGardens", withExtension: "graphql")`
+    static func doneAllCaresByGardensGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.doneAllCaresByGardensGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DoneCareByGardenPlant", withExtension: "graphql")`
+    static func doneCareByGardenPlantGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.doneCareByGardenPlantGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "DoneCareByGardenPlants", withExtension: "graphql")`
+    static func doneCareByGardenPlantsGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.doneCareByGardenPlantsGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 

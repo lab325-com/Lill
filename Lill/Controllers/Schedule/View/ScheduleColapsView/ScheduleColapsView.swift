@@ -43,9 +43,10 @@ class ScheduleColapsView: UIView, LoadFromXibProtocol {
         addSubviewLoadedFromXib()
     }
 
-    func updateView(model: GardenPlantByMainIdsModel) {
+    func updateView(model: GardenPlantByMainIdsModel, showCare: Bool) {
         self.model = model
         
+        careButton.isHidden = !showCare
         careButton.setTitle(model.customIsDone == true ? "Done" : "Care", for: .normal)
         careButton.backgroundColor = model.customIsDone == true ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)
         nameLabel.text = model.name

@@ -41,6 +41,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    controller?.view?.makeToast(error.localizedDescription)
                     failureHandler(error)
                 }
             case .failure(let error):
@@ -71,6 +72,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    controller?.view?.makeToast(error.localizedDescription)
                     failureHandler(error)
                 }
             case .failure(let error):
@@ -101,6 +103,7 @@ class Network {
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
+                    controller?.view?.makeToast(error.localizedDescription)
                     failureHandler(error)
                 }
             case .failure(let error):

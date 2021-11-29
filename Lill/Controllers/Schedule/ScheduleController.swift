@@ -53,7 +53,8 @@ class ScheduleController: BaseController {
         tableView.register(UINib(nibName: cellScheduleDoneIdentifier, bundle: nil), forCellReuseIdentifier: cellScheduleDoneIdentifier)
         
         tableView.tableFooterView = UIView()
-        
+        tableView.addHeader(withTarget: self,
+                            action: #selector(self.headerRefresh(sender:)))
         tableView.reloadData()
     }
     
@@ -88,6 +89,10 @@ class ScheduleController: BaseController {
     // MARK: - IBAction
     //----------------------------------------------
     
+    @objc func headerRefresh(sender: AnyObject) {
+        presenter.getScheduleAll()
+    }
+    
     @IBAction func actionChangeSheldure(_ sender: UISegmentedControl) {
         changeViews()
     }
@@ -98,6 +103,43 @@ class ScheduleController: BaseController {
 //----------------------------------------------
 
 extension ScheduleController: ScheduleOutputProtocol {
+    func successDoneAll(model: ScheduleMainModel) {
+        if let index = presenter.futureSchedule.firstIndex(where: {$0.id == model.id}) {
+            
+            for (indexGarden, _) in (presenter.futureSchedule[index].customGardens ?? []).enumerated() {
+                presenter.futureSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+            }
+            UIView.performWithoutAnimation {
+                self.tableView.reloadRows(at: [IndexPath(row: index + 1 + presenter.currentSchedule.count, section: 0)], with: .none)
+            }
+        } else if let index = presenter.currentSchedule.firstIndex(where: {$0.id == model.id}) {
+            for (indexGarden, _) in (presenter.currentSchedule[index].customGardens ?? []).enumerated() {
+                presenter.currentSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+            }
+            UIView.performWithoutAnimation {
+                self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+              }
+        }
+    }
+    
+    func successDone(gardenID: String, modelID: UUID) {
+        if let index = presenter.futureSchedule.firstIndex(where: {$0.id == modelID}) {
+            if let indexGarden = presenter.futureSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenID}) {
+                presenter.futureSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+                UIView.performWithoutAnimation {
+                    self.tableView.reloadRows(at: [IndexPath(row: index + 1 + presenter.currentSchedule.count, section: 0)], with: .none)
+                }
+            }
+        } else if let index = presenter.currentSchedule.firstIndex(where: {$0.id == modelID}) {
+            if let indexGarden = presenter.currentSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenID}) {
+                presenter.currentSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
+                UIView.performWithoutAnimation {
+                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                  }
+            }
+        }
+    }
+    
     func successId(model: [GardenPlantByMainIdsModel], modelSchedule: ScheduleMainModel, row: Int) {
         
         if let index = presenter.futureSchedule.firstIndex(where: {$0.id == modelSchedule.id}) {
@@ -113,9 +155,12 @@ extension ScheduleController: ScheduleOutputProtocol {
     }
     
     func success() {
+        indexSelected.removeAll()
+        tableView.headerEndRefreshing()
         changeViews()
     }
     
     func failure(error: String) {
+        tableView.headerEndRefreshing()
     }
 }

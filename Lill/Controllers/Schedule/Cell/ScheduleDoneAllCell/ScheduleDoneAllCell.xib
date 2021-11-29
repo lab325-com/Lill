@@ -18,7 +18,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleDoneAllCell" rowHeight="58" id="KGk-i7-Jjw" customClass="ScheduleDoneAllCell" customModule="Lill" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="323" height="58"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="323" height="58"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -38,6 +38,9 @@
                                 <integer key="value" value="24"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="actionDoneAll:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="g2e-ON-GKv"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -15,6 +15,8 @@ import UIKit
 
 protocol ScheduleOutputProtocol: BaseController {
     func success()
+    func successDone(gardenID: String, modelID: UUID)
+    func successDoneAll(model: ScheduleMainModel)
     func successId(model: [GardenPlantByMainIdsModel], modelSchedule: ScheduleMainModel, row: Int)
     func failure(error: String)
 }
@@ -26,8 +28,10 @@ protocol ScheduleOutputProtocol: BaseController {
 protocol SchedulePresenterProtocol: AnyObject {
     init(view: ScheduleOutputProtocol)
     
+    func doneAllCares()
     func getScheduleAll()
-    
+    func gardensById(ids: [String], modelSchedule: ScheduleMainModel, row: Int)
+    func doneCareByGarden(gardenID: String, careTypeId: Int, modelID: UUID)
 }
 
 class SchedulePresenter: SchedulePresenterProtocol {
@@ -95,6 +99,46 @@ class SchedulePresenter: SchedulePresenterProtocol {
         let _ = Network.shared.query(model: GardenPlantByIdsModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successId(model: model.gardenPlantByIds, modelSchedule: modelSchedule, row: row)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func doneCareByGarden(gardenID: String, careTypeId: Int, modelID: UUID) {
+        view?.startLoader()
+        
+        let mutation = DoneCareByGardenPlantMutation(gardenPlantId: gardenID, careTypeId: careTypeId)
+        let _ = Network.shared.mutation(model: DoneCareByGardenPlantModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successDone(gardenID: gardenID, modelID: modelID)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func doneCareByGardens(model: ScheduleMainModel) {
+        view?.startLoader()
+        
+        let mutation =  DoneCareByGardenPlantsMutation(gardenPlantIds: model.gardenPlantIds, careTypeId: model.careTypeId)
+        let _ = Network.shared.mutation(model: DoneCareByGardenPlantsModel.self, mutation, controller: view, successHandler: { [weak self] _ in
+            self?.view?.stopLoading()
+            self?.view?.successDoneAll(model: model)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func doneAllCares() {
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        
+        view?.startLoader()
+        
+        let mutation =  DoneAllCaresByGardensMutation(gardenIds: [gardenId])
+        let _ = Network.shared.mutation(model: DoneAllCaresByGardensModel.self, mutation, controller: view, successHandler: { [weak self] _ in
+            self?.getScheduleAll()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)

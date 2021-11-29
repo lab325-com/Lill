@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleColapsBottomView" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="doneButton" destination="07X-Ht-EZB" id="ebL-EK-WkV"/>
                 <outlet property="mainView" destination="KtX-Wc-jUL" id="LTe-dm-jwM"/>
             </connections>
         </placeholder>
@@ -36,6 +37,9 @@
                             <state key="normal" title="Done Somelonngnamecare">
                                 <color key="titleColor" red="1" green="0.59999999999999998" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="actionDoneAll:" destination="-1" eventType="touchUpInside" id="Cgm-Xr-Hjg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

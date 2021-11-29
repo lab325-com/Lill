@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ScheduleDoneAllDelegate: AnyObject {
+    func scheduleDoneAll(cell: ScheduleDoneAllCell)
+}
+
 class ScheduleDoneAllCell: UITableViewCell {
 
     @IBOutlet weak var doneButton: UIButton!
+    
+    weak var delegate: ScheduleDoneAllDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +30,11 @@ class ScheduleDoneAllCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //----------------------------------------------
+    // MARK: - IBAction
+    //----------------------------------------------
+
+    @IBAction func actionDoneAll(_ sender: UIButton) {
+        delegate?.scheduleDoneAll(cell: self)
+    }
 }

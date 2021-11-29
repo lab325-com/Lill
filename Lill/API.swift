@@ -801,6 +801,163 @@ public final class DoneAllCaresByGardenPlantMutation: GraphQLMutation {
   }
 }
 
+public final class DoneAllCaresByGardensMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DoneAllCaresByGardens($gardenIds: [String!]) {
+      doneAllCaresByGardens(gardenIds: $gardenIds)
+    }
+    """
+
+  public let operationName: String = "DoneAllCaresByGardens"
+
+  public var gardenIds: [String]?
+
+  public init(gardenIds: [String]?) {
+    self.gardenIds = gardenIds
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenIds": gardenIds]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("doneAllCaresByGardens", arguments: ["gardenIds": GraphQLVariable("gardenIds")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(doneAllCaresByGardens: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "doneAllCaresByGardens": doneAllCaresByGardens])
+    }
+
+    public var doneAllCaresByGardens: Bool? {
+      get {
+        return resultMap["doneAllCaresByGardens"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "doneAllCaresByGardens")
+      }
+    }
+  }
+}
+
+public final class DoneCareByGardenPlantMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DoneCareByGardenPlant($gardenPlantId: String!, $careTypeId: Int!) {
+      doneCareByGardenPlant(gardenPlantId: $gardenPlantId, careTypeId: $careTypeId)
+    }
+    """
+
+  public let operationName: String = "DoneCareByGardenPlant"
+
+  public var gardenPlantId: String
+  public var careTypeId: Int
+
+  public init(gardenPlantId: String, careTypeId: Int) {
+    self.gardenPlantId = gardenPlantId
+    self.careTypeId = careTypeId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenPlantId": gardenPlantId, "careTypeId": careTypeId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("doneCareByGardenPlant", arguments: ["gardenPlantId": GraphQLVariable("gardenPlantId"), "careTypeId": GraphQLVariable("careTypeId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(doneCareByGardenPlant: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "doneCareByGardenPlant": doneCareByGardenPlant])
+    }
+
+    public var doneCareByGardenPlant: Bool? {
+      get {
+        return resultMap["doneCareByGardenPlant"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "doneCareByGardenPlant")
+      }
+    }
+  }
+}
+
+public final class DoneCareByGardenPlantsMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DoneCareByGardenPlants($gardenPlantIds: [String!]!, $careTypeId: Int!) {
+      doneCareByGardenPlants(gardenPlantIds: $gardenPlantIds, careTypeId: $careTypeId)
+    }
+    """
+
+  public let operationName: String = "DoneCareByGardenPlants"
+
+  public var gardenPlantIds: [String]
+  public var careTypeId: Int
+
+  public init(gardenPlantIds: [String], careTypeId: Int) {
+    self.gardenPlantIds = gardenPlantIds
+    self.careTypeId = careTypeId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenPlantIds": gardenPlantIds, "careTypeId": careTypeId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("doneCareByGardenPlants", arguments: ["gardenPlantIds": GraphQLVariable("gardenPlantIds"), "careTypeId": GraphQLVariable("careTypeId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(doneCareByGardenPlants: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "doneCareByGardenPlants": doneCareByGardenPlants])
+    }
+
+    public var doneCareByGardenPlants: Bool? {
+      get {
+        return resultMap["doneCareByGardenPlants"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "doneCareByGardenPlants")
+      }
+    }
+  }
+}
+
 public final class GardenPlantCloneMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

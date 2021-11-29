@@ -12,7 +12,7 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if scheldureSegment.selectedSegmentIndex == 0 {
             var count = presenter.currentSchedule.count + presenter.futureSchedule.count
-            if presenter.futureSchedule.count > 0 {
+            if presenter.currentSchedule.count > 0 {
                 count += 1
             }
             
@@ -27,30 +27,43 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
             
             if let model = presenter.nextWeekSchedule[safe: indexPath.row] {
-                cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row))
+                cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row), showCare: false)
             }
             
             return cell
         } else {
-            switch indexPath.row {
-            case 0..<presenter.currentSchedule.count:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
-                
-                if let model = presenter.currentSchedule[safe: indexPath.row] {
-                    cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row))
+            if presenter.currentSchedule.count > 0 {
+                switch indexPath.row {
+                case 0..<presenter.currentSchedule.count:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
+                    
+                    if let model = presenter.currentSchedule[safe: indexPath.row] {
+                        cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row), showCare: model.status == .done ? false : true)
+                    }
+                    
+                    cell.delegate = self
+                    return cell
+                case presenter.currentSchedule.count:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleDoneIdentifier) as? ScheduleDoneAllCell else { return UITableViewCell() }
+                    
+                    cell.delegate = self
+                    return cell
+                default:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
+                    
+                    if let model = presenter.futureSchedule[safe: indexPath.row - presenter.currentSchedule.count - 1] {
+                        cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row), showCare: model.status == .done ? false : true)
+                    } else {
+                        debugPrint("ERROR: ->>>>>>>>>>> CELL INDEX")
+                    }
+                    cell.delegate = self
+                    return cell
                 }
-                
-                cell.delegate = self
-                return cell
-            case presenter.currentSchedule.count:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleDoneIdentifier) as? ScheduleDoneAllCell else { return UITableViewCell() }
-                
-                return cell
-            default:
+            } else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
                 
-                if let model = presenter.futureSchedule[safe: indexPath.row - presenter.currentSchedule.count - 1] {
-                    cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row))
+                if let model = presenter.futureSchedule[safe: indexPath.row] {
+                    cell.setupCell(model: model, needCornerBottom: indexSelected.contains(indexPath.row), showCare: model.status == .done ? false : true)
                 } else {
                     debugPrint("ERROR: ->>>>>>>>>>> CELL INDEX")
                 }
@@ -72,13 +85,18 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
             if scheldureSegment.selectedSegmentIndex == 1 {
                 model = presenter.nextWeekSchedule[safe: indexPath.row]
             } else {
-                switch indexPath.row {
-                case 0..<presenter.currentSchedule.count:
-                    model = presenter.currentSchedule[safe: indexPath.row]
-                case presenter.currentSchedule.count:
-                    break
-                default:
-                    model = presenter.futureSchedule[safe: indexPath.row - presenter.currentSchedule.count - 1]
+                
+                if presenter.currentSchedule.count > 0 {
+                    switch indexPath.row {
+                    case 0..<presenter.currentSchedule.count:
+                        model = presenter.currentSchedule[safe: indexPath.row]
+                    case presenter.currentSchedule.count:
+                        break
+                    default:
+                        model = presenter.futureSchedule[safe: indexPath.row - presenter.currentSchedule.count - 1]
+                    }
+                } else {
+                    model = presenter.futureSchedule[safe: indexPath.row]
                 }
             }
             
@@ -100,21 +118,21 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
 //----------------------------------------------
 
 extension ScheduleController: ScheduleCellDelegate {
+    func scheduleCellCareAll(cell: ScheduleCell, model: ScheduleMainModel) {
+        presenter.doneCareByGardens(model: model)
+    }
+    
     func scheduleCellCare(cell: ScheduleCell, model: ScheduleMainModel, gardenModel: GardenPlantByMainIdsModel) {
-        if let index = presenter.futureSchedule.firstIndex(where: {$0.id == model.id}) {
-            if let indexGarden = presenter.futureSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenModel.id}) {
-                presenter.futureSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
-                UIView.performWithoutAnimation {
-                    self.tableView.reloadRows(at: [IndexPath(row: index + 1 + presenter.currentSchedule.count, section: 0)], with: .none)
-                }
-            }
-        } else if let index = presenter.currentSchedule.firstIndex(where: {$0.id == model.id}) {
-            if let indexGarden = presenter.currentSchedule[index].customGardens?.firstIndex(where: {$0.id == gardenModel.id}) {
-                presenter.currentSchedule[index].customGardens?[indexGarden].setCustomIsDone(true)
-                UIView.performWithoutAnimation {
-                    self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-                  }
-            }
-        }
+        presenter.doneCareByGarden(gardenID: gardenModel.id, careTypeId: model.careTypeId, modelID: model.id)
+    }
+}
+
+//----------------------------------------------
+// MARK: - ScheduleDoneAllDelegate
+//----------------------------------------------
+
+extension ScheduleController: ScheduleDoneAllDelegate {
+    func scheduleDoneAll(cell: ScheduleDoneAllCell) {
+        presenter.doneAllCares()
     }
 }

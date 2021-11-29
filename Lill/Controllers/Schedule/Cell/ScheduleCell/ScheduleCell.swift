@@ -9,10 +9,12 @@ import UIKit
 
 protocol ScheduleCellDelegate: AnyObject {
     func scheduleCellCare(cell: ScheduleCell, model: ScheduleMainModel, gardenModel: GardenPlantByMainIdsModel)
+    
+    func scheduleCellCareAll(cell: ScheduleCell, model: ScheduleMainModel)
 }
 
 class ScheduleCell: UITableViewCell {
-
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomView: ShadowView!
     @IBOutlet weak var careView: ShadowView!
@@ -35,16 +37,16 @@ class ScheduleCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         bottomView.layer.cornerRadius = 27
         bottomView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
     
-    func setupCell(model: ScheduleMainModel, needCornerBottom: Bool) {
+    func setupCell(model: ScheduleMainModel, needCornerBottom: Bool, showCare: Bool) {
         self.model = model
         careImageView.image = model.careTypeName.image
         careLabel.text = model.careTypeName.text
@@ -82,10 +84,11 @@ class ScheduleCell: UITableViewCell {
         
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
-        stackView.isHidden = !needCornerBottom
-        bottomView.isHidden = !needCornerBottom
-        
-        if needCornerBottom {
+    
+        if needCornerBottom && model.customGardens?.count ?? 0 > 0 {
+            stackView.isHidden = false
+            bottomView.isHidden = false
+            
             careView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             
             topStackLayout.constant = 0.0
@@ -93,13 +96,17 @@ class ScheduleCell: UITableViewCell {
             for model in model.customGardens ?? [] {
                 let view = ScheduleColapsView()
                 view.delegate = self
-                view.updateView(model: model)
+                view.updateView(model: model, showCare: showCare)
                 stackView.addArrangedSubview(view)
             }
             
             let view3 = ScheduleColapsBottomView()
+            view3.delegate = self
+            view3.setupView(model: model, isHiddenButton: !showCare)
             stackView.addArrangedSubview(view3)
         } else {
+            stackView.isHidden = true
+            bottomView.isHidden = true
             topStackLayout.constant = -5
             careView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         }
@@ -116,5 +123,22 @@ extension ScheduleCell: ScheduleColapsDelegate {
     func scheduleColapsCare(view: ScheduleColapsView, model: GardenPlantByMainIdsModel) {
         guard let mainModel = self.model else { return }
         delegate?.scheduleCellCare(cell: self, model: mainModel, gardenModel: model)
+    }
+}
+
+//----------------------------------------------
+// MARK: - ScheduleColapsBottomDelegate
+//----------------------------------------------
+
+extension ScheduleCell: ScheduleColapsBottomDelegate {
+    func scheduleColapsBottomAllDone(view: ScheduleColapsBottomView, model: ScheduleMainModel) {
+        
+        guard let customGardens = model.customGardens else {
+            delegate?.scheduleCellCareAll(cell: self, model: model)
+            return
+        }
+        if let _ = customGardens.first(where: {$0.customIsDone != true}) {
+            delegate?.scheduleCellCareAll(cell: self, model: model)
+        }
     }
 }
