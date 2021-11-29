@@ -48,27 +48,21 @@ class PlantsPresenter: PlantsPresenterProtocol {
     }
     
     func setFavoritePlant(id: String, isFavorite: Bool) {
-        view?.startLoader()
         
-        let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: isFavorite)
+        let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: !isFavorite)
         let _ = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
             self?.view?.successFavorite(isFavorite: !isFavorite, id: id)
         }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
     }
     
     func addPlantToGarden(plantId: String, gardenId: String) {
-        view?.startLoader()
         
         let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
         let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
             self?.view?.successAddToGarden()
         }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
     }

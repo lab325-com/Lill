@@ -260,7 +260,6 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
-		FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AD938275125FB00B0104C /* WishListRouter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
 		FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */; };
@@ -306,9 +305,9 @@
 		02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailDeletePlanController.xib; sourceTree = "<group>"; };
 		02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDelete.graphql; sourceTree = SOURCE_ROOT; };
 		02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDeleteModel.swift; sourceTree = SOURCE_ROOT; };
-		02089EAC2754CA9A0022E1BD /* DoneCareByGardenPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = DoneCareByGardenPlants.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.graphql; sourceTree = SOURCE_ROOT; };
+		02089EAC2754CA9A0022E1BD /* DoneCareByGardenPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = DoneCareByGardenPlants.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.graphql; sourceTree = SOURCE_ROOT; };
 		02089EAD2754CA9A0022E1BD /* DoneCareByGardenPlants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneCareByGardenPlants.swift; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.swift; sourceTree = SOURCE_ROOT; };
-		02089EB02754CB830022E1BD /* DoneAllCaresByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = DoneAllCaresByGardens.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardens.graphql; sourceTree = SOURCE_ROOT; };
+		02089EB02754CB830022E1BD /* DoneAllCaresByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = DoneAllCaresByGardens.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardens.graphql; sourceTree = SOURCE_ROOT; };
 		02089EB32754CBC30022E1BD /* DoneAllCaresByGardensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoneAllCaresByGardensModel.swift; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardensModel.swift; sourceTree = SOURCE_ROOT; };
 		020FE334274BDC3300FF69F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		021C8EC52705B0B200F0F589 /* PlantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollectionCell.swift; sourceTree = "<group>"; };
@@ -545,7 +544,6 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		FA8AD938275125FB00B0104C /* WishListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRouter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
 		FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognize.graphql; sourceTree = "<group>"; };
@@ -1555,7 +1553,6 @@
 				FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */,
 				02FCBFA9270A36500089CEF8 /* WishListController.xib */,
 				FAFCF34727147E1300C3134E /* Presenter */,
-				FA8AD937275125DF00B0104C /* Router */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -1815,14 +1812,6 @@
 				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		FA8AD937275125DF00B0104C /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				FA8AD938275125FB00B0104C /* WishListRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		FA8FCD27271818DA00173725 /* UploadMedia */ = {
@@ -2508,7 +2497,6 @@
 				FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */,
 				0272DAE227354170005E7880 /* AddCoverIdentifierController.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
-				FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
 				FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */,

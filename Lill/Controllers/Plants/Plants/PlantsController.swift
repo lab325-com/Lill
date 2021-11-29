@@ -60,7 +60,9 @@ class PlantsController: BaseController {
     override func viewDidLoad() {
         hiddenNavigationBar = true
         super.viewDidLoad()
+        
         setup()
+        presenter.getPlants(search: "")
     }
     
     //----------------------------------------------
@@ -68,7 +70,6 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        presenter.getPlants(search: "")
         navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         identifireLabel.text = RLocalization.plants_identifier()
         explorerLabel.text = RLocalization.plants_explore()
@@ -164,12 +165,18 @@ extension PlantsController: PlantsOutputProtocol {
         if let index = plants.firstIndex(where: {$0.id == id }) {
             plants[index].description.changeIsFavorite(isFavorite)
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+            if let countText = countLabel.text, let count = Int(countText) {
+                var tempCount = 0
+                tempCount = isFavorite ? count+1 : count-1
+                countLabel.text = "\(tempCount)"
+            }
         }
     }
     
     func success(model: CatalogPlantsModel) {
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
         plants = model.getCatalogPlants.plants
+        faworiteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
         collectionView.reloadData()
         setupAnimate()
     }
