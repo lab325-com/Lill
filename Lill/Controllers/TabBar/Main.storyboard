@@ -856,6 +856,9 @@ Ring icon in Plant card</string>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="scheldure_settings_ic"/>
+                                        <connections>
+                                            <action selector="actionScheduleSettingsWithSender:" destination="wfN-Lx-kdK" eventType="touchUpInside" id="E95-ht-IID"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

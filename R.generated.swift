@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 37 files.
+  /// This `R.file` struct is generated, and contains static references to 38 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -197,6 +197,8 @@ struct R: Rswift.Validatable {
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Me.graphql`.
     static let meGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Me", pathExtension: "graphql")
+    /// Resource file `NotificationSettingsUpdate.graphql`.
+    static let notificationSettingsUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "NotificationSettingsUpdate", pathExtension: "graphql")
     /// Resource file `OrderCreate.graphql`.
     static let orderCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "OrderCreate", pathExtension: "graphql")
     /// Resource file `PlantById.graphql`.
@@ -356,6 +358,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "NotificationSettingsUpdate", withExtension: "graphql")`
+    static func notificationSettingsUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.notificationSettingsUpdateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "OrderCreate", withExtension: "graphql")`
     static func orderCreateGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.orderCreateGraphql
@@ -488,7 +496,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 98 images.
+  /// This `R.image` struct is generated, and contains static references to 99 images.
   struct image {
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
@@ -660,6 +668,8 @@ struct R: Rswift.Validatable {
     static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
     /// Image `scheldure_bell_ic`.
     static let scheldure_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_bell_ic")
+    /// Image `scheldure_settings_bell_ic`.
+    static let scheldure_settings_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_bell_ic")
     /// Image `scheldure_settings_ic`.
     static let scheldure_settings_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_ic")
     /// Image `sub_back_ic`.
@@ -1283,6 +1293,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "scheldure_settings_bell_ic", bundle: ..., traitCollection: ...)`
+    static func scheldure_settings_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.scheldure_settings_bell_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "scheldure_settings_ic", bundle: ..., traitCollection: ...)`
     static func scheldure_settings_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.scheldure_settings_ic, compatibleWith: traitCollection)
@@ -1376,7 +1393,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 52 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 53 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1476,6 +1493,8 @@ struct R: Rswift.Validatable {
     static let scheduleColapsView = _R.nib._ScheduleColapsView()
     /// Nib `ScheduleDoneAllCell`.
     static let scheduleDoneAllCell = _R.nib._ScheduleDoneAllCell()
+    /// Nib `ScheduleSettingsController`.
+    static let scheduleSettingsController = _R.nib._ScheduleSettingsController()
     /// Nib `SplashController`.
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
@@ -1876,6 +1895,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ScheduleSettingsController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleSettingsController) instead")
+    static func scheduleSettingsController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scheduleSettingsController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SplashController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.splashController) instead")
     static func splashController(_: Void = ()) -> UIKit.UINib {
@@ -2095,6 +2122,10 @@ struct R: Rswift.Validatable {
       return R.nib.scheduleDoneAllCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleDoneAllCell
     }
 
+    static func scheduleSettingsController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.scheduleSettingsController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func splashController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.splashController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2144,7 +2175,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 219 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 236 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2250,10 +2281,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_title = Rswift.StringResource(key: "subscription_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
-      ///
-      /// Locales: en, es
-      static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Biennial
       ///
       /// Locales: en, es
@@ -2286,6 +2313,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_delete_cancel = Rswift.StringResource(key: "garden_delete_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_cancel = Rswift.StringResource(key: "scheldure_setting_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, es
@@ -2326,6 +2357,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_cares = Rswift.StringResource(key: "plant_detail_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cares
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_cares = Rswift.StringResource(key: "scheldure_setting_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cares Notifications
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_cares_notification = Rswift.StringResource(key: "scheldure_setting_cares_notification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cares added:
       ///
       /// Locales: en, es
@@ -2494,6 +2533,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plan_done = Rswift.StringResource(key: "garden_plan_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_done = Rswift.StringResource(key: "scheldure_setting_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Done all Waiting Cares
       ///
       /// Locales: en, es
@@ -2534,6 +2577,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let add_plant_frequency = Rswift.StringResource(key: "add_plant_frequency", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Frequency of Notifications
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_frequency = Rswift.StringResource(key: "scheldure_setting_frequency", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Full-size image of Plant
       ///
       /// Locales: en, es
@@ -2566,6 +2613,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_height = Rswift.StringResource(key: "climate_height", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Hour
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_hour = Rswift.StringResource(key: "scheldure_setting_hour", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Humidity
       ///
       /// Locales: en, es
@@ -2686,6 +2737,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plan_missed = Rswift.StringResource(key: "garden_plan_missed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Missed
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_missed = Rswift.StringResource(key: "scheldure_setting_missed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Misting
       ///
       /// Locales: en, es
@@ -2866,6 +2921,34 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plants_search = Rswift.StringResource(key: "plants_search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Second chance Alert
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_alert = Rswift.StringResource(key: "scheldure_setting_alert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send Time:
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_send_time = Rswift.StringResource(key: "scheldure_setting_send_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send a daily list of cares and plants
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_send_daily_list = Rswift.StringResource(key: "scheldure_setting_send_daily_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send additional notification if you miss your first one
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_after_sub = Rswift.StringResource(key: "scheldure_setting_after_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send after:
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_after = Rswift.StringResource(key: "scheldure_setting_after", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send notifications no more often than the specified time period
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_frequency_sub = Rswift.StringResource(key: "scheldure_setting_frequency_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Settings
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_title = Rswift.StringResource(key: "scheldure_setting_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Shade
       ///
       /// Locales: en, es
@@ -2922,6 +3005,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_today = Rswift.StringResource(key: "scheldure_today", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Today List Notification
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_list_notification = Rswift.StringResource(key: "scheldure_setting_list_notification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Tree
       ///
       /// Locales: en, es
@@ -2954,6 +3041,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plan_waiting = Rswift.StringResource(key: "garden_plan_waiting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Waiting
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_waiting = Rswift.StringResource(key: "scheldure_setting_waiting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Watering
       ///
       /// Locales: en, es
@@ -2974,6 +3065,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
+      ///
+      /// Locales: en, es
+      static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: You will not miss Caring for plants even with closed application!
+      ///
+      /// Locales: en, es
+      static let scheldure_setting_cares_notification_sub = Rswift.StringResource(key: "scheldure_setting_cares_notification_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Your unique Plant is added!
       ///
       /// Locales: en, es
@@ -3413,21 +3512,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_title", bundle: bundle, comment: "")
       }
 
-      /// en translation: Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.
-      ///
-      /// Locales: en, es
-      static func subscription_description(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("subscription_description", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscription_description"
-        }
-
-        return NSLocalizedString("subscription_description", bundle: bundle, comment: "")
-      }
-
       /// en translation: Biennial
       ///
       /// Locales: en, es
@@ -3548,6 +3632,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_delete_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_cancel"
+        }
+
+        return NSLocalizedString("scheldure_setting_cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -3698,6 +3797,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plant_detail_cares", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cares
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_cares(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_cares", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_cares"
+        }
+
+        return NSLocalizedString("scheldure_setting_cares", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cares Notifications
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_cares_notification(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_cares_notification", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_cares_notification"
+        }
+
+        return NSLocalizedString("scheldure_setting_cares_notification", bundle: bundle, comment: "")
       }
 
       /// en translation: Cares added:
@@ -4330,6 +4459,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plan_done", bundle: bundle, comment: "")
       }
 
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_done"
+        }
+
+        return NSLocalizedString("scheldure_setting_done", bundle: bundle, comment: "")
+      }
+
       /// en translation: Done all Waiting Cares
       ///
       /// Locales: en, es
@@ -4480,6 +4624,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("add_plant_frequency", bundle: bundle, comment: "")
       }
 
+      /// en translation: Frequency of Notifications
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_frequency(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_frequency", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_frequency"
+        }
+
+        return NSLocalizedString("scheldure_setting_frequency", bundle: bundle, comment: "")
+      }
+
       /// en translation: Full-size image of Plant
       ///
       /// Locales: en, es
@@ -4598,6 +4757,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_height", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Hour
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_hour(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_hour", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_hour"
+        }
+
+        return NSLocalizedString("scheldure_setting_hour", bundle: bundle, comment: "")
       }
 
       /// en translation: Humidity
@@ -5048,6 +5222,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_plan_missed", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Missed
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_missed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_missed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_missed"
+        }
+
+        return NSLocalizedString("scheldure_setting_missed", bundle: bundle, comment: "")
       }
 
       /// en translation: Misting
@@ -5725,6 +5914,111 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plants_search", bundle: bundle, comment: "")
       }
 
+      /// en translation: Second chance Alert
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_alert", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_alert"
+        }
+
+        return NSLocalizedString("scheldure_setting_alert", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send Time:
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_send_time(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_send_time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_send_time"
+        }
+
+        return NSLocalizedString("scheldure_setting_send_time", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send a daily list of cares and plants
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_send_daily_list(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_send_daily_list", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_send_daily_list"
+        }
+
+        return NSLocalizedString("scheldure_setting_send_daily_list", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send additional notification if you miss your first one
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_after_sub(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_after_sub", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_after_sub"
+        }
+
+        return NSLocalizedString("scheldure_setting_after_sub", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send after:
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_after(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_after", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_after"
+        }
+
+        return NSLocalizedString("scheldure_setting_after", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send notifications no more often than the specified time period
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_frequency_sub(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_frequency_sub", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_frequency_sub"
+        }
+
+        return NSLocalizedString("scheldure_setting_frequency_sub", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Settings
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_title"
+        }
+
+        return NSLocalizedString("scheldure_setting_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Shade
       ///
       /// Locales: en, es
@@ -5935,6 +6229,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_today", bundle: bundle, comment: "")
       }
 
+      /// en translation: Today List Notification
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_list_notification(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_list_notification", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_list_notification"
+        }
+
+        return NSLocalizedString("scheldure_setting_list_notification", bundle: bundle, comment: "")
+      }
+
       /// en translation: Tree
       ///
       /// Locales: en, es
@@ -6055,6 +6364,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plan_waiting", bundle: bundle, comment: "")
       }
 
+      /// en translation: Waiting
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_waiting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_waiting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_waiting"
+        }
+
+        return NSLocalizedString("scheldure_setting_waiting", bundle: bundle, comment: "")
+      }
+
       /// en translation: Watering
       ///
       /// Locales: en, es
@@ -6128,6 +6452,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("allert_yes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
+      ///
+      /// Locales: en, es
+      static func subscription_description(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_description"
+        }
+
+        return NSLocalizedString("subscription_description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You will not miss Caring for plants even with closed application!
+      ///
+      /// Locales: en, es
+      static func scheldure_setting_cares_notification_sub(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_setting_cares_notification_sub", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_setting_cares_notification_sub"
+        }
+
+        return NSLocalizedString("scheldure_setting_cares_notification_sub", bundle: bundle, comment: "")
       }
 
       /// en translation: Your unique Plant is added!
@@ -6377,6 +6731,7 @@ struct _R: Rswift.Validatable {
       try _RecognizeArchiveController.validate()
       try _ScheduleCell.validate()
       try _ScheduleColapsView.validate()
+      try _ScheduleSettingsController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
       try _WishListController.validate()
@@ -7215,6 +7570,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleDoneAllCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleDoneAllCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ScheduleSettingsController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ScheduleSettingsController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "scheldure_settings_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_settings_bell_ic' is used in nib 'ScheduleSettingsController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

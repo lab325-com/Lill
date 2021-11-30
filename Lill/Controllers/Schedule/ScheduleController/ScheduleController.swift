@@ -35,6 +35,8 @@ class ScheduleController: BaseController {
     }
     
     private func setup() {
+        navigationItem.title = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         scheduleTitleLabel.text = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         emptyTextLabel.text = RLocalization.scheldure_empty_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
@@ -91,6 +93,10 @@ class ScheduleController: BaseController {
     
     @objc func headerRefresh(sender: AnyObject) {
         presenter.getScheduleAll()
+    }
+    
+    @IBAction func actionScheduleSettings(sender: UIButton) {
+        ScheduleRouter(presenter: navigationController).pushScheduleSettings()
     }
     
     @IBAction func actionChangeSheldure(_ sender: UISegmentedControl) {
