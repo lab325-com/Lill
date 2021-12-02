@@ -45,7 +45,7 @@ class GardenCareDetailView: UIView, LoadFromXibProtocol {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd HH:mm"
         careTimeLabel.text = dateFormatter.string(from: care.model.date)
-        careTypeImageView.image = care.type.gardenCarelmage
+        careTypeImageView.image = care.type.darklmage
         careTypeLabel.text = care.type.text
         careStatusLabel.text = care.model.status.gardenCareStatusText
         careStatusLabel.textColor = care.model.status.color

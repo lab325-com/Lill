@@ -4,16 +4,21 @@ import Foundation
 struct CaresModel: Codable {
     let count: Int
     let id: String?
+    let isActive: Bool?
+    let sendNotificationAt: String?
+    let nexDate: Date?
     let period: PeriodType
     let type: CareType
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
         case id = "id"
+        case isActive = "isActive"
+        case sendNotificationAt = "sendNotificationAt"
+        case nexDate = "nexDate"
         case period = "period"
         case type = "CareType"
     }
-    
 }
 
 extension PeriodType: Codable {

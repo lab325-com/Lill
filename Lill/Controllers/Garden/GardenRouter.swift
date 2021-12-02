@@ -33,4 +33,12 @@ class GardenRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)
     }
+    
+    func presentEditCarePlant(gardenPlantId: String) {
+        let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId)
+        push(controller: controller)
+//        controller.modalTransitionStyle = .crossDissolve
+//        controller.modalPresentationStyle = .overCurrentContext
+//        present(controller: controller, presentStyle: .overFullScreen)
+    }
 }

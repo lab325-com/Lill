@@ -755,18 +755,6 @@
             "deprecationReason": null
           },
           {
-            "name": "pgBossTest",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "example",
             "description": "",
             "args": [],
@@ -2897,6 +2885,18 @@
             "deprecationReason": null
           },
           {
+            "name": "Subscription",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Subscription",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "access",
             "description": "",
             "args": [],
@@ -3083,6 +3083,30 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "Subscription",
+        "description": "",
+        "specifiedByUrl": null,
+        "fields": [
+          {
+            "name": "hello",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -4882,30 +4906,6 @@
       },
       {
         "kind": "OBJECT",
-        "name": "Subscription",
-        "description": "",
-        "specifiedByUrl": null,
-        "fields": [
-          {
-            "name": "hello",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
         "name": "__Schema",
         "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
         "specifiedByUrl": null,
@@ -5653,20 +5653,7 @@
           {
             "name": "args",
             "description": null,
-            "args": [
-              {
-                "name": "includeDeprecated",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                },
-                "defaultValue": "false",
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
+            "args": [],
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -6009,25 +5996,7 @@
         "interfaces": null,
         "enumValues": [
           {
-            "name": "GARDEN_PLANT_CARE_JOB_TYPE_CARE",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "GARDEN_PLANT_CARE_JOB_TYPE_DAILY_TODAY_LIST_CHECK",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "GARDEN_PLANT_CARE_JOB_TYPE_HOURLY_CARE_CHECK",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "GARDEN_PLANT_CARE_JOB_TYPE_TODAY_LIST",
+            "name": "GARDEN_PLANT_CARE_JOB_TYPE_CARE_CHECK",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
