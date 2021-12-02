@@ -2077,6 +2077,13 @@
 			path = PlantById;
 			sourceTree = "<group>";
 		};
+		FA49AA3C275638A7003B0CD4 /* GardenCarePlanEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GardenCarePlanEdit;
+			sourceTree = "<group>";
+		};
 		FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */ = {
 			isa = PBXGroup;
 			children = (
@@ -2277,6 +2284,7 @@
 				023BBB1B2744171100DCFFF1 /* GardenDetail */,
 				FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */,
 				FA545471274BCEF4006B52F4 /* GardenCaresDetail */,
+				FA49AA3C275638A7003B0CD4 /* GardenCarePlanEdit */,
 			);
 			path = Garden;
 			sourceTree = "<group>";
@@ -2682,7 +2690,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3066,7 +3074,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3217,7 +3225,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3248,7 +3256,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
