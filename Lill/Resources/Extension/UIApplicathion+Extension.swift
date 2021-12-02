@@ -48,7 +48,7 @@ extension UIApplication {
         }
         
         if animated {
-            UIView.transition(with: window, duration: 0.1, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 window.rootViewController = rootViewController

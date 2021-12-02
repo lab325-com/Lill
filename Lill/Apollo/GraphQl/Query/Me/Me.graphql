@@ -12,6 +12,16 @@ query Me {
 			code
 			index
 		}
+		NotificationSettings {
+			cares
+			waitingCares
+			missedCares
+			frequency
+			secondChance
+			secondChanceSendAfter
+			todayList
+			todayListSendAt
+		}
 		Gardens {
 			id
 			name

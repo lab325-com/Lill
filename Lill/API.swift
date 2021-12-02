@@ -225,6 +225,95 @@ public struct GardenPlantUpdateInput: GraphQLMapConvertible {
   }
 }
 
+public struct NotificationSettingsUpdateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - cares
+  ///   - waitingCares
+  ///   - missedCares
+  ///   - frequency
+  ///   - secondChance
+  ///   - secondChanceSendAfter
+  ///   - groupNotifications
+  ///   - groupNotificationsSendAt
+  public init(cares: Swift.Optional<Bool?> = nil, waitingCares: Swift.Optional<Bool?> = nil, missedCares: Swift.Optional<Bool?> = nil, frequency: Swift.Optional<String?> = nil, secondChance: Swift.Optional<Bool?> = nil, secondChanceSendAfter: Swift.Optional<String?> = nil, groupNotifications: Swift.Optional<Bool?> = nil, groupNotificationsSendAt: Swift.Optional<String?> = nil) {
+    graphQLMap = ["cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "groupNotifications": groupNotifications, "groupNotificationsSendAt": groupNotificationsSendAt]
+  }
+
+  public var cares: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["cares"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "cares")
+    }
+  }
+
+  public var waitingCares: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["waitingCares"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "waitingCares")
+    }
+  }
+
+  public var missedCares: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["missedCares"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "missedCares")
+    }
+  }
+
+  public var frequency: Swift.Optional<String?> {
+    get {
+      return graphQLMap["frequency"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "frequency")
+    }
+  }
+
+  public var secondChance: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["secondChance"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "secondChance")
+    }
+  }
+
+  public var secondChanceSendAfter: Swift.Optional<String?> {
+    get {
+      return graphQLMap["secondChanceSendAfter"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "secondChanceSendAfter")
+    }
+  }
+
+  public var groupNotifications: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["groupNotifications"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "groupNotifications")
+    }
+  }
+
+  public var groupNotificationsSendAt: Swift.Optional<String?> {
+    get {
+      return graphQLMap["groupNotificationsSendAt"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "groupNotificationsSendAt")
+    }
+  }
+}
+
 public struct InputPagination: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -1365,6 +1454,176 @@ public final class GardenPlantUpdateMutation: GraphQLMutation {
           set {
             resultMap.updateValue(newValue, forKey: "urlIosPrev")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class NotificationSettingsUpdateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation NotificationSettingsUpdate($record: NotificationSettingsUpdateInput!) {
+      notificationSettingsUpdate(record: $record) {
+        __typename
+        cares
+        waitingCares
+        missedCares
+        frequency
+        secondChance
+        secondChanceSendAfter
+        todayList
+        todayListSendAt
+      }
+    }
+    """
+
+  public let operationName: String = "NotificationSettingsUpdate"
+
+  public var record: NotificationSettingsUpdateInput
+
+  public init(record: NotificationSettingsUpdateInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("notificationSettingsUpdate", arguments: ["record": GraphQLVariable("record")], type: .object(NotificationSettingsUpdate.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(notificationSettingsUpdate: NotificationSettingsUpdate? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "notificationSettingsUpdate": notificationSettingsUpdate.flatMap { (value: NotificationSettingsUpdate) -> ResultMap in value.resultMap }])
+    }
+
+    public var notificationSettingsUpdate: NotificationSettingsUpdate? {
+      get {
+        return (resultMap["notificationSettingsUpdate"] as? ResultMap).flatMap { NotificationSettingsUpdate(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "notificationSettingsUpdate")
+      }
+    }
+
+    public struct NotificationSettingsUpdate: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["NotificationSettings"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("cares", type: .scalar(Bool.self)),
+          GraphQLField("waitingCares", type: .scalar(Bool.self)),
+          GraphQLField("missedCares", type: .scalar(Bool.self)),
+          GraphQLField("frequency", type: .scalar(String.self)),
+          GraphQLField("secondChance", type: .scalar(Bool.self)),
+          GraphQLField("secondChanceSendAfter", type: .scalar(String.self)),
+          GraphQLField("todayList", type: .scalar(Bool.self)),
+          GraphQLField("todayListSendAt", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: String? = nil, secondChance: Bool? = nil, secondChanceSendAfter: String? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "todayList": todayList, "todayListSendAt": todayListSendAt])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var cares: Bool? {
+        get {
+          return resultMap["cares"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "cares")
+        }
+      }
+
+      public var waitingCares: Bool? {
+        get {
+          return resultMap["waitingCares"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "waitingCares")
+        }
+      }
+
+      public var missedCares: Bool? {
+        get {
+          return resultMap["missedCares"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "missedCares")
+        }
+      }
+
+      public var frequency: String? {
+        get {
+          return resultMap["frequency"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "frequency")
+        }
+      }
+
+      public var secondChance: Bool? {
+        get {
+          return resultMap["secondChance"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "secondChance")
+        }
+      }
+
+      public var secondChanceSendAfter: String? {
+        get {
+          return resultMap["secondChanceSendAfter"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "secondChanceSendAfter")
+        }
+      }
+
+      public var todayList: Bool? {
+        get {
+          return resultMap["todayList"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "todayList")
+        }
+      }
+
+      public var todayListSendAt: String? {
+        get {
+          return resultMap["todayListSendAt"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "todayListSendAt")
         }
       }
     }
@@ -4657,6 +4916,17 @@ public final class MeQuery: GraphQLQuery {
           code
           index
         }
+        NotificationSettings {
+          __typename
+          cares
+          waitingCares
+          missedCares
+          frequency
+          secondChance
+          secondChanceSendAfter
+          todayList
+          todayListSendAt
+        }
         Gardens {
           __typename
           id
@@ -4740,6 +5010,7 @@ public final class MeQuery: GraphQLQuery {
           GraphQLField("timezone", type: .scalar(String.self)),
           GraphQLField("defaultGardenId", type: .scalar(String.self)),
           GraphQLField("Language", type: .object(Language.selections)),
+          GraphQLField("NotificationSettings", type: .object(NotificationSetting.selections)),
           GraphQLField("Gardens", type: .list(.object(Garden.selections))),
           GraphQLField("access", type: .object(Access.selections)),
         ]
@@ -4751,8 +5022,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, language: Language? = nil, gardens: [Garden?]? = nil, access: Access? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -4815,6 +5086,15 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue?.resultMap, forKey: "Language")
+        }
+      }
+
+      public var notificationSettings: NotificationSetting? {
+        get {
+          return (resultMap["NotificationSettings"] as? ResultMap).flatMap { NotificationSetting(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "NotificationSettings")
         }
       }
 
@@ -4911,6 +5191,115 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "index")
+          }
+        }
+      }
+
+      public struct NotificationSetting: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["NotificationSettings"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("cares", type: .scalar(Bool.self)),
+            GraphQLField("waitingCares", type: .scalar(Bool.self)),
+            GraphQLField("missedCares", type: .scalar(Bool.self)),
+            GraphQLField("frequency", type: .scalar(String.self)),
+            GraphQLField("secondChance", type: .scalar(Bool.self)),
+            GraphQLField("secondChanceSendAfter", type: .scalar(String.self)),
+            GraphQLField("todayList", type: .scalar(Bool.self)),
+            GraphQLField("todayListSendAt", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: String? = nil, secondChance: Bool? = nil, secondChanceSendAfter: String? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "todayList": todayList, "todayListSendAt": todayListSendAt])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var cares: Bool? {
+          get {
+            return resultMap["cares"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "cares")
+          }
+        }
+
+        public var waitingCares: Bool? {
+          get {
+            return resultMap["waitingCares"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "waitingCares")
+          }
+        }
+
+        public var missedCares: Bool? {
+          get {
+            return resultMap["missedCares"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "missedCares")
+          }
+        }
+
+        public var frequency: String? {
+          get {
+            return resultMap["frequency"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "frequency")
+          }
+        }
+
+        public var secondChance: Bool? {
+          get {
+            return resultMap["secondChance"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "secondChance")
+          }
+        }
+
+        public var secondChanceSendAfter: String? {
+          get {
+            return resultMap["secondChanceSendAfter"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "secondChanceSendAfter")
+          }
+        }
+
+        public var todayList: Bool? {
+          get {
+            return resultMap["todayList"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "todayList")
+          }
+        }
+
+        public var todayListSendAt: String? {
+          get {
+            return resultMap["todayListSendAt"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "todayListSendAt")
           }
         }
       }
