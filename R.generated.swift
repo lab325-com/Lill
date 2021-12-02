@@ -496,14 +496,28 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 99 images.
+  /// This `R.image` struct is generated, and contains static references to 104 images.
   struct image {
+    /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
+    static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
+    /// Image `3c0ee1011123205f7b1af28adb3bdb92ca5bc8e6`.
+    static let c0ee1011123205f7b1af28adb3bdb92ca5bc8e6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "3c0ee1011123205f7b1af28adb3bdb92ca5bc8e6")
+    /// Image `50768c7e39870d8fe5102da500e2b7dfd6e35156`.
+    static let c7e39870d8fe5102da500e2b7dfd6e35156 = Rswift.ImageResource(bundle: R.hostingBundle, name: "50768c7e39870d8fe5102da500e2b7dfd6e35156")
+    /// Image `7249753fd0388b133090fb58740a2c12387a848d`.
+    static let fd0388b133090fb58740a2c12387a848d = Rswift.ImageResource(bundle: R.hostingBundle, name: "7249753fd0388b133090fb58740a2c12387a848d")
     /// Image `avatar_ic`.
     static let avatar_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar_ic")
     /// Image `background_main`.
     static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
+    /// Image `ce90603745001e15f304bfaf33f3d09971a2d951`.
+    static let ce90603745001e15f304bfaf33f3d09971a2d951 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ce90603745001e15f304bfaf33f3d09971a2d951")
     /// Image `congrads_view_flower_ic`.
     static let congrads_view_flower_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "congrads_view_flower_ic")
+    /// Image `d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584`.
+    static let d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584 = Rswift.ImageResource(bundle: R.hostingBundle, name: "d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584")
+    /// Image `fdba6d1ffef80f7deaf150c9d1df1e2192528442`.
+    static let fdba6d1ffef80f7deaf150c9d1df1e2192528442 = Rswift.ImageResource(bundle: R.hostingBundle, name: "fdba6d1ffef80f7deaf150c9d1df1e2192528442")
     /// Image `garde_edit_ic`.
     static let garde_edit_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garde_edit_ic")
     /// Image `garden_back_ic`.
@@ -678,16 +692,8 @@ struct R: Rswift.Validatable {
     static let sub_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_close_ic")
     /// Image `temp_detail_ic`.
     static let temp_detail_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_detail_ic")
-    /// Image `temp_onboarding_1_ic`.
-    static let temp_onboarding_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_1_ic")
-    /// Image `temp_onboarding_2_ic`.
-    static let temp_onboarding_2_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_2_ic")
-    /// Image `temp_onboarding_3_ic`.
-    static let temp_onboarding_3_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_onboarding_3_ic")
     /// Image `temp_plants_ic`.
     static let temp_plants_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp_plants_ic")
-    /// Image `temp`.
-    static let temp = Rswift.ImageResource(bundle: R.hostingBundle, name: "temp")
     /// Image `unique_add_back_ic`.
     static let unique_add_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_add_back_ic")
     /// Image `unique_arrow_back_ic`.
@@ -696,6 +702,38 @@ struct R: Rswift.Validatable {
     static let unique_cover_capture_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_cover_capture_ic")
     /// Image `unique_cover_close_ic`.
     static let unique_cover_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "unique_cover_close_ic")
+    /// Image `welcome_plant_ic`.
+    static let welcome_plant_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "welcome_plant_ic")
+    /// Image `welcome_plant_title_ic`.
+    static let welcome_plant_title_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "welcome_plant_title_ic")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "0387eb0228108c3862249f5f68cc1f46a2b645bf", bundle: ..., traitCollection: ...)`
+    static func eb0228108c3862249f5f68cc1f46a2b645bf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eb0228108c3862249f5f68cc1f46a2b645bf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "3c0ee1011123205f7b1af28adb3bdb92ca5bc8e6", bundle: ..., traitCollection: ...)`
+    static func c0ee1011123205f7b1af28adb3bdb92ca5bc8e6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.c0ee1011123205f7b1af28adb3bdb92ca5bc8e6, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "50768c7e39870d8fe5102da500e2b7dfd6e35156", bundle: ..., traitCollection: ...)`
+    static func c7e39870d8fe5102da500e2b7dfd6e35156(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.c7e39870d8fe5102da500e2b7dfd6e35156, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "7249753fd0388b133090fb58740a2c12387a848d", bundle: ..., traitCollection: ...)`
+    static func fd0388b133090fb58740a2c12387a848d(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fd0388b133090fb58740a2c12387a848d, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "avatar_ic", bundle: ..., traitCollection: ...)`
@@ -712,9 +750,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ce90603745001e15f304bfaf33f3d09971a2d951", bundle: ..., traitCollection: ...)`
+    static func ce90603745001e15f304bfaf33f3d09971a2d951(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ce90603745001e15f304bfaf33f3d09971a2d951, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "congrads_view_flower_ic", bundle: ..., traitCollection: ...)`
     static func congrads_view_flower_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.congrads_view_flower_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584", bundle: ..., traitCollection: ...)`
+    static func d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fdba6d1ffef80f7deaf150c9d1df1e2192528442", bundle: ..., traitCollection: ...)`
+    static func fdba6d1ffef80f7deaf150c9d1df1e2192528442(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fdba6d1ffef80f7deaf150c9d1df1e2192528442, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1321,37 +1380,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "temp", bundle: ..., traitCollection: ...)`
-    static func temp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.temp, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "temp_detail_ic", bundle: ..., traitCollection: ...)`
     static func temp_detail_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.temp_detail_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "temp_onboarding_1_ic", bundle: ..., traitCollection: ...)`
-    static func temp_onboarding_1_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.temp_onboarding_1_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "temp_onboarding_2_ic", bundle: ..., traitCollection: ...)`
-    static func temp_onboarding_2_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.temp_onboarding_2_ic, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "temp_onboarding_3_ic", bundle: ..., traitCollection: ...)`
-    static func temp_onboarding_3_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.temp_onboarding_3_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1390,10 +1421,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "welcome_plant_ic", bundle: ..., traitCollection: ...)`
+    static func welcome_plant_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.welcome_plant_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "welcome_plant_title_ic", bundle: ..., traitCollection: ...)`
+    static func welcome_plant_title_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.welcome_plant_title_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 53 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 56 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1459,18 +1504,24 @@ struct R: Rswift.Validatable {
     static let languageController = _R.nib._LanguageController()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
+    /// Nib `MainOnboardingController`.
+    static let mainOnboardingController = _R.nib._MainOnboardingController()
     /// Nib `MenuAccauntInfoTableViewCell`.
     static let menuAccauntInfoTableViewCell = _R.nib._MenuAccauntInfoTableViewCell()
     /// Nib `MenuItemTableViewCell`.
     static let menuItemTableViewCell = _R.nib._MenuItemTableViewCell()
     /// Nib `OnboardingFirsController`.
     static let onboardingFirsController = _R.nib._OnboardingFirsController()
+    /// Nib `OnboardingFourController`.
+    static let onboardingFourController = _R.nib._OnboardingFourController()
     /// Nib `OnboardingPageController`.
     static let onboardingPageController = _R.nib._OnboardingPageController()
     /// Nib `OnboardingSecondController`.
     static let onboardingSecondController = _R.nib._OnboardingSecondController()
     /// Nib `OnboardingThreeController`.
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
+    /// Nib `OnboardingWelcomeController`.
+    static let onboardingWelcomeController = _R.nib._OnboardingWelcomeController()
     /// Nib `PickerCaresController`.
     static let pickerCaresController = _R.nib._PickerCaresController()
     /// Nib `PlantCollectionCell`.
@@ -1759,6 +1810,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MainOnboardingController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mainOnboardingController) instead")
+    static func mainOnboardingController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mainOnboardingController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "MenuAccauntInfoTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.menuAccauntInfoTableViewCell) instead")
     static func menuAccauntInfoTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -1783,6 +1842,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingFourController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingFourController) instead")
+    static func onboardingFourController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingFourController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "OnboardingPageController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingPageController) instead")
     static func onboardingPageController(_: Void = ()) -> UIKit.UINib {
@@ -1803,6 +1870,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingThreeController) instead")
     static func onboardingThreeController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.onboardingThreeController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OnboardingWelcomeController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.onboardingWelcomeController) instead")
+    static func onboardingWelcomeController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.onboardingWelcomeController)
     }
     #endif
 
@@ -2054,6 +2129,10 @@ struct R: Rswift.Validatable {
       return R.nib.loginController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func mainOnboardingController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.mainOnboardingController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func menuAccauntInfoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuAccauntInfoTableViewCell? {
       return R.nib.menuAccauntInfoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MenuAccauntInfoTableViewCell
     }
@@ -2066,6 +2145,10 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingFirsController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func onboardingFourController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingFourController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func onboardingPageController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.onboardingPageController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2076,6 +2159,10 @@ struct R: Rswift.Validatable {
 
     static func onboardingThreeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.onboardingThreeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func onboardingWelcomeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.onboardingWelcomeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func pickerCaresController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -6720,9 +6807,7 @@ struct _R: Rswift.Validatable {
       try _LanguageController.validate()
       try _LoginController.validate()
       try _MenuAccauntInfoTableViewCell.validate()
-      try _OnboardingFirsController.validate()
-      try _OnboardingSecondController.validate()
-      try _OnboardingThreeController.validate()
+      try _OnboardingWelcomeController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
       try _PopChangeNameController.validate()
@@ -7302,6 +7387,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _MainOnboardingController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MainOnboardingController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _MenuAccauntInfoTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "MenuAccauntInfoTableViewCell"
@@ -7330,7 +7426,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _OnboardingFirsController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _OnboardingFirsController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "OnboardingFirsController"
 
@@ -7338,10 +7434,15 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
-      static func validate() throws {
-        if UIKit.UIImage(named: "temp_onboarding_1_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_1_ic' is used in nib 'OnboardingFirsController', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
+      fileprivate init() {}
+    }
+
+    struct _OnboardingFourController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "OnboardingFourController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -7358,7 +7459,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _OnboardingSecondController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _OnboardingSecondController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "OnboardingSecondController"
 
@@ -7366,16 +7467,10 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
-      static func validate() throws {
-        if UIKit.UIImage(named: "temp_onboarding_2_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_2_ic' is used in nib 'OnboardingSecondController', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
       fileprivate init() {}
     }
 
-    struct _OnboardingThreeController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _OnboardingThreeController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "OnboardingThreeController"
 
@@ -7383,8 +7478,20 @@ struct _R: Rswift.Validatable {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
+      fileprivate init() {}
+    }
+
+    struct _OnboardingWelcomeController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OnboardingWelcomeController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
       static func validate() throws {
-        if UIKit.UIImage(named: "temp_onboarding_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_onboarding_3_ic' is used in nib 'OnboardingThreeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "welcome_plant_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'welcome_plant_ic' is used in nib 'OnboardingWelcomeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "welcome_plant_title_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'welcome_plant_title_ic' is used in nib 'OnboardingWelcomeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

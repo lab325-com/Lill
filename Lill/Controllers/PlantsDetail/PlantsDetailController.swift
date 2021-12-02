@@ -2,6 +2,10 @@
 import UIKit
 import Kingfisher
 
+protocol PlantsDetailDelegate: AnyObject {
+    func updatePlants()
+}
+
 class PlantsDetailController: BaseController {
     
     //----------------------------------------------
@@ -42,15 +46,22 @@ class PlantsDetailController: BaseController {
     
     private lazy var presenter = PlantsDetailPresenter(view: self)
     private var id: String
-    private var isFavorite: Bool = false
     private var wikiUrl: String = ""
+    private var model: PlantDataModel?
+    
+    //----------------------------------------------
+    // MARK: - Global property
+    //----------------------------------------------
+    
+    weak var delegate: PlantsDetailDelegate?
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(id: String) {
+    init(id: String, delegate: PlantsDetailDelegate? = nil) {
         self.id = id
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -96,22 +107,25 @@ class PlantsDetailController: BaseController {
         moreOnWikiButton.layer.cornerRadius = 22
         moreOnWikiButton.layer.borderWidth = 1
         moreOnWikiButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
-    
     }
     
-    private func updateFavoriteButton(isFavorite: Bool) {
+    private func updateFavoriteButton() {
+        guard let isFavorite = model?.plantById.isFavourite else { return }
+        
         favoriteButton.setImage(UIImage(named: isFavorite ? "plants_detail_favorite_ic" : "plants_detail_no_favorite_ic"), for: .normal)
         favoriteButton.backgroundColor = isFavorite ? UIColor(rgb: 0xC36ED1) : .white
     }
     
-    private func showFavoriteStatusView(isFavorite: Bool) {
+    private func showFavoriteStatusView() {
+        guard let isFavorite = model?.plantById.isFavourite else { return }
+        
         UIView.animate(withDuration: 0.5) {
             self.favoriteStatusViewBottomLayout.constant = 24.0
             self.view.layoutIfNeeded()
         }
         
-        favoriteStatusLabel.text = isFavorite ? RLocalization.plant_detail_added_to_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.plant_detail_removed_from_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        favoriteStatusImage.image = UIImage(named: isFavorite ? "plants_detail_added_favorites_ic" : "plants_detail_removed_favorites_ic")
+        favoriteStatusLabel.text = isFavorite ? RLocalization.plant_detail_removed_from_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue) :  RLocalization.plant_detail_added_to_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        favoriteStatusImage.image = UIImage(named: isFavorite ? "plants_detail_removed_favorites_ic" : "plants_detail_added_favorites_ic")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             UIView.animate(withDuration: 0.5) {
@@ -131,7 +145,9 @@ class PlantsDetailController: BaseController {
     //----------------------------------------------
     
     @IBAction func plantFavoriteAction(_ sender: Any) {
-        presenter.setFaviritePlant(id: id, isFavorite: !isFavorite)
+        guard let isFavorite = model?.plantById.isFavourite else { return }
+        presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
+        delegate?.updatePlants()
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
@@ -155,13 +171,17 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
         CongradsViewPresenter.showCongradsView()
     }
     
-    func success(model: FavoritePlantDataModel) {
-        updateFavoriteButton(isFavorite: model.setFavoritePlantById)
-        showFavoriteStatusView(isFavorite: model.setFavoritePlantById)
+    func successSetFavorite() {
+        presenter.getPlantDetail(id: id)
+        updateFavoriteButton()
+        showFavoriteStatusView()
     }
     
     func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)]) {
-                
+        self.model = model
+        
+        updateFavoriteButton()
+        
         mainImageView.kf.setImage(with: URL(string: model.plantById.plantImages.first?.urlIosFull ?? ""), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
         
         nameLabel.text = model.plantById.names
@@ -175,11 +195,6 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
                 self.view.layoutIfNeeded()
             }
             return
-        }
-        
-        if let isFavorite = model.plantById.isFavourite {
-            self.isFavorite = isFavorite
-            updateFavoriteButton(isFavorite: isFavorite)
         }
         
         for view in aboutViews {

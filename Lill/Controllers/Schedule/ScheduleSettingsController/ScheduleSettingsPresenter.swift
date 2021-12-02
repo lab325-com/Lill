@@ -53,12 +53,13 @@ class ScheduleSettingsPresenter: ScheduleSettingsPresenterProtocol {
                           groupNotificationsSendAt: String) {
         view?.startLoader()
         
+    
         let update = NotificationSettingsUpdateInput(cares: cares,
                                                      waitingCares: waitingCares,
                                                      missedCares: missedCares,
-                                                     frequency: frequency,
+                                                     frequency:  "hours: \(1)",
                                                      secondChance: secondChance,
-                                                     secondChanceSendAfter: secondChanceSendAfter,
+                                                     secondChanceSendAfter: "hours: \(1)",
                                                      groupNotifications: groupNotifications,
                                                      groupNotificationsSendAt: groupNotificationsSendAt)
         

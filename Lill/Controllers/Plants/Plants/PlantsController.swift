@@ -51,6 +51,7 @@ class PlantsController: BaseController {
     lazy var presenter = PlantsPresenter(view: self)
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var plants = [PlantsModel]()
+    weak var delegate: WishListDelegate?
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -59,7 +60,9 @@ class PlantsController: BaseController {
     override func viewDidLoad() {
         hiddenNavigationBar = true
         super.viewDidLoad()
+        
         setup()
+        presenter.getPlants(search: "")
     }
     
     //----------------------------------------------
@@ -67,7 +70,6 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        presenter.getPlants(search: "")
         navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         identifireLabel.text = RLocalization.plants_identifier()
         explorerLabel.text = RLocalization.plants_explore()
@@ -109,7 +111,7 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionWishList(_ sender: UIButton) {
-        PlantsRouter(presenter: navigationController).pushWishList()
+        PlantsRouter(presenter: navigationController).pushWishList(delegate: self)
     }
     
     @IBAction func actionClear(_ sender: UIButton) {
@@ -163,18 +165,50 @@ extension PlantsController: PlantsOutputProtocol {
         if let index = plants.firstIndex(where: {$0.id == id }) {
             plants[index].description.changeIsFavorite(isFavorite)
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+            if let countText = countLabel.text, let count = Int(countText) {
+                var tempCount = 0
+                tempCount = isFavorite ? count+1 : count-1
+                countLabel.text = "\(tempCount)"
+            }
         }
     }
     
     func success(model: CatalogPlantsModel) {
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
         plants = model.getCatalogPlants.plants
+        faworiteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
         collectionView.reloadData()
         setupAnimate()
     }
     
     func failure(error: String) {
         
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopUniqePlanProtocol
+//----------------------------------------------
+
+extension PlantsController: PopUniqePlanProtocol {
+    func dissmiss(controller: PopUniquePlantController, text: String) {
+        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
+    }
+}
+
+extension PlantsController: AddCoverIdentifierProtocol {
+    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantsDetailDelegate
+//----------------------------------------------
+
+extension PlantsController: PlantsDetailDelegate, WishListDelegate {
+    func updatePlants() {
+        presenter.getPlants(search: "")
     }
 }
 
@@ -203,22 +237,6 @@ extension PlantsController: UITextFieldDelegate {
         if textField.text?.count == 0 {
             textField.text = searchText
         }
-    }
-}
-
-//----------------------------------------------
-// MARK: - PopUniqePlanProtocol
-//----------------------------------------------
-
-extension PlantsController: PopUniqePlanProtocol {
-    func dissmiss(controller: PopUniquePlantController, text: String) {
-        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
-    }
-}
-
-extension PlantsController: AddCoverIdentifierProtocol {
-    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
 }
 

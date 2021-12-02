@@ -167,9 +167,9 @@ class ScheduleSettingsController: BaseController {
         presenter.setNotifications(cares: caresSwitcher.isOn,
                                    waitingCares: waitingSwitcher.isOn,
                                    missedCares: missedSwitcher.isOn,
-                                   frequency: "\(hourData[selectedRowFrequency]):00:00",
+                                   frequency: hourData[selectedRowFrequency],
                                    secondChance: secondChanceSwitcher.isOn,
-                                   secondChanceSendAfter: "\(hourData[selectedRowSend]):00:00",
+                                   secondChanceSendAfter: hourData[selectedRowSend],
                                    groupNotifications: listNotificationsSwitcher.isOn,
                                    groupNotificationsSendAt: datePicker.date.sendToServerFormat())
     }

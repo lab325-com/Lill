@@ -166,6 +166,38 @@
 		02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC826F5E7AD00F86B87 /* Staging.xcconfig */; };
 		02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECB26F5E7AE00F86B87 /* AppConfiguration.swift */; };
 		02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */; };
+		02D142BC2757D90D008A7FA3 /* IPhone13ProMax2TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142BA2757D90C008A7FA3 /* IPhone13ProMax2TimeLine.swift */; };
+		02D142BD2757D90D008A7FA3 /* IPhone13ProMax2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142BB2757D90D008A7FA3 /* IPhone13ProMax2View.swift */; };
+		02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142C12757D9B0008A7FA3 /* IPhone13ProMax3View.swift */; };
+		02D142C42757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142C22757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift */; };
+		02D142C92757DA6E008A7FA3 /* IPhone13ProMax4Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142C72757DA6D008A7FA3 /* IPhone13ProMax4Timeline.swift */; };
+		02D142CA2757DA6E008A7FA3 /* IPhone13ProMax4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142C82757DA6E008A7FA3 /* IPhone13ProMax4View.swift */; };
+		02D142CF2757DB29008A7FA3 /* IPhone13ProMax5Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142CD2757DB27008A7FA3 /* IPhone13ProMax5Timeline.swift */; };
+		02D142D02757DB29008A7FA3 /* IPhone13ProMax5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142CE2757DB28008A7FA3 /* IPhone13ProMax5View.swift */; };
+		02D142D42757DBD5008A7FA3 /* IPhoneSe2Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142D22757DBD4008A7FA3 /* IPhoneSe2Timeline.swift */; };
+		02D142D52757DBD5008A7FA3 /* IPhoneSe2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142D32757DBD5008A7FA3 /* IPhoneSe2View.swift */; };
+		02D142D92757DCD8008A7FA3 /* IPhoneSe3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142D72757DCD7008A7FA3 /* IPhoneSe3View.swift */; };
+		02D142DA2757DCD8008A7FA3 /* IPhoneSe3Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142D82757DCD8008A7FA3 /* IPhoneSe3Timeline.swift */; };
+		02D142DE2757DD6D008A7FA3 /* IPhoneSe4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142DC2757DD6C008A7FA3 /* IPhoneSe4View.swift */; };
+		02D142DF2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142DD2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift */; };
+		02D142E32757DDD8008A7FA3 /* IPhoneSe5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142E12757DDD5008A7FA3 /* IPhoneSe5View.swift */; };
+		02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142E22757DDD8008A7FA3 /* IPhoneSe5Timeline.swift */; };
+		02D142E82757E6D8008A7FA3 /* IPhone82Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142E62757E6D8008A7FA3 /* IPhone82Timeline.swift */; };
+		02D142E92757E6D8008A7FA3 /* IPhone82View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142E72757E6D8008A7FA3 /* IPhone82View.swift */; };
+		02D142ED2757E728008A7FA3 /* IPhone83Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142EB2757E728008A7FA3 /* IPhone83Timeline.swift */; };
+		02D142EE2757E728008A7FA3 /* IPhone83View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142EC2757E728008A7FA3 /* IPhone83View.swift */; };
+		02D142F22757E769008A7FA3 /* IPhone84View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142F02757E768008A7FA3 /* IPhone84View.swift */; };
+		02D142F32757E769008A7FA3 /* IPhone84Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142F12757E769008A7FA3 /* IPhone84Timeline.swift */; };
+		02D142F72757E7B7008A7FA3 /* IPhone85View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142F52757E7B6008A7FA3 /* IPhone85View.swift */; };
+		02D142F82757E7B7008A7FA3 /* IPhone85Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142F62757E7B7008A7FA3 /* IPhone85Timeline.swift */; };
+		02D142FC2757E805008A7FA3 /* IPhone11ProX2Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142FA2757E804008A7FA3 /* IPhone11ProX2Timeline.swift */; };
+		02D142FD2757E805008A7FA3 /* IPhone11ProX2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142FB2757E805008A7FA3 /* IPhone11ProX2View.swift */; };
+		02D143012757E845008A7FA3 /* IPhone11ProX3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D142FF2757E845008A7FA3 /* IPhone11ProX3View.swift */; };
+		02D143022757E845008A7FA3 /* IPhone11ProX3Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D143002757E845008A7FA3 /* IPhone11ProX3Timeline.swift */; };
+		02D143062757E88C008A7FA3 /* IPhone11ProX4Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D143042757E88B008A7FA3 /* IPhone11ProX4Timeline.swift */; };
+		02D143072757E88C008A7FA3 /* IPhone11ProX4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D143052757E88C008A7FA3 /* IPhone11ProX4View.swift */; };
+		02D1430B2757E8EF008A7FA3 /* IPhone11ProX5Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D143092757E8EE008A7FA3 /* IPhone11ProX5Timeline.swift */; };
+		02D1430C2757E8EF008A7FA3 /* IPhone11ProX5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1430A2757E8EF008A7FA3 /* IPhone11ProX5View.swift */; };
 		02D4BFB32743B94D00B9322B /* CGPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFA62743B94D00B9322B /* CGPath+SVG.swift */; };
 		02D4BFB42743B94D00B9322B /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFA72743B94D00B9322B /* ShapeView.swift */; };
 		02D4BFB52743B94D00B9322B /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFA82743B94D00B9322B /* Animation.swift */; };
@@ -183,6 +215,12 @@
 		02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC22743B98C00B9322B /* TimelineSwipeLeft.swift */; };
 		02D4BFC82743BC7800B9322B /* AnimationBackGroundSwipeRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */; };
 		02D4BFC92743BC7800B9322B /* TimelineSwipeRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */; };
+		02DF6B31275659910069CFF6 /* OnboardingFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */; };
+		02DF6B32275659910069CFF6 /* OnboardingFourController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DF6B30275659910069CFF6 /* OnboardingFourController.xib */; };
+		02DF6B3A275663C80069CFF6 /* MainOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */; };
+		02DF6B3B275663C80069CFF6 /* MainOnboardingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DF6B39275663C80069CFF6 /* MainOnboardingController.xib */; };
+		02DF6B422756A5410069CFF6 /* OnboardingWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B402756A5410069CFF6 /* OnboardingWelcomeController.swift */; };
+		02DF6B432756A5410069CFF6 /* OnboardingWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DF6B412756A5410069CFF6 /* OnboardingWelcomeController.xib */; };
 		02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */; };
 		02E0255927326C8B00988F12 /* DiseaseArchiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */; };
 		02E02560273273D600988F12 /* MainPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0255F273273D600988F12 /* MainPlantModel.swift */; };
@@ -268,7 +306,6 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
-		FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AD938275125FB00B0104C /* WishListRouter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
 		FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */; };
@@ -314,15 +351,15 @@
 		02017AAC2747922000EE093C /* GardenDetailDeletePlanController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailDeletePlanController.xib; sourceTree = "<group>"; };
 		02017AB02747DBD400EE093C /* GardenPlantDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDelete.graphql; sourceTree = SOURCE_ROOT; };
 		02017AB22747DBE400EE093C /* GardenPlantDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/GardenPlantDelete/GardenPlantDeleteModel.swift; sourceTree = SOURCE_ROOT; };
-		02089EAC2754CA9A0022E1BD /* DoneCareByGardenPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = DoneCareByGardenPlants.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.graphql; sourceTree = SOURCE_ROOT; };
+		02089EAC2754CA9A0022E1BD /* DoneCareByGardenPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = DoneCareByGardenPlants.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.graphql; sourceTree = SOURCE_ROOT; };
 		02089EAD2754CA9A0022E1BD /* DoneCareByGardenPlants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneCareByGardenPlants.swift; path = Lill/Apollo/GraphQl/Mutation/DoneCareByGardenPlants/DoneCareByGardenPlants.swift; sourceTree = SOURCE_ROOT; };
-		02089EB02754CB830022E1BD /* DoneAllCaresByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = DoneAllCaresByGardens.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardens.graphql; sourceTree = SOURCE_ROOT; };
+		02089EB02754CB830022E1BD /* DoneAllCaresByGardens.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = DoneAllCaresByGardens.graphql; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardens.graphql; sourceTree = SOURCE_ROOT; };
 		02089EB32754CBC30022E1BD /* DoneAllCaresByGardensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoneAllCaresByGardensModel.swift; path = Lill/Apollo/GraphQl/Mutation/DoneAllCaresByGardens/DoneAllCaresByGardensModel.swift; sourceTree = SOURCE_ROOT; };
 		02089EB72754EDB60022E1BD /* ScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRouter.swift; sourceTree = "<group>"; };
 		02089EBA2754EDFA0022E1BD /* ScheduleSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsController.swift; sourceTree = "<group>"; };
 		02089EBB2754EDFA0022E1BD /* ScheduleSettingsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleSettingsController.xib; sourceTree = "<group>"; };
 		02089EBE275528280022E1BD /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		02089EC127554D7B0022E1BD /* NotificationSettingsUpdate.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = NotificationSettingsUpdate.graphql; path = Lill/Apollo/GraphQl/Mutation/NotificationSettingsUpdate/NotificationSettingsUpdate.graphql; sourceTree = SOURCE_ROOT; };
+		02089EC127554D7B0022E1BD /* NotificationSettingsUpdate.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = NotificationSettingsUpdate.graphql; path = Lill/Apollo/GraphQl/Mutation/NotificationSettingsUpdate/NotificationSettingsUpdate.graphql; sourceTree = SOURCE_ROOT; };
 		02089EC327554DE80022E1BD /* NotificationSettingsUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationSettingsUpdateModel.swift; path = Lill/Apollo/GraphQl/Mutation/NotificationSettingsUpdate/NotificationSettingsUpdateModel.swift; sourceTree = SOURCE_ROOT; };
 		02089EC527554E530022E1BD /* ScheduleSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsPresenter.swift; sourceTree = "<group>"; };
 		02089EC7275551510022E1BD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -462,6 +499,38 @@
 		02D04ECD26F5E7AE00F86B87 /* AppConfigurationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigurationBridge.h; sourceTree = "<group>"; };
 		02D04ECE26F5E7AE00F86B87 /* AppConfigurationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationBridge.m; sourceTree = "<group>"; };
 		02D04ED826F5E89800F86B87 /* Lill-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lill-Bridging-Header.h"; sourceTree = "<group>"; };
+		02D142BA2757D90C008A7FA3 /* IPhone13ProMax2TimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax2TimeLine.swift; sourceTree = "<group>"; };
+		02D142BB2757D90D008A7FA3 /* IPhone13ProMax2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax2View.swift; sourceTree = "<group>"; };
+		02D142C12757D9B0008A7FA3 /* IPhone13ProMax3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax3View.swift; sourceTree = "<group>"; };
+		02D142C22757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax3Timeline.swift; sourceTree = "<group>"; };
+		02D142C72757DA6D008A7FA3 /* IPhone13ProMax4Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax4Timeline.swift; sourceTree = "<group>"; };
+		02D142C82757DA6E008A7FA3 /* IPhone13ProMax4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax4View.swift; sourceTree = "<group>"; };
+		02D142CD2757DB27008A7FA3 /* IPhone13ProMax5Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax5Timeline.swift; sourceTree = "<group>"; };
+		02D142CE2757DB28008A7FA3 /* IPhone13ProMax5View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone13ProMax5View.swift; sourceTree = "<group>"; };
+		02D142D22757DBD4008A7FA3 /* IPhoneSe2Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe2Timeline.swift; sourceTree = "<group>"; };
+		02D142D32757DBD5008A7FA3 /* IPhoneSe2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe2View.swift; sourceTree = "<group>"; };
+		02D142D72757DCD7008A7FA3 /* IPhoneSe3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe3View.swift; sourceTree = "<group>"; };
+		02D142D82757DCD8008A7FA3 /* IPhoneSe3Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe3Timeline.swift; sourceTree = "<group>"; };
+		02D142DC2757DD6C008A7FA3 /* IPhoneSe4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe4View.swift; sourceTree = "<group>"; };
+		02D142DD2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe4Timeline.swift; sourceTree = "<group>"; };
+		02D142E12757DDD5008A7FA3 /* IPhoneSe5View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe5View.swift; sourceTree = "<group>"; };
+		02D142E22757DDD8008A7FA3 /* IPhoneSe5Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneSe5Timeline.swift; sourceTree = "<group>"; };
+		02D142E62757E6D8008A7FA3 /* IPhone82Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone82Timeline.swift; sourceTree = "<group>"; };
+		02D142E72757E6D8008A7FA3 /* IPhone82View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone82View.swift; sourceTree = "<group>"; };
+		02D142EB2757E728008A7FA3 /* IPhone83Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone83Timeline.swift; sourceTree = "<group>"; };
+		02D142EC2757E728008A7FA3 /* IPhone83View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone83View.swift; sourceTree = "<group>"; };
+		02D142F02757E768008A7FA3 /* IPhone84View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone84View.swift; sourceTree = "<group>"; };
+		02D142F12757E769008A7FA3 /* IPhone84Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone84Timeline.swift; sourceTree = "<group>"; };
+		02D142F52757E7B6008A7FA3 /* IPhone85View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone85View.swift; sourceTree = "<group>"; };
+		02D142F62757E7B7008A7FA3 /* IPhone85Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone85Timeline.swift; sourceTree = "<group>"; };
+		02D142FA2757E804008A7FA3 /* IPhone11ProX2Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX2Timeline.swift; sourceTree = "<group>"; };
+		02D142FB2757E805008A7FA3 /* IPhone11ProX2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX2View.swift; sourceTree = "<group>"; };
+		02D142FF2757E845008A7FA3 /* IPhone11ProX3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX3View.swift; sourceTree = "<group>"; };
+		02D143002757E845008A7FA3 /* IPhone11ProX3Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX3Timeline.swift; sourceTree = "<group>"; };
+		02D143042757E88B008A7FA3 /* IPhone11ProX4Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX4Timeline.swift; sourceTree = "<group>"; };
+		02D143052757E88C008A7FA3 /* IPhone11ProX4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX4View.swift; sourceTree = "<group>"; };
+		02D143092757E8EE008A7FA3 /* IPhone11ProX5Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX5Timeline.swift; sourceTree = "<group>"; };
+		02D1430A2757E8EF008A7FA3 /* IPhone11ProX5View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhone11ProX5View.swift; sourceTree = "<group>"; };
 		02D4BFA62743B94D00B9322B /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+SVG.swift"; sourceTree = "<group>"; };
 		02D4BFA72743B94D00B9322B /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		02D4BFA82743B94D00B9322B /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -479,6 +548,12 @@
 		02D4BFC22743B98C00B9322B /* TimelineSwipeLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwipeLeft.swift; sourceTree = "<group>"; };
 		02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBackGroundSwipeRightView.swift; sourceTree = "<group>"; };
 		02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwipeRight.swift; sourceTree = "<group>"; };
+		02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFourController.swift; sourceTree = "<group>"; };
+		02DF6B30275659910069CFF6 /* OnboardingFourController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingFourController.xib; sourceTree = "<group>"; };
+		02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingController.swift; sourceTree = "<group>"; };
+		02DF6B39275663C80069CFF6 /* MainOnboardingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainOnboardingController.xib; sourceTree = "<group>"; };
+		02DF6B402756A5410069CFF6 /* OnboardingWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeController.swift; sourceTree = "<group>"; };
+		02DF6B412756A5410069CFF6 /* OnboardingWelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingWelcomeController.xib; sourceTree = "<group>"; };
 		02E0255627326C8B00988F12 /* DiseaseArchiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveCell.swift; sourceTree = "<group>"; };
 		02E0255727326C8B00988F12 /* DiseaseArchiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveCell.xib; sourceTree = "<group>"; };
 		02E0255F273273D600988F12 /* MainPlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPlantModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MainPlantModel.swift; sourceTree = SOURCE_ROOT; };
@@ -561,7 +636,6 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		FA8AD938275125FB00B0104C /* WishListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRouter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
 		FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognize.graphql; sourceTree = "<group>"; };
@@ -1171,9 +1245,11 @@
 		02A4BA2926FDCF0900DF6A08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				02DF6B3F2756A5240069CFF6 /* OnboardingWelcomeController */,
 				02A4BA2E26FDCFA500DF6A08 /* OnboardingFirsController */,
 				02A4BA2F26FDCFAA00DF6A08 /* OnboardingSecondController */,
 				02A4BA3826FDD01500DF6A08 /* OnboardingThreeController */,
+				02DF6B2E2756591A0069CFF6 /* OnboardingFourController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1272,9 +1348,9 @@
 		02A8347E26F38F920009E147 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				02A8347F26F38FA70009E147 /* OnboardingPageController.swift */,
-				02A8348026F38FA70009E147 /* OnboardingPageController.xib */,
-				02A4BA2926FDCF0900DF6A08 /* Controllers */,
+				02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */,
+				02DF6B39275663C80069CFF6 /* MainOnboardingController.xib */,
+				02DF6B3C2756681A0069CFF6 /* Page */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1438,9 +1514,209 @@
 			path = BridgingHeaders;
 			sourceTree = "<group>";
 		};
+		02D142B82757D8BB008A7FA3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				02D142BE2757D969008A7FA3 /* Step2 */,
+				02D142BF2757D984008A7FA3 /* Step3 */,
+				02D142C52757D9DA008A7FA3 /* Step4 */,
+				02D142CB2757DAA6008A7FA3 /* Step5 */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		02D142B92757D8CE008A7FA3 /* iphone13_step2 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142BB2757D90D008A7FA3 /* IPhone13ProMax2View.swift */,
+				02D142BA2757D90C008A7FA3 /* IPhone13ProMax2TimeLine.swift */,
+			);
+			path = iphone13_step2;
+			sourceTree = "<group>";
+		};
+		02D142BE2757D969008A7FA3 /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142F92757E7CF008A7FA3 /* iphone11x_step2 */,
+				02D142E52757E687008A7FA3 /* iphone8_step2 */,
+				02D142D12757DBBD008A7FA3 /* IphoneSE_step2 */,
+				02D142B92757D8CE008A7FA3 /* iphone13_step2 */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		02D142BF2757D984008A7FA3 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142FE2757E811008A7FA3 /* iphone11x_step3 */,
+				02D142EA2757E6F1008A7FA3 /* iphone8_step3 */,
+				02D142D62757DC07008A7FA3 /* IphoneSE_step3 */,
+				02D142C02757D9A5008A7FA3 /* iphone13_step3 */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		02D142C02757D9A5008A7FA3 /* iphone13_step3 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142C12757D9B0008A7FA3 /* IPhone13ProMax3View.swift */,
+				02D142C22757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift */,
+			);
+			path = iphone13_step3;
+			sourceTree = "<group>";
+		};
+		02D142C52757D9DA008A7FA3 /* Step4 */ = {
+			isa = PBXGroup;
+			children = (
+				02D143032757E854008A7FA3 /* iphone11x_step4 */,
+				02D142EF2757E734008A7FA3 /* iphone8_step4 */,
+				02D142DB2757DD0E008A7FA3 /* IphoneSE_step4 */,
+				02D142C62757DA1C008A7FA3 /* iphone13_step4 */,
+			);
+			path = Step4;
+			sourceTree = "<group>";
+		};
+		02D142C62757DA1C008A7FA3 /* iphone13_step4 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142C82757DA6E008A7FA3 /* IPhone13ProMax4View.swift */,
+				02D142C72757DA6D008A7FA3 /* IPhone13ProMax4Timeline.swift */,
+			);
+			path = iphone13_step4;
+			sourceTree = "<group>";
+		};
+		02D142CB2757DAA6008A7FA3 /* Step5 */ = {
+			isa = PBXGroup;
+			children = (
+				02D143082757E8B8008A7FA3 /* iphone11x_step5 */,
+				02D142F42757E775008A7FA3 /* iphone8_step5 */,
+				02D142E02757DD96008A7FA3 /* IphoneSE_step5 */,
+				02D142CC2757DABD008A7FA3 /* iphone13_step5 */,
+			);
+			path = Step5;
+			sourceTree = "<group>";
+		};
+		02D142CC2757DABD008A7FA3 /* iphone13_step5 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142CE2757DB28008A7FA3 /* IPhone13ProMax5View.swift */,
+				02D142CD2757DB27008A7FA3 /* IPhone13ProMax5Timeline.swift */,
+			);
+			path = iphone13_step5;
+			sourceTree = "<group>";
+		};
+		02D142D12757DBBD008A7FA3 /* IphoneSE_step2 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142D32757DBD5008A7FA3 /* IPhoneSe2View.swift */,
+				02D142D22757DBD4008A7FA3 /* IPhoneSe2Timeline.swift */,
+			);
+			path = IphoneSE_step2;
+			sourceTree = "<group>";
+		};
+		02D142D62757DC07008A7FA3 /* IphoneSE_step3 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142D72757DCD7008A7FA3 /* IPhoneSe3View.swift */,
+				02D142D82757DCD8008A7FA3 /* IPhoneSe3Timeline.swift */,
+			);
+			path = IphoneSE_step3;
+			sourceTree = "<group>";
+		};
+		02D142DB2757DD0E008A7FA3 /* IphoneSE_step4 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142DC2757DD6C008A7FA3 /* IPhoneSe4View.swift */,
+				02D142DD2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift */,
+			);
+			path = IphoneSE_step4;
+			sourceTree = "<group>";
+		};
+		02D142E02757DD96008A7FA3 /* IphoneSE_step5 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142E12757DDD5008A7FA3 /* IPhoneSe5View.swift */,
+				02D142E22757DDD8008A7FA3 /* IPhoneSe5Timeline.swift */,
+			);
+			path = IphoneSE_step5;
+			sourceTree = "<group>";
+		};
+		02D142E52757E687008A7FA3 /* iphone8_step2 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142E62757E6D8008A7FA3 /* IPhone82Timeline.swift */,
+				02D142E72757E6D8008A7FA3 /* IPhone82View.swift */,
+			);
+			path = iphone8_step2;
+			sourceTree = "<group>";
+		};
+		02D142EA2757E6F1008A7FA3 /* iphone8_step3 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142EB2757E728008A7FA3 /* IPhone83Timeline.swift */,
+				02D142EC2757E728008A7FA3 /* IPhone83View.swift */,
+			);
+			path = iphone8_step3;
+			sourceTree = "<group>";
+		};
+		02D142EF2757E734008A7FA3 /* iphone8_step4 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142F12757E769008A7FA3 /* IPhone84Timeline.swift */,
+				02D142F02757E768008A7FA3 /* IPhone84View.swift */,
+			);
+			path = iphone8_step4;
+			sourceTree = "<group>";
+		};
+		02D142F42757E775008A7FA3 /* iphone8_step5 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142F62757E7B7008A7FA3 /* IPhone85Timeline.swift */,
+				02D142F52757E7B6008A7FA3 /* IPhone85View.swift */,
+			);
+			path = iphone8_step5;
+			sourceTree = "<group>";
+		};
+		02D142F92757E7CF008A7FA3 /* iphone11x_step2 */ = {
+			isa = PBXGroup;
+			children = (
+				02D142FA2757E804008A7FA3 /* IPhone11ProX2Timeline.swift */,
+				02D142FB2757E805008A7FA3 /* IPhone11ProX2View.swift */,
+			);
+			path = iphone11x_step2;
+			sourceTree = "<group>";
+		};
+		02D142FE2757E811008A7FA3 /* iphone11x_step3 */ = {
+			isa = PBXGroup;
+			children = (
+				02D143002757E845008A7FA3 /* IPhone11ProX3Timeline.swift */,
+				02D142FF2757E845008A7FA3 /* IPhone11ProX3View.swift */,
+			);
+			path = iphone11x_step3;
+			sourceTree = "<group>";
+		};
+		02D143032757E854008A7FA3 /* iphone11x_step4 */ = {
+			isa = PBXGroup;
+			children = (
+				02D143042757E88B008A7FA3 /* IPhone11ProX4Timeline.swift */,
+				02D143052757E88C008A7FA3 /* IPhone11ProX4View.swift */,
+			);
+			path = iphone11x_step4;
+			sourceTree = "<group>";
+		};
+		02D143082757E8B8008A7FA3 /* iphone11x_step5 */ = {
+			isa = PBXGroup;
+			children = (
+				02D143092757E8EE008A7FA3 /* IPhone11ProX5Timeline.swift */,
+				02D1430A2757E8EF008A7FA3 /* IPhone11ProX5View.swift */,
+			);
+			path = iphone11x_step5;
+			sourceTree = "<group>";
+		};
 		02D4BFA42743B93D00B9322B /* FlowAnimate */ = {
 			isa = PBXGroup;
 			children = (
+				02D142B82757D8BB008A7FA3 /* Onboarding */,
 				02D4BFC52743BC6800B9322B /* SwipeRight */,
 				02D4BFC02743B97D00B9322B /* SwipeLeft */,
 				02D4BFA52743B94D00B9322B /* FlowCommon */,
@@ -1484,6 +1760,34 @@
 				02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */,
 			);
 			path = SwipeRight;
+			sourceTree = "<group>";
+		};
+		02DF6B2E2756591A0069CFF6 /* OnboardingFourController */ = {
+			isa = PBXGroup;
+			children = (
+				02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */,
+				02DF6B30275659910069CFF6 /* OnboardingFourController.xib */,
+			);
+			path = OnboardingFourController;
+			sourceTree = "<group>";
+		};
+		02DF6B3C2756681A0069CFF6 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				02A8347F26F38FA70009E147 /* OnboardingPageController.swift */,
+				02A8348026F38FA70009E147 /* OnboardingPageController.xib */,
+				02A4BA2926FDCF0900DF6A08 /* Controllers */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		02DF6B3F2756A5240069CFF6 /* OnboardingWelcomeController */ = {
+			isa = PBXGroup;
+			children = (
+				02DF6B402756A5410069CFF6 /* OnboardingWelcomeController.swift */,
+				02DF6B412756A5410069CFF6 /* OnboardingWelcomeController.xib */,
+			);
+			path = OnboardingWelcomeController;
 			sourceTree = "<group>";
 		};
 		02E0255527326C6800988F12 /* Cell */ = {
@@ -1604,7 +1908,6 @@
 				FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */,
 				02FCBFA9270A36500089CEF8 /* WishListController.xib */,
 				FAFCF34727147E1300C3134E /* Presenter */,
-				FA8AD937275125DF00B0104C /* Router */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -1865,14 +2168,6 @@
 				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		FA8AD937275125DF00B0104C /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				FA8AD938275125FB00B0104C /* WishListRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		FA8FCD27271818DA00173725 /* UploadMedia */ = {
@@ -2232,6 +2527,7 @@
 				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
 				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
 				02BBBE7B273E623900E97712 /* PickerCaresController.xib in Resources */,
+				02DF6B432756A5410069CFF6 /* OnboardingWelcomeController.xib in Resources */,
 				02089EBD2754EDFA0022E1BD /* ScheduleSettingsController.xib in Resources */,
 				FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */,
 				FAFCF35527157FE100C3134E /* Me.graphql in Resources */,
@@ -2239,6 +2535,7 @@
 				025ECF22273D5CFE0041A7BD /* AddPlantTimeCell.xib in Resources */,
 				FA545475274BCF53006B52F4 /* GardenCaresDetail.xib in Resources */,
 				0273B8BB27453D1A009A2247 /* GardenDetailTitleCell.xib in Resources */,
+				02DF6B3B275663C80069CFF6 /* MainOnboardingController.xib in Resources */,
 				02D04ED226F5E7B000F86B87 /* Staging.xcconfig in Resources */,
 				02A46057274294E100D5D931 /* GardenPlantCreate.graphql in Resources */,
 				02E025652732B39500988F12 /* RecognizeArchiveController.xib in Resources */,
@@ -2307,6 +2604,7 @@
 				028C9BFC274D30060043EA31 /* ScheduleColapsView.xib in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
+				02DF6B32275659910069CFF6 /* OnboardingFourController.xib in Resources */,
 				02A8347A26F38E580009E147 /* SplashController.xib in Resources */,
 				FAAA231C26F3625200E10E89 /* LaunchScreen.storyboard in Resources */,
 				FA545480274E784E006B52F4 /* GardenCareDetailView.xib in Resources */,
@@ -2451,7 +2749,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54547E274E7836006B52F4 /* GardenCareDetailView.swift in Sources */,
+				02DF6B422756A5410069CFF6 /* OnboardingWelcomeController.swift in Sources */,
 				02E0256F2732C97500988F12 /* RecognizeArchiveController+Collection.swift in Sources */,
+				02D142D02757DB29008A7FA3 /* IPhone13ProMax5View.swift in Sources */,
 				026CFC0C270C1FF8003A0687 /* GardenViewCell.swift in Sources */,
 				02E4575D26F903B000F19C41 /* Network.swift in Sources */,
 				FA40D718272854E200A10C10 /* CaresModel.swift in Sources */,
@@ -2459,6 +2759,7 @@
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
 				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
 				02017AAD2747922000EE093C /* GardenDetailDeletePlanController.swift in Sources */,
+				02D142F32757E769008A7FA3 /* IPhone84Timeline.swift in Sources */,
 				02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */,
 				02527DA02746DCEB00126022 /* AddImageToGalleryModel.swift in Sources */,
 				02527D8A2746339500126022 /* GardenDetailController+TableView.swift in Sources */,
@@ -2471,11 +2772,13 @@
 				FAB3BD252704AF210075C0C0 /* PlantsController.swift in Sources */,
 				02CF963F274FBFBF00F356C2 /* GardenPlantByIdsModel.swift in Sources */,
 				F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */,
+				02D142E82757E6D8008A7FA3 /* IPhone82Timeline.swift in Sources */,
 				02D4BFB52743B94D00B9322B /* Animation.swift in Sources */,
 				FA545485274E89C6006B52F4 /* PlantsAboutType.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				02D4BFB82743B94D00B9322B /* Timeline.swift in Sources */,
 				028C9BFA274D2FE20043EA31 /* ScheduleColapsView.swift in Sources */,
+				02D142F22757E769008A7FA3 /* IPhone84View.swift in Sources */,
 				FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */,
 				02D4BFB92743B94D00B9322B /* CAKeyframeAnimation+Extension.swift in Sources */,
 				023BBB1D2744173200DCFFF1 /* GardenDetailPresenter.swift in Sources */,
@@ -2499,8 +2802,11 @@
 				02A4B6502742C942007E0DA2 /* GardenRecordCreateModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FA24A5AE273475100059AF6A /* CaresByGardenModel.swift in Sources */,
+				02D143072757E88C008A7FA3 /* IPhone11ProX4View.swift in Sources */,
 				FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */,
+				02D142D42757DBD5008A7FA3 /* IPhoneSe2Timeline.swift in Sources */,
 				028C9BF4274D1B2B0043EA31 /* ScheduleCell.swift in Sources */,
+				02D142FC2757E805008A7FA3 /* IPhone11ProX2Timeline.swift in Sources */,
 				02493DDA2727F125008C2064 /* DetailAboutView.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */,
 				02A4B6522742C962007E0DA2 /* GardenPlantUpdateModel.swift in Sources */,
@@ -2511,6 +2817,7 @@
 				FA545487274E8C7A006B52F4 /* StatusGardenCareType.swift in Sources */,
 				023BBB1A2744150900DCFFF1 /* GardenRouter.swift in Sources */,
 				FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */,
+				02D142CF2757DB29008A7FA3 /* IPhone13ProMax5Timeline.swift in Sources */,
 				FA54548C274F00EF006B52F4 /* DoneAllCaresByGardenPlantModel.swift in Sources */,
 				02089EC427554DE80022E1BD /* NotificationSettingsUpdateModel.swift in Sources */,
 				02D4BFBD2743B94D00B9322B /* Sound.swift in Sources */,
@@ -2533,7 +2840,9 @@
 				02E025642732B39500988F12 /* RecognizeArchiveController.swift in Sources */,
 				FAAA231026F3624F00E10E89 /* AppDelegate.swift in Sources */,
 				02A8347526F38CAB0009E147 /* UIApplicathion+Extension.swift in Sources */,
+				02D142BD2757D90D008A7FA3 /* IPhone13ProMax2View.swift in Sources */,
 				FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */,
+				02D142C92757DA6E008A7FA3 /* IPhone13ProMax4Timeline.swift in Sources */,
 				02D4BFB62743B94D00B9322B /* UIViewFlow+Extension.swift in Sources */,
 				02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */,
 				FA8FCD472719C19D00173725 /* IdentifyController+CollectionView.swift in Sources */,
@@ -2541,10 +2850,13 @@
 				023786292706DD020092F63A /* Collection+Extension.swift in Sources */,
 				021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */,
 				025ECF21273D5CFE0041A7BD /* AddPlantTimeCell.swift in Sources */,
+				02D142DF2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift in Sources */,
 				FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
+				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
+				02D143062757E88C008A7FA3 /* IPhone11ProX4Timeline.swift in Sources */,
 				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
@@ -2554,6 +2866,7 @@
 				028C9BF7274D1BCB0043EA31 /* ScheduleController+TableView.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				02A4B6472742C389007E0DA2 /* PopChangeNameController.swift in Sources */,
+				02D143022757E845008A7FA3 /* IPhone11ProX3Timeline.swift in Sources */,
 				025A18C12739242300AFA581 /* AddPlantCareView.swift in Sources */,
 				F3D378B0272F93490015C6EE /* MenuRouter.swift in Sources */,
 				02D4BFBA2743B94D00B9322B /* NSMutableParagraphStyle+Extension.swift in Sources */,
@@ -2562,8 +2875,8 @@
 				0272DAE227354170005E7880 /* AddCoverIdentifierController.swift in Sources */,
 				FA8FCD3D27199CD100173725 /* SubcribeController.swift in Sources */,
 				02089EC8275551510022E1BD /* Date+Extension.swift in Sources */,
-				FA8AD939275125FB00B0104C /* WishListRouter.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
+				02D142EE2757E728008A7FA3 /* IPhone83View.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
 				FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */,
 				02359BA1274D7EAE00109C69 /* ScheduleColapsBottomView.swift in Sources */,
@@ -2577,6 +2890,7 @@
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
 				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
+				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				02089EC627554E530022E1BD /* ScheduleSettingsPresenter.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
@@ -2589,23 +2903,31 @@
 				02527D93274642E900126022 /* GardenDetailScheduleCell.swift in Sources */,
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
 				02A4605127427A6A00D5D931 /* CareTypesModel.swift in Sources */,
+				02D142C42757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift in Sources */,
+				02D142F72757E7B7008A7FA3 /* IPhone85View.swift in Sources */,
 				FA24A5AC273474E00059AF6A /* CareTypeModel.swift in Sources */,
 				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
 				02A4B64B2742C7F5007E0DA2 /* PopChangeNamePresenter.swift in Sources */,
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
 				025ECF27273D82E20041A7BD /* OrderCreate.swift in Sources */,
+				02D142DA2757DCD8008A7FA3 /* IPhoneSe3Timeline.swift in Sources */,
 				0290C291275265B4001FE6F7 /* UIScrollView+Extension.swift in Sources */,
 				FA24A59C2732BC830059AF6A /* CongradsViewPresenter.swift in Sources */,
 				021C8EC72705B0B200F0F589 /* PlantCollectionCell.swift in Sources */,
 				02A8347326F38B9E0009E147 /* BaseController.swift in Sources */,
 				F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */,
+				02D1430B2757E8EF008A7FA3 /* IPhone11ProX5Timeline.swift in Sources */,
 				02089EAF2754CA9A0022E1BD /* DoneCareByGardenPlants.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,
 				02A4BA3E26FDD16C00DF6A08 /* UIPageViewController+Extension.swift in Sources */,
+				02D142FD2757E805008A7FA3 /* IPhone11ProX2View.swift in Sources */,
+				02DF6B3A275663C80069CFF6 /* MainOnboardingController.swift in Sources */,
 				0291DDA027283C32008E9F6F /* PlantsDetailPresenter.swift in Sources */,
+				02D142E92757E6D8008A7FA3 /* IPhone82View.swift in Sources */,
 				FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */,
 				02A4BA3626FDCFEF00DF6A08 /* OnboardingSecondController.swift in Sources */,
 				021D6CF72731137C00C73183 /* LanguageController.swift in Sources */,
+				02D142CA2757DA6E008A7FA3 /* IPhone13ProMax4View.swift in Sources */,
 				02A4BA2C26FDCF6700DF6A08 /* OnboardingFirsController.swift in Sources */,
 				FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
@@ -2615,28 +2937,38 @@
 				02D4BFBB2743B94D00B9322B /* CATransaction+Extension.swift in Sources */,
 				02493DD62727E38A008C2064 /* PlantsDetailController.swift in Sources */,
 				FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */,
+				02D1430C2757E8EF008A7FA3 /* IPhone11ProX5View.swift in Sources */,
 				02D4BFC82743BC7800B9322B /* AnimationBackGroundSwipeRightView.swift in Sources */,
 				023786232706D7230092F63A /* PlantsPresenter.swift in Sources */,
 				0272DADD27352770005E7880 /* PopUpRouter.swift in Sources */,
 				02D4BFB72743B94D00B9322B /* UIImage+Extension.swift in Sources */,
 				FA1CEC5C273C64FC003A4F84 /* GardenModel.swift in Sources */,
+				02D142F82757E7B7008A7FA3 /* IPhone85Timeline.swift in Sources */,
+				02DF6B31275659910069CFF6 /* OnboardingFourController.swift in Sources */,
 				025ECF1C273D59A80041A7BD /* AddPlantTimeController.swift in Sources */,
 				FAD1833226F8A5CA007A67DC /* API.swift in Sources */,
 				02017AB32747DBE400EE093C /* GardenPlantDeleteModel.swift in Sources */,
 				FA24A5B1273476190059AF6A /* GardenPresenter.swift in Sources */,
 				FA40D7122728307000A10C10 /* PlantByIdModel.swift in Sources */,
+				02D142DE2757DD6D008A7FA3 /* IPhoneSe4View.swift in Sources */,
+				02D143012757E845008A7FA3 /* IPhone11ProX3View.swift in Sources */,
 				02527D8F27463A5100126022 /* ScheduleByGardenPlantModel.swift in Sources */,
 				02A8346E26F38B290009E147 /* BaseRouter.swift in Sources */,
+				02D142D52757DBD5008A7FA3 /* IPhoneSe2View.swift in Sources */,
 				02F3ADF4274E9E4C00A07FEA /* ScheduleDoneAllCell.swift in Sources */,
 				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
+				02D142E32757DDD8008A7FA3 /* IPhoneSe5View.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
+				02D142ED2757E728008A7FA3 /* IPhone83Timeline.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
 				02A4605327427B2900D5D931 /* AddPlantsCarePresenter.swift in Sources */,
 				0261FA622748FC70002BB6CE /* PopClonePlantController.swift in Sources */,
 				02527D8727462DDF00126022 /* GardenDetailEditCareCell.swift in Sources */,
+				02D142BC2757D90D008A7FA3 /* IPhone13ProMax2TimeLine.swift in Sources */,
 				0273B8C02745584A009A2247 /* GardenDetailAboutCell.swift in Sources */,
 				FAB26ACF2716C89A00B3EFDF /* ShadowView.swift in Sources */,
 				021D6D012731263D00C73183 /* Constants.swift in Sources */,
+				02D142D92757DCD8008A7FA3 /* IPhoneSe3View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2734,7 +3066,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -2885,7 +3217,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -2916,7 +3248,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;

@@ -23,8 +23,15 @@ extension WishListController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = wishList[safe: indexPath.row] {
-            WishListRouter(presenter: navigationController).pushDetail(id: model.id)
+            PlantsRouter(presenter: navigationController).pushDetail(id: model.id, delegate: self)
         }
+    }
+}
+
+extension WishListController: PlantsDetailDelegate {
+    func updatePlants() {
+        presenter.getWishList()
+        delegate?.updatePlants()
     }
 }
 
