@@ -105,6 +105,10 @@
 		0273B8C627455D8B009A2247 /* GardenDetailCaresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0273B8C427455D8B009A2247 /* GardenDetailCaresCell.xib */; };
 		0273B8CA2745693E009A2247 /* GardenDetailSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273B8C82745693E009A2247 /* GardenDetailSegmentCell.swift */; };
 		0273B8CB2745693E009A2247 /* GardenDetailSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0273B8C92745693E009A2247 /* GardenDetailSegmentCell.xib */; };
+		027B5FA62758F19900A84D98 /* LillActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FA52758F19900A84D98 /* LillActivityIndicator.swift */; };
+		027B5FA82758F23900A84D98 /* LillActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027B5FA72758F23900A84D98 /* LillActivityIndicator.xib */; };
+		027B5FAC27590B2B00A84D98 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FAA27590B2B00A84D98 /* LoaderView.swift */; };
+		027B5FAD27590B2B00A84D98 /* LoaderTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */; };
 		028C9BF4274D1B2B0043EA31 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */; };
 		028C9BF5274D1B2B0043EA31 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */; };
 		028C9BF7274D1BCB0043EA31 /* ScheduleController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */; };
@@ -118,8 +122,6 @@
 		0291DDA027283C32008E9F6F /* PlantsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */; };
 		029C520327307B8100BD30B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02AB244926F39D8E00309CFF /* Localizable.strings */; };
 		029C520527307F9300BD30B4 /* Rswift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C520427307F9300BD30B4 /* Rswift+Extension.swift */; };
-		029CFD972701A85D00C69908 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 029CFD962701A85D00C69908 /* NVActivityIndicatorView */; };
-		029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */; };
 		02A4604E274279E300D5D931 /* CareType.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02A4604D274279E300D5D931 /* CareType.graphql */; };
 		02A4605127427A6A00D5D931 /* CareTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4605027427A6A00D5D931 /* CareTypesModel.swift */; };
 		02A4605327427B2900D5D931 /* AddPlantsCarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4605227427B2900D5D931 /* AddPlantsCarePresenter.swift */; };
@@ -438,6 +440,10 @@
 		0273B8C427455D8B009A2247 /* GardenDetailCaresCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailCaresCell.xib; sourceTree = "<group>"; };
 		0273B8C82745693E009A2247 /* GardenDetailSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenDetailSegmentCell.swift; sourceTree = "<group>"; };
 		0273B8C92745693E009A2247 /* GardenDetailSegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenDetailSegmentCell.xib; sourceTree = "<group>"; };
+		027B5FA52758F19900A84D98 /* LillActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LillActivityIndicator.swift; sourceTree = "<group>"; };
+		027B5FA72758F23900A84D98 /* LillActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LillActivityIndicator.xib; sourceTree = "<group>"; };
+		027B5FAA27590B2B00A84D98 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderTimeline.swift; sourceTree = "<group>"; };
 		028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleController+TableView.swift"; sourceTree = "<group>"; };
@@ -685,7 +691,6 @@
 				023786272706DAEC0092F63A /* Kingfisher in Frameworks */,
 				FA8A31062701C98B00F99516 /* Toast in Frameworks */,
 				FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */,
-				029CFD972701A85D00C69908 /* NVActivityIndicatorView in Frameworks */,
 				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
 				020FE33E274BDD6E00FF69F7 /* FirebaseDynamicLinks in Frameworks */,
 				02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */,
@@ -698,7 +703,6 @@
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				02C6C111273A69CF003C47FF /* Alamofire in Frameworks */,
 				020FE33C274BDD6E00FF69F7 /* FirebaseCrashlytics in Frameworks */,
-				029CFD992701A85D00C69908 /* NVActivityIndicatorViewExtended in Frameworks */,
 				02E329A327342557004344C0 /* StoreKit.framework in Frameworks */,
 				020FE33A274BDD6E00FF69F7 /* FirebaseAuth in Frameworks */,
 				020FE342274BDD6E00FF69F7 /* FirebaseRemoteConfig in Frameworks */,
@@ -1125,6 +1129,24 @@
 			path = GardenDetailSegmentCell;
 			sourceTree = "<group>";
 		};
+		027B5FA42758F15B00A84D98 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				027B5FA52758F19900A84D98 /* LillActivityIndicator.swift */,
+				027B5FA72758F23900A84D98 /* LillActivityIndicator.xib */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		027B5FA927590B1C00A84D98 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				027B5FAA27590B2B00A84D98 /* LoaderView.swift */,
+				027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		028C9BF0274D1A910043EA31 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1388,7 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				027B5FA42758F15B00A84D98 /* ActivityIndicator */,
 				FA545481274E88FD006B52F4 /* Enums */,
 				FAFCF350271575D400C3134E /* Views */,
 				021D6D0B2731AE3B00C73183 /* Service */,
@@ -1716,6 +1739,7 @@
 		02D4BFA42743B93D00B9322B /* FlowAnimate */ = {
 			isa = PBXGroup;
 			children = (
+				027B5FA927590B1C00A84D98 /* Loader */,
 				02D142B82757D8BB008A7FA3 /* Onboarding */,
 				02D4BFC52743BC6800B9322B /* SwipeRight */,
 				02D4BFC02743B97D00B9322B /* SwipeLeft */,
@@ -2460,8 +2484,6 @@
 				FA7C8CD526FB6688000D2976 /* FacebookCore */,
 				FA7C8CD726FB6688000D2976 /* FacebookLogin */,
 				FA7C8CEE26FCC082000D2976 /* GoogleSignIn */,
-				029CFD962701A85D00C69908 /* NVActivityIndicatorView */,
-				029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */,
 				FA8A31052701C98B00F99516 /* Toast */,
 				023786262706DAEC0092F63A /* Kingfisher */,
 				02FCBFB2270A44310089CEF8 /* SwiftKeychainWrapper */,
@@ -2507,7 +2529,6 @@
 				FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				023786252706DAEC0092F63A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				02FCBFB1270A44310089CEF8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
@@ -2581,6 +2602,7 @@
 				FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */,
 				0273B8C12745584A009A2247 /* GardenDetailAboutCell.xib in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
+				027B5FA82758F23900A84D98 /* LillActivityIndicator.xib in Resources */,
 				F3BED18A272EFB8F00614DEE /* MenuItemTableViewCell.xib in Resources */,
 				FA24A5A32732DB160059AF6A /* PlantToGarden.graphql in Resources */,
 				02BBBE76273E5FC200E97712 /* AddPlantTitleCell.xib in Resources */,
@@ -2690,7 +2712,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2885,6 +2907,7 @@
 				02089EC8275551510022E1BD /* Date+Extension.swift in Sources */,
 				0291DD9A2728293B008E9F6F /* DetailCaresView.swift in Sources */,
 				02D142EE2757E728008A7FA3 /* IPhone83View.swift in Sources */,
+				027B5FA62758F19900A84D98 /* LillActivityIndicator.swift in Sources */,
 				FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */,
 				FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */,
 				02359BA1274D7EAE00109C69 /* ScheduleColapsBottomView.swift in Sources */,
@@ -2901,6 +2924,7 @@
 				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				02089EC627554E530022E1BD /* ScheduleSettingsPresenter.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
+				027B5FAD27590B2B00A84D98 /* LoaderTimeline.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,
 				02E025672732B72600988F12 /* RecognizeArchivePresenter.swift in Sources */,
 				FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */,
@@ -2940,6 +2964,7 @@
 				FA24A59E2732BCCE0059AF6A /* CongradsView.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
 				029C520527307F9300BD30B4 /* Rswift+Extension.swift in Sources */,
+				027B5FAC27590B2B00A84D98 /* LoaderView.swift in Sources */,
 				02089EBF275528280022E1BD /* UITextField+Extension.swift in Sources */,
 				02C6C108273A68BF003C47FF /* RestSuffix.swift in Sources */,
 				02D4BFBB2743B94D00B9322B /* CATransaction+Extension.swift in Sources */,
@@ -3321,14 +3346,6 @@
 				kind = branch;
 			};
 		};
-		029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
-			};
-		};
 		02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -3430,16 +3447,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 023786252706DAEC0092F63A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		029CFD962701A85D00C69908 /* NVActivityIndicatorView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorView;
-		};
-		029CFD982701A85D00C69908 /* NVActivityIndicatorViewExtended */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 029CFD952701A85C00C69908 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorViewExtended;
 		};
 		02C6C110273A69CF003C47FF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

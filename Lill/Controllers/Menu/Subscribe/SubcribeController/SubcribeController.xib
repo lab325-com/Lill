@@ -77,13 +77,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get access to unlimited Identify and Diagnosis Plants" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rn-50-0GU">
-                                    <rect key="frame" x="24" y="89" width="366" height="18"/>
+                                    <rect key="frame" x="24" y="101" width="366" height="18"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tZ-i6-8kW" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="131" width="366" height="177"/>
+                                    <rect key="frame" x="24" y="143" width="366" height="177"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yearly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMx-cf-fI1">
                                             <rect key="frame" x="24" y="24" width="38" height="18"/>
@@ -180,7 +180,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pp4-Zj-WPx" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="326" width="366" height="177"/>
+                                    <rect key="frame" x="24" y="338" width="366" height="177"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgO-fJ-DNz">
                                             <rect key="frame" x="24" y="24" width="51.5" height="18"/>
@@ -251,13 +251,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel anytime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-7s-Skp">
-                                    <rect key="frame" x="24" y="527" width="366" height="13.5"/>
+                                    <rect key="frame" x="24" y="539" width="366" height="13.5"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="11"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeQ-0N-UjH">
-                                    <rect key="frame" x="24" y="560.5" width="366" height="31"/>
+                                    <rect key="frame" x="24" y="572.5" width="366" height="31"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <connections>
@@ -265,7 +265,7 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-ga-pMd">
-                                    <rect key="frame" x="24" y="688.5" width="366" height="28"/>
+                                    <rect key="frame" x="24" y="623.5" width="366" height="28"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sci-FX-hvz">
                                             <rect key="frame" x="0.0" y="0.0" width="183" height="28"/>
@@ -286,7 +286,7 @@
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHZ-c3-vCa">
-                                    <rect key="frame" x="24" y="740.5" width="366" height="131.5"/>
+                                    <rect key="frame" x="24" y="675.5" width="366" height="131.5"/>
                                     <string key="text">Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.Before creating your subscriptions, make sure you know about the requirements and best practices that will help you deliver a great user experience. The guidelines below provide details on what your subscriptions need to include and how they should be presented in your app, as well as information on making changes to existing subscriptions, offering free trials, and more.</string>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="11"/>
                                     <nil key="textColor"/>
@@ -302,7 +302,7 @@
                                 <constraint firstItem="u4g-7s-Skp" firstAttribute="top" secondItem="Pp4-Zj-WPx" secondAttribute="bottom" constant="24" id="5yl-Qa-fnc"/>
                                 <constraint firstItem="oeQ-0N-UjH" firstAttribute="leading" secondItem="6pL-eA-2Ap" secondAttribute="leading" constant="24" id="745-LC-7NM"/>
                                 <constraint firstItem="Pp4-Zj-WPx" firstAttribute="top" secondItem="4tZ-i6-8kW" secondAttribute="bottom" constant="18" id="7Dl-Nh-zuR"/>
-                                <constraint firstItem="YXV-ga-pMd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oeQ-0N-UjH" secondAttribute="bottom" constant="20" id="BtV-ZE-D0Z"/>
+                                <constraint firstItem="YXV-ga-pMd" firstAttribute="top" secondItem="oeQ-0N-UjH" secondAttribute="bottom" constant="20" id="BtV-ZE-D0Z"/>
                                 <constraint firstItem="vut-Pg-ZTZ" firstAttribute="centerY" secondItem="fu9-IS-M11" secondAttribute="centerY" id="C4B-RO-JNK"/>
                                 <constraint firstItem="9Rn-50-0GU" firstAttribute="leading" secondItem="6pL-eA-2Ap" secondAttribute="leading" constant="24" id="FUv-Rf-Bu1"/>
                                 <constraint firstItem="vut-Pg-ZTZ" firstAttribute="centerX" secondItem="6pL-eA-2Ap" secondAttribute="centerX" priority="999" id="Hyc-ld-emb"/>
@@ -316,13 +316,13 @@
                                 <constraint firstAttribute="trailing" secondItem="oeQ-0N-UjH" secondAttribute="trailing" constant="24" id="eMx-cP-od3"/>
                                 <constraint firstItem="4tZ-i6-8kW" firstAttribute="leading" secondItem="6pL-eA-2Ap" secondAttribute="leading" constant="24" id="gOK-GJ-ewT"/>
                                 <constraint firstItem="fu9-IS-M11" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vut-Pg-ZTZ" secondAttribute="trailing" constant="5" id="lNS-aF-3B2"/>
-                                <constraint firstAttribute="bottom" secondItem="kHZ-c3-vCa" secondAttribute="bottom" constant="24" id="lmH-uF-TeF"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kHZ-c3-vCa" secondAttribute="bottom" constant="24" id="lmH-uF-TeF"/>
                                 <constraint firstItem="kHZ-c3-vCa" firstAttribute="top" secondItem="YXV-ga-pMd" secondAttribute="bottom" constant="24" id="oXw-An-YJ2"/>
                                 <constraint firstAttribute="trailing" secondItem="9Rn-50-0GU" secondAttribute="trailing" constant="24" id="obl-Yz-wCB"/>
                                 <constraint firstAttribute="trailing" secondItem="kHZ-c3-vCa" secondAttribute="trailing" constant="24" id="p85-Cc-WPm"/>
                                 <constraint firstItem="4tZ-i6-8kW" firstAttribute="top" secondItem="9Rn-50-0GU" secondAttribute="bottom" constant="24" id="pQy-cv-8Cc"/>
                                 <constraint firstItem="Pp4-Zj-WPx" firstAttribute="leading" secondItem="6pL-eA-2Ap" secondAttribute="leading" constant="24" id="qCU-Iz-dvI"/>
-                                <constraint firstItem="9Rn-50-0GU" firstAttribute="top" secondItem="vut-Pg-ZTZ" secondAttribute="bottom" constant="8" symbolic="YES" id="yz2-Ae-iYl"/>
+                                <constraint firstItem="9Rn-50-0GU" firstAttribute="top" secondItem="vut-Pg-ZTZ" secondAttribute="bottom" constant="20" id="yz2-Ae-iYl"/>
                             </constraints>
                         </view>
                     </subviews>

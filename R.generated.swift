@@ -1438,7 +1438,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 56 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 57 nibs.
   struct nib {
     /// Nib `AddCoverAddController`.
     static let addCoverAddController = _R.nib._AddCoverAddController()
@@ -1502,6 +1502,8 @@ struct R: Rswift.Validatable {
     static let languageCell = _R.nib._LanguageCell()
     /// Nib `LanguageController`.
     static let languageController = _R.nib._LanguageController()
+    /// Nib `LillActivityIndicator`.
+    static let lillActivityIndicator = _R.nib._LillActivityIndicator()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
     /// Nib `MainOnboardingController`.
@@ -1798,6 +1800,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.languageController) instead")
     static func languageController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.languageController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LillActivityIndicator", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.lillActivityIndicator) instead")
+    static func lillActivityIndicator(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.lillActivityIndicator)
     }
     #endif
 
@@ -2123,6 +2133,10 @@ struct R: Rswift.Validatable {
 
     static func languageController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.languageController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func lillActivityIndicator(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.lillActivityIndicator.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2672,7 +2686,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_make_photo_info = Rswift.StringResource(key: "identify_make_photo_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
+      /// en translation: Get access to unlimited Identify and Diagnosis Plants
       ///
       /// Locales: en, es
       static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
@@ -4741,7 +4755,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_make_photo_info", bundle: bundle, comment: "")
       }
 
-      /// en translation: Get access to unlimited Identify/nand Diagnosis Plants
+      /// en translation: Get access to unlimited Identify and Diagnosis Plants
       ///
       /// Locales: en, es
       static func subscription_sub_title(preferredLanguages: [String]? = nil) -> String {
@@ -7359,6 +7373,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'LanguageController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LillActivityIndicator: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LillActivityIndicator"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
