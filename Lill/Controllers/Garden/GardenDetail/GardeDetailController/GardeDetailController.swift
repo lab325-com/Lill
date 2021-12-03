@@ -187,7 +187,6 @@ extension GardeDetailController {
         
         let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
-            
             PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
         }
         
@@ -196,13 +195,13 @@ extension GardeDetailController {
             AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
         }
         
-        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { (action: UIAlertAction) in
-            // Code to unfollow
+        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id)
         }
         
         let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
-            
             PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
         }
         

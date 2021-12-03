@@ -33,7 +33,7 @@ enum PlantsCareType: String, CaseIterable, Codable {
         }
     }
     
-    var gardenCarelmage: UIImage {
+    var darklmage: UIImage {
         switch self {
         case .humidity:
             return RImage.garden_care_humidity_ic()!
