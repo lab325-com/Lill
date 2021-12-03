@@ -126,6 +126,10 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        
+//        let caresModel = AddPlantTimeModel(plan: model.type, period: model.period)
+//        if let index = presenter.plantCares.firstIndex(where: {$0.plan == caresModel.plan}) {
+//            presenter.plantCares[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
+//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
+//        }
     }
 }

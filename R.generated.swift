@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 38 files.
+  /// This `R.file` struct is generated, and contains static references to 39 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -1446,7 +1446,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 56 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 60 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
