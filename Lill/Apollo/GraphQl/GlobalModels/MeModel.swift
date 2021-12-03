@@ -29,9 +29,16 @@ struct NotificationSettings: Codable {
     let cares: Bool
     let waitingCares: Bool
     let missedCares: Bool
-    let frequency: Int
+    let frequency: NotificationsHours
     let secondChance: Bool
-    let secondChanceSendAfter: Int
+    let secondChanceSendAfter: NotificationsHours
     let todayList: Bool
     let todayListSendAt: String
+}
+
+
+struct NotificationsHours:  Codable {
+    let hours: Int
+    let minutes: Int?
+    let seconds: Int?
 }

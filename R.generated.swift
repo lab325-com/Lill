@@ -1446,7 +1446,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 60 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 61 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1518,6 +1518,8 @@ struct R: Rswift.Validatable {
     static let languageCell = _R.nib._LanguageCell()
     /// Nib `LanguageController`.
     static let languageController = _R.nib._LanguageController()
+    /// Nib `LillActivityIndicator`.
+    static let lillActivityIndicator = _R.nib._LillActivityIndicator()
     /// Nib `LoginController`.
     static let loginController = _R.nib._LoginController()
     /// Nib `MainOnboardingController`.
@@ -1846,6 +1848,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.languageController) instead")
     static func languageController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.languageController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LillActivityIndicator", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.lillActivityIndicator) instead")
+    static func lillActivityIndicator(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.lillActivityIndicator)
     }
     #endif
 
@@ -2187,6 +2197,10 @@ struct R: Rswift.Validatable {
 
     static func languageController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.languageController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func lillActivityIndicator(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.lillActivityIndicator.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func loginController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -7496,6 +7510,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'LanguageController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LillActivityIndicator: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LillActivityIndicator"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

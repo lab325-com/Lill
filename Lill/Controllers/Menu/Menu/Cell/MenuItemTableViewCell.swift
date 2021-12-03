@@ -35,11 +35,11 @@ class MenuItemTableViewCell: UITableViewCell {
             self.accessoryType = .disclosureIndicator
         case .recognized:
             self.titleLabel.text = RLocalization.menu_item_archive_recognized.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
-            self.subtitleLabel.text = "\(model?.me.access.diagnosisUsed ?? 0)/\(model?.me.access.diagnosisTotal ?? 0)"
+            self.subtitleLabel.text = "\(model?.me.access.identifyUsed ?? 0)/\(model?.me.access.identifyTotal ?? 0)"
             self.accessoryType = .disclosureIndicator
         case .disease:
             self.titleLabel.text = RLocalization.menu_item_archive_disease.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
-            self.subtitleLabel.text = "\(model?.me.access.identifyUsed ?? 0)/\(model?.me.access.identifyTotal ?? 0)"
+            self.subtitleLabel.text = "\(model?.me.access.diagnosisUsed ?? 0)/\(model?.me.access.diagnosisTotal ?? 0)"
             self.accessoryType = .disclosureIndicator
         case .lang:
             self.titleLabel.text = RLocalization.menu_item_language.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized

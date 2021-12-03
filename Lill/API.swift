@@ -1470,9 +1470,19 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
         cares
         waitingCares
         missedCares
-        frequency
+        frequency {
+          __typename
+          hours
+          minutes
+          seconds
+        }
         secondChance
-        secondChanceSendAfter
+        secondChanceSendAfter {
+          __typename
+          hours
+          minutes
+          seconds
+        }
         todayList
         todayListSendAt
       }
@@ -1528,9 +1538,9 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
           GraphQLField("cares", type: .scalar(Bool.self)),
           GraphQLField("waitingCares", type: .scalar(Bool.self)),
           GraphQLField("missedCares", type: .scalar(Bool.self)),
-          GraphQLField("frequency", type: .scalar(String.self)),
+          GraphQLField("frequency", type: .object(Frequency.selections)),
           GraphQLField("secondChance", type: .scalar(Bool.self)),
-          GraphQLField("secondChanceSendAfter", type: .scalar(String.self)),
+          GraphQLField("secondChanceSendAfter", type: .object(SecondChanceSendAfter.selections)),
           GraphQLField("todayList", type: .scalar(Bool.self)),
           GraphQLField("todayListSendAt", type: .scalar(String.self)),
         ]
@@ -1542,8 +1552,8 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: String? = nil, secondChance: Bool? = nil, secondChanceSendAfter: String? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "todayList": todayList, "todayListSendAt": todayListSendAt])
+      public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: Frequency? = nil, secondChance: Bool? = nil, secondChanceSendAfter: SecondChanceSendAfter? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency.flatMap { (value: Frequency) -> ResultMap in value.resultMap }, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter.flatMap { (value: SecondChanceSendAfter) -> ResultMap in value.resultMap }, "todayList": todayList, "todayListSendAt": todayListSendAt])
       }
 
       public var __typename: String {
@@ -1582,12 +1592,12 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
         }
       }
 
-      public var frequency: String? {
+      public var frequency: Frequency? {
         get {
-          return resultMap["frequency"] as? String
+          return (resultMap["frequency"] as? ResultMap).flatMap { Frequency(unsafeResultMap: $0) }
         }
         set {
-          resultMap.updateValue(newValue, forKey: "frequency")
+          resultMap.updateValue(newValue?.resultMap, forKey: "frequency")
         }
       }
 
@@ -1600,12 +1610,12 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
         }
       }
 
-      public var secondChanceSendAfter: String? {
+      public var secondChanceSendAfter: SecondChanceSendAfter? {
         get {
-          return resultMap["secondChanceSendAfter"] as? String
+          return (resultMap["secondChanceSendAfter"] as? ResultMap).flatMap { SecondChanceSendAfter(unsafeResultMap: $0) }
         }
         set {
-          resultMap.updateValue(newValue, forKey: "secondChanceSendAfter")
+          resultMap.updateValue(newValue?.resultMap, forKey: "secondChanceSendAfter")
         }
       }
 
@@ -1624,6 +1634,124 @@ public final class NotificationSettingsUpdateMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "todayListSendAt")
+        }
+      }
+
+      public struct Frequency: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["IntervalRepresentation"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("hours", type: .scalar(Int.self)),
+            GraphQLField("minutes", type: .scalar(Int.self)),
+            GraphQLField("seconds", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(hours: Int? = nil, minutes: Int? = nil, seconds: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "IntervalRepresentation", "hours": hours, "minutes": minutes, "seconds": seconds])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var hours: Int? {
+          get {
+            return resultMap["hours"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "hours")
+          }
+        }
+
+        public var minutes: Int? {
+          get {
+            return resultMap["minutes"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "minutes")
+          }
+        }
+
+        public var seconds: Int? {
+          get {
+            return resultMap["seconds"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "seconds")
+          }
+        }
+      }
+
+      public struct SecondChanceSendAfter: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["IntervalRepresentation"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("hours", type: .scalar(Int.self)),
+            GraphQLField("minutes", type: .scalar(Int.self)),
+            GraphQLField("seconds", type: .scalar(Int.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(hours: Int? = nil, minutes: Int? = nil, seconds: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "IntervalRepresentation", "hours": hours, "minutes": minutes, "seconds": seconds])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var hours: Int? {
+          get {
+            return resultMap["hours"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "hours")
+          }
+        }
+
+        public var minutes: Int? {
+          get {
+            return resultMap["minutes"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "minutes")
+          }
+        }
+
+        public var seconds: Int? {
+          get {
+            return resultMap["seconds"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "seconds")
+          }
         }
       }
     }
@@ -4921,9 +5049,19 @@ public final class MeQuery: GraphQLQuery {
           cares
           waitingCares
           missedCares
-          frequency
+          frequency {
+            __typename
+            hours
+            minutes
+            seconds
+          }
           secondChance
-          secondChanceSendAfter
+          secondChanceSendAfter {
+            __typename
+            hours
+            minutes
+            seconds
+          }
           todayList
           todayListSendAt
         }
@@ -5204,9 +5342,9 @@ public final class MeQuery: GraphQLQuery {
             GraphQLField("cares", type: .scalar(Bool.self)),
             GraphQLField("waitingCares", type: .scalar(Bool.self)),
             GraphQLField("missedCares", type: .scalar(Bool.self)),
-            GraphQLField("frequency", type: .scalar(String.self)),
+            GraphQLField("frequency", type: .object(Frequency.selections)),
             GraphQLField("secondChance", type: .scalar(Bool.self)),
-            GraphQLField("secondChanceSendAfter", type: .scalar(String.self)),
+            GraphQLField("secondChanceSendAfter", type: .object(SecondChanceSendAfter.selections)),
             GraphQLField("todayList", type: .scalar(Bool.self)),
             GraphQLField("todayListSendAt", type: .scalar(String.self)),
           ]
@@ -5218,8 +5356,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: String? = nil, secondChance: Bool? = nil, secondChanceSendAfter: String? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "todayList": todayList, "todayListSendAt": todayListSendAt])
+        public init(cares: Bool? = nil, waitingCares: Bool? = nil, missedCares: Bool? = nil, frequency: Frequency? = nil, secondChance: Bool? = nil, secondChanceSendAfter: SecondChanceSendAfter? = nil, todayList: Bool? = nil, todayListSendAt: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "NotificationSettings", "cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency.flatMap { (value: Frequency) -> ResultMap in value.resultMap }, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter.flatMap { (value: SecondChanceSendAfter) -> ResultMap in value.resultMap }, "todayList": todayList, "todayListSendAt": todayListSendAt])
         }
 
         public var __typename: String {
@@ -5258,12 +5396,12 @@ public final class MeQuery: GraphQLQuery {
           }
         }
 
-        public var frequency: String? {
+        public var frequency: Frequency? {
           get {
-            return resultMap["frequency"] as? String
+            return (resultMap["frequency"] as? ResultMap).flatMap { Frequency(unsafeResultMap: $0) }
           }
           set {
-            resultMap.updateValue(newValue, forKey: "frequency")
+            resultMap.updateValue(newValue?.resultMap, forKey: "frequency")
           }
         }
 
@@ -5276,12 +5414,12 @@ public final class MeQuery: GraphQLQuery {
           }
         }
 
-        public var secondChanceSendAfter: String? {
+        public var secondChanceSendAfter: SecondChanceSendAfter? {
           get {
-            return resultMap["secondChanceSendAfter"] as? String
+            return (resultMap["secondChanceSendAfter"] as? ResultMap).flatMap { SecondChanceSendAfter(unsafeResultMap: $0) }
           }
           set {
-            resultMap.updateValue(newValue, forKey: "secondChanceSendAfter")
+            resultMap.updateValue(newValue?.resultMap, forKey: "secondChanceSendAfter")
           }
         }
 
@@ -5300,6 +5438,124 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "todayListSendAt")
+          }
+        }
+
+        public struct Frequency: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["IntervalRepresentation"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("hours", type: .scalar(Int.self)),
+              GraphQLField("minutes", type: .scalar(Int.self)),
+              GraphQLField("seconds", type: .scalar(Int.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(hours: Int? = nil, minutes: Int? = nil, seconds: Int? = nil) {
+            self.init(unsafeResultMap: ["__typename": "IntervalRepresentation", "hours": hours, "minutes": minutes, "seconds": seconds])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var hours: Int? {
+            get {
+              return resultMap["hours"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "hours")
+            }
+          }
+
+          public var minutes: Int? {
+            get {
+              return resultMap["minutes"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "minutes")
+            }
+          }
+
+          public var seconds: Int? {
+            get {
+              return resultMap["seconds"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "seconds")
+            }
+          }
+        }
+
+        public struct SecondChanceSendAfter: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["IntervalRepresentation"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("hours", type: .scalar(Int.self)),
+              GraphQLField("minutes", type: .scalar(Int.self)),
+              GraphQLField("seconds", type: .scalar(Int.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(hours: Int? = nil, minutes: Int? = nil, seconds: Int? = nil) {
+            self.init(unsafeResultMap: ["__typename": "IntervalRepresentation", "hours": hours, "minutes": minutes, "seconds": seconds])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var hours: Int? {
+            get {
+              return resultMap["hours"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "hours")
+            }
+          }
+
+          public var minutes: Int? {
+            get {
+              return resultMap["minutes"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "minutes")
+            }
+          }
+
+          public var seconds: Int? {
+            get {
+              return resultMap["seconds"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "seconds")
+            }
           }
         }
       }

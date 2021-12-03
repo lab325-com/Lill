@@ -1,7 +1,5 @@
 
 import UIKit
-import NVActivityIndicatorView
-import NVActivityIndicatorViewExtended
 
 final class NavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -9,7 +7,7 @@ final class NavigationController: UINavigationController {
     }
 }
 
-class BaseController: UIViewController, NVActivityIndicatorViewable {
+class BaseController: UIViewController {
     
     //----------------------------------------------
     // MARK: - IBOutlets
@@ -140,14 +138,11 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     //----------------------------------------------
     
     func startLoader() {
-        let size = CGSize(width: 50, height: 50)
-        let allTypes = NVActivityIndicatorType.allCases
-        
-        startAnimating(size, message: "", type: allTypes.randomElement() ?? .orbit, fadeInAnimation: nil)
+        LillActivityIndicator.shared.show()
     }
     
     func stopLoading() {
-        stopAnimating()
+        LillActivityIndicator.shared.hide()
     }
 }
 

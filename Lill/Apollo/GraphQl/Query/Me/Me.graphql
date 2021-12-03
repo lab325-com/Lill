@@ -16,9 +16,17 @@ query Me {
 			cares
 			waitingCares
 			missedCares
-			frequency
+			frequency {
+				hours
+				minutes
+				seconds
+			}
 			secondChance
-			secondChanceSendAfter
+			secondChanceSendAfter {
+				hours
+				minutes
+				seconds
+			}
 			todayList
 			todayListSendAt
 		}
