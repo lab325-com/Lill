@@ -10,7 +10,7 @@ struct DescriptionModel: Codable {
     var is_favorite: Bool
     let name: String
     let names: String?
-    let image: ImageModel
+    let image: ImageModel?
     
     mutating func changeIsFavorite(_ isFavourite: Bool) {
         self.is_favorite = isFavourite

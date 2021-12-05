@@ -84,7 +84,7 @@ class BaseController: UIViewController {
                 navigationController?.navigationBar.shadowImage = UIImage()
                 navigationController?.navigationBar.isTranslucent = true
                 navigationController?.navigationBar.backgroundColor = .clear
-                navigationController?.navigationBar.barTintColor = .clear
+                navigationController?.navigationBar.barTintColor = .black
             } else {
                 navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
                 navigationController?.navigationBar.shadowImage = UINavigationBar().shadowImage

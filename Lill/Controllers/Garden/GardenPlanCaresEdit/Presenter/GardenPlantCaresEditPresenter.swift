@@ -8,6 +8,7 @@ import UIKit
 
 protocol GardenPlantCaresEditOutputProtocol: BaseController {
     func successGetGardenPlantCares()
+    func successUpdateGardenPlantCare()
     
     func failure(error: String)
 }
@@ -44,5 +45,20 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func updateGardenPlantCare(gardenPlantId: String, isActive: Bool) {
+        view?.startLoader()
+        
+        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: gardenPlantId, isActive: isActive)
+        let mutation = GardenPlantCareUpdateMutation(record: gardenPlantCareUpdateInput)
+        
+        let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successUpdateGardenPlantCare()
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
     }
 }

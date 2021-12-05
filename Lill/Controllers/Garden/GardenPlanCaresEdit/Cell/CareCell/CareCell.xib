@@ -29,7 +29,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="370" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxG-6Q-AUx" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-B7-EGD" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                         <rect key="frame" x="12" y="0.0" width="346" height="138"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tks-re-ECD">
@@ -52,30 +52,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tzH-zH-cfO" firstAttribute="centerY" secondItem="tks-re-ECD" secondAttribute="centerY" id="4bt-Pi-wAs"/>
                                     <constraint firstItem="qe4-hh-Lkb" firstAttribute="leading" secondItem="tzH-zH-cfO" secondAttribute="trailing" constant="21" id="68I-VL-8Ed"/>
+                                    <constraint firstAttribute="height" constant="82" id="Atq-vH-t94"/>
                                     <constraint firstAttribute="trailing" secondItem="Z1m-c8-rz5" secondAttribute="trailing" constant="30" id="FYu-we-wmV"/>
-                                    <constraint firstAttribute="height" constant="82" id="UM2-Y1-okc"/>
                                     <constraint firstItem="tzH-zH-cfO" firstAttribute="leading" secondItem="tks-re-ECD" secondAttribute="leading" constant="24" id="YYJ-5T-5JX"/>
                                     <constraint firstItem="Z1m-c8-rz5" firstAttribute="centerY" secondItem="tks-re-ECD" secondAttribute="centerY" id="r90-mP-Vuu"/>
                                     <constraint firstItem="qe4-hh-Lkb" firstAttribute="centerY" secondItem="tks-re-ECD" secondAttribute="centerY" id="uvE-1p-Qbu"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                        <integer key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowSpread">
-                                        <integer key="value" value="-8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-h3-spF">
                                 <rect key="frame" x="0.0" y="82" width="346" height="56"/>
@@ -110,7 +96,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="wDH-yo-h2E" secondAttribute="trailing" id="1jM-Kq-fQn"/>
                                             <constraint firstItem="t3E-Uk-7nz" firstAttribute="top" secondItem="wDH-yo-h2E" secondAttribute="bottom" id="38j-Xh-VsR"/>
@@ -161,7 +147,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ayl-FC-ukK" firstAttribute="leading" secondItem="KXA-TH-YZf" secondAttribute="trailing" id="2EC-Sb-xpz"/>
                                             <constraint firstItem="KXA-TH-YZf" firstAttribute="leading" secondItem="jVq-7C-hsR" secondAttribute="trailing" id="4Fm-ZF-UFv"/>
@@ -205,7 +191,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ucp-aP-hFw" secondAttribute="trailing" id="0uH-2w-t9o"/>
                                             <constraint firstItem="4HD-fw-ppZ" firstAttribute="top" secondItem="dl1-GC-0PQ" secondAttribute="top" id="7Uv-mX-zyh"/>
@@ -221,7 +207,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Hfu-nn-waV" firstAttribute="leading" secondItem="4fB-h3-spF" secondAttribute="leading" id="7gp-11-tmY"/>
                                     <constraint firstAttribute="trailing" secondItem="dl1-GC-0PQ" secondAttribute="trailing" id="8l6-Nf-Ybr"/>
@@ -237,47 +223,48 @@
                                     <constraint firstAttribute="trailing" secondItem="4Dh-LR-q0d" secondAttribute="trailing" id="nEn-Op-21A"/>
                                     <constraint firstItem="Hfu-nn-waV" firstAttribute="top" secondItem="4Dh-LR-q0d" secondAttribute="bottom" id="o2J-sZ-cJz"/>
                                     <constraint firstItem="4Dh-LR-q0d" firstAttribute="top" secondItem="4fB-h3-spF" secondAttribute="top" id="uFp-px-OBo"/>
+                                    <constraint firstAttribute="height" constant="56" id="vZg-EA-7lp"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4fB-h3-spF" firstAttribute="leading" secondItem="pxG-6Q-AUx" secondAttribute="leading" id="6Jo-ah-CkR"/>
-                            <constraint firstAttribute="trailing" secondItem="tks-re-ECD" secondAttribute="trailing" id="GXz-X9-F9N"/>
-                            <constraint firstAttribute="trailing" secondItem="4fB-h3-spF" secondAttribute="trailing" id="M7k-fp-KnR"/>
-                            <constraint firstAttribute="height" constant="138" id="aY9-L5-MDD"/>
-                            <constraint firstItem="tks-re-ECD" firstAttribute="top" secondItem="pxG-6Q-AUx" secondAttribute="top" id="dmg-4B-yZC"/>
-                            <constraint firstItem="tks-re-ECD" firstAttribute="leading" secondItem="pxG-6Q-AUx" secondAttribute="leading" id="md2-kT-5VJ"/>
-                            <constraint firstAttribute="bottom" secondItem="4fB-h3-spF" secondAttribute="bottom" id="t4L-aQ-Cg2"/>
-                            <constraint firstItem="4fB-h3-spF" firstAttribute="top" secondItem="tks-re-ECD" secondAttribute="bottom" id="vx9-Sw-LMh"/>
+                            <constraint firstItem="tks-re-ECD" firstAttribute="top" secondItem="mVJ-B7-EGD" secondAttribute="top" id="0Vk-0L-O4v"/>
+                            <constraint firstItem="4fB-h3-spF" firstAttribute="top" secondItem="tks-re-ECD" secondAttribute="bottom" id="1Xb-Qw-2Ns"/>
+                            <constraint firstAttribute="trailing" secondItem="4fB-h3-spF" secondAttribute="trailing" id="8X5-aG-kBE"/>
+                            <constraint firstAttribute="trailing" secondItem="tks-re-ECD" secondAttribute="trailing" id="bKO-rR-Tqx"/>
+                            <constraint firstAttribute="bottom" secondItem="4fB-h3-spF" secondAttribute="bottom" id="fQN-Bh-Yuw"/>
+                            <constraint firstItem="tks-re-ECD" firstAttribute="leading" secondItem="mVJ-B7-EGD" secondAttribute="leading" id="s6T-kL-wKf"/>
+                            <constraint firstItem="4fB-h3-spF" firstAttribute="leading" secondItem="mVJ-B7-EGD" secondAttribute="leading" id="vt7-jz-Y0Q"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
                                 <integer key="value" value="16"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="4" height="8"/>
+                                <size key="value" width="0.0" height="8"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="24"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="pxG-6Q-AUx" secondAttribute="trailing" constant="12" id="0mA-Gt-cWD"/>
-                    <constraint firstAttribute="bottom" secondItem="pxG-6Q-AUx" secondAttribute="bottom" constant="12" id="I1D-sd-MpG"/>
-                    <constraint firstItem="pxG-6Q-AUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IEl-58-Zdq"/>
-                    <constraint firstItem="pxG-6Q-AUx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="s4o-lP-Yfh"/>
+                    <constraint firstItem="mVJ-B7-EGD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="86D-VQ-S3F"/>
+                    <constraint firstItem="mVJ-B7-EGD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cvZ-YR-yue"/>
+                    <constraint firstAttribute="trailing" secondItem="mVJ-B7-EGD" secondAttribute="trailing" constant="12" id="dVg-jm-b6H"/>
+                    <constraint firstAttribute="bottom" secondItem="mVJ-B7-EGD" secondAttribute="bottom" constant="12" id="iOj-KI-VX2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="bottomView" destination="4fB-h3-spF" id="QgP-IB-qNi"/>
+                <outlet property="bottomViewHeighConstraint" destination="vZg-EA-7lp" id="bjL-VQ-jiw"/>
                 <outlet property="careDateLabel" destination="G6h-Vz-yc7" id="tbu-xH-PoU"/>
                 <outlet property="careDateTitleLabel" destination="ucp-aP-hFw" id="ZTZ-Eb-fHG"/>
                 <outlet property="careFrequencyLabel" destination="KXA-TH-YZf" id="gq2-mn-3CB"/>
@@ -287,8 +274,7 @@
                 <outlet property="careSwitch" destination="Z1m-c8-rz5" id="swx-ou-Zph"/>
                 <outlet property="careTimeLabel" destination="t3E-Uk-7nz" id="lBB-8b-fdr"/>
                 <outlet property="careTimeTitleLabel" destination="wDH-yo-h2E" id="4hI-EJ-87w"/>
-                <outlet property="shadowView" destination="pxG-6Q-AUx" id="VXz-d5-P3R"/>
-                <outlet property="shadowViewHeighConstraint" destination="aY9-L5-MDD" id="NkI-NJ-ciG"/>
+                <outlet property="shadowView" destination="mVJ-B7-EGD" id="xgt-dp-TJm"/>
                 <outlet property="topView" destination="tks-re-ECD" id="4p1-dD-vHS"/>
             </connections>
             <point key="canvasLocation" x="188.40579710144928" y="131.91964285714286"/>

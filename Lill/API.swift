@@ -4,6 +4,120 @@
 import Apollo
 import Foundation
 
+public struct GardenPlantCareUpdateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  ///   - name
+  ///   - count
+  ///   - period
+  ///   - sendNotificationAt
+  ///   - isActive
+  public init(id: String, name: Swift.Optional<String?> = nil, count: Swift.Optional<Int?> = nil, period: Swift.Optional<PeriodType?> = nil, sendNotificationAt: Swift.Optional<String?> = nil, isActive: Swift.Optional<Bool?> = nil) {
+    graphQLMap = ["id": id, "name": name, "count": count, "period": period, "sendNotificationAt": sendNotificationAt, "isActive": isActive]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: Swift.Optional<String?> {
+    get {
+      return graphQLMap["name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var count: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["count"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "count")
+    }
+  }
+
+  public var period: Swift.Optional<PeriodType?> {
+    get {
+      return graphQLMap["period"] as? Swift.Optional<PeriodType?> ?? Swift.Optional<PeriodType?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "period")
+    }
+  }
+
+  public var sendNotificationAt: Swift.Optional<String?> {
+    get {
+      return graphQLMap["sendNotificationAt"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "sendNotificationAt")
+    }
+  }
+
+  public var isActive: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["isActive"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "isActive")
+    }
+  }
+}
+
+public enum PeriodType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case periodTypeDay
+  case periodTypeMonth
+  case periodTypeWeek
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "PERIOD_TYPE_DAY": self = .periodTypeDay
+      case "PERIOD_TYPE_MONTH": self = .periodTypeMonth
+      case "PERIOD_TYPE_WEEK": self = .periodTypeWeek
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .periodTypeDay: return "PERIOD_TYPE_DAY"
+      case .periodTypeMonth: return "PERIOD_TYPE_MONTH"
+      case .periodTypeWeek: return "PERIOD_TYPE_WEEK"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: PeriodType, rhs: PeriodType) -> Bool {
+    switch (lhs, rhs) {
+      case (.periodTypeDay, .periodTypeDay): return true
+      case (.periodTypeMonth, .periodTypeMonth): return true
+      case (.periodTypeWeek, .periodTypeWeek): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [PeriodType] {
+    return [
+      .periodTypeDay,
+      .periodTypeMonth,
+      .periodTypeWeek,
+    ]
+  }
+}
+
 public struct GardenPlantCreateRecordInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -138,51 +252,6 @@ public struct GPCareCreateInput: GraphQLMapConvertible {
     set {
       graphQLMap.updateValue(newValue, forKey: "careTypeId")
     }
-  }
-}
-
-public enum PeriodType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
-  public typealias RawValue = String
-  case periodTypeDay
-  case periodTypeMonth
-  case periodTypeWeek
-  /// Auto generated constant for unknown enum values
-  case __unknown(RawValue)
-
-  public init?(rawValue: RawValue) {
-    switch rawValue {
-      case "PERIOD_TYPE_DAY": self = .periodTypeDay
-      case "PERIOD_TYPE_MONTH": self = .periodTypeMonth
-      case "PERIOD_TYPE_WEEK": self = .periodTypeWeek
-      default: self = .__unknown(rawValue)
-    }
-  }
-
-  public var rawValue: RawValue {
-    switch self {
-      case .periodTypeDay: return "PERIOD_TYPE_DAY"
-      case .periodTypeMonth: return "PERIOD_TYPE_MONTH"
-      case .periodTypeWeek: return "PERIOD_TYPE_WEEK"
-      case .__unknown(let value): return value
-    }
-  }
-
-  public static func == (lhs: PeriodType, rhs: PeriodType) -> Bool {
-    switch (lhs, rhs) {
-      case (.periodTypeDay, .periodTypeDay): return true
-      case (.periodTypeMonth, .periodTypeMonth): return true
-      case (.periodTypeWeek, .periodTypeWeek): return true
-      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
-      default: return false
-    }
-  }
-
-  public static var allCases: [PeriodType] {
-    return [
-      .periodTypeDay,
-      .periodTypeMonth,
-      .periodTypeWeek,
-    ]
   }
 }
 
@@ -1042,6 +1111,99 @@ public final class DoneCareByGardenPlantsMutation: GraphQLMutation {
       }
       set {
         resultMap.updateValue(newValue, forKey: "doneCareByGardenPlants")
+      }
+    }
+  }
+}
+
+public final class GardenPlantCareUpdateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenPlantCareUpdate($record: GardenPlantCareUpdateInput!) {
+      gardenPlantCareUpdate(record: $record) {
+        __typename
+        isActive
+      }
+    }
+    """
+
+  public let operationName: String = "GardenPlantCareUpdate"
+
+  public var record: GardenPlantCareUpdateInput
+
+  public init(record: GardenPlantCareUpdateInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenPlantCareUpdate", arguments: ["record": GraphQLVariable("record")], type: .object(GardenPlantCareUpdate.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenPlantCareUpdate: GardenPlantCareUpdate? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenPlantCareUpdate": gardenPlantCareUpdate.flatMap { (value: GardenPlantCareUpdate) -> ResultMap in value.resultMap }])
+    }
+
+    public var gardenPlantCareUpdate: GardenPlantCareUpdate? {
+      get {
+        return (resultMap["gardenPlantCareUpdate"] as? ResultMap).flatMap { GardenPlantCareUpdate(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "gardenPlantCareUpdate")
+      }
+    }
+
+    public struct GardenPlantCareUpdate: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["GardenPlantCare"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("isActive", type: .scalar(Bool.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(isActive: Bool? = nil) {
+        self.init(unsafeResultMap: ["__typename": "GardenPlantCare", "isActive": isActive])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var isActive: Bool? {
+        get {
+          return resultMap["isActive"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "isActive")
+        }
       }
     }
   }

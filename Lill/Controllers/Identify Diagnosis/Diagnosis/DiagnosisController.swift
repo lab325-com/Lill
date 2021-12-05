@@ -248,8 +248,14 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             diagnosingResultView.isHidden = false
             bottomViewHeighConstraint.constant = 480.0
             diagnoseLargePlantImageView.isHidden = false
-            diagnoseLargePlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
-            diagnoseSmallPlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
+            
+            if let image = model.startDiagnose?.plant.description.image {
+                diagnoseLargePlantImageView.kf.setImage(with: URL(string: image.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
+                diagnoseSmallPlantImageView.kf.setImage(with: URL(string: image.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
+            }
+            
+//            diagnoseLargePlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
+//            diagnoseSmallPlantImageView.kf.setImage(with: URL(string: model.startDiagnose?.plant.description.image.urlIosPrev ?? ""), options: [.transition(.fade(0.25))])
             diagnoseFirstPlantNameLabel.text = result.plant.description.name
             diagnoseSecondPlantNameLabel.text = result.plant.description.names ?? ""
             diagnoseTimeLabel.text = dateFormatter.string(from: Date())
