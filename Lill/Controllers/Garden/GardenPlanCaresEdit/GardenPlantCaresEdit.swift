@@ -81,7 +81,15 @@ class GardenPlantCaresEdit: BaseController {
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
-
+    
+    @IBAction func setToRecommendedAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func deleteCaresAction(_ sender: Any) {
+        //presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
+    }
+    
     @objc func closeAction() {
         navigationController?.popViewController(animated: true)
     }
@@ -97,6 +105,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     }
     
     func successUpdateGardenPlantCare() {
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
+    }
+    
+    func successDeleteGardenPlantCare() {
         presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
 

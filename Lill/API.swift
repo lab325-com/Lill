@@ -1116,6 +1116,57 @@ public final class DoneCareByGardenPlantsMutation: GraphQLMutation {
   }
 }
 
+public final class GardenPlantCareDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenPlantCareDelete($id: String!) {
+      gardenPlantCareDelete(id: $id)
+    }
+    """
+
+  public let operationName: String = "GardenPlantCareDelete"
+
+  public var id: String
+
+  public init(id: String) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenPlantCareDelete", arguments: ["id": GraphQLVariable("id")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenPlantCareDelete: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenPlantCareDelete": gardenPlantCareDelete])
+    }
+
+    public var gardenPlantCareDelete: Bool? {
+      get {
+        return resultMap["gardenPlantCareDelete"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "gardenPlantCareDelete")
+      }
+    }
+  }
+}
+
 public final class GardenPlantCareUpdateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
