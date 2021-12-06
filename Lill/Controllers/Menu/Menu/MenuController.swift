@@ -29,6 +29,10 @@ class MenuController: BaseController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getMe(withoutLoader: false)
+    }
     //----------------------------------------------
     // MARK: - Private func
     //----------------------------------------------
@@ -37,7 +41,7 @@ class MenuController: BaseController {
         navigationItem.title = RLocalization.menu_title.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
         titleLabel.text = RLocalization.menu_title.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
         setupTable()
-        presenter.getMe()
+        presenter.getMe(withoutLoader: true)
     }
     
     private func setupTable(){

@@ -63,8 +63,16 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 if let receiptString = receiptData?.base64EncodedString(options: []) {
                     let mutation = OrderCreateMutation(receipt: receiptString)
                     let _ = Network.shared.mutation(model: OrderCreate.self, mutation, controller: self?.view, successHandler: { [weak self] model in
-                        self?.view?.stopLoading()
-                        purchaseSuccess(true, nil)
+                        
+                        let _ = Network.shared.query(model: MeDataModel.self, MeQuery(), controller: self?.view) { [weak self] model in
+                            KeychainService.standard.me = model.me
+                            self?.view?.stopLoading()
+                            purchaseSuccess(true, nil)
+                        } failureHandler: { [weak self] error in
+                            self?.view?.stopLoading()
+                            purchaseSuccess(false, error.localizedDescription)
+                        }
+                        
                     }, failureHandler: { [weak self] error in
                         self?.view?.stopLoading()
                         purchaseSuccess(false, error.localizedDescription)
@@ -117,8 +125,15 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 if let receiptString = receiptData?.base64EncodedString(options: []) {
                     let mutation = OrderCreateMutation(receipt: receiptString)
                     let _ = Network.shared.mutation(model: OrderCreate.self, mutation, controller: self?.view, successHandler: { [weak self] model in
-                        self?.view?.stopLoading()
-                        restoreCompletion(true)
+                        let _ = Network.shared.query(model: MeDataModel.self, MeQuery(), controller: self?.view) { [weak self] model in
+                            KeychainService.standard.me = model.me
+                            self?.view?.stopLoading()
+                            restoreCompletion(true)
+                        } failureHandler: { [weak self] error in
+                            self?.view?.stopLoading()
+                            restoreCompletion(false)
+                        }
+                        
                     }, failureHandler: { [weak self] error in
                         self?.view?.stopLoading()
                         restoreCompletion(false)

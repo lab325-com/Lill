@@ -191,7 +191,7 @@
 "scheldure_setting_cares_notification_sub" = "¡No te perderás cuidar a las plantas, incluso con cerrado \ Napplication!";
 "scheldure_setting_done" = "Hecho";
 "scheldure_setting_frequency" = "Frecuencia de notificaciones";
-"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n momento especificado";
+"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n tiempo especificado";
 "scheldure_setting_hour" = "Hora";
 "scheldure_setting_list_notification" = "Hoy enumerar la notificación";
 "scheldure_setting_missed" = "Omitido";
@@ -236,5 +236,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";

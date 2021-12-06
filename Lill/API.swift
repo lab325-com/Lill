@@ -5311,6 +5311,12 @@ public final class MeQuery: GraphQLQuery {
           identifyTotal
           identifyUsed
           isPremium
+          subscriptionName
+          subscription {
+            __typename
+            name
+            duration
+          }
         }
       }
     }
@@ -6052,6 +6058,8 @@ public final class MeQuery: GraphQLQuery {
             GraphQLField("identifyTotal", type: .scalar(Int.self)),
             GraphQLField("identifyUsed", type: .scalar(Int.self)),
             GraphQLField("isPremium", type: .scalar(Bool.self)),
+            GraphQLField("subscriptionName", type: .scalar(String.self)),
+            GraphQLField("subscription", type: .object(Subscription.selections)),
           ]
         }
 
@@ -6061,8 +6069,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(diagnosisAvaliable: Bool? = nil, diagnosisTotal: Int? = nil, diagnosisUsed: Int? = nil, identifyTotal: Int? = nil, identifyUsed: Int? = nil, isPremium: Bool? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "diagnosisTotal": diagnosisTotal, "diagnosisUsed": diagnosisUsed, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium])
+        public init(diagnosisAvaliable: Bool? = nil, diagnosisTotal: Int? = nil, diagnosisUsed: Int? = nil, identifyTotal: Int? = nil, identifyUsed: Int? = nil, isPremium: Bool? = nil, subscriptionName: String? = nil, subscription: Subscription? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Access", "diagnosisAvaliable": diagnosisAvaliable, "diagnosisTotal": diagnosisTotal, "diagnosisUsed": diagnosisUsed, "identifyTotal": identifyTotal, "identifyUsed": identifyUsed, "isPremium": isPremium, "subscriptionName": subscriptionName, "subscription": subscription.flatMap { (value: Subscription) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -6125,6 +6133,73 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "isPremium")
+          }
+        }
+
+        public var subscriptionName: String? {
+          get {
+            return resultMap["subscriptionName"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "subscriptionName")
+          }
+        }
+
+        public var subscription: Subscription? {
+          get {
+            return (resultMap["subscription"] as? ResultMap).flatMap { Subscription(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "subscription")
+          }
+        }
+
+        public struct Subscription: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["SubscriptionShort"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .scalar(String.self)),
+              GraphQLField("duration", type: .scalar(String.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil, duration: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "SubscriptionShort", "name": name, "duration": duration])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var duration: String? {
+            get {
+              return resultMap["duration"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "duration")
+            }
           }
         }
       }

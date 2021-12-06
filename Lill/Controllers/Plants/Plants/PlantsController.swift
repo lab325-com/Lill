@@ -295,6 +295,8 @@ extension PlantsController {
             
             isNeedAnimate = true
             animatePhotoButton(isHidden: false)
+            
+            presenter.getPlants(search: "")
         }
     }
     

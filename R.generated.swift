@@ -520,7 +520,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 104 images.
+  /// This `R.image` struct is generated, and contains static references to 105 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -710,6 +710,8 @@ struct R: Rswift.Validatable {
     static let scheldure_settings_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_bell_ic")
     /// Image `scheldure_settings_ic`.
     static let scheldure_settings_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_ic")
+    /// Image `sub_active_check_ic`.
+    static let sub_active_check_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_active_check_ic")
     /// Image `sub_back_ic`.
     static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
     /// Image `sub_close_ic`.
@@ -1386,6 +1388,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "scheldure_settings_ic", bundle: ..., traitCollection: ...)`
     static func scheldure_settings_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.scheldure_settings_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_active_check_ic", bundle: ..., traitCollection: ...)`
+    static func sub_active_check_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_active_check_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -7999,6 +8008,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "sub_active_check_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_active_check_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
