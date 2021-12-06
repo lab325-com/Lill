@@ -350,6 +350,8 @@
 		FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */; };
 		FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */; };
 		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
+		FAEFA7A4275E4DA400900EE0 /* GardenPlantCareDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */; };
+		FAEFA7A5275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -700,6 +702,8 @@
 		FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareUpdate.graphql; sourceTree = "<group>"; };
 		FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGarden.graphql; sourceTree = "<group>"; };
 		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
+		FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareDelete.graphql; sourceTree = "<group>"; };
+		FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareDeleteModel.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -2060,6 +2064,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FAEFA7A1275E4D7700900EE0 /* GardenPlantCareDelete */,
 				FADCE357275D180000119C51 /* GardenPlantCareUpdate */,
 				02089EC027554D540022E1BD /* NotificationSettingsUpdate */,
 				02089EAB2754CA4C0022E1BD /* DoneAllCaresByGardens */,
@@ -2483,6 +2488,15 @@
 			path = DoneAllCaresByGarden;
 			sourceTree = "<group>";
 		};
+		FAEFA7A1275E4D7700900EE0 /* GardenPlantCareDelete */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */,
+				FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */,
+			);
+			path = GardenPlantCareDelete;
+			sourceTree = "<group>";
+		};
 		FAFCF34727147E1300C3134E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -2674,6 +2688,7 @@
 				02527D9E2746DCB700126022 /* AddImageToGallery.graphql in Resources */,
 				FA1CEC53273C572E003A4F84 /* RecognizeArhive.graphql in Resources */,
 				021C8EC82705B0B200F0F589 /* PlantCollectionCell.xib in Resources */,
+				FAEFA7A4275E4DA400900EE0 /* GardenPlantCareDelete.graphql in Resources */,
 				FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */,
 				02A8348226F38FA70009E147 /* OnboardingPageController.xib in Resources */,
 				FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */,
@@ -3057,6 +3072,7 @@
 				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
 				02A4B64B2742C7F5007E0DA2 /* PopChangeNamePresenter.swift in Sources */,
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
+				FAEFA7A5275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift in Sources */,
 				025ECF27273D82E20041A7BD /* OrderCreate.swift in Sources */,
 				02D142DA2757DCD8008A7FA3 /* IPhoneSe3Timeline.swift in Sources */,
 				0290C291275265B4001FE6F7 /* UIScrollView+Extension.swift in Sources */,
@@ -3215,7 +3231,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3366,7 +3382,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3397,7 +3413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;

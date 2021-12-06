@@ -9,6 +9,7 @@ import UIKit
 protocol GardenPlantCaresEditOutputProtocol: BaseController {
     func successGetGardenPlantCares()
     func successUpdateGardenPlantCare()
+    func successDeleteGardenPlantCare()
     
     func failure(error: String)
 }
@@ -21,6 +22,8 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     init(view: GardenPlantCaresEditOutputProtocol)
     
     func getGardenPlantCares(gardenPlantId: String)
+    func updateGardenPlantCare(gardenPlantId: String, isActive: Bool)
+    func deleteGardenPlantCare(gardenPlantId: String)
 }
 
 class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
@@ -39,7 +42,7 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         let query = GardenPlantCaresQuery(gardenPlantId: gardenPlantId)
         let _ = Network.shared.query(model: GardenPlantCaresDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            self?.plantCares = model.gardenPlantCares
+            self?.plantCares = model.gardenPlantCares.sorted(by: {$0.isActive! && !$1.isActive!})
             self?.view?.successGetGardenPlantCares()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
@@ -56,6 +59,22 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successUpdateGardenPlantCare()
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
+    }
+    
+    func deleteGardenPlantCare(gardenPlantId: String) {
+        view?.startLoader()
+        
+        let mutation = GardenPlantDeleteMutation(id: gardenPlantId)
+        
+        let _ = Network.shared.mutation(model: GardenPlantCareDeleteModel.self, mutation, controller: view) { [weak self] model in
+            if model.gardenPlantCareDelete {
+                self?.view?.stopLoading()
+                self?.view?.successDeleteGardenPlantCare()
+            }
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)

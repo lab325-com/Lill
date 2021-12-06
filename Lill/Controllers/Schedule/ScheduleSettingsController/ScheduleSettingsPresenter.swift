@@ -67,6 +67,7 @@ class ScheduleSettingsPresenter: ScheduleSettingsPresenterProtocol {
             var me = KeychainService.standard.me
             me?.changeNotification(notification: model.notificationSettingsUpdate)
             KeychainService.standard.me = me
+            
             self?.view?.stopLoading()
             self?.view?.success()
         }, failureHandler: { [weak self] error in
