@@ -16,7 +16,6 @@ class AddCareCell: UITableViewCell {
     }
     
     func setupCell() {
-        addCareButton.isHidden = false
         addCareButton.setTitle("Add Care", for: .normal)
     }
     

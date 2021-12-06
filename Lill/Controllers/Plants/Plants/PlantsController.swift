@@ -21,7 +21,7 @@ class PlantsController: BaseController {
     @IBOutlet weak var buttonToThisView: UIView!
     @IBOutlet weak var identifireLabel: UILabel!
     @IBOutlet weak var explorerLabel: UILabel!
-    @IBOutlet weak var faworiteView: UIView!
+    @IBOutlet weak var favoriteView: UIView!
     @IBOutlet weak var uniquePlantView: UIView!
     
     @IBOutlet weak var photoButton: UIButton!
@@ -82,9 +82,9 @@ class PlantsController: BaseController {
         photoIconLayoutTop.constant = -1000
         heightCollectionLayout.constant = 0
         
-        faworiteView.layer.cornerRadius = 10
-        faworiteView.layer.borderWidth = 1
-        faworiteView.layer.borderColor = UIColor(rgb: 0xC36ED1).cgColor
+        favoriteView.layer.cornerRadius = 10
+        favoriteView.layer.borderWidth = 1
+        favoriteView.layer.borderColor = UIColor(rgb: 0xC36ED1).cgColor
         
         backToTopButton.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         backToTopButton.layer.borderColor = UIColor.white.cgColor
@@ -176,7 +176,7 @@ extension PlantsController: PlantsOutputProtocol {
     func success(model: CatalogPlantsModel) {
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
         plants = model.getCatalogPlants.plants
-        faworiteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
+        favoriteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
         collectionView.reloadData()
         setupAnimate()
     }

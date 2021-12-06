@@ -345,6 +345,9 @@
 		FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1833726F9DD2C007A67DC /* LoginController.xib */; };
 		FADC80CF272FF5B100CA9ED3 /* SetFavoritePlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */; };
 		FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */; };
+		FADCE356275D033400119C51 /* AddPlantTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCE355275D033400119C51 /* AddPlantTimeModel.swift */; };
+		FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */; };
+		FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */; };
 		FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */; };
 		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
@@ -692,6 +695,9 @@
 		FAD1833726F9DD2C007A67DC /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SetFavoritePlantById.graphql; sourceTree = "<group>"; };
 		FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoritePlantByIdModel.swift; sourceTree = "<group>"; };
+		FADCE355275D033400119C51 /* AddPlantTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantTimeModel.swift; sourceTree = "<group>"; };
+		FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareUpdateModel.swift; sourceTree = "<group>"; };
+		FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareUpdate.graphql; sourceTree = "<group>"; };
 		FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGarden.graphql; sourceTree = "<group>"; };
 		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
@@ -2054,6 +2060,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FADCE357275D180000119C51 /* GardenPlantCareUpdate */,
 				02089EC027554D540022E1BD /* NotificationSettingsUpdate */,
 				02089EAB2754CA4C0022E1BD /* DoneAllCaresByGardens */,
 				0290C2892752591E001FE6F7 /* DoneCareByGardenPlants */,
@@ -2252,6 +2259,7 @@
 		FA8FCD3727196BC100173725 /* GlobalModels */ = {
 			isa = PBXGroup;
 			children = (
+				FADCE355275D033400119C51 /* AddPlantTimeModel.swift */,
 				FA8FCD3827196BD500173725 /* PlantsModel.swift */,
 				FA24A5B2273564400059AF6A /* PaginationModel.swift */,
 				FA64050A27205515000124A5 /* AccessModel.swift */,
@@ -2455,6 +2463,15 @@
 				FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */,
 			);
 			path = SetFavoritePlant;
+			sourceTree = "<group>";
+		};
+		FADCE357275D180000119C51 /* GardenPlantCareUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */,
+				FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */,
+			);
+			path = GardenPlantCareUpdate;
 			sourceTree = "<group>";
 		};
 		FAE8C935273A78C800685D85 /* DoneAllCaresByGarden */ = {
@@ -2706,6 +2723,7 @@
 				F3BED186272EF5C800614DEE /* MenuAccauntInfoTableViewCell.xib in Resources */,
 				FA24A5A02732BCD80059AF6A /* CongradsView.xib in Resources */,
 				FA24A5B6273564C80059AF6A /* GardenPlants.graphql in Resources */,
+				FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */,
 				02527D9B27467FF900126022 /* GardenDetailAllWaitingCell.xib in Resources */,
@@ -2877,6 +2895,7 @@
 				FA545474274BCF53006B52F4 /* GardenCaresDetail.swift in Sources */,
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
 				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
+				FADCE356275D033400119C51 /* AddPlantTimeModel.swift in Sources */,
 				02017AAD2747922000EE093C /* GardenDetailDeletePlanController.swift in Sources */,
 				02D142F32757E769008A7FA3 /* IPhone84Timeline.swift in Sources */,
 				02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */,
@@ -3030,6 +3049,7 @@
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				02527D93274642E900126022 /* GardenDetailScheduleCell.swift in Sources */,
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
+				FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */,
 				02A4605127427A6A00D5D931 /* CareTypesModel.swift in Sources */,
 				02D142C42757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift in Sources */,
 				02D142F72757E7B7008A7FA3 /* IPhone85View.swift in Sources */,
@@ -3195,7 +3215,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3346,7 +3366,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3377,7 +3397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;

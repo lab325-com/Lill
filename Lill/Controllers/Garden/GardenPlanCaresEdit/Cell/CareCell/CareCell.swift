@@ -5,13 +5,13 @@ protocol CareCellDelegate: AnyObject {
     func didTappedCareTimeButton(caresModel: CaresModel)
     func didTappedCareFrequencyButton(caresModel: CaresModel)
     func didTappedCareNextDateButton()
-    func didChangeCareActivity()
+    func didChangeCareActivity(caresModel: CaresModel, isActive: Bool)
 }
 
 class CareCell: UITableViewCell {
     
     @IBOutlet weak var shadowView: ShadowView!
-    @IBOutlet weak var shadowViewHeighConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewHeighConstraint: NSLayoutConstraint!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var careImageView: UIImageView!
@@ -30,8 +30,6 @@ class CareCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        topView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
-        bottomView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 24.0)
     }
     
     func setupCell(caresModel: CaresModel) {
@@ -40,6 +38,8 @@ class CareCell: UITableViewCell {
         careLabel.text = caresModel.type.name.text
         if let isActive = caresModel.isActive {
             careSwitch.isOn = isActive
+            bottomView.isHidden = isActive ? false : true
+            bottomViewHeighConstraint.constant = isActive ? 56.0 : 0.0
         }
     }
         
@@ -58,6 +58,9 @@ class CareCell: UITableViewCell {
     }
     
     @IBAction func careActivityAction(_ sender: UISwitch) {
-        
+        guard let caresModel = self.caresModel else { return }
+        delegate?.didChangeCareActivity(caresModel: caresModel, isActive: sender.isOn)
+//        bottomView.isHidden = sender.isOn ? false : true
+//        bottomViewHeighConstraint.constant = sender.isOn ? 56.0 : 0.0
     }
 }

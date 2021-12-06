@@ -12,9 +12,6 @@
         <array key="SFProDisplay-Medium.ttf">
             <string>SFProDisplay-Medium</string>
         </array>
-        <array key="SFProDisplay-Regular.ttf">
-            <string>SFProDisplay-Regular</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenPlantCaresEdit" customModule="Lill" customModuleProvider="target">
@@ -35,58 +32,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wQi-IK-ZpI">
-                    <rect key="frame" x="0.0" y="88" width="414" height="653"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="697"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ju9-fM-ZSd"/>
                         <outlet property="delegate" destination="-1" id="LHd-Fa-jeF"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-PP-ask">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Care Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57p-Bi-Vet">
-                            <rect key="frame" x="157.5" y="56" width="99" height="21"/>
-                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbd-Q7-2wN">
-                            <rect key="frame" x="0.0" y="45" width="76" height="43"/>
-                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Cancel">
-                                <color key="titleColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="0.93999999999999995" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="Hu9-aP-sfN"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzh-RS-DwI">
-                            <rect key="frame" x="351" y="45" width="63" height="43"/>
-                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Done">
-                                <color key="titleColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="0.93999999999999995" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="fcd-m0-sTg"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Gbd-Q7-2wN" secondAttribute="bottom" id="5sW-TJ-cn5"/>
-                        <constraint firstItem="Xzh-RS-DwI" firstAttribute="centerY" secondItem="57p-Bi-Vet" secondAttribute="centerY" id="8GH-Bx-P6z"/>
-                        <constraint firstAttribute="height" constant="88" id="FTb-1P-wZq"/>
-                        <constraint firstAttribute="bottom" secondItem="57p-Bi-Vet" secondAttribute="bottom" constant="11" id="GnE-Ck-pZm"/>
-                        <constraint firstAttribute="bottom" secondItem="Xzh-RS-DwI" secondAttribute="bottom" id="SFi-jD-9fO"/>
-                        <constraint firstItem="57p-Bi-Vet" firstAttribute="centerX" secondItem="RsR-PP-ask" secondAttribute="centerX" id="YIF-bz-G04"/>
-                        <constraint firstAttribute="trailing" secondItem="Xzh-RS-DwI" secondAttribute="trailing" id="ffy-Gi-XJj"/>
-                        <constraint firstItem="Gbd-Q7-2wN" firstAttribute="centerY" secondItem="57p-Bi-Vet" secondAttribute="centerY" id="rJT-H2-lgM"/>
-                        <constraint firstItem="Gbd-Q7-2wN" firstAttribute="leading" secondItem="RsR-PP-ask" secondAttribute="leading" id="s8n-Jd-tkE"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-j4-m8A">
                     <rect key="frame" x="0.0" y="717" width="414" height="145"/>
                     <subviews>
@@ -140,19 +92,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="wQi-IK-ZpI" firstAttribute="top" secondItem="RsR-PP-ask" secondAttribute="bottom" id="1FS-I5-h7S"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wQi-IK-ZpI" secondAttribute="trailing" id="43X-fv-YCv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RsR-PP-ask" secondAttribute="trailing" id="5i0-ga-gr6"/>
-                <constraint firstItem="RsR-PP-ask" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KRY-Tb-Pwh"/>
+                <constraint firstAttribute="trailing" secondItem="wQi-IK-ZpI" secondAttribute="trailing" id="43X-fv-YCv"/>
                 <constraint firstAttribute="bottom" secondItem="lB4-R9-Xzh" secondAttribute="bottom" id="QV6-6u-QRk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Ls-j4-m8A" secondAttribute="trailing" id="Qfg-GY-orj"/>
-                <constraint firstItem="wQi-IK-ZpI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RFL-zQ-j2d"/>
-                <constraint firstItem="RsR-PP-ask" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WSP-G4-z48"/>
+                <constraint firstItem="wQi-IK-ZpI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RFL-zQ-j2d"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lB4-R9-Xzh" secondAttribute="trailing" id="aK4-vZ-cKq"/>
                 <constraint firstItem="lB4-R9-Xzh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ard-G6-txK"/>
                 <constraint firstItem="0Ls-j4-m8A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gKn-x1-0GN"/>
                 <constraint firstItem="0Ls-j4-m8A" firstAttribute="top" secondItem="wQi-IK-ZpI" secondAttribute="bottom" constant="-24" id="hoK-v8-t8r"/>
                 <constraint firstItem="lB4-R9-Xzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lI7-OO-Y5E"/>
+                <constraint firstItem="wQi-IK-ZpI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="quA-nx-SSC"/>
                 <constraint firstItem="0Ls-j4-m8A" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="trb-p6-pQb"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>

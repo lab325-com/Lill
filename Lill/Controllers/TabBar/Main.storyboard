@@ -738,7 +738,7 @@
                         <outlet property="countLabel" destination="aGu-Tf-adC" id="UBE-Jg-D1W"/>
                         <outlet property="dividerImageView" destination="DZ4-AE-c1D" id="Vdn-ex-W8l"/>
                         <outlet property="explorerLabel" destination="NZo-Js-jvq" id="VJO-3w-rVW"/>
-                        <outlet property="faworiteView" destination="daE-aQ-WcC" id="P84-hj-d7o"/>
+                        <outlet property="favoriteView" destination="daE-aQ-WcC" id="P84-hj-d7o"/>
                         <outlet property="heightCollectionLayout" destination="q6w-KJ-ITP" id="BBy-jz-1sF"/>
                         <outlet property="identifireLabel" destination="77e-li-0WU" id="IqJ-8h-9rb"/>
                         <outlet property="navigationTralingToPhoto" destination="QXE-Ov-u8n" id="A7y-hg-UaH"/>

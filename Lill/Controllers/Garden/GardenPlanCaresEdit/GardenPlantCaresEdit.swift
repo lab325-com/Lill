@@ -59,27 +59,31 @@ class GardenPlantCaresEdit: BaseController {
     func setup() {
         hiddenNavigationBar = false
         
+        title = "Edit Care Plan"
+        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(closeAction))
+        let leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(closeAction))
+        rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
+        leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        
         tableView.contentInset.bottom = 24
         tableView.estimatedRowHeight = 82
         tableView.rowHeight = UITableView.automaticDimension
         
-        bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
-        
         tableView.register(UINib(nibName: cellCareInfoIdentifier, bundle: nil), forCellReuseIdentifier: cellCareInfoIdentifier)
         tableView.register(UINib(nibName: cellCareIdentifier, bundle: nil), forCellReuseIdentifier: cellCareIdentifier)
         tableView.register(UINib(nibName: cellAddCareIdentifier, bundle: nil), forCellReuseIdentifier: cellAddCareIdentifier)
+        
+        bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
     }
     
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
 
-    @IBAction func cancelAction(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func doneAction(_ sender: Any) {
-        dismiss(animated: true)
+    @objc func closeAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -91,6 +95,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     func successGetGardenPlantCares() {
         tableView.reloadData()
     }
+    
+    func successUpdateGardenPlantCare() {
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
+    }
 
     func failure(error: String) {
         
@@ -99,8 +107,8 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
 
 extension GardenPlantCaresEdit: CareCellDelegate {
     
-    func didChangeCareActivity() {
-        print("didChangeCareActivity")
+    func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
+        presenter.updateGardenPlantCare(gardenPlantId: caresModel.id ?? "", isActive: isActive)
     }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
@@ -126,6 +134,9 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        
+//        if let index = presenter.plantCares.firstIndex(where: {$0.type == model.plan}) {
+//            plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
+//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
+//        }
     }
 }
