@@ -31,7 +31,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sx-bs-uvm">
                     <rect key="frame" x="0.0" y="0.0" width="399" height="54"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_detail_ic" translatesAutoresizingMaskIntoConstraints="NO" id="It7-aA-9UC">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_little_ic" translatesAutoresizingMaskIntoConstraints="NO" id="It7-aA-9UC">
                             <rect key="frame" x="14" y="7" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="cma-yq-DYj"/>
@@ -104,7 +104,7 @@
         </view>
     </objects>
     <resources>
-        <image name="temp_detail_ic" width="390" height="349"/>
+        <image name="placeholder_little_ic" width="227" height="171"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -35,7 +35,7 @@
                                 <color key="textColor" red="0.17254901960784313" green="0.1764705882352941" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="SVS-rN-ces">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_little_ic" translatesAutoresizingMaskIntoConstraints="NO" id="SVS-rN-ces">
                                 <rect key="frame" x="0.0" y="0.0" width="168" height="166.5"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-Xv-JaC">
@@ -109,7 +109,7 @@
     <resources>
         <image name="ic_plants_add" width="32" height="32"/>
         <image name="ic_plants_favorite" width="40" height="40"/>
-        <image name="temp_plants_ic" width="400" height="267"/>
+        <image name="placeholder_little_ic" width="227" height="171"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

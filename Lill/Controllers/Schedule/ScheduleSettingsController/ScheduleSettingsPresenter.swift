@@ -65,8 +65,7 @@ class ScheduleSettingsPresenter: ScheduleSettingsPresenterProtocol {
         let mutation = NotificationSettingsUpdateMutation(record: update)
         let _ = Network.shared.mutation(model: NotificationSettingsUpdateModel.self, mutation, controller: view, successHandler: { [weak self] model in
             var me = KeychainService.standard.me
-            me?.notificationSettings = model
-            
+            me?.changeNotification(notification: model.notificationSettingsUpdate)
             KeychainService.standard.me = me
             self?.view?.stopLoading()
             self?.view?.success()

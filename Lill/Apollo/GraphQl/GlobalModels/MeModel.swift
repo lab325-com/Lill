@@ -10,7 +10,11 @@ struct MeModel: Codable {
     let Language: LanguageModel
     let Gardens: [GardenModel]
     let access: AccessModel
-    let notificationSettings: NotificationSettings?
+    var notificationSettings: NotificationSettings?
+    
+    mutating func changeNotification(notification: NotificationSettings?) {
+        self.notificationSettings = notification
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
