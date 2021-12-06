@@ -201,9 +201,11 @@
 "scheldure_setting_waiting" = "Esperando";
 "scheldure_title" = "Calendario";
 "scheldure_today" = "Hoy dia";
+"subscription_active" = "Activo";
 "subscription_billed_with" = "Facturado %@";
 "subscription_cancel_any_time" = "Cancelar en cualquier momento";
 "subscription_description" = "Puede cancelar su suscripción de prueba gratuita en cualquier momento al cancelar su suscripción a través de su configuración de cuenta de iTunes, o se renovará automáticamente. Esto debe hacerse en 24 horas antes del final de la prueba gratuita o cualquier período de suscripción para evitar que se cargue. La suscripción con un período de prueba gratuito se renovará automáticamente a una suscripción pagada. Tenga en cuenta: cualquier parte no utilizada de un período de prueba gratuito (si se ofrece) se perderá cuando compre una suscripción de prima durante el período de prueba gratuito. Los pagos de suscripción se cargarán a su cuenta de iTunes en la confirmación de su compra y al comienzo de cada término de renovación. Para obtener más información, consulte nuestros Términos de uso y Política de privacidad.";
+"subscription_month" = "mes";
 "subscription_privacy" = "Política de privacidad";
 "subscription_recurring" = "Facturación mensual recurrente";
 "subscription_restore" = "Restaurar las compras";
@@ -211,7 +213,10 @@
 "subscription_sub_title" = "Obtenga acceso a las plantas de diagnóstico de identificación ilimitadas";
 "subscription_subscribe" = "Suscribir";
 "subscription_terms" = "Condiciones de uso";
+"subscription_thanks_subscription" = "Gracias por suscribirse, \ Nyou tiene la versión completa de la aplicación";
 "subscription_title" = "Convertirse en una prima";
+"subscription_unsubscribe" = "Darse de baja";
+"subscription_your_plan" = "Tu plan";
 "unique_ident_cover_capture_title" = "Capturar";
 "unique_ident_cover_sub_title" = "Crea cubierta para tu nuevo lugar.";
 "uniquel_plan_create" = "Crear nombre de la planta";
@@ -231,5 +236,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";

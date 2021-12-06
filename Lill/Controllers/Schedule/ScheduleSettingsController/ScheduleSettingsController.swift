@@ -134,6 +134,34 @@ class ScheduleSettingsController: BaseController {
         todayListNotificationLabel.text = RLocalization.scheldure_setting_list_notification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         sendTimeLabel.text = RLocalization.scheldure_setting_send_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         sendTimeSubLabel.text = RLocalization.scheldure_setting_send_daily_list.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        
+        if let notification = KeychainService.standard.me?.notificationSettings {
+            caresSwitcher.setOn(notification.cares, animated: true)
+            missedSwitcher.setOn(notification.missedCares, animated: true)
+            secondChanceSwitcher.setOn(notification.secondChance, animated: true)
+            waitingSwitcher.setOn(notification.waitingCares, animated: true)
+            listNotificationsSwitcher.setOn(notification.todayList, animated: true)
+            
+            
+            selectedRowFrequency = notification.frequency.hours - 1
+            frequencyPicker?.selectRow(selectedRowFrequency, inComponent: 0, animated: true)
+            
+            selectedRowSend  =  notification.secondChanceSendAfter.hours - 1
+            sendPicker?.selectRow(selectedRowSend, inComponent: 0, animated: true)
+            
+            actionFrequencyDone()
+            actionSendDone()
+            
+            let separateTodayList = notification.todayListSendAt.components(separatedBy: ":")
+            let hour = Int(separateTodayList.first ?? "8")  ?? 8
+            let minute = Int(separateTodayList[safe: 1] ?? "0")  ?? 8
+            let second = Int(separateTodayList.last ?? "0")  ?? 8
+            
+            datePicker.setDate(Calendar.current.date(bySettingHour: hour, minute: minute, second: second, of: Date())!, animated: true)
+            
+            actionTimeDone()
+        }
     }
     
     //----------------------------------------------
@@ -147,12 +175,12 @@ class ScheduleSettingsController: BaseController {
     
     @objc func actionFrequencyDone() {
         frequencyTextField.text = "\(hourData[selectedRowFrequency]) \(RLocalization.scheldure_setting_hour.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
-        self.resignFirstResponder()
+        view.endEditing(true)
     }
     
     @objc func actionSendDone() {
         sendTextField.text = "\(hourData[selectedRowSend]) \(RLocalization.scheldure_setting_hour.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
-        self.resignFirstResponder()
+        view.endEditing(true)
     }
     
     
@@ -160,7 +188,7 @@ class ScheduleSettingsController: BaseController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         timeTextField.text = dateFormatter.string(from: datePicker.date)
-        view.resignFirstResponder()
+        view.endEditing(true)
     }
     
     @objc func actionDone() {

@@ -21,7 +21,7 @@ protocol MenuOutputProtocol: BaseController {
 //----------------------------------------------
 protocol MenuPresenterProtocol: AnyObject {
     init(view: MenuOutputProtocol)
-    func getMe()
+    func getMe(withoutLoader: Bool)
 }
 
 class MenuPresenter: MenuPresenterProtocol {
@@ -48,8 +48,10 @@ class MenuPresenter: MenuPresenterProtocol {
         self.view = view
     }
     
-    func getMe() {
-        view?.startLoader()
+    func getMe(withoutLoader: Bool = false) {
+        if withoutLoader {
+            view?.startLoader()
+        }
                 
         let query = MeQuery()
         

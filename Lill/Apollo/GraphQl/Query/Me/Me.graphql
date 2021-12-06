@@ -59,6 +59,11 @@ query Me {
 			identifyTotal
 			identifyUsed
 			isPremium
+			subscriptionName
+			subscription {
+				name
+				duration
+			}
 		}
 	}
 }

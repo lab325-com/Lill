@@ -1,6 +1,55 @@
 
 import UIKit
 import Toast
+import SwiftyStoreKit
+
+// Specify the decimal place to round to using an enum
+public enum RoundingPrecision {
+    case ones
+    case tenths
+    case hundredths
+}
+
+// Round to the specific decimal place
+public func preciseRound(
+    _ value: Double,
+    precision: RoundingPrecision = .ones) -> Double
+{
+    switch precision {
+    case .ones:
+        return round(value)
+    case .tenths:
+        return round(value * 10) / 10.0
+    case .hundredths:
+        return round(value * 100) / 100.0
+    }
+}
+
+enum SubscribeType: String, CaseIterable {
+    case yearProduct = "com.lill.subscription.yearly"
+    case monthProduct = "com.lill.subscription.monthly"
+    
+    
+    func priceLabel(sub: PaymentsModel) -> String {
+        switch self {
+        case .yearProduct:
+            let value = sub.price / 12
+            
+            return "\(sub.currencySymbol ?? "$") \(preciseRound(value, precision: .tenths) - 0.01)/\(RLocalization.subscription_month.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
+        case .monthProduct:
+            return "\(sub.currencySymbol ?? "$") \(sub.price)/\(RLocalization.subscription_month.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
+        }
+    }
+    
+    func billed(sub: PaymentsModel) -> String {
+        switch self {
+        case .yearProduct:
+            return  RLocalization.subscription_billed_with("\(sub.period) - \(sub.prettyPrice)")
+        case .monthProduct:
+            return RLocalization.subscription_recurring.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        }
+    }
+}
 
 class SubcribeController: BaseController {
 
@@ -30,25 +79,33 @@ class SubcribeController: BaseController {
     @IBOutlet weak var cancelAnyTimeLabel: UILabel!
     @IBOutlet weak var restoreButton: UIButton!
     
+    @IBOutlet weak var orChangeLabel: UILabel!
     @IBOutlet weak var termsButton: UIButton!
     @IBOutlet weak var privacyButton: UIButton!
     
     @IBOutlet weak var rulesLabel: UILabel!
+    
+    @IBOutlet weak var saveViewFirst: UIView!
+    @IBOutlet weak var saveViewSecond: UIView!
+    
+    @IBOutlet weak var unsubscribeView: UIView!
+    @IBOutlet weak var unsubscribeButton: UIButton!
+    @IBOutlet weak var activeView: UIView!
+    @IBOutlet weak var activeLabel: UILabel!
     
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
     
     private lazy var presenter = SubscribePresenter(view: self)
+    private var fistSub = SubscribeType.yearProduct
+    private var secondSub = SubscribeType.monthProduct
     
     private let yourAttributes: [NSAttributedString.Key: Any] = [
         .font: UIFont.systemFont(ofSize: 13),
         .foregroundColor: UIColor.black,
         .underlineStyle: NSUnderlineStyle.single.rawValue
     ]
-    
-    private let yearProduct = "com.lill.subscription.yearly"
-    private let monthProduct = "com.lill.subscription.monthly"
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -64,10 +121,16 @@ class SubcribeController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        unsubscribeButton.setTitle(RLocalization.subscription_unsubscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        activeLabel.text = RLocalization.subscription_active.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        unsubscribeView.layer.borderColor = UIColor.white.cgColor
+        unsubscribeView.layer.borderWidth = 1
+        
         yearView.alpha = 0.0
         mounthView.alpha = 0.0
         
-        presenter.retriveProduct(id: [yearProduct, monthProduct])
+        presenter.retriveProduct(id: [SubscribeType.yearProduct.rawValue, SubscribeType.monthProduct.rawValue])
         
         let attributeString = NSMutableAttributedString(
             string: RLocalization.subscription_restore.localized(PreferencesManager.sharedManager.languageCode.rawValue),
@@ -75,16 +138,12 @@ class SubcribeController: BaseController {
         )
         restoreButton.setAttributedTitle(attributeString, for: .normal)
         
-        paywallTitleLabel.text = RLocalization.subscription_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        paywallSubLabel.text = RLocalization.subscription_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
+    
         yearSaveLabel.text = RLocalization.subscription_save_33.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         yearSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         monthSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
-        
-        monthRecuringLabel.text = RLocalization.subscription_recurring.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         cancelAnyTimeLabel.text = RLocalization.subscription_cancel_any_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
@@ -93,27 +152,24 @@ class SubcribeController: BaseController {
         restoreButton.setTitle(RLocalization.subscription_restore.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         rulesLabel.text = RLocalization.subscription_description.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        checkSubscribeUI()
     }
     
-    // Specify the decimal place to round to using an enum
-    public enum RoundingPrecision {
-        case ones
-        case tenths
-        case hundredths
-    }
-
-    // Round to the specific decimal place
-    public func preciseRound(
-        _ value: Double,
-        precision: RoundingPrecision = .ones) -> Double
-    {
-        switch precision {
-        case .ones:
-            return round(value)
-        case .tenths:
-            return round(value * 10) / 10.0
-        case .hundredths:
-            return round(value * 100) / 100.0
+    private func checkSubscribeUI() {
+        if KeychainService.standard.me?.access.subscription?.name != nil {
+            paywallTitleLabel.text = RLocalization.subscription_your_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            paywallSubLabel.text = RLocalization.subscription_thanks_subscription.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            
+            cancelAnyTimeLabel.isHidden = true
+            restoreButton.isHidden = true
+            orChangeLabel.isHidden = false
+        } else {
+            paywallTitleLabel.text = RLocalization.subscription_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            paywallSubLabel.text = RLocalization.subscription_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            
+            cancelAnyTimeLabel.isHidden = false
+            restoreButton.isHidden = false
+            orChangeLabel.isHidden = true
         }
     }
     
@@ -121,12 +177,17 @@ class SubcribeController: BaseController {
     // MARK: - @IBActions
     //----------------------------------------------
     
+    @IBAction func actionUnsubscribe(_ sender: UIButton) {
+        guard let urlSubscriptions = URL(string: "https://apps.apple.com/account/subscriptions") else { return }
+        UIApplication.shared.open(urlSubscriptions)
+    }
+    
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true)
     }
     
     @IBAction func actionYearSubscription(_ sender: UIButton) {
-        presenter.purchase(id: yearProduct) { [weak self] result, error in
+        presenter.purchase(id: self.fistSub.rawValue) { [weak self] result, error in
             if result {
                 self?.dismiss(animated: true, completion: nil)
             } else {
@@ -136,7 +197,8 @@ class SubcribeController: BaseController {
     }
     
     @IBAction func actionMonthSubscription(_ sender: UIButton) {
-        presenter.purchase(id: monthProduct) { [weak self] result, error in
+        presenter.purchase(id: self.secondSub.rawValue) { [weak self] result, error in
+            self?.checkSubscribeUI()
             if result {
                 self?.dismiss(animated: true, completion: nil)
             } else {
@@ -144,9 +206,10 @@ class SubcribeController: BaseController {
             }
         }
     }
+    
     @IBAction func actionRestore(_ sender: UIButton) {
-        presenter.restore { result in
-            
+        presenter.restore { [weak self] result in
+            self?.checkSubscribeUI()
         }
     }
 }
@@ -159,26 +222,53 @@ extension SubcribeController: SubscribeOutputProtocol {
     func successRetrive() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let `self` = self else { return }
-            if let yearSub = self.presenter.paymentsInfo.first(where: {$0.product == self.yearProduct}) {
-                self.yearTitleLabel.text = yearSub.period
-                self.yearBilledLabel.text = RLocalization.subscription_billed_with("\(yearSub.period) - \(yearSub.prettyPrice)")
+            
+            var selectedSub: SubscribeType?
+            
+            self.unsubscribeView.isHidden = true
+            self.activeView.isHidden = true
+            
+            if let name = KeychainService.standard.me?.access.subscription?.name, let buyType = SubscribeType(rawValue: name) {
+                self.unsubscribeView.isHidden = false
+                self.activeView.isHidden = false
+                selectedSub = buyType
+                self.fistSub = buyType
+                self.yearSubscribeButton.isHidden = true
                 
-                let value = yearSub.price / 12
+                if buyType == self.secondSub {
+                    self.secondSub = SubscribeType.yearProduct
+                }
+            }
+            
+            self.saveViewFirst.isHidden = self.fistSub == .monthProduct ? true : false
+            self.saveViewSecond.isHidden = self.secondSub == .monthProduct ? true : false
+
+            self.yearView.backgroundColor = self.fistSub == selectedSub ? UIColor(rgb: 0x7CDAA3) : UIColor.white.withAlphaComponent(0.7)
+            self.mounthView.backgroundColor = self.secondSub == selectedSub ? UIColor(rgb: 0x7CDAA3) : UIColor.white.withAlphaComponent(0.7)
+            
+            self.yearTitleLabel.textColor = self.fistSub == selectedSub ? UIColor.white : UIColor.black
+            
+            if selectedSub == .yearProduct {
+                self.saveViewFirst.isHidden = true
+            }
+            
+            if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.fistSub.rawValue}) {
                 
-                self.yearPriceLabel.text = "\(yearSub.currencySymbol ?? "$") \(self.preciseRound(value, precision: .tenths) - 0.01)/month"
+                self.yearTitleLabel.text = sub.period
+                self.yearBilledLabel.text = SubscribeType.yearProduct.billed(sub: sub)
+                
+                self.yearPriceLabel.text = SubscribeType.yearProduct.priceLabel(sub: sub)
                 self.yearView.alpha = 1.0
             }
             
-            if let monthSub = self.presenter.paymentsInfo.first(where: {$0.product == self.monthProduct}) {
-                self.monthTitleLabel.text = monthSub.period
+            if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.secondSub.rawValue}) {
+                self.monthTitleLabel.text = sub.period
                 
-                self.monthPriceLabel.text = "\(monthSub.currencySymbol ?? "$") \(monthSub.price)/month"
-                
+                self.monthPriceLabel.text = SubscribeType.monthProduct.priceLabel(sub: sub)
+                self.monthRecuringLabel.text = SubscribeType.monthProduct.billed(sub: sub)
                 self.mounthView.alpha = 1.0
             }
         }
-        
-        
     }
     
     func failure(error: String) {

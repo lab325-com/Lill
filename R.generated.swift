@@ -504,7 +504,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 104 images.
+  /// This `R.image` struct is generated, and contains static references to 105 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -694,6 +694,8 @@ struct R: Rswift.Validatable {
     static let scheldure_settings_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_bell_ic")
     /// Image `scheldure_settings_ic`.
     static let scheldure_settings_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_ic")
+    /// Image `sub_active_check_ic`.
+    static let sub_active_check_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_active_check_ic")
     /// Image `sub_back_ic`.
     static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
     /// Image `sub_close_ic`.
@@ -1370,6 +1372,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "scheldure_settings_ic", bundle: ..., traitCollection: ...)`
     static func scheldure_settings_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.scheldure_settings_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_active_check_ic", bundle: ..., traitCollection: ...)`
+    static func sub_active_check_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_active_check_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2346,7 +2355,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 236 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 241 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2372,6 +2381,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_title = Rswift.StringResource(key: "action_edit_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Active
+      ///
+      /// Locales: en, es
+      static let subscription_active = Rswift.StringResource(key: "subscription_active", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Cares
       ///
       /// Locales: en, es
@@ -3164,6 +3177,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_terms = Rswift.StringResource(key: "subscription_terms", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Thanks for subscribing, you have full version of app
+      ///
+      /// Locales: en, es
+      static let subscription_thanks_subscription = Rswift.StringResource(key: "subscription_thanks_subscription", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Time
       ///
       /// Locales: en, es
@@ -3192,6 +3209,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let care_period_type_unknown = Rswift.StringResource(key: "care_period_type_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Unsubscribe
+      ///
+      /// Locales: en, es
+      static let subscription_unsubscribe = Rswift.StringResource(key: "subscription_unsubscribe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Upcoming
       ///
       /// Locales: en, es
@@ -3244,6 +3265,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_setting_cares_notification_sub = Rswift.StringResource(key: "scheldure_setting_cares_notification_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Your Plan
+      ///
+      /// Locales: en, es
+      static let subscription_your_plan = Rswift.StringResource(key: "subscription_your_plan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Your unique Plant is added!
       ///
       /// Locales: en, es
@@ -3280,6 +3305,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_premium = Rswift.StringResource(key: "identify_premium", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: month
+      ///
+      /// Locales: en, es
+      static let subscription_month = Rswift.StringResource(key: "subscription_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: months
       ///
       /// Locales: en, es
@@ -3381,6 +3410,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Active
+      ///
+      /// Locales: en, es
+      static func subscription_active(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_active", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_active"
+        }
+
+        return NSLocalizedString("subscription_active", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Cares
@@ -6355,6 +6399,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_terms", bundle: bundle, comment: "")
       }
 
+      /// en translation: Thanks for subscribing, you have full version of app
+      ///
+      /// Locales: en, es
+      static func subscription_thanks_subscription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_thanks_subscription", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_thanks_subscription"
+        }
+
+        return NSLocalizedString("subscription_thanks_subscription", bundle: bundle, comment: "")
+      }
+
       /// en translation: Time
       ///
       /// Locales: en, es
@@ -6458,6 +6517,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("care_period_type_unknown", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unsubscribe
+      ///
+      /// Locales: en, es
+      static func subscription_unsubscribe(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_unsubscribe", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_unsubscribe"
+        }
+
+        return NSLocalizedString("subscription_unsubscribe", bundle: bundle, comment: "")
       }
 
       /// en translation: Upcoming
@@ -6655,6 +6729,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_setting_cares_notification_sub", bundle: bundle, comment: "")
       }
 
+      /// en translation: Your Plan
+      ///
+      /// Locales: en, es
+      static func subscription_your_plan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_your_plan", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_your_plan"
+        }
+
+        return NSLocalizedString("subscription_your_plan", bundle: bundle, comment: "")
+      }
+
       /// en translation: Your unique Plant is added!
       ///
       /// Locales: en, es
@@ -6788,6 +6877,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_premium", bundle: bundle, comment: "")
+      }
+
+      /// en translation: month
+      ///
+      /// Locales: en, es
+      static func subscription_month(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_month", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_month"
+        }
+
+        return NSLocalizedString("subscription_month", bundle: bundle, comment: "")
       }
 
       /// en translation: months
@@ -7888,6 +7992,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "sub_active_check_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_active_check_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
