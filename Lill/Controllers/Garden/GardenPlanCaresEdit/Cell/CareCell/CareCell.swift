@@ -4,7 +4,6 @@ import UIKit
 protocol CareCellDelegate: AnyObject {
     func didTappedCareTimeButton(caresModel: CaresModel)
     func didTappedCareFrequencyButton(caresModel: CaresModel)
-    func didTappedCareNextDateButton()
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool)
 }
 
@@ -29,7 +28,6 @@ class CareCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     func setupCell(caresModel: CaresModel) {
@@ -53,14 +51,8 @@ class CareCell: UITableViewCell {
         delegate?.didTappedCareFrequencyButton(caresModel: caresModel)
     }
     
-    @IBAction func careNextDateAction(_ sender: Any) {
-        delegate?.didTappedCareNextDateButton()
-    }
-    
     @IBAction func careActivityAction(_ sender: UISwitch) {
         guard let caresModel = self.caresModel else { return }
         delegate?.didChangeCareActivity(caresModel: caresModel, isActive: sender.isOn)
-//        bottomView.isHidden = sender.isOn ? false : true
-//        bottomViewHeighConstraint.constant = sender.isOn ? 56.0 : 0.0
     }
 }

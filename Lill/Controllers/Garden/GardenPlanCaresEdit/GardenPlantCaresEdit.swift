@@ -83,7 +83,7 @@ class GardenPlantCaresEdit: BaseController {
     //----------------------------------------------
     
     @IBAction func setToRecommendedAction(_ sender: Any) {
-        
+        presenter.gardenPlantCaresToDefault(gardenPlantId: gardenPlantId)
     }
     
     @IBAction func deleteCaresAction(_ sender: Any) {
@@ -100,6 +100,7 @@ class GardenPlantCaresEdit: BaseController {
 //----------------------------------------------
 
 extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
+    
     func successGetGardenPlantCares() {
         tableView.reloadData()
     }
@@ -109,6 +110,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     }
     
     func successDeleteGardenPlantCare() {
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
+    }
+    
+    func successGardenPlantCaresToDefault() {
         presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
 
@@ -131,10 +136,6 @@ extension GardenPlantCaresEdit: CareCellDelegate {
     func didTappedCareFrequencyButton(caresModel: CaresModel) {
         let caresModel = AddPlantTimeModel(plan: caresModel.type, period: caresModel.period)
         AddCoverRouter(presenter: navigationController).presentPickerCares(model: caresModel, delegate: self, isDatePicker: false)
-    }
-    
-    func didTappedCareNextDateButton() {
-        print("didTappedCareNextDateButton")
     }
 }
 
