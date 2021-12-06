@@ -7059,7 +7059,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'AddCoverAddController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'AddCoverAddController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "unique_add_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_add_back_ic' is used in nib 'AddCoverAddController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
@@ -7466,7 +7466,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "garden_delete_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_delete_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'GardenDetailDeletePlanController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -7576,7 +7576,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'GardenViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -7811,7 +7811,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "ic_plants_add", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_add' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_favorite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_favorite' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'PlantCollectionCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -7950,7 +7950,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'ScheduleColapsView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'ScheduleColapsView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

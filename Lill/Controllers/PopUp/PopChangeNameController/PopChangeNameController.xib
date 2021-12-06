@@ -37,14 +37,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-se-HMw">
                     <rect key="frame" x="0.0" y="633.5" width="414" height="262.5"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-TW-0OD">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-TW-0OD">
                             <rect key="frame" x="340" y="24" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Zdo-UP-vdB"/>
                                 <constraint firstAttribute="width" constant="50" id="xoc-vw-6NR"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="sub_close_ic"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="sub_close_ic"/>
                             <connections>
                                 <action selector="actionClose:" destination="-1" eventType="touchUpInside" id="J7t-j7-WNa"/>
                             </connections>

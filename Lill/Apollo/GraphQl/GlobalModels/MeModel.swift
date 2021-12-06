@@ -12,6 +12,10 @@ struct MeModel: Codable {
     let access: AccessModel
     var notificationSettings: NotificationSettings?
     
+    mutating func changeNotification(notification: NotificationSettings?) {
+        self.notificationSettings = notification
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case fullName = "fullName"

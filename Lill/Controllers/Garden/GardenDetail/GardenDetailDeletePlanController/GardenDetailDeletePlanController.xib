@@ -60,7 +60,7 @@
                                 <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-66-yUY">
                                     <rect key="frame" x="0.0" y="0.0" width="224" height="177"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-VD-UQ9">
                                             <rect key="frame" x="0.0" y="0.0" width="204" height="156.5"/>
                                         </imageView>
                                     </subviews>
@@ -228,7 +228,7 @@
     </objects>
     <resources>
         <image name="garden_delete_ic" width="118" height="118"/>
-        <image name="temp_plants_ic" width="400" height="267"/>
+        <image name="placeholder_big_ic" width="390" height="241"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

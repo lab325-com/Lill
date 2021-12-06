@@ -61,10 +61,17 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
     
     func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel]) {
         func dateToString(fromDate date: Date) -> String {
-            let dateFormmater = DateFormatter()
+            //let dateFormmater = DateFormatter()
             //dateFormmater.timeZone = TimeZone(identifier: "UTC")
-            dateFormmater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            return dateFormmater.string(from: date)
+            //dateFormmater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            //return dateFormmater.string(from: date)
+            let calendar = Calendar.current
+
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            let seconds = calendar.component(.second, from: date)
+            
+            return "\(hour):\(minutes):\(seconds)"
         }
         
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
