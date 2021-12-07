@@ -4,6 +4,7 @@ import Foundation
 struct CaresModel: Codable {
     let count: Int
     let id: String?
+    let name: String?
     let isActive: Bool?
     let sendNotificationAt: String?
     let nexDate: Date?
@@ -13,6 +14,7 @@ struct CaresModel: Codable {
     enum CodingKeys: String, CodingKey {
         case count = "count"
         case id = "id"
+        case name = "name"
         case isActive = "isActive"
         case sendNotificationAt = "sendNotificationAt"
         case nexDate = "nexDate"

@@ -7,7 +7,7 @@ import UIKit
 //----------------------------------------------
 
 protocol GardenPlantCaresEditOutputProtocol: BaseController {
-    func successGetGardenPlantCares()
+    func successGetGardenPlantCares(caresToDefaultButton: Bool)
     func successUpdateGardenPlantCare()
     func successDeleteGardenPlantCare()
     func successGardenPlantCaresToDefault()
@@ -23,7 +23,7 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     init(view: GardenPlantCaresEditOutputProtocol)
     
     func getGardenPlantCares(gardenPlantId: String)
-    func updateGardenPlantCare(gardenPlantId: String, isActive: Bool)
+    func updateGardenPlantCare(id: String, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?)
     func deleteGardenPlantCare(gardenPlantId: String)
     func gardenPlantCaresToDefault(gardenPlantId: String)
 }
@@ -42,20 +42,21 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         view?.startLoader()
         
         let query = GardenPlantCaresQuery(gardenPlantId: gardenPlantId)
-        let _ = Network.shared.query(model: GardenPlantCaresDataModel.self, query, controller: view, successHandler: { [weak self] model in
+        let _ = Network.shared.query(model: GardenPlantEditCaresDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            self?.plantCares = model.gardenPlantCares.sorted(by: {$0.isActive! && !$1.isActive!})
-            self?.view?.successGetGardenPlantCares()
+            self?.plantCares = model.gardenPlantCares.cares.sorted(by: {$0.isActive! && !$1.isActive!})
+            self?.view?.successGetGardenPlantCares(caresToDefaultButton: model.gardenPlantCares.caresToDefaultButton)
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
     }
     
-    func updateGardenPlantCare(gardenPlantId: String, isActive: Bool) {
+    func updateGardenPlantCare(id: String, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?) {
         view?.startLoader()
         
-        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: gardenPlantId, isActive: isActive)
+//        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: gardenPlantId, isActive: isActive)
+        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id, period: period, sendNotificationAt: sendNotificationAt, isActive: isActive)
         let mutation = GardenPlantCareUpdateMutation(record: gardenPlantCareUpdateInput)
         
         let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in

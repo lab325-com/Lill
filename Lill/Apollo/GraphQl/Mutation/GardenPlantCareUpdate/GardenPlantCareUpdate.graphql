@@ -1,5 +1,14 @@
 mutation GardenPlantCareUpdate($record: GardenPlantCareUpdateInput!) {
 	gardenPlantCareUpdate(record: $record) {
+		id
+		count
+		period
+		sendNotificationAt
 		isActive
+		nextDate
+		CareType {
+			id
+			name
+		}
 	}
 }

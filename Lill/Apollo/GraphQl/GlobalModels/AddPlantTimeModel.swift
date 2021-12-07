@@ -2,7 +2,7 @@
 import Foundation
 
 struct AddPlantTimeModel {
-    let plan: CareType
+    let type: CareType
     var time: Date? = Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date())
     var frequency: Int = 7
     var period: PeriodType = .periodTypeDay

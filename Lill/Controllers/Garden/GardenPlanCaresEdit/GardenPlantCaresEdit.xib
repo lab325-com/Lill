@@ -19,6 +19,7 @@
                 <outlet property="bottomView" destination="0Ls-j4-m8A" id="QtE-l5-NFI"/>
                 <outlet property="deleteCaresButton" destination="aoE-d3-udm" id="vb6-jl-JMR"/>
                 <outlet property="setRecommendedButton" destination="t9f-al-vd4" id="fFc-5m-QWa"/>
+                <outlet property="setRecommendedButtonHeighConstaint" destination="q8r-gw-UOP" id="0bB-B7-Ous"/>
                 <outlet property="tableView" destination="wQi-IK-ZpI" id="aBx-Dh-OcM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -90,8 +91,8 @@
                         <constraint firstAttribute="trailing" secondItem="t9f-al-vd4" secondAttribute="trailing" constant="24" id="FcY-lC-lgE"/>
                         <constraint firstItem="aoE-d3-udm" firstAttribute="top" secondItem="t9f-al-vd4" secondAttribute="bottom" constant="11" id="Ike-mM-HcL"/>
                         <constraint firstItem="t9f-al-vd4" firstAttribute="leading" secondItem="0Ls-j4-m8A" secondAttribute="leading" constant="24" id="K8w-DR-Ubf"/>
-                        <constraint firstAttribute="height" constant="145" id="TrR-00-tma"/>
                         <constraint firstItem="t9f-al-vd4" firstAttribute="top" secondItem="0Ls-j4-m8A" secondAttribute="top" constant="20" id="WZa-ns-Bxo"/>
+                        <constraint firstAttribute="bottom" secondItem="aoE-d3-udm" secondAttribute="bottom" constant="26" id="YDJ-hO-lsO"/>
                     </constraints>
                 </view>
             </subviews>

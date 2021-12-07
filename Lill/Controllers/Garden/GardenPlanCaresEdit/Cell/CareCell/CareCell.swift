@@ -32,6 +32,7 @@ class CareCell: UITableViewCell {
     
     func setupCell(caresModel: CaresModel) {
         self.caresModel = caresModel
+        
         careImageView.image = caresModel.type.name.darklmage
         careLabel.text = caresModel.type.name.text
         if let isActive = caresModel.isActive {
@@ -39,6 +40,11 @@ class CareCell: UITableViewCell {
             bottomView.isHidden = isActive ? false : true
             bottomViewHeighConstraint.constant = isActive ? 56.0 : 0.0
         }
+        
+        let aadPlantModel = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
+//        careTimeLabel.text = aadPlantModel.getTime
+//        careFrequencyLabel.text = "every \(model.frequency) \(model.period.text)"
+//        careDateLabel.text = aadPlantModel.nextTime
     }
         
     @IBAction func careTimeimeAction(_ sender: Any) {

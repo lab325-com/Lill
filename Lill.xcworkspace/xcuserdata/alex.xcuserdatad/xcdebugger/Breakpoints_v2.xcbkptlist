@@ -23,32 +23,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E1AF6CD-DFBF-48B7-B76B-7CE1FE0E1085"
-            shouldBeEnabled = "Yes"
+            uuid = "4F7F0F8F-859C-4EDF-A51D-A1FEB1628AC1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "gardenPlantCaresToDefault(gardenPlantId:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getGardenPlantCares(gardenPlantId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "12B96761-201F-45A0-9488-A8266C9BEB2E"
+            uuid = "29CB209A-C338-4B5C-9093-FAD9B210812E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "gardenPlantCaresToDefault(gardenPlantId:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "updateGardenPlantCare(id:period:sendNotificationAt:isActive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F36555FF-9F3E-425B-9FAB-DAE8BE0C870B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/GardenPlantCaresEdit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "pickerCareSelected(controller:selectedDay:selectedPeriod:model:date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

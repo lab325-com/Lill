@@ -82,7 +82,7 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
         
         for plantsTime in plantsTime {
             let dateString = dateToString(fromDate: plantsTime.time ?? Date())
-            if let id = Int(plantsTime.plan.id ?? "") {
+            if let id = Int(plantsTime.type.id ?? "") {
                 cares.append(GPCareCreateInput(count: plantsTime.frequency, period: plantsTime.period, sendNotificationAt: dateString, careTypeId: id))
             }
         }

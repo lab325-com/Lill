@@ -52,7 +52,7 @@ class AddPlantTimeController: BaseController {
         self.plantsTime = []
         
         for selectedCare in selectedCares {
-            plantsTime.append(AddPlantTimeModel(plan: selectedCare))
+            plantsTime.append(AddPlantTimeModel(type: selectedCare))
         }
         self.coverImage = coverImage
         self.text = text
@@ -156,7 +156,7 @@ extension AddPlantTimeController: AddPlantTimeProtocol {
 
 extension AddPlantTimeController: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        if let index = plantsTime.firstIndex(where: {$0.plan == model.plan}) {
+        if let index = plantsTime.firstIndex(where: {$0.type == model.type}) {
             plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
             tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
         }

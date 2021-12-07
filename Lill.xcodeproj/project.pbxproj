@@ -325,7 +325,7 @@
 		FAA0895B2757976D00449D5B /* CareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA089592757976D00449D5B /* CareCell.xib */; };
 		FAA089602757B3C100449D5B /* AddCareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0895E2757B3C100449D5B /* AddCareCell.swift */; };
 		FAA089612757B3C100449D5B /* AddCareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0895F2757B3C100449D5B /* AddCareCell.xib */; };
-		FAA089652757B5F900449D5B /* GardenPlantCaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA089632757B5F800449D5B /* GardenPlantCaresModel.swift */; };
+		FAA089652757B5F900449D5B /* GardenPlantEditCaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA089632757B5F800449D5B /* GardenPlantEditCaresModel.swift */; };
 		FAA089662757B5F900449D5B /* GardenPlantCares.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAA089642757B5F900449D5B /* GardenPlantCares.graphql */; };
 		FAA089692757B90D00449D5B /* GardenPlantCaresEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA089682757B90D00449D5B /* GardenPlantCaresEditPresenter.swift */; };
 		FAA0896D275802A100449D5B /* CareInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0896B275802A100449D5B /* CareInfoCell.swift */; };
@@ -678,7 +678,7 @@
 		FAA089592757976D00449D5B /* CareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CareCell.xib; sourceTree = "<group>"; };
 		FAA0895E2757B3C100449D5B /* AddCareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCareCell.swift; sourceTree = "<group>"; };
 		FAA0895F2757B3C100449D5B /* AddCareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCareCell.xib; sourceTree = "<group>"; };
-		FAA089632757B5F800449D5B /* GardenPlantCaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresModel.swift; sourceTree = "<group>"; };
+		FAA089632757B5F800449D5B /* GardenPlantEditCaresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantEditCaresModel.swift; sourceTree = "<group>"; };
 		FAA089642757B5F900449D5B /* GardenPlantCares.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCares.graphql; sourceTree = "<group>"; };
 		FAA089682757B90D00449D5B /* GardenPlantCaresEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditPresenter.swift; sourceTree = "<group>"; };
 		FAA0896B275802A100449D5B /* CareInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareInfoCell.swift; sourceTree = "<group>"; };
@@ -2327,7 +2327,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA089642757B5F900449D5B /* GardenPlantCares.graphql */,
-				FAA089632757B5F800449D5B /* GardenPlantCaresModel.swift */,
+				FAA089632757B5F800449D5B /* GardenPlantEditCaresModel.swift */,
 			);
 			path = GardenPlantCares;
 			sourceTree = "<group>";
@@ -2906,7 +2906,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://faker.graphqleditor.com/3knbh/lill/graphql\"\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://api.front.dev.lill.mob325.com/graphql\"\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://api.front.dev.lill.mob325.com/graphql\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2999,7 +2999,7 @@
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				FAA0896D275802A100449D5B /* CareInfoCell.swift in Sources */,
 				02F3ADED274E961C00A07FEA /* ScheduleByGardensModel.swift in Sources */,
-				FAA089652757B5F900449D5B /* GardenPlantCaresModel.swift in Sources */,
+				FAA089652757B5F900449D5B /* GardenPlantEditCaresModel.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
 				02089EB42754CBC30022E1BD /* DoneAllCaresByGardensModel.swift in Sources */,
 				F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */,

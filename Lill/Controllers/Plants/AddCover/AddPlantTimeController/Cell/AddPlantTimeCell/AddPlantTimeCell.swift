@@ -57,8 +57,8 @@ class AddPlantTimeCell: UITableViewCell {
     
     func setupCell(model: AddPlantTimeModel) {
         self.model = model
-        careImageView.image = model.plan.name.image
-        careTitleLabel.text = model.plan.name.text
+        careImageView.image = model.type.name.image
+        careTitleLabel.text = model.type.name.text
         
         careTimeLabel.text = model.getTime
         careFrequencyLabel.text = "\(constEvery) \(model.frequency) \(model.period.text)"
