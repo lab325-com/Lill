@@ -10,6 +10,7 @@ protocol GardenPlantCaresEditOutputProtocol: BaseController {
     func successGetGardenPlantCares()
     func successUpdateGardenPlantCare()
     func successDeleteGardenPlantCare()
+    func successGardenPlantCaresToDefault()
     
     func failure(error: String)
 }
@@ -24,6 +25,7 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     func getGardenPlantCares(gardenPlantId: String)
     func updateGardenPlantCare(gardenPlantId: String, isActive: Bool)
     func deleteGardenPlantCare(gardenPlantId: String)
+    func gardenPlantCaresToDefault(gardenPlantId: String)
 }
 
 class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
@@ -74,6 +76,22 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
             if model.gardenPlantCareDelete {
                 self?.view?.stopLoading()
                 self?.view?.successDeleteGardenPlantCare()
+            }
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
+    }
+    
+    func gardenPlantCaresToDefault(gardenPlantId: String) {
+        view?.startLoader()
+        
+        let mutation = GardenPlantCaresToDefaultMutation(gardenPlantId: gardenPlantId)
+        
+        let _ = Network.shared.mutation(model: GardenPlantCaresToDefaultModel.self, mutation, controller: view) { [weak self] model in
+            if model.gardenPlantCaresToDefault {
+                self?.view?.stopLoading()
+                self?.view?.successGardenPlantCaresToDefault()
             }
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()

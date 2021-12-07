@@ -183,23 +183,12 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HD-fw-ppZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="108" height="55"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <connections>
-                                                    <action selector="careNextDateAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q0N-4G-aCf"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ucp-aP-hFw" secondAttribute="trailing" id="0uH-2w-t9o"/>
-                                            <constraint firstItem="4HD-fw-ppZ" firstAttribute="top" secondItem="dl1-GC-0PQ" secondAttribute="top" id="7Uv-mX-zyh"/>
                                             <constraint firstItem="ucp-aP-hFw" firstAttribute="leading" secondItem="dl1-GC-0PQ" secondAttribute="leading" id="LQH-D8-G7q"/>
                                             <constraint firstItem="G6h-Vz-yc7" firstAttribute="top" secondItem="ucp-aP-hFw" secondAttribute="bottom" id="LXX-2W-R3g"/>
-                                            <constraint firstAttribute="trailing" secondItem="4HD-fw-ppZ" secondAttribute="trailing" id="TJi-7T-Yvn"/>
-                                            <constraint firstItem="4HD-fw-ppZ" firstAttribute="leading" secondItem="dl1-GC-0PQ" secondAttribute="leading" id="VRB-SH-9aE"/>
-                                            <constraint firstAttribute="bottom" secondItem="4HD-fw-ppZ" secondAttribute="bottom" id="kK3-h6-m1G"/>
                                             <constraint firstItem="ucp-aP-hFw" firstAttribute="top" secondItem="dl1-GC-0PQ" secondAttribute="top" constant="10" id="qFb-jt-vMu"/>
                                             <constraint firstItem="G6h-Vz-yc7" firstAttribute="top" secondItem="ucp-aP-hFw" secondAttribute="bottom" id="sdI-fW-AJK"/>
                                             <constraint firstItem="G6h-Vz-yc7" firstAttribute="leading" secondItem="dl1-GC-0PQ" secondAttribute="leading" id="tbb-BG-1JE"/>
