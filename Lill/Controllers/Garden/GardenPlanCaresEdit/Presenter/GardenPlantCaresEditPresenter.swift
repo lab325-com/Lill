@@ -23,7 +23,7 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     init(view: GardenPlantCaresEditOutputProtocol)
     
     func getGardenPlantCares(gardenPlantId: String)
-    func updateGardenPlantCare(id: String, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?)
+    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?)
     func deleteGardenPlantCare(gardenPlantId: String)
     func gardenPlantCaresToDefault(gardenPlantId: String)
 }
@@ -52,11 +52,22 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         })
     }
     
-    func updateGardenPlantCare(id: String, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?) {
+    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?) {
         view?.startLoader()
         
-//        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: gardenPlantId, isActive: isActive)
-        let gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id, period: period, sendNotificationAt: sendNotificationAt, isActive: isActive)
+        var gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id)
+        if let count = count {
+            gardenPlantCareUpdateInput.count = count
+        }
+        if let period = period {
+            gardenPlantCareUpdateInput.period = period
+        }
+        if let sendNotificationAt = sendNotificationAt {
+            gardenPlantCareUpdateInput.sendNotificationAt = sendNotificationAt
+        }
+        if let isActive = isActive {
+            gardenPlantCareUpdateInput.isActive = isActive
+        }
         let mutation = GardenPlantCareUpdateMutation(record: gardenPlantCareUpdateInput)
         
         let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in

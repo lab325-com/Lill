@@ -93,7 +93,7 @@ class GardenPlantCaresEdit: BaseController {
     }
     
     @IBAction func deleteCaresAction(_ sender: Any) {
-        //presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
+        presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
     }
     
     @objc func closeAction() {
@@ -135,21 +135,20 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
 extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
-        //presenter.updateGardenPlantCare(gardenPlantId: caresModel.id ?? "", isActive: isActive)
         guard let id = caresModel.id else { return }
-        presenter.updateGardenPlantCare(id: id, period: nil, sendNotificationAt: nil, isActive: isActive)
+        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive)
     }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
         selectedModel = caresModel
-        let caresModel = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
-        AddCoverRouter(presenter: navigationController).presentPickerCares(model: caresModel, delegate: self, isDatePicker: true)
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: true)
     }
     
     func didTappedCareFrequencyButton(caresModel: CaresModel) {
         selectedModel = caresModel
-        let caresModel = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
-        AddCoverRouter(presenter: navigationController).presentPickerCares(model: caresModel, delegate: self, isDatePicker: false)
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: false)
     }
 }
 
@@ -162,11 +161,13 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
         guard let id = selectedModel?.id else { return }
-        presenter.updateGardenPlantCare(id: id, period: selectedPeriod, sendNotificationAt: model.getTime, isActive: nil)
+        
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "HH:mm"
+        let sendNotificationAt = formatter.string(from: date ?? Date())
+        
+        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
         selectedModel = nil
-//        if let index = presenter.plantCares.firstIndex(where: {$0.type == model.plan}) {
-//            plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
-//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
-//        }
     }
 }
