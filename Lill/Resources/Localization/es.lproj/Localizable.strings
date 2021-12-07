@@ -101,7 +101,7 @@
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";
@@ -191,7 +191,7 @@
 "scheldure_setting_cares_notification_sub" = "¡No te perderás cuidar a las plantas, incluso con cerrado \ Napplication!";
 "scheldure_setting_done" = "Hecho";
 "scheldure_setting_frequency" = "Frecuencia de notificaciones";
-"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n tiempo especificado";
+"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n momento especificado";
 "scheldure_setting_hour" = "Hora";
 "scheldure_setting_list_notification" = "Hoy enumerar la notificación";
 "scheldure_setting_missed" = "Omitido";
