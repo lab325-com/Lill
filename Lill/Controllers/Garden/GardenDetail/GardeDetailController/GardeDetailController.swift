@@ -78,6 +78,11 @@ class GardeDetailController: BaseController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
@@ -102,7 +107,7 @@ class GardeDetailController: BaseController {
         
         tableView.tableFooterView = UIView()
         
-        navigationController?.navigationBar.tintColor = UIColor.white
+        
         
         let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
         navigationItem.rightBarButtonItems = [dots]
@@ -197,7 +202,7 @@ extension GardeDetailController {
         
         let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
-            GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id)
+            GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id, delegate: self)
         }
         
         let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
@@ -255,5 +260,15 @@ extension GardeDetailController: GardenDetailDeleteDelegate {
 extension GardeDetailController: PopClonePlantDelegate {
     func popClonePlantSuccess(controller: PopClonePlantController) {
         
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenPlantCaresEditDelegate
+//----------------------------------------------
+
+extension GardeDetailController: GardenPlantCaresEditDelegate {
+    func gardenPlantCaresEditSuccessDelete() {
+        presenter.getDetailGarden(gardenId: id)
     }
 }

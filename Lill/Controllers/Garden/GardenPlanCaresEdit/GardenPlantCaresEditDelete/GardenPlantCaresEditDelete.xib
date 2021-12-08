@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenPlantCaresEditDelete" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="animationBackGroundSwipeRightView" destination="oFA-sx-mdU" id="C5c-Ed-ZTU"/>
+                <outlet property="deleteCareButton" destination="7YH-Gu-ndV" id="0zZ-YY-Y5i"/>
+                <outlet property="mainLabel" destination="eoH-GU-pnf" id="7zS-z3-0oW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="imageViews" destination="NcP-lT-6Ok" collectionClass="NSMutableArray" id="4WR-X0-4Oj"/>
+                <outletCollection property="imageViews" destination="IO0-RU-EC9" collectionClass="NSMutableArray" id="rg7-PS-JD9"/>
+                <outletCollection property="imageViews" destination="ldI-Oj-vmv" collectionClass="NSMutableArray" id="Ozh-yP-aZI"/>
+                <outletCollection property="imageViews" destination="Nbp-40-gb7" collectionClass="NSMutableArray" id="RIT-af-de9"/>
+                <outletCollection property="titlesLabels" destination="1WX-Tt-yVC" collectionClass="NSMutableArray" id="LrZ-YQ-o7r"/>
+                <outletCollection property="titlesLabels" destination="qEp-V4-cE2" collectionClass="NSMutableArray" id="Agz-y8-Z4h"/>
+                <outletCollection property="titlesLabels" destination="wAB-in-ySL" collectionClass="NSMutableArray" id="Wey-xN-pjS"/>
+                <outletCollection property="titlesLabels" destination="m9x-A5-f2m" collectionClass="NSMutableArray" id="y5G-Fq-WF5"/>
+                <outletCollection property="caresViews" destination="QgI-D4-6fk" collectionClass="NSMutableArray" id="vA3-Um-BZR"/>
+                <outletCollection property="caresViews" destination="QgI-D4-6fk" collectionClass="NSMutableArray" id="LvJ-vR-OXX"/>
+                <outletCollection property="caresViews" destination="qFt-1b-tD6" collectionClass="NSMutableArray" id="vbs-Xu-6Hb"/>
+                <outletCollection property="caresViews" destination="fDg-Ci-CN2" collectionClass="NSMutableArray" id="KIB-Gf-0Js"/>
+                <outletCollection property="caresViews" destination="Jof-uR-SHu" collectionClass="NSMutableArray" id="CA3-qw-ZMv"/>
+                <outletCollection property="separatorsViews" destination="8qZ-i3-ksk" collectionClass="NSMutableArray" id="04k-C8-GCk"/>
+                <outletCollection property="separatorsViews" destination="IIG-y1-Hrg" collectionClass="NSMutableArray" id="5FA-7R-C9B"/>
+                <outletCollection property="separatorsViews" destination="8bs-1F-F3D" collectionClass="NSMutableArray" id="X9P-A0-B54"/>
+                <outletCollection property="separatorsViews" destination="dDC-dv-eTs" collectionClass="NSMutableArray" id="kTt-XC-tM6"/>
+                <outletCollection property="actionsSelectCares" destination="Sco-mh-93i" collectionClass="NSMutableArray" id="rLK-e8-7KW"/>
+                <outletCollection property="actionsSelectCares" destination="Wqe-PW-IZ0" collectionClass="NSMutableArray" id="f9r-Vx-VeO"/>
+                <outletCollection property="actionsSelectCares" destination="jXZ-9r-8f3" collectionClass="NSMutableArray" id="bVu-vS-wZZ"/>
+                <outletCollection property="actionsSelectCares" destination="r4w-Bb-Pdn" collectionClass="NSMutableArray" id="na6-fh-9z4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFA-sx-mdU" customClass="AnimationBackGroundSwipeRightView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Cares that you want to delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoH-GU-pnf">
+                    <rect key="frame" x="107" y="60" width="200.5" height="16"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                    <color key="textColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP1-Rf-SXu" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="16" y="92" width="382" height="298"/>
+                    <subviews>
+                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eCr-Je-VHW">
+                            <rect key="frame" x="0.0" y="5" width="382" height="288"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-D4-6fk">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="72"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_humidity_ic" translatesAutoresizingMaskIntoConstraints="NO" id="NcP-lT-6Ok">
+                                            <rect key="frame" x="33" y="24" width="30" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WX-Tt-yVC">
+                                            <rect key="frame" x="88" y="27" width="41" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qZ-i3-ksk">
+                                            <rect key="frame" x="0.0" y="71.5" width="382" height="0.5"/>
+                                            <color key="backgroundColor" red="0.94117647058823528" green="0.95294117647058818" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="g9o-jG-hOB"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sco-mh-93i">
+                                            <rect key="frame" x="324" y="20.5" width="31" height="31"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="garden_delete_unselect_ic"/>
+                                            <connections>
+                                                <action selector="actionsSelectCares:" destination="-1" eventType="touchUpInside" id="zKg-7k-d0r"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Sco-mh-93i" firstAttribute="centerY" secondItem="1WX-Tt-yVC" secondAttribute="centerY" id="9WL-gD-EIb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Sco-mh-93i" secondAttribute="trailing" constant="27" id="C6b-ZG-rqS"/>
+                                        <constraint firstAttribute="bottom" secondItem="8qZ-i3-ksk" secondAttribute="bottom" id="EIZ-Ly-7UI"/>
+                                        <constraint firstAttribute="bottom" secondItem="NcP-lT-6Ok" secondAttribute="bottom" constant="24" id="R6q-4O-bGd"/>
+                                        <constraint firstAttribute="height" constant="72" id="RGI-YR-ayz"/>
+                                        <constraint firstItem="8qZ-i3-ksk" firstAttribute="leading" secondItem="QgI-D4-6fk" secondAttribute="leading" id="ZwR-7V-ErY"/>
+                                        <constraint firstItem="NcP-lT-6Ok" firstAttribute="top" secondItem="QgI-D4-6fk" secondAttribute="top" constant="24" id="gLk-lk-7iw"/>
+                                        <constraint firstItem="NcP-lT-6Ok" firstAttribute="leading" secondItem="QgI-D4-6fk" secondAttribute="leading" constant="33" id="guT-F7-7jO"/>
+                                        <constraint firstItem="1WX-Tt-yVC" firstAttribute="centerY" secondItem="NcP-lT-6Ok" secondAttribute="centerY" id="hQH-bE-tKC"/>
+                                        <constraint firstItem="1WX-Tt-yVC" firstAttribute="leading" secondItem="QgI-D4-6fk" secondAttribute="leading" constant="88" id="s1D-6j-lWy"/>
+                                        <constraint firstAttribute="trailing" secondItem="8qZ-i3-ksk" secondAttribute="trailing" id="y4q-81-9y6"/>
+                                    </constraints>
+                                </view>
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFt-1b-tD6">
+                                    <rect key="frame" x="0.0" y="72" width="382" height="72"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="IO0-RU-EC9">
+                                            <rect key="frame" x="33" y="24" width="32" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-V4-cE2">
+                                            <rect key="frame" x="88" y="27" width="41" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIG-y1-Hrg">
+                                            <rect key="frame" x="0.0" y="71.5" width="382" height="0.5"/>
+                                            <color key="backgroundColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="OFF-UV-foa"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqe-PW-IZ0">
+                                            <rect key="frame" x="324" y="20.5" width="31" height="31"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="garden_delete_unselect_ic"/>
+                                            <connections>
+                                                <action selector="actionsSelectCares:" destination="-1" eventType="touchUpInside" id="Vpf-yL-zQa"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="IO0-RU-EC9" firstAttribute="leading" secondItem="qFt-1b-tD6" secondAttribute="leading" constant="33" id="30n-8d-UIZ"/>
+                                        <constraint firstItem="IIG-y1-Hrg" firstAttribute="leading" secondItem="qFt-1b-tD6" secondAttribute="leading" id="8QX-32-tuK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wqe-PW-IZ0" secondAttribute="trailing" constant="27" id="9hk-WG-6yQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="IIG-y1-Hrg" secondAttribute="bottom" id="DKt-m0-ab2"/>
+                                        <constraint firstAttribute="trailing" secondItem="IIG-y1-Hrg" secondAttribute="trailing" id="F0c-OF-Qr9"/>
+                                        <constraint firstItem="qEp-V4-cE2" firstAttribute="centerY" secondItem="IO0-RU-EC9" secondAttribute="centerY" id="cgq-fL-FiM"/>
+                                        <constraint firstAttribute="bottom" secondItem="IO0-RU-EC9" secondAttribute="bottom" constant="24" id="d7I-Eq-aSy"/>
+                                        <constraint firstItem="qEp-V4-cE2" firstAttribute="leading" secondItem="qFt-1b-tD6" secondAttribute="leading" constant="88" id="dF7-3V-t5O"/>
+                                        <constraint firstItem="IO0-RU-EC9" firstAttribute="top" secondItem="qFt-1b-tD6" secondAttribute="top" constant="24" id="fab-Ub-tCP"/>
+                                        <constraint firstItem="Wqe-PW-IZ0" firstAttribute="centerY" secondItem="qFt-1b-tD6" secondAttribute="centerY" id="gVg-lY-Nnf"/>
+                                        <constraint firstAttribute="height" constant="72" id="hTw-7T-dAK"/>
+                                    </constraints>
+                                </view>
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-Ci-CN2">
+                                    <rect key="frame" x="0.0" y="144" width="382" height="72"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="ldI-Oj-vmv">
+                                            <rect key="frame" x="33" y="24" width="32" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAB-in-ySL">
+                                            <rect key="frame" x="88" y="27" width="41" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-1F-F3D">
+                                            <rect key="frame" x="0.0" y="71.5" width="382" height="0.5"/>
+                                            <color key="backgroundColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="dGj-MN-Dkz"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-9r-8f3">
+                                            <rect key="frame" x="324" y="20.5" width="31" height="31"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="garden_delete_unselect_ic"/>
+                                            <connections>
+                                                <action selector="actionsSelectCares:" destination="-1" eventType="touchUpInside" id="FIj-8p-55c"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ldI-Oj-vmv" secondAttribute="bottom" constant="24" id="3td-YA-Yds"/>
+                                        <constraint firstItem="8bs-1F-F3D" firstAttribute="leading" secondItem="fDg-Ci-CN2" secondAttribute="leading" id="7XZ-c7-btS"/>
+                                        <constraint firstAttribute="height" constant="72" id="Ka6-FZ-I1d"/>
+                                        <constraint firstItem="jXZ-9r-8f3" firstAttribute="centerY" secondItem="fDg-Ci-CN2" secondAttribute="centerY" id="Nln-dd-k4e"/>
+                                        <constraint firstAttribute="bottom" secondItem="8bs-1F-F3D" secondAttribute="bottom" id="cTg-hc-xR8"/>
+                                        <constraint firstItem="wAB-in-ySL" firstAttribute="centerY" secondItem="ldI-Oj-vmv" secondAttribute="centerY" id="dns-0b-hOm"/>
+                                        <constraint firstItem="ldI-Oj-vmv" firstAttribute="leading" secondItem="fDg-Ci-CN2" secondAttribute="leading" constant="33" id="kff-lp-3MM"/>
+                                        <constraint firstAttribute="trailing" secondItem="jXZ-9r-8f3" secondAttribute="trailing" constant="27" id="mm8-En-Nkg"/>
+                                        <constraint firstAttribute="trailing" secondItem="8bs-1F-F3D" secondAttribute="trailing" id="ofu-Km-yye"/>
+                                        <constraint firstItem="ldI-Oj-vmv" firstAttribute="top" secondItem="fDg-Ci-CN2" secondAttribute="top" constant="24" id="vTl-BV-9sX"/>
+                                        <constraint firstItem="wAB-in-ySL" firstAttribute="leading" secondItem="fDg-Ci-CN2" secondAttribute="leading" constant="88" id="xCt-Nh-eNM"/>
+                                    </constraints>
+                                </view>
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-uR-SHu">
+                                    <rect key="frame" x="0.0" y="216" width="382" height="72"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Nbp-40-gb7">
+                                            <rect key="frame" x="33" y="24" width="32" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9x-A5-f2m">
+                                            <rect key="frame" x="88" y="27" width="41" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4w-Bb-Pdn">
+                                            <rect key="frame" x="324" y="20.5" width="31" height="31"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="garden_delete_unselect_ic"/>
+                                            <connections>
+                                                <action selector="actionsSelectCares:" destination="-1" eventType="touchUpInside" id="7Ts-bD-ibA"/>
+                                            </connections>
+                                        </button>
+                                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDC-dv-eTs">
+                                            <rect key="frame" x="0.0" y="71.5" width="382" height="0.5"/>
+                                            <color key="backgroundColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="JfQ-of-C6b"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="dDC-dv-eTs" secondAttribute="trailing" id="7pb-0v-9oO"/>
+                                        <constraint firstItem="Nbp-40-gb7" firstAttribute="leading" secondItem="Jof-uR-SHu" secondAttribute="leading" constant="33" id="A4a-HB-gHi"/>
+                                        <constraint firstItem="m9x-A5-f2m" firstAttribute="centerY" secondItem="Nbp-40-gb7" secondAttribute="centerY" id="HUf-6U-WRR"/>
+                                        <constraint firstAttribute="height" constant="72" id="Pym-Mw-IK0"/>
+                                        <constraint firstItem="m9x-A5-f2m" firstAttribute="leading" secondItem="Jof-uR-SHu" secondAttribute="leading" constant="88" id="Rut-Sp-3Hh"/>
+                                        <constraint firstItem="r4w-Bb-Pdn" firstAttribute="centerY" secondItem="Jof-uR-SHu" secondAttribute="centerY" id="cUM-oh-xep"/>
+                                        <constraint firstAttribute="bottom" secondItem="Nbp-40-gb7" secondAttribute="bottom" constant="24" id="cWP-zq-NdS"/>
+                                        <constraint firstItem="Nbp-40-gb7" firstAttribute="top" secondItem="Jof-uR-SHu" secondAttribute="top" constant="24" id="crn-D0-LtQ"/>
+                                        <constraint firstItem="dDC-dv-eTs" firstAttribute="leading" secondItem="Jof-uR-SHu" secondAttribute="leading" id="jaX-5R-xlG"/>
+                                        <constraint firstAttribute="bottom" secondItem="dDC-dv-eTs" secondAttribute="bottom" id="uOX-Rz-FZj"/>
+                                        <constraint firstAttribute="trailing" secondItem="r4w-Bb-Pdn" secondAttribute="trailing" constant="27" id="zSW-Do-CDA"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="eCr-Je-VHW" firstAttribute="top" secondItem="jP1-Rf-SXu" secondAttribute="top" constant="5" id="0Tb-Bg-QCe"/>
+                        <constraint firstAttribute="bottom" secondItem="eCr-Je-VHW" secondAttribute="bottom" constant="5" id="NXK-Nd-ooj"/>
+                        <constraint firstAttribute="trailing" secondItem="eCr-Je-VHW" secondAttribute="trailing" id="aw8-la-XvQ"/>
+                        <constraint firstItem="eCr-Je-VHW" firstAttribute="leading" secondItem="jP1-Rf-SXu" secondAttribute="leading" id="cCy-OD-WaN"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="0.12" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-Gu-ndV">
+                    <rect key="frame" x="24" y="440" width="366" height="44"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oKb-4o-cba"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Delete Cares"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionDeleteCares:" destination="-1" eventType="touchUpInside" id="5xg-H9-45D"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oFA-sx-mdU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6T1-iG-O7J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jP1-Rf-SXu" secondAttribute="trailing" constant="16" id="G5H-8H-92P"/>
+                <constraint firstItem="oFA-sx-mdU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GPP-LY-xp2"/>
+                <constraint firstItem="eoH-GU-pnf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="NmR-dA-mJa"/>
+                <constraint firstAttribute="bottom" secondItem="oFA-sx-mdU" secondAttribute="bottom" id="Q9X-Xp-5zs"/>
+                <constraint firstItem="7YH-Gu-ndV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="cOK-pL-DQA"/>
+                <constraint firstItem="jP1-Rf-SXu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dUC-pd-05O"/>
+                <constraint firstAttribute="trailing" secondItem="oFA-sx-mdU" secondAttribute="trailing" id="efc-Iw-b9x"/>
+                <constraint firstItem="jP1-Rf-SXu" firstAttribute="top" secondItem="eoH-GU-pnf" secondAttribute="bottom" constant="16" id="fXR-7I-csL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7YH-Gu-ndV" secondAttribute="trailing" constant="24" id="i0k-3s-hbb"/>
+                <constraint firstItem="7YH-Gu-ndV" firstAttribute="top" secondItem="jP1-Rf-SXu" secondAttribute="bottom" constant="50" id="r6F-63-eAL"/>
+                <constraint firstItem="eoH-GU-pnf" firstAttribute="centerX" secondItem="oFA-sx-mdU" secondAttribute="centerX" id="yUZ-H9-rNt"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="garden_care_watering_ic" width="32" height="32"/>
+        <image name="garden_delete_unselect_ic" width="31" height="31"/>
+        <image name="plants_detail_humidity_ic" width="30" height="34"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

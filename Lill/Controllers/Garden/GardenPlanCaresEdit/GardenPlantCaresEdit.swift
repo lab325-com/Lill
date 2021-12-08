@@ -2,6 +2,10 @@
 import UIKit
 import SwiftUI
 
+protocol GardenPlantCaresEditDelegate: AnyObject {
+    func gardenPlantCaresEditSuccessDelete()
+}
+
 class GardenPlantCaresEdit: BaseController {
     
     //----------------------------------------------
@@ -25,6 +29,7 @@ class GardenPlantCaresEdit: BaseController {
     private var selectedModel: CaresModel?
     
     lazy var presenter = GardenPlantCaresEditPresenter(view: self)
+    weak var delegate: GardenPlantCaresEditDelegate?
     
     //----------------------------------------------
     // MARK: - Private property
@@ -36,7 +41,8 @@ class GardenPlantCaresEdit: BaseController {
     // MARK: - Init
     //----------------------------------------------
     
-    init(gardenPlantId: String) {
+    init(gardenPlantId: String, delegate: GardenPlantCaresEditDelegate) {
+        self.delegate = delegate
         self.gardenPlantId = gardenPlantId
         super.init(nibName: nil, bundle: nil)
     }
@@ -107,11 +113,24 @@ class GardenPlantCaresEdit: BaseController {
     }
     
     @IBAction func deleteCaresAction(_ sender: Any) {
-        presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
+        if presenter.plantCares.count > 0 {
+            GardenRouter(presenter: navigationController).pushDeleteGarden(cares: presenter.plantCares, delegate: self)
+        }
     }
     
     @objc func closeAction() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenPlantCaresEditDeleteDelegate
+//----------------------------------------------
+
+extension GardenPlantCaresEdit: GardenPlantCaresEditDeleteDelegate {
+    func successDelete() {
+        delegate?.gardenPlantCaresEditSuccessDelete()
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
 }
 
@@ -130,10 +149,6 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     }
     
     func successUpdateGardenPlantCare() {
-        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
-    }
-    
-    func successDeleteGardenPlantCare() {
         presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
     
