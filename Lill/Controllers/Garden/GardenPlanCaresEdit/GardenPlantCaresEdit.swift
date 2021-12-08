@@ -163,8 +163,7 @@ extension GardenPlantCaresEdit: PickerCareDelegate {
         guard let id = selectedModel?.id else { return }
         
         let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "HH:mm:ss"
         let sendNotificationAt = formatter.string(from: date ?? Date())
         
         presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)

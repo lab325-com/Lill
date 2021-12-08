@@ -41,10 +41,13 @@ class CareCell: UITableViewCell {
             bottomViewHeighConstraint.constant = isActive ? 56.0 : 0.0
         }
         
-        let aadPlantModel = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
-//        careTimeLabel.text = aadPlantModel.getTime
-//        careFrequencyLabel.text = "every \(model.frequency) \(model.period.text)"
-//        careDateLabel.text = aadPlantModel.nextTime
+        let model = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
+        
+        if let time = caresModel.sendNotificationAt {
+            careTimeLabel.text = String(time.dropLast(3))
+        }
+        careFrequencyLabel.text = "every \(caresModel.count) \(model.period.text)"
+        careDateLabel.text = model.nextTime
     }
         
     @IBAction func careTimeimeAction(_ sender: Any) {
