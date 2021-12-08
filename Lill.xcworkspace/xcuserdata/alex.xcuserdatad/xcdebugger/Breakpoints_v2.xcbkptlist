@@ -30,8 +30,8 @@
             filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "gardenPlantCaresToDefault(gardenPlantId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,9 +46,57 @@
             filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "gardenPlantCaresToDefault(gardenPlantId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12B96761-201F-45A0-9488-A8266C9BEB2E - 3870b1e2a298b4ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lill.GardenPlantCaresEditPresenter.gardenPlantCaresToDefault(gardenPlantId: Swift.String) -&gt; ()"
+                  moduleName = "Lill"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Desktop/lill/Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "12B96761-201F-45A0-9488-A8266C9BEB2E - 7d773b1184099ced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in Lill.GardenPlantCaresEditPresenter.gardenPlantCaresToDefault(gardenPlantId: Swift.String) -&gt; ()"
+                  moduleName = "Lill"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Desktop/lill/Lill/Controllers/Garden/GardenPlanCaresEdit/Presenter/GardenPlantCaresEditPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "998208DE-B932-4D8F-BC6C-859CD2716632"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/GardenPlantCaresEdit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "pickerCareSelected(controller:selectedDay:selectedPeriod:model:date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

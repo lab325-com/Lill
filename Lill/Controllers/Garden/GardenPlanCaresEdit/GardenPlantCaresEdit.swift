@@ -1,5 +1,6 @@
 
 import UIKit
+import SwiftUI
 
 class GardenPlantCaresEdit: BaseController {
     
@@ -11,6 +12,7 @@ class GardenPlantCaresEdit: BaseController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var setRecommendedButton: UIButton!
     @IBOutlet weak var deleteCaresButton: UIButton!
+    @IBOutlet weak var setRecommendedButtonHeighConstaint: NSLayoutConstraint!
     
     //----------------------------------------------
     // MARK: - Global property
@@ -19,6 +21,8 @@ class GardenPlantCaresEdit: BaseController {
     let cellCareInfoIdentifier = String(describing: CareInfoCell.self)
     let cellCareIdentifier = String(describing: CareCell.self)
     let cellAddCareIdentifier = String(describing: AddCareCell.self)
+    
+    private var selectedModel: CaresModel?
     
     lazy var presenter = GardenPlantCaresEditPresenter(view: self)
     
@@ -58,6 +62,8 @@ class GardenPlantCaresEdit: BaseController {
     
     func setup() {
         hiddenNavigationBar = false
+        tableView.alpha = 0.0
+        bottomView.isHidden = true
         
         title = "Edit Care Plan"
         let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(closeAction))
@@ -87,7 +93,7 @@ class GardenPlantCaresEdit: BaseController {
     }
     
     @IBAction func deleteCaresAction(_ sender: Any) {
-        //presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
+        presenter.deleteGardenPlantCare(gardenPlantId: gardenPlantId)
     }
     
     @objc func closeAction() {
@@ -101,7 +107,11 @@ class GardenPlantCaresEdit: BaseController {
 
 extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     
-    func successGetGardenPlantCares() {
+    func successGetGardenPlantCares(caresToDefaultButton: Bool) {
+        tableView.alpha = 1.0
+        bottomView.isHidden = false
+        setRecommendedButton.isHidden = caresToDefaultButton ? false : true
+        setRecommendedButtonHeighConstaint.constant = caresToDefaultButton ? 44.0 : 0.0
         tableView.reloadData()
     }
     
@@ -125,17 +135,20 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
 extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
-        presenter.updateGardenPlantCare(gardenPlantId: caresModel.id ?? "", isActive: isActive)
+        guard let id = caresModel.id else { return }
+        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive)
     }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
-        let caresModel = AddPlantTimeModel(plan: caresModel.type, period: caresModel.period)
-        AddCoverRouter(presenter: navigationController).presentPickerCares(model: caresModel, delegate: self, isDatePicker: true)
+        selectedModel = caresModel
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: true)
     }
     
     func didTappedCareFrequencyButton(caresModel: CaresModel) {
-        let caresModel = AddPlantTimeModel(plan: caresModel.type, period: caresModel.period)
-        AddCoverRouter(presenter: navigationController).presentPickerCares(model: caresModel, delegate: self, isDatePicker: false)
+        selectedModel = caresModel
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: false)
     }
 }
 
@@ -147,9 +160,14 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-//        if let index = presenter.plantCares.firstIndex(where: {$0.type == model.plan}) {
-//            plantsTime[index].change(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
-//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
-//        }
+        guard let id = selectedModel?.id else { return }
+        
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "HH:mm"
+        let sendNotificationAt = formatter.string(from: date ?? Date())
+        
+        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
+        selectedModel = nil
     }
 }

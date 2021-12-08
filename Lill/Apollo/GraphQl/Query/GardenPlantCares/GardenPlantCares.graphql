@@ -1,13 +1,18 @@
 query GardenPlantCares($gardenPlantId: String!) {
 	gardenPlantCares(gardenPlantId: $gardenPlantId) {
-		id
-		CareType {
+		cares {
 			id
 			name
+			count
+			period
+			sendNotificationAt
+			isActive
+			nextDate
+			CareType {
+				id
+				name
+			}
 		}
-		count
-		period
-		sendNotificationAt
-		isActive
+		caresToDefaultButton
 	}
 }

@@ -13,7 +13,7 @@ fileprivate let gardenButtonCellSize = CGSize(width: UIScreen.main.bounds.size.w
 extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.gardenPlants.count + (presenter.sadGardenPlants.count == 0 ? 0 : 1) + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1)
+        return presenter.gardenPlants.count /*+ (presenter.sadGardenPlants.count == 0 ? 0 : 1) + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1)*/
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
