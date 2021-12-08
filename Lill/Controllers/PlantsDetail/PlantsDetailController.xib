@@ -37,6 +37,7 @@
                 <outlet property="scrollView" destination="oSy-dc-sRC" id="YVE-La-LVS"/>
                 <outlet property="topAboutLayout" destination="kj2-rZ-dR6" id="PQW-Iq-teB"/>
                 <outlet property="topCareLayout" destination="Xq8-eH-goU" id="hqr-H7-72l"/>
+                <outlet property="topLayoutWiki" destination="1UU-A1-MJN" id="RiB-YB-CKy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="separeteViews" destination="Gdm-GS-9nm" collectionClass="NSMutableArray" id="hhY-oZ-G03"/>
                 <outletCollection property="separeteViews" destination="LRt-Rr-paN" collectionClass="NSMutableArray" id="Man-Rl-ZAq"/>

@@ -39,6 +39,7 @@ class PlantsDetailController: BaseController {
     @IBOutlet weak var favoriteStatusLabel: UILabel!
     @IBOutlet weak var favoriteStatusImage: UIImageView!
     @IBOutlet weak var favoriteStatusViewBottomLayout: NSLayoutConstraint!
+    @IBOutlet weak var topLayoutWiki: NSLayoutConstraint!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -179,6 +180,11 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
     
     func success(model: PlantDataModel, abouts: [PlantsAboutType], cares: [(type: PlantsCareType, care: CaresModel)]) {
         self.model = model
+        
+        if model.plantById.wikiUrl == nil {
+            moreOnWikiButton.isHidden = true
+            topLayoutWiki.constant = -24 - 44
+        }
         
         updateFavoriteButton()
         

@@ -190,6 +190,7 @@
             <connections>
                 <outlet property="mainView" destination="9cs-hR-1IT" id="HrL-W5-2yw"/>
                 <outlet property="moreOnWikiButton" destination="CYk-pw-5bg" id="ogJ-kQ-NZu"/>
+                <outlet property="topLayoutWiki" destination="q6R-k4-SsS" id="tdX-Ih-17T"/>
                 <outletCollection property="verticalStacks" destination="qo3-4X-Hyl" collectionClass="NSMutableArray" id="AJE-c6-GYn"/>
                 <outletCollection property="verticalStacks" destination="JjM-Bd-XOo" collectionClass="NSMutableArray" id="DbP-KI-AcC"/>
                 <outletCollection property="verticalStacks" destination="nV7-B6-VvU" collectionClass="NSMutableArray" id="1kn-Yz-u0o"/>

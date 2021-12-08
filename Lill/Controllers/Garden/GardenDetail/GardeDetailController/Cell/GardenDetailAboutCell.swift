@@ -20,6 +20,7 @@ class GardenDetailAboutCell: UITableViewCell {
     @IBOutlet var middleLinesViews: [UIView]!
     @IBOutlet weak var moreOnWikiButton: UIButton!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var topLayoutWiki: NSLayoutConstraint!
     
     weak var delegate: GardenDetailAboutDelegate?
     
@@ -46,6 +47,14 @@ class GardenDetailAboutCell: UITableViewCell {
     }
     
     func setupCell(model: GardenPlanByIDModel, abouts: [PlantsAboutType]) {
+        if let _ = model.gardenPlantById.plant?.wikiUrl {
+            moreOnWikiButton.isHidden = false
+            topLayoutWiki.constant = 24
+        } else {
+            topLayoutWiki.constant = -24 - 44
+            moreOnWikiButton.isHidden = true
+        }
+        
         for view in aboutViews {
             view.isHidden = true
         }
@@ -91,6 +100,8 @@ class GardenDetailAboutCell: UITableViewCell {
             middleLinesViews.first(where: {$0.tag == 3})?.isHidden = true
         default: break
         }
+        
+        layoutIfNeeded()
     }
     
     @IBAction func actionWiki(_ sender: UIButton) {
