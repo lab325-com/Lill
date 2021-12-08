@@ -89,7 +89,21 @@ class GardenPlantCaresEdit: BaseController {
     //----------------------------------------------
     
     @IBAction func setToRecommendedAction(_ sender: Any) {
-        presenter.gardenPlantCaresToDefault(gardenPlantId: gardenPlantId)
+        let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let recommended = "Set to Recommended Cares"
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let setToRecommended = UIAlertAction(title: recommended, style: .destructive) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            self.presenter.gardenPlantCaresToDefault(gardenPlantId: self.gardenPlantId)
+        }
+        
+        let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
+        
+        alert.addAction(setToRecommended)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func deleteCaresAction(_ sender: Any) {
