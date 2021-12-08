@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wQi-IK-ZpI">
-                    <rect key="frame" x="0.0" y="44" width="414" height="697"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="731"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ju9-fM-ZSd"/>
@@ -41,7 +41,7 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-j4-m8A">
-                    <rect key="frame" x="0.0" y="717" width="414" height="145"/>
+                    <rect key="frame" x="0.0" y="751" width="414" height="145"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-al-vd4">
                             <rect key="frame" x="24" y="20" width="366" height="44"/>
@@ -109,7 +109,7 @@
                 <constraint firstItem="0Ls-j4-m8A" firstAttribute="top" secondItem="wQi-IK-ZpI" secondAttribute="bottom" constant="-24" id="hoK-v8-t8r"/>
                 <constraint firstItem="lB4-R9-Xzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lI7-OO-Y5E"/>
                 <constraint firstItem="wQi-IK-ZpI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="quA-nx-SSC"/>
-                <constraint firstItem="0Ls-j4-m8A" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="trb-p6-pQb"/>
+                <constraint firstItem="0Ls-j4-m8A" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="trb-p6-pQb"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>

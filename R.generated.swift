@@ -1479,7 +1479,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 61 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 63 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1541,6 +1541,10 @@ struct R: Rswift.Validatable {
     static let gardenDetailSegmentCell = _R.nib._GardenDetailSegmentCell()
     /// Nib `GardenDetailTitleCell`.
     static let gardenDetailTitleCell = _R.nib._GardenDetailTitleCell()
+    /// Nib `GardenPlantAddCares`.
+    static let gardenPlantAddCares = _R.nib._GardenPlantAddCares()
+    /// Nib `GardenPlantCareView`.
+    static let gardenPlantCareView = _R.nib._GardenPlantCareView()
     /// Nib `GardenPlantCaresEdit`.
     static let gardenPlantCaresEdit = _R.nib._GardenPlantCaresEdit()
     /// Nib `GardenViewCell`.
@@ -1841,6 +1845,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailTitleCell) instead")
     static func gardenDetailTitleCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenDetailTitleCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenPlantAddCares", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenPlantAddCares) instead")
+    static func gardenPlantAddCares(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenPlantAddCares)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenPlantCareView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenPlantCareView) instead")
+    static func gardenPlantCareView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenPlantCareView)
     }
     #endif
 
@@ -2210,6 +2230,14 @@ struct R: Rswift.Validatable {
 
     static func gardenDetailTitleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailTitleCell? {
       return R.nib.gardenDetailTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailTitleCell
+    }
+
+    static func gardenPlantAddCares(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenPlantAddCares.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenPlantCareView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenPlantCareView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenPlantCaresEdit(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -7015,6 +7043,7 @@ struct _R: Rswift.Validatable {
       try _GardenDetailEditCareCell.validate()
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
+      try _GardenPlantCareView.validate()
       try _GardenPlantCaresEdit.validate()
       try _GardenViewCell.validate()
       try _IdentifyController.validate()
@@ -7543,6 +7572,34 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "garden_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_bell_ic' is used in nib 'GardenDetailTitleCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'GardenDetailTitleCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenPlantAddCares: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GardenPlantAddCares"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenPlantCareView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenPlantCareView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_care_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_watering_ic' is used in nib 'GardenPlantCareView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

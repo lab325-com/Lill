@@ -354,6 +354,10 @@
 		FAE8D5F7275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8D5F5275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift */; };
 		FAEFA7A4275E4DA400900EE0 /* GardenPlantCareDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */; };
 		FAEFA7A5275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */; };
+		FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */; };
+		FAEFA7B02760E46400900EE0 /* GardenPlantAddCares.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */; };
+		FAEFA7B32760E6D900900EE0 /* GardenPlantCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */; };
+		FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -708,6 +712,10 @@
 		FAE8D5F5275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresToDefaultModel.swift; sourceTree = "<group>"; };
 		FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareDelete.graphql; sourceTree = "<group>"; };
 		FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareDeleteModel.swift; sourceTree = "<group>"; };
+		FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCares.swift; sourceTree = "<group>"; };
+		FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantAddCares.xib; sourceTree = "<group>"; };
+		FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCareView.swift; sourceTree = "<group>"; };
+		FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCareView.xib; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -2411,6 +2419,7 @@
 				FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */,
 				FA545471274BCEF4006B52F4 /* GardenCaresDetail */,
 				FA49AA3C275638A7003B0CD4 /* GardenPlanCaresEdit */,
+				FAEFA7AC2760E42200900EE0 /* GardenPlantAddCares */,
 			);
 			path = Garden;
 			sourceTree = "<group>";
@@ -2509,6 +2518,25 @@
 				FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */,
 			);
 			path = GardenPlantCareDelete;
+			sourceTree = "<group>";
+		};
+		FAEFA7AC2760E42200900EE0 /* GardenPlantAddCares */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */,
+				FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */,
+				FAEFA7B12760E68F00900EE0 /* Views */,
+			);
+			path = GardenPlantAddCares;
+			sourceTree = "<group>";
+		};
+		FAEFA7B12760E68F00900EE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */,
+				FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FAFCF34727147E1300C3134E /* Presenter */ = {
@@ -2719,6 +2747,7 @@
 				02089EC227554D7C0022E1BD /* NotificationSettingsUpdate.graphql in Resources */,
 				FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */,
 				025A18C32739243500AFA581 /* AddPlantCareView.xib in Resources */,
+				FAEFA7B02760E46400900EE0 /* GardenPlantAddCares.xib in Resources */,
 				026CFC13270C221C003A0687 /* GardenButtonCell.xib in Resources */,
 				02F3ADF5274E9E4C00A07FEA /* ScheduleDoneAllCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
@@ -2764,6 +2793,7 @@
 				020FE335274BDC3300FF69F7 /* GoogleService-Info.plist in Resources */,
 				02493DDC2727F136008C2064 /* DetailAboutView.xib in Resources */,
 				026CFC0D270C1FF8003A0687 /* GardenViewCell.xib in Resources */,
+				FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */,
 				02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */,
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
 				02E0B1A4270431B400A56840 /* Main.storyboard in Resources */,
@@ -2849,7 +2879,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3026,6 +3056,7 @@
 				02D142DF2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift in Sources */,
 				FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
+				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
@@ -3064,6 +3095,7 @@
 				02FCBFB5270A45410089CEF8 /* PreferencesManager.swift in Sources */,
 				02A8348126F38FA70009E147 /* OnboardingPageController.swift in Sources */,
 				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
+				FAEFA7B32760E6D900900EE0 /* GardenPlantCareView.swift in Sources */,
 				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
 				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				02089EC627554E530022E1BD /* ScheduleSettingsPresenter.swift in Sources */,
@@ -3247,7 +3279,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3398,7 +3430,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3429,7 +3461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
