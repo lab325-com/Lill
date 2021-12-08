@@ -128,7 +128,10 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionBackToTop(_ sender: UIButton) {
-        collectionView.setContentOffset(.zero, animated: true)
+        if plants.count > 0 {
+            collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            collectionView.reloadData()
+        }
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
