@@ -49,6 +49,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
         view?.startLoader()
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
             
+           
             
             switch result {
             case .success(let product):

@@ -1,5 +1,7 @@
 
 import UIKit
+import AppTrackingTransparency
+import FBSDKCoreKit
 
 class PlantsController: BaseController {
     
@@ -61,6 +63,7 @@ class PlantsController: BaseController {
         hiddenNavigationBar = true
         super.viewDidLoad()
         
+        askTrackingTransparency()
         setup()
         presenter.getPlants(search: "")
     }
@@ -149,6 +152,34 @@ class PlantsController: BaseController {
     
     @objc func liveSearch() {
         presenter.getPlants(search: searchTextField.text!)
+    }
+    
+    private func askTrackingTransparency() {
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus != .authorized && ATTrackingManager.trackingAuthorizationStatus != .denied {
+                ATTrackingManager.requestTrackingAuthorization {  status in
+                    switch status {
+                    case .authorized:
+                        Settings.isAdvertiserIDCollectionEnabled = true
+                        break
+                    case .denied:
+                        Settings.isAdvertiserIDCollectionEnabled = false
+                        break
+                    case .notDetermined:
+                        // Tracking authorization dialog has not been shown
+                        print("Not Determined")
+                    case .restricted:
+                        Settings.isAdvertiserIDCollectionEnabled = false
+                        print("Restricted")
+                    @unknown default:
+                        print("Unknown")
+                    }
+                    
+                }
+            }
+        } else {
+            
+        }
     }
 }
 

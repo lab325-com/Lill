@@ -1,6 +1,7 @@
 
 import UIKit
 
+
 class MainTabBarController: UITabBarController {
     
     //----------------------------------------------
@@ -8,6 +9,7 @@ class MainTabBarController: UITabBarController {
     //----------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let tabbarItemPlants = (self.tabBar.items?[0])! as UITabBarItem
         tabbarItemPlants.image = UIImage(named: "ic_tab_plants")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)

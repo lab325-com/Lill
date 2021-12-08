@@ -1,6 +1,8 @@
 
 import UIKit
 import Toast
+import AppTrackingTransparency
+import FBSDKCoreKit
 
 class LoginController: BaseController {    
 
@@ -39,6 +41,7 @@ class LoginController: BaseController {
             versionLabel.text = "ver. \(version) (\(build))"
         }
     }
+    
     
     //----------------------------------------------
     // MARK: - @IBActions

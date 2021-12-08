@@ -7,7 +7,7 @@ import UserNotifications
 import Firebase
 import FirebaseMessaging
 import SwiftyStoreKit
-
+import StoreKit
 //----------------------------------------------
 // MARK: - Typealias
 //----------------------------------------------
@@ -52,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         
         
+        
+        SKAdNetwork.registerAppForAdNetworkAttribution()
         
         application.registerForRemoteNotifications()
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
