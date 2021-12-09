@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct CaresModel: Codable {
+struct CaresModel: Codable, Hashable {
     let count: Int
     let id: String?
     let name: String?

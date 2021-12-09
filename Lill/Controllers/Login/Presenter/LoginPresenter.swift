@@ -57,6 +57,19 @@ class LoginPresenter: LoginPresenterProtocol {
         RestAuth().login(token: token, social: social) { [weak self] model in
             KeychainService.standard.newAuthToken = model
             
+            switch social {
+            case .apple:
+                AnalyticsHelper.sendFirebaseEvents(events: .login_apple_ok)
+            case .fb:
+                AnalyticsHelper.sendFirebaseEvents(events: .login_fb_ok)
+            case .google:
+                AnalyticsHelper.sendFirebaseEvents(events: .login_google_ok)
+            case .instagram:
+                AnalyticsHelper.sendFirebaseEvents(events: .login_google_ok)
+            case .none:
+                AnalyticsHelper.sendFirebaseEvents(events: .login_close_ok)
+            }
+            
             let query = MeQuery()
             let _ = Network.shared.query(model: MeDataModel.self, query, controller: self?.view) { [weak self] model in
                 KeychainService.standard.me = model.me

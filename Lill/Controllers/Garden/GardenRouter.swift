@@ -9,6 +9,12 @@ import Foundation
 
 class GardenRouter: BaseRouter {
     
+    func pushDeleteGarden(cares: [CaresModel], delegate: GardenPlantCaresEditDeleteDelegate) {
+        let controller = GardenPlantCaresEditDelete(cares: cares, delegate: delegate)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
     func pushGardenDetail(id: String, delegate: GardenDetailProtocolo) {
         let controller = GardeDetailController(id: id, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true
@@ -34,11 +40,8 @@ class GardenRouter: BaseRouter {
         present(controller: controller, presentStyle: .overFullScreen)
     }
     
-    func presentEditCarePlant(gardenPlantId: String) {
-        let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId)
+    func presentEditCarePlant(gardenPlantId: String, delegate: GardenPlantCaresEditDelegate) {
+        let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId, delegate: delegate)
         push(controller: controller)
-//        controller.modalTransitionStyle = .crossDissolve
-//        controller.modalPresentationStyle = .overCurrentContext
-//        present(controller: controller, presentStyle: .overFullScreen)
     }
 }

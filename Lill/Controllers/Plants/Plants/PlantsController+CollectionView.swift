@@ -37,6 +37,7 @@ extension PlantsController: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = plants[safe: indexPath.row] {
+            AnalyticsHelper.sendFirebaseEvents(events: .card_view)
             PlantsRouter(presenter: navigationController).pushDetail(id: model.id, delegate: self)
         }
     }

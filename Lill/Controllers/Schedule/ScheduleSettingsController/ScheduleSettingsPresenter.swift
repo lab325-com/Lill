@@ -59,8 +59,8 @@ class ScheduleSettingsPresenter: ScheduleSettingsPresenterProtocol {
                                                      frequency:  "\(frequency):00:00",
                                                      secondChance: secondChance,
                                                      secondChanceSendAfter: "\(secondChanceSendAfter):00:00",
-                                                     groupNotifications: groupNotifications,
-                                                     groupNotificationsSendAt: groupNotificationsSendAt)
+                                                     todayList: groupNotifications,
+                                                     todayListSendAt: groupNotificationsSendAt)
         
         let mutation = NotificationSettingsUpdateMutation(record: update)
         let _ = Network.shared.mutation(model: NotificationSettingsUpdateModel.self, mutation, controller: view, successHandler: { [weak self] model in

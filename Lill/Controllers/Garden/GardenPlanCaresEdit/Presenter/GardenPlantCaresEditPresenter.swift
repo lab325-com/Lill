@@ -15,6 +15,16 @@ protocol GardenPlantCaresEditOutputProtocol: BaseController {
     func failure(error: String)
 }
 
+extension GardenPlantCaresEditOutputProtocol {
+    func successGetGardenPlantCares(caresToDefaultButton: Bool) {}
+    func successUpdateGardenPlantCare() {}
+    func successDeleteGardenPlantCare() {}
+    func successGardenPlantCaresToDefault() {}
+    
+    func failure(error: String) {}
+
+}
+
 //----------------------------------------------
 // MARK: - Inputs Protocol
 //----------------------------------------------
@@ -24,8 +34,8 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     
     func getGardenPlantCares(gardenPlantId: String)
     func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?)
-    func deleteGardenPlantCare(gardenPlantId: String)
     func gardenPlantCaresToDefault(gardenPlantId: String)
+    func deleteGardenPlantCares(caresId: [String])
 }
 
 class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
@@ -79,14 +89,14 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         }
     }
     
-    func deleteGardenPlantCare(gardenPlantId: String) {
+    func deleteGardenPlantCares(caresId: [String]) {
         view?.startLoader()
         
-        let mutation = GardenPlantDeleteMutation(id: gardenPlantId)
+        let mutation = GardenPlantCaresDeleteMutation(ids: caresId)
         
-        let _ = Network.shared.mutation(model: GardenPlantCareDeleteModel.self, mutation, controller: view) { [weak self] model in
-            if model.gardenPlantCareDelete {
-                self?.view?.stopLoading()
+        let _ = Network.shared.mutation(model: GardenPlantCaresDeleteModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            if model.gardenPlantCaresDelete {
                 self?.view?.successDeleteGardenPlantCare()
             }
         } failureHandler: { [weak self] error in
