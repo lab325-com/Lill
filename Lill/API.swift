@@ -304,10 +304,10 @@ public struct NotificationSettingsUpdateInput: GraphQLMapConvertible {
   ///   - frequency
   ///   - secondChance
   ///   - secondChanceSendAfter
-  ///   - groupNotifications
-  ///   - groupNotificationsSendAt
-  public init(cares: Swift.Optional<Bool?> = nil, waitingCares: Swift.Optional<Bool?> = nil, missedCares: Swift.Optional<Bool?> = nil, frequency: Swift.Optional<String?> = nil, secondChance: Swift.Optional<Bool?> = nil, secondChanceSendAfter: Swift.Optional<String?> = nil, groupNotifications: Swift.Optional<Bool?> = nil, groupNotificationsSendAt: Swift.Optional<String?> = nil) {
-    graphQLMap = ["cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "groupNotifications": groupNotifications, "groupNotificationsSendAt": groupNotificationsSendAt]
+  ///   - todayList
+  ///   - todayListSendAt
+  public init(cares: Swift.Optional<Bool?> = nil, waitingCares: Swift.Optional<Bool?> = nil, missedCares: Swift.Optional<Bool?> = nil, frequency: Swift.Optional<String?> = nil, secondChance: Swift.Optional<Bool?> = nil, secondChanceSendAfter: Swift.Optional<String?> = nil, todayList: Swift.Optional<Bool?> = nil, todayListSendAt: Swift.Optional<String?> = nil) {
+    graphQLMap = ["cares": cares, "waitingCares": waitingCares, "missedCares": missedCares, "frequency": frequency, "secondChance": secondChance, "secondChanceSendAfter": secondChanceSendAfter, "todayList": todayList, "todayListSendAt": todayListSendAt]
   }
 
   public var cares: Swift.Optional<Bool?> {
@@ -364,21 +364,21 @@ public struct NotificationSettingsUpdateInput: GraphQLMapConvertible {
     }
   }
 
-  public var groupNotifications: Swift.Optional<Bool?> {
+  public var todayList: Swift.Optional<Bool?> {
     get {
-      return graphQLMap["groupNotifications"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+      return graphQLMap["todayList"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "groupNotifications")
+      graphQLMap.updateValue(newValue, forKey: "todayList")
     }
   }
 
-  public var groupNotificationsSendAt: Swift.Optional<String?> {
+  public var todayListSendAt: Swift.Optional<String?> {
     get {
-      return graphQLMap["groupNotificationsSendAt"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+      return graphQLMap["todayListSendAt"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "groupNotificationsSendAt")
+      graphQLMap.updateValue(newValue, forKey: "todayListSendAt")
     }
   }
 }

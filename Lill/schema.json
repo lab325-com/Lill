@@ -6540,7 +6540,7 @@
             "deprecationReason": null
           },
           {
-            "name": "groupNotifications",
+            "name": "todayList",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6552,7 +6552,7 @@
             "deprecationReason": null
           },
           {
-            "name": "groupNotificationsSendAt",
+            "name": "todayListSendAt",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -7628,7 +7628,7 @@
       },
       {
         "name": "specifiedBy",
-        "description": "Exposes a URL that specifies the behaviour of this scalar.",
+        "description": "Exposes a URL that specifies the behavior of this scalar.",
         "isRepeatable": false,
         "locations": [
           "SCALAR"
@@ -7636,7 +7636,7 @@
         "args": [
           {
             "name": "url",
-            "description": "The URL that specifies the behaviour of this scalar.",
+            "description": "The URL that specifies the behavior of this scalar.",
             "type": {
               "kind": "NON_NULL",
               "name": null,
