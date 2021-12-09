@@ -13,10 +13,11 @@ class GardenPlantAddCaresSetup: UIViewController {
     // MARK: - Global property
     //----------------------------------------------
     
+    let cellCareInfoIdentifier = String(describing: CareInfoCell.self)
     let cellCareIdentifier = String(describing: CareCell.self)
     let cellAddCareIdentifier = String(describing: AddCareCell.self)
     
-    var cares: [CareType] = []
+    var cares: [CaresModel] = []
     
     //----------------------------------------------
     // MARK: - Private property
@@ -27,7 +28,7 @@ class GardenPlantAddCaresSetup: UIViewController {
     // MARK: - Init
     //----------------------------------------------
     
-    init(cares: [CareType]) {
+    init(cares: [CaresModel]) {
         self.cares = cares
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,6 +63,7 @@ class GardenPlantAddCaresSetup: UIViewController {
 //        tableView.estimatedRowHeight = 82
 //        tableView.rowHeight = UITableView.automaticDimension
         
+        tableView.register(UINib(nibName: cellCareInfoIdentifier, bundle: nil), forCellReuseIdentifier: cellCareInfoIdentifier)
         tableView.register(UINib(nibName: cellCareIdentifier, bundle: nil), forCellReuseIdentifier: cellCareIdentifier)
         tableView.register(UINib(nibName: cellAddCareIdentifier, bundle: nil), forCellReuseIdentifier: cellAddCareIdentifier)
     }
@@ -69,10 +71,6 @@ class GardenPlantAddCaresSetup: UIViewController {
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
-    
-    @IBAction func addCareAction(_ sender: Any) {
-        
-    }
     
     @objc func backAction() {
         navigationController?.popViewController(animated: true)
@@ -83,7 +81,7 @@ class GardenPlantAddCaresSetup: UIViewController {
 // MARK: - CareCellDelegate
 //----------------------------------------------
 
-extension AddCareCellProtocol: CareCellDelegate {
+extension GardenPlantAddCaresSetup: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
 //        guard let id = caresModel.id else { return }
@@ -109,8 +107,7 @@ extension AddCareCellProtocol: CareCellDelegate {
 
 extension GardenPlantAddCaresSetup: AddCareCellProtocol {
     func didPressedAddCareButton() {
-//        let cares = presenter.plantCares.map( {$0.type} )
-//        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(cares: cares)
+
     }
 }
 

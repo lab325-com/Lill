@@ -9,7 +9,6 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var caresStack: UIStackView!
     @IBOutlet var caresViews: [GardenPlantCareView]!
     
     //----------------------------------------------
@@ -68,7 +67,9 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBAction func addCustomCareAction(_ sender: Any) {
-        
+        let caresModel1 = CaresModel(count: 2, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .misting))
+        let caresModel2 = CaresModel(count: 4, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .watering))
+        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(cares: [caresModel1, caresModel2])
     }
     
     @objc func backAction() {

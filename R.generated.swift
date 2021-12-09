@@ -7195,6 +7195,7 @@ struct _R: Rswift.Validatable {
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
       try _GardenPlantAddCares.validate()
+      try _GardenPlantAddCaresSetup.validate()
       try _GardenPlantCareView.validate()
       try _GardenPlantCaresEdit.validate()
       try _GardenPlantCaresEditDelete.validate()
@@ -7749,12 +7750,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GardenPlantAddCaresSetup: Rswift.NibResourceType {
+    struct _GardenPlantAddCaresSetup: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GardenPlantAddCaresSetup"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_background' is used in nib 'GardenPlantAddCaresSetup', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

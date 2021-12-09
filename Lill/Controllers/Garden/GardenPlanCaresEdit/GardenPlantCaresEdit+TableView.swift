@@ -17,6 +17,7 @@ extension GardenPlantCaresEdit: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCareInfoIdentifier) as? CareInfoCell else { return UITableViewCell() }
+                cell.setupCell(infoLabel: "Turn on/off Cares\nto add/remove from Care Plan")
                 return cell
             case presenter.plantCares.count + 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAddCareIdentifier) as? AddCareCell else { return UITableViewCell() }

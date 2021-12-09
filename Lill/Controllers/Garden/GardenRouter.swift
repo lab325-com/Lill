@@ -40,7 +40,7 @@ class GardenRouter: BaseRouter {
         present(controller: controller, presentStyle: .overFullScreen)
     }
     
-    func presentEditCarePlant(gardenPlantId: String, delegate: GardenPlantCaresEditDelegate) {
+    func pushEditCarePlant(gardenPlantId: String, delegate: GardenPlantCaresEditDelegate) {
         let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId, delegate: delegate)
         push(controller: controller)
     }

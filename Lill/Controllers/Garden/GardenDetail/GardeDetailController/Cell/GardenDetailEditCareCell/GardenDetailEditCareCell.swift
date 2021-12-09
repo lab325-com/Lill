@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol GardenDetailEditCareCellProtocol: AnyObject {
+    func didPressedEditButton()
+}
+
 class GardenDetailEditCareCell: UITableViewCell {
 
     @IBOutlet weak var editView: UIView!
-    @IBOutlet weak var editLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    
+    weak var delegate: GardenDetailEditCareCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +25,7 @@ class GardenDetailEditCareCell: UITableViewCell {
         editView.layer.borderWidth = 1.5
         editView.layer.borderColor = UIColor(rgb: 0xF6C137).cgColor
         
-        editLabel.text = RLocalization.garden_detail_care_edit_my_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        editButton.setTitle(RLocalization.garden_detail_care_edit_my_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         selectionStyle = .none
         DispatchQueue.main.async {
             self.contentView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 24)
@@ -32,4 +38,7 @@ class GardenDetailEditCareCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func editAction(_ sender: Any) {
+        delegate?.didPressedEditButton()
+    }
 }

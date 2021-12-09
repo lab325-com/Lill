@@ -107,7 +107,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellEditIdentifier) as? GardenDetailEditCareCell else { return UITableViewCell() }
-        
+                cell.delegate = self
                 return cell
             default:
                 if presenter.scheduleFuture.count != 0 {

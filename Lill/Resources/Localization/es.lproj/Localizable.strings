@@ -16,7 +16,7 @@
 "allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
 "allert_no" = "NO";
 "allert_yes" = "SÍ";
-"care_period_type_days" = "Dias";
+"care_period_type_days" = "Días";
 "care_period_type_mounths" = "Montones";
 "care_period_type_unknown" = "Desconocido";
 "care_period_type_weeks" = "Semanas";
@@ -120,7 +120,7 @@
 "garden_plan_done" = "Hecho";
 "garden_plan_missed" = "Omitido";
 "garden_plan_upcoming" = "Próximo";
-"garden_plan_waiting" = "Esperando";
+"garden_plan_waiting" = "Espera";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";
@@ -130,7 +130,7 @@
 "identify_make_photo_title" = "Hacer la foto de toda la planta.";
 "identify_no_data" = "Lo siento, no se han encontrado resultados";
 "identify_overview_info" = "Asegúrese de que la planta aislada de otras plantas.";
-"identify_overview_title" = "Visión general";
+"identify_overview_title" = "Descripción general";
 "identify_photo_quality_info" = "Asegúrate de que la foto sea aguda y de alta resolución.";
 "identify_photo_quality_title" = "calidad de la foto";
 "identify_premium" = "Hazte Premium";
@@ -203,7 +203,7 @@
 "scheldure_setting_send_daily_list" = "Enviar una lista diaria de cuidados y plantas.";
 "scheldure_setting_send_time" = "Enviar tiempo:";
 "scheldure_setting_title" = "Ajustes";
-"scheldure_setting_waiting" = "Esperando";
+"scheldure_setting_waiting" = "Espera";
 "scheldure_title" = "Calendario";
 "scheldure_today" = "Hoy dia";
 "subscription_active" = "Activo";
@@ -217,7 +217,7 @@
 "subscription_save_33" = "Ahorre un 33% de descuento";
 "subscription_sub_title" = "Obtenga acceso a las plantas de diagnóstico de identificación ilimitadas";
 "subscription_subscribe" = "Suscribir";
-"subscription_terms" = "Condiciones de uso";
+"subscription_terms" = "Términos de Uso";
 "subscription_thanks_subscription" = "Gracias por suscribirse, \ Nyou tiene la versión completa de la aplicación";
 "subscription_title" = "Convertirse en una prima";
 "subscription_unsubscribe" = "Darse de baja";
