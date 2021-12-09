@@ -161,6 +161,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     }
 }
 
+//----------------------------------------------
+// MARK: - CareCellDelegate
+//----------------------------------------------
+
 extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
@@ -181,12 +185,20 @@ extension GardenPlantCaresEdit: CareCellDelegate {
     }
 }
 
+//----------------------------------------------
+// MARK: - AddCareCellProtocol
+//----------------------------------------------
+
 extension GardenPlantCaresEdit: AddCareCellProtocol {
     func didPressedAddCareButton() {
         let cares = presenter.plantCares.map( {$0.type} )
         GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(cares: cares)
     }
 }
+
+//----------------------------------------------
+// MARK: - PickerCareDelegate
+//----------------------------------------------
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
