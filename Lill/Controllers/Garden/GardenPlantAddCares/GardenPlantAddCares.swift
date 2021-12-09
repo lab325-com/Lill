@@ -42,8 +42,9 @@ class GardenPlantAddCares: BaseController {
     
     func setup() {
         title = "Add Care"
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
         let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(backAction))
-        rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
+        rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!], for: .normal)
 //        leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
@@ -60,7 +61,6 @@ class GardenPlantAddCares: BaseController {
         for index in 0..<cares.count {
             let type = cares[index]
             caresViews.first(where: {$0.tag == index})?.setup(type: type, isSelected: selectedCares.contains(type))
-            
         }
     }
     
@@ -84,13 +84,12 @@ class GardenPlantAddCares: BaseController {
 extension GardenPlantAddCares: GardenPlantAddCaresOutputProtocol {
     func successGetCares(cares: [CareType]) {
         
-        self.cares = cares
-        //self.cares = Array(Set(cares).symmetricDifference(Set(self.cares)))
+        self.cares = Array(Set(cares).symmetricDifference(Set(self.cares)))
         
-        for index in 0..<cares.count {
+        for index in 0..<self.cares.count {
             let view = caresViews.first(where: {$0.tag == index})
             view?.isHidden = false
-            view?.setup(type: cares[index], isSelected: false)
+            view?.setup(type: self.cares[index], isSelected: false)
         }
     }
     
