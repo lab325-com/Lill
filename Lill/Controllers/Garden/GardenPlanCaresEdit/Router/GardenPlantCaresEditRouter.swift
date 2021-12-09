@@ -3,12 +3,9 @@ import Foundation
 
 class GardenPlantCaresEditRouter: BaseRouter {
     
-//    func pushWishList(delegate: WishListDelegate) {
-//        let controller = WishListController(delegate: delegate)
-//        push(controller: controller)
-//    }
-    func pushAddCare() {
+    func pushAddCare(cares: [CareType]) {
         let controller = GardenPlantAddCares()
+        controller.cares = cares
         push(controller: controller)
     }
 }

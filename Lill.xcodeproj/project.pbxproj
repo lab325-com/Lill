@@ -310,6 +310,7 @@
 		FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */; };
 		FA87220326FB503400BB8125 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */; };
 		FA8A31062701C98B00F99516 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA8A31052701C98B00F99516 /* Toast */; };
+		FA8D7E6A2762044800AD0E57 /* GardenPlantAddCaresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
 		FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */; };
@@ -668,6 +669,7 @@
 		FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresPresenter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
 		FA8FCD2D27185FCD00173725 /* StartRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartRecognize.graphql; sourceTree = "<group>"; };
@@ -2259,6 +2261,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FA8D7E682762042700AD0E57 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FA8FCD27271818DA00173725 /* UploadMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -2528,6 +2538,7 @@
 			children = (
 				FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */,
 				FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */,
+				FA8D7E682762042700AD0E57 /* Presenter */,
 				FAEFA7B12760E68F00900EE0 /* Views */,
 			);
 			path = GardenPlantAddCares;
@@ -2982,6 +2993,7 @@
 				02CF963F274FBFBF00F356C2 /* GardenPlantByIdsModel.swift in Sources */,
 				F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */,
 				02D142E82757E6D8008A7FA3 /* IPhone82Timeline.swift in Sources */,
+				FA8D7E6A2762044800AD0E57 /* GardenPlantAddCaresPresenter.swift in Sources */,
 				02D4BFB52743B94D00B9322B /* Animation.swift in Sources */,
 				FA545485274E89C6006B52F4 /* PlantsAboutType.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,

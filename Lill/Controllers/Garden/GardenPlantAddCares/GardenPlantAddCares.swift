@@ -1,5 +1,6 @@
 
 import UIKit
+import Apollo
 
 class GardenPlantAddCares: BaseController {
     
@@ -8,14 +9,21 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var caresStack: UIStackView!
     @IBOutlet var caresViews: [GardenPlantCareView]!
     
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
     
-    private var cares: [CareType] = []
     private var selectedCares = Set<CareType>()
+    
+    //----------------------------------------------
+    // MARK: - Global property
+    //----------------------------------------------
+    
+    lazy var presenter = GardenPlantAddCaresPresenter(view: self)
+    var cares: [CareType] = []
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -25,6 +33,7 @@ class GardenPlantAddCares: BaseController {
         super.viewDidLoad()
         
         setup()
+        presenter.getCares()
     }
     
     //----------------------------------------------
@@ -40,6 +49,19 @@ class GardenPlantAddCares: BaseController {
         
         scrollView.contentInset.left = 9.0
         scrollView.contentInset.right = 9.0
+        
+        for view in caresViews {
+            view.isHidden = true
+            view.delegate = self
+        }
+    }
+    
+    private func updateCaresView() {
+        for index in 0..<cares.count {
+            let type = cares[index]
+            caresViews.first(where: {$0.tag == index})?.setup(type: type, isSelected: selectedCares.contains(type))
+            
+        }
     }
     
     //----------------------------------------------
@@ -56,21 +78,38 @@ class GardenPlantAddCares: BaseController {
 }
 
 //----------------------------------------------
+// MARK: - GardenPlantAddCaresOutputProtocol
+//----------------------------------------------
+
+extension GardenPlantAddCares: GardenPlantAddCaresOutputProtocol {
+    func successGetCares(cares: [CareType]) {
+        
+        self.cares = cares
+        //self.cares = Array(Set(cares).symmetricDifference(Set(self.cares)))
+        
+        for index in 0..<cares.count {
+            let view = caresViews.first(where: {$0.tag == index})
+            view?.isHidden = false
+            view?.setup(type: cares[index], isSelected: false)
+        }
+    }
+    
+    func failure(error: String) {
+        
+    }
+}
+
+//----------------------------------------------
 // MARK: - AddPlantCareProtocol
 //----------------------------------------------
 
 extension GardenPlantAddCares: GardenPlantCareViewProtocol {
     func didSelectCare(view: GardenPlantCareView, selectedType: CareType) {
-        
+        if selectedCares.contains(selectedType) {
+            selectedCares.remove(selectedType)
+        } else {
+            selectedCares.insert(selectedType)
+        }
+        updateCaresView()
     }
-    
-//    func addPlantCareSelect(view: AddPlantCareView, selectedType: CareType) {
-//        if selectedCares.contains(selectedType) {
-//            selectedCares.remove(selectedType)
-//        } else {
-//            selectedCares.insert(selectedType)
-//        }
-//
-//        changesView()
-//    }
 }

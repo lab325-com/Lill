@@ -57,15 +57,15 @@
                                                 <constraint firstAttribute="width" constant="112" id="sLB-UP-5Dg"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-dL-2yK" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
+                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-dL-2yK" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
                                             <rect key="frame" x="120" y="0.0" width="112" height="104"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1Q-z8-lAu" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
+                                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1Q-z8-lAu" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
                                             <rect key="frame" x="240" y="0.0" width="112" height="104"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbr-4e-r26" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
+                                        <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbr-4e-r26" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
                                             <rect key="frame" x="360" y="0.0" width="112" height="104"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>

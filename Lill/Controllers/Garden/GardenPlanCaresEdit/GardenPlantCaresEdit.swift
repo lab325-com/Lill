@@ -168,7 +168,8 @@ extension GardenPlantCaresEdit: CareCellDelegate {
 
 extension GardenPlantCaresEdit: AddCareCellProtocol {
     func didPressedAddCareButton() {
-        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare()
+        let cares = presenter.plantCares.map( {$0.type} )
+        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(cares: cares)
     }
 }
 

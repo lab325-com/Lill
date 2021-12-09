@@ -51,5 +51,4 @@ class AddPlantCareView: UIView, LoadFromXibProtocol {
             delegate?.addPlantCareSelect(view: self, selectedType: selectedType)
         }
     }
-    
 }
