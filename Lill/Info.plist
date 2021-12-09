@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAdvertisingAttributionReportEndpoint</key>
-	<string>https://mob325.com</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Your data will be used to provide you with tailored personalized experience</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -56,6 +52,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://mob325.com</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -63,6 +61,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app will use camera.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Your data will be used to provide you with tailored personalized experience</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFProDisplay-Bold</string>
@@ -85,6 +85,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

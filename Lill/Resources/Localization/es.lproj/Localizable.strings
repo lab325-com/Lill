@@ -95,6 +95,11 @@
 "diagnosis_title" = "Diagnosticando en progreso";
 "disease_archive_button" = "Diagnosticar la enfermedad";
 "disease_archive_title" = "Archivado de la enfermedad";
+"garde_edit_delete_allert_button" = "Eliminar %d le importa";
+"garde_edit_delete_allert_sub_title" = "¿Seguro que quieres hacer esto?";
+"garde_edit_delete_delete_cares" = "Eliminar cares";
+"garde_edit_delete_sub_title" = "Seleccione Cares que quiera eliminar";
+"garde_edit_delete_title" = "Eliminar atención";
 "garden_cares_detail_cares" = "Cuidar";
 "garden_cares_detail_info" = "¿Seguro que quieres marcar como se hace?";
 "garden_choose_add_plant_cancel" = "Cancelar";

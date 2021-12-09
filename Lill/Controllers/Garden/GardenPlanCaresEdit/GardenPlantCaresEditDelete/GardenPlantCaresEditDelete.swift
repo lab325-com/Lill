@@ -21,6 +21,7 @@ class GardenPlantCaresEditDelete: BaseController {
     @IBOutlet var caresViews: [UIView]!
     @IBOutlet var imageViews: [UIImageView]!
     @IBOutlet var titlesLabels: [UILabel]!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     @IBOutlet var separatorsViews: [UIView]!
     
@@ -66,9 +67,10 @@ class GardenPlantCaresEditDelete: BaseController {
         colorTitleNavigation = UIColor.black
         super.viewDidLoad()
 
-        navigationItem.title = "Delete Care"
+        subtitleLabel.text = RLocalization.garde_edit_delete_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        navigationItem.title = RLocalization.garde_edit_delete_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        
+        deleteCareButton.setTitle(RLocalization.garde_edit_delete_delete_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         for view in caresViews {
             view.isHidden = true
         }
@@ -99,8 +101,9 @@ class GardenPlantCaresEditDelete: BaseController {
     
     @IBAction func actionDeleteCares(_ sender: UIButton) {
         if selectedCares.count > 0 {
-            let message = "Are you sure you want to do this?"
-            let deleteTitle = "Delete \(selectedCares.count) Cares"
+            
+            let message = RLocalization.garde_edit_delete_allert_sub_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            let deleteTitle = RLocalization.garde_edit_delete_allert_button(selectedCares.count, preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
             let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
             
             let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.actionSheet)

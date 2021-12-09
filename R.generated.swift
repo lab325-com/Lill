@@ -1505,7 +1505,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 62 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 64 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1567,6 +1567,10 @@ struct R: Rswift.Validatable {
     static let gardenDetailSegmentCell = _R.nib._GardenDetailSegmentCell()
     /// Nib `GardenDetailTitleCell`.
     static let gardenDetailTitleCell = _R.nib._GardenDetailTitleCell()
+    /// Nib `GardenPlantAddCares`.
+    static let gardenPlantAddCares = _R.nib._GardenPlantAddCares()
+    /// Nib `GardenPlantCareView`.
+    static let gardenPlantCareView = _R.nib._GardenPlantCareView()
     /// Nib `GardenPlantCaresEditDelete`.
     static let gardenPlantCaresEditDelete = _R.nib._GardenPlantCaresEditDelete()
     /// Nib `GardenPlantCaresEdit`.
@@ -1869,6 +1873,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailTitleCell) instead")
     static func gardenDetailTitleCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenDetailTitleCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenPlantAddCares", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenPlantAddCares) instead")
+    static func gardenPlantAddCares(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenPlantAddCares)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenPlantCareView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenPlantCareView) instead")
+    static func gardenPlantCareView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenPlantCareView)
     }
     #endif
 
@@ -2248,6 +2268,14 @@ struct R: Rswift.Validatable {
       return R.nib.gardenDetailTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailTitleCell
     }
 
+    static func gardenPlantAddCares(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenPlantAddCares.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenPlantCareView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenPlantCareView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenPlantCaresEdit(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenPlantCaresEdit.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2419,7 +2447,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 241 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 246 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2505,6 +2533,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_cares_detail_info = Rswift.StringResource(key: "garden_cares_detail_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Are you sure you want to do this?
+      ///
+      /// Locales: en, es
+      static let garde_edit_delete_allert_sub_title = Rswift.StringResource(key: "garde_edit_delete_allert_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: B
       ///
       /// Locales: en, es
@@ -2729,6 +2761,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_deciduous_deciduous = Rswift.StringResource(key: "climate_deciduous_deciduous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Delete %d Cares
+      ///
+      /// Locales: en, es
+      static let garde_edit_delete_allert_button = Rswift.StringResource(key: "garde_edit_delete_allert_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Delete Care
+      ///
+      /// Locales: en, es
+      static let garde_edit_delete_title = Rswift.StringResource(key: "garde_edit_delete_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Delete Cares
+      ///
+      /// Locales: en, es
+      static let garde_edit_delete_delete_cares = Rswift.StringResource(key: "garde_edit_delete_delete_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Delete Plant
       ///
       /// Locales: en, es
@@ -3173,6 +3217,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_setting_alert = Rswift.StringResource(key: "scheldure_setting_alert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Select Cares that you want to delete
+      ///
+      /// Locales: en, es
+      static let garde_edit_delete_sub_title = Rswift.StringResource(key: "garde_edit_delete_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -3699,6 +3747,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_cares_detail_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Are you sure you want to do this?
+      ///
+      /// Locales: en, es
+      static func garde_edit_delete_allert_sub_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garde_edit_delete_allert_sub_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garde_edit_delete_allert_sub_title"
+        }
+
+        return NSLocalizedString("garde_edit_delete_allert_sub_title", bundle: bundle, comment: "")
       }
 
       /// en translation: B
@@ -4541,6 +4604,53 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_deciduous_deciduous", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete %d Cares
+      ///
+      /// Locales: en, es
+      static func garde_edit_delete_allert_button(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garde_edit_delete_allert_button", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garde_edit_delete_allert_button"
+        }
+
+        let format = NSLocalizedString("garde_edit_delete_allert_button", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: Delete Care
+      ///
+      /// Locales: en, es
+      static func garde_edit_delete_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garde_edit_delete_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garde_edit_delete_title"
+        }
+
+        return NSLocalizedString("garde_edit_delete_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete Cares
+      ///
+      /// Locales: en, es
+      static func garde_edit_delete_delete_cares(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garde_edit_delete_delete_cares", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garde_edit_delete_delete_cares"
+        }
+
+        return NSLocalizedString("garde_edit_delete_delete_cares", bundle: bundle, comment: "")
       }
 
       /// en translation: Delete Plant
@@ -6208,6 +6318,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_setting_alert", bundle: bundle, comment: "")
       }
 
+      /// en translation: Select Cares that you want to delete
+      ///
+      /// Locales: en, es
+      static func garde_edit_delete_sub_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garde_edit_delete_sub_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garde_edit_delete_sub_title"
+        }
+
+        return NSLocalizedString("garde_edit_delete_sub_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -7055,6 +7180,7 @@ struct _R: Rswift.Validatable {
       try _GardenDetailEditCareCell.validate()
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
+      try _GardenPlantCareView.validate()
       try _GardenPlantCaresEdit.validate()
       try _GardenPlantCaresEditDelete.validate()
       try _GardenViewCell.validate()
@@ -7584,6 +7710,34 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "garden_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_bell_ic' is used in nib 'GardenDetailTitleCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'GardenDetailTitleCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenPlantAddCares: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GardenPlantAddCares"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenPlantCareView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenPlantCareView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_care_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_watering_ic' is used in nib 'GardenPlantCareView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

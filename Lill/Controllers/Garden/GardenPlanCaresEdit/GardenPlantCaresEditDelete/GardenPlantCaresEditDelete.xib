@@ -22,6 +22,7 @@
                 <outlet property="animationBackGroundSwipeRightView" destination="oFA-sx-mdU" id="C5c-Ed-ZTU"/>
                 <outlet property="deleteCareButton" destination="7YH-Gu-ndV" id="0zZ-YY-Y5i"/>
                 <outlet property="mainLabel" destination="eoH-GU-pnf" id="7zS-z3-0oW"/>
+                <outlet property="subtitleLabel" destination="eoH-GU-pnf" id="0cP-TX-Xpa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="imageViews" destination="NcP-lT-6Ok" collectionClass="NSMutableArray" id="4WR-X0-4Oj"/>
                 <outletCollection property="imageViews" destination="IO0-RU-EC9" collectionClass="NSMutableArray" id="rg7-PS-JD9"/>

@@ -71,7 +71,7 @@ class GardenPlantCaresEdit: BaseController {
         tableView.alpha = 0.0
         bottomView.isHidden = true
         
-        title = "Edit Care Plan"
+        navigationItem.title = "Edit Care Plan"
         let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(closeAction))
         let leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(closeAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
