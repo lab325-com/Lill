@@ -362,6 +362,7 @@
 		FAEFA7B02760E46400900EE0 /* GardenPlantAddCares.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */; };
 		FAEFA7B32760E6D900900EE0 /* GardenPlantCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */; };
 		FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */; };
+		FAEFA7B82760FEA200900EE0 /* GardenPlantCaresEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7B72760FEA200900EE0 /* GardenPlantCaresEditRouter.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -724,6 +725,7 @@
 		FAEFA7AE2760E46400900EE0 /* GardenPlantAddCares.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantAddCares.xib; sourceTree = "<group>"; };
 		FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCareView.swift; sourceTree = "<group>"; };
 		FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCareView.xib; sourceTree = "<group>"; };
+		FAEFA7B72760FEA200900EE0 /* GardenPlantCaresEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditRouter.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -2186,6 +2188,7 @@
 				FA49AA3E275642DC003B0CD4 /* GardenPlantCaresEdit.xib */,
 				FAA08955275796B100449D5B /* GardenPlantCaresEdit+TableView.swift */,
 				FAA089672757B8EA00449D5B /* Presenter */,
+				FAEFA7B62760FE6E00900EE0 /* Router */,
 				FAA089572757972C00449D5B /* Cell */,
 			);
 			path = GardenPlanCaresEdit;
@@ -2565,6 +2568,14 @@
 				FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FAEFA7B62760FE6E00900EE0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFA7B72760FEA200900EE0 /* GardenPlantCaresEditRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		FAFCF34727147E1300C3134E /* Presenter */ = {
@@ -3041,6 +3052,7 @@
 				0272DB0527358DF2005E7880 /* AddCoverRouter.swift in Sources */,
 				FA24A5A52732DB950059AF6A /* PlantToGardenModel.swift in Sources */,
 				FA8FCD302718601400173725 /* StartRecognizeModel.swift in Sources */,
+				FAEFA7B82760FEA200900EE0 /* GardenPlantCaresEditRouter.swift in Sources */,
 				02C6C104273A684A003C47FF /* RestCalls.swift in Sources */,
 				FA545487274E8C7A006B52F4 /* StatusGardenCareType.swift in Sources */,
 				023BBB1A2744150900DCFFF1 /* GardenRouter.swift in Sources */,
