@@ -63,9 +63,15 @@ class PlantsController: BaseController {
         hiddenNavigationBar = true
         super.viewDidLoad()
         
+        AnalyticsHelper.sendFirebaseEvents(events: .main_screen_open)
         askTrackingTransparency()
         setup()
         presenter.getPlants(search: "")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .main_screen)
     }
     
     //----------------------------------------------
@@ -124,6 +130,7 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionPhoto(_ sender: UIButton) {
+        AnalyticsHelper.sendFirebaseEvents(events: .explore_photo)
         PlantsRouter(presenter: navigationController).presentChooseIdentify()
     }
     
@@ -154,6 +161,7 @@ class PlantsController: BaseController {
     }
     
     @objc func liveSearch() {
+        AnalyticsHelper.sendFirebaseEvents(events: .explore_search)
         presenter.getPlants(search: searchTextField.text!)
     }
     
@@ -192,10 +200,14 @@ class PlantsController: BaseController {
 
 extension PlantsController: PlantsOutputProtocol {
     func successAddToGarden() {
+        AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
+        
         CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
     func successFavorite(isFavorite: Bool, id: String) {
+        isFavorite ? AnalyticsHelper.sendFirebaseEvents(events: .add_to_fav) : AnalyticsHelper.sendFirebaseEvents(events: .remove_from_fav)
+        
         if let index = plants.firstIndex(where: {$0.id == id }) {
             plants[index].description.changeIsFavorite(isFavorite)
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
@@ -317,7 +329,7 @@ extension PlantsController {
     func upAnimate() {
         if isNeedAnimate {
             debugPrint("animate")
-            
+            AnalyticsHelper.sendFirebaseEvents(events: .explore_catalog)
             isNeedAnimate = false
             animatePhotoButton(isHidden: true)
         }

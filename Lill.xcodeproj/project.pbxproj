@@ -221,6 +221,7 @@
 		02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC22743B98C00B9322B /* TimelineSwipeLeft.swift */; };
 		02D4BFC82743BC7800B9322B /* AnimationBackGroundSwipeRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */; };
 		02D4BFC92743BC7800B9322B /* TimelineSwipeRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */; };
+		02DCC49E27621C7000F976BA /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCC49D27621C7000F976BA /* AnalyticsHelper.swift */; };
 		02DF6B31275659910069CFF6 /* OnboardingFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */; };
 		02DF6B32275659910069CFF6 /* OnboardingFourController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DF6B30275659910069CFF6 /* OnboardingFourController.xib */; };
 		02DF6B3A275663C80069CFF6 /* MainOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */; };
@@ -485,7 +486,7 @@
 		0291DD992728293B008E9F6F /* DetailCaresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCaresView.swift; sourceTree = "<group>"; };
 		0291DD9B27282944008E9F6F /* DetailCaresView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCaresView.xib; sourceTree = "<group>"; };
 		0291DD9F27283C32008E9F6F /* PlantsDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailPresenter.swift; sourceTree = "<group>"; };
-		0292D673276100F700E8A21F /* GardenPlantCaresDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = GardenPlantCaresDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantCaresDelete/GardenPlantCaresDelete.graphql; sourceTree = SOURCE_ROOT; };
+		0292D673276100F700E8A21F /* GardenPlantCaresDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantCaresDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/GardenPlantCaresDelete/GardenPlantCaresDelete.graphql; sourceTree = SOURCE_ROOT; };
 		0292D6752761012A00E8A21F /* GardenPlantCaresDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantCaresDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/GardenPlantCaresDelete/GardenPlantCaresDeleteModel.swift; sourceTree = SOURCE_ROOT; };
 		029C5202273078D300BD30B4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		029C520427307F9300BD30B4 /* Rswift+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Extension.swift"; sourceTree = "<group>"; };
@@ -586,6 +587,7 @@
 		02D4BFC22743B98C00B9322B /* TimelineSwipeLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwipeLeft.swift; sourceTree = "<group>"; };
 		02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBackGroundSwipeRightView.swift; sourceTree = "<group>"; };
 		02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwipeRight.swift; sourceTree = "<group>"; };
+		02DCC49D27621C7000F976BA /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
 		02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFourController.swift; sourceTree = "<group>"; };
 		02DF6B30275659910069CFF6 /* OnboardingFourController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingFourController.xib; sourceTree = "<group>"; };
 		02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingController.swift; sourceTree = "<group>"; };
@@ -1414,7 +1416,6 @@
 				02E0B1A22704315100A56840 /* TabBar */,
 				FAB3BD202704AB640075C0C0 /* Plants */,
 				02FCBFA7270A36200089CEF8 /* WishList */,
-				02493DD32727E35F008C2064 /* PlantsDetail */,
 				FAFCF34A27148B8A00C3134E /* Identify Diagnosis */,
 				FAB3BD212704AB710075C0C0 /* Garden */,
 				FAB3BD222704AB7E0075C0C0 /* Schedule */,
@@ -1462,6 +1463,7 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02DCC49C27621C5900F976BA /* Analytics */,
 				027B5FA42758F15B00A84D98 /* ActivityIndicator */,
 				FA545481274E88FD006B52F4 /* Enums */,
 				FAFCF350271575D400C3134E /* Views */,
@@ -1858,6 +1860,14 @@
 				02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */,
 			);
 			path = SwipeRight;
+			sourceTree = "<group>";
+		};
+		02DCC49C27621C5900F976BA /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				02DCC49D27621C7000F976BA /* AnalyticsHelper.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		02DF6B2E2756591A0069CFF6 /* OnboardingFourController */ = {
@@ -2433,6 +2443,7 @@
 			children = (
 				FAFCF34527147DC800C3134E /* PlantsRouter.swift */,
 				02FCBFA6270A36100089CEF8 /* Plants */,
+				02493DD32727E35F008C2064 /* PlantsDetail */,
 				0272DADF2735413A005E7880 /* AddCover */,
 			);
 			path = Plants;
@@ -3078,6 +3089,7 @@
 				025A18BC273915FE00AFA581 /* AddPlantsCareController.swift in Sources */,
 				02359B9D274D748A00109C69 /* GardenPlantClone.swift in Sources */,
 				F3BED189272EFB8F00614DEE /* MenuItemTableViewCell.swift in Sources */,
+				02DCC49E27621C7000F976BA /* AnalyticsHelper.swift in Sources */,
 				FA49AA3F275642DC003B0CD4 /* GardenPlantCaresEdit.swift in Sources */,
 				02AB244326F39BA400309CFF /* R.generated.swift in Sources */,
 				FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */,

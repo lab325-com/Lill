@@ -83,6 +83,11 @@ class PlantsDetailController: BaseController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .card_plant_explore)
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
@@ -147,16 +152,22 @@ class PlantsDetailController: BaseController {
     
     @IBAction func plantFavoriteAction(_ sender: Any) {
         guard let isFavorite = model?.plantById.isFavourite else { return }
+        if !isFavorite == true {
+            AnalyticsHelper.sendFirebaseEvents(events: .add_to_fav)
+        }
+        
         presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
         delegate?.updatePlants()
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
         guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
         presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
     }
     
     @IBAction func wikiAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .go_to_wiki)
         if let url = URL(string: wikiUrl) {
             UIApplication.shared.open(url)
         }

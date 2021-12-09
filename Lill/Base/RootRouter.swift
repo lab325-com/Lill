@@ -33,6 +33,7 @@ class RootRouter {
         if PreferencesManager.sharedManager.isFirstRun == false {
             KeychainService.standard.removeObject(forKey: .newAuthToken)
             KeychainService.standard.removeObject(forKey: .me)
+            AnalyticsHelper.sendFirebaseEvents(events: .first_open)
             PreferencesManager.sharedManager.isFirstRun = true
         }
         
