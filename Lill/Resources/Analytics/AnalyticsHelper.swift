@@ -13,13 +13,18 @@ enum FirebaseScreenEvents: String {
     case login_screen = "login_screen"
     case main_screen = "main_screen"
     case card_plant_explore = "card_plant_explore"
+    case photo_select = "photo_select"
+    case identify_screen_step_1 = "identify_screen_step_1"
+    case identify_screen_step_2 = "identify_screen_step_2"
+    
+    case tap_bar = "tap_bar"
 }
 
 enum FirebaseEvents: String {
     /// All base event
     case first_open = "first_open"
     
-    ///Login Screen
+    ///LoginController(login_screen)
     case login_apple = "login_apple"
     case login_fb = "login_fb"
     case login_instagram = "login_instagram"
@@ -32,7 +37,7 @@ enum FirebaseEvents: String {
     case login_google_ok = "login_google_ok"
     case login_close_ok = "login_close_ok"
     
-    ///Main Screen
+    ///PlantsController(main_screen)
     case main_screen_open = "main_screen_open"
     case explore_search = "explore_search"
     case explore_photo = "explore_photo"
@@ -42,8 +47,27 @@ enum FirebaseEvents: String {
     case card_view = "card_view"
     case remove_from_fav = "remove_from_fav"
     
-    /// Plants (card_plant_explore)
+    /// PlantsDetailController (card_plant_explore)
     case go_to_wiki = "go_to_wiki"
+    
+    ///ChooseIdentifyController (photo_select)
+    case identify = "identify"
+    case diagnose = "diagnose"
+    case cancel_photo = "cancel_photo"
+    
+    /// IdentifyController (identify_screen_step_1)
+    case identify_capture = "identify_capture"
+    case identify_upload = "identify_upload"
+    
+    /// IdentifyController (identify_screen_step_2)
+    case identifying = "identifying"
+    case retake_photo = "retake_photo"
+    
+    /// MainTabBarController(tap_bar)
+    case add_bar = "add_bar"
+    case garden_bar = "garden_bar"
+    case notification_bar = "notification_bar"
+    case menu_bar = "menu_bar"
 }
 
 class AnalyticsHelper: NSObject {

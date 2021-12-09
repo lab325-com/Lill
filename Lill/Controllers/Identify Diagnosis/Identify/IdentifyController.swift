@@ -95,8 +95,13 @@ class IdentifyController: BaseController {
         super.viewDidLoad()
         
         setup()
+        
+        DispatchQueue.main.async {
+            AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_1)
+        }
+        
     }
-   
+    
     //----------------------------------------------
     // MARK: - Private methods
     //----------------------------------------------
@@ -184,6 +189,8 @@ class IdentifyController: BaseController {
     }
     
     @IBAction func galleryAction(_ sender: Any) {
+        
+        AnalyticsHelper.sendFirebaseEvents(events: .identify_upload)
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.sourceType = .savedPhotosAlbum
@@ -194,10 +201,15 @@ class IdentifyController: BaseController {
     
     @IBAction func captureAction(_ sender: Any) {
         takePicture = true
+        AnalyticsHelper.sendFirebaseEvents(events: .identify_capture)
         
         identifyView.isHidden = true
         identifyRsultView.isHidden = false
         flashButton.isHidden = true
+        
+        DispatchQueue.main.async {
+            AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_2)
+        }
     }
     
     @IBAction func subscribeAction(_ sender: Any) {
@@ -208,6 +220,8 @@ class IdentifyController: BaseController {
     }
     
     @IBAction func identifyAction(_ sender: Any) {
+        
+        AnalyticsHelper.sendFirebaseEvents(events: .identifying)
         guard let image = capturedImage else { return }
         
         presenter.uploadPhoto(img: image)
@@ -217,6 +231,7 @@ class IdentifyController: BaseController {
     }
     
     @IBAction func retakePhotoAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .retake_photo)
         capturedImage = nil
         capturedImageView.image = nil
         
@@ -225,6 +240,10 @@ class IdentifyController: BaseController {
         flashButton.isHidden = false
         
         setupAndStartCaptureSession()
+        
+        DispatchQueue.main.async {
+            AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_1)
+        }
     }
 }
 
@@ -372,6 +391,8 @@ extension IdentifyController {
 extension IdentifyController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !takePicture { return }
+        
+        
         
         guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: cvBuffer)

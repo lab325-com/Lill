@@ -931,7 +931,7 @@ Ring icon in Plant card</string>
         <scene sceneID="zsG-Tb-NnV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N7h-az-nc5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_tab_garden" id="d2w-tZ-0eA"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="ic_tab_garden" id="d2w-tZ-0eA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="etD-fp-dGr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1007,7 +1007,7 @@ Ring icon in Plant card</string>
         <scene sceneID="eJH-CO-re7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hxc-h8-EUH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_tab_schedule" id="zUn-Q9-D4g"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="ic_tab_schedule" id="zUn-Q9-D4g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iU4-CH-LdQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1026,7 +1026,7 @@ Ring icon in Plant card</string>
         <scene sceneID="uRz-Y0-7HF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eVG-q5-gdL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_tab_menu" id="kGd-TF-ZuT"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="ic_tab_menu" id="kGd-TF-ZuT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KHB-ve-5en">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

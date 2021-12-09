@@ -20,12 +20,6 @@ class ChooseIdentifyController: BaseController {
     @IBOutlet weak var premiumLabel: UILabel!
     
     //----------------------------------------------
-    // MARK: - Private property
-    //----------------------------------------------
-
-    
-
-    //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     
@@ -33,6 +27,11 @@ class ChooseIdentifyController: BaseController {
         super.viewDidLoad()
 
         configureView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .photo_select)
     }
     
     //----------------------------------------------
@@ -57,14 +56,17 @@ class ChooseIdentifyController: BaseController {
     //----------------------------------------------
     
     @IBAction func cancelAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .cancel_photo)
         dismiss(animated: false)
     }
     
     @IBAction func identifyAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .identify)
         guard let meModel = KeychainService.standard.me else { return }
+        
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if meModel.access.isPremium || meModel.access.identifyUsed < 3 {
+            if meModel.access.subscription != nil || meModel.access.identifyUsed < 3 {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
@@ -73,10 +75,11 @@ class ChooseIdentifyController: BaseController {
     }
     
     @IBAction func diagnosisAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .diagnose)
         guard let meModel = KeychainService.standard.me else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if meModel.access.isPremium {
+            if meModel.access.subscription != nil {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()

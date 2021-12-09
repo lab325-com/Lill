@@ -2,7 +2,7 @@
 import UIKit
 
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -10,6 +10,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.delegate = self
         
         let tabbarItemPlants = (self.tabBar.items?[0])! as UITabBarItem
         tabbarItemPlants.image = UIImage(named: "ic_tab_plants")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
@@ -38,5 +39,20 @@ class MainTabBarController: UITabBarController {
         tabBar.layer.shadowRadius = 30
         tabBar.layer.shadowColor = UIColor(rgb: 0xA4E2AD).cgColor
         tabBar.layer.shadowOpacity = 0.5
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag {
+        case 0:
+            AnalyticsHelper.sendFirebaseEvents(events: .add_bar)
+        case 1:
+            AnalyticsHelper.sendFirebaseEvents(events: .garden_bar)
+        case 2:
+            AnalyticsHelper.sendFirebaseEvents(events: .notification_bar)
+        case 3:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_bar)
+        default:
+            break
+        }
     }
 }
