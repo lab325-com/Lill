@@ -61,6 +61,9 @@ extension MenuController: UITableViewDelegate {
         let itemType  = self.presenter.menuItems[indexPath.section].items[indexPath.row].type
         switch(itemType){
         case .accountInfo:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_log_out)
+            
+            
             let title = RLocalization.allert_logout_message.localized(PreferencesManager.sharedManager.languageCode.rawValue)
             let yesText = RLocalization.allert_yes.localized(PreferencesManager.sharedManager.languageCode.rawValue)
             let noText = RLocalization.allert_no.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -76,20 +79,26 @@ extension MenuController: UITableViewDelegate {
             
             self.present(alert, animated: true, completion: nil)
         case .recognized:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_recognize)
             MenuRouter(presenter: self.navigationController).pushRecognizedArchive()
         case .disease:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_disease)
             MenuRouter(presenter: self.navigationController).pushDiseaseArchive()
         case .lang:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_language)
             MenuRouter(presenter: self.navigationController).pushLanguage()
         case .privacyPolice:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_privacy)
             if let url = URL(string: "https://www.hackingwithswift.com") {
                 UIApplication.shared.open(url)
             }
         case .terms:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_terms)
             if let url = URL(string: "https://www.hackingwithswift.com") {
                 UIApplication.shared.open(url)
             }
         case .rate:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_rate_app)
             if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "id1586099684") { ///ID => 1586099684
                 if #available(iOS 10, *) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -99,10 +108,12 @@ extension MenuController: UITableViewDelegate {
                 }
             }
         case .share:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_invite_friends)
             if let url = URL(string: "https://apps.apple.com/ru/app/telegram/id686449807") {
                 SharingManager.sharedManager.sendSharingLink(url: url, controller: self)
             }
         case .subscriptions:
+            AnalyticsHelper.sendFirebaseEvents(events: .menu_subscription)
             MenuRouter(presenter: navigationController).presentSubscription()
         }
     }

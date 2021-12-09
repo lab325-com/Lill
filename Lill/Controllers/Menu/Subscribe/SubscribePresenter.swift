@@ -47,12 +47,14 @@ class SubscribePresenter: SubscribePresenterProtocol {
     
     func purchase(id: String, purchaseSuccess: @escaping (Bool, String?) -> Void) {
         view?.startLoader()
+        
+        AnalyticsHelper.sendFirebaseEvents(events: .subscribe_start, params: ["id": id])
+        
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
-            
-           
-            
             switch result {
             case .success(let product):
+                AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id])
+                
                 //self?.sendPrepay()
                 // fetch content from your server, then:
                 if product.needsFinishTransaction {
@@ -89,6 +91,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 case .unknown: errorMessage = "Unknown error. Please contact support"
                 case .clientInvalid: errorMessage = "Not allowed to make the payment"
                 case .paymentCancelled:
+                    AnalyticsHelper.sendFirebaseEvents(events: .purchase_cancel, params: ["id": id])
                     return
                 case .paymentInvalid: errorMessage = "The purchase identifier was invalid"
                 case .paymentNotAllowed: errorMessage = "The device is not allowed to make the payment"
@@ -99,6 +102,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 default: errorMessage = (error as NSError).localizedDescription
                 }
                 
+                AnalyticsHelper.sendFirebaseEvents(events: .purchase_error, params: ["message": errorMessage])
                 purchaseSuccess(false, errorMessage)
             }
         }

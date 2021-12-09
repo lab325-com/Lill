@@ -116,6 +116,11 @@ class SubcribeController: BaseController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .purchase_screen)
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
@@ -178,6 +183,8 @@ class SubcribeController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionUnsubscribe(_ sender: UIButton) {
+        AnalyticsHelper.sendFirebaseEvents(events: .unsubscribe)
+        
         guard let urlSubscriptions = URL(string: "https://apps.apple.com/account/subscriptions") else { return }
         UIApplication.shared.open(urlSubscriptions)
     }

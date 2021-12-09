@@ -33,6 +33,12 @@ class MenuController: BaseController {
         super.viewWillAppear(animated)
         presenter.getMe(withoutLoader: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .menu)
+    }
+    
     //----------------------------------------------
     // MARK: - Private func
     //----------------------------------------------

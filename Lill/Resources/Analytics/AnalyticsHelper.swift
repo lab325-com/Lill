@@ -18,6 +18,8 @@ enum FirebaseScreenEvents: String {
     case identify_screen_step_2 = "identify_screen_step_2"
     
     case tap_bar = "tap_bar"
+    case menu = "menu"
+    case purchase_screen = "purchase_screen"
 }
 
 enum FirebaseEvents: String {
@@ -68,6 +70,24 @@ enum FirebaseEvents: String {
     case garden_bar = "garden_bar"
     case notification_bar = "notification_bar"
     case menu_bar = "menu_bar"
+    
+    ///MenuController(menu)
+    case menu_log_out = "menu_log_out"
+    case menu_subscription = "menu_subscription"
+    case menu_recognize = "menu_recognize"
+    case menu_disease = "menu_disease"
+    case menu_language = "menu_language"
+    case menu_invite_friends = "menu_invite_friends"
+    case menu_rate_app = "menu_rate_app"
+    case menu_terms = "menu_terms"
+    case menu_privacy = "menu_privacy"
+    
+    ///SubcribeController(purchase_screen)
+    case subscribe_start = "subscribe_start"
+    case purchase_success = "purchase_success"
+    case purchase_cancel = "purchase_cancel"
+    case purchase_error = "purchase_error"
+    case unsubscribe = "unsubscribe"
 }
 
 class AnalyticsHelper: NSObject {
