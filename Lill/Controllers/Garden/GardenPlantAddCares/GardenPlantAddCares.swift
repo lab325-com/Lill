@@ -10,11 +10,14 @@ class GardenPlantAddCares: BaseController {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var caresViews: [GardenPlantCareView]!
+    @IBOutlet var addCareButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
     
+    private let gardenPlantId: String
+    private var cares: [CareType] = []
     private var selectedCares = Set<CareType>()
     
     //----------------------------------------------
@@ -22,7 +25,20 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     lazy var presenter = GardenPlantAddCaresPresenter(view: self)
-    var cares: [CareType] = []
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(gardenPlantId: String, cares: [CareType]) {
+        self.gardenPlantId = gardenPlantId
+        self.cares = cares
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -67,9 +83,11 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBAction func addCustomCareAction(_ sender: Any) {
-        let caresModel1 = CaresModel(count: 2, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .misting))
-        let caresModel2 = CaresModel(count: 4, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .watering))
-        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(cares: [caresModel1, caresModel2])
+        var careModels = [CaresModel]()
+        for type in selectedCares {
+            careModels.append(CaresModel(count: 7, id: type.id, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, type: type, period: .periodTypeWeek))
+        }
+        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(gardenPlantId: gardenPlantId, cares: careModels)
     }
     
     @objc func backAction() {
@@ -109,6 +127,7 @@ extension GardenPlantAddCares: GardenPlantCareViewProtocol {
         } else {
             selectedCares.insert(selectedType)
         }
+        addCareButton.isUserInteractionEnabled = selectedCares.count > 0 ? true : false
         updateCaresView()
     }
 }

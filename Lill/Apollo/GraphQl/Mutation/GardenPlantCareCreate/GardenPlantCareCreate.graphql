@@ -1,0 +1,17 @@
+
+mutation GardenPlantCareCreate($record: GardenPlantCareCreateInput!) {
+	gardenPlantCareCreate(record: $record) {
+		id
+		name
+		count
+		period
+		sendNotificationAt
+		isActive
+		nextDate
+		status
+		CareType {
+			id
+			name
+		}
+	}
+}

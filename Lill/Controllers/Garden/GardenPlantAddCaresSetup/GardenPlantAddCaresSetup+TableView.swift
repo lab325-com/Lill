@@ -42,7 +42,7 @@ extension GardenPlantAddCaresSetup: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellCareIdentifier) as? CareCell else { return UITableViewCell() }
             cell.delegate = self
             if let caresModel = cares[safe: indexPath.row - 1] {
-                cell.setupCell(caresModel: caresModel)
+                cell.setupCell(caresModel: caresModel, isHideSwitch: true)
             }
             return cell
         }

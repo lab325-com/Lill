@@ -1,7 +1,7 @@
 
 import UIKit
 
-class GardenPlantAddCaresSetup: UIViewController {
+class GardenPlantAddCaresSetup: BaseController {
 
     //----------------------------------------------
     // MARK: - IBOutlet
@@ -17,18 +17,23 @@ class GardenPlantAddCaresSetup: UIViewController {
     let cellCareIdentifier = String(describing: CareCell.self)
     let cellAddCareIdentifier = String(describing: AddCareCell.self)
     
+    lazy var presenter = GardenPlanAddCaresSetupPresenter(view: self)
+    
+    let gardenPlantId: String
     var cares: [CaresModel] = []
     
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
 
+    private var selectedModel: CaresModel?
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(cares: [CaresModel]) {
+    init(gardenPlantId: String, cares: [CaresModel]) {
+        self.gardenPlantId = gardenPlantId
         self.cares = cares
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,10 +64,6 @@ class GardenPlantAddCaresSetup: UIViewController {
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
-//        tableView.contentInset.bottom = 24
-//        tableView.estimatedRowHeight = 82
-//        tableView.rowHeight = UITableView.automaticDimension
-        
         tableView.register(UINib(nibName: cellCareInfoIdentifier, bundle: nil), forCellReuseIdentifier: cellCareInfoIdentifier)
         tableView.register(UINib(nibName: cellCareIdentifier, bundle: nil), forCellReuseIdentifier: cellCareIdentifier)
         tableView.register(UINib(nibName: cellAddCareIdentifier, bundle: nil), forCellReuseIdentifier: cellAddCareIdentifier)
@@ -83,31 +84,18 @@ class GardenPlantAddCaresSetup: UIViewController {
 
 extension GardenPlantAddCaresSetup: CareCellDelegate {
     
-    func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
-//        guard let id = caresModel.id else { return }
-//        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive)
-    }
+    func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) { }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
-//        selectedModel = caresModel
-//        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
-//        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: true)
+        selectedModel = caresModel
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: true)
     }
     
     func didTappedCareFrequencyButton(caresModel: CaresModel) {
-//        selectedModel = caresModel
-//        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
-//        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: false)
-    }
-}
-
-//----------------------------------------------
-// MARK: - AddCareCellProtocol
-//----------------------------------------------
-
-extension GardenPlantAddCaresSetup: AddCareCellProtocol {
-    func didPressedAddCareButton() {
-
+        selectedModel = caresModel
+        let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
+        AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: false)
     }
 }
 
@@ -117,13 +105,33 @@ extension GardenPlantAddCaresSetup: AddCareCellProtocol {
 
 extension GardenPlantAddCaresSetup: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-//        guard let id = selectedModel?.id else { return }
-//
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "HH:mm:ss"
-//        let sendNotificationAt = formatter.string(from: date ?? Date())
-//
-//        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
-//        selectedModel = nil
+        if let index = cares.firstIndex(where: {$0.type == model.type}) {
+            cares[index].update(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
+            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
+        }
+    }
+}
+
+//----------------------------------------------
+// MARK: - AddCareCellProtocol
+//----------------------------------------------
+
+extension GardenPlantAddCaresSetup: AddCareCellProtocol {
+    func didPressedAddCareButton() {
+        presenter.addCares(gardenPlantId: gardenPlantId, cares: cares)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenPlantAddCaresSetupOutputProtocol
+//----------------------------------------------
+
+extension GardenPlantAddCaresSetup: GardenPlanAddCaresSetupOutputProtocol {
+    func successAddCares() {
+        
+    }
+    
+    func failure(error: String) {
+        
     }
 }
