@@ -67,9 +67,11 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBAction func addCustomCareAction(_ sender: Any) {
-        let caresModel1 = CaresModel(count: 2, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .misting))
-        let caresModel2 = CaresModel(count: 4, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: CareType(id: nil, name: .watering))
-        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(cares: [caresModel1, caresModel2])
+        var caresModel = [CaresModel]()
+        for care in cares {
+            caresModel.append(CaresModel(count: 7, id: nil, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, period: .periodTypeWeek, type: care))
+        }
+        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(cares: caresModel)
     }
     
     @objc func backAction() {
