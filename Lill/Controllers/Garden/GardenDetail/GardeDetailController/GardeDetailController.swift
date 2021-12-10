@@ -184,6 +184,9 @@ extension GardeDetailController: PopChangeNameProtocol {
 
 extension GardeDetailController {
     @objc func editTapped() {
+        
+        
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .plant_edit_menu)
         AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
         
         let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
