@@ -8,8 +8,8 @@
 import Foundation
 
 struct PlantModel: Codable {
-    let cares: [CaresModel]
-    let climate: ClimatModel
+    let cares: [CaresModel]?
+    let climate: ClimatModel?
     let descriptionFull: String?
     let descriptionWikiHtml: String?
     let id: String

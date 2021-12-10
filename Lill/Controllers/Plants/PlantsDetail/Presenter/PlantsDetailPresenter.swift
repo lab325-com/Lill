@@ -85,35 +85,35 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
     private func createAbout(model: PlantDataModel) -> [PlantsAboutType] {
         var abouts: [PlantsAboutType] = []
         
-        if let _ = model.plantById.climate.habit {
+        if let _ = model.plantById.climate?.habit {
             abouts.append(.habit)
         }
         
-        if let _ = model.plantById.climate.shade {
+        if let _ = model.plantById.climate?.shade {
             abouts.append(.shade)
         }
 
-        if let _ = model.plantById.climate.moisture {
+        if let _ = model.plantById.climate?.moisture {
             abouts.append(.moisture)
         }
 
-        if let _ = model.plantById.climate.height {
+        if let _ = model.plantById.climate?.height {
             abouts.append(.height)
         }
 
-        if let _ = model.plantById.climate.soil {
+        if let _ = model.plantById.climate?.soil {
             abouts.append(.soil)
         }
 
-        if let _ = model.plantById.climate.ph {
+        if let _ = model.plantById.climate?.ph {
             abouts.append(.ph)
         }
 
-        if let _ = model.plantById.climate.deciduous {
+        if let _ = model.plantById.climate?.deciduous {
             abouts.append(.deciduous)
         }
 
-        if let _ = model.plantById.climate.hardiness {
+        if let _ = model.plantById.climate?.hardiness {
             abouts.append(.hardiness)
         }
         
@@ -122,7 +122,7 @@ class PlantsDetailPresenter: PlantsDetailPresenterProtocol {
     
     func createCares(model: PlantDataModel) -> [(type: PlantsCareType, care: CaresModel)] {
         var caresType = [(type: PlantsCareType, care: CaresModel)]()
-        let cares = model.plantById.cares
+        let cares = model.plantById.cares ?? []
         for care in cares {
             
             caresType.append((type: care.type.name, care: care))

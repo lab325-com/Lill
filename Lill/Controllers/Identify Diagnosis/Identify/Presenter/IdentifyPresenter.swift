@@ -54,16 +54,19 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
     func recognizePhoto(id: String) {
         view?.startLoader()
         
-        request?.cancel()
-        
-        let query = StartRecognizeQuery(mediaId: id)
-        
-        request = Network.shared.query(model: RecognitionDataModel.self, query, controller: view, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successRecognize(model: model)
-        }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            guard let `self` = self else { return }
+            self.request?.cancel()
+            
+            let query = StartRecognizeQuery(mediaId: id)
+            
+            self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] model in
+                self?.view?.stopLoading()
+                self?.view?.successRecognize(model: model)
+            }, failureHandler: { [weak self] error in
+                self?.view?.stopLoading()
+                self?.view?.failure(error: error.localizedDescription)
+            })
+        }
     }
 }
