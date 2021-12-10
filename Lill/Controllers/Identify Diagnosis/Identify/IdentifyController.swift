@@ -148,8 +148,8 @@ class IdentifyController: BaseController {
         retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo(), for: .normal)
         
         guard let meModel = KeychainService.standard.me else { return }
-        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
-        identifyResultCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
+        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"
+        identifyResultCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"
         identifyPremiumView.isHidden = meModel.access.isPremium
         identifyRsultPremiumView.isHidden = meModel.access.isPremium
     }

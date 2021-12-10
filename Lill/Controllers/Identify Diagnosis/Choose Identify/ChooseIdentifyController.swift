@@ -48,7 +48,7 @@ class ChooseIdentifyController: BaseController {
         guard let meModel = KeychainService.standard.me else { return }
         identifyCountView.isHidden = meModel.access.isPremium
         premiumView.isHidden = meModel.access.isPremium
-        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal)"
+        identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"
     }
     
     //----------------------------------------------
