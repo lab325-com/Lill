@@ -26,8 +26,6 @@ class GardenPlantCaresEdit: BaseController {
     let cellCareIdentifier = String(describing: CareCell.self)
     let cellAddCareIdentifier = String(describing: AddCareCell.self)
     
-    private var selectedModel: CaresModel?
-    
     lazy var presenter = GardenPlantCaresEditPresenter(view: self)
     weak var delegate: GardenPlantCaresEditDelegate?
     
@@ -36,6 +34,7 @@ class GardenPlantCaresEdit: BaseController {
     //----------------------------------------------
     
     private let gardenPlantId: String
+    private var selectedModel: CaresModel?
     
     //----------------------------------------------
     // MARK: - Init
@@ -192,7 +191,7 @@ extension GardenPlantCaresEdit: CareCellDelegate {
 extension GardenPlantCaresEdit: AddCareCellProtocol {
     func didPressedAddCareButton() {
         let cares = presenter.plantCares.map( {$0.type} )
-        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(cares: cares)
+        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(gardenPlantId: gardenPlantId, cares: cares)
     }
 }
 

@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 43 files.
+  /// This `R.file` struct is generated, and contains static references to 44 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -179,6 +179,8 @@ struct R: Rswift.Validatable {
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantByIds.graphql`.
     static let gardenPlantByIdsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantByIds", pathExtension: "graphql")
+    /// Resource file `GardenPlantCareCreate.graphql`.
+    static let gardenPlantCareCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCareCreate", pathExtension: "graphql")
     /// Resource file `GardenPlantCareDelete.graphql`.
     static let gardenPlantCareDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCareDelete", pathExtension: "graphql")
     /// Resource file `GardenPlantCareUpdate.graphql`.
@@ -311,6 +313,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlantByIds", withExtension: "graphql")`
     static func gardenPlantByIdsGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantByIdsGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantCareCreate", withExtension: "graphql")`
+    static func gardenPlantCareCreateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantCareCreateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
