@@ -10,16 +10,26 @@ import Firebase
 
 
 enum FirebaseScreenEvents: String {
-    case login_screen = "login_screen"
-    case main_screen = "main_screen"
-    case card_plant_explore = "card_plant_explore"
-    case photo_select = "photo_select"
-    case identify_screen_step_1 = "identify_screen_step_1"
-    case identify_screen_step_2 = "identify_screen_step_2"
+    case login_screen = "login_screen" ///LoginController
+    case main_screen = "main_screen" /// PlantsController
+    case card_plant_explore = "card_plant_explore" /// PlantsDetailController
+    case photo_select = "photo_select" /// ChooseIdentifyController
+    case identify_screen_step_1 = "identify_screen_step_1" /// IdentifyController
+    case identify_screen_step_2 = "identify_screen_step_2" /// IdentifyController
     
-    case tap_bar = "tap_bar"
-    case menu = "menu"
-    case purchase_screen = "purchase_screen"
+    case tap_bar = "tap_bar" /// MainTabBarController
+    case menu = "menu" /// MenuController
+    case purchase_screen = "purchase_screen" /// SubcribeController
+    case card_plan = "card_plan" /// GardeDetailController
+    
+    case onboarding_step_1 = "onboarding_step_1" /// OnboardingWelcomeController
+    case onboarding_step_2 = "onboarding_step_2" /// OnboardingFirsController
+    case onboarding_step_3 = "onboarding_step_3" /// OnboardingSecondController
+    case onboarding_step_4 = "onboarding_step_4" /// OnboardingThreeController
+    case onboarding_step_5 = "onboarding_step_5" /// OnboardingFourController
+    
+    case diagnosing_step_2 = "diagnosing_step_2"
+    case diagnosis_results = "diagnosis results"
 }
 
 enum FirebaseEvents: String {
@@ -88,6 +98,38 @@ enum FirebaseEvents: String {
     case purchase_cancel = "purchase_cancel"
     case purchase_error = "purchase_error"
     case unsubscribe = "unsubscribe"
+    
+    /// GardeDetailController(card plant_about)
+    case card_about = "card_about"
+    case card_care_plan = "card_care_plan"
+    case plant_edit_menu = "plant_edit_menu"
+    case edit_cares = "edit_cares"
+    
+    case edit_change_name = "edit_change_name"
+    case edit_change_photo = "edit_change_photo"
+    case edit_care_plan = "edit_care_plan"
+    case edit_clone_plant = "edit_clone_plant"
+    case edit_delete_plant = "edit_delete_plant"
+    case edit_cancel = "edit_cancel"
+    
+    
+    /// Onboarding
+    case onboarding_skip_1 = "onboarding_skip_1"
+    case onboarding_next_1 = "onboarding_next_1"
+    
+    case onboarding_skip_2 = "onboarding_skip_2"
+    case onboarding_next_2 = "onboarding_next_2"
+    
+    case onboarding_skip_3 = "onboarding_skip_3"
+    case onboarding_next_3 = "onboarding_next_3"
+    
+    case onboarding_skip_4 = "onboarding_skip_4"
+    case onboarding_next_4 = "onboarding_next_4"
+    
+    case onboarding_skip_5 = "onboarding_skip_5"
+    case onboarding_next_5 = "onboarding_next_5"
+    
+    case re_diagnose = "re_diagnose"
 }
 
 class AnalyticsHelper: NSObject {

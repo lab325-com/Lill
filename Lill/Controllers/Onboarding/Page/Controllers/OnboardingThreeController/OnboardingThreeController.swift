@@ -51,4 +51,9 @@ class OnboardingThreeController: BaseController {
         timelineNew?.play()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .onboarding_step_4)
+    }
+    
 }

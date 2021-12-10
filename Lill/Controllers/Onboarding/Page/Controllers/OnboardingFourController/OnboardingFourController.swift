@@ -56,4 +56,9 @@ class OnboardingFourController: BaseController {
         super.viewWillAppear(animated)
         timelineNew?.play()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .onboarding_step_5)
+    }
 }

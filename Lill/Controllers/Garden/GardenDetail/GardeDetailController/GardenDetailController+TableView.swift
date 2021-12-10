@@ -170,6 +170,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
 
 extension GardeDetailController: GardenDetailSegmentDelegate {
     func changeSegment(cell: GardenDetailSegmentCell, selectedTag: Int) {
+        selectedTag == 0 ? AnalyticsHelper.sendFirebaseEvents(events: .card_about) : AnalyticsHelper.sendFirebaseEvents(events: .card_care_plan)
         self.selectedTag = selectedTag
         tableView.reloadData()
     }

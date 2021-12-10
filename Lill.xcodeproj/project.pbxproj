@@ -933,8 +933,8 @@
 			isa = PBXGroup;
 			children = (
 				023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */,
-				02017AAA274791F900EE093C /* GardenDetailDeletePlanController */,
 				023BBB14274413D500DCFFF1 /* GardeDetailController */,
+				02017AAA274791F900EE093C /* GardenDetailDeletePlanController */,
 			);
 			path = GardenDetail;
 			sourceTree = "<group>";
@@ -1507,6 +1507,17 @@
 				02BBBE79273E623900E97712 /* PickerCaresController.xib */,
 			);
 			path = Picker;
+			sourceTree = "<group>";
+		};
+		02BFFF502763335800140A5C /* GardenController */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
+				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
+				026CFC09270C1FD4003A0687 /* Cell */,
+				FA24A5AF273475EE0059AF6A /* Presenter */,
+			);
+			path = GardenController;
 			sourceTree = "<group>";
 		};
 		02C6C102273A6821003C47FF /* REST */ = {
@@ -2463,10 +2474,7 @@
 			isa = PBXGroup;
 			children = (
 				023BBB192744150900DCFFF1 /* GardenRouter.swift */,
-				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
-				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
-				026CFC09270C1FD4003A0687 /* Cell */,
-				FA24A5AF273475EE0059AF6A /* Presenter */,
+				02BFFF502763335800140A5C /* GardenController */,
 				023BBB1B2744171100DCFFF1 /* GardenDetail */,
 				FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */,
 				FA545471274BCEF4006B52F4 /* GardenCaresDetail */,

@@ -137,9 +137,12 @@ class DiagnosisController: BaseController {
         setupAndStartCaptureSession()
         flashButton.isHidden = false
         capturedView.isHidden = false
+        
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .diagnosing_step_2)
     }
     
     @IBAction func galleryAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .identify_upload)
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.sourceType = .savedPhotosAlbum
@@ -150,13 +153,15 @@ class DiagnosisController: BaseController {
     
     @IBAction func captureAction(_ sender: Any) {
         takePicture = true
-        
+        AnalyticsHelper.sendFirebaseEvents(events: .identify_capture)
         diagnosingCaptureView.isHidden = true
         diagnosingPreviewView.isHidden = false
         flashButton.isHidden = true
     }
     
     @IBAction func retakeAction(_ sender: Any) {
+        
+        AnalyticsHelper.sendFirebaseEvents(events: .retake_photo)
         capturedImage = nil
         capturedImageView.image = nil
         
@@ -179,6 +184,12 @@ class DiagnosisController: BaseController {
     }
 
     @IBAction func restartAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseEvents(events: .re_diagnose)
+        
+        DispatchQueue.main.async {
+            AnalyticsHelper.sendFirebaseScreenEvent(screen: .diagnosing_step_2)
+        }
+        
         diagnosingResultView.isHidden = true
         diagnosingNoResultView.isHidden = true
         diagnoseLargePlantImageView.isHidden = true

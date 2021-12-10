@@ -83,6 +83,11 @@ class GardeDetailController: BaseController {
         navigationController?.navigationBar.tintColor = UIColor.white
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .card_plan)
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
@@ -179,6 +184,7 @@ extension GardeDetailController: PopChangeNameProtocol {
 
 extension GardeDetailController {
     @objc func editTapped() {
+        AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
         
         let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         let changeNameTitle = RLocalization.action_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -192,31 +198,40 @@ extension GardeDetailController {
         
         let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_name)
             PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
         }
         
         let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_photo)
             AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
         }
         
         let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_care_plan)
             GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id, delegate: self)
         }
         
         let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_clone_plant)
             PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
         }
         
         let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_delete_plant)
             GardenRouter(presenter: self.navigationController).presentDeletePlan(plantID: self.id, imageUrl: self.presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? "", text: self.presenter.model?.gardenPlantById.name ?? "", delegate: self)
         }
         
-        let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
-        
+        let cancelAction = UIAlertAction(title: cancel, style: .cancel) { (action: UIAlertAction) in
+            
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_cancel)
+        }
+                                         
+                                         
         alert.addAction(changeName)
         alert.addAction(addPhoto)
         alert.addAction(editCarePlan)
