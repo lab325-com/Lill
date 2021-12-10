@@ -90,6 +90,7 @@ class GardenDetailTitleCell: UITableViewCell {
     //----------------------------------------------
     
     @IBAction func actionsBellSelect(_ sender: UIButton) {
+        AnalyticsHelper.sendFirebaseEvents(events: .edit_cares)
         guard let notification = model?.gardenPlantById.sendNotifications else { return }
         delegate?.gardenDetailTitleSelectBell(cell: self, notification: !notification)
     }
