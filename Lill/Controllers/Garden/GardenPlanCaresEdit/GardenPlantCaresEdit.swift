@@ -57,6 +57,8 @@ class GardenPlantCaresEdit: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCares), name: NSNotification.Name(rawValue: "update_cares"), object: nil)
+        
         setup()
         presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
@@ -119,6 +121,10 @@ class GardenPlantCaresEdit: BaseController {
     
     @objc func closeAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func updateCares() {
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
 }
 
@@ -209,5 +215,15 @@ extension GardenPlantCaresEdit: PickerCareDelegate {
         
         presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
         selectedModel = nil
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenPlanAddCaresSetupOutputProtocol
+//----------------------------------------------
+
+extension GardenPlantCaresEdit: GardenPlanAddCaresSetupOutputProtocol {
+    func successAddCares() {
+        
     }
 }

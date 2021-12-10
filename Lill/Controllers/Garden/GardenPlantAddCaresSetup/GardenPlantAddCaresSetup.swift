@@ -128,10 +128,16 @@ extension GardenPlantAddCaresSetup: AddCareCellProtocol {
 
 extension GardenPlantAddCaresSetup: GardenPlanAddCaresSetupOutputProtocol {
     func successAddCares() {
-        
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: GardenPlantCaresEdit.self) {
+                navigationController?.popToViewController(controller, animated: true)
+            }
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("update_cares"), object: nil)
     }
     
     func failure(error: String) {
         
     }
 }
+

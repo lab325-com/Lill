@@ -7,37 +7,18 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9540D37D-6325-4F5F-AA75-9594E6EDEE2E"
-            shouldBeEnabled = "No"
+            uuid = "F4545C73-5677-405D-B6DA-294F8FC92CB6"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenRouter.swift"
+            filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/GardenPlantCaresEdit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "presentGadrenCaresDetail(plantId:)"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "successAddCares()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-<<<<<<< HEAD
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "35A93999-0E6D-43C4-8807-6F0988E4802B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenPlantAddCares/GardenPlantAddCares.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "addCustomCareAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-=======
->>>>>>> AddCaresSetup
    </Breakpoints>
 </Bucket>
