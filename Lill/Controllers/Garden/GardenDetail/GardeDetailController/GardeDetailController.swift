@@ -28,7 +28,7 @@ class GardeDetailController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private var id: String
+    var id: String
     
     private var kTableHeaderHeight:CGFloat = 300.0
     private var headerView: UIView!
@@ -140,6 +140,11 @@ class GardeDetailController: BaseController {
 //----------------------------------------------
 
 extension GardeDetailController: GardenDetailOutputProtocol {
+    func successNotificationChange(notification: Bool) {
+        presenter.model?.gardenPlantById.changeNotification(notification)
+        tableView.reloadData()
+    }
+    
     func success() {
         if presenter.about.count == 0 && presenter.cares.count != 0 {
             selectedTag = 1

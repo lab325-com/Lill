@@ -5,6 +5,7 @@ query GardenPlantById($id: String!,
 		id
 		name
 		userDescription
+		sendNotifications
 		userMainImage {
 			id
 			urlIosFull

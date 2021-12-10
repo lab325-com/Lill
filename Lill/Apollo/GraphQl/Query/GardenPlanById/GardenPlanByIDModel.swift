@@ -16,6 +16,7 @@ struct GardenIDModel: Codable {
     let id: String
     var name: String?
     let userDescription: String?
+    var sendNotifications: Bool
     var userMainImage: MediaModel?
     let plant: GardenShortPlantModel?
     let garden: GardenMiniModel?
@@ -28,11 +29,16 @@ struct GardenIDModel: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
+        case sendNotifications = "sendNotifications"
         case userDescription = "userDescription"
         case userMainImage = "userMainImage"
         case plant = "Plant"
         case garden = "Garden"
         case gardenPlantCares = "GardenPlantCares"
+    }
+    
+    mutating func changeNotification(_ notifications: Bool) {
+        self.sendNotifications = notifications
     }
 }
 

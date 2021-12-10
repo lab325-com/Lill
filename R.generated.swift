@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 43 files.
+  /// This `R.file` struct is generated, and contains static references to 44 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -231,6 +231,8 @@ struct R: Rswift.Validatable {
     static let scheduleByGardensGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ScheduleByGardens", pathExtension: "graphql")
     /// Resource file `SetFavoritePlantById.graphql`.
     static let setFavoritePlantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SetFavoritePlantById", pathExtension: "graphql")
+    /// Resource file `SetGardenPlantNotifications.graphql`.
+    static let setGardenPlantNotificationsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SetGardenPlantNotifications", pathExtension: "graphql")
     /// Resource file `Staging.xcconfig`.
     static let stagingXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Staging", pathExtension: "xcconfig")
     /// Resource file `StartDiagnose.graphql`.
@@ -470,6 +472,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "SetGardenPlantNotifications", withExtension: "graphql")`
+    static func setGardenPlantNotificationsGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.setGardenPlantNotificationsGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Staging", withExtension: "xcconfig")`
     static func stagingXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.stagingXcconfig
@@ -536,7 +544,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 107 images.
+  /// This `R.image` struct is generated, and contains static references to 108 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -584,6 +592,8 @@ struct R: Rswift.Validatable {
     static let garden_delete_unselect_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_unselect_ic")
     /// Image `garden_schelure_ic`.
     static let garden_schelure_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_schelure_ic")
+    /// Image `garden_selected_bell_ic`.
+    static let garden_selected_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_selected_bell_ic")
     /// Image `ic_background`.
     static let ic_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_background")
     /// Image `ic_choose_identify_diagnosis`.
@@ -911,6 +921,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_schelure_ic", bundle: ..., traitCollection: ...)`
     static func garden_schelure_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_schelure_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_selected_bell_ic", bundle: ..., traitCollection: ...)`
+    static func garden_selected_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_selected_bell_ic, compatibleWith: traitCollection)
     }
     #endif
 

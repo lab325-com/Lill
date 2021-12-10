@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GardenDetailTitleCellDelegate: AnyObject {
+    func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool)
+}
+
 class GardenDetailTitleCell: UITableViewCell {
 
     @IBOutlet weak var topStackLayout: NSLayoutConstraint!
@@ -18,10 +22,14 @@ class GardenDetailTitleCell: UITableViewCell {
     
     @IBOutlet var topCaresViews: [DetailCaresView]!
     
+    weak var delegate: GardenDetailTitleCellDelegate?
+    
+    private var model: GardenPlanByIDModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        selectionStyle = .none
+       // selectionStyle = .none
         bellButton.setTitle("", for: .normal)
     }
 
@@ -32,7 +40,14 @@ class GardenDetailTitleCell: UITableViewCell {
     }
     
     func setupCell(model: GardenPlanByIDModel, cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
+        self.model = model
         mainTitleLabel.text = model.gardenPlantById.name ?? ""
+        
+        if model.gardenPlantById.sendNotifications {
+            bellButton.setImage(RImage.garden_selected_bell_ic(), for: .normal)
+        } else {
+            bellButton.setImage(RImage.garden_bell_ic(), for: .normal)
+        }
         
         if let userDescription = model.gardenPlantById.userDescription {
             desciptionLabel.isHidden = false
@@ -68,5 +83,14 @@ class GardenDetailTitleCell: UITableViewCell {
                 topView.setupWithDate(care: care)
             }
         }
+    }
+    
+    //----------------------------------------------
+    // MARK: - IBAction
+    //----------------------------------------------
+    
+    @IBAction func actionsBellSelect(_ sender: UIButton) {
+        guard let notification = model?.gardenPlantById.sendNotifications else { return }
+        delegate?.gardenDetailTitleSelectBell(cell: self, notification: !notification)
     }
 }

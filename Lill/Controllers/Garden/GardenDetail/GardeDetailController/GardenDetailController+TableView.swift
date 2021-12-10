@@ -51,6 +51,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
                 
+                cell.delegate = self
                 if let model = presenter.model {
                     cell.setupCell(model: model, cares: presenter.cares)
                 }
@@ -96,6 +97,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
                 
+                cell.delegate = self
                 if let model = presenter.model {
                     cell.setupCell(model: model, cares: presenter.cares)
                 }
@@ -185,5 +187,16 @@ extension GardeDetailController: GardenDetailAboutDelegate {
         if let url = URL(string: wikiUrl) {
             UIApplication.shared.open(url)
         }
+    }
+}
+
+
+//----------------------------------------------
+// MARK: - GardenDetailTitleCellDelegate
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailTitleCellDelegate {
+    func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool) {
+        presenter.getDetailSetNotification(gardenId: id, notification: notification)
     }
 }

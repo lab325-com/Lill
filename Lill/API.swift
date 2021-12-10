@@ -2391,6 +2391,62 @@ public final class SetFavoritePlantByIdMutation: GraphQLMutation {
   }
 }
 
+public final class SetGardenPlantNotificationsMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SetGardenPlantNotifications($gardenPlantId: String!, $sendNotifications: Boolean!) {
+      setGardenPlantNotifications(
+        gardenPlantId: $gardenPlantId
+        sendNotifications: $sendNotifications
+      )
+    }
+    """
+
+  public let operationName: String = "SetGardenPlantNotifications"
+
+  public var gardenPlantId: String
+  public var sendNotifications: Bool
+
+  public init(gardenPlantId: String, sendNotifications: Bool) {
+    self.gardenPlantId = gardenPlantId
+    self.sendNotifications = sendNotifications
+  }
+
+  public var variables: GraphQLMap? {
+    return ["gardenPlantId": gardenPlantId, "sendNotifications": sendNotifications]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("setGardenPlantNotifications", arguments: ["gardenPlantId": GraphQLVariable("gardenPlantId"), "sendNotifications": GraphQLVariable("sendNotifications")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(setGardenPlantNotifications: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "setGardenPlantNotifications": setGardenPlantNotifications])
+    }
+
+    public var setGardenPlantNotifications: Bool? {
+      get {
+        return resultMap["setGardenPlantNotifications"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "setGardenPlantNotifications")
+      }
+    }
+  }
+}
+
 public final class CaresByGardenQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -3361,6 +3417,7 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
         id
         name
         userDescription
+        sendNotifications
         userMainImage {
           __typename
           id
@@ -3479,6 +3536,7 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
           GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("name", type: .scalar(String.self)),
           GraphQLField("userDescription", type: .scalar(String.self)),
+          GraphQLField("sendNotifications", type: .scalar(Bool.self)),
           GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
           GraphQLField("Garden", type: .object(Garden.selections)),
           GraphQLField("GardenPlantCares", type: .list(.object(GardenPlantCare.selections))),
@@ -3492,8 +3550,8 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, name: String? = nil, userDescription: String? = nil, userMainImage: UserMainImage? = nil, garden: Garden? = nil, gardenPlantCares: [GardenPlantCare?]? = nil, plant: Plant? = nil) {
-        self.init(unsafeResultMap: ["__typename": "GardenPlant", "id": id, "name": name, "userDescription": userDescription, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "Garden": garden.flatMap { (value: Garden) -> ResultMap in value.resultMap }, "GardenPlantCares": gardenPlantCares.flatMap { (value: [GardenPlantCare?]) -> [ResultMap?] in value.map { (value: GardenPlantCare?) -> ResultMap? in value.flatMap { (value: GardenPlantCare) -> ResultMap in value.resultMap } } }, "Plant": plant.flatMap { (value: Plant) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, name: String? = nil, userDescription: String? = nil, sendNotifications: Bool? = nil, userMainImage: UserMainImage? = nil, garden: Garden? = nil, gardenPlantCares: [GardenPlantCare?]? = nil, plant: Plant? = nil) {
+        self.init(unsafeResultMap: ["__typename": "GardenPlant", "id": id, "name": name, "userDescription": userDescription, "sendNotifications": sendNotifications, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "Garden": garden.flatMap { (value: Garden) -> ResultMap in value.resultMap }, "GardenPlantCares": gardenPlantCares.flatMap { (value: [GardenPlantCare?]) -> [ResultMap?] in value.map { (value: GardenPlantCare?) -> ResultMap? in value.flatMap { (value: GardenPlantCare) -> ResultMap in value.resultMap } } }, "Plant": plant.flatMap { (value: Plant) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -3529,6 +3587,15 @@ public final class GardenPlantByIdQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "userDescription")
+        }
+      }
+
+      public var sendNotifications: Bool? {
+        get {
+          return resultMap["sendNotifications"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "sendNotifications")
         }
       }
 
