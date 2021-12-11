@@ -183,12 +183,6 @@ extension GardeDetailController: PopChangeNameProtocol {
     }
 }
 
-extension GardeDetailController: GardenDetailEditCareCellProtocol {
-    func didPressedEditButton() {
-        GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
-    }
-}
-
 //----------------------------------------------
 // MARK: - Editable
 //----------------------------------------------
@@ -225,7 +219,7 @@ extension GardeDetailController {
         let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
             guard let `self` = self else { return }
             AnalyticsHelper.sendFirebaseEvents(events: .edit_care_plan)
-            GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id, delegate: self)
+            GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
         }
         
         let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in

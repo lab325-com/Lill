@@ -207,6 +207,6 @@ extension GardeDetailController: GardenDetailTitleCellDelegate {
 
 extension GardeDetailController: GardenDetailEditCareCellDelegate {
     func gardenDetailEditCareCellEdit(cell: GardenDetailEditCareCell) {
-        GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id, delegate: self)
+        GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
     }
 }
