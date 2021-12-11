@@ -30,24 +30,35 @@ class CareCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(caresModel: CaresModel) {
+    func setupCell(caresModel: CaresModel, isHideSwitch: Bool = false) {
         self.caresModel = caresModel
         
         careImageView.image = caresModel.type.name.darklmage
         careLabel.text = caresModel.type.name.text
+        
+        careSwitch.isHidden = isHideSwitch
         if let isActive = caresModel.isActive {
             careSwitch.isOn = isActive
             bottomView.isHidden = isActive ? false : true
             bottomViewHeighConstraint.constant = isActive ? 56.0 : 0.0
         }
         
+        if isHideSwitch {
+            careTimeLabel.text = caresModel.getTime
+        } else {
+            if let time = caresModel.sendNotificationAt {
+                careTimeLabel.text = String(time.dropLast(3))
+            }
+        }
+        
         let model = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
         
-        if let time = caresModel.sendNotificationAt {
-            careTimeLabel.text = String(time.dropLast(3))
-        }
-        careFrequencyLabel.text = "every \(caresModel.count) \(model.period.text)"
-        careDateLabel.text = model.nextTime
+        let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let frequency = isHideSwitch ? " \(caresModel.frequency)" : " \(caresModel.count)"
+        let period = isHideSwitch ? " \(caresModel.period.text)" : " \(model.period.text)"
+        
+        careFrequencyLabel.text = every + frequency + period
+        careDateLabel.text = isHideSwitch ? caresModel.nextTime : model.nextTime
     }
         
     @IBAction func careTimeimeAction(_ sender: Any) {

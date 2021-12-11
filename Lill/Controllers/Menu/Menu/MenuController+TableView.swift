@@ -88,13 +88,11 @@ extension MenuController: UITableViewDelegate {
             AnalyticsHelper.sendFirebaseEvents(events: .menu_language)
             MenuRouter(presenter: self.navigationController).pushLanguage()
         case .privacyPolice:
-            AnalyticsHelper.sendFirebaseEvents(events: .menu_privacy)
-            if let url = URL(string: "https://www.hackingwithswift.com") {
+            if let url = URL(string: "https://mob325.com/lill/privacy_policy.html") {
                 UIApplication.shared.open(url)
             }
         case .terms:
-            AnalyticsHelper.sendFirebaseEvents(events: .menu_terms)
-            if let url = URL(string: "https://www.hackingwithswift.com") {
+            if let url = URL(string: "https://mob325.com/lill/terms_and_conditions.html") {
                 UIApplication.shared.open(url)
             }
         case .rate:

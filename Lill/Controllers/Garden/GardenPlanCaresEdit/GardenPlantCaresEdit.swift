@@ -26,8 +26,6 @@ class GardenPlantCaresEdit: BaseController {
     let cellCareIdentifier = String(describing: CareCell.self)
     let cellAddCareIdentifier = String(describing: AddCareCell.self)
     
-    private var selectedModel: CaresModel?
-    
     lazy var presenter = GardenPlantCaresEditPresenter(view: self)
     weak var delegate: GardenPlantCaresEditDelegate?
     
@@ -36,6 +34,7 @@ class GardenPlantCaresEdit: BaseController {
     //----------------------------------------------
     
     private let gardenPlantId: String
+    private var selectedModel: CaresModel?
     
     //----------------------------------------------
     // MARK: - Init
@@ -58,6 +57,8 @@ class GardenPlantCaresEdit: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCares), name: NSNotification.Name(rawValue: "update_cares"), object: nil)
+        
         setup()
         presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
@@ -71,9 +72,11 @@ class GardenPlantCaresEdit: BaseController {
         tableView.alpha = 0.0
         bottomView.isHidden = true
         
-        navigationItem.title = "Edit Care Plan"
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(closeAction))
-        let leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(closeAction))
+        navigationItem.title = RLocalization.garden_plant_cares_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let done = RLocalization.garden_plant_cares_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let cancel = RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let rightBarButtonItem = UIBarButtonItem(title: done, style: .done, target: self, action: #selector(closeAction))
+        let leftBarButtonItem = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(closeAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -96,7 +99,7 @@ class GardenPlantCaresEdit: BaseController {
     
     @IBAction func setToRecommendedAction(_ sender: Any) {
         let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let recommended = "Set to Recommended Cares"
+        let recommended = RLocalization.garden_plant_cares_edit_set_to_recommended.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
@@ -120,6 +123,10 @@ class GardenPlantCaresEdit: BaseController {
     
     @objc func closeAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func updateCares() {
+        presenter.getGardenPlantCares(gardenPlantId: gardenPlantId)
     }
 }
 
@@ -161,6 +168,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
     }
 }
 
+//----------------------------------------------
+// MARK: - CareCellDelegate
+//----------------------------------------------
+
 extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
@@ -181,12 +192,20 @@ extension GardenPlantCaresEdit: CareCellDelegate {
     }
 }
 
+//----------------------------------------------
+// MARK: - AddCareCellProtocol
+//----------------------------------------------
+
 extension GardenPlantCaresEdit: AddCareCellProtocol {
     func didPressedAddCareButton() {
         let cares = presenter.plantCares.map( {$0.type} )
-        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(cares: cares)
+        GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(gardenPlantId: gardenPlantId, cares: cares)
     }
 }
+
+//----------------------------------------------
+// MARK: - PickerCareDelegate
+//----------------------------------------------
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
@@ -198,5 +217,15 @@ extension GardenPlantCaresEdit: PickerCareDelegate {
         
         presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
         selectedModel = nil
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenPlanAddCaresSetupOutputProtocol
+//----------------------------------------------
+
+extension GardenPlantCaresEdit: GardenPlanAddCaresSetupOutputProtocol {
+    func successAddCares() {
+        
     }
 }

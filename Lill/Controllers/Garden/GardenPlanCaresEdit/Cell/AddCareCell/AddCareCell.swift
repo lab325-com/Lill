@@ -16,7 +16,7 @@ class AddCareCell: UITableViewCell {
     }
     
     func setupCell() {
-        addCareButton.setTitle("Add Care", for: .normal)
+        addCareButton.setTitle(RLocalization.garden_plant_cares_edit_add_care.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     @IBAction func addCareAction(_ sender: Any) {

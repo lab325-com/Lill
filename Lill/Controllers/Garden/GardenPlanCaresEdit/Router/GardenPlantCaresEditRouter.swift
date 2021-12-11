@@ -3,9 +3,8 @@ import Foundation
 
 class GardenPlantCaresEditRouter: BaseRouter {
     
-    func pushAddCare(cares: [CareType]) {
-        let controller = GardenPlantAddCares()
-        controller.cares = cares
+    func pushAddCare(gardenPlantId: String, cares: [CareType]) {
+        let controller = GardenPlantAddCares(gardenPlantId: gardenPlantId, cares: cares)
         push(controller: controller)
     }
 }

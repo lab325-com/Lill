@@ -183,6 +183,12 @@ extension GardeDetailController: PopChangeNameProtocol {
     }
 }
 
+extension GardeDetailController: GardenDetailEditCareCellProtocol {
+    func didPressedEditButton() {
+        GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
+    }
+}
+
 //----------------------------------------------
 // MARK: - Editable
 //----------------------------------------------

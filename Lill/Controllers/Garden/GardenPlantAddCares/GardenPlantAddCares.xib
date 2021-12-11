@@ -19,6 +19,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenPlantAddCares" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="addCustomCareButton" destination="gMA-GP-8dG" id="wfl-OA-c3z"/>
+                <outlet property="infoLabel" destination="x5m-bZ-lyr" id="xqw-GG-T1R"/>
                 <outlet property="scrollView" destination="7iC-0y-QkW" id="wey-AJ-GLr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="caresViews" destination="OUY-mo-0UJ" collectionClass="NSMutableArray" id="iWp-5a-nBX"/>
@@ -99,7 +101,7 @@
                         <constraint firstItem="7iC-0y-QkW" firstAttribute="leading" secondItem="w0K-4f-UZK" secondAttribute="leading" id="py7-1a-ajh"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-GP-8dG">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-GP-8dG">
                     <rect key="frame" x="24" y="257" width="366" height="44"/>
                     <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="0.93999999999999995" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -107,14 +109,14 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Add Care"/>
+                    <state key="normal" title="Add Custom Care"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="22"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="addCustomCareAction:" destination="-1" eventType="touchUpInside" id="CgN-Pb-DbS"/>
+                        <action selector="addCustomCareAction:" destination="-1" eventType="touchUpInside" id="O6Z-b4-Qsf"/>
                     </connections>
                 </button>
             </subviews>

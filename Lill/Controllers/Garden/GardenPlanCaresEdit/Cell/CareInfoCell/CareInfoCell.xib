@@ -44,6 +44,9 @@ to add/remove from Care Plan</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="infoLabel" destination="T2d-tT-4sZ" id="fgF-s2-QSc"/>
+            </connections>
             <point key="canvasLocation" x="41" y="109"/>
         </tableViewCell>
     </objects>

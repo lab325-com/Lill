@@ -25,29 +25,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPr-5e-b5G">
                         <rect key="frame" x="24" y="5" width="302" height="44"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ioy-92-j1Y">
-                                <rect key="frame" x="85" y="0.0" width="132.5" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit My Care Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW1-f2-6CA">
-                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="44"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
-                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garde_edit_ic" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-dv-9za">
-                                        <rect key="frame" x="116.5" y="0.0" width="16" height="44"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0d-wu-dbs">
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="44"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Edit My Care Plan" image="garde_edit_ic">
+                                    <color key="titleColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fm9-06-O2g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.75686274509803919" blue="0.21568627450980393" alpha="0.24413799765883692" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NPr-5e-b5G" secondAttribute="leading" constant="16" id="4ro-VY-0k9"/>
+                            <constraint firstAttribute="bottom" secondItem="f0d-wu-dbs" secondAttribute="bottom" id="1op-Y5-Jsl"/>
                             <constraint firstAttribute="height" constant="44" id="Afv-9i-tmE"/>
-                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="centerX" secondItem="NPr-5e-b5G" secondAttribute="centerX" id="GLc-5E-5Ih"/>
-                            <constraint firstAttribute="bottom" secondItem="Ioy-92-j1Y" secondAttribute="bottom" id="MUX-rV-hcM"/>
-                            <constraint firstItem="Ioy-92-j1Y" firstAttribute="top" secondItem="NPr-5e-b5G" secondAttribute="top" id="g81-fR-37i"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ioy-92-j1Y" secondAttribute="trailing" constant="16" id="kXT-5G-oEn"/>
+                            <constraint firstItem="f0d-wu-dbs" firstAttribute="leading" secondItem="NPr-5e-b5G" secondAttribute="leading" id="Hea-Vd-khe"/>
+                            <constraint firstItem="f0d-wu-dbs" firstAttribute="top" secondItem="NPr-5e-b5G" secondAttribute="top" id="a2R-rL-cK0"/>
+                            <constraint firstAttribute="trailing" secondItem="f0d-wu-dbs" secondAttribute="trailing" id="oWD-zQ-yvH"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-XI-oGO">
@@ -74,7 +71,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="editLabel" destination="xW1-f2-6CA" id="4EK-Z6-OR6"/>
+                <outlet property="editButton" destination="f0d-wu-dbs" id="7kO-BL-cG0"/>
                 <outlet property="editView" destination="NPr-5e-b5G" id="jrJ-Q6-cmk"/>
             </connections>
             <point key="canvasLocation" x="159.42028985507247" y="113.50446428571428"/>
