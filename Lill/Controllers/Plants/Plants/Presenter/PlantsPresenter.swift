@@ -20,6 +20,7 @@ protocol PlantsPresenterProtocol: AnyObject {
     init(view: PlantsOutputProtocol)
     
     func getPlants(search: String)
+    func updateMe()
 }
 
 class PlantsPresenter: PlantsPresenterProtocol {
@@ -65,5 +66,14 @@ class PlantsPresenter: PlantsPresenterProtocol {
         }, failureHandler: { [weak self] error in
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func updateMe() {
+        let query = MeQuery()
+        
+        let _ = Network.shared.query(model: MeDataModel.self, query, controller: view) { [weak self] model in
+            KeychainService.standard.me = model.me
+        } failureHandler: { [weak self] error in
+        }
     }
 }

@@ -69,6 +69,11 @@ class PlantsController: BaseController {
         presenter.getPlants(search: "")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.updateMe()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .main_screen)
