@@ -66,7 +66,13 @@ class ChooseIdentifyController: BaseController {
         
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if meModel.access.subscription != nil || meModel.access.identifyUsed < 3 {
+            
+            guard let total = meModel.access.identifyTotal else {
+                PlantsRouter(presenter: currentNavigationController).presentIdentify()
+                return
+            }
+            
+            if meModel.access.identifyUsed < total {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
@@ -79,7 +85,13 @@ class ChooseIdentifyController: BaseController {
         guard let meModel = KeychainService.standard.me else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if meModel.access.subscription != nil {
+            
+            guard let total = meModel.access.diagnosisTotal else {
+                PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
+                return
+            }
+            
+            if meModel.access.diagnosisUsed < total {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
