@@ -60,9 +60,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app will use camera.</string>
+	<string></string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>Your data will be used to provide you with tailored personalized experience</string>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFProDisplay-Bold</string>

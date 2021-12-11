@@ -2462,8 +2462,52 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
+    /// This `R.string.infoPlist` struct is generated, and contains static references to 2 localization keys.
+    struct infoPlist {
+      /// en translation: Allow access to Camera to be able to take photos of plants and gardens. Allow access to Photos to identify plants on your photos.
+      ///
+      /// Locales: en, es
+      static let nsCameraUsageDescription = Rswift.StringResource(key: "NSCameraUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Your data will be used to provide you with tailored personalized experience.
+      ///
+      /// Locales: en, es
+      static let nsUserTrackingUsageDescription = Rswift.StringResource(key: "NSUserTrackingUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+
+      /// en translation: Allow access to Camera to be able to take photos of plants and gardens. Allow access to Photos to identify plants on your photos.
+      ///
+      /// Locales: en, es
+      static func nsCameraUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSCameraUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSCameraUsageDescription"
+        }
+
+        return NSLocalizedString("NSCameraUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your data will be used to provide you with tailored personalized experience.
+      ///
+      /// Locales: en, es
+      static func nsUserTrackingUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSUserTrackingUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSUserTrackingUsageDescription"
+        }
+
+        return NSLocalizedString("NSUserTrackingUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.string.localizable` struct is generated, and contains static references to 246 localization keys.
     struct localizable {
       /// en translation: A
