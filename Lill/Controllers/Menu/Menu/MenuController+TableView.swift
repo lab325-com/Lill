@@ -82,11 +82,11 @@ extension MenuController: UITableViewDelegate {
         case .lang:
             MenuRouter(presenter: self.navigationController).pushLanguage()
         case .privacyPolice:
-            if let url = URL(string: "https://www.hackingwithswift.com") {
+            if let url = URL(string: "https://mob325.com/lill/privacy_policy.html") {
                 UIApplication.shared.open(url)
             }
         case .terms:
-            if let url = URL(string: "https://www.hackingwithswift.com") {
+            if let url = URL(string: "https://mob325.com/lill/terms_and_conditions.html") {
                 UIApplication.shared.open(url)
             }
         case .rate:

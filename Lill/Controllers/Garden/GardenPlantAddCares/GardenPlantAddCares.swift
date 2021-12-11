@@ -10,7 +10,8 @@ class GardenPlantAddCares: BaseController {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var caresViews: [GardenPlantCareView]!
-    @IBOutlet var addCareButton: UIButton!
+    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var addCustomCareButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -56,11 +57,13 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     func setup() {
-        title = "Add Care"
+        title = RLocalization.garden_plant_add_cares_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(backAction))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        infoLabel.text = RLocalization.garden_plant_add_cares_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         scrollView.contentInset.left = 9.0
         scrollView.contentInset.right = 9.0
@@ -69,6 +72,8 @@ class GardenPlantAddCares: BaseController {
             view.isHidden = true
             view.delegate = self
         }
+        
+        addCustomCareButton.setTitle(RLocalization.garden_plant_add_cares_add_custom_care.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     private func updateCaresView() {
@@ -127,7 +132,7 @@ extension GardenPlantAddCares: GardenPlantCareViewProtocol {
         } else {
             selectedCares.insert(selectedType)
         }
-        addCareButton.isUserInteractionEnabled = selectedCares.count > 0 ? true : false
+        addCustomCareButton.isUserInteractionEnabled = selectedCares.count > 0 ? true : false
         updateCaresView()
     }
 }

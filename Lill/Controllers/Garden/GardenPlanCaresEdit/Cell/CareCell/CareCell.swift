@@ -53,7 +53,11 @@ class CareCell: UITableViewCell {
         
         let model = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
         
-        careFrequencyLabel.text = isHideSwitch ? "every \(caresModel.frequency) \(caresModel.period.text)" : "every \(caresModel.count) \(model.period.text)"
+        let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let frequency = isHideSwitch ? " \(caresModel.frequency)" : " \(caresModel.count)"
+        let period = isHideSwitch ? " \(caresModel.period.text)" : " \(model.period.text)"
+        
+        careFrequencyLabel.text = every + frequency + period
         careDateLabel.text = isHideSwitch ? caresModel.nextTime : model.nextTime
     }
         

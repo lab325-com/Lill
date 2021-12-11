@@ -10,7 +10,7 @@ class CareInfoCell: UITableViewCell {
         
     }
     
-    func setupCell(infoLabel: String) {
-        
+    func setupCell(infoText: String) {
+        infoLabel.text = infoText
     }
 }

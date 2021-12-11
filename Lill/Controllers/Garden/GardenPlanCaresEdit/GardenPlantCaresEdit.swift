@@ -72,9 +72,11 @@ class GardenPlantCaresEdit: BaseController {
         tableView.alpha = 0.0
         bottomView.isHidden = true
         
-        navigationItem.title = "Edit Care Plan"
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(closeAction))
-        let leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(closeAction))
+        navigationItem.title = RLocalization.garden_plant_cares_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let done = RLocalization.garden_plant_cares_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let cancel = RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let rightBarButtonItem = UIBarButtonItem(title: done, style: .done, target: self, action: #selector(closeAction))
+        let leftBarButtonItem = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(closeAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -97,7 +99,7 @@ class GardenPlantCaresEdit: BaseController {
     
     @IBAction func setToRecommendedAction(_ sender: Any) {
         let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let recommended = "Set to Recommended Cares"
+        let recommended = RLocalization.garden_plant_cares_edit_set_to_recommended.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         

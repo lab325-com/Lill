@@ -2469,7 +2469,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 246 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 259 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2499,6 +2499,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_active = Rswift.StringResource(key: "subscription_active", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static let garden_plant_add_cares_setup_title = Rswift.StringResource(key: "garden_plant_add_cares_setup_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static let garden_plant_add_cares_title = Rswift.StringResource(key: "garden_plant_add_cares_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_add_care = Rswift.StringResource(key: "garden_plant_cares_edit_add_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Cares
       ///
       /// Locales: en, es
@@ -2507,6 +2519,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniques_cover_add = Rswift.StringResource(key: "uniques_cover_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Custom Care
+      ///
+      /// Locales: en, es
+      static let garden_plant_add_cares_add_custom_care = Rswift.StringResource(key: "garden_plant_add_cares_add_custom_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -2615,6 +2631,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_delete_cancel = Rswift.StringResource(key: "garden_delete_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_cancel = Rswift.StringResource(key: "garden_plant_cares_edit_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, es
@@ -2850,6 +2870,18 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es
+      static let garden_plant_add_cares_done = Rswift.StringResource(key: "garden_plant_add_cares_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static let garden_plant_add_cares_setup_done = Rswift.StringResource(key: "garden_plant_add_cares_setup_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_done = Rswift.StringResource(key: "garden_plant_cares_edit_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
       static let scheldure_setting_done = Rswift.StringResource(key: "scheldure_setting_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Done all Waiting Cares
       ///
@@ -2859,6 +2891,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_care_plan = Rswift.StringResource(key: "action_edit_care_plan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Edit Care Plan
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_title = Rswift.StringResource(key: "garden_plant_cares_edit_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Edit My Care Plan
       ///
       /// Locales: en, es
@@ -3243,6 +3279,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garde_edit_delete_sub_title = Rswift.StringResource(key: "garde_edit_delete_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Select From Cares
+      ///
+      /// Locales: en, es
+      static let garden_plant_add_cares_info = Rswift.StringResource(key: "garden_plant_add_cares_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -3263,6 +3303,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_setting_frequency_sub = Rswift.StringResource(key: "scheldure_setting_frequency_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Set to Recommended Cares
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_set_to_recommended = Rswift.StringResource(key: "garden_plant_cares_edit_set_to_recommended", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, es
@@ -3335,6 +3379,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_tree = Rswift.StringResource(key: "climate_habit_tree", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Turn on/off Cares   to add/remove from Care Plan
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_info = Rswift.StringResource(key: "garden_plant_cares_edit_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Type
       ///
       /// Locales: en, es
@@ -3427,6 +3475,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let add_plant_every = Rswift.StringResource(key: "add_plant_every", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: every
+      ///
+      /// Locales: en, es
+      static let garden_plant_cares_edit_every = Rswift.StringResource(key: "garden_plant_cares_edit_every", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: free snaps
       ///
       /// Locales: en, es
@@ -3561,6 +3613,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_active", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static func garden_plant_add_cares_setup_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_setup_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_setup_title"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_setup_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static func garden_plant_add_cares_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_title"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Care
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_add_care(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_add_care", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_add_care"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_add_care", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add Cares
       ///
       /// Locales: en, es
@@ -3589,6 +3686,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("uniques_cover_add", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Custom Care
+      ///
+      /// Locales: en, es
+      static func garden_plant_add_cares_add_custom_care(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_add_custom_care", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_add_custom_care"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_add_custom_care", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Plant
@@ -3996,6 +4108,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_delete_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_cancel"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -4873,6 +5000,51 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es
+      static func garden_plant_add_cares_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_done"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static func garden_plant_add_cares_setup_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_setup_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_setup_done"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_setup_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_done"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es
       static func scheldure_setting_done(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("scheldure_setting_done", bundle: hostingBundle, comment: "")
@@ -4913,6 +5085,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_care_plan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit Care Plan
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_title"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Edit My Care Plan
@@ -6355,6 +6542,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garde_edit_delete_sub_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Select From Cares
+      ///
+      /// Locales: en, es
+      static func garden_plant_add_cares_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_add_cares_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_add_cares_info"
+        }
+
+        return NSLocalizedString("garden_plant_add_cares_info", bundle: bundle, comment: "")
+      }
+
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -6428,6 +6630,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_setting_frequency_sub", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Set to Recommended Cares
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_set_to_recommended(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_set_to_recommended", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_set_to_recommended"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_set_to_recommended", bundle: bundle, comment: "")
       }
 
       /// en translation: Settings
@@ -6698,6 +6915,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_tree", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Turn on/off Cares   to add/remove from Care Plan
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_info"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Type
@@ -7043,6 +7275,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("add_plant_every", bundle: bundle, comment: "")
+      }
+
+      /// en translation: every
+      ///
+      /// Locales: en, es
+      static func garden_plant_cares_edit_every(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_cares_edit_every", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_cares_edit_every"
+        }
+
+        return NSLocalizedString("garden_plant_cares_edit_every", bundle: bundle, comment: "")
       }
 
       /// en translation: free snaps
