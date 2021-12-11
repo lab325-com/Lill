@@ -264,6 +264,7 @@
 		F3D378B5272F9B360015C6EE /* DiseaseArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */; };
 		F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */; };
 		F3D378B9272F9B680015C6EE /* DiseaseArchivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */; };
+		FA0F608A2764B1100043E72C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA0F608C2764B1100043E72C /* InfoPlist.strings */; };
 		FA1CEC53273C572E003A4F84 /* RecognizeArhive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1CEC51273C572E003A4F84 /* RecognizeArhive.graphql */; };
 		FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */; };
 		FA1CEC57273C59AB003A4F84 /* DiagnoseArhive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */; };
@@ -526,7 +527,7 @@
 		02BBBE74273E5FC200E97712 /* AddPlantTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlantTitleCell.xib; sourceTree = "<group>"; };
 		02BBBE78273E623900E97712 /* PickerCaresController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCaresController.swift; sourceTree = "<group>"; };
 		02BBBE79273E623900E97712 /* PickerCaresController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCaresController.xib; sourceTree = "<group>"; };
-		02BFFF522763516200140A5C /* SetGardenPlantNotifications.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = SetGardenPlantNotifications.graphql; path = Lill/Apollo/GraphQl/Mutation/SetGardenPlantNotifications/SetGardenPlantNotifications.graphql; sourceTree = SOURCE_ROOT; };
+		02BFFF522763516200140A5C /* SetGardenPlantNotifications.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = SetGardenPlantNotifications.graphql; path = Lill/Apollo/GraphQl/Mutation/SetGardenPlantNotifications/SetGardenPlantNotifications.graphql; sourceTree = SOURCE_ROOT; };
 		02BFFF54276351B100140A5C /* SetGardenPlantNotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetGardenPlantNotificationsModel.swift; path = Lill/Apollo/GraphQl/Mutation/SetGardenPlantNotifications/SetGardenPlantNotificationsModel.swift; sourceTree = SOURCE_ROOT; };
 		02C6C103273A684A003C47FF /* RestCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCalls.swift; sourceTree = "<group>"; };
 		02C6C107273A68BF003C47FF /* RestSuffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSuffix.swift; sourceTree = "<group>"; };
@@ -634,6 +635,8 @@
 		F3D378B3272F9B360015C6EE /* DiseaseArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchiveViewController.swift; sourceTree = "<group>"; };
 		F3D378B4272F9B360015C6EE /* DiseaseArchiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseArchiveViewController.xib; sourceTree = "<group>"; };
 		F3D378B8272F9B680015C6EE /* DiseaseArchivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseArchivePresenter.swift; sourceTree = "<group>"; };
+		FA0F608B2764B1100043E72C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA0F608D2764B1120043E72C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA1CEC51273C572E003A4F84 /* RecognizeArhive.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RecognizeArhive.graphql; sourceTree = "<group>"; };
 		FA1CEC52273C572E003A4F84 /* RecognizeArchiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeArchiveModel.swift; sourceTree = "<group>"; };
 		FA1CEC55273C59AB003A4F84 /* DiagnoseArhive.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DiagnoseArhive.graphql; sourceTree = "<group>"; };
@@ -2468,6 +2471,7 @@
 				02A8347626F38E3E0009E147 /* Controllers */,
 				FAAA231826F3625200E10E89 /* Assets.xcassets */,
 				FAAA231D26F3625200E10E89 /* Info.plist */,
+				FA0F608C2764B1100043E72C /* InfoPlist.strings */,
 				FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */,
 			);
 			path = Lill;
@@ -2882,6 +2886,7 @@
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
 				0228B48D2760DE3300F7101C /* GardenPlantCaresEditDelete.xib in Resources */,
 				02E0B1A4270431B400A56840 /* Main.storyboard in Resources */,
+				FA0F608A2764B1100043E72C /* InfoPlist.strings in Resources */,
 				0261FA632748FC70002BB6CE /* PopClonePlantController.xib in Resources */,
 				028C9BFC274D30060043EA31 /* ScheduleColapsView.xib in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
@@ -3287,6 +3292,15 @@
 				029C5202273078D300BD30B4 /* es */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		FA0F608C2764B1100043E72C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA0F608B2764B1100043E72C /* en */,
+				FA0F608D2764B1120043E72C /* es */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */ = {
