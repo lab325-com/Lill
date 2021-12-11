@@ -109,7 +109,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellEditIdentifier) as? GardenDetailEditCareCell else { return UITableViewCell() }
-        
+                cell.delegate = self
                 return cell
             default:
                 if presenter.scheduleFuture.count != 0 {
@@ -198,5 +198,15 @@ extension GardeDetailController: GardenDetailAboutDelegate {
 extension GardeDetailController: GardenDetailTitleCellDelegate {
     func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool) {
         presenter.getDetailSetNotification(gardenId: id, notification: notification)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailEditCareCellDelegate
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailEditCareCellDelegate {
+    func gardenDetailEditCareCellEdit(cell: GardenDetailEditCareCell) {
+        GardenRouter(presenter: self.navigationController).presentEditCarePlant(gardenPlantId: self.id, delegate: self)
     }
 }

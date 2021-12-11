@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol GardenDetailEditCareCellDelegate: AnyObject {
+    func gardenDetailEditCareCellEdit(cell: GardenDetailEditCareCell)
+}
+
 class GardenDetailEditCareCell: UITableViewCell {
 
     @IBOutlet weak var editView: UIView!
     @IBOutlet weak var editLabel: UILabel!
+    
+    weak var delegate: GardenDetailEditCareCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,4 +38,7 @@ class GardenDetailEditCareCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func actionSelectEdit(_ sender: UIButton) {
+        delegate?.gardenDetailEditCareCellEdit(cell: self)
+    }
 }

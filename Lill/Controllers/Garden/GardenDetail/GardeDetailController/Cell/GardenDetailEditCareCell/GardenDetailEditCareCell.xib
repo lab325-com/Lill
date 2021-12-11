@@ -18,7 +18,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GardenDetailEditCareCell" rowHeight="59" id="KGk-i7-Jjw" customClass="GardenDetailEditCareCell" customModule="Lill" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="350" height="59"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="350" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -50,13 +50,24 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ioy-92-j1Y" secondAttribute="trailing" constant="16" id="kXT-5G-oEn"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-XI-oGO">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="59"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <connections>
+                            <action selector="actionSelectEdit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ewr-S3-HAt"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="NPr-5e-b5G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3qh-Uf-YZY"/>
+                    <constraint firstAttribute="bottom" secondItem="s54-XI-oGO" secondAttribute="bottom" id="XN4-sp-8dx"/>
                     <constraint firstAttribute="trailing" secondItem="NPr-5e-b5G" secondAttribute="trailing" constant="24" id="bXb-7k-0MM"/>
+                    <constraint firstItem="s54-XI-oGO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="g9N-l1-Tq9"/>
                     <constraint firstAttribute="bottom" secondItem="NPr-5e-b5G" secondAttribute="bottom" constant="16" id="iS4-XT-8RO"/>
                     <constraint firstItem="NPr-5e-b5G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="j8P-Fl-akj"/>
+                    <constraint firstItem="s54-XI-oGO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rhK-Vs-b1J"/>
+                    <constraint firstAttribute="trailing" secondItem="s54-XI-oGO" secondAttribute="trailing" id="zaQ-lA-uKs"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
