@@ -2,6 +2,17 @@ query StartDiagnose($mediaId: String!) {
 	startDiagnose(mediaId: $mediaId) {
 		id
 		Plant {
+			id
+			names
+			latinName
+			descriptionFull
+			wikiUrl
+			isFavourite
+			plantImages {
+				id
+				urlIosFull
+				urlIosPrev
+			}
 			PlantCares {
 				count
 				id
@@ -21,18 +32,6 @@ query StartDiagnose($mediaId: String!) {
 				shade
 				soil
 			}
-			descriptionFull
-			descriptionWikiHtml
-			id
-			isFavourite
-			latinName
-			plantImages {
-				id
-				urlIosFull
-				urlIosPrev
-			}
-			names
-			wikiUrl
 		}
 		Disease {
 			id

@@ -270,8 +270,8 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             diagnoseFirstPlantNameLabel.text = result.plant.description.name
             diagnoseSecondPlantNameLabel.text = result.plant.description.names ?? ""
             diagnoseTimeLabel.text = dateFormatter.string(from: Date())
-            diagnoseTitleLabel.text = result.diagnoseTitle
-            diagnoseInfoLabel.text = result.diagnoseDescription
+            diagnoseTitleLabel.text = result.desease.name
+            diagnoseInfoLabel.text = result.desease.description
         } else {
             bottomViewHeighConstraint.constant = 120.0
             diagnosingNoResultView.isHidden = false

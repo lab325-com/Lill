@@ -6,7 +6,19 @@ struct DiagnoseDataModel: Codable {
 }
 
 struct DiagnoseResultModel: Codable {
-    let diagnoseDescription: String
-    let diagnoseTitle: String
+    let id: String
     let plant: PlantsModel
+    let desease: Disease
+}
+
+enum CodingKeys: String, CodingKey {
+    case id = "id"
+    case plant = "Plant"
+    case desease = "Desease"
+}
+
+struct Disease: Codable {
+    let id: String
+    let name: String
+    let description: String
 }

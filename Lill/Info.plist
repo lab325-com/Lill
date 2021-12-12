@@ -60,9 +60,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Allow access to Camera to be able to take photos of plants and gardens. Allow access to Photos to identify plants on your photos.</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string></string>
+	<string>Your data will be used to provide you with tailored personalized experience.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFProDisplay-Bold</string>
