@@ -1,41 +1,18 @@
 query StartDiagnose($mediaId: String!) {
 	startDiagnose(mediaId: $mediaId) {
-		id
 		Plant {
-			id
-			names
 			latinName
-			descriptionFull
-			wikiUrl
-			isFavourite
+			names
 			plantImages {
 				id
 				urlIosFull
 				urlIosPrev
 			}
-			PlantCares {
-				count
-				id
-				period
-				CareType {
-					id
-					name
-				}
-			}
-			Climate {
-				deciduous
-				habit
-				hardiness
-				height
-				moisture
-				ph
-				shade
-				soil
-			}
 		}
 		Disease {
 			id
 			name
+			description
 		}
 	}
 }

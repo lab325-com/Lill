@@ -91,12 +91,11 @@ class ChooseIdentifyController: BaseController {
                 return
             }
             
-//            if meModel.access.diagnosisUsed < total {
-//                PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
-//            } else {
-//                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
-//            }
-            PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
+            if meModel.access.diagnosisUsed < total {
+                PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
+            } else {
+                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+            }
         }
     }
 }
