@@ -16,6 +16,7 @@ enum FirebaseScreenEvents: String {
     case photo_select = "photo_select" /// ChooseIdentifyController
     case identify_screen_step_1 = "identify_screen_step_1" /// IdentifyController
     case identify_screen_step_2 = "identify_screen_step_2" /// IdentifyController
+    case identify_screen_step_4 = "identify_screen_step_4" /// IdentifyController
     
     case tap_bar = "tap_bar" /// MainTabBarController
     case menu = "menu" /// MenuController
@@ -29,8 +30,8 @@ enum FirebaseScreenEvents: String {
     case onboarding_step_4 = "onboarding_step_4" /// OnboardingThreeController
     case onboarding_step_5 = "onboarding_step_5" /// OnboardingFourController
     
-    case diagnosing_step_2 = "diagnosing_step_2"
-    case diagnosis_results = "diagnosis results"
+    case diagnosing_step_2 = "diagnosing_step_2" /// DiagnosisController
+    case diagnosis_results = "diagnosis results" /// DiagnosisController
     
     case edit_cares = "edit_cares" /// GardenPlantCaresEdit
 }
@@ -77,6 +78,10 @@ enum FirebaseEvents: String {
     /// IdentifyController (identify_screen_step_2)
     case identifying = "identifying"
     case retake_photo = "retake_photo"
+    
+    /// IdentifyController (identify_screen_step_4)
+    case identify_results_wrong = "identify_results_wrong"
+    case identify_results_many = "identify_results_many"
     
     /// MainTabBarController(tap_bar)
     case add_bar = "add_bar"
@@ -133,6 +138,8 @@ enum FirebaseEvents: String {
     case onboarding_next_5 = "onboarding_next_5"
     
     case re_diagnose = "re_diagnose"
+    case diagnosis_results_success_sick = "diagnosis_results_success_sick"
+    case diagnosis_results_success_not_sick = "diagnosis_results_success_not_sick"
     
     /// GardenPlantCaresEdit (edit_cares)
     

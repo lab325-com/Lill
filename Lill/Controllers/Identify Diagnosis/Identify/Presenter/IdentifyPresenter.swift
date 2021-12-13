@@ -53,6 +53,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
     
     func recognizePhoto(id: String) {
         view?.startLoader()
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_4)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
             guard let `self` = self else { return }
@@ -61,9 +62,11 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
             let query = StartRecognizeQuery(mediaId: id)
             
             self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] model in
+                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": model.startRecognize.count])
                 self?.view?.stopLoading()
                 self?.view?.successRecognize(model: model)
             }, failureHandler: { [weak self] error in
+                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_wrong)
                 self?.view?.stopLoading()
                 self?.view?.failure(error: error.localizedDescription)
             })

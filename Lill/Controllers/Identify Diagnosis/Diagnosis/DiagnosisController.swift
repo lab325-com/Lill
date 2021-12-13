@@ -184,6 +184,9 @@ class DiagnosisController: BaseController {
     }
 
     @IBAction func restartAction(_ sender: Any) {
+        
+        
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .diagnosis_results)
         AnalyticsHelper.sendFirebaseEvents(events: .re_diagnose)
         
         DispatchQueue.main.async {

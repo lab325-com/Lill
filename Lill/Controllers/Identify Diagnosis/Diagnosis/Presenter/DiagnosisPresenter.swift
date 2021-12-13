@@ -2,6 +2,7 @@
 import Foundation
 import Apollo
 import UIKit
+import GameController
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -60,6 +61,12 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
         request = Network.shared.query(model: DiagnoseDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successDiagnose(model: model)
+            
+            if model.startDiagnose?.plant == nil {
+                AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_results_success_not_sick)
+            } else {
+                AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_results_success_sick)
+            }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
