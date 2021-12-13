@@ -490,23 +490,26 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qU-tn-3h6">
-                                    <rect key="frame" x="108" y="24" width="88.5" height="36"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qU-tn-3h6">
+                                    <rect key="frame" x="108" y="24" width="190" height="36"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="36" id="SM9-3y-cOE"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="SM9-3y-cOE"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second name of plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-sU-2fo">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second name of plant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-sU-2fo">
                                     <rect key="frame" x="108" y="60" width="282" height="16"/>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19 Aug 16:14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT5-vR-09s">
-                                    <rect key="frame" x="318.5" y="34" width="71.5" height="16"/>
+                                    <rect key="frame" x="310" y="34" width="80" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="zW7-XA-q9d"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
                                     <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -573,6 +576,7 @@
                                 <constraint firstItem="Ulj-In-rFS" firstAttribute="leading" secondItem="CK9-ma-LRa" secondAttribute="leading" id="TBz-vQ-LuE"/>
                                 <constraint firstItem="4qU-tn-3h6" firstAttribute="top" secondItem="87Z-dw-LPO" secondAttribute="top" id="WmE-AU-lqw"/>
                                 <constraint firstItem="87Z-dw-LPO" firstAttribute="top" secondItem="CK9-ma-LRa" secondAttribute="top" constant="24" id="gq0-vf-WO7"/>
+                                <constraint firstItem="eT5-vR-09s" firstAttribute="leading" secondItem="4qU-tn-3h6" secondAttribute="trailing" constant="12" id="ixq-qs-woU"/>
                                 <constraint firstItem="t9W-pa-Ype" firstAttribute="top" secondItem="Tds-ac-IFP" secondAttribute="bottom" constant="12" id="mx3-m7-Jg9"/>
                                 <constraint firstItem="Tds-ac-IFP" firstAttribute="top" secondItem="utN-Yd-MHJ" secondAttribute="bottom" id="n9R-vg-tl7"/>
                                 <constraint firstItem="utN-Yd-MHJ" firstAttribute="leading" secondItem="CK9-ma-LRa" secondAttribute="leading" constant="24" id="qeZ-fQ-AAA"/>
