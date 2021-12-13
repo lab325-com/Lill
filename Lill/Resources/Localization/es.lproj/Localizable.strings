@@ -114,7 +114,7 @@
 "garden_delete_success" = "Planta \ NHA ha sido eliminado";
 "garden_delete_title" = "Plante";
 "garden_detail_about" = "Acerca de";
-"garden_detail_care_edit_my_plan" = "Editar mi plan de cuidado";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
 "garden_plan_done" = "Hecho";
@@ -254,5 +254,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";
