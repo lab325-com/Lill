@@ -33,7 +33,7 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     init(view: GardenPlantCaresEditOutputProtocol)
     
     func getGardenPlantCares(gardenPlantId: String)
-    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?)
+    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?, type: CareType)
     func gardenPlantCaresToDefault(gardenPlantId: String)
     func deleteGardenPlantCares(caresId: [String])
 }
@@ -62,8 +62,10 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         })
     }
     
-    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?) {
+    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?, type: CareType) {
         view?.startLoader()
+        
+        var dict: [String : Any] = [:]
         
         var gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id)
         if let count = count {
@@ -73,13 +75,17 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
             gardenPlantCareUpdateInput.period = period
         }
         if let sendNotificationAt = sendNotificationAt {
+            dict["time_edit"] = sendNotificationAt
             gardenPlantCareUpdateInput.sendNotificationAt = sendNotificationAt
         }
         if let isActive = isActive {
+            dict["isActive"] = [isActive ? "on" : "off"]
             gardenPlantCareUpdateInput.isActive = isActive
         }
+        
         let mutation = GardenPlantCareUpdateMutation(record: gardenPlantCareUpdateInput)
         
+
         let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successUpdateGardenPlantCare()
@@ -87,6 +93,33 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         }
+        
+        
+        if let count = count, let period = period {
+
+            dict["frequancy_edit"] = "\(count) \(period.rawValue)"
+            var dayComponent    = DateComponents()
+            
+            switch period {
+            case .periodTypeDay:
+                dayComponent.day = count
+            case .periodTypeMonth:
+                dayComponent.month = count
+            case .periodTypeWeek:
+                dayComponent.day = count * 7
+            default:
+               break
+            }
+            
+            if let nextDate = Calendar.current.date(byAdding: dayComponent, to: Date()) {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM dd"
+                dict["nextdate_edit"] = dateFormatter.string(from: nextDate)
+            }
+        }
+        
+        AnalyticsHelper.sendFirebaseEvents(events: type.name.rawValue, params: dict)
     }
     
     func deleteGardenPlantCares(caresId: [String]) {

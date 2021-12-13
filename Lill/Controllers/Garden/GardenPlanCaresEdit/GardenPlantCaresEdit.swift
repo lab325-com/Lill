@@ -93,6 +93,11 @@ class GardenPlantCaresEdit: BaseController {
         bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .edit_cares)
+    }
+    
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
@@ -176,7 +181,8 @@ extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
         guard let id = caresModel.id else { return }
-        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive)
+        
+        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive, type: caresModel.type)
     }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
@@ -198,6 +204,7 @@ extension GardenPlantCaresEdit: CareCellDelegate {
 
 extension GardenPlantCaresEdit: AddCareCellProtocol {
     func didPressedAddCareButton() {
+        AnalyticsHelper.sendFirebaseEvents(events: .add_care)
         let cares = presenter.plantCares.map( {$0.type} )
         GardenPlantCaresEditRouter(presenter: navigationController).pushAddCare(gardenPlantId: gardenPlantId, cares: cares)
     }
@@ -209,13 +216,13 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        guard let id = selectedModel?.id else { return }
+        guard let id = selectedModel?.id, let type = selectedModel?.type else { return }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         let sendNotificationAt = formatter.string(from: date ?? Date())
         
-        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil)
+        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil, type: type)
         selectedModel = nil
     }
 }

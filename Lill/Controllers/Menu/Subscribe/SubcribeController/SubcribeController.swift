@@ -219,6 +219,18 @@ class SubcribeController: BaseController {
             self?.checkSubscribeUI()
         }
     }
+    
+    @IBAction func actionTerms(_ sender: UIButton) {
+        if let url = URL(string: "https://mob325.com/lill/terms_and_conditions.html") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func actionPrivacy(_ sender: UIButton) {
+        if let url = URL(string: "https://mob325.com/lill/privacy_policy.html") {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 //----------------------------------------------

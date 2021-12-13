@@ -7,7 +7,7 @@
 
 import Foundation
 import Firebase
-
+import FirebaseAnalytics
 
 enum FirebaseScreenEvents: String {
     case login_screen = "login_screen" ///LoginController
@@ -31,6 +31,8 @@ enum FirebaseScreenEvents: String {
     
     case diagnosing_step_2 = "diagnosing_step_2"
     case diagnosis_results = "diagnosis results"
+    
+    case edit_cares = "edit_cares" /// GardenPlantCaresEdit
 }
 
 enum FirebaseEvents: String {
@@ -131,9 +133,16 @@ enum FirebaseEvents: String {
     case onboarding_next_5 = "onboarding_next_5"
     
     case re_diagnose = "re_diagnose"
+    
+    /// GardenPlantCaresEdit (edit_cares)
+    
+    case add_care = "add_care"
 }
 
 class AnalyticsHelper: NSObject {
+    static func sendFirebaseEvents(events: String, params: [String : Any]? = nil) {
+        Analytics.logEvent(events, parameters: params)
+    }
     
     static func sendFirebaseEvents(events: FirebaseEvents, params: [String : Any]? = nil) {
         Analytics.logEvent(events.rawValue, parameters: params)

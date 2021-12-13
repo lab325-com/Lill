@@ -375,6 +375,9 @@
                                             <state key="normal" title="Terms of use">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="actionTerms:" destination="-1" eventType="touchUpInside" id="vHK-ae-jTe"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6L-zK-FBx">
                                             <rect key="frame" x="183" y="0.0" width="183" height="28"/>
@@ -383,6 +386,9 @@
                                             <state key="normal" title="Privacy policy">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="actionPrivacy:" destination="-1" eventType="touchUpInside" id="RF8-xE-mpO"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
