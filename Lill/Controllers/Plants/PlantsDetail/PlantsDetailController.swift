@@ -4,6 +4,11 @@ import Kingfisher
 
 protocol PlantsDetailDelegate: AnyObject {
     func updatePlants()
+    func successSetFavorite(id: String, isFavorite: Bool)
+}
+
+extension PlantsDetailDelegate {
+    func successSetFavorite(id: String, isFavorite: Bool) {}
 }
 
 class PlantsDetailController: BaseController {
@@ -184,6 +189,7 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
     }
     
     func successSetFavorite() {
+        delegate?.successSetFavorite(id: id, isFavorite: !(model?.plantById.isFavourite ?? false))
         presenter.getPlantDetail(id: id)
         updateFavoriteButton()
         showFavoriteStatusView()
@@ -204,6 +210,15 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
         nameLabel.text = model.plantById.names
         descriptionLabel.text = model.plantById.descriptionFull
         wikiUrl = model.plantById.wikiUrl ?? ""
+        
+        
+        if cares.count == 0 {
+            careView.isHidden = true
+            DispatchQueue.main.async {
+                self.topCareLayout.constant = -self.careView.frame.height
+                self.view.layoutIfNeeded()
+            }
+        }
         
         if abouts.count == 0 {
             aboutView.isHidden = true
@@ -269,15 +284,6 @@ extension PlantsDetailController: PlantsDetailOutputProtocol {
                 view.isHidden = false
                 view.setup(care: care)
             }
-        }
-        
-        if cares.count == 0 {
-            careView.isHidden = true
-            DispatchQueue.main.async {
-                self.topCareLayout.constant = -self.careView.frame.height
-                self.view.layoutIfNeeded()
-            }
-            return
         }
         
         UIView.animate(withDuration: 0.3) { [weak self] in

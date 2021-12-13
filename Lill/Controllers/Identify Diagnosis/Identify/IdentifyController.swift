@@ -64,7 +64,7 @@ class IdentifyController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private lazy var presenter = IdentifyPresenter(view: self)
+    lazy var presenter = IdentifyPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Public property
@@ -92,6 +92,7 @@ class IdentifyController: BaseController {
     }
     
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
         
         setup()
@@ -279,6 +280,17 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
 //----------------------------------------------
 
 extension IdentifyController: IdentifyOutputProtocol {
+    func successAddToGarden() {
+        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+    }
+    
+    func successFavorite(isFavorite: Bool, id: String) {
+        if let index = identifyResults.firstIndex(where: {$0.id == id }) {
+            identifyResults[index].changeIsFavorite(isFavorite)
+            collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+        }
+    }
+    
     func successUpload(model: MediaDataModel) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

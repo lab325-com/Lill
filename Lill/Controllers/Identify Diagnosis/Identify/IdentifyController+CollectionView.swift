@@ -18,11 +18,46 @@ extension IdentifyController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.configure(model: model)
         }
         
+        cell.delegate = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("select item")
+        if let model = identifyResults[safe: indexPath.row] {
+            PlantsRouter(presenter: navigationController).pushDetail(id: model.id, delegate: self)
+        }
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantsDetailDelegate
+//----------------------------------------------
+
+extension IdentifyController: PlantsDetailDelegate {
+    func updatePlants() {
+        
+    }
+    
+    func successSetFavorite(id: String, isFavorite: Bool) {
+        if let index = identifyResults.firstIndex(where: {$0.id == id }) {
+            identifyResults[index].changeIsFavorite(isFavorite)
+            collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+        }
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantCollectionDelegate
+//----------------------------------------------
+
+extension IdentifyController: PlantCollectionDelegate {
+    func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
+        presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
+    }
+    
+    func setToGarden(cell: PlantCollectionCell, id: String) {
+        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
+        presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
     }
 }
 

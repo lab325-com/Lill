@@ -1,5 +1,5 @@
 
-import Foundation
+import UIKit
 
 class PlantsRouter: BaseRouter {
     
@@ -22,7 +22,9 @@ class PlantsRouter: BaseRouter {
     
     func presentIdentify() {
         let controller = IdentifyController()
-        present(controller: controller)
+        let nc = UINavigationController(rootViewController: controller)
+        nc.modalPresentationStyle = .fullScreen
+        present(controller: nc)
     }
     
     func presentDiagnosis() {
