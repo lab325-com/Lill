@@ -35,11 +35,11 @@ class DiseaseArchiveCell: UITableViewCell {
         dateFormatter.dateFormat = "d MMM HH:mm"
         timeLabel.text = dateFormatter.string(from: date)
         
-        let url = URL(string: plant.plant.plantImages.first?.urlIosFull ?? "")
+        let url = URL(string: plant.plant?.plantImages.first?.urlIosFull ?? "")
         plantImageView.kf.setImage(with: url, placeholder: UIImage(named: "avatar_ic"),  options: [.transition(.fade(0.25))])
         
-        plantNameLabel.text = plant.plant.latinName
-        secondNamePlantLabel.text = plant.plant.names
+        plantNameLabel.text = plant.plant?.latinName
+        secondNamePlantLabel.text = plant.plant?.names
         
         titeDiagnose.text = plant.diagnoseTitle
         descriptionLabel.text = plant.diagnoseDescription

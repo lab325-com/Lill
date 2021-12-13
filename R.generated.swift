@@ -2668,10 +2668,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_biennial_perennial = Rswift.StringResource(key: "climate_habit_biennial_perennial", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Billed %@
-      ///
-      /// Locales: en, es
-      static let subscription_billed_with = Rswift.StringResource(key: "subscription_billed_with", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Bulb
       ///
       /// Locales: en, es
@@ -3280,6 +3276,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_recurring = Rswift.StringResource(key: "subscription_recurring", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Recurring yearly billing
+      ///
+      /// Locales: en
+      static let subscription_recurring_yearly = Rswift.StringResource(key: "subscription_recurring_yearly", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -4077,23 +4077,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_biennial_perennial", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Billed %@
-      ///
-      /// Locales: en, es
-      static func subscription_billed_with(_ value1: String, preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          let format = NSLocalizedString("subscription_billed_with", bundle: hostingBundle, comment: "")
-          return String(format: format, locale: applicationLocale, value1)
-        }
-
-        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscription_billed_with"
-        }
-
-        let format = NSLocalizedString("subscription_billed_with", bundle: bundle, comment: "")
-        return String(format: format, locale: locale, value1)
       }
 
       /// en translation: Bulb
@@ -6376,6 +6359,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscription_recurring", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Recurring yearly billing
+      ///
+      /// Locales: en
+      static func subscription_recurring_yearly(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_recurring_yearly", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_recurring_yearly"
+        }
+
+        return NSLocalizedString("subscription_recurring_yearly", bundle: bundle, comment: "")
       }
 
       /// en translation: Removed from Wishlist

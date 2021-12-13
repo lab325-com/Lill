@@ -19,5 +19,5 @@ struct DiseaseMainModel: Codable {
 struct DiseasePlant: Codable {
     let diagnoseDescription: String
     let diagnoseTitle: String
-    let plant: PlantModel
+    let plant: PlantModel?
 }

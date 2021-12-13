@@ -15,6 +15,7 @@ struct PaymentsModel {
     let product: String
     let prettyPrice: String
     let period: String
+    let number: Int
     let price: Double
     let currencySymbol: String?
     let daysTrial: Int? = nil
@@ -172,10 +173,10 @@ class SubscribePresenter: SubscribePresenterProtocol {
             
             for product in results.retrievedProducts {
                 if let priceString = product.localizedPrice,
-                   let _ = product.subscriptionPeriod?.numberOfUnits,
+                   let number = product.subscriptionPeriod?.numberOfUnits,
                    let period = self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
                     
-                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
+                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
                     self?.paymentsInfo.append(model)
                 } else {
                     debugPrint(">>>>>>>>>>>>>>>>>>>incorrect product!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

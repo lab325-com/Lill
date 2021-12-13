@@ -221,12 +221,12 @@
 "scheldure_title" = "Schedule";
 "scheldure_today" = "Today";
 "subscription_active" = "Active";
-"subscription_billed_with" = "Billed %@";
 "subscription_cancel_any_time" = "Cancel anytime";
 "subscription_description" = "You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.";
 "subscription_month" = "month";
 "subscription_privacy" = "Privacy policy";
 "subscription_recurring" = "Recurring monthly billing";
+"subscription_recurring_yearly" = "Recurring yearly billing";
 "subscription_restore" = "Restore Purchases";
 "subscription_save_33" = "Save 33% Off";
 "subscription_sub_title" = "Get access to unlimited Identify\nand Diagnosis Plants";

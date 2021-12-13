@@ -87,7 +87,7 @@ extension DiseaseArchiveViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let id = model?.diagnoseArhive.plant[safe: indexPath.row]?.plant.id {
+        if let id = model?.diagnoseArhive.plant[safe: indexPath.row]?.plant?.id {
             PlantsRouter(presenter: navigationController).pushDetail(id: id)
         }
     }

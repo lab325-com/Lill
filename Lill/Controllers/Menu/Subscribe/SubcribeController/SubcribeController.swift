@@ -33,18 +33,16 @@ enum SubscribeType: String, CaseIterable {
     func priceLabel(sub: PaymentsModel) -> String {
         switch self {
         case .yearProduct:
-            let value = sub.price / 12
-            
-            return "\(sub.currencySymbol ?? "$") \(preciseRound(value, precision: .tenths) - 0.01)/\(RLocalization.subscription_month.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
+            return "\(sub.currencySymbol ?? "$") \(sub.price)"
         case .monthProduct:
-            return "\(sub.currencySymbol ?? "$") \(sub.price)/\(RLocalization.subscription_month.localized(PreferencesManager.sharedManager.languageCode.rawValue))"
+            return "\(sub.currencySymbol ?? "$") \(sub.price)"
         }
     }
     
     func billed(sub: PaymentsModel) -> String {
         switch self {
         case .yearProduct:
-            return  RLocalization.subscription_billed_with("\(sub.period) - \(sub.prettyPrice)")
+            return  RLocalization.subscription_recurring_yearly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .monthProduct:
             return RLocalization.subscription_recurring.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
@@ -266,6 +264,7 @@ extension SubcribeController: SubscribeOutputProtocol {
             self.mounthView.backgroundColor = self.secondSub == selectedSub ? UIColor(rgb: 0x7CDAA3) : UIColor.white.withAlphaComponent(0.7)
             
             self.yearTitleLabel.textColor = self.fistSub == selectedSub ? UIColor.white : UIColor.black
+            self.yearTitleLabel.font = self.fistSub == selectedSub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
             
             if selectedSub == .yearProduct {
                 self.saveViewFirst.isHidden = true
@@ -273,18 +272,18 @@ extension SubcribeController: SubscribeOutputProtocol {
             
             if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.fistSub.rawValue}) {
                 
-                self.yearTitleLabel.text = sub.period
-                self.yearBilledLabel.text = SubscribeType.yearProduct.billed(sub: sub)
+                self.yearTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
+                self.yearBilledLabel.text = self.fistSub.billed(sub: sub)
                 
                 self.yearPriceLabel.text = SubscribeType.yearProduct.priceLabel(sub: sub)
                 self.yearView.alpha = 1.0
             }
             
             if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.secondSub.rawValue}) {
-                self.monthTitleLabel.text = sub.period
+                self.monthTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
                 
                 self.monthPriceLabel.text = SubscribeType.monthProduct.priceLabel(sub: sub)
-                self.monthRecuringLabel.text = SubscribeType.monthProduct.billed(sub: sub)
+                self.monthRecuringLabel.text = self.secondSub.billed(sub: sub)
                 self.mounthView.alpha = 1.0
             }
         }
