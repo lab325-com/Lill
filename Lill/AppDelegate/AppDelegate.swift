@@ -8,6 +8,8 @@ import Firebase
 import FirebaseMessaging
 import SwiftyStoreKit
 import StoreKit
+import Siren
+
 //----------------------------------------------
 // MARK: - Typealias
 //----------------------------------------------
@@ -27,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         checkingPurchase()
+        forceUpdate()
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         
@@ -40,22 +43,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             options: authOptions,
             completionHandler: {(granted, error) in
                 DispatchQueue.main.async {
-                    if (granted)
-                    {
+                    if (granted) {
                         application.registerForRemoteNotifications()
                     }
-                    else{
+                    else {
                         //Do stuff if unsuccessful...
                     }
                 }
-                
             })
-        
-        
         
         SKAdNetwork.registerAppForAdNetworkAttribution()
         
         application.registerForRemoteNotifications()
+        
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
     }
     
@@ -84,6 +84,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 default:
                     break
                 }
+            }
+        }
+    }
+    
+    private func forceUpdate() {
+        let siren = Siren.shared
+        let rules = Rules(promptFrequency: .immediately, forAlertType: .force)
+        siren.rulesManager = RulesManager(globalRules: rules)
+        siren.wail(performCheck: .onForeground) { (results) in
+            switch results {
+            case .success(let updateResults):
+                if updateResults.alertAction == .appStore {
+                    guard let url = URL(string: "itms-apps://itunes.apple.com/app/id1586099684") else { return }
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

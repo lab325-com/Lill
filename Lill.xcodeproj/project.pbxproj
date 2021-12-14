@@ -352,6 +352,7 @@
 		FAD1833226F8A5CA007A67DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833126F8A5CA007A67DC /* API.swift */; };
 		FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833626F9DD2C007A67DC /* LoginController.swift */; };
 		FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1833726F9DD2C007A67DC /* LoginController.xib */; };
+		FAD18C8B2768C28300E3C59D /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = FAD18C8A2768C28300E3C59D /* Siren */; };
 		FADC80CF272FF5B100CA9ED3 /* SetFavoritePlantById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADC80CE272FF5B100CA9ED3 /* SetFavoritePlantById.graphql */; };
 		FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC80D0272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift */; };
 		FADCE356275D033400119C51 /* AddPlantTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCE355275D033400119C51 /* AddPlantTimeModel.swift */; };
@@ -781,6 +782,7 @@
 				020FE338274BDD6E00FF69F7 /* FirebaseAnalytics in Frameworks */,
 				02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */,
 				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
+				FAD18C8B2768C28300E3C59D /* Siren in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				02C6C111273A69CF003C47FF /* Alamofire in Frameworks */,
 				020FE33C274BDD6E00FF69F7 /* FirebaseCrashlytics in Frameworks */,
@@ -2793,6 +2795,7 @@
 				020FE33D274BDD6E00FF69F7 /* FirebaseDynamicLinks */,
 				020FE33F274BDD6E00FF69F7 /* FirebaseMessaging */,
 				020FE341274BDD6E00FF69F7 /* FirebaseRemoteConfig */,
+				FAD18C8A2768C28300E3C59D /* Siren */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -2833,6 +2836,7 @@
 				02E329A627342628004344C0 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				020FE336274BDD6E00FF69F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -3445,15 +3449,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -3596,15 +3601,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -3627,15 +3633,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -3756,6 +3763,14 @@
 				minimumVersion = 0.48.0;
 			};
 		};
+		FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3838,6 +3853,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		FAD18C8A2768C28300E3C59D /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
