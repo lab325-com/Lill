@@ -43,7 +43,7 @@ class PlantsController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private let searchText = RLocalization.plants_search()
+    let searchText = RLocalization.plants_search()
     private var isNeedAnimate = true
     
     //----------------------------------------------
@@ -225,11 +225,17 @@ extension PlantsController: PlantsOutputProtocol {
     }
     
     func success(model: CatalogPlantsModel) {
+        if model.getCatalogPlants.pagination.prevPageExist == false {
+            plants = model.getCatalogPlants.plants
+            setupAnimate()
+        } else {
+            plants.append(contentsOf: model.getCatalogPlants.plants)
+        }
+        
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
-        plants = model.getCatalogPlants.plants
         favoriteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
         collectionView.reloadData()
-        setupAnimate()
+        
     }
     
     func failure(error: String) {
