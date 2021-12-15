@@ -65,10 +65,21 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
             
             let query = StartRecognizeQuery(mediaId: id)
             
-            self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] model in
-                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": model.startRecognize.count])
-                self?.view?.stopLoading()
-                self?.view?.successRecognize(model: model)
+            self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] modelRecognize in
+                guard let `self` = self else { return }
+                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": modelRecognize.startRecognize.count])
+                
+                let queryMe = MeQuery()
+                
+                let _ = Network.shared.query(model: MeDataModel.self, queryMe, controller: self.view) { [weak self] model in
+                    KeychainService.standard.me = model.me
+                    self?.view?.stopLoading()
+                    self?.view?.successRecognize(model: modelRecognize)
+                } failureHandler: { [weak self] error in
+                    self?.view?.stopLoading()
+                    self?.view?.successRecognize(model: modelRecognize)
+                }
+                
             }, failureHandler: { [weak self] error in
                 AnalyticsHelper.sendFirebaseEvents(events: .identify_results_wrong)
                 self?.view?.stopLoading()

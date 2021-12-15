@@ -552,7 +552,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 108 images.
+  /// This `R.image` struct is generated, and contains static references to 109 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -646,6 +646,8 @@ struct R: Rswift.Validatable {
     static let ic_identify_photo_rectangle = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_rectangle")
     /// Image `ic_identify_photo_white`.
     static let ic_identify_photo_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_white")
+    /// Image `ic_identify_recognize_arhive`.
+    static let ic_identify_recognize_arhive = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_recognize_arhive")
     /// Image `ic_login_apple`.
     static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
     /// Image `ic_login_bg`.
@@ -1090,6 +1092,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_identify_photo_white", bundle: ..., traitCollection: ...)`
     static func ic_identify_photo_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_identify_photo_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_recognize_arhive", bundle: ..., traitCollection: ...)`
+    static func ic_identify_recognize_arhive(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_recognize_arhive, compatibleWith: traitCollection)
     }
     #endif
 
@@ -8229,6 +8238,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_identify_onboarding_3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_3' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_black' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_recognize_arhive", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_recognize_arhive' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

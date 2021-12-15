@@ -60,6 +60,10 @@ class IdentifyController: BaseController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var identifierRecongizeCount: UILabel!
+    @IBOutlet weak var recognizeArchiveTitle: UILabel!
+    @IBOutlet weak var recognizeBottomView: ShadowView!
+    
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
@@ -108,6 +112,7 @@ class IdentifyController: BaseController {
     //----------------------------------------------
     
     func setup() {
+        recognizeArchiveTitle.text = RLocalization.menu_item_archive_recognized.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),
                                 forCellWithReuseIdentifier: cellIdentifier)
@@ -246,6 +251,10 @@ class IdentifyController: BaseController {
             AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_1)
         }
     }
+    
+    @IBAction func actionGoToRecognizeArchive(_ sender: UIButton) {
+        MenuRouter(presenter: self.navigationController).pushRecognizedArchive()
+    }
 }
 
 //----------------------------------------------
@@ -311,6 +320,8 @@ extension IdentifyController: IdentifyOutputProtocol {
             self.identifyImageView.isHidden = false
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.recognizeBottomView.isHidden = false
+                self.identifierRecongizeCount.text = KeychainService.standard.me?.access.identifyTotal == nil ? "\(KeychainService.standard.me?.access.identifyUsed ?? 0)/\(KeychainService.standard.me?.access.identifyUsed ?? 0)" : "\(KeychainService.standard.me?.access.identifyUsed ?? 0)/\(KeychainService.standard.me?.access.identifyTotal ?? 0)"
                 self.bottomView.isHidden = true
                 self.capturedView.isHidden = true
                 self.identifyResultsLabel.isHidden = false

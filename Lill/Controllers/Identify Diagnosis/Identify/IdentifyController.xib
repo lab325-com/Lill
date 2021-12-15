@@ -31,6 +31,7 @@
                 <outlet property="capturedView" destination="6Ov-jd-UiM" id="GeD-m7-2bW"/>
                 <outlet property="collectionView" destination="LAh-N1-W5x" id="Pja-kh-P8D"/>
                 <outlet property="flashButton" destination="7kd-wV-KJM" id="SuS-r6-AJK"/>
+                <outlet property="identifierRecongizeCount" destination="QXT-jX-bRO" id="XZe-vI-Iwm"/>
                 <outlet property="identifyActivity" destination="5xF-dR-OtG" id="IQi-Ha-EqQ"/>
                 <outlet property="identifyAnalyzeIdentifyPlantLabel" destination="RPy-D7-fbq" id="e8S-De-jVE"/>
                 <outlet property="identifyAnalyzeImageLabel" destination="fcA-tM-rxq" id="uGj-We-zD4"/>
@@ -61,6 +62,8 @@
                 <outlet property="overviewTitleLabel" destination="pPD-zm-zd3" id="s2v-hP-Znz"/>
                 <outlet property="photoQualityInfoLabel" destination="aLI-LS-59U" id="ru0-6t-eSc"/>
                 <outlet property="photoQualityTitleLabel" destination="KAT-mI-Crg" id="apP-o3-lAi"/>
+                <outlet property="recognizeArchiveTitle" destination="8hQ-dw-LS4" id="vPO-WN-HlZ"/>
+                <outlet property="recognizeBottomView" destination="Aut-2Z-yQS" id="CML-jg-PrN"/>
                 <outlet property="retakePhotoButton" destination="fEh-78-IpP" id="9bO-3J-kXz"/>
                 <outlet property="stackView" destination="glz-gi-Sph" id="oC6-nu-wTb"/>
                 <outlet property="startIdentifyButton" destination="G1w-5e-AiD" id="TSD-E0-NhL"/>
@@ -781,12 +784,77 @@
                         </view>
                     </subviews>
                 </stackView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aut-2Z-yQS" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="24" y="824" width="366" height="48"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_identify_recognize_arhive" translatesAutoresizingMaskIntoConstraints="NO" id="IWS-9N-LTj">
+                            <rect key="frame" x="6" y="4" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="2FC-YK-qiE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognized Archive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-dw-LS4">
+                            <rect key="frame" x="68" y="15" width="136" height="18"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXT-jX-bRO">
+                            <rect key="frame" x="317.5" y="15" width="22.5" height="18"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-tQ-Sbs">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="actionGoToRecognizeArchive:" destination="-1" eventType="touchUpInside" id="HTd-6W-8hs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="2xD-eE-Hnh"/>
+                        <constraint firstItem="IWS-9N-LTj" firstAttribute="leading" secondItem="Aut-2Z-yQS" secondAttribute="leading" constant="6" id="AE6-Ws-fd1"/>
+                        <constraint firstAttribute="bottom" secondItem="IWS-9N-LTj" secondAttribute="bottom" constant="4" id="b8L-IC-667"/>
+                        <constraint firstItem="ekd-tQ-Sbs" firstAttribute="width" secondItem="Aut-2Z-yQS" secondAttribute="width" id="g6Z-mg-TQY"/>
+                        <constraint firstAttribute="trailing" secondItem="QXT-jX-bRO" secondAttribute="trailing" constant="26" id="iAV-jf-GNM"/>
+                        <constraint firstItem="8hQ-dw-LS4" firstAttribute="centerY" secondItem="IWS-9N-LTj" secondAttribute="centerY" id="jBm-wj-Fzs"/>
+                        <constraint firstItem="8hQ-dw-LS4" firstAttribute="leading" secondItem="IWS-9N-LTj" secondAttribute="trailing" constant="22" id="mfY-EA-fdT"/>
+                        <constraint firstItem="ekd-tQ-Sbs" firstAttribute="centerX" secondItem="Aut-2Z-yQS" secondAttribute="centerX" id="nH2-Ng-hnL"/>
+                        <constraint firstItem="ekd-tQ-Sbs" firstAttribute="height" secondItem="Aut-2Z-yQS" secondAttribute="height" id="phB-UJ-h0D"/>
+                        <constraint firstItem="ekd-tQ-Sbs" firstAttribute="centerY" secondItem="Aut-2Z-yQS" secondAttribute="centerY" id="qEd-c5-hM6"/>
+                        <constraint firstItem="QXT-jX-bRO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8hQ-dw-LS4" secondAttribute="trailing" constant="20" id="sQb-DY-ykw"/>
+                        <constraint firstItem="QXT-jX-bRO" firstAttribute="centerY" secondItem="IWS-9N-LTj" secondAttribute="centerY" id="wVb-4J-dph"/>
+                        <constraint firstItem="IWS-9N-LTj" firstAttribute="top" secondItem="Aut-2Z-yQS" secondAttribute="top" constant="4" id="zma-Hf-hoN"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="glz-gi-Sph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3Sy-xD-egd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Aut-2Z-yQS" secondAttribute="trailing" constant="24" id="3xP-Q9-J02"/>
                 <constraint firstItem="Px5-zN-g5S" firstAttribute="top" secondItem="H8a-ok-oH0" secondAttribute="bottom" constant="50" id="6Fc-1o-AJq"/>
+                <constraint firstAttribute="bottom" secondItem="Aut-2Z-yQS" secondAttribute="bottom" constant="24" id="6Si-tk-A5S"/>
                 <constraint firstAttribute="bottom" secondItem="C37-6P-6Gr" secondAttribute="bottom" id="6eQ-qQ-xxJ"/>
                 <constraint firstItem="8IJ-EL-Oys" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Jp-g9-i7u"/>
                 <constraint firstItem="glz-gi-Sph" firstAttribute="top" secondItem="WXa-ko-cAf" secondAttribute="bottom" constant="40" id="BKc-5D-h3o"/>
@@ -796,6 +864,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7kd-wV-KJM" secondAttribute="trailing" constant="15" id="FfN-Rs-fdp"/>
                 <constraint firstItem="Ods-Qu-cL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I8e-u9-ENR"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IUA-GA-chi"/>
+                <constraint firstItem="Aut-2Z-yQS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NSC-yC-V7P"/>
                 <constraint firstItem="C37-6P-6Gr" firstAttribute="top" secondItem="glz-gi-Sph" secondAttribute="bottom" constant="40" id="Qvm-XP-eCb"/>
                 <constraint firstItem="Ods-Qu-cL0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W6T-0w-7xa"/>
                 <constraint firstItem="LAh-N1-W5x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YFM-we-qTA"/>
@@ -834,6 +903,7 @@
         <image name="ic_identify_onboarding_3" width="116" height="112"/>
         <image name="ic_identify_photo_black" width="87.5" height="73"/>
         <image name="ic_identify_photo_white" width="38" height="38"/>
+        <image name="ic_identify_recognize_arhive" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
