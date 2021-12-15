@@ -19,7 +19,7 @@ protocol PlantsOutputProtocol: BaseController {
 protocol PlantsPresenterProtocol: AnyObject {
     init(view: PlantsOutputProtocol)
     
-    func getPlants(search: String)
+    func getPlants(offset: Int, search: String)
     func updateMe()
 }
 
@@ -29,17 +29,20 @@ class PlantsPresenter: PlantsPresenterProtocol {
     private var isLoaded = false
     private var request: Cancellable?
     
+    var paginationModel: PaginationModel?
+    
     required init(view: PlantsOutputProtocol) {
         self.view = view
     }
     
-    func getPlants(search: String) {
+    func getPlants(offset: Int = 0, search: String) {
         view?.startLoader()
         
         request?.cancel()
         
-        let query = GetCatalogPlantsQuery(pagination: InputPagination(offset: 0, limit: 100), search: search, onlyFavorites: false)
+        let query = GetCatalogPlantsQuery(pagination: InputPagination(offset: offset, limit: 50), search: search, onlyFavorites: false)
         request = Network.shared.query(model: CatalogPlantsModel.self, query, controller: view) { [weak self] model in
+            self?.paginationModel = model.getCatalogPlants.pagination
             self?.view?.stopLoading()
             self?.view?.success(model: model)
         } failureHandler: { [weak self] error in

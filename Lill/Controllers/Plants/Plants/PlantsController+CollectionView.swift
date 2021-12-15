@@ -21,6 +21,14 @@ extension PlantsController: UICollectionViewDataSource, UICollectionViewDelegate
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == plants.count - 5 {
+            if presenter.paginationModel?.nextPageExist == true {
+                presenter.getPlants(offset: plants.count, search: searchTextField.text! == searchText ? "" : searchTextField.text!)
+            }
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 {
             upAnimate()
