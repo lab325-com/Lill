@@ -10,7 +10,12 @@ class LoginController: BaseController {
     // MARK: - @IBOutlets
     //----------------------------------------------
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
+    
+    @IBOutlet weak var signInAppleLabel: UILabel!
+    @IBOutlet weak var signInFacebookLabel: UILabel!
+    @IBOutlet weak var signInInstagramLabel: UILabel!
+    @IBOutlet weak var signInGoogleLabel: UILabel!
+    
     @IBOutlet weak var versionLabel: UILabel!
     
     //----------------------------------------------
@@ -38,10 +43,14 @@ class LoginController: BaseController {
     // MARK: - Private methods
     //----------------------------------------------
     func configureView() {
+        signInAppleLabel.text = RLocalization.login_apple.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        signInFacebookLabel.text = RLocalization.login_facebook.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        signInInstagramLabel.text = RLocalization.login_instagram.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        signInGoogleLabel.text = RLocalization.login_google.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         navigationBar(isNavigationBarHidden: true)
         
-        infoLabel.text = RLocalization.login_info()
-        loginLabel.text = RLocalization.login_loginWith()
+        infoLabel.text = RLocalization.login_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
             versionLabel.text = "ver. \(version) (\(build))"

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SFProDisplay-Regular.ttf">
-            <string>SFProDisplay-Regular</string>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -30,26 +30,25 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Zmq-Jp-1OD">
                     <rect key="frame" x="149.5" y="194" width="115.5" height="91"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore Plants and create garden of your dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wu2-wR-X6b">
-                    <rect key="frame" x="16" y="335" width="382" height="16"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore Plants and create garden of your dream" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3b-xM-swK">
+                    <rect key="frame" x="20" y="325" width="374" height="45.5"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="19"/>
+                    <color key="textColor" red="0.97647058819999999" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="T3b-xM-swK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="59R-by-iBd"/>
                 <constraint firstItem="Zmq-Jp-1OD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="5gH-l4-RI1"/>
-                <constraint firstItem="Wu2-wR-X6b" firstAttribute="top" secondItem="Zmq-Jp-1OD" secondAttribute="bottom" constant="50" id="Kc9-Jw-gKm"/>
-                <constraint firstItem="Wu2-wR-X6b" firstAttribute="centerX" secondItem="Zmq-Jp-1OD" secondAttribute="centerX" id="ZzE-GM-yie"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="T3b-xM-swK" secondAttribute="trailing" constant="20" id="8b4-KU-mfw"/>
                 <constraint firstAttribute="bottom" secondItem="kqU-Tq-HKO" secondAttribute="bottom" id="btQ-Lo-eqy"/>
                 <constraint firstItem="kqU-Tq-HKO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fLn-Sw-kGb"/>
+                <constraint firstItem="T3b-xM-swK" firstAttribute="top" secondItem="Zmq-Jp-1OD" secondAttribute="bottom" constant="40" id="lWO-mC-T3m"/>
                 <constraint firstItem="Zmq-Jp-1OD" firstAttribute="centerX" secondItem="kqU-Tq-HKO" secondAttribute="centerX" id="oK0-0E-TZ3"/>
                 <constraint firstItem="kqU-Tq-HKO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tDW-uP-jzR"/>
-                <constraint firstItem="Wu2-wR-X6b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vtv-Zb-Elz"/>
                 <constraint firstItem="kqU-Tq-HKO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x8r-BC-64V"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wu2-wR-X6b" secondAttribute="trailing" constant="16" id="yxt-zM-NKc"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>

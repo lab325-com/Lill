@@ -155,8 +155,11 @@
 "identify_results" = "Identify Results:";
 "identify_start_identify" = "Start Identify";
 "identify_title" = "Identifying";
-"login_info" = "Explore Plants and create garden of your dream";
-"login_loginWith" = "Login with";
+"login_apple" = "Sign in with Apple";
+"login_facebook" = "Sign in with Facebook";
+"login_google" = "Sign in with Google";
+"login_info" = "Explore Plants and create\ngarden of your dream";
+"login_instagram" = "Sign in with Instagram";
 "menu_account" = "account";
 "menu_item_archive_disease" = "Disease Archive";
 "menu_item_archive_recognized" = "Recognized Archive";

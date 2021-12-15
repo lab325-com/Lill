@@ -2530,7 +2530,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 259 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 262 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -3092,10 +3092,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_log_out = Rswift.StringResource(key: "menu_log_out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Login with
-      ///
-      /// Locales: en, es
-      static let login_loginWith = Rswift.StringResource(key: "login_loginWith", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: M
       ///
       /// Locales: en, es
@@ -3380,6 +3376,22 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_shrub = Rswift.StringResource(key: "climate_habit_shrub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Sign in with Apple
+      ///
+      /// Locales: en, es
+      static let login_apple = Rswift.StringResource(key: "login_apple", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Sign in with Facebook
+      ///
+      /// Locales: en, es
+      static let login_facebook = Rswift.StringResource(key: "login_facebook", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Sign in with Google
+      ///
+      /// Locales: en, es
+      static let login_google = Rswift.StringResource(key: "login_google", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Sign in with Instagram
+      ///
+      /// Locales: en, es
+      static let login_instagram = Rswift.StringResource(key: "login_instagram", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Skip
       ///
       /// Locales: en, es
@@ -5671,21 +5683,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_log_out", bundle: bundle, comment: "")
       }
 
-      /// en translation: Login with
-      ///
-      /// Locales: en, es
-      static func login_loginWith(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("login_loginWith", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "login_loginWith"
-        }
-
-        return NSLocalizedString("login_loginWith", bundle: bundle, comment: "")
-      }
-
       /// en translation: M
       ///
       /// Locales: en, es
@@ -6749,6 +6746,66 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_shrub", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sign in with Apple
+      ///
+      /// Locales: en, es
+      static func login_apple(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_apple", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login_apple"
+        }
+
+        return NSLocalizedString("login_apple", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sign in with Facebook
+      ///
+      /// Locales: en, es
+      static func login_facebook(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_facebook", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login_facebook"
+        }
+
+        return NSLocalizedString("login_facebook", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sign in with Google
+      ///
+      /// Locales: en, es
+      static func login_google(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_google", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login_google"
+        }
+
+        return NSLocalizedString("login_google", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sign in with Instagram
+      ///
+      /// Locales: en, es
+      static func login_instagram(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login_instagram", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login_instagram"
+        }
+
+        return NSLocalizedString("login_instagram", bundle: bundle, comment: "")
       }
 
       /// en translation: Skip
