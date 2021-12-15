@@ -20,10 +20,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="infoLabel" destination="5HK-Ih-qLU" id="5kQ-te-qBC"/>
-                <outlet property="signInAppleLabel" destination="iCn-EE-2A9" id="hYd-el-KFb"/>
-                <outlet property="signInFacebookLabel" destination="gtZ-gy-sqX" id="rYt-TY-fds"/>
-                <outlet property="signInGoogleLabel" destination="iDy-Do-vgN" id="L9h-Om-Rgh"/>
-                <outlet property="signInInstagramLabel" destination="BVv-Z8-rvi" id="awc-Eu-hTQ"/>
+                <outlet property="signInAppleLabel" destination="vew-Ru-tvn" id="xFj-BE-Onh"/>
+                <outlet property="signInFacebookLabel" destination="cUj-hi-W8V" id="LN3-3d-RRi"/>
+                <outlet property="signInGoogleLabel" destination="wUx-9X-Wd8" id="SGT-WB-spL"/>
+                <outlet property="signInInstagramLabel" destination="S1a-dU-l3P" id="SHr-TF-kIK"/>
                 <outlet property="versionLabel" destination="S1P-gb-BDL" id="g3u-9w-jal"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,6 +36,222 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xho-CO-Sgg">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jP8-d2-od0">
+                    <rect key="frame" x="67" y="625" width="280" height="197"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHi-aA-Nm7">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-pg-pyQ">
+                                    <rect key="frame" x="58" y="0.0" width="164" height="44"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_apple" translatesAutoresizingMaskIntoConstraints="NO" id="W3c-Po-rsO">
+                                            <rect key="frame" x="0.0" y="0.0" width="12.5" height="44"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vew-Ru-tvn">
+                                            <rect key="frame" x="22.5" y="0.0" width="141.5" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
+                                            <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5p-ht-rOG">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="appleAction:" destination="-1" eventType="touchUpInside" id="yza-5f-gpO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="xEi-pg-pyQ" secondAttribute="bottom" id="0im-55-kC0"/>
+                                <constraint firstAttribute="height" constant="44" id="1JQ-b7-1rH"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xEi-pg-pyQ" secondAttribute="trailing" constant="10" id="2Lg-4p-dsm"/>
+                                <constraint firstAttribute="bottom" secondItem="W5p-ht-rOG" secondAttribute="bottom" id="7tG-oA-yOb"/>
+                                <constraint firstItem="xEi-pg-pyQ" firstAttribute="top" secondItem="pHi-aA-Nm7" secondAttribute="top" id="Bqo-JA-Vvr"/>
+                                <constraint firstAttribute="trailing" secondItem="W5p-ht-rOG" secondAttribute="trailing" id="C0M-Ie-2Ps"/>
+                                <constraint firstItem="W5p-ht-rOG" firstAttribute="leading" secondItem="pHi-aA-Nm7" secondAttribute="leading" id="MWn-1Y-UKo"/>
+                                <constraint firstItem="xEi-pg-pyQ" firstAttribute="centerX" secondItem="pHi-aA-Nm7" secondAttribute="centerX" id="oAk-Jm-B6o"/>
+                                <constraint firstItem="W5p-ht-rOG" firstAttribute="top" secondItem="pHi-aA-Nm7" secondAttribute="top" id="oXL-TE-zjh"/>
+                                <constraint firstItem="xEi-pg-pyQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pHi-aA-Nm7" secondAttribute="leading" constant="10" id="sRX-HN-mbg"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GD-bT-Cur">
+                            <rect key="frame" x="0.0" y="51" width="280" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5UL-WA-q8O">
+                                    <rect key="frame" x="52" y="0.0" width="176.5" height="44"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_google" translatesAutoresizingMaskIntoConstraints="NO" id="6zr-vF-DFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="14" height="44"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wUx-9X-Wd8">
+                                            <rect key="frame" x="24" y="0.0" width="152.5" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
+                                            <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWr-KI-dJy">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="googleAction:" destination="-1" eventType="touchUpInside" id="jIs-IB-RTU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="5UL-WA-q8O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2GD-bT-Cur" secondAttribute="leading" constant="10" id="1vz-Qb-JUI"/>
+                                <constraint firstAttribute="bottom" secondItem="5UL-WA-q8O" secondAttribute="bottom" id="3al-OD-sXG"/>
+                                <constraint firstItem="5UL-WA-q8O" firstAttribute="top" secondItem="2GD-bT-Cur" secondAttribute="top" id="84p-Bj-X2x"/>
+                                <constraint firstAttribute="height" constant="44" id="GmH-fU-IyG"/>
+                                <constraint firstItem="JWr-KI-dJy" firstAttribute="top" secondItem="2GD-bT-Cur" secondAttribute="top" id="Ide-RC-Mmd"/>
+                                <constraint firstItem="5UL-WA-q8O" firstAttribute="centerX" secondItem="2GD-bT-Cur" secondAttribute="centerX" id="Pld-uI-X9z"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5UL-WA-q8O" secondAttribute="trailing" constant="10" id="WnA-0c-kh7"/>
+                                <constraint firstAttribute="bottom" secondItem="JWr-KI-dJy" secondAttribute="bottom" id="gx9-mF-CqV"/>
+                                <constraint firstItem="JWr-KI-dJy" firstAttribute="leading" secondItem="2GD-bT-Cur" secondAttribute="leading" id="t6X-ve-Ba2"/>
+                                <constraint firstAttribute="trailing" secondItem="JWr-KI-dJy" secondAttribute="trailing" id="xBl-k7-dUt"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-yF-9FD">
+                            <rect key="frame" x="0.0" y="102" width="280" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-hK-mkq">
+                                    <rect key="frame" x="41.5" y="0.0" width="197" height="44"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="wLc-Y8-ixI">
+                                            <rect key="frame" x="0.0" y="0.0" width="14" height="44"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cUj-hi-W8V">
+                                            <rect key="frame" x="24" y="0.0" width="173" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
+                                            <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE9-Ua-kHA">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="facebookAction:" destination="-1" eventType="touchUpInside" id="25M-3c-eU5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="RE9-Ua-kHA" secondAttribute="trailing" id="52I-Df-jZM"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Juq-hK-mkq" secondAttribute="trailing" constant="10" id="Fda-af-dfk"/>
+                                <constraint firstAttribute="bottom" secondItem="RE9-Ua-kHA" secondAttribute="bottom" id="GHl-yu-Dfd"/>
+                                <constraint firstItem="RE9-Ua-kHA" firstAttribute="top" secondItem="0u1-yF-9FD" secondAttribute="top" id="O1N-jT-yYH"/>
+                                <constraint firstItem="Juq-hK-mkq" firstAttribute="top" secondItem="0u1-yF-9FD" secondAttribute="top" id="W6o-j4-fFV"/>
+                                <constraint firstItem="Juq-hK-mkq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0u1-yF-9FD" secondAttribute="leading" constant="10" id="WKc-vg-C6C"/>
+                                <constraint firstItem="Juq-hK-mkq" firstAttribute="centerX" secondItem="0u1-yF-9FD" secondAttribute="centerX" id="bA7-ne-cfp"/>
+                                <constraint firstItem="RE9-Ua-kHA" firstAttribute="leading" secondItem="0u1-yF-9FD" secondAttribute="leading" id="dDW-2b-usC"/>
+                                <constraint firstAttribute="bottom" secondItem="Juq-hK-mkq" secondAttribute="bottom" id="wV1-BC-aQW"/>
+                                <constraint firstAttribute="height" constant="44" id="xfp-nv-cSk"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-Ra-ROg">
+                            <rect key="frame" x="0.0" y="153" width="280" height="44"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-Re-A3T">
+                                    <rect key="frame" x="41" y="0.0" width="198" height="44"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_instagram" translatesAutoresizingMaskIntoConstraints="NO" id="jJs-xG-1gK">
+                                            <rect key="frame" x="0.0" y="0.0" width="14" height="44"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S1a-dU-l3P">
+                                            <rect key="frame" x="24" y="0.0" width="174" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
+                                            <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-xH-VAK">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="22"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="instagramAction:" destination="-1" eventType="touchUpInside" id="AdV-rN-Psz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cwP-xH-VAK" secondAttribute="bottom" id="21l-kq-A5d"/>
+                                <constraint firstItem="cwP-xH-VAK" firstAttribute="top" secondItem="qQU-Ra-ROg" secondAttribute="top" id="EGi-Ba-5JY"/>
+                                <constraint firstAttribute="bottom" secondItem="AUG-Re-A3T" secondAttribute="bottom" id="EjK-2P-IaD"/>
+                                <constraint firstItem="AUG-Re-A3T" firstAttribute="centerX" secondItem="qQU-Ra-ROg" secondAttribute="centerX" id="P9j-aE-n5L"/>
+                                <constraint firstAttribute="height" constant="44" id="gwz-jQ-3I0"/>
+                                <constraint firstItem="AUG-Re-A3T" firstAttribute="top" secondItem="qQU-Ra-ROg" secondAttribute="top" id="i7J-oT-nnK"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AUG-Re-A3T" secondAttribute="trailing" constant="10" id="tZe-We-tkL"/>
+                                <constraint firstItem="AUG-Re-A3T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qQU-Ra-ROg" secondAttribute="leading" constant="10" id="tnk-oG-pOX"/>
+                                <constraint firstItem="cwP-xH-VAK" firstAttribute="leading" secondItem="qQU-Ra-ROg" secondAttribute="leading" id="xWw-Ml-S56"/>
+                                <constraint firstAttribute="trailing" secondItem="cwP-xH-VAK" secondAttribute="trailing" id="yiT-gy-rYi"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="1XY-MY-ich"/>
+                    </constraints>
+                </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6TV-gg-gnu">
                     <rect key="frame" x="149.5" y="194" width="115.5" height="91"/>
                 </imageView>
@@ -45,111 +261,6 @@
                     <color key="textColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsi-Pd-BFm">
-                    <rect key="frame" x="50" y="612" width="314" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="QtX-sU-Q6K"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
-                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="22"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="appleAction:" destination="-1" eventType="touchUpInside" id="sH5-Nq-V7A"/>
-                    </connections>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_apple" translatesAutoresizingMaskIntoConstraints="NO" id="Qb7-UF-VLF">
-                    <rect key="frame" x="74" y="624.5" width="16" height="19"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-EE-2A9">
-                    <rect key="frame" x="114" y="622.5" width="141.5" height="23"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                    <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiV-bn-3CL">
-                    <rect key="frame" x="50" y="664" width="314" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="WY5-cb-LT7"/>
-                    </constraints>
-                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="22"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="facebookAction:" destination="-1" eventType="touchUpInside" id="SL3-ld-K1H"/>
-                    </connections>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-aR-Rrz">
-                    <rect key="frame" x="74" y="678" width="16" height="16"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-gy-sqX">
-                    <rect key="frame" x="114" y="674.5" width="173" height="23"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                    <color key="textColor" red="0.019607843137254902" green="0.027450980392156862" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-9y-nwx">
-                    <rect key="frame" x="50" y="716" width="314" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="IXP-Ob-OEN"/>
-                    </constraints>
-                    <color key="tintColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="22"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="instagramAction:" destination="-1" eventType="touchUpInside" id="ktn-Fj-plm"/>
-                    </connections>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_instagram" translatesAutoresizingMaskIntoConstraints="NO" id="QWi-3b-kiR">
-                    <rect key="frame" x="74" y="730" width="16" height="16.5"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVv-Z8-rvi">
-                    <rect key="frame" x="114" y="726.5" width="174" height="23"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                    <color key="textColor" red="0.019607843137254902" green="0.027450980392156862" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6K-HD-uzh">
-                    <rect key="frame" x="50" y="768" width="314" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="D0o-s7-L4h"/>
-                    </constraints>
-                    <color key="tintColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="22"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="googleAction:" destination="-1" eventType="touchUpInside" id="XKX-DZ-MrC"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-Do-vgN">
-                    <rect key="frame" x="114" y="778.5" width="152.5" height="23"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                    <color key="textColor" red="0.019607843140000001" green="0.027450980390000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_google" translatesAutoresizingMaskIntoConstraints="NO" id="kjY-G2-KHR">
-                    <rect key="frame" x="74" y="782" width="16" height="16"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver. 1.0 (1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-gb-BDL">
                     <rect key="frame" x="179.5" y="838" width="55" height="16"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
@@ -179,59 +290,34 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="o5M-9y-nwx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="11l-qe-kGS"/>
-                <constraint firstItem="h6K-HD-uzh" firstAttribute="top" secondItem="o5M-9y-nwx" secondAttribute="bottom" constant="8" symbolic="YES" id="2zK-uR-Vav"/>
-                <constraint firstItem="iCn-EE-2A9" firstAttribute="centerY" secondItem="lsi-Pd-BFm" secondAttribute="centerY" id="7ZP-Dj-8WT"/>
+                <constraint firstItem="jP8-d2-od0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5HK-Ih-qLU" secondAttribute="bottom" constant="20" id="371-tw-4il"/>
+                <constraint firstItem="S1P-gb-BDL" firstAttribute="top" secondItem="jP8-d2-od0" secondAttribute="bottom" constant="16" id="4XO-ND-DME"/>
+                <constraint firstItem="jP8-d2-od0" firstAttribute="centerX" secondItem="xho-CO-Sgg" secondAttribute="centerX" id="AsE-Qk-oHy"/>
                 <constraint firstItem="5HK-Ih-qLU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="EnQ-yt-aCd"/>
-                <constraint firstItem="MOz-aR-Rrz" firstAttribute="centerY" secondItem="UiV-bn-3CL" secondAttribute="centerY" id="Kbg-vR-kOG"/>
-                <constraint firstItem="lsi-Pd-BFm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="KqW-ex-W0g"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lsi-Pd-BFm" secondAttribute="trailing" constant="50" id="M4I-aN-sQ0"/>
-                <constraint firstItem="iDy-Do-vgN" firstAttribute="centerY" secondItem="h6K-HD-uzh" secondAttribute="centerY" id="NXG-vy-wD8"/>
                 <constraint firstItem="pPd-95-IyI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="P4w-wI-IRm"/>
-                <constraint firstItem="gtZ-gy-sqX" firstAttribute="centerY" secondItem="UiV-bn-3CL" secondAttribute="centerY" id="QSD-An-v63"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xho-CO-Sgg" secondAttribute="trailing" id="Qc5-G4-Qxz"/>
-                <constraint firstItem="iCn-EE-2A9" firstAttribute="leading" secondItem="lsi-Pd-BFm" secondAttribute="leading" constant="64" id="SBV-dJ-bsm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5HK-Ih-qLU" secondAttribute="trailing" constant="20" id="SD6-IF-gPS"/>
                 <constraint firstItem="5HK-Ih-qLU" firstAttribute="top" secondItem="6TV-gg-gnu" secondAttribute="bottom" constant="40" id="SH6-GR-aJP"/>
                 <constraint firstItem="6TV-gg-gnu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T8p-WC-mhB"/>
-                <constraint firstItem="BVv-Z8-rvi" firstAttribute="centerY" secondItem="o5M-9y-nwx" secondAttribute="centerY" id="UGp-MN-iJp"/>
                 <constraint firstItem="5HK-Ih-qLU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WuO-tT-aXP"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xz6-yA-x0I"/>
-                <constraint firstItem="kjY-G2-KHR" firstAttribute="centerY" secondItem="h6K-HD-uzh" secondAttribute="centerY" id="aGa-Lh-hu9"/>
-                <constraint firstItem="QWi-3b-kiR" firstAttribute="leading" secondItem="o5M-9y-nwx" secondAttribute="leading" constant="24" id="b7k-T6-Wo9"/>
-                <constraint firstItem="UiV-bn-3CL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="bHM-Fq-baH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o5M-9y-nwx" secondAttribute="trailing" constant="50" id="bLP-OZ-dbi"/>
                 <constraint firstItem="6TV-gg-gnu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="bcD-UP-NX4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UiV-bn-3CL" secondAttribute="trailing" constant="50" id="bvZ-HU-i8j"/>
-                <constraint firstItem="Qb7-UF-VLF" firstAttribute="centerY" secondItem="lsi-Pd-BFm" secondAttribute="centerY" id="c1Q-LV-6QR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h6K-HD-uzh" secondAttribute="trailing" constant="50" id="cF6-y7-2ht"/>
-                <constraint firstItem="iDy-Do-vgN" firstAttribute="leading" secondItem="h6K-HD-uzh" secondAttribute="leading" constant="64" id="dYd-cV-Eki"/>
-                <constraint firstItem="kjY-G2-KHR" firstAttribute="leading" secondItem="h6K-HD-uzh" secondAttribute="leading" constant="24" id="fbt-sM-rf5"/>
-                <constraint firstItem="BVv-Z8-rvi" firstAttribute="leading" secondItem="o5M-9y-nwx" secondAttribute="leading" constant="64" id="gHX-Kn-gPK"/>
                 <constraint firstAttribute="bottom" secondItem="xho-CO-Sgg" secondAttribute="bottom" id="iV5-Pg-acd"/>
                 <constraint firstItem="S1P-gb-BDL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kvU-I5-x9n"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n4s-xA-JBB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h6K-HD-uzh" secondAttribute="bottom" constant="50" id="ot2-jw-idc"/>
                 <constraint firstItem="S1P-gb-BDL" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-8" id="pj4-Lv-gQp"/>
-                <constraint firstItem="o5M-9y-nwx" firstAttribute="top" secondItem="UiV-bn-3CL" secondAttribute="bottom" constant="8" symbolic="YES" id="rPQ-mO-ixI"/>
-                <constraint firstItem="QWi-3b-kiR" firstAttribute="centerY" secondItem="o5M-9y-nwx" secondAttribute="centerY" id="ret-wP-EHD"/>
-                <constraint firstItem="Qb7-UF-VLF" firstAttribute="leading" secondItem="lsi-Pd-BFm" secondAttribute="leading" constant="24" id="tUi-JR-wwe"/>
-                <constraint firstItem="gtZ-gy-sqX" firstAttribute="leading" secondItem="UiV-bn-3CL" secondAttribute="leading" constant="64" id="uOx-Z2-J3O"/>
                 <constraint firstItem="pPd-95-IyI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="uiU-jN-Tuf"/>
-                <constraint firstItem="UiV-bn-3CL" firstAttribute="top" secondItem="lsi-Pd-BFm" secondAttribute="bottom" constant="8" symbolic="YES" id="v9M-AX-7os"/>
-                <constraint firstItem="MOz-aR-Rrz" firstAttribute="leading" secondItem="UiV-bn-3CL" secondAttribute="leading" constant="24" id="vgZ-wV-dnB"/>
-                <constraint firstItem="h6K-HD-uzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="w9u-nr-tXv"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="68.973214285714278"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_login_apple" width="16" height="19"/>
+        <image name="ic_login_apple" width="12.5" height="14.5"/>
         <image name="ic_login_bg" width="390" height="844"/>
         <image name="ic_login_close" width="11" height="11"/>
-        <image name="ic_login_facebook" width="16" height="16"/>
-        <image name="ic_login_google" width="16" height="16"/>
-        <image name="ic_login_instagram" width="16" height="16.5"/>
+        <image name="ic_login_facebook" width="14" height="14"/>
+        <image name="ic_login_google" width="14" height="14"/>
+        <image name="ic_login_instagram" width="14" height="14"/>
         <image name="ic_login_logo" width="115.5" height="91"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
