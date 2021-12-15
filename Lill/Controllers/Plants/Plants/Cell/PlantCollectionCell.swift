@@ -50,10 +50,7 @@ class PlantCollectionCell: UICollectionViewCell {
         modelOne = model
         titleLabel.text = model.description.name
         
-        if let image = model.description.image {
-            mainImageView.kf.setImage(with: URL(string: image.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
-        }
-//        mainImageView.kf.setImage(with: URL(string: model.description.image.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
+        mainImageView.kf.setImage(with: URL(string: model.description.image?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
         
         favoriteImageView.image = model.description.is_favorite ? UIImage(named: "ic_plants_favorite") : UIImage(named: "ic_plants_unfavorite")
     }
