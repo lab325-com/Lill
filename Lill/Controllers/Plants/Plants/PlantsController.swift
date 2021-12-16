@@ -218,7 +218,8 @@ extension PlantsController: PlantsOutputProtocol {
             collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             if let countText = countLabel.text, let count = Int(countText) {
                 var tempCount = 0
-                tempCount = isFavorite ? count+1 : count-1
+                tempCount = isFavorite ? count + 1 : count - 1
+                favoriteView.isHidden = tempCount > 0 ? false : true
                 countLabel.text = "\(tempCount)"
             }
         }
