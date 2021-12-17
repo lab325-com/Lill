@@ -125,6 +125,9 @@ class PlantsController: BaseController {
         let swipeUpCollection = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipeUp))
         swipeUpCollection.direction = .up
         self.collectionView.addGestureRecognizer(swipeUpCollection)
+        
+//        collectionView.contentInset = UIEdgeInsetsMake(98,0,0,0)
+//        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
     }
     
     //----------------------------------------------
@@ -233,12 +236,19 @@ extension PlantsController: PlantsOutputProtocol {
     }
     
     func success(model: CatalogPlantsModel) {
+       
+        
         if model.getCatalogPlants.pagination.prevPageExist == false {
             plants = model.getCatalogPlants.plants
             setupAnimate()
         } else {
             plants.append(contentsOf: model.getCatalogPlants.plants)
         }
+        
+        if isNeedAnimate == false {
+            topCollectionLayout.constant = plants.count > 8 ? 0 : 98
+        }
+        
         
         countLabel.text = "\(model.getCatalogPlants.totalFavorites)"
         favoriteView.isHidden = model.getCatalogPlants.totalFavorites != 0 ? false : true
