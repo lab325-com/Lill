@@ -8,7 +8,7 @@ import UIKit
 
 extension GardenPlantCaresEdit: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.plantCares.count > 0 ? presenter.plantCares.count + 2 : 0
+        return presenter.plantCares.count > 0 ? presenter.plantCares.count + 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,7 +33,10 @@ extension GardenPlantCaresEdit: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         } else {
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAddCareIdentifier) as? AddCareCell else { return UITableViewCell() }
+            cell.delegate = self
+            cell.setupCell()
+            return cell
         }
     }
     
