@@ -12,7 +12,7 @@
 "add_plant_next_date" = "Next Date";
 "add_plant_time" = "Time";
 "add_plant_time_subtitle" = "Please Setup your Care for new Plant";
-"add_plants_success" = "Your unique Plant is added!";
+"add_plants_success" = "Plant is added to your Garden!";
 "allert_logout_message" = "Are you sure want log out?";
 "allert_no" = "NO";
 "allert_yes" = "YES";
@@ -180,7 +180,7 @@
 "period_type_week" = "weeks";
 "plant_add_to_garden_great" = "Great!";
 "plant_add_to_garden_info" = "Plant is added in your Garden!";
-"plant_add_to_garden_title" = "Congrads!";
+"plant_add_to_garden_title" = "Congrats!";
 "plant_detail_about" = "About";
 "plant_detail_add_to_my_garden" = "Add to My Garden";
 "plant_detail_added_to_wishlist" = "Added in Wishlist";

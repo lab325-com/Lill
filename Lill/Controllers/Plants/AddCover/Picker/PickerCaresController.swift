@@ -22,6 +22,7 @@ class PickerCaresController: BaseController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet weak var applyButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -59,6 +60,7 @@ class PickerCaresController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        applyButton.setTitle(RLocalization.uniques_cover_add_apply.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         datePickerView.isHidden = !isDatePicker
         pickerView.isHidden = isDatePicker
     }
@@ -69,14 +71,14 @@ class PickerCaresController: BaseController {
         pickerView.selectRow(second.firstIndex(where: {$0 == selectedPeriod}) ?? 0, inComponent: 1, animated: true)
     }
     
-    override func hideKeyboard() {
-        delegate?.pickerCareSelected(controller: self, selectedDay: selectedDay, selectedPeriod: selectedPeriod, model: model, date: selectedDate)
-         dismiss(animated: true)
-    }
-    
     //----------------------------------------------
     // MARK: - IBAction
     //----------------------------------------------
+    
+    @IBAction func actionApply(_ sender: UIButton) {
+        delegate?.pickerCareSelected(controller: self, selectedDay: selectedDay, selectedPeriod: selectedPeriod, model: model, date: selectedDate)
+         dismiss(animated: true)
+    }
     
     @IBAction func actionValueChange(_ sender: UIDatePicker) {
         selectedDate = sender.date
