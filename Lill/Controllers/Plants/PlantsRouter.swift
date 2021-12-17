@@ -10,7 +10,6 @@ class PlantsRouter: BaseRouter {
     
     func pushDetail(id: String, delegate: PlantsDetailDelegate? = nil) {
         let controller = PlantsDetailController(id: id, delegate: delegate)
-        controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }
     

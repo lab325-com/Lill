@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -455,12 +455,12 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-hE-877">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-co-mj3">
-                                <rect key="frame" x="118.5" y="114" width="177" height="167"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ic_plants_photo">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
-                                </buttonConfiguration>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-co-mj3">
+                                <rect key="frame" x="143" y="114" width="128" height="128"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_plants_photo">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
                                 <connections>
                                     <action selector="actionPhoto:" destination="mBY-et-jSr" eventType="touchUpInside" id="zfH-Xp-V7y"/>
                                 </connections>
@@ -633,7 +633,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify my Plants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77e-li-0WU">
-                                <rect key="frame" x="138" y="296" width="138.5" height="20.5"/>
+                                <rect key="frame" x="138" y="257" width="138.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1055,7 +1055,7 @@ Ring icon in Plant card</string>
         <image name="ic_plants_close" width="11" height="11"/>
         <image name="ic_plants_favorite" width="40" height="40"/>
         <image name="ic_plants_line" width="343" height="1"/>
-        <image name="ic_plants_photo" width="153" height="153"/>
+        <image name="ic_plants_photo" width="128" height="128"/>
         <image name="ic_plants_search" width="16" height="16"/>
         <image name="ic_plants_unique" width="23" height="23"/>
         <image name="ic_tab_garden" width="29.5" height="28"/>

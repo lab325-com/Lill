@@ -34,11 +34,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         tabBar.layer.cornerRadius = 24
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        tabBar.layer.masksToBounds = true
+        //tabBar.layer.masksToBounds = true
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 4)
         tabBar.layer.shadowRadius = 30
-        tabBar.layer.shadowColor = UIColor(rgb: 0xA4E2AD).cgColor
-        tabBar.layer.shadowOpacity = 0.5
+        tabBar.layer.shadowColor = UIColor(rgb: 0xA4E2AD).withAlphaComponent(0.5).cgColor
+        tabBar.layer.shadowOpacity = 1.0
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

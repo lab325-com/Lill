@@ -326,7 +326,7 @@ extension PlantsController {
             
             self.view.layoutIfNeeded()
             
-            self.photoButton.transform = CGAffineTransform(scaleX: isHidden ? 0.23 : 1.0, y: isHidden ? 0.23 : 1.0)
+            self.photoButton.transform = CGAffineTransform(scaleX: isHidden ? 0.32 : 1.0, y: isHidden ? 0.32 : 1.0)
             self.identifireLabel.isHidden = isHidden
             self.explorerLabel.isHidden = isHidden
             self.dividerImageView.isHidden = isHidden
