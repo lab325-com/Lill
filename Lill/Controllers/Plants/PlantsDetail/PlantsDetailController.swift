@@ -131,7 +131,7 @@ class PlantsDetailController: BaseController {
         guard let isFavorite = model?.plantById.isFavourite else { return }
         
         UIView.animate(withDuration: 0.5) {
-            self.favoriteStatusViewBottomLayout.constant = 24.0
+            self.favoriteStatusViewBottomLayout.constant = -88.0
             self.view.layoutIfNeeded()
         }
         
@@ -140,7 +140,7 @@ class PlantsDetailController: BaseController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             UIView.animate(withDuration: 0.5) {
-                self.favoriteStatusViewBottomLayout.constant = -85.0
+                self.favoriteStatusViewBottomLayout.constant = 0.0
                 self.view.layoutIfNeeded()
             }
         }
