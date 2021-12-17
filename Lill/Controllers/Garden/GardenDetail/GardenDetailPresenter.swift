@@ -18,6 +18,7 @@ protocol GardenDetailOutputProtocol: BaseController {
     func successNotificationChange(notification: Bool)
     func successDelete()
     func successUploadMedia(imageUrl: String)
+    func successDoneAllCares()
     func failure(error: String)
 }
 
@@ -26,6 +27,7 @@ extension GardenDetailOutputProtocol {
     func success() {}
     func successDelete() {}
     func successUploadMedia(imageUrl: String) {}
+    func successDoneAllCares () {}
     func failure(error: String) {}
 }
 
@@ -38,6 +40,7 @@ protocol GardenDetailPresenterProtocol: AnyObject {
     
     func getDetailGarden(gardenId: String)
     func getDetailSetNotification(gardenId: String, notification: Bool)
+    func doneAllCares(gardenPlantId: String)
 }
 
 class GardenDetailPresenter: GardenDetailPresenterProtocol {
@@ -211,6 +214,22 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         let _ = Network.shared.mutation(model: SetGardenPlantNotificationsModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successNotificationChange(notification: notification)
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
+    }
+    
+    func doneAllCares(gardenPlantId: String) {
+        view?.startLoader()
+        
+        let mutation = DoneAllCaresByGardenPlantMutation(gardenPlantId: gardenPlantId)
+        
+        let _ = Network.shared.mutation(model: DoneAllCaresByGardenPlantModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            if model.doneAllCaresByGardenPlant {
+                self?.view?.successDoneAllCares()
+            }
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
