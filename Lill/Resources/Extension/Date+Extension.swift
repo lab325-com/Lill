@@ -16,7 +16,7 @@ extension Date {
         let minutes = calendar.component(.minute, from: self)
         let seconds = calendar.component(.second, from: self)
         
-        return "\(hour):\(minutes):\(seconds)"
+        return String(format: "%02d:%02d:%02d", hour, minutes, seconds)
         
         //let dateFormmater = DateFormatter()
         //dateFormmater.timeZone = TimeZone(identifier: "UTC")

@@ -38,11 +38,18 @@ class Network {
                 } catch {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
+                        
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
-                    controller?.view?.makeToast(error.localizedDescription)
-                    failureHandler(error)
+                    
+                    if let message = queryResult.errors?.first?.message {
+                        controller?.view?.makeToast(message)
+                        failureHandler(error)
+                    } else {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
@@ -69,11 +76,18 @@ class Network {
                 } catch {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
+                        
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
-                    controller?.view?.makeToast(error.localizedDescription)
-                    failureHandler(error)
+                    
+                    if let message = queryResult.errors?.first?.message {
+                        controller?.view?.makeToast(message)
+                        failureHandler(error)
+                    } else {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
@@ -100,11 +114,18 @@ class Network {
                 } catch {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
+                        
                         KeychainService.standard.removeAll()
                         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
-                    controller?.view?.makeToast(error.localizedDescription)
-                    failureHandler(error)
+                    
+                    if let message = queryResult.errors?.first?.message {
+                        controller?.view?.makeToast(message)
+                        failureHandler(error)
+                    } else {
+                        controller?.view?.makeToast(error.localizedDescription)
+                        failureHandler(error)
+                    }
                 }
             case .failure(let error):
                 debugPrint("Failure! Error: \(error)")
