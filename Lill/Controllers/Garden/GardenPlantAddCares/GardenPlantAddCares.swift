@@ -19,7 +19,11 @@ class GardenPlantAddCares: BaseController {
     
     private let gardenPlantId: String
     private var cares: [CareType] = []
-    private var selectedCares = Set<CareType>()
+    private var selectedCares = Set<CareType>() {
+        didSet {
+            addCustomCareButton.alpha = selectedCares.count > 0 ? 1.0 : 0.5
+        }
+    }
     
     //----------------------------------------------
     // MARK: - Global property
@@ -57,6 +61,7 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     func setup() {
+        addCustomCareButton.alpha = 0.5
         title = RLocalization.garden_plant_add_cares_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
         let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
@@ -88,11 +93,13 @@ class GardenPlantAddCares: BaseController {
     //----------------------------------------------
     
     @IBAction func addCustomCareAction(_ sender: Any) {
-        var careModels = [CaresModel]()
-        for type in selectedCares {
-            careModels.append(CaresModel(count: 7, id: type.id, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, type: type, period: .periodTypeWeek))
+        if selectedCares.count > 0 {
+            var careModels = [CaresModel]()
+            for type in selectedCares {
+                careModels.append(CaresModel(count: 7, id: type.id, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, type: type, period: .periodTypeWeek))
+            }
+            GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(gardenPlantId: gardenPlantId, cares: careModels)
         }
-        GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(gardenPlantId: gardenPlantId, cares: careModels)
     }
     
     @objc func backAction() {
