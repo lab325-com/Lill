@@ -122,6 +122,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
                         return cell
                     } else if indexPath.row == (presenter.scheduleFuture.count + 3) {
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAllWaitingIdentifier) as? GardenDetailAllWaitingCell else { return UITableViewCell() }
+                        cell.delegate = self
                         
                         return cell
                     } else if indexPath.row >= (presenter.scheduleFuture.count + 4) && indexPath.row < (presenter.scheduleFuture.count + 4 + presenter.scheduleNoFuture.count) {
@@ -135,6 +136,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
                 } else {
                     if indexPath.row == 3 {
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellAllWaitingIdentifier) as? GardenDetailAllWaitingCell else { return UITableViewCell() }
+                        cell.delegate = self
                         
                         return cell
                     } else if indexPath.row >= 4 && indexPath.row < (presenter.scheduleNoFuture.count + 4) {
@@ -208,5 +210,15 @@ extension GardeDetailController: GardenDetailTitleCellDelegate {
 extension GardeDetailController: GardenDetailEditCareCellDelegate {
     func gardenDetailEditCareCellEdit(cell: GardenDetailEditCareCell) {
         GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenDetailEditCareCellDelegate
+//----------------------------------------------
+
+extension GardeDetailController: GardenDetailAllWaitingCellDelegate {
+    func gardenDetailAllWaitingCellDoneCares(cell: GardenDetailAllWaitingCell) {
+        presenter.doneAllCares(gardenPlantId: id)
     }
 }

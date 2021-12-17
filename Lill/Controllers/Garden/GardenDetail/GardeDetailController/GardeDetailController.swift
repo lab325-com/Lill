@@ -160,6 +160,10 @@ extension GardeDetailController: GardenDetailOutputProtocol {
         }
     }
     
+    func successDoneAllCares() {
+        presenter.getDetailGarden(gardenId: id)
+    }
+    
     func failure(error: String) {
         
     }
