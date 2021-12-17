@@ -30,9 +30,10 @@ extension PlantsController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > 0 {
-            upAnimate()
-        } else if scrollView.contentOffset.y < -100 {
+//        if scrollView.contentOffset.y > 0 {
+//            upAnimate()
+//        } else
+        if scrollView.contentOffset.y < -100 {
             downAnimate()
         }
         

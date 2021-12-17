@@ -8,7 +8,7 @@ import UIKit
 
 extension GardenPlantCaresEdit: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.plantCares.count > 0 ? presenter.plantCares.count + 2 : 1
+        return presenter.plantCares.count > 0 ? presenter.plantCares.count + (presenter.plantCares.count == 4 ? 1 : 2) : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

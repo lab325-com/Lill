@@ -18,6 +18,8 @@ class ChooseIdentifyController: BaseController {
     @IBOutlet weak var identifyCountLabel: UILabel!
     @IBOutlet weak var diagnosisLabel: UILabel!
     @IBOutlet weak var premiumLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var bottomLayoutCancelButton: NSLayoutConstraint!
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -31,6 +33,9 @@ class ChooseIdentifyController: BaseController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        animate(isHidden: false) {
+            
+        }
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .photo_select)
     }
     
@@ -38,7 +43,9 @@ class ChooseIdentifyController: BaseController {
     // MARK: - Private methods
     //----------------------------------------------
     
-    func configureView() {        
+    func configureView() {
+        backView.backgroundColor = UIColor.clear
+        
         identifyLabel.text = RLocalization.choose_identify_identify()
         diagnosisLabel.text = RLocalization.choose_identify_diagnosis()
         premiumLabel.text = RLocalization.choose_identify_premium()
@@ -57,7 +64,10 @@ class ChooseIdentifyController: BaseController {
     
     @IBAction func cancelAction(_ sender: Any) {
         AnalyticsHelper.sendFirebaseEvents(events: .cancel_photo)
-        dismiss(animated: false)
+        animate(isHidden: true) { [weak self] in
+            self?.dismiss(animated: false)
+        }
+        
     }
     
     @IBAction func identifyAction(_ sender: Any) {
@@ -96,6 +106,17 @@ class ChooseIdentifyController: BaseController {
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
             }
+        }
+    }
+    
+    private func animate(isHidden: Bool, completion: @escaping () -> ()) {
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            guard let `self` = self else { return }
+            self.backView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: isHidden ? 0.0 : 0.7)
+            self.bottomLayoutCancelButton.constant = isHidden ? -200 : 25
+            self.view.layoutIfNeeded()
+        } completion: { result in
+            completion()
         }
     }
 }

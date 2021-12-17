@@ -38,19 +38,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
         
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {(granted, error) in
-                DispatchQueue.main.async {
-                    if (granted) {
-                        application.registerForRemoteNotifications()
-                    }
-                    else {
-                        //Do stuff if unsuccessful...
-                    }
-                }
-            })
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//        UNUserNotificationCenter.current().requestAuthorization(
+//            options: authOptions,
+//            completionHandler: {(granted, error) in
+//                DispatchQueue.main.async {
+//                    if (granted) {
+//                        application.registerForRemoteNotifications()
+//                    }
+//                    else {
+//                        //Do stuff if unsuccessful...
+//                    }
+//                }
+//            })
         
         SKAdNetwork.registerAppForAdNetworkAttribution()
         

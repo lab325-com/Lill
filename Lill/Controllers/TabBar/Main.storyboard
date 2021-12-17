@@ -455,16 +455,6 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="caZ-hE-877">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-co-mj3">
-                                <rect key="frame" x="143" y="114" width="128" height="128"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="ic_plants_photo">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionPhoto:" destination="mBY-et-jSr" eventType="touchUpInside" id="zfH-Xp-V7y"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d10-0g-iQ9">
                                 <rect key="frame" x="0.0" y="596" width="414" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -483,6 +473,27 @@
                                     <outlet property="delegate" destination="mBY-et-jSr" id="MKo-77-45W"/>
                                 </connections>
                             </collectionView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doS-uE-B5C">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wy9-aJ-8bf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="iXE-of-hAz"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-co-mj3">
+                                <rect key="frame" x="143" y="114" width="128" height="128"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_plants_photo">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionPhoto:" destination="mBY-et-jSr" eventType="touchUpInside" id="zfH-Xp-V7y"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5Q-i6-jlZ">
                                 <rect key="frame" x="20" y="44" width="374" height="40"/>
                                 <subviews>
@@ -693,15 +704,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HKl-L3-pLw" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" id="2bQ-Ve-HGW"/>
+                            <constraint firstItem="doS-uE-B5C" firstAttribute="trailing" secondItem="B1r-u0-q8d" secondAttribute="trailing" id="6Da-jk-3gd"/>
                             <constraint firstAttribute="bottom" secondItem="d10-0g-iQ9" secondAttribute="bottom" id="8Pr-OI-XYC"/>
-                            <constraint firstItem="d10-0g-iQ9" firstAttribute="top" secondItem="q5Q-i6-jlZ" secondAttribute="bottom" priority="998" constant="12" id="AxK-4s-HvR"/>
+                            <constraint firstItem="d10-0g-iQ9" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" priority="998" id="AxK-4s-HvR"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="T7y-Mu-cvf" secondAttribute="trailing" constant="20" id="B4i-TQ-1eP"/>
                             <constraint firstItem="q5Q-i6-jlZ" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" constant="20" id="BjD-8F-gzZ"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="q5Q-i6-jlZ" secondAttribute="trailing" priority="999" constant="20" id="DsY-QD-V5o"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="PGc-IL-8F9" secondAttribute="trailing" constant="-90" id="IKj-if-kck"/>
                             <constraint firstItem="NZo-Js-jvq" firstAttribute="top" secondItem="DZ4-AE-c1D" secondAttribute="bottom" id="Ml9-V1-BGF"/>
+                            <constraint firstItem="doS-uE-B5C" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" id="QSN-mb-8PG"/>
                             <constraint firstItem="T7y-Mu-cvf" firstAttribute="leading" secondItem="q5Q-i6-jlZ" secondAttribute="trailing" priority="998" constant="10" id="QXE-Ov-u8n"/>
                             <constraint firstItem="DZ4-AE-c1D" firstAttribute="centerX" secondItem="B1r-u0-q8d" secondAttribute="centerX" id="VQh-S4-gig"/>
+                            <constraint firstItem="doS-uE-B5C" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="Wjv-wB-8dt"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="zyc-OB-Vey" secondAttribute="trailing" constant="10" id="Xbm-4M-ODa"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="d10-0g-iQ9" secondAttribute="trailing" id="YQ9-xc-iXz"/>
                             <constraint firstItem="T7y-Mu-cvf" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" id="ZW9-k5-hkU"/>
@@ -731,6 +745,7 @@
                         <outlet property="animationBackGroundSwipeLeftView" destination="HKl-L3-pLw" id="8VC-8Z-I6Y"/>
                         <outlet property="backToTopButton" destination="PGc-IL-8F9" id="BlO-oq-qQ7"/>
                         <outlet property="backToTopTrailingLayout" destination="IKj-if-kck" id="SZi-dQ-x0E"/>
+                        <outlet property="blurEffectView" destination="doS-uE-B5C" id="T1g-oY-Rxs"/>
                         <outlet property="bottomViewConstraint" destination="8Pr-OI-XYC" id="7VP-DN-1sz"/>
                         <outlet property="buttonToThisView" destination="T7y-Mu-cvf" id="old-OM-3HR"/>
                         <outlet property="closeButton" destination="wNG-Hx-bep" id="8Se-4p-rPA"/>

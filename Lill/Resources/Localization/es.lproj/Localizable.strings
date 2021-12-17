@@ -12,7 +12,7 @@
 "add_plant_next_date" = "Proxima fecha";
 "add_plant_time" = "Hora";
 "add_plant_time_subtitle" = "Por favor, configure su cuidado de nueva planta";
-"add_plants_success" = "¡Se agrega tu planta única!";
+"add_plants_success" = "¡La planta se agrega a tu jardín!";
 "allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
 "allert_no" = "NO";
 "allert_yes" = "SÍ";
@@ -99,14 +99,14 @@
 "garde_edit_delete_allert_sub_title" = "¿Seguro que quieres hacer esto?";
 "garde_edit_delete_delete_cares" = "Eliminar cares";
 "garde_edit_delete_sub_title" = "Seleccione Cares que quiera eliminar";
-"garde_edit_delete_title" = "Eliminar cuidado";
+"garde_edit_delete_title" = "Eliminar atención";
 "garden_cares_detail_cares" = "Cuidar";
 "garden_cares_detail_info" = "¿Seguro que quieres marcar como se hace?";
 "garden_choose_add_plant_cancel" = "Cancelar";
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";
@@ -114,7 +114,7 @@
 "garden_delete_success" = "Planta \ NHA ha sido eliminado";
 "garden_delete_title" = "Plante";
 "garden_detail_about" = "Acerca de";
-"garden_detail_care_edit_my_plan" = "Editar mi plan de cuidado";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
 "garden_plan_done" = "Hecho";
@@ -179,7 +179,7 @@
 "period_type_week" = "semanas";
 "plant_add_to_garden_great" = "¡Estupendo!";
 "plant_add_to_garden_info" = "¡La planta se agrega en tu jardín!";
-"plant_add_to_garden_title" = "Confijas!";
+"plant_add_to_garden_title" = "¡Felicitaciones!";
 "plant_detail_about" = "Acerca de";
 "plant_detail_add_to_my_garden" = "Añadir a mi jardín";
 "plant_detail_added_to_wishlist" = "Añadido en la lista de deseos";
@@ -256,5 +256,5 @@
 "uniques_cover_title" = "Añadir";
 "uniques_skip_care" = "Saltar";
 "wish_list_back" = "atrás";
-"wish_list_no_data" = "Lista de deseos está vacía";
+"wish_list_no_data" = "Lista de deseos está vacío";
 "wish_list_title" = "De deseos";

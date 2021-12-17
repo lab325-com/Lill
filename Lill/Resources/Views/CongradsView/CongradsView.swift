@@ -41,6 +41,20 @@ class CongradsView: UIView {
         titleLabel.text = RLocalization.plant_add_to_garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         infoLabel.text = RLocalization.plant_add_to_garden_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         greatButton.setTitle(RLocalization.plant_add_to_garden_great.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {(granted, error) in
+                DispatchQueue.main.async {
+                    if (granted) {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                    else {
+                        //Do stuff if unsuccessful...
+                    }
+                }
+            })
     }
     
     func changeText(textSubtitle: String? = nil ) {
@@ -65,6 +79,7 @@ class CongradsView: UIView {
     //----------------------------------------------
     
     @IBAction func greatAction(_ sender: Any) {
+        
         SwiftEntryKit.dismiss()
     }
 }

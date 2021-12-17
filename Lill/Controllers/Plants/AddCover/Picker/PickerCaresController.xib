@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerCaresController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="applyButton" destination="150-Y4-0Tv" id="la4-jR-zI9"/>
                 <outlet property="datePickerView" destination="2ba-Or-cX0" id="KMO-D9-5XA"/>
                 <outlet property="pickerView" destination="OUw-Pb-Tbu" id="ltc-UQ-9tP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,6 +61,24 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="150-Y4-0Tv">
+                    <rect key="frame" x="24" y="585" width="366" height="44"/>
+                    <color key="backgroundColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="WZw-c7-g8c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Apply"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionApply:" destination="-1" eventType="touchUpInside" id="3tG-JF-0E3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,6 +86,9 @@
                 <constraint firstItem="7Bt-fH-cqU" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5YI-Pw-qiN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Bt-fH-cqU" secondAttribute="trailing" constant="16" id="5aw-bz-koG"/>
                 <constraint firstItem="7Bt-fH-cqU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ECU-Gv-MoK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="150-Y4-0Tv" secondAttribute="trailing" constant="24" id="HnQ-e7-ds8"/>
+                <constraint firstItem="150-Y4-0Tv" firstAttribute="top" secondItem="7Bt-fH-cqU" secondAttribute="bottom" constant="24" id="bRz-0j-PQ7"/>
+                <constraint firstItem="150-Y4-0Tv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="nVc-IS-zPE"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </view>

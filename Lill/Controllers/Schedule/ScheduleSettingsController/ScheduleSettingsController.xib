@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,6 +52,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbk-Hn-ite" customClass="AnimationBackGroundSwipeLeftView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-lg-0RF">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="0.94597848905187076" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lu-0e-Uf7">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
@@ -471,6 +475,10 @@
                 <constraint firstAttribute="bottom" secondItem="5lu-0e-Uf7" secondAttribute="bottom" id="3bb-ta-DMm"/>
                 <constraint firstItem="5lu-0e-Uf7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="5A1-7X-Hh5"/>
                 <constraint firstItem="5lu-0e-Uf7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5aJ-IZ-ZOs"/>
+                <constraint firstItem="ImU-lg-0RF" firstAttribute="height" secondItem="Xbk-Hn-ite" secondAttribute="height" id="8T5-QM-BEM"/>
+                <constraint firstItem="ImU-lg-0RF" firstAttribute="width" secondItem="Xbk-Hn-ite" secondAttribute="width" id="CPC-Fd-31o"/>
+                <constraint firstItem="ImU-lg-0RF" firstAttribute="centerX" secondItem="Xbk-Hn-ite" secondAttribute="centerX" id="CVf-F5-d3c"/>
+                <constraint firstItem="ImU-lg-0RF" firstAttribute="centerY" secondItem="Xbk-Hn-ite" secondAttribute="centerY" id="EVC-hF-e3q"/>
                 <constraint firstItem="yAW-bI-Fia" firstAttribute="height" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="999" id="LWP-hK-xs2"/>
                 <constraint firstItem="Xbk-Hn-ite" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Npp-Ir-Ur7"/>
                 <constraint firstAttribute="bottom" secondItem="Xbk-Hn-ite" secondAttribute="bottom" id="RDL-j7-s8A"/>
