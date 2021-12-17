@@ -37,6 +37,7 @@ class PlantsController: BaseController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var uniquePlantLabel: UILabel!
     
+    @IBOutlet weak var blurEffectView: UIVisualEffectView!
     @IBOutlet weak var searchTextField: UITextField!
     
     //----------------------------------------------
@@ -92,6 +93,7 @@ class PlantsController: BaseController {
         searchTextField.text = searchText
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        blurEffectView.alpha = 0.0
         closeButton.isHidden = true
         photoIconLayoutTop.constant = -1000
         heightCollectionLayout.constant = 0
@@ -118,6 +120,11 @@ class PlantsController: BaseController {
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.contentInset.bottom = 54
         collectionView.reloadData()
+        collectionView.isScrollEnabled = false
+        
+        let swipeUpCollection = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipeUp))
+        swipeUpCollection.direction = .up
+        self.collectionView.addGestureRecognizer(swipeUpCollection)
     }
     
     //----------------------------------------------
@@ -303,6 +310,10 @@ extension PlantsController: UITextFieldDelegate {
 //----------------------------------------------
 
 extension PlantsController {
+    @objc func gestureSwipeUp()
+    {
+        upAnimate()
+    }
     
     private func setupAnimate() {
         DispatchQueue.main.async {
@@ -318,6 +329,12 @@ extension PlantsController {
     private func animatePhotoButton(isHidden: Bool) {
         photoButton.translatesAutoresizingMaskIntoConstraints = isHidden
         
+        if isHidden {
+            self.identifireLabel.isHidden = isHidden
+            self.explorerLabel.isHidden = isHidden
+            self.dividerImageView.isHidden = isHidden
+        }
+        
         UIView.animate(withDuration: 0.7) {
             self.navigationTralingToViewLayout.priority = UILayoutPriority(rawValue: isHidden ? 998 : 999)
             self.navigationTralingToPhoto.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
@@ -327,20 +344,23 @@ extension PlantsController {
             
             self.view.layoutIfNeeded()
             
+            self.blurEffectView.alpha = isHidden ? 1.0 : 0.0
             self.photoButton.transform = CGAffineTransform(scaleX: isHidden ? 0.32 : 1.0, y: isHidden ? 0.32 : 1.0)
-            self.identifireLabel.isHidden = isHidden
-            self.explorerLabel.isHidden = isHidden
-            self.dividerImageView.isHidden = isHidden
-
+            
             if isHidden {
                 self.photoButton.center = self.buttonToThisView.center
             }
+        } completion: { result in
+            self.identifireLabel.isHidden = isHidden
+            self.explorerLabel.isHidden = isHidden
+            self.dividerImageView.isHidden = isHidden
         }
     }
     
     func upAnimate() {
         if isNeedAnimate {
-            debugPrint("animate")
+            collectionView.isScrollEnabled = true
+            debugPrint("animate up")
             AnalyticsHelper.sendFirebaseEvents(events: .explore_catalog)
             isNeedAnimate = false
             animatePhotoButton(isHidden: true)
@@ -349,7 +369,8 @@ extension PlantsController {
     
     func downAnimate() {
         if !isNeedAnimate {
-            debugPrint("animate")
+            collectionView.isScrollEnabled = false
+            debugPrint("animate down")
             
             isNeedAnimate = true
             animatePhotoButton(isHidden: false)
