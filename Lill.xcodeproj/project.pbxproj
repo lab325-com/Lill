@@ -941,7 +941,7 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		023BBB14274413D500DCFFF1 /* GardeDetailController */ = {
+		023BBB14274413D500DCFFF1 /* GardenDetailController */ = {
 			isa = PBXGroup;
 			children = (
 				023BBB15274413EF00DCFFF1 /* GardenDetailController.swift */,
@@ -949,14 +949,14 @@
 				023BBB16274413EF00DCFFF1 /* GardenDetailController.xib */,
 				0273B8B727453CF9009A2247 /* Cell */,
 			);
-			path = GardeDetailController;
+			path = GardenDetailController;
 			sourceTree = "<group>";
 		};
 		023BBB1B2744171100DCFFF1 /* GardenDetail */ = {
 			isa = PBXGroup;
 			children = (
 				023BBB1C2744173200DCFFF1 /* GardenDetailPresenter.swift */,
-				023BBB14274413D500DCFFF1 /* GardeDetailController */,
+				023BBB14274413D500DCFFF1 /* GardenDetailController */,
 				02017AAA274791F900EE093C /* GardenDetailDeletePlanController */,
 			);
 			path = GardenDetail;
