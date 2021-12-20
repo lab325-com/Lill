@@ -96,7 +96,7 @@ class GardenPlantAddCares: BaseController {
         if selectedCares.count > 0 {
             var careModels = [CaresModel]()
             for type in selectedCares {
-                careModels.append(CaresModel(count: 7, id: type.id, name: nil, isActive: true, sendNotificationAt: nil, nexDate: nil, type: type, period: .periodTypeWeek))
+                careModels.append(CaresModel(count: 7, id: type.id, name: nil, isActive: true, sendNotificationAt: nil, nextDate: nil, type: type, period: .periodTypeWeek))
             }
             GardenPlantAddCaresRouter(presenter: navigationController).pushAddCareSetup(gardenPlantId: gardenPlantId, cares: careModels)
         }

@@ -73,14 +73,10 @@ class GardenPlantCaresEdit: BaseController {
         bottomView.isHidden = true
         
         navigationItem.title = RLocalization.garden_plant_cares_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-//        let done = RLocalization.garden_plant_cares_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-//        let cancel = RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-//        let rightBarButtonItem = UIBarButtonItem(title: done, style: .done, target: self, action: #selector(closeAction))
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
         let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
-//        leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
-//        navigationItem.leftBarButtonItem = leftBarButtonItem
         
         tableView.contentInset.bottom = 24
         tableView.estimatedRowHeight = 82
@@ -180,9 +176,10 @@ extension GardenPlantCaresEdit: GardenPlantCaresEditOutputProtocol {
 extension GardenPlantCaresEdit: CareCellDelegate {
     
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) {
-        guard let id = caresModel.id else { return }
-        
-        presenter.updateGardenPlantCare(id: id, count: nil, period: nil, sendNotificationAt: nil, isActive: isActive, type: caresModel.type)
+        selectedModel = caresModel
+        guard var care = selectedModel else { return }
+        care.isActive = isActive
+        presenter.updateGardenPlantCare(care: care)
     }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
@@ -216,13 +213,19 @@ extension GardenPlantCaresEdit: AddCareCellProtocol {
 
 extension GardenPlantCaresEdit: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        guard let id = selectedModel?.id, let type = selectedModel?.type else { return }
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        let sendNotificationAt = formatter.string(from: date ?? Date())
+        guard var care = selectedModel else { return }
         
-        presenter.updateGardenPlantCare(id: id, count: selectedDay, period: selectedPeriod, sendNotificationAt: sendNotificationAt, isActive: nil, type: type)
+        if let date = date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm:ss"
+            care.sendNotificationAt = formatter.string(from: date)
+        } else {
+            care.count = selectedDay
+        }
+        
+        presenter.updateGardenPlantCare(care: care)
+        
         selectedModel = nil
     }
 }

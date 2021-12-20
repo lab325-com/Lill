@@ -2,12 +2,12 @@
 import Foundation
 
 struct CaresModel: Codable, Hashable {
-    let count: Int
+    var count: Int
     let id: String?
     let name: String?
-    let isActive: Bool?
-    let sendNotificationAt: String?
-    let nexDate: Date?
+    var isActive: Bool?
+    var sendNotificationAt: String?
+    let nextDate: String?
     let type: CareType
     var period: PeriodType
     var time: Date? = Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date())
@@ -19,7 +19,7 @@ struct CaresModel: Codable, Hashable {
         case name = "name"
         case isActive = "isActive"
         case sendNotificationAt = "sendNotificationAt"
-        case nexDate = "nexDate"
+        case nextDate = "nextDate"
         case period = "period"
         case type = "CareType"
     }
@@ -45,11 +45,11 @@ struct CaresModel: Codable, Hashable {
         
         switch period {
         case .periodTypeDay:
-            dayComponent.day = frequency
+            dayComponent.day = count
         case .periodTypeMonth:
-            dayComponent.month = frequency
+            dayComponent.month = count
         case .periodTypeWeek:
-            dayComponent.day = frequency * 7
+            dayComponent.day = count * 7
         default:
             return ""
         }

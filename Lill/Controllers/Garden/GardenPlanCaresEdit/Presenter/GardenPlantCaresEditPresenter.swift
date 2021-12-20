@@ -22,7 +22,6 @@ extension GardenPlantCaresEditOutputProtocol {
     func successGardenPlantCaresToDefault() {}
     
     func failure(error: String) {}
-
 }
 
 //----------------------------------------------
@@ -33,7 +32,7 @@ protocol GardenPlantCaresEditPresenterProtocol: AnyObject {
     init(view: GardenPlantCaresEditOutputProtocol)
     
     func getGardenPlantCares(gardenPlantId: String)
-    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?, type: CareType)
+    func updateGardenPlantCare(care: CaresModel)
     func gardenPlantCaresToDefault(gardenPlantId: String)
     func deleteGardenPlantCares(caresId: [String])
 }
@@ -62,29 +61,23 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
         })
     }
     
-    func updateGardenPlantCare(id: String, count: Int?, period: PeriodType?, sendNotificationAt: String?, isActive: Bool?, type: CareType) {
+    func updateGardenPlantCare(care: CaresModel) {
         view?.startLoader()
         
         var dict: [String : Any] = [:]
         
-        var gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id)
-        if let count = count {
-            gardenPlantCareUpdateInput.count = count
-        }
-        if let period = period {
-            gardenPlantCareUpdateInput.period = period
-        }
-        if let sendNotificationAt = sendNotificationAt {
+        guard let id = care.id else { return }
+        var gardenPlantCareUpdateInput = GardenPlantCareUpdateInput(id: id, count: care.count, period: care.period)
+        if let sendNotificationAt = care.sendNotificationAt {
             dict["time_edit"] = sendNotificationAt
             gardenPlantCareUpdateInput.sendNotificationAt = sendNotificationAt
         }
-        if let isActive = isActive {
+        if let isActive = care.isActive {
             dict["isActive"] = [isActive ? "on" : "off"]
             gardenPlantCareUpdateInput.isActive = isActive
         }
         
         let mutation = GardenPlantCareUpdateMutation(record: gardenPlantCareUpdateInput)
-        
 
         let _ = Network.shared.mutation(model: GardenPlantCareUpdateModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
@@ -94,32 +87,27 @@ class GardenPlantCaresEditPresenter: GardenPlantCaresEditPresenterProtocol {
             self?.view?.failure(error: error.localizedDescription)
         }
         
+        dict["frequancy_edit"] = "\(care.count) \(care.period.rawValue)"
+        var dayComponent    = DateComponents()
         
-        if let count = count, let period = period {
-
-            dict["frequancy_edit"] = "\(count) \(period.rawValue)"
-            var dayComponent    = DateComponents()
-            
-            switch period {
-            case .periodTypeDay:
-                dayComponent.day = count
-            case .periodTypeMonth:
-                dayComponent.month = count
-            case .periodTypeWeek:
-                dayComponent.day = count * 7
-            default:
-               break
-            }
-            
-            if let nextDate = Calendar.current.date(byAdding: dayComponent, to: Date()) {
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MMM dd"
-                dict["nextdate_edit"] = dateFormatter.string(from: nextDate)
-            }
+        switch care.period {
+        case .periodTypeDay:
+            dayComponent.day = care.count
+        case .periodTypeMonth:
+            dayComponent.month = care.count
+        case .periodTypeWeek:
+            dayComponent.day = care.count * 7
+        default:
+           break
         }
         
-        AnalyticsHelper.sendFirebaseEvents(events: type.name.rawValue, params: dict)
+        if let nextDate = Calendar.current.date(byAdding: dayComponent, to: Date()) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd"
+            dict["nextdate_edit"] = dateFormatter.string(from: nextDate)
+        }
+        
+        AnalyticsHelper.sendFirebaseEvents(events: care.type.name.rawValue, params: dict)
     }
     
     func deleteGardenPlantCares(caresId: [String]) {
