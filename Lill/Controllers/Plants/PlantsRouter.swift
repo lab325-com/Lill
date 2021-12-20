@@ -13,8 +13,9 @@ class PlantsRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func presentChooseIdentify() {
-        let controller = ChooseIdentifyController()
+    func presentChooseIdentify(delegate: ChooseIdentifyDelegate? = nil) {
+        let controller = ChooseIdentify()
+        controller.delegate = delegate
         controller.hidesBottomBarWhenPushed = true
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }

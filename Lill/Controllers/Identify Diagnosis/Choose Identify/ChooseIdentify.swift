@@ -1,7 +1,11 @@
 
 import UIKit
 
-class ChooseIdentifyController: BaseController {
+protocol ChooseIdentifyDelegate: AnyObject {
+    func didPressedAddUniquePlant()
+}
+
+class ChooseIdentify: BaseController {
     
     //----------------------------------------------
     // MARK: - @IBOutlets
@@ -18,8 +22,11 @@ class ChooseIdentifyController: BaseController {
     @IBOutlet weak var identifyCountLabel: UILabel!
     @IBOutlet weak var diagnosisLabel: UILabel!
     @IBOutlet weak var premiumLabel: UILabel!
+    @IBOutlet weak var addUniqueLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var bottomLayoutCancelButton: NSLayoutConstraint!
+    
+    weak var delegate: ChooseIdentifyDelegate?
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -106,6 +113,13 @@ class ChooseIdentifyController: BaseController {
             } else {
                 PlantsRouter(presenter: currentNavigationController).presentSubscribe()
             }
+        }
+    }
+    
+    @IBAction func addUniqueAction(_ sender: Any) {
+        dismiss(animated: false) { [weak self] in
+            guard let `self` = self else { return }
+            self.delegate?.didPressedAddUniquePlant()
         }
     }
     

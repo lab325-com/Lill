@@ -146,7 +146,7 @@ class PlantsController: BaseController {
     
     @IBAction func actionPhoto(_ sender: UIButton) {
         AnalyticsHelper.sendFirebaseEvents(events: .explore_photo)
-        PlantsRouter(presenter: navigationController).presentChooseIdentify()
+        PlantsRouter(presenter: navigationController).presentChooseIdentify(delegate: self)
     }
     
     @IBAction func actionBackToTop(_ sender: UIButton) {
@@ -284,6 +284,16 @@ extension PlantsController: AddCoverIdentifierProtocol {
 extension PlantsController: PlantsDetailDelegate, WishListDelegate {
     func updatePlants() {
         presenter.getPlants(search: "")
+    }
+}
+
+//----------------------------------------------
+// MARK: - ChooseIdentifyDelegate
+//----------------------------------------------
+
+extension PlantsController: ChooseIdentifyDelegate {
+    func didPressedAddUniquePlant() {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
 }
 

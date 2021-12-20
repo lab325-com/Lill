@@ -379,8 +379,8 @@
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
-		FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */; };
-		FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */; };
+		FAFCF34E27148D2C00C3134E /* ChooseIdentify.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34C27148D2C00C3134E /* ChooseIdentify.swift */; };
+		FAFCF34F27148D2C00C3134E /* ChooseIdentify.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF34D27148D2C00C3134E /* ChooseIdentify.xib */; };
 		FAFCF3522715760A00C3134E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3512715760A00C3134E /* GradientView.swift */; };
 		FAFCF35527157FE100C3134E /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFCF35427157FE100C3134E /* Me.graphql */; };
 		FAFCF35A2715830D00C3134E /* MeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF3592715830D00C3134E /* MeDataModel.swift */; };
@@ -755,8 +755,8 @@
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
-		FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentifyController.swift; sourceTree = "<group>"; };
-		FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseIdentifyController.xib; sourceTree = "<group>"; };
+		FAFCF34C27148D2C00C3134E /* ChooseIdentify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentify.swift; sourceTree = "<group>"; };
+		FAFCF34D27148D2C00C3134E /* ChooseIdentify.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseIdentify.xib; sourceTree = "<group>"; };
 		FAFCF3512715760A00C3134E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FAFCF35427157FE100C3134E /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FAFCF3592715830D00C3134E /* MeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataModel.swift; sourceTree = "<group>"; };
@@ -2702,8 +2702,8 @@
 		FAFCF34B27148BFC00C3134E /* Choose Identify */ = {
 			isa = PBXGroup;
 			children = (
-				FAFCF34C27148D2C00C3134E /* ChooseIdentifyController.swift */,
-				FAFCF34D27148D2C00C3134E /* ChooseIdentifyController.xib */,
+				FAFCF34C27148D2C00C3134E /* ChooseIdentify.swift */,
+				FAFCF34D27148D2C00C3134E /* ChooseIdentify.xib */,
 			);
 			path = "Choose Identify";
 			sourceTree = "<group>";
@@ -2918,7 +2918,7 @@
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				02A4B6482742C389007E0DA2 /* PopChangeNameController.xib in Resources */,
-				FAFCF34F27148D2C00C3134E /* ChooseIdentifyController.xib in Resources */,
+				FAFCF34F27148D2C00C3134E /* ChooseIdentify.xib in Resources */,
 				FADC80CF272FF5B100CA9ED3 /* SetFavoritePlantById.graphql in Resources */,
 				02089EAE2754CA9A0022E1BD /* DoneCareByGardenPlants.graphql in Resources */,
 				0272DADB273523FF005E7880 /* PopUniquePlantController.xib in Resources */,
@@ -3274,7 +3274,7 @@
 				02D142C42757D9B0008A7FA3 /* IPhone13ProMax3Timeline.swift in Sources */,
 				02D142F72757E7B7008A7FA3 /* IPhone85View.swift in Sources */,
 				FA24A5AC273474E00059AF6A /* CareTypeModel.swift in Sources */,
-				FAFCF34E27148D2C00C3134E /* ChooseIdentifyController.swift in Sources */,
+				FAFCF34E27148D2C00C3134E /* ChooseIdentify.swift in Sources */,
 				FAE8D5F7275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift in Sources */,
 				02A4B64B2742C7F5007E0DA2 /* PopChangeNamePresenter.swift in Sources */,
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,

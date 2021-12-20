@@ -13,7 +13,7 @@ enum FirebaseScreenEvents: String {
     case login_screen = "login_screen" ///LoginController
     case main_screen = "main_screen" /// PlantsController
     case card_plant_explore = "card_plant_explore" /// PlantsDetailController
-    case photo_select = "photo_select" /// ChooseIdentifyController
+    case photo_select = "photo_select" /// ChooseIdentify
     case identify_screen_step_1 = "identify_screen_step_1" /// IdentifyController
     case identify_screen_step_2 = "identify_screen_step_2" /// IdentifyController
     case identify_screen_step_4 = "identify_screen_step_4" /// IdentifyController
@@ -66,7 +66,7 @@ enum FirebaseEvents: String {
     /// PlantsDetailController (card_plant_explore)
     case go_to_wiki = "go_to_wiki"
     
-    ///ChooseIdentifyController (photo_select)
+    ///ChooseIdentify (photo_select)
     case identify = "identify"
     case diagnose = "diagnose"
     case cancel_photo = "cancel_photo"

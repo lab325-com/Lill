@@ -552,7 +552,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 111 images.
+  /// This `R.image` struct is generated, and contains static references to 112 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -568,6 +568,12 @@ struct R: Rswift.Validatable {
     static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
     /// Image `ce90603745001e15f304bfaf33f3d09971a2d951`.
     static let ce90603745001e15f304bfaf33f3d09971a2d951 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ce90603745001e15f304bfaf33f3d09971a2d951")
+    /// Image `choose_identify_add_unique_ic`.
+    static let choose_identify_add_unique_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "choose_identify_add_unique_ic")
+    /// Image `choose_identify_diagnosis_ic`.
+    static let choose_identify_diagnosis_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "choose_identify_diagnosis_ic")
+    /// Image `choose_identify_photo_ic`.
+    static let choose_identify_photo_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "choose_identify_photo_ic")
     /// Image `congrads_view_flower_ic`.
     static let congrads_view_flower_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "congrads_view_flower_ic")
     /// Image `d2a1bacac2b6f24c96eeaa53d308d0b6f8bab584`.
@@ -608,10 +614,6 @@ struct R: Rswift.Validatable {
     static let garden_selected_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_selected_bell_ic")
     /// Image `ic_background`.
     static let ic_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_background")
-    /// Image `ic_choose_identify_diagnosis`.
-    static let ic_choose_identify_diagnosis = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_diagnosis")
-    /// Image `ic_choose_identify_photo`.
-    static let ic_choose_identify_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_choose_identify_photo")
     /// Image `ic_diagnosis_checkmark`.
     static let ic_diagnosis_checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_checkmark")
     /// Image `ic_diagnosis_close`.
@@ -827,6 +829,27 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "choose_identify_add_unique_ic", bundle: ..., traitCollection: ...)`
+    static func choose_identify_add_unique_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.choose_identify_add_unique_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "choose_identify_diagnosis_ic", bundle: ..., traitCollection: ...)`
+    static func choose_identify_diagnosis_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.choose_identify_diagnosis_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "choose_identify_photo_ic", bundle: ..., traitCollection: ...)`
+    static func choose_identify_photo_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.choose_identify_photo_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "congrads_view_flower_ic", bundle: ..., traitCollection: ...)`
     static func congrads_view_flower_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.congrads_view_flower_ic, compatibleWith: traitCollection)
@@ -963,20 +986,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_background", bundle: ..., traitCollection: ...)`
     static func ic_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_background, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "ic_choose_identify_diagnosis", bundle: ..., traitCollection: ...)`
-    static func ic_choose_identify_diagnosis(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ic_choose_identify_diagnosis, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "ic_choose_identify_photo", bundle: ..., traitCollection: ...)`
-    static func ic_choose_identify_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ic_choose_identify_photo, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1579,8 +1588,8 @@ struct R: Rswift.Validatable {
     static let careCell = _R.nib._CareCell()
     /// Nib `CareInfoCell`.
     static let careInfoCell = _R.nib._CareInfoCell()
-    /// Nib `ChooseIdentifyController`.
-    static let chooseIdentifyController = _R.nib._ChooseIdentifyController()
+    /// Nib `ChooseIdentify`.
+    static let chooseIdentify = _R.nib._ChooseIdentify()
     /// Nib `CongradsView`.
     static let congradsView = _R.nib._CongradsView()
     /// Nib `DetailAboutView`.
@@ -1771,10 +1780,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "ChooseIdentifyController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.chooseIdentifyController) instead")
-    static func chooseIdentifyController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.chooseIdentifyController)
+    /// `UINib(name: "ChooseIdentify", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.chooseIdentify) instead")
+    static func chooseIdentify(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.chooseIdentify)
     }
     #endif
 
@@ -2250,8 +2259,8 @@ struct R: Rswift.Validatable {
       return R.nib.careInfoCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CareInfoCell
     }
 
-    static func chooseIdentifyController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.chooseIdentifyController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func chooseIdentify(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.chooseIdentify.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func congradsView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CongradsView? {
@@ -7617,7 +7626,7 @@ struct _R: Rswift.Validatable {
       try _AddPlantTimeController.validate()
       try _AddPlantsCareController.validate()
       try _CareCell.validate()
-      try _ChooseIdentifyController.validate()
+      try _ChooseIdentify.validate()
       try _CongradsView.validate()
       try _DetailAboutView.validate()
       try _DetailCaresView.validate()
@@ -7827,17 +7836,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _ChooseIdentifyController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _ChooseIdentify: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let name = "ChooseIdentifyController"
+      let name = "ChooseIdentify"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "ic_choose_identify_diagnosis", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_diagnosis' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic_choose_identify_photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_choose_identify_photo' is used in nib 'ChooseIdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "choose_identify_add_unique_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_add_unique_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "choose_identify_diagnosis_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_diagnosis_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "choose_identify_photo_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_photo_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
