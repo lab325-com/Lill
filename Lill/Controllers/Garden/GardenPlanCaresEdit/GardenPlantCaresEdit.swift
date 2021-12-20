@@ -73,14 +73,14 @@ class GardenPlantCaresEdit: BaseController {
         bottomView.isHidden = true
         
         navigationItem.title = RLocalization.garden_plant_cares_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let done = RLocalization.garden_plant_cares_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let cancel = RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let rightBarButtonItem = UIBarButtonItem(title: done, style: .done, target: self, action: #selector(closeAction))
-        let leftBarButtonItem = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(closeAction))
+//        let done = RLocalization.garden_plant_cares_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let cancel = RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let rightBarButtonItem = UIBarButtonItem(title: done, style: .done, target: self, action: #selector(closeAction))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_cares_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
-        leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
+//        leftBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        navigationItem.leftBarButtonItem = leftBarButtonItem
+//        navigationItem.leftBarButtonItem = leftBarButtonItem
         
         tableView.contentInset.bottom = 24
         tableView.estimatedRowHeight = 82
@@ -126,7 +126,7 @@ class GardenPlantCaresEdit: BaseController {
         }
     }
     
-    @objc func closeAction() {
+    @objc func backAction() {
         navigationController?.popViewController(animated: true)
     }
     

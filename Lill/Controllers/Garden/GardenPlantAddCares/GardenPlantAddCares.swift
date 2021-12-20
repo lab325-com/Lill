@@ -64,7 +64,7 @@ class GardenPlantAddCares: BaseController {
         addCustomCareButton.alpha = 0.5
         title = RLocalization.garden_plant_add_cares_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
@@ -103,7 +103,11 @@ class GardenPlantAddCares: BaseController {
     }
     
     @objc func backAction() {
-        navigationController?.popViewController(animated: true)
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: GardenDetailController.self) {
+                navigationController?.popToViewController(controller, animated: true)
+            }
+        }
     }
 }
 
