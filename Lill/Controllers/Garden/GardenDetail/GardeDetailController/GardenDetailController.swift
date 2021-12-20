@@ -10,12 +10,12 @@ import Kingfisher
 import SwiftUI
 
 protocol GardenDetailProtocolo: AnyObject {
-    func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String)
-    func gardenDetailChangePhoto(controller: GardeDetailController, imageUrl: String, id: String)
-    func gardenDetailDelete(controller: GardeDetailController, id: String)
+    func gardenDetailChangeName(controller: GardenDetailController, text: String, id: String)
+    func gardenDetailChangePhoto(controller: GardenDetailController, imageUrl: String, id: String)
+    func gardenDetailDelete(controller: GardenDetailController, id: String)
 }
 
-class GardeDetailController: BaseController {
+class GardenDetailController: BaseController {
     
     //----------------------------------------------
     // MARK: - IBOutlet
@@ -146,7 +146,7 @@ class GardeDetailController: BaseController {
         scheduleStatusLabel.text = notification ? RLocalization.garden_plant_detail_added_in_schedule.localized(PreferencesManager.sharedManager.languageCode.rawValue) :  RLocalization.garden_plant_detail_removed_from_schedule.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         scheduleStatusImage.image = UIImage(named: notification ? "garden_added_in_schedule_ic" : "garden_removed_from_schedule_ic")
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             UIView.animate(withDuration: 0.5) {
                 self.scheduleStatusViewBottomLayout.constant = 0.0
                 self.view.layoutIfNeeded()
@@ -159,7 +159,7 @@ class GardeDetailController: BaseController {
 // MARK: - PlantsDetailOutputProtocol
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailOutputProtocol {
+extension GardenDetailController: GardenDetailOutputProtocol {
     func successNotificationChange(notification: Bool) {
         presenter.model?.gardenPlantById.changeNotification(notification)
         showScheduleStatusView(notification: notification)
@@ -190,7 +190,7 @@ extension GardeDetailController: GardenDetailOutputProtocol {
     }
 }
 
-extension GardeDetailController {
+extension GardenDetailController {
     private func updateLanguage() {
         setup()
     }
@@ -200,7 +200,7 @@ extension GardeDetailController {
 // MARK: - PopChangeNameProtocol
 //----------------------------------------------
 
-extension GardeDetailController: PopChangeNameProtocol {
+extension GardenDetailController: PopChangeNameProtocol {
     func dissmiss(controller: PopChangeNameController, text: String) {
         presenter.model?.gardenPlantById.changeName(text)
         tableView.reloadData()
@@ -212,9 +212,8 @@ extension GardeDetailController: PopChangeNameProtocol {
 // MARK: - Editable
 //----------------------------------------------
 
-extension GardeDetailController {
+extension GardenDetailController {
     @objc func editTapped() {
-        
         
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .plant_edit_menu)
         AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
@@ -279,7 +278,7 @@ extension GardeDetailController {
 // MARK: - AddCoverIdentifierProtocol
 //----------------------------------------------
 
-extension GardeDetailController: AddCoverIdentifierProtocol {
+extension GardenDetailController: AddCoverIdentifierProtocol {
     func addCoverIdentifierSuccessUpload(controller: AddCoverIdentifierController, imageUrl: String) {
         presenter.model?.gardenPlantById.userMainImage?.changeUrlIosFull(imageUrl)
         delegate?.gardenDetailChangePhoto(controller: self, imageUrl: imageUrl, id: id)
@@ -291,7 +290,7 @@ extension GardeDetailController: AddCoverIdentifierProtocol {
 // MARK: - GardenDetailDeletePlanController
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailDeleteDelegate {
+extension GardenDetailController: GardenDetailDeleteDelegate {
     func gardeDetailDeleteSuccess(controller: GardenDetailDeletePlanController) {
         self.dismiss(animated: true) { [weak self] in
             guard let `self` = self else { return }
@@ -305,7 +304,7 @@ extension GardeDetailController: GardenDetailDeleteDelegate {
 // MARK: - PopClonePlantDelegate
 //----------------------------------------------
 
-extension GardeDetailController: PopClonePlantDelegate {
+extension GardenDetailController: PopClonePlantDelegate {
     func popClonePlantSuccess(controller: PopClonePlantController) {
         
     }
@@ -315,7 +314,7 @@ extension GardeDetailController: PopClonePlantDelegate {
 // MARK: - GardenPlantCaresEditDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenPlantCaresEditDelegate {
+extension GardenDetailController: GardenPlantCaresEditDelegate {
     func gardenPlantCaresEditSuccessDelete() {
         presenter.getDetailGarden(gardenId: id)
     }

@@ -21,7 +21,7 @@ enum FirebaseScreenEvents: String {
     case tap_bar = "tap_bar" /// MainTabBarController
     case menu = "menu" /// MenuController
     case purchase_screen = "purchase_screen" /// SubcribeController
-    case card_plan = "card_plan" /// GardeDetailController
+    case card_plan = "card_plan" /// GardenDetailController
     case plant_edit_menu = "plant_edit_menu"
     
     case onboarding_step_1 = "onboarding_step_1" /// OnboardingWelcomeController
@@ -107,7 +107,7 @@ enum FirebaseEvents: String {
     case purchase_error = "purchase_error"
     case unsubscribe = "unsubscribe"
     
-    /// GardeDetailController(card plant_about)
+    /// GardenDetailController(card plant_about)
     case card_about = "card_about"
     case card_care_plan = "card_care_plan"
     case plant_edit_menu = "plant_edit_menu"

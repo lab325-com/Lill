@@ -11,7 +11,7 @@ import UIKit
 // MARK: - UITableViewDataSource, UITableViewDelegate
 //----------------------------------------------
 
-extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
+extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 1
         
@@ -172,7 +172,7 @@ extension GardeDetailController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - GardenDetailSegmentDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailSegmentDelegate {
+extension GardenDetailController: GardenDetailSegmentDelegate {
     func changeSegment(cell: GardenDetailSegmentCell, selectedTag: Int) {
         selectedTag == 0 ? AnalyticsHelper.sendFirebaseEvents(events: .card_about) : AnalyticsHelper.sendFirebaseEvents(events: .card_care_plan)
         self.selectedTag = selectedTag
@@ -184,7 +184,7 @@ extension GardeDetailController: GardenDetailSegmentDelegate {
 // MARK: - GardenDetailAboutDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailAboutDelegate {
+extension GardenDetailController: GardenDetailAboutDelegate {
     func gardenDetailWiki(cell: GardenDetailAboutCell) {
         if let url = URL(string: wikiUrl) {
             UIApplication.shared.open(url)
@@ -192,12 +192,11 @@ extension GardeDetailController: GardenDetailAboutDelegate {
     }
 }
 
-
 //----------------------------------------------
 // MARK: - GardenDetailTitleCellDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailTitleCellDelegate {
+extension GardenDetailController: GardenDetailTitleCellDelegate {
     func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool) {
         presenter.getDetailSetNotification(gardenId: id, notification: notification)
     }
@@ -207,7 +206,7 @@ extension GardeDetailController: GardenDetailTitleCellDelegate {
 // MARK: - GardenDetailEditCareCellDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailEditCareCellDelegate {
+extension GardenDetailController: GardenDetailEditCareCellDelegate {
     func gardenDetailEditCareCellEdit(cell: GardenDetailEditCareCell) {
         GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
     }
@@ -217,7 +216,7 @@ extension GardeDetailController: GardenDetailEditCareCellDelegate {
 // MARK: - GardenDetailEditCareCellDelegate
 //----------------------------------------------
 
-extension GardeDetailController: GardenDetailAllWaitingCellDelegate {
+extension GardenDetailController: GardenDetailAllWaitingCellDelegate {
     func gardenDetailAllWaitingCellDoneCares(cell: GardenDetailAllWaitingCell) {
         presenter.doneAllCares(gardenPlantId: id)
     }

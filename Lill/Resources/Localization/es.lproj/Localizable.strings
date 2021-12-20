@@ -106,7 +106,7 @@
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";
@@ -114,7 +114,7 @@
 "garden_delete_success" = "Planta \ NHA ha sido eliminado";
 "garden_delete_title" = "Plante";
 "garden_detail_about" = "Acerca de";
-"garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
+"garden_detail_care_edit_my_plan" = "Editar mi plan de cuidado";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
 "garden_plan_done" = "Hecho";
@@ -134,6 +134,8 @@
 "garden_plant_cares_edit_info" = "Encender / apagar cares \ n para agregar / eliminar del plan de cuidado";
 "garden_plant_cares_edit_set_to_recommended" = "Establecido en cuidadores recomendados";
 "garden_plant_cares_edit_title" = "Editar plan de atención";
+"garden_plant_detail_added_in_schedule" = "Añadido en el horario";
+"garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
 "identify_analize_identify_plant" = "Planta de identificación";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";
@@ -191,7 +193,7 @@
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar mis plantas";
 "plants_search" = "Buscar por nombre";
-"plants_uniquePlantButton" = "Añadir unico";
+"plants_uniquePlantButton" = "Añadir un único";
 "plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "pop_change_name_button" = "Cambio";
 "pop_change_name_subtitle" = "Dale el nombre de tu planta";
@@ -212,7 +214,7 @@
 "scheldure_setting_cares_notification_sub" = "¡No te perderás cuidar a las plantas, incluso con cerrado \ Napplication!";
 "scheldure_setting_done" = "Hecho";
 "scheldure_setting_frequency" = "Frecuencia de notificaciones";
-"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n tiempo especificado";
+"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n momento especificado";
 "scheldure_setting_hour" = "Hora";
 "scheldure_setting_list_notification" = "Hoy enumerar la notificación";
 "scheldure_setting_missed" = "Omitido";

@@ -552,7 +552,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 109 images.
+  /// This `R.image` struct is generated, and contains static references to 111 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -576,6 +576,8 @@ struct R: Rswift.Validatable {
     static let fdba6d1ffef80f7deaf150c9d1df1e2192528442 = Rswift.ImageResource(bundle: R.hostingBundle, name: "fdba6d1ffef80f7deaf150c9d1df1e2192528442")
     /// Image `garde_edit_ic`.
     static let garde_edit_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garde_edit_ic")
+    /// Image `garden_added_in_schedule_ic`.
+    static let garden_added_in_schedule_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_added_in_schedule_ic")
     /// Image `garden_back_ic`.
     static let garden_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_back_ic")
     /// Image `garden_bell_ic`.
@@ -598,6 +600,8 @@ struct R: Rswift.Validatable {
     static let garden_delete_select_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_select_ic")
     /// Image `garden_delete_unselect_ic`.
     static let garden_delete_unselect_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_unselect_ic")
+    /// Image `garden_removed_from_schedule_ic`.
+    static let garden_removed_from_schedule_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_removed_from_schedule_ic")
     /// Image `garden_schelure_ic`.
     static let garden_schelure_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_schelure_ic")
     /// Image `garden_selected_bell_ic`.
@@ -851,6 +855,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_added_in_schedule_ic", bundle: ..., traitCollection: ...)`
+    static func garden_added_in_schedule_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_added_in_schedule_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "garden_back_ic", bundle: ..., traitCollection: ...)`
     static func garden_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_back_ic, compatibleWith: traitCollection)
@@ -924,6 +935,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_delete_unselect_ic", bundle: ..., traitCollection: ...)`
     static func garden_delete_unselect_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_delete_unselect_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_removed_from_schedule_ic", bundle: ..., traitCollection: ...)`
+    static func garden_removed_from_schedule_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_removed_from_schedule_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1575,8 +1593,6 @@ struct R: Rswift.Validatable {
     static let diseaseArchiveCell = _R.nib._DiseaseArchiveCell()
     /// Nib `DiseaseArchiveViewController`.
     static let diseaseArchiveViewController = _R.nib._DiseaseArchiveViewController()
-    /// Nib `GardeDetailController`.
-    static let gardeDetailController = _R.nib._GardeDetailController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
     /// Nib `GardenCareDetailView`.
@@ -1591,6 +1607,8 @@ struct R: Rswift.Validatable {
     static let gardenDetailAllWaitingCell = _R.nib._GardenDetailAllWaitingCell()
     /// Nib `GardenDetailCaresCell`.
     static let gardenDetailCaresCell = _R.nib._GardenDetailCaresCell()
+    /// Nib `GardenDetailController`.
+    static let gardenDetailController = _R.nib._GardenDetailController()
     /// Nib `GardenDetailDeletePlanController`.
     static let gardenDetailDeletePlanController = _R.nib._GardenDetailDeletePlanController()
     /// Nib `GardenDetailEditCareCell`.
@@ -1809,14 +1827,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "GardeDetailController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardeDetailController) instead")
-    static func gardeDetailController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.gardeDetailController)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardenButtonCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenButtonCell) instead")
     static func gardenButtonCell(_: Void = ()) -> UIKit.UINib {
@@ -1869,6 +1879,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailCaresCell) instead")
     static func gardenDetailCaresCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenDetailCaresCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailController) instead")
+    static func gardenDetailController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailController)
     }
     #endif
 
@@ -2260,10 +2278,6 @@ struct R: Rswift.Validatable {
       return R.nib.diseaseArchiveViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func gardeDetailController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.gardeDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
     static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
       return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
     }
@@ -2290,6 +2304,10 @@ struct R: Rswift.Validatable {
 
     static func gardenDetailCaresCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailCaresCell? {
       return R.nib.gardenDetailCaresCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailCaresCell
+    }
+
+    static func gardenDetailController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenDetailDeletePlanController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -2539,7 +2557,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 262 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 264 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2613,6 +2631,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_add_to_my_garden = Rswift.StringResource(key: "plant_detail_add_to_my_garden", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Added in Schedule
+      ///
+      /// Locales: en, es
+      static let garden_plant_detail_added_in_schedule = Rswift.StringResource(key: "garden_plant_detail_added_in_schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Added in Wishlist
       ///
       /// Locales: en, es
@@ -3289,6 +3311,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let subscription_recurring_yearly = Rswift.StringResource(key: "subscription_recurring_yearly", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Removed from Schedule
+      ///
+      /// Locales: en, es
+      static let garden_plant_detail_removed_from_schedule = Rswift.StringResource(key: "garden_plant_detail_removed_from_schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -3858,6 +3884,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plant_detail_add_to_my_garden", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Added in Schedule
+      ///
+      /// Locales: en, es
+      static func garden_plant_detail_added_in_schedule(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_detail_added_in_schedule", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_detail_added_in_schedule"
+        }
+
+        return NSLocalizedString("garden_plant_detail_added_in_schedule", bundle: bundle, comment: "")
       }
 
       /// en translation: Added in Wishlist
@@ -6397,6 +6438,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_recurring_yearly", bundle: bundle, comment: "")
       }
 
+      /// en translation: Removed from Schedule
+      ///
+      /// Locales: en, es
+      static func garden_plant_detail_removed_from_schedule(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_plant_detail_removed_from_schedule", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_plant_detail_removed_from_schedule"
+        }
+
+        return NSLocalizedString("garden_plant_detail_removed_from_schedule", bundle: bundle, comment: "")
+      }
+
       /// en translation: Removed from Wishlist
       ///
       /// Locales: en, es
@@ -7567,9 +7623,9 @@ struct _R: Rswift.Validatable {
       try _DetailCaresView.validate()
       try _DiagnosisController.validate()
       try _DiseaseArchiveViewController.validate()
-      try _GardeDetailController.validate()
       try _GardenCareDetailView.validate()
       try _GardenChooseAddPlantController.validate()
+      try _GardenDetailController.validate()
       try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
       try _GardenDetailScheduleCell.validate()
@@ -7901,24 +7957,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GardeDetailController: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "GardeDetailController"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'GardeDetailController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "plants_detail_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_back_ic' is used in nib 'GardeDetailController', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-
     struct _GardenButtonCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "GardenButtonCell"
@@ -8014,6 +8052,25 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailCaresCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailCaresCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenDetailController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_added_in_schedule_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_added_in_schedule_ic' is used in nib 'GardenDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'GardenDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plants_detail_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_back_ic' is used in nib 'GardenDetailController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

@@ -131,14 +131,14 @@ class PlantsDetailController: BaseController {
         guard let isFavorite = model?.plantById.isFavourite else { return }
         
         UIView.animate(withDuration: 0.5) {
-            self.favoriteStatusViewBottomLayout.constant = -88.0
+            self.favoriteStatusViewBottomLayout.constant = -100.0
             self.view.layoutIfNeeded()
         }
         
         favoriteStatusLabel.text = isFavorite ? RLocalization.plant_detail_removed_from_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue) :  RLocalization.plant_detail_added_to_wishlist.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         favoriteStatusImage.image = UIImage(named: isFavorite ? "plants_detail_removed_favorites_ic" : "plants_detail_added_favorites_ic")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             UIView.animate(withDuration: 0.5) {
                 self.favoriteStatusViewBottomLayout.constant = 0.0
                 self.view.layoutIfNeeded()

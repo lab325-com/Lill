@@ -134,6 +134,8 @@
 "garden_plant_cares_edit_info" = "Turn on/off Cares \n to add/remove from Care Plan";
 "garden_plant_cares_edit_set_to_recommended" = "Set to Recommended Cares";
 "garden_plant_cares_edit_title" = "Edit Care Plan";
+"garden_plant_detail_added_in_schedule" = "Added in Schedule";
+"garden_plant_detail_removed_from_schedule" = "Removed from Schedule";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
 "identify_capture" = "Capture";

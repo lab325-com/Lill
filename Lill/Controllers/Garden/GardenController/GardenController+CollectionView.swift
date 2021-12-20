@@ -120,7 +120,7 @@ extension GardenController: GardenViewCellDelegate {
 //----------------------------------------------
 
 extension GardenController: GardenDetailProtocolo {
-    func gardenDetailDelete(controller: GardeDetailController, id: String) {
+    func gardenDetailDelete(controller: GardenDetailController, id: String) {
         /// not working because reload data in view will appear
         if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
             presenter.gardenPlants.remove(at: index)
@@ -128,7 +128,7 @@ extension GardenController: GardenDetailProtocolo {
         }
     }
     
-    func gardenDetailChangePhoto(controller: GardeDetailController, imageUrl: String, id: String) {
+    func gardenDetailChangePhoto(controller: GardenDetailController, imageUrl: String, id: String) {
         /// not working because reload data in view will appear
         if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
             presenter.gardenPlants[index].userMainImage?.changeUrlIosFull(imageUrl)
@@ -136,7 +136,7 @@ extension GardenController: GardenDetailProtocolo {
         }
     }
     
-    func gardenDetailChangeName(controller: GardeDetailController, text: String, id: String) {
+    func gardenDetailChangeName(controller: GardenDetailController, text: String, id: String) {
         /// not working because reload data in view will appear
         if let index = presenter.gardenPlants.firstIndex(where: {$0.id == id}) {
             presenter.gardenPlants[index].changeName(text)
