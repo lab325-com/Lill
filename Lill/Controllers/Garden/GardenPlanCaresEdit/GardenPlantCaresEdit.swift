@@ -223,6 +223,7 @@ extension GardenPlantCaresEdit: PickerCareDelegate {
         } else {
             care.count = selectedDay
         }
+        care.period = selectedPeriod
         
         presenter.updateGardenPlantCare(care: care)
         
