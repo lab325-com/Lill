@@ -552,7 +552,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 109 images.
+  /// This `R.image` struct is generated, and contains static references to 111 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -598,6 +598,10 @@ struct R: Rswift.Validatable {
     static let garden_delete_select_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_select_ic")
     /// Image `garden_delete_unselect_ic`.
     static let garden_delete_unselect_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_unselect_ic")
+    /// Image `garden_galler_add_ic`.
+    static let garden_galler_add_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_galler_add_ic")
+    /// Image `garden_phoho_ic`.
+    static let garden_phoho_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_phoho_ic")
     /// Image `garden_schelure_ic`.
     static let garden_schelure_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_schelure_ic")
     /// Image `garden_selected_bell_ic`.
@@ -924,6 +928,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_delete_unselect_ic", bundle: ..., traitCollection: ...)`
     static func garden_delete_unselect_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_delete_unselect_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_galler_add_ic", bundle: ..., traitCollection: ...)`
+    static func garden_galler_add_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_galler_add_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_phoho_ic", bundle: ..., traitCollection: ...)`
+    static func garden_phoho_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_phoho_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1539,7 +1557,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 65 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 72 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1575,6 +1593,12 @@ struct R: Rswift.Validatable {
     static let diseaseArchiveCell = _R.nib._DiseaseArchiveCell()
     /// Nib `DiseaseArchiveViewController`.
     static let diseaseArchiveViewController = _R.nib._DiseaseArchiveViewController()
+    /// Nib `GadenDetailHistoryTitleCell`.
+    static let gadenDetailHistoryTitleCell = _R.nib._GadenDetailHistoryTitleCell()
+    /// Nib `GaleryHistoryAddCell`.
+    static let galeryHistoryAddCell = _R.nib._GaleryHistoryAddCell()
+    /// Nib `GalleryHistoryCell`.
+    static let galleryHistoryCell = _R.nib._GalleryHistoryCell()
     /// Nib `GardeDetailController`.
     static let gardeDetailController = _R.nib._GardeDetailController()
     /// Nib `GardenButtonCell`.
@@ -1595,6 +1619,14 @@ struct R: Rswift.Validatable {
     static let gardenDetailDeletePlanController = _R.nib._GardenDetailDeletePlanController()
     /// Nib `GardenDetailEditCareCell`.
     static let gardenDetailEditCareCell = _R.nib._GardenDetailEditCareCell()
+    /// Nib `GardenDetailHistoryPhotoCell`.
+    static let gardenDetailHistoryPhotoCell = _R.nib._GardenDetailHistoryPhotoCell()
+    /// Nib `GardenDetailHistoryStatisticCell`.
+    static let gardenDetailHistoryStatisticCell = _R.nib._GardenDetailHistoryStatisticCell()
+    /// Nib `GardenDetailListCaresCell`.
+    static let gardenDetailListCaresCell = _R.nib._GardenDetailListCaresCell()
+    /// Nib `GardenDetailListHeaderCell`.
+    static let gardenDetailListHeaderCell = _R.nib._GardenDetailListHeaderCell()
     /// Nib `GardenDetailScheduleCell`.
     static let gardenDetailScheduleCell = _R.nib._GardenDetailScheduleCell()
     /// Nib `GardenDetailSegmentCell`.
@@ -1809,6 +1841,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GadenDetailHistoryTitleCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gadenDetailHistoryTitleCell) instead")
+    static func gadenDetailHistoryTitleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gadenDetailHistoryTitleCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GaleryHistoryAddCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.galeryHistoryAddCell) instead")
+    static func galeryHistoryAddCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.galeryHistoryAddCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GalleryHistoryCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.galleryHistoryCell) instead")
+    static func galleryHistoryCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.galleryHistoryCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardeDetailController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardeDetailController) instead")
     static func gardeDetailController(_: Void = ()) -> UIKit.UINib {
@@ -1885,6 +1941,38 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailEditCareCell) instead")
     static func gardenDetailEditCareCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenDetailEditCareCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailHistoryPhotoCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailHistoryPhotoCell) instead")
+    static func gardenDetailHistoryPhotoCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailHistoryPhotoCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailHistoryStatisticCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailHistoryStatisticCell) instead")
+    static func gardenDetailHistoryStatisticCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailHistoryStatisticCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailListCaresCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailListCaresCell) instead")
+    static func gardenDetailListCaresCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailListCaresCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenDetailListHeaderCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenDetailListHeaderCell) instead")
+    static func gardenDetailListHeaderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenDetailListHeaderCell)
     }
     #endif
 
@@ -2260,6 +2348,18 @@ struct R: Rswift.Validatable {
       return R.nib.diseaseArchiveViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func gadenDetailHistoryTitleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GadenDetailHistoryTitleCell? {
+      return R.nib.gadenDetailHistoryTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GadenDetailHistoryTitleCell
+    }
+
+    static func galeryHistoryAddCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GaleryHistoryAddCell? {
+      return R.nib.galeryHistoryAddCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GaleryHistoryAddCell
+    }
+
+    static func galleryHistoryCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryHistoryCell? {
+      return R.nib.galleryHistoryCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryHistoryCell
+    }
+
     static func gardeDetailController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardeDetailController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2298,6 +2398,22 @@ struct R: Rswift.Validatable {
 
     static func gardenDetailEditCareCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailEditCareCell? {
       return R.nib.gardenDetailEditCareCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailEditCareCell
+    }
+
+    static func gardenDetailHistoryPhotoCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailHistoryPhotoCell? {
+      return R.nib.gardenDetailHistoryPhotoCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailHistoryPhotoCell
+    }
+
+    static func gardenDetailHistoryStatisticCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailHistoryStatisticCell? {
+      return R.nib.gardenDetailHistoryStatisticCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailHistoryStatisticCell
+    }
+
+    static func gardenDetailListCaresCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailListCaresCell? {
+      return R.nib.gardenDetailListCaresCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailListCaresCell
+    }
+
+    static func gardenDetailListHeaderCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailListHeaderCell? {
+      return R.nib.gardenDetailListHeaderCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailListHeaderCell
     }
 
     static func gardenDetailScheduleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailScheduleCell? {
@@ -2455,7 +2571,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 16 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 23 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AddCareCell`.
     static let addCareCell: Rswift.ReuseIdentifier<AddCareCell> = Rswift.ReuseIdentifier(identifier: "AddCareCell")
@@ -2469,6 +2585,12 @@ struct R: Rswift.Validatable {
     static let careInfoCell: Rswift.ReuseIdentifier<CareInfoCell> = Rswift.ReuseIdentifier(identifier: "CareInfoCell")
     /// Reuse identifier `DiseaseArchiveCell`.
     static let diseaseArchiveCell: Rswift.ReuseIdentifier<DiseaseArchiveCell> = Rswift.ReuseIdentifier(identifier: "DiseaseArchiveCell")
+    /// Reuse identifier `GadenDetailHistoryTitleCell`.
+    static let gadenDetailHistoryTitleCell: Rswift.ReuseIdentifier<GadenDetailHistoryTitleCell> = Rswift.ReuseIdentifier(identifier: "GadenDetailHistoryTitleCell")
+    /// Reuse identifier `GaleryHistoryAddCell`.
+    static let galeryHistoryAddCell: Rswift.ReuseIdentifier<GaleryHistoryAddCell> = Rswift.ReuseIdentifier(identifier: "GaleryHistoryAddCell")
+    /// Reuse identifier `GalleryHistoryCell`.
+    static let galleryHistoryCell: Rswift.ReuseIdentifier<GalleryHistoryCell> = Rswift.ReuseIdentifier(identifier: "GalleryHistoryCell")
     /// Reuse identifier `GardenDetailAboutCell`.
     static let gardenDetailAboutCell: Rswift.ReuseIdentifier<GardenDetailAboutCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailAboutCell")
     /// Reuse identifier `GardenDetailAllWaitingCell`.
@@ -2477,6 +2599,14 @@ struct R: Rswift.Validatable {
     static let gardenDetailCaresCell: Rswift.ReuseIdentifier<GardenDetailCaresCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailCaresCell")
     /// Reuse identifier `GardenDetailEditCareCell`.
     static let gardenDetailEditCareCell: Rswift.ReuseIdentifier<GardenDetailEditCareCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailEditCareCell")
+    /// Reuse identifier `GardenDetailHistoryPhotoCell`.
+    static let gardenDetailHistoryPhotoCell: Rswift.ReuseIdentifier<GardenDetailHistoryPhotoCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailHistoryPhotoCell")
+    /// Reuse identifier `GardenDetailHistoryStatisticCell`.
+    static let gardenDetailHistoryStatisticCell: Rswift.ReuseIdentifier<GardenDetailHistoryStatisticCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailHistoryStatisticCell")
+    /// Reuse identifier `GardenDetailListCaresCell`.
+    static let gardenDetailListCaresCell: Rswift.ReuseIdentifier<GardenDetailListCaresCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailListCaresCell")
+    /// Reuse identifier `GardenDetailListHeaderCell`.
+    static let gardenDetailListHeaderCell: Rswift.ReuseIdentifier<GardenDetailListHeaderCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailListHeaderCell")
     /// Reuse identifier `GardenDetailScheduleCell`.
     static let gardenDetailScheduleCell: Rswift.ReuseIdentifier<GardenDetailScheduleCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailScheduleCell")
     /// Reuse identifier `GardenDetailSegmentCell`.
@@ -7567,11 +7697,15 @@ struct _R: Rswift.Validatable {
       try _DetailCaresView.validate()
       try _DiagnosisController.validate()
       try _DiseaseArchiveViewController.validate()
+      try _GaleryHistoryAddCell.validate()
+      try _GalleryHistoryCell.validate()
       try _GardeDetailController.validate()
       try _GardenCareDetailView.validate()
       try _GardenChooseAddPlantController.validate()
       try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
+      try _GardenDetailHistoryPhotoCell.validate()
+      try _GardenDetailListCaresCell.validate()
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
       try _GardenPlantAddCares.validate()
@@ -7901,6 +8035,60 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _GadenDetailHistoryTitleCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GadenDetailHistoryTitleCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GadenDetailHistoryTitleCell"
+      let name = "GadenDetailHistoryTitleCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GadenDetailHistoryTitleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GadenDetailHistoryTitleCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GaleryHistoryAddCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GaleryHistoryAddCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GaleryHistoryAddCell"
+      let name = "GaleryHistoryAddCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GaleryHistoryAddCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GaleryHistoryAddCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_galler_add_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_galler_add_ic' is used in nib 'GaleryHistoryAddCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GalleryHistoryCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GalleryHistoryCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GalleryHistoryCell"
+      let name = "GalleryHistoryCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryHistoryCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryHistoryCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'GalleryHistoryCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _GardeDetailController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GardeDetailController"
@@ -8052,6 +8240,76 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "garde_edit_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garde_edit_ic' is used in nib 'GardenDetailEditCareCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailHistoryPhotoCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GardenDetailHistoryPhotoCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenDetailHistoryPhotoCell"
+      let name = "GardenDetailHistoryPhotoCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailHistoryPhotoCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailHistoryPhotoCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_phoho_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_phoho_ic' is used in nib 'GardenDetailHistoryPhotoCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "temp_plants_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_plants_ic' is used in nib 'GardenDetailHistoryPhotoCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailHistoryStatisticCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GardenDetailHistoryStatisticCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenDetailHistoryStatisticCell"
+      let name = "GardenDetailHistoryStatisticCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailHistoryStatisticCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailHistoryStatisticCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailListCaresCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GardenDetailListCaresCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenDetailListCaresCell"
+      let name = "GardenDetailListCaresCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailListCaresCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailListCaresCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_care_missed_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_missed_ic' is used in nib 'GardenDetailListCaresCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_care_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_watering_ic' is used in nib 'GardenDetailListCaresCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenDetailListHeaderCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GardenDetailListHeaderCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenDetailListHeaderCell"
+      let name = "GardenDetailListHeaderCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailListHeaderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailListHeaderCell
       }
 
       fileprivate init() {}

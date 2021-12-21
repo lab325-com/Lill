@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GardenDetailHistoryPhotoCell" rowHeight="366" id="KGk-i7-Jjw" customClass="GardenDetailHistoryPhotoCell" customModule="Lill" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="249"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="249"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcY-Ca-UFq">
+                        <rect key="frame" x="87.5" y="0.0" width="1" height="26"/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="f8p-M4-oL6"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qst-eF-Skl">
+                        <rect key="frame" x="87.5" y="36" width="1" height="213"/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.72549019609999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="ZQv-e4-jua"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPz-kx-cmm">
+                        <rect key="frame" x="17" y="15" width="54" height="31.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="L1n-De-XmG"/>
+                        </constraints>
+                        <string key="text">Aug 21
+16:12</string>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                        <color key="textColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrn-Ks-Y1Y">
+                        <rect key="frame" x="83" y="26" width="10" height="10"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="EIG-BS-gx0"/>
+                            <constraint firstAttribute="width" constant="10" id="HxK-mn-HhG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K7J-J9-MhJ">
+                        <rect key="frame" x="117" y="23" width="97" height="16"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_phoho_ic" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-if-tYA">
+                                <rect key="frame" x="0.0" y="0.0" width="19" height="16"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpP-a7-qL1">
+                                <rect key="frame" x="34" y="0.0" width="63" height="16"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qde-Vw-WGs">
+                        <rect key="frame" x="117" y="59" width="192" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_plants_ic" translatesAutoresizingMaskIntoConstraints="NO" id="igp-Gb-lKl">
+                                <rect key="frame" x="0.0" y="0.0" width="192" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="ffB-yj-zfc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you can add some Notes about this Plant" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUh-p9-R11">
+                                <rect key="frame" x="0.0" y="115" width="192" height="65"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="JPz-kx-cmm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="1Wj-4H-Owk"/>
+                    <constraint firstItem="Xrn-Ks-Y1Y" firstAttribute="centerY" secondItem="JPz-kx-cmm" secondAttribute="centerY" id="4sS-mS-ZTf"/>
+                    <constraint firstItem="GcY-Ca-UFq" firstAttribute="centerX" secondItem="Xrn-Ks-Y1Y" secondAttribute="centerX" id="5v6-eM-9un"/>
+                    <constraint firstItem="K7J-J9-MhJ" firstAttribute="centerY" secondItem="Xrn-Ks-Y1Y" secondAttribute="centerY" id="7Lg-Vi-ScK"/>
+                    <constraint firstItem="Qde-Vw-WGs" firstAttribute="leading" secondItem="dIx-if-tYA" secondAttribute="leading" id="8go-Bc-5YP"/>
+                    <constraint firstItem="JPz-kx-cmm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="HbR-qU-t4S"/>
+                    <constraint firstItem="K7J-J9-MhJ" firstAttribute="leading" secondItem="Xrn-Ks-Y1Y" secondAttribute="trailing" constant="24" id="IqC-8a-2mq"/>
+                    <constraint firstItem="Xrn-Ks-Y1Y" firstAttribute="leading" secondItem="JPz-kx-cmm" secondAttribute="trailing" constant="12" id="J7h-Ac-Aag"/>
+                    <constraint firstAttribute="bottom" secondItem="Qde-Vw-WGs" secondAttribute="bottom" constant="10" id="TAF-gk-bYY"/>
+                    <constraint firstItem="GcY-Ca-UFq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="coC-bh-KQz"/>
+                    <constraint firstItem="Qst-eF-Skl" firstAttribute="centerX" secondItem="Xrn-Ks-Y1Y" secondAttribute="centerX" id="eOj-rf-VBp"/>
+                    <constraint firstAttribute="trailing" secondItem="Qde-Vw-WGs" secondAttribute="trailing" constant="93" id="nsR-A8-l9N"/>
+                    <constraint firstItem="Qst-eF-Skl" firstAttribute="top" secondItem="Xrn-Ks-Y1Y" secondAttribute="bottom" id="pKr-9k-e6H"/>
+                    <constraint firstItem="Xrn-Ks-Y1Y" firstAttribute="top" secondItem="GcY-Ca-UFq" secondAttribute="bottom" id="pvm-hJ-V9T"/>
+                    <constraint firstAttribute="bottom" secondItem="Qst-eF-Skl" secondAttribute="bottom" id="s2Y-T5-h4a"/>
+                    <constraint firstItem="Qde-Vw-WGs" firstAttribute="top" secondItem="K7J-J9-MhJ" secondAttribute="bottom" constant="20" id="z8p-x2-Ltm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="bottomSeparatorView" destination="Qst-eF-Skl" id="ZcN-tb-Drz"/>
+                <outlet property="circleView" destination="Xrn-Ks-Y1Y" id="Ws0-qU-hAA"/>
+                <outlet property="topSeparatorView" destination="GcY-Ca-UFq" id="jLI-bf-eUI"/>
+            </connections>
+            <point key="canvasLocation" x="183" y="224"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="garden_phoho_ic" width="19" height="16"/>
+        <image name="temp_plants_ic" width="400" height="267"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -45,6 +45,12 @@ class GardeDetailController: BaseController {
     let cellScheldureIdentifier = "GardenDetailScheduleCell"
     let cellAllWaitingIdentifier = "GardenDetailAllWaitingCell"
     
+    let cellHistoryTitleIdentifier = "GadenDetailHistoryTitleCell"
+    let cellHistoryStatisticIdentifier = "GardenDetailHistoryStatisticCell"
+    let cellHistoryListHeaderCell = "GardenDetailListHeaderCell"
+    let cellHistoryListCareCell = "GardenDetailListCaresCell"
+    let cellHistoryListPhotoCell = "GardenDetailHistoryPhotoCell"
+    
     var wikiUrl: String = ""
     var selectedTag = 0
     
@@ -110,9 +116,13 @@ class GardeDetailController: BaseController {
         tableView.register(UINib(nibName: cellScheldureIdentifier, bundle: nil), forCellReuseIdentifier: cellScheldureIdentifier)
         tableView.register(UINib(nibName: cellAllWaitingIdentifier, bundle: nil), forCellReuseIdentifier: cellAllWaitingIdentifier)
         
+        tableView.register(UINib(nibName: cellHistoryTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryTitleIdentifier)
+        tableView.register(UINib(nibName: cellHistoryStatisticIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryStatisticIdentifier)
+        tableView.register(UINib(nibName: cellHistoryListHeaderCell, bundle: nil), forCellReuseIdentifier: cellHistoryListHeaderCell)
+        tableView.register(UINib(nibName: cellHistoryListCareCell, bundle: nil), forCellReuseIdentifier: cellHistoryListCareCell)
+        tableView.register(UINib(nibName: cellHistoryListPhotoCell, bundle: nil), forCellReuseIdentifier: cellHistoryListPhotoCell)
+        
         tableView.tableFooterView = UIView()
-        
-        
         
         let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
         navigationItem.rightBarButtonItems = [dots]
