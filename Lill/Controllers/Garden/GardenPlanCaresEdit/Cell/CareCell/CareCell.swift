@@ -37,28 +37,37 @@ class CareCell: UITableViewCell {
         careLabel.text = caresModel.type.name.text
         
         careSwitch.isHidden = isHideSwitch
+        
         if let isActive = caresModel.isActive {
             careSwitch.isOn = isActive
             bottomView.isHidden = isActive ? false : true
             bottomViewHeighConstraint.constant = isActive ? 56.0 : 0.0
         }
         
-        if isHideSwitch {
-            careTimeLabel.text = caresModel.getTime
-        } else {
-            if let time = caresModel.sendNotificationAt {
-                careTimeLabel.text = String(time.dropLast(3))
-            }
+        if let time = caresModel.sendNotificationAt {
+            careTimeLabel.text = String(time.dropLast(3))
         }
         
-        let model = AddPlantTimeModel(type: caresModel.type, time: caresModel.nexDate, period: caresModel.period)
-        
         let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let frequency = isHideSwitch ? " \(caresModel.frequency)" : " \(caresModel.count)"
-        let period = isHideSwitch ? " \(caresModel.period.text)" : " \(model.period.text)"
+        careFrequencyLabel.text = every + " \(caresModel.count)" + " \(caresModel.period.text)"
+        careDateLabel.text = caresModel.nextTime
         
-        careFrequencyLabel.text = every + frequency + period
-        careDateLabel.text = isHideSwitch ? caresModel.nextTime : model.nextTime
+//        if isHideSwitch {
+//            careTimeLabel.text = caresModel.getTime
+//        } else {
+//            if let time = caresModel.sendNotificationAt {
+//                careTimeLabel.text = String(time.dropLast(3))
+//            }
+//        }
+//
+//        let model = AddPlantTimeModel(type: caresModel.type, time: nil, frequency: caresModel.count, period: caresModel.period)
+//
+//        let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let frequency = isHideSwitch ? " \(caresModel.frequency)" : " \(caresModel.count)"
+//        let period = isHideSwitch ? " \(caresModel.period.text)" : " \(model.period.text)"
+//
+//        careFrequencyLabel.text = every + frequency + period
+//        careDateLabel.text = isHideSwitch ? caresModel.nextTime : model.nextTime
     }
         
     @IBAction func careTimeimeAction(_ sender: Any) {

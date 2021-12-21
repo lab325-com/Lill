@@ -13,7 +13,7 @@ enum FirebaseScreenEvents: String {
     case login_screen = "login_screen" ///LoginController
     case main_screen = "main_screen" /// PlantsController
     case card_plant_explore = "card_plant_explore" /// PlantsDetailController
-    case photo_select = "photo_select" /// ChooseIdentifyController
+    case photo_select = "photo_select" /// ChooseIdentify
     case identify_screen_step_1 = "identify_screen_step_1" /// IdentifyController
     case identify_screen_step_2 = "identify_screen_step_2" /// IdentifyController
     case identify_screen_step_4 = "identify_screen_step_4" /// IdentifyController
@@ -21,7 +21,7 @@ enum FirebaseScreenEvents: String {
     case tap_bar = "tap_bar" /// MainTabBarController
     case menu = "menu" /// MenuController
     case purchase_screen = "purchase_screen" /// SubcribeController
-    case card_plan = "card_plan" /// GardeDetailController
+    case card_plan = "card_plan" /// GardenDetailController
     case plant_edit_menu = "plant_edit_menu"
     
     case onboarding_step_1 = "onboarding_step_1" /// OnboardingWelcomeController
@@ -66,7 +66,7 @@ enum FirebaseEvents: String {
     /// PlantsDetailController (card_plant_explore)
     case go_to_wiki = "go_to_wiki"
     
-    ///ChooseIdentifyController (photo_select)
+    ///ChooseIdentify (photo_select)
     case identify = "identify"
     case diagnose = "diagnose"
     case cancel_photo = "cancel_photo"
@@ -107,7 +107,7 @@ enum FirebaseEvents: String {
     case purchase_error = "purchase_error"
     case unsubscribe = "unsubscribe"
     
-    /// GardeDetailController(card plant_about)
+    /// GardenDetailController(card plant_about)
     case card_about = "card_about"
     case card_care_plan = "card_care_plan"
     case plant_edit_menu = "plant_edit_menu"

@@ -1,5 +1,5 @@
 //
-//  GardeDetailController.swift
+//  GardenDetailController.swift
 //  Lill
 //
 //  Created by Andrey S on 16.11.2021.
@@ -23,6 +23,9 @@ class GardeDetailController: BaseController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var scheduleStatusLabel: UILabel!
+    @IBOutlet weak var scheduleStatusImage: UIImageView!
+    @IBOutlet weak var scheduleStatusViewBottomLayout: NSLayoutConstraint!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -143,6 +146,23 @@ class GardeDetailController: BaseController {
         
         headerView.frame = headerRect
     }
+    
+    private func showScheduleStatusView(notification: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.scheduleStatusViewBottomLayout.constant = -100.0
+            self.view.layoutIfNeeded()
+        }
+
+        scheduleStatusLabel.text = notification ? RLocalization.garden_plant_detail_added_in_schedule.localized(PreferencesManager.sharedManager.languageCode.rawValue) :  RLocalization.garden_plant_detail_removed_from_schedule.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        scheduleStatusImage.image = UIImage(named: notification ? "garden_added_in_schedule_ic" : "garden_removed_from_schedule_ic")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            UIView.animate(withDuration: 0.5) {
+                self.scheduleStatusViewBottomLayout.constant = 0.0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
 }
 
 //----------------------------------------------
@@ -152,6 +172,7 @@ class GardeDetailController: BaseController {
 extension GardeDetailController: GardenDetailOutputProtocol {
     func successNotificationChange(notification: Bool) {
         presenter.model?.gardenPlantById.changeNotification(notification)
+        showScheduleStatusView(notification: notification)
         tableView.reloadData()
     }
     

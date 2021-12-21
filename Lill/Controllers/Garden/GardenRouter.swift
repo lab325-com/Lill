@@ -16,7 +16,7 @@ class GardenRouter: BaseRouter {
     }
     
     func pushGardenDetail(id: String, delegate: GardenDetailProtocolo) {
-        let controller = GardeDetailController(id: id, delegate: delegate)
+        let controller = GardenDetailController(id: id, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }

@@ -25,8 +25,6 @@ class GardenPlantAddCaresSetup: BaseController {
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
-
-    private var selectedModel: CaresModel?
     
     //----------------------------------------------
     // MARK: - Init
@@ -57,10 +55,9 @@ class GardenPlantAddCaresSetup: BaseController {
     //----------------------------------------------
     
     func setup() {
-
         title = RLocalization.garden_plant_add_cares_setup_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_setup_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_plant_add_cares_setup_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(backAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
@@ -74,7 +71,11 @@ class GardenPlantAddCaresSetup: BaseController {
     //----------------------------------------------
     
     @objc func backAction() {
-        navigationController?.popViewController(animated: true)
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: GardenDetailController.self) {
+                navigationController?.popToViewController(controller, animated: true)
+            }
+        }
     }
 }
 
@@ -87,13 +88,11 @@ extension GardenPlantAddCaresSetup: CareCellDelegate {
     func didChangeCareActivity(caresModel: CaresModel, isActive: Bool) { }
 
     func didTappedCareTimeButton(caresModel: CaresModel) {
-        selectedModel = caresModel
         let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
         AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: true)
     }
     
     func didTappedCareFrequencyButton(caresModel: CaresModel) {
-        selectedModel = caresModel
         let model = AddPlantTimeModel(type: caresModel.type, period: caresModel.period)
         AddCoverRouter(presenter: navigationController).presentPickerCares(model: model, delegate: self, isDatePicker: false)
     }
@@ -105,10 +104,11 @@ extension GardenPlantAddCaresSetup: CareCellDelegate {
 
 extension GardenPlantAddCaresSetup: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
-        if let index = cares.firstIndex(where: {$0.type == model.type}) {
-            cares[index].update(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
-            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
-        }
+        
+//        if let index = cares.firstIndex(where: {$0.type == model.type}) {
+//            cares[index].update(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
+//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
+//        }
     }
 }
 
