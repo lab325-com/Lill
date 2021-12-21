@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GardenDetailCaresCell" rowHeight="220" id="KGk-i7-Jjw" customClass="GardenDetailCaresCell" customModule="Lill" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="424" height="220"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiU-z8-EZo">
+                        <rect key="frame" x="0.0" y="10" width="424" height="210"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3v-de-Yd9">
+                                <rect key="frame" x="24" y="21" width="51" height="34"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-oS-DOZ">
+                                <rect key="frame" x="12" y="79" width="400" height="107"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21l-wp-o2T" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="107"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l42-Js-X7b" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                        <rect key="frame" x="101" y="0.0" width="97.5" height="107"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtF-7S-u2K" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                        <rect key="frame" x="201.5" y="0.0" width="98" height="107"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-PV-N03" customClass="DetailCaresView" customModule="Lill" customModuleProvider="target">
+                                        <rect key="frame" x="302.5" y="0.0" width="97.5" height="107"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="S6P-wE-5Yc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X3v-de-Yd9" firstAttribute="top" secondItem="tiU-z8-EZo" secondAttribute="top" constant="21" id="LAI-cX-5Q6"/>
+                            <constraint firstItem="X3v-de-Yd9" firstAttribute="leading" secondItem="tiU-z8-EZo" secondAttribute="leading" constant="24" id="VFx-jT-ODT"/>
+                            <constraint firstItem="Cgq-oS-DOZ" firstAttribute="leading" secondItem="tiU-z8-EZo" secondAttribute="leading" constant="12" id="dXx-wA-EzT"/>
+                            <constraint firstAttribute="bottom" secondItem="Cgq-oS-DOZ" secondAttribute="bottom" constant="24" id="rhg-su-1gM"/>
+                            <constraint firstItem="Cgq-oS-DOZ" firstAttribute="top" secondItem="X3v-de-Yd9" secondAttribute="bottom" constant="24" id="spH-5B-rb5"/>
+                            <constraint firstAttribute="trailing" secondItem="Cgq-oS-DOZ" secondAttribute="trailing" constant="12" id="x2U-Xq-tcg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tiU-z8-EZo" secondAttribute="trailing" id="3pL-xN-7Hf"/>
+                    <constraint firstItem="tiU-z8-EZo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="n90-Za-9nf"/>
+                    <constraint firstAttribute="bottom" secondItem="tiU-z8-EZo" secondAttribute="bottom" id="nEI-HZ-UwG"/>
+                    <constraint firstItem="tiU-z8-EZo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xqd-P2-9OV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outletCollection property="caresViews" destination="21l-wp-o2T" collectionClass="NSMutableArray" id="0mm-Ll-a4r"/>
+                <outletCollection property="caresViews" destination="l42-Js-X7b" collectionClass="NSMutableArray" id="38J-Ii-g1f"/>
+                <outletCollection property="caresViews" destination="PtF-7S-u2K" collectionClass="NSMutableArray" id="aRP-Y1-n9C"/>
+                <outletCollection property="caresViews" destination="A9J-PV-N03" collectionClass="NSMutableArray" id="VQf-Zr-Fes"/>
+            </connections>
+            <point key="canvasLocation" x="213.04347826086959" y="155.35714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

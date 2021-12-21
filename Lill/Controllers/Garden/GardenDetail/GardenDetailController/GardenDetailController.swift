@@ -48,6 +48,12 @@ class GardenDetailController: BaseController {
     let cellScheldureIdentifier = "GardenDetailScheduleCell"
     let cellAllWaitingIdentifier = "GardenDetailAllWaitingCell"
     
+    let cellHistoryTitleIdentifier = "GadenDetailHistoryTitleCell"
+    let cellHistoryStatisticIdentifier = "GardenDetailHistoryStatisticCell"
+    let cellHistoryListHeaderCell = "GardenDetailListHeaderCell"
+    let cellHistoryListCareCell = "GardenDetailListCaresCell"
+    let cellHistoryListPhotoCell = "GardenDetailHistoryPhotoCell"
+    
     var wikiUrl: String = ""
     var selectedTag = 0
     
@@ -112,6 +118,12 @@ class GardenDetailController: BaseController {
         tableView.register(UINib(nibName: cellEditIdentifier, bundle: nil), forCellReuseIdentifier: cellEditIdentifier)
         tableView.register(UINib(nibName: cellScheldureIdentifier, bundle: nil), forCellReuseIdentifier: cellScheldureIdentifier)
         tableView.register(UINib(nibName: cellAllWaitingIdentifier, bundle: nil), forCellReuseIdentifier: cellAllWaitingIdentifier)
+        
+        tableView.register(UINib(nibName: cellHistoryTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryTitleIdentifier)
+        tableView.register(UINib(nibName: cellHistoryStatisticIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryStatisticIdentifier)
+        tableView.register(UINib(nibName: cellHistoryListHeaderCell, bundle: nil), forCellReuseIdentifier: cellHistoryListHeaderCell)
+        tableView.register(UINib(nibName: cellHistoryListCareCell, bundle: nil), forCellReuseIdentifier: cellHistoryListCareCell)
+        tableView.register(UINib(nibName: cellHistoryListPhotoCell, bundle: nil), forCellReuseIdentifier: cellHistoryListPhotoCell)
         
         tableView.tableFooterView = UIView()
         

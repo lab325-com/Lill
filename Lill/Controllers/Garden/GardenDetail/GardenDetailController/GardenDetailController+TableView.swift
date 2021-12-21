@@ -29,7 +29,7 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
             }
             
             return count
-        } else {
+        } else if selectedTag == 1 {
             count += 2
             if presenter.cares.count != 0 {
                 
@@ -41,6 +41,9 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
                     count += presenter.scheduleNoFuture.count + 1
                 }
             }
+            return count
+        } else {
+            count += 40
             return count
         }
     }
@@ -92,7 +95,7 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
             default:
                 return UITableViewCell()
             }
-        } else {
+        } else  if selectedTag == 1 {
             switch indexPath.row {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
@@ -150,6 +153,44 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
                 }
                 return UITableViewCell()
             }
+        } else {
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellTitleIdentifier) as? GardenDetailTitleCell else { return UITableViewCell() }
+                
+                cell.delegate = self
+                if let model = presenter.model {
+                    cell.setupCell(model: model, cares: presenter.cares)
+                }
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellSegmentIdentifier) as? GardenDetailSegmentCell else { return UITableViewCell() }
+                cell.setupCell(selectedTag: selectedTag)
+                cell.delegate = self
+                return cell
+            case 2:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryTitleIdentifier) as? GadenDetailHistoryTitleCell else { return UITableViewCell() }
+                
+                return cell
+            case 3:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryStatisticIdentifier) as? GardenDetailHistoryStatisticCell else { return UITableViewCell() }
+                
+                return cell
+            case 4:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListHeaderCell) as? GardenDetailListHeaderCell else { return UITableViewCell() }
+                
+                return cell
+            default:
+                if indexPath.row % 4 == 0 {
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListPhotoCell) as? GardenDetailHistoryPhotoCell else { return UITableViewCell() }
+                    cell.setupCell(isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 40)
+                    return cell
+                } else {
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListCareCell) as? GardenDetailListCaresCell else { return UITableViewCell() }
+                    cell.setupCell(isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 40)
+                    return cell
+                }
+            }
         }
     }
     
@@ -174,7 +215,12 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
 
 extension GardenDetailController: GardenDetailSegmentDelegate {
     func changeSegment(cell: GardenDetailSegmentCell, selectedTag: Int) {
-        selectedTag == 0 ? AnalyticsHelper.sendFirebaseEvents(events: .card_about) : AnalyticsHelper.sendFirebaseEvents(events: .card_care_plan)
+        if selectedTag == 0 {
+            AnalyticsHelper.sendFirebaseEvents(events: .card_about)
+        } else if selectedTag == 1 {
+            AnalyticsHelper.sendFirebaseEvents(events: .card_care_plan)
+        }
+        
         self.selectedTag = selectedTag
         tableView.reloadData()
     }
