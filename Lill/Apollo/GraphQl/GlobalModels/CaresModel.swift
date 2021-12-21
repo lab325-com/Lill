@@ -10,8 +10,7 @@ struct CaresModel: Codable, Hashable {
     let nextDate: String?
     let type: CareType
     var period: PeriodType
-    var time: Date? = Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date())
-    var frequency: Int = 7
+    var time: Date?
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
@@ -24,9 +23,9 @@ struct CaresModel: Codable, Hashable {
         case type = "CareType"
     }
     
-    mutating func update(frequency: Int, period: PeriodType, date: Date?) {
+    mutating func update(count: Int, period: PeriodType, date: Date?) {
         self.time = date
-        self.frequency = frequency
+        self.count = count
         self.period = period
     }
     
@@ -41,7 +40,7 @@ struct CaresModel: Codable, Hashable {
     }
     
     var nextTime: String {
-        var dayComponent    = DateComponents()
+        var dayComponent = DateComponents()
         
         switch period {
         case .periodTypeDay:
