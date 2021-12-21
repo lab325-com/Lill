@@ -19,6 +19,7 @@ class PlantsController: BaseController {
     @IBOutlet weak var navigationTralingToPhoto: NSLayoutConstraint!
     @IBOutlet weak var uniqueViewBottomLayout: NSLayoutConstraint!
     @IBOutlet weak var backToTopTrailingLayout: NSLayoutConstraint!
+    @IBOutlet weak var blurEffectHeighLayout: NSLayoutConstraint!
     
     @IBOutlet weak var buttonToThisView: UIView!
     @IBOutlet weak var identifireLabel: UILabel!
@@ -125,6 +126,8 @@ class PlantsController: BaseController {
         let swipeUpCollection = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipeUp))
         swipeUpCollection.direction = .up
         self.collectionView.addGestureRecognizer(swipeUpCollection)
+        
+        blurEffectHeighLayout.constant = UIDevice.current.hasSafeArea ? 98.0 : 82.0
         
 //        collectionView.contentInset = UIEdgeInsetsMake(98,0,0,0)
 //        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
