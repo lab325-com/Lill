@@ -1,0 +1,35 @@
+query PlantById($id: String!) {
+	plantById(id: $id) {
+		PlantCares {
+			count
+			id
+			period
+			CareType {
+				id
+				name
+			}
+		}
+		Climate {
+			deciduous
+			habit
+			hardiness
+			height
+			moisture
+			ph
+			shade
+			soil
+		}
+		descriptionFull
+		descriptionWikiHtml
+		id
+		isFavourite
+		latinName
+		plantImages {
+			id
+			urlIosFull
+			urlIosPrev
+		}
+		names
+		wikiUrl
+	}
+}

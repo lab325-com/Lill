@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenCaresDetail" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="PeT-Ak-F8J" id="ql8-L7-xyw"/>
+                <outlet property="caresCountLabel" destination="xxP-u5-S9R" id="9P4-s6-iSN"/>
+                <outlet property="caresInfoLabel" destination="1Dr-mI-cFV" id="Px8-An-HRB"/>
+                <outlet property="caresStackView" destination="hWh-Vd-8g7" id="mKw-gq-kDx"/>
+                <outlet property="doneCaresButton" destination="XHy-rQ-WsY" id="wIb-5v-XUN"/>
+                <outlet property="plantImageView" destination="Jyz-sa-evv" id="guQ-xy-bQJ"/>
+                <outlet property="plantNameLabel" destination="kHj-ZR-rbX" id="Gcc-aa-Mij"/>
+                <outlet property="popupView" destination="1Oa-hE-LcE" id="9n5-09-lg0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="careViews" destination="Yde-Ss-Ckv" collectionClass="NSMutableArray" id="UYo-uX-n6Y"/>
+                <outletCollection property="careViews" destination="TVB-0C-I5r" collectionClass="NSMutableArray" id="B3c-bG-wLe"/>
+                <outletCollection property="careViews" destination="bKz-DE-WJU" collectionClass="NSMutableArray" id="SkY-aL-TEM"/>
+                <outletCollection property="careViews" destination="0RA-EF-xr8" collectionClass="NSMutableArray" id="eA9-06-VUP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-hE-LcE">
+                    <rect key="frame" x="12" y="112.5" width="390" height="681"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My First Violet Orchid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHj-ZR-rbX">
+                            <rect key="frame" x="12" y="0.0" width="366" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="42A-0D-OHj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jyz-sa-evv">
+                            <rect key="frame" x="117" y="72" width="156" height="138"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="156" id="Ds0-RC-WFm"/>
+                                <constraint firstAttribute="height" constant="138" id="lrz-tY-rFH"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Cares" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxP-u5-S9R">
+                            <rect key="frame" x="162" y="230" width="66.5" height="23"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure want to mark as done?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dr-mI-cFV">
+                            <rect key="frame" x="12" y="256" width="366" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="43" id="RDf-vC-QrL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                            <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeT-Ak-F8J">
+                            <rect key="frame" x="20" y="620" width="350" height="44"/>
+                            <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="cTD-7g-Anb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Cancel"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="lhd-Nu-tvN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHy-rQ-WsY">
+                            <rect key="frame" x="20" y="570" width="350" height="44"/>
+                            <color key="backgroundColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="WIl-UG-ph6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Done all Cares"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="doneCaresAction:" destination="-1" eventType="touchUpInside" id="B0v-JE-gMK"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hWh-Vd-8g7">
+                            <rect key="frame" x="12" y="306" width="366" height="240"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yde-Ss-Ckv" customClass="GardenCareDetailView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="366" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="g8c-08-BNe"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="27"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.6705882352941176" green="0.7803921568627451" blue="0.76078431372549016" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVB-0C-I5r" customClass="GardenCareDetailView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="60" width="366" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="27"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.6705882353" green="0.78039215689999997" blue="0.76078431369999999" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKz-DE-WJU" customClass="GardenCareDetailView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="120" width="366" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="27"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.6705882353" green="0.78039215689999997" blue="0.76078431369999999" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RA-EF-xr8" customClass="GardenCareDetailView" customModule="Lill" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="180" width="366" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="27"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.6705882353" green="0.78039215689999997" blue="0.76078431369999999" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="0RA-EF-xr8" firstAttribute="height" secondItem="Yde-Ss-Ckv" secondAttribute="height" id="6f4-b6-XrE"/>
+                                <constraint firstItem="bKz-DE-WJU" firstAttribute="height" secondItem="Yde-Ss-Ckv" secondAttribute="height" id="DDe-fu-w3W"/>
+                                <constraint firstItem="TVB-0C-I5r" firstAttribute="height" secondItem="Yde-Ss-Ckv" secondAttribute="height" id="iE7-5U-MkJ"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="1Dr-mI-cFV" firstAttribute="centerX" secondItem="1Oa-hE-LcE" secondAttribute="centerX" id="77j-NQ-fk4"/>
+                        <constraint firstItem="hWh-Vd-8g7" firstAttribute="top" secondItem="1Dr-mI-cFV" secondAttribute="bottom" constant="7" id="8LZ-lY-Mj7"/>
+                        <constraint firstItem="kHj-ZR-rbX" firstAttribute="top" secondItem="1Oa-hE-LcE" secondAttribute="top" id="CPb-z4-5mC"/>
+                        <constraint firstAttribute="trailing" secondItem="kHj-ZR-rbX" secondAttribute="trailing" constant="12" id="D5z-gp-Gia"/>
+                        <constraint firstAttribute="trailing" secondItem="PeT-Ak-F8J" secondAttribute="trailing" constant="20" id="DKG-as-HQ6"/>
+                        <constraint firstItem="kHj-ZR-rbX" firstAttribute="leading" secondItem="1Oa-hE-LcE" secondAttribute="leading" constant="12" id="M2b-Gv-cqO"/>
+                        <constraint firstAttribute="trailing" secondItem="hWh-Vd-8g7" secondAttribute="trailing" constant="12" id="N8c-ov-p2h"/>
+                        <constraint firstItem="PeT-Ak-F8J" firstAttribute="leading" secondItem="1Oa-hE-LcE" secondAttribute="leading" constant="20" id="NB4-7a-0iF"/>
+                        <constraint firstItem="XHy-rQ-WsY" firstAttribute="leading" secondItem="1Oa-hE-LcE" secondAttribute="leading" constant="20" id="P2T-SM-0DM"/>
+                        <constraint firstItem="1Dr-mI-cFV" firstAttribute="top" secondItem="xxP-u5-S9R" secondAttribute="bottom" constant="3" id="PcR-pf-gby"/>
+                        <constraint firstItem="xxP-u5-S9R" firstAttribute="centerX" secondItem="1Oa-hE-LcE" secondAttribute="centerX" id="QFZ-kD-AWw"/>
+                        <constraint firstItem="xxP-u5-S9R" firstAttribute="top" secondItem="Jyz-sa-evv" secondAttribute="bottom" constant="20" id="Up4-Kr-XUb"/>
+                        <constraint firstItem="XHy-rQ-WsY" firstAttribute="top" secondItem="hWh-Vd-8g7" secondAttribute="bottom" constant="24" id="YvB-Vd-oDo"/>
+                        <constraint firstAttribute="trailing" secondItem="1Dr-mI-cFV" secondAttribute="trailing" constant="12" id="aRw-Ct-H0o"/>
+                        <constraint firstItem="Jyz-sa-evv" firstAttribute="top" secondItem="kHj-ZR-rbX" secondAttribute="bottom" id="ejM-2a-7Hc"/>
+                        <constraint firstItem="1Dr-mI-cFV" firstAttribute="leading" secondItem="1Oa-hE-LcE" secondAttribute="leading" constant="12" id="krl-Gz-qxW"/>
+                        <constraint firstAttribute="bottom" secondItem="PeT-Ak-F8J" secondAttribute="bottom" constant="17" id="l5i-ZO-y6P"/>
+                        <constraint firstAttribute="trailing" secondItem="XHy-rQ-WsY" secondAttribute="trailing" constant="20" id="uRN-Gd-Drs"/>
+                        <constraint firstItem="PeT-Ak-F8J" firstAttribute="top" secondItem="XHy-rQ-WsY" secondAttribute="bottom" constant="6" id="urY-bI-Jae"/>
+                        <constraint firstItem="Jyz-sa-evv" firstAttribute="centerX" secondItem="1Oa-hE-LcE" secondAttribute="centerX" id="xBU-eD-l6f"/>
+                        <constraint firstItem="hWh-Vd-8g7" firstAttribute="leading" secondItem="1Oa-hE-LcE" secondAttribute="leading" constant="12" id="zvx-vj-WcM"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1Oa-hE-LcE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="4EG-ju-jN7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Oa-hE-LcE" secondAttribute="trailing" constant="12" id="7XM-r0-ZF8"/>
+                <constraint firstItem="1Oa-hE-LcE" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="fiJ-cC-dFB"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+query CareTypes {
+	careTypes {
+	  id,
+	  name
+	}
+}

@@ -1,0 +1,5 @@
+mutation SetGardenPlantNotifications($gardenPlantId: String!,
+									 $sendNotifications: Boolean!) {
+	setGardenPlantNotifications(gardenPlantId: $gardenPlantId,
+								sendNotifications: $sendNotifications)
+}

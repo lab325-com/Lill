@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GardenButtonCell" customModule="Lill" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="550" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="550" height="135"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mR-wZ-PSa">
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="135"/>
+                        <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Done all Watering"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="doneCaresAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zh5-zh-Lne"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8mR-wZ-PSa" secondAttribute="bottom" id="3IX-Mo-Oyx"/>
+                <constraint firstItem="8mR-wZ-PSa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cj0-z8-Gbp"/>
+                <constraint firstItem="8mR-wZ-PSa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ftm-s5-yXR"/>
+                <constraint firstAttribute="trailing" secondItem="8mR-wZ-PSa" secondAttribute="trailing" id="yOP-u1-87n"/>
+            </constraints>
+            <size key="customSize" width="550" height="135"/>
+            <connections>
+                <outlet property="doneCaresButton" destination="8mR-wZ-PSa" id="lvz-nK-MZA"/>
+            </connections>
+            <point key="canvasLocation" x="344.92753623188406" y="128.90625"/>
+        </collectionViewCell>
+    </objects>
+</document>

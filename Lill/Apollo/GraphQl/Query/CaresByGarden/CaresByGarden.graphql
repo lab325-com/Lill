@@ -1,0 +1,9 @@
+query CaresByGarden($gardenId: String!) {
+	caresByGarden(gardenId: $gardenId) {
+		careCount
+		CareType {
+			id
+			name
+		}
+	}
+}

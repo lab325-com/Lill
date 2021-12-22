@@ -1,0 +1,7 @@
+mutation UploadMedia($image: Upload!) {
+	uploadMedia(image: $image) {
+		id
+		urlIosFull
+		urlIosPrev
+	}
+}

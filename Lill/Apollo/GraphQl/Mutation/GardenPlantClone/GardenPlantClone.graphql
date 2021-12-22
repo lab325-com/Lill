@@ -1,0 +1,5 @@
+mutation GardenPlantClone($gardenPlantId: String!, $name: String!, $gardenId: String) {
+	gardenPlantClone(gardenPlantId: $gardenPlantId, name: $name, gardenId: $gardenId) {
+		id
+	}
+}

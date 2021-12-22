@@ -1,0 +1,18 @@
+query StartDiagnose($mediaId: String!) {
+	startDiagnose(mediaId: $mediaId) {
+		Plant {
+			latinName
+			names
+			plantImages {
+				id
+				urlIosFull
+				urlIosPrev
+			}
+		}
+		Disease {
+			id
+			name
+			description
+		}
+	}
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleColapsBottomView" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="doneButton" destination="07X-Ht-EZB" id="ebL-EK-WkV"/>
+                <outlet property="mainView" destination="KtX-Wc-jUL" id="LTe-dm-jwM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtX-Wc-jUL">
+                    <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07X-Ht-EZB">
+                            <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="999" constant="40" id="6Is-Zq-8fP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Done Somelonngnamecare">
+                                <color key="titleColor" red="1" green="0.59999999999999998" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionDoneAll:" destination="-1" eventType="touchUpInside" id="Cgm-Xr-Hjg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="07X-Ht-EZB" secondAttribute="bottom" id="4jl-4w-Mbv"/>
+                        <constraint firstItem="07X-Ht-EZB" firstAttribute="leading" secondItem="KtX-Wc-jUL" secondAttribute="leading" id="LFU-9A-7z7"/>
+                        <constraint firstItem="07X-Ht-EZB" firstAttribute="top" secondItem="KtX-Wc-jUL" secondAttribute="top" id="fk6-Vr-hHK"/>
+                        <constraint firstAttribute="trailing" secondItem="07X-Ht-EZB" secondAttribute="trailing" id="zgg-Q1-jmF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KtX-Wc-jUL" secondAttribute="trailing" id="4XY-lH-Uz2"/>
+                <constraint firstItem="KtX-Wc-jUL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7g4-Pa-NaC"/>
+                <constraint firstItem="KtX-Wc-jUL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ka5-Iv-ufg"/>
+                <constraint firstAttribute="bottom" secondItem="KtX-Wc-jUL" secondAttribute="bottom" id="Yax-tQ-Lx1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="102.17391304347827" y="102.45535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenDetailController">
+            <connections>
+                <outlet property="scheduleStatusImage" destination="VjR-in-5jR" id="O2U-ec-QAO"/>
+                <outlet property="scheduleStatusLabel" destination="NEL-5b-bmX" id="1Ek-2y-hB5"/>
+                <outlet property="scheduleStatusViewBottomLayout" destination="aM8-Lg-Wdz" id="lij-Zl-70i"/>
+                <outlet property="tableView" destination="zFK-7O-Wbd" id="nU3-dR-4eY"/>
+                <outlet property="topImageView" destination="bsv-hv-YoW" id="Zam-sH-Myi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Mgd-Pk-cnL">
+                    <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zFK-7O-Wbd">
+                    <rect key="frame" x="0.0" y="0.0" width="409" height="1221"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view key="tableHeaderView" clipsSubviews="YES" contentMode="scaleToFill" id="nez-Ct-6PW">
+                        <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-hv-YoW">
+                                <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.0039215686269999999" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bsv-hv-YoW" firstAttribute="leading" secondItem="nez-Ct-6PW" secondAttribute="leading" id="Ge6-Ys-Qzi"/>
+                            <constraint firstAttribute="bottom" secondItem="bsv-hv-YoW" secondAttribute="bottom" id="QbA-pS-fnH"/>
+                            <constraint firstAttribute="trailing" secondItem="bsv-hv-YoW" secondAttribute="trailing" id="V6V-9n-Caj"/>
+                            <constraint firstItem="bsv-hv-YoW" firstAttribute="top" secondItem="nez-Ct-6PW" secondAttribute="top" id="hLa-yj-XkG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="kkQ-bA-GHK"/>
+                        <outlet property="delegate" destination="-1" id="eeu-5h-a5T"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUO-i5-5fG" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="24" y="-60" width="361" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Added in Schedule" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEL-5b-bmX">
+                            <rect key="frame" x="15" y="19.5" width="237" height="20.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_added_in_schedule_ic" translatesAutoresizingMaskIntoConstraints="NO" id="VjR-in-5jR">
+                            <rect key="frame" x="267" y="8" width="86" height="44"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="VjR-in-5jR" firstAttribute="centerY" secondItem="VUO-i5-5fG" secondAttribute="centerY" id="4xJ-DZ-fO5"/>
+                        <constraint firstAttribute="trailing" secondItem="VjR-in-5jR" secondAttribute="trailing" constant="8" id="7kn-md-snM"/>
+                        <constraint firstItem="NEL-5b-bmX" firstAttribute="centerY" secondItem="VUO-i5-5fG" secondAttribute="centerY" id="BCK-gs-ZS9"/>
+                        <constraint firstAttribute="height" constant="60" id="SM7-ei-yzB"/>
+                        <constraint firstItem="NEL-5b-bmX" firstAttribute="leading" secondItem="VUO-i5-5fG" secondAttribute="leading" constant="15" id="d9D-Ei-4gh"/>
+                        <constraint firstItem="VjR-in-5jR" firstAttribute="leading" secondItem="NEL-5b-bmX" secondAttribute="trailing" constant="15" id="im9-Ou-Dgc"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zFK-7O-Wbd" secondAttribute="bottom" id="2MP-49-7On"/>
+                <constraint firstItem="zFK-7O-Wbd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8za-3n-l3a"/>
+                <constraint firstItem="Mgd-Pk-cnL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Z9-ST-dUG"/>
+                <constraint firstAttribute="trailing" secondItem="zFK-7O-Wbd" secondAttribute="trailing" id="Qy9-4C-Ixt"/>
+                <constraint firstItem="Mgd-Pk-cnL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBY-kw-O5N"/>
+                <constraint firstItem="zFK-7O-Wbd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uwp-pd-4Lx"/>
+                <constraint firstItem="VUO-i5-5fG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="WSh-Ll-5PB"/>
+                <constraint firstItem="Mgd-Pk-cnL" firstAttribute="top" secondItem="VUO-i5-5fG" secondAttribute="bottom" id="aM8-Lg-Wdz"/>
+                <constraint firstAttribute="bottom" secondItem="Mgd-Pk-cnL" secondAttribute="bottom" id="or0-yr-DZg"/>
+                <constraint firstAttribute="trailing" secondItem="Mgd-Pk-cnL" secondAttribute="trailing" id="tiy-2I-sDT"/>
+                <constraint firstAttribute="trailing" secondItem="VUO-i5-5fG" secondAttribute="trailing" constant="24" id="wHF-Be-okz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="134.05797101449275" y="-165.06696428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="garden_added_in_schedule_ic" width="86" height="44"/>
+        <image name="placeholder_big_ic" width="390" height="241"/>
+        <image name="plants_detail_back_ic" width="390" height="1041"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

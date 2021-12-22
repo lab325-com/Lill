@@ -1,0 +1,69 @@
+query Me {
+	me {
+		id
+		fullName
+		email
+		timezone
+		defaultGardenId
+		Language {
+			id
+			name
+			nativeName
+			code
+			index
+		}
+		NotificationSettings {
+			cares
+			waitingCares
+			missedCares
+			frequency {
+				hours
+				minutes
+				seconds
+			}
+			secondChance
+			secondChanceSendAfter {
+				hours
+				minutes
+				seconds
+			}
+			todayList
+			todayListSendAt
+		}
+		Gardens {
+			id
+			name
+			userDescription
+			userMainImage {
+				id
+				urlIosFull
+				urlIosPrev
+				urlAndroidPhone
+				urlAndroidTablet
+				notes
+			}
+			userGalleryImages {
+				id
+				urlIosFull
+				urlIosPrev
+				urlAndroidPhone
+				urlAndroidTablet
+				notes
+			}
+			isDefault
+		}
+		access {
+			diagnosisAvaliable
+			diagnosisTotal
+			diagnosisUsed
+			identifyTotal
+			identifyUsed
+			isPremium
+			subscriptionName
+			subscription {
+				name
+				duration
+			}
+		}
+	}
+}

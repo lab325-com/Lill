@@ -1,0 +1,3 @@
+mutation GardenPlantCaresToDefault($gardenPlantId: String!) {
+	gardenPlantCaresToDefault(gardenPlantId: $gardenPlantId)
+}

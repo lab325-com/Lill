@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LanguageController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="animationBackGroundSwipeRightView" destination="Ids-aC-gzJ" id="WMW-Ge-AjH"/>
+                <outlet property="tableView" destination="SQI-XC-9bW" id="ePI-FL-EI9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_main" translatesAutoresizingMaskIntoConstraints="NO" id="Vy7-bz-4xe">
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                </imageView>
+                <view clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ids-aC-gzJ" customClass="AnimationBackGroundSwipeRightView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="414" height="837"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SQI-XC-9bW">
+                    <rect key="frame" x="0.0" y="88" width="414" height="754"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LR8-j7-ZyZ"/>
+                        <outlet property="delegate" destination="-1" id="3nN-iP-fxY"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.99607843137254903" green="0.97254901960784312" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Vy7-bz-4xe" secondAttribute="bottom" id="1IR-Fb-ylb"/>
+                <constraint firstItem="Vy7-bz-4xe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="72F-SE-PyF"/>
+                <constraint firstItem="SQI-XC-9bW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BOH-Cb-tTt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SQI-XC-9bW" secondAttribute="bottom" constant="20" id="DiT-Xz-dxh"/>
+                <constraint firstItem="Vy7-bz-4xe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EAx-fI-aea"/>
+                <constraint firstAttribute="bottom" secondItem="Ids-aC-gzJ" secondAttribute="bottom" id="H3V-T3-Yrq"/>
+                <constraint firstItem="Ids-aC-gzJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HWk-ne-eOt"/>
+                <constraint firstItem="SQI-XC-9bW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bzm-4G-onG"/>
+                <constraint firstItem="SQI-XC-9bW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e0X-Xw-xhP"/>
+                <constraint firstItem="Ids-aC-gzJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ef3-tR-hPv"/>
+                <constraint firstItem="Vy7-bz-4xe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mWl-02-Y1I"/>
+                <constraint firstItem="Ids-aC-gzJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wup-eR-YUh"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Ids-aC-gzJ">
+            <size key="intrinsicContentSize" width="390" height="844"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="background_main" width="390" height="800"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

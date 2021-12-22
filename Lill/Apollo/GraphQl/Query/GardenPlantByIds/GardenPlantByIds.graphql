@@ -1,0 +1,10 @@
+query GardenPlantByIds($ids: [String!]) {
+	gardenPlantByIds(ids: $ids) {
+		id
+		name
+		userMainImage{
+			id
+			urlIosPrev
+		}
+	}
+}

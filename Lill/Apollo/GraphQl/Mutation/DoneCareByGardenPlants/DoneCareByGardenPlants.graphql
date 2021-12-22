@@ -1,0 +1,5 @@
+mutation DoneCareByGardenPlants($gardenPlantIds: [String!]!,
+						   $careTypeId: Int!) {
+	doneCareByGardenPlants(gardenPlantIds: $gardenPlantIds,
+					  careTypeId: $careTypeId)
+}

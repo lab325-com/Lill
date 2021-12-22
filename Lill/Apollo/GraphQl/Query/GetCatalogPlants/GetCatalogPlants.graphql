@@ -1,0 +1,28 @@
+query GetCatalogPlants($pagination: InputPagination!,
+					   $search: String!,
+					   $onlyFavorites: Boolean) {
+	getCatalogPlants(pagination: $pagination,
+					 search: $search,
+					 onlyFavorites: $onlyFavorites) {
+		pagination {
+			limit
+			nextPageExist
+			offset
+			prevPageExist
+			totalPages
+		}
+		totalFavorites
+		plants {
+			id
+			description {
+				is_favorite
+				name
+				image {
+					id
+					urlIosFull
+					urlIosPrev
+				}
+			}
+		}
+	}
+}

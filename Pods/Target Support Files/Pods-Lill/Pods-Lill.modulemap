@@ -1,0 +1,6 @@
+framework module Pods_Lill {
+  umbrella header "Pods-Lill-umbrella.h"
+
+  export *
+  module * { export * }
+}

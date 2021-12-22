@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopChangeNameController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomViewConstraint" destination="8iD-gr-SUb" id="vbJ-Tl-kGt"/>
+                <outlet property="closeButton" destination="0ol-TW-0OD" id="qh7-uA-HRY"/>
+                <outlet property="createPlanButton" destination="iX0-uX-TR4" id="Frr-U6-5tz"/>
+                <outlet property="mainView" destination="yvP-se-HMw" id="9ML-wo-95f"/>
+                <outlet property="namePlantstextField" destination="nyg-rq-AfK" id="loi-Dg-1ZP"/>
+                <outlet property="subTitleLabel" destination="q82-94-nMD" id="RKd-Qx-7Yt"/>
+                <outlet property="titleNameLabel" destination="Hkr-Za-rEt" id="nzi-Na-see"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-se-HMw">
+                    <rect key="frame" x="0.0" y="633.5" width="414" height="262.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-TW-0OD">
+                            <rect key="frame" x="340" y="24" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Zdo-UP-vdB"/>
+                                <constraint firstAttribute="width" constant="50" id="xoc-vw-6NR"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="sub_close_ic"/>
+                            <connections>
+                                <action selector="actionClose:" destination="-1" eventType="touchUpInside" id="J7t-j7-WNa"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkr-Za-rEt">
+                            <rect key="frame" x="130" y="34.5" width="154.5" height="29"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U34-X4-AGj">
+                            <rect key="frame" x="60" y="88.5" width="294" height="42"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyg-rq-AfK">
+                                    <rect key="frame" x="10" y="2" width="274" height="38"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="19"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.51336973080000003" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="nyg-rq-AfK" secondAttribute="bottom" constant="2" id="Qoq-lD-h5o"/>
+                                <constraint firstAttribute="trailing" secondItem="nyg-rq-AfK" secondAttribute="trailing" constant="10" id="fV8-7N-FFL"/>
+                                <constraint firstItem="nyg-rq-AfK" firstAttribute="top" secondItem="U34-X4-AGj" secondAttribute="top" constant="2" id="nQ6-4g-Phi"/>
+                                <constraint firstAttribute="height" constant="42" id="s7s-zg-jMu"/>
+                                <constraint firstItem="nyg-rq-AfK" firstAttribute="leading" secondItem="U34-X4-AGj" secondAttribute="leading" constant="10" id="vOx-Yt-xcj"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your plant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q82-94-nMD">
+                            <rect key="frame" x="24" y="154.5" width="366" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX0-uX-TR4">
+                            <rect key="frame" x="24" y="194.5" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="gkd-Hb-pQs"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Change">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionAddPlant:" destination="-1" eventType="touchUpInside" id="dwu-BB-abV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="iX0-uX-TR4" firstAttribute="top" secondItem="q82-94-nMD" secondAttribute="bottom" constant="24" id="3qK-hQ-8Oz"/>
+                        <constraint firstItem="iX0-uX-TR4" firstAttribute="leading" secondItem="yvP-se-HMw" secondAttribute="leading" constant="24" id="7Hz-rG-5Mh"/>
+                        <constraint firstItem="q82-94-nMD" firstAttribute="top" secondItem="U34-X4-AGj" secondAttribute="bottom" constant="24" id="7Xg-0p-DjQ"/>
+                        <constraint firstItem="q82-94-nMD" firstAttribute="leading" secondItem="yvP-se-HMw" secondAttribute="leading" constant="24" id="DYc-fV-cmj"/>
+                        <constraint firstItem="Hkr-Za-rEt" firstAttribute="centerX" secondItem="yvP-se-HMw" secondAttribute="centerX" priority="999" id="EbO-Ec-v1m"/>
+                        <constraint firstItem="Hkr-Za-rEt" firstAttribute="centerY" secondItem="0ol-TW-0OD" secondAttribute="centerY" id="GSH-lC-A8t"/>
+                        <constraint firstItem="U34-X4-AGj" firstAttribute="leading" secondItem="yvP-se-HMw" secondAttribute="leading" constant="60" id="HUs-6A-Bsh"/>
+                        <constraint firstAttribute="trailing" secondItem="iX0-uX-TR4" secondAttribute="trailing" constant="24" id="LJy-kp-7NE"/>
+                        <constraint firstAttribute="bottom" secondItem="iX0-uX-TR4" secondAttribute="bottom" constant="24" id="N4x-4B-5YB"/>
+                        <constraint firstAttribute="trailing" secondItem="q82-94-nMD" secondAttribute="trailing" constant="24" id="SuY-8s-EfR"/>
+                        <constraint firstAttribute="trailing" secondItem="0ol-TW-0OD" secondAttribute="trailing" constant="24" id="Xuo-jS-LdS"/>
+                        <constraint firstItem="Hkr-Za-rEt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yvP-se-HMw" secondAttribute="leading" constant="20" id="dX6-nx-clG"/>
+                        <constraint firstItem="0ol-TW-0OD" firstAttribute="top" secondItem="yvP-se-HMw" secondAttribute="top" constant="24" id="dfL-NK-VVD"/>
+                        <constraint firstItem="U34-X4-AGj" firstAttribute="top" secondItem="Hkr-Za-rEt" secondAttribute="bottom" constant="25" id="fDG-I4-ixH"/>
+                        <constraint firstAttribute="trailing" secondItem="U34-X4-AGj" secondAttribute="trailing" constant="60" id="t8d-mb-xoo"/>
+                        <constraint firstItem="0ol-TW-0OD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hkr-Za-rEt" secondAttribute="trailing" constant="5" id="tCR-VA-aSq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yvP-se-HMw" secondAttribute="bottom" id="8iD-gr-SUb"/>
+                <constraint firstItem="yvP-se-HMw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="P9M-Vb-2J8"/>
+                <constraint firstItem="yvP-se-HMw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e0Z-9q-cdB"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sub_close_ic" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

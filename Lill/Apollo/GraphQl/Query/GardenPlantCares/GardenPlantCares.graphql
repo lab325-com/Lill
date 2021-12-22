@@ -1,0 +1,18 @@
+query GardenPlantCares($gardenPlantId: String!) {
+	gardenPlantCares(gardenPlantId: $gardenPlantId) {
+		cares {
+			id
+			name
+			count
+			period
+			sendNotificationAt
+			isActive
+			nextDate
+			CareType {
+				id
+				name
+			}
+		}
+		caresToDefaultButton
+	}
+}

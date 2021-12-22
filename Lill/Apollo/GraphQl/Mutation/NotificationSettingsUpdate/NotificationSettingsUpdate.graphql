@@ -1,0 +1,21 @@
+mutation NotificationSettingsUpdate($record: NotificationSettingsUpdateInput!) {
+	notificationSettingsUpdate(record: $record) {
+		cares
+		waitingCares
+		missedCares
+		frequency {
+			hours
+			minutes
+			seconds
+		}
+		secondChance
+		secondChanceSendAfter {
+			hours
+			minutes
+			seconds
+		}
+		todayList
+		todayListSendAt
+	}
+}
+

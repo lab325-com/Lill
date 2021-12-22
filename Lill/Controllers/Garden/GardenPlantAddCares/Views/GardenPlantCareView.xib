@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenPlantCareView" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="careImageView" destination="Lk7-MR-q2d" id="YPD-xX-kX8"/>
+                <outlet property="careTitleLabel" destination="1L9-YU-NhU" id="md2-5x-Kdv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="112" height="104"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6b7-Q3-VYA" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="112" height="104"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-MR-q2d">
+                            <rect key="frame" x="40" y="27" width="32" height="32"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1L9-YU-NhU">
+                            <rect key="frame" x="0.0" y="76" width="112" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <color key="textColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-m4-OAI">
+                            <rect key="frame" x="0.0" y="0.0" width="112" height="104"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="selectCareAction:" destination="-1" eventType="touchUpInside" id="CEO-qP-N7c"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="wFy-m4-OAI" secondAttribute="trailing" id="Q8A-ZD-dzC"/>
+                        <constraint firstItem="wFy-m4-OAI" firstAttribute="leading" secondItem="6b7-Q3-VYA" secondAttribute="leading" id="RVm-Cc-0WE"/>
+                        <constraint firstItem="Lk7-MR-q2d" firstAttribute="top" secondItem="6b7-Q3-VYA" secondAttribute="top" constant="27" id="Sit-cC-fbG"/>
+                        <constraint firstAttribute="bottom" secondItem="1L9-YU-NhU" secondAttribute="bottom" constant="12" id="gCp-de-9cI"/>
+                        <constraint firstItem="1L9-YU-NhU" firstAttribute="leading" secondItem="6b7-Q3-VYA" secondAttribute="leading" id="ku2-uT-owL"/>
+                        <constraint firstAttribute="bottom" secondItem="wFy-m4-OAI" secondAttribute="bottom" id="nYW-XV-4sL"/>
+                        <constraint firstItem="Lk7-MR-q2d" firstAttribute="centerX" secondItem="6b7-Q3-VYA" secondAttribute="centerX" id="sVN-K8-dy5"/>
+                        <constraint firstItem="wFy-m4-OAI" firstAttribute="top" secondItem="6b7-Q3-VYA" secondAttribute="top" id="sqO-Io-O9G"/>
+                        <constraint firstAttribute="trailing" secondItem="1L9-YU-NhU" secondAttribute="trailing" id="tlg-Ek-krq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6b7-Q3-VYA" secondAttribute="trailing" id="33D-nT-qv3"/>
+                <constraint firstItem="6b7-Q3-VYA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BQl-yC-lNw"/>
+                <constraint firstAttribute="bottom" secondItem="6b7-Q3-VYA" secondAttribute="bottom" id="heh-tT-t4P"/>
+                <constraint firstItem="6b7-Q3-VYA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nYd-Jg-1zm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="23.188405797101453" y="300.66964285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="garden_care_watering_ic" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

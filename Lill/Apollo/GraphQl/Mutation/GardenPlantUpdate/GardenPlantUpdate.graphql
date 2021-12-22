@@ -1,0 +1,10 @@
+mutation GardenPlantUpdate($record: GardenPlantUpdateInput!) {
+	gardenPlantUpdate(record: $record) {
+		id
+		userMainImage {
+			id
+			urlIosFull
+			urlIosPrev
+		}
+	}
+}

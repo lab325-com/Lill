@@ -1,0 +1,64 @@
+query GardenPlantById($id: String!,
+					  $withoutFutureCares: Boolean) {
+	gardenPlantById(id: $id,
+					withoutFutureCares: $withoutFutureCares) {
+		id
+		name
+		userDescription
+		sendNotifications
+		userMainImage {
+			id
+			urlIosFull
+			urlIosPrev
+		}
+		Garden {
+			id
+			name
+		}
+		GardenPlantCares{
+			id
+			name
+			count
+			period
+			nextDate
+			status
+			CareType {
+				id
+				name
+			}
+		}
+		Plant {
+			PlantCares {
+				count
+				id
+				period
+				CareType {
+					id
+					name
+				}
+			}
+			Climate {
+				deciduous
+				habit
+				hardiness
+				height
+				moisture
+				ph
+				shade
+				soil
+			}
+			descriptionFull
+			descriptionWikiHtml
+			id
+			isFavourite
+			latinName
+			plantImages {
+				id
+				urlIosFull
+				urlIosPrev
+			}
+			names
+			wikiUrl
+		}
+	}
+}

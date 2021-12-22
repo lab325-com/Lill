@@ -1,0 +1,24 @@
+PODS:
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - SpreadsheetView (0.9.1)
+
+DEPENDENCIES:
+  - R.swift
+  - SpreadsheetView
+
+SPEC REPOS:
+  trunk:
+    - R.swift
+    - R.swift.Library
+    - SpreadsheetView
+
+SPEC CHECKSUMS:
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
+
+PODFILE CHECKSUM: a569d1dd6df6605f5be4389d4ab865c0df2b136f
+
+COCOAPODS: 1.11.2
