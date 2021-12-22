@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 45 files.
+  /// This `R.file` struct is generated, and contains static references to 48 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -175,6 +175,8 @@ struct R: Rswift.Validatable {
     static let doneCareByGardenPlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneCareByGardenPlant", pathExtension: "graphql")
     /// Resource file `DoneCareByGardenPlants.graphql`.
     static let doneCareByGardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "DoneCareByGardenPlants", pathExtension: "graphql")
+    /// Resource file `GalleryImages.graphql`.
+    static let galleryImagesGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GalleryImages", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantByIds.graphql`.
@@ -197,6 +199,10 @@ struct R: Rswift.Validatable {
     static let gardenPlantCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantCreate", pathExtension: "graphql")
     /// Resource file `GardenPlantDelete.graphql`.
     static let gardenPlantDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantDelete", pathExtension: "graphql")
+    /// Resource file `GardenPlantHistory.graphql`.
+    static let gardenPlantHistoryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantHistory", pathExtension: "graphql")
+    /// Resource file `GardenPlantStatistics.graphql`.
+    static let gardenPlantStatisticsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantStatistics", pathExtension: "graphql")
     /// Resource file `GardenPlantUpdate.graphql`.
     static let gardenPlantUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantUpdate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
@@ -306,6 +312,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "GalleryImages", withExtension: "graphql")`
+    static func galleryImagesGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.galleryImagesGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "GardenPlanById", withExtension: "graphql")`
     static func gardenPlanByIdGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlanByIdGraphql
@@ -369,6 +381,18 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlantDelete", withExtension: "graphql")`
     static func gardenPlantDeleteGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantDeleteGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantHistory", withExtension: "graphql")`
+    static func gardenPlantHistoryGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantHistoryGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenPlantStatistics", withExtension: "graphql")`
+    static func gardenPlantStatisticsGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenPlantStatisticsGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -552,7 +576,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 114 images.
+  /// This `R.image` struct is generated, and contains static references to 115 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -608,6 +632,8 @@ struct R: Rswift.Validatable {
     static let garden_delete_unselect_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_delete_unselect_ic")
     /// Image `garden_galler_add_ic`.
     static let garden_galler_add_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_galler_add_ic")
+    /// Image `garden_history_missed_ic`.
+    static let garden_history_missed_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_history_missed_ic")
     /// Image `garden_phoho_ic`.
     static let garden_phoho_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_phoho_ic")
     /// Image `garden_removed_from_schedule_ic`.
@@ -969,6 +995,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_galler_add_ic", bundle: ..., traitCollection: ...)`
     static func garden_galler_add_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_galler_add_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_history_missed_ic", bundle: ..., traitCollection: ...)`
+    static func garden_history_missed_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_history_missed_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -7763,7 +7796,6 @@ struct _R: Rswift.Validatable {
       try _DiagnosisController.validate()
       try _DiseaseArchiveViewController.validate()
       try _GaleryHistoryAddCell.validate()
-      try _GalleryHistoryCell.validate()
       try _GardenCareDetailView.validate()
       try _GardenChooseAddPlantController.validate()
       try _GardenDetailController.validate()
@@ -8135,7 +8167,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GalleryHistoryCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+    struct _GalleryHistoryCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = GalleryHistoryCell
 
       let bundle = R.hostingBundle
@@ -8144,12 +8176,6 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GalleryHistoryCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryHistoryCell
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "temp_detail_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'temp_detail_ic' is used in nib 'GalleryHistoryCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
       }
 
       fileprivate init() {}
@@ -8359,8 +8385,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "garden_care_missed_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_missed_ic' is used in nib 'GardenDetailListCaresCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "garden_care_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_care_watering_ic' is used in nib 'GardenDetailListCaresCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_history_missed_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_history_missed_ic' is used in nib 'GardenDetailListCaresCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

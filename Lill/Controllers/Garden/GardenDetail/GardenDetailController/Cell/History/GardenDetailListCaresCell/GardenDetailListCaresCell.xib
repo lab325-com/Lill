@@ -65,48 +65,54 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-Fz-BQA">
-                        <rect key="frame" x="117" y="20.5" width="97.5" height="32"/>
+                        <rect key="frame" x="117" y="20.5" width="85.5" height="32"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="D1q-Af-VhM">
-                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="D1q-Af-VhM">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="KoN-aC-23U"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cri-B5-wjY">
-                                <rect key="frame" x="47" y="0.0" width="50.5" height="32"/>
+                                <rect key="frame" x="35" y="0.0" width="50.5" height="32"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_care_missed_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-gA-kgU">
-                        <rect key="frame" x="320" y="31.5" width="10" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="10" id="ZPb-QO-JGh"/>
-                            <constraint firstAttribute="height" constant="10" id="khe-Cq-VwF"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpw-ll-78J">
-                        <rect key="frame" x="276.5" y="30" width="34.5" height="13.5"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="11"/>
-                        <color key="textColor" red="0.85098039215686272" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="zrs-ZY-5Cy">
+                        <rect key="frame" x="276.5" y="31.5" width="53.5" height="10"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpw-ll-78J">
+                                <rect key="frame" x="0.0" y="0.0" width="34.5" height="10"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="11"/>
+                                <color key="textColor" red="0.85098039215686272" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_history_missed_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-gA-kgU">
+                                <rect key="frame" x="43.5" y="0.0" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="ZPb-QO-JGh"/>
+                                    <constraint firstAttribute="height" constant="10" id="khe-Cq-VwF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Xc2-gA-kgU" firstAttribute="centerY" secondItem="cri-B5-wjY" secondAttribute="centerY" id="110-Yp-haQ"/>
                     <constraint firstItem="zBD-ca-PvL" firstAttribute="top" secondItem="qhU-9W-CHy" secondAttribute="bottom" id="3Cz-qJ-bSK"/>
-                    <constraint firstItem="Jpw-ll-78J" firstAttribute="centerY" secondItem="Xc2-gA-kgU" secondAttribute="centerY" id="D5r-QH-l6r"/>
-                    <constraint firstItem="Xc2-gA-kgU" firstAttribute="leading" secondItem="Jpw-ll-78J" secondAttribute="trailing" constant="9" id="KE3-Pm-We0"/>
                     <constraint firstAttribute="bottom" secondItem="Jqt-TJ-Ffn" secondAttribute="bottom" id="LGM-v7-Lud"/>
                     <constraint firstItem="QJ4-G3-fdt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Ofx-nQ-lU1"/>
                     <constraint firstItem="Jqt-TJ-Ffn" firstAttribute="top" secondItem="zBD-ca-PvL" secondAttribute="bottom" id="Xvf-9t-0wS"/>
+                    <constraint firstAttribute="trailing" secondItem="zrs-ZY-5Cy" secondAttribute="trailing" constant="24" id="auK-bx-ZaB"/>
                     <constraint firstItem="qhU-9W-CHy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cSI-yr-YYr"/>
                     <constraint firstItem="HhF-Fz-BQA" firstAttribute="centerY" secondItem="zBD-ca-PvL" secondAttribute="centerY" id="ehg-mM-6X9"/>
                     <constraint firstItem="QJ4-G3-fdt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="jOj-PE-Wa9"/>
                     <constraint firstItem="zBD-ca-PvL" firstAttribute="leading" secondItem="QJ4-G3-fdt" secondAttribute="trailing" constant="12" id="lDg-05-Zf0"/>
                     <constraint firstItem="qhU-9W-CHy" firstAttribute="centerX" secondItem="zBD-ca-PvL" secondAttribute="centerX" id="mHD-3v-v7Q"/>
-                    <constraint firstAttribute="trailing" secondItem="Xc2-gA-kgU" secondAttribute="trailing" constant="24" id="mPO-bD-bbA"/>
+                    <constraint firstItem="zrs-ZY-5Cy" firstAttribute="centerY" secondItem="cri-B5-wjY" secondAttribute="centerY" id="omZ-O3-eDz"/>
                     <constraint firstItem="zBD-ca-PvL" firstAttribute="centerY" secondItem="QJ4-G3-fdt" secondAttribute="centerY" id="pXC-CJ-eaD"/>
                     <constraint firstItem="HhF-Fz-BQA" firstAttribute="leading" secondItem="zBD-ca-PvL" secondAttribute="trailing" constant="24" id="uTg-2N-l4F"/>
                     <constraint firstAttribute="bottom" secondItem="QJ4-G3-fdt" secondAttribute="bottom" constant="15" id="xwB-88-nTE"/>
@@ -118,15 +124,20 @@
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="bottomSeparatorView" destination="Jqt-TJ-Ffn" id="nkf-Yh-K56"/>
+                <outlet property="careImageView" destination="D1q-Af-VhM" id="Yqg-QS-SN2"/>
+                <outlet property="careTitleLabel" destination="cri-B5-wjY" id="mIu-e0-6QC"/>
                 <outlet property="circleView" destination="zBD-ca-PvL" id="xGH-aP-EnS"/>
+                <outlet property="dateLabel" destination="QJ4-G3-fdt" id="kRF-qV-Usf"/>
+                <outlet property="statucImageView" destination="Xc2-gA-kgU" id="sxf-Ta-zKr"/>
+                <outlet property="statusLabel" destination="Jpw-ll-78J" id="nsF-iU-oqc"/>
                 <outlet property="topSeparatorView" destination="qhU-9W-CHy" id="Cfk-8J-McJ"/>
             </connections>
             <point key="canvasLocation" x="162.31884057971016" y="128.23660714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="garden_care_missed_ic" width="14" height="14"/>
         <image name="garden_care_watering_ic" width="32" height="32"/>
+        <image name="garden_history_missed_ic" width="14" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,0 +1,28 @@
+query GardenPlantHistory($gardenPlantId: String!,
+                          $pagination: InputPagination) {
+    gardenPlantHistory(gardenPlantId: $gardenPlantId,
+                       pagination: $pagination) {
+        Pagination {
+            limit
+            nextPageExist
+            offset
+            prevPageExist
+            totalPages
+        }
+        GardenPlantsHistoryList {
+            createdAt
+            type
+            GardenPlantCare {
+                id
+                name
+                status
+            }
+            Media {
+                id
+                urlIosFull
+                urlIosPrev
+                notes
+            }
+        }
+	}
+}

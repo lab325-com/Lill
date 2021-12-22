@@ -43,8 +43,11 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
             }
             return count
         } else {
-            count += 40
-            return count
+            count += 3
+            if presenter.historyList.count > 0 {
+                count += 1
+            }
+            return count + presenter.historyList.count
         }
     }
     
@@ -170,24 +173,26 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryTitleIdentifier) as? GadenDetailHistoryTitleCell else { return UITableViewCell() }
-                
+                cell.setupCell(model: presenter.historyMediaModel)
                 return cell
             case 3:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryStatisticIdentifier) as? GardenDetailHistoryStatisticCell else { return UITableViewCell() }
-                
+                cell.setupCell(model: presenter.historyStatistics)
                 return cell
             case 4:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListHeaderCell) as? GardenDetailListHeaderCell else { return UITableViewCell() }
                 
                 return cell
             default:
-                if indexPath.row % 4 == 0 {
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListPhotoCell) as? GardenDetailHistoryPhotoCell else { return UITableViewCell() }
-                    cell.setupCell(isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 40)
+                
+                guard let model = presenter.historyList[safe: indexPath.row - 5] else { return UITableViewCell() }
+                if model.type == .gardenPlantHistoryTypeCare || model.type == .gardenPlantHistoryTypeCaresToDefault {
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListCareCell) as? GardenDetailListCaresCell else { return UITableViewCell() }
+                    cell.setupCell(model: model, isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 4 + presenter.historyList.count)
                     return cell
                 } else {
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListCareCell) as? GardenDetailListCaresCell else { return UITableViewCell() }
-                    cell.setupCell(isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 40)
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListPhotoCell) as? GardenDetailHistoryPhotoCell else { return UITableViewCell() }
+                    cell.setupCell(model: model, isHiddenTop: indexPath.row == 5, isHiddenBottom: indexPath.row == 4 + presenter.historyList.count)
                     return cell
                 }
             }
@@ -197,6 +202,10 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             tableView.bringSubviewToFront(cell)
+        }
+        
+        if selectedTag == 2 && indexPath.row == presenter.historyList.count - 1 && presenter.historyPagination?.nextPageExist == true {
+            presenter.historyList(gardenId: id)
         }
     }
     

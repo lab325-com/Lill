@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="131" height="117"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_detail_ic" translatesAutoresizingMaskIntoConstraints="NO" id="J8A-lg-1OO">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J8A-lg-1OO">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="117"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -35,10 +35,10 @@
                 <constraint firstAttribute="trailing" secondItem="J8A-lg-1OO" secondAttribute="trailing" id="rOH-xi-6C9"/>
             </constraints>
             <size key="customSize" width="131" height="117"/>
+            <connections>
+                <outlet property="plantImageView" destination="J8A-lg-1OO" id="VJU-pW-N8h"/>
+            </connections>
             <point key="canvasLocation" x="196.37681159420291" y="124.21875"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="temp_detail_ic" width="390" height="349"/>
-    </resources>
 </document>

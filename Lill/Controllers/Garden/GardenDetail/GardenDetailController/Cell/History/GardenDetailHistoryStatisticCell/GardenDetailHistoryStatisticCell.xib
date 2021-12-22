@@ -58,7 +58,7 @@
                                         <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="months" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-8v-VKx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-8v-VKx">
                                         <rect key="frame" x="7" y="53" width="109" height="11"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="9"/>
                                         <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,8 +224,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="ageLabel" destination="OX0-WV-DoG" id="nS7-1x-RkZ"/>
                 <outlet property="ageView" destination="lIi-yN-chW" id="U4t-Rc-DQi"/>
+                <outlet property="caresLabel" destination="EhT-PH-DAO" id="yhT-cH-Jay"/>
                 <outlet property="caresView" destination="wfn-wq-kRk" id="66y-pi-ohc"/>
+                <outlet property="waterLabel" destination="Wd2-tw-nfA" id="E30-Dl-Tao"/>
                 <outlet property="waterView" destination="Gw7-0Y-K39" id="QzZ-tX-Ezl"/>
             </connections>
             <point key="canvasLocation" x="205.07246376811597" y="152.34375"/>

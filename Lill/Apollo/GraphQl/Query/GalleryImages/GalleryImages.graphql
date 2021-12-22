@@ -1,0 +1,8 @@
+query GalleryImages($gardenPlantId: String!) {
+	galleryImages(gardenPlantId: $gardenPlantId) {
+        id
+        urlIosFull
+        urlIosPrev
+        notes
+	}
+}

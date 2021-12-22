@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GardenDetailHistoryPhotoCell: UITableViewCell {
     
@@ -13,6 +14,10 @@ class GardenDetailHistoryPhotoCell: UITableViewCell {
     
     @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var bottomSeparatorView: UIView!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var notesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +32,19 @@ class GardenDetailHistoryPhotoCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(isHiddenTop: Bool, isHiddenBottom: Bool) {
+    func setupCell(model: GardenPlantsHistoryListModel, isHiddenTop: Bool, isHiddenBottom: Bool) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd\nHH:mm"
+        let dateString = dateFormatter.string(from: model.date)
+        dateLabel.text = dateString
+        
+        photoImageView.isHidden = model.media?.urlIosPrev != nil ? false : true
+        notesLabel.isHidden = model.media?.notes != nil ? false : true
+        
+        photoImageView.kf.setImage(with: URL(string: model.media?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
+        notesLabel.text = model.media?.notes
+        
         topSeparatorView.isHidden = isHiddenTop
         bottomSeparatorView.isHidden = isHiddenBottom
         

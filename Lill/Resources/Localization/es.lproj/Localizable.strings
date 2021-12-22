@@ -106,7 +106,7 @@
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";

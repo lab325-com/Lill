@@ -1,0 +1,7 @@
+query GardenPlantStatistics($gardenPlantId: String!) {
+    GardenPlantStatistics(gardenPlantId: $gardenPlantId) {
+        caresDone
+        age
+        waterDrank
+	}
+}

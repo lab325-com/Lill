@@ -41,6 +41,7 @@ protocol GardenDetailPresenterProtocol: AnyObject {
     func getDetailGarden(gardenId: String)
     func getDetailSetNotification(gardenId: String, notification: Bool)
     func doneAllCares(gardenPlantId: String)
+    func historyList(gardenId: String)
 }
 
 class GardenDetailPresenter: GardenDetailPresenterProtocol {
@@ -50,6 +51,11 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
     var model: GardenPlanByIDModel?
     var cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)] = []
     var about: [PlantsAboutType] = []
+    
+    var historyStatistics: GardenPlantStatisticsMainModel?
+    var historyList: [GardenPlantsHistoryListModel] = []
+    var historyPagination: PaginationModel?
+    var historyMediaModel: [MediaModel] = []
     
     var scheduleFuture: [ScheduleByGardenPlantMainModel] = []
     var scheduleNoFuture: [ScheduleByGardenPlantMainModel] = []
@@ -99,6 +105,37 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         let query3 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: false)
         let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, controller: view, successHandler: { [weak self] model in
             self?.scheduleNoFuture = model.scheduleByGardenPlant
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
+        })
+        
+        group.enter()
+        let query4 = GardenPlantStatisticsQuery(gardenPlantId: gardenId)
+        let _ = Network.shared.query(model: GardenPlantStatisticsModel.self, query4, controller: view, successHandler: { [weak self] model in
+            self?.historyStatistics = model.gardenPlantStatistics
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
+        })
+        
+        group.enter()
+        let query5 = GardenPlantHistoryQuery(gardenPlantId: gardenId, pagination: InputPagination(offset: 0, limit: 8))
+        let _ = Network.shared.query(model: GardenPlantHistoryModel.self, query5, controller: view, successHandler: { [weak self] model in
+            self?.historyList = model.gardenPlantHistory.gardenPlantsHistoryList
+            self?.historyPagination = model.gardenPlantHistory.pagination
+            group.leave()
+        }, failureHandler: { error in
+            errors.append(error)
+            group.leave()
+        })
+        
+        group.enter()
+        let query6 = GalleryImagesQuery(gardenPlantId: gardenId)
+        let _ = Network.shared.query(model: GalleryImagesModel.self, query6, controller: view, successHandler: { [weak self] model in
+            self?.historyMediaModel = model.galleryImages
             group.leave()
         }, failureHandler: { error in
             errors.append(error)
@@ -234,5 +271,20 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         }
+    }
+    
+    func historyList(gardenId: String) {
+        view?.startLoader()
+        
+        let query = GardenPlantHistoryQuery(gardenPlantId: gardenId, pagination: InputPagination(offset: historyList.count, limit: 30))
+        let _ = Network.shared.query(model: GardenPlantHistoryModel.self, query, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.historyList.append(contentsOf: model.gardenPlantHistory.gardenPlantsHistoryList)
+            self?.historyPagination = model.gardenPlantHistory.pagination
+            self?.view?.success()
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
 }

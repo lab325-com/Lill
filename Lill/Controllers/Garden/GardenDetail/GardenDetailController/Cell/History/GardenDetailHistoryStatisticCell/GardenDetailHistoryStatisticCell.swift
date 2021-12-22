@@ -13,6 +13,10 @@ class GardenDetailHistoryStatisticCell: UITableViewCell {
     @IBOutlet weak var waterView: UIView!
     @IBOutlet weak var caresView: UIView!
     
+    @IBOutlet weak var waterLabel: UILabel!
+    @IBOutlet weak var caresLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,4 +36,13 @@ class GardenDetailHistoryStatisticCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCell(model: GardenPlantStatisticsMainModel?) {
+        guard let model = model else {
+            return
+        }
+        
+        ageLabel.text = "\(model.age)"
+        caresLabel.text = "\(model.caresDone)"
+        waterLabel.text = "\(model.waterDrank)"
+    }
 }

@@ -16,6 +16,7 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
     private let cellAddIdenfier = String(describing: GaleryHistoryAddCell.self)
     
     private let elementSize = UIScreen.main.bounds.size.width / 4 + 3
+    private var mediaModel: [MediaModel] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +34,12 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCell(model: [MediaModel]) {
+        if mediaModel != model {
+            mediaModel = model
+            collectionView.reloadData()
+        }
+    }
 }
 
 //----------------------------------------------
@@ -41,7 +48,7 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
 
 extension GadenDetailHistoryTitleCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return mediaModel.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,7 +58,9 @@ extension GadenDetailHistoryTitleCell: UICollectionViewDataSource, UICollectionV
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  cellIdentifier, for: indexPath) as! GalleryHistoryCell
-            
+            if let model = mediaModel[safe: indexPath.row - 1] {
+                cell.setupCell(model: model)
+            }
             return cell
         }
     }

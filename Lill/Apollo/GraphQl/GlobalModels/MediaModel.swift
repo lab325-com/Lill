@@ -1,9 +1,10 @@
 
 import Foundation
 
-struct MediaModel: Codable {
+struct MediaModel: Codable, Equatable {
     let id: String?
     let type: String?
+    let notes: String?
     let urlAndroidPhone: String?
     let urlAndroidTablet: String?
     var urlIosFull: String
