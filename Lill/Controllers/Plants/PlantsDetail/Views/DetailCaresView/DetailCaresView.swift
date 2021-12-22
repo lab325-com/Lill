@@ -27,8 +27,6 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         addSubviewLoadedFromXib()
         
         backView.layer.cornerRadius = 22
-        backView.layer.borderWidth = 1
-        backView.layer.borderColor = UIColor(rgb: 0xEDEDED).cgColor
     }
 
     func setup(care: (type: PlantsCareType, care: CaresModel)) {
@@ -60,7 +58,6 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         careImageView.image = care.type.image
         careTitleLabel.text = care.type.text
         
-        
         if days < 0 {
             careValueLabel.text = "\(days * -1) days"
         } else if days == 0 {
@@ -68,8 +65,5 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         } else {
             careValueLabel.text = "\(days) days"
         }
-        
-        
-        
     }
 }
