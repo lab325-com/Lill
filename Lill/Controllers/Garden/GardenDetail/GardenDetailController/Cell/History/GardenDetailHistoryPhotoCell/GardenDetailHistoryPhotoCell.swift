@@ -19,8 +19,12 @@ class GardenDetailHistoryPhotoCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var notesLabel: UILabel!
     
+    @IBOutlet weak var photoTitleNoteLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        photoTitleNoteLabel.text = RLocalization.garden_hiistory_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         circleView.layer.borderWidth = 1.0
         circleView.layer.borderColor = UIColor(rgb: 0xD4B9D9).cgColor
         

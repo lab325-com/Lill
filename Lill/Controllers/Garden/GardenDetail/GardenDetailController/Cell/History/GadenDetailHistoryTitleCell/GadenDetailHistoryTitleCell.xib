@@ -64,7 +64,9 @@
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="collectionView" destination="g1a-G2-s8k" id="1kR-Nn-lo8"/>
+                <outlet property="galleryLabel" destination="BA1-J6-ohD" id="LzS-CM-9WH"/>
                 <outlet property="heightCollectionView" destination="aAm-LC-rLg" id="fcK-cf-Zxa"/>
+                <outlet property="viewAllLabel" destination="0JI-9w-00a" id="9tb-6j-8Fu"/>
             </connections>
             <point key="canvasLocation" x="189.85507246376812" y="126.22767857142857"/>
         </tableViewCell>

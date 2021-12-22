@@ -117,6 +117,17 @@
 "garden_detail_care_edit_my_plan" = "Edit My Care Plan";
 "garden_detail_care_plan" = "Care Plan";
 "garden_detail_check_all" = "Check all Waiting Cares as done";
+"garden_hiistory_age" = "Age";
+"garden_hiistory_cares" = "cares";
+"garden_hiistory_cares_done" = "Cares done";
+"garden_hiistory_days" = "days";
+"garden_hiistory_gallery" = "Gallery";
+"garden_hiistory_liters" = "liters";
+"garden_hiistory_photo" = "Photo Note";
+"garden_hiistory_statistic" = "Statistic";
+"garden_hiistory_title" = "History";
+"garden_hiistory_view_all" = "view all";
+"garden_hiistory_water" = "Water drinked";
 "garden_plan_done" = "Done";
 "garden_plan_missed" = "Missed";
 "garden_plan_upcoming" = "Upcoming";

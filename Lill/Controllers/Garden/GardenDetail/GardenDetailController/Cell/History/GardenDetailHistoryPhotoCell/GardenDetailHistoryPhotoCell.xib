@@ -133,6 +133,7 @@
                 <outlet property="dateLabel" destination="JPz-kx-cmm" id="4N0-Cl-f2j"/>
                 <outlet property="notesLabel" destination="NUh-p9-R11" id="U5V-mS-VpN"/>
                 <outlet property="photoImageView" destination="igp-Gb-lKl" id="Fx3-Hd-RpJ"/>
+                <outlet property="photoTitleNoteLabel" destination="OpP-a7-qL1" id="bd4-F8-V9L"/>
                 <outlet property="topSeparatorView" destination="GcY-Ca-UFq" id="jLI-bf-eUI"/>
             </connections>
             <point key="canvasLocation" x="183" y="224"/>

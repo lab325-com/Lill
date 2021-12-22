@@ -177,7 +177,7 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             case 3:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryStatisticIdentifier) as? GardenDetailHistoryStatisticCell else { return UITableViewCell() }
-                cell.setupCell(model: presenter.historyStatistics)
+                cell.setupCell(model: presenter.historyStatistics, isRounded: presenter.historyList.count == 0)
                 return cell
             case 4:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryListHeaderCell) as? GardenDetailListHeaderCell else { return UITableViewCell() }

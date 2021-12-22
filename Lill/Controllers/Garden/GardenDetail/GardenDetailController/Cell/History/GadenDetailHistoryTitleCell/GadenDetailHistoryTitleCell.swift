@@ -11,6 +11,8 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
 
     @IBOutlet weak var heightCollectionView: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var galleryLabel: UILabel!
+    @IBOutlet weak var viewAllLabel: UILabel!
     
     private let cellIdentifier = String(describing: GalleryHistoryCell.self)
     private let cellAddIdenfier = String(describing: GaleryHistoryAddCell.self)
@@ -20,6 +22,9 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        galleryLabel.text = RLocalization.garden_hiistory_gallery.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        viewAllLabel.text = RLocalization.garden_hiistory_view_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)

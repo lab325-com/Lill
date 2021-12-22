@@ -117,6 +117,17 @@
 "garden_detail_care_edit_my_plan" = "Editar mi plan de atención";
 "garden_detail_care_plan" = "Plan de cuidado";
 "garden_detail_check_all" = "Marque todos los cuidadores esperando como se hace";
+"garden_hiistory_age" = "Envejecer";
+"garden_hiistory_cares" = "cuidar";
+"garden_hiistory_cares_done" = "Cuida hecho";
+"garden_hiistory_days" = "días";
+"garden_hiistory_gallery" = "Galería";
+"garden_hiistory_liters" = "litros";
+"garden_hiistory_photo" = "Nota fotográfica";
+"garden_hiistory_statistic" = "Estadística";
+"garden_hiistory_title" = "Historia";
+"garden_hiistory_view_all" = "ver todo";
+"garden_hiistory_water" = "Agua bebida";
 "garden_plan_done" = "Hecho";
 "garden_plan_missed" = "Omitido";
 "garden_plan_upcoming" = "Próximo";
