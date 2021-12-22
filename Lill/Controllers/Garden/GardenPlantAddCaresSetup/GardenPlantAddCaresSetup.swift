@@ -105,10 +105,14 @@ extension GardenPlantAddCaresSetup: CareCellDelegate {
 extension GardenPlantAddCaresSetup: PickerCareDelegate {
     func pickerCareSelected(controller: PickerCaresController, selectedDay: Int, selectedPeriod: PeriodType, model: AddPlantTimeModel, date: Date?) {
         
-//        if let index = cares.firstIndex(where: {$0.type == model.type}) {
-//            cares[index].update(frequency: selectedDay, period: selectedPeriod, date: date ?? Calendar.current.date(bySettingHour: 12, minute: 00, second: 0, of: Date()))
-//            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
-//        }
+        if let index = cares.firstIndex(where: {$0.type == model.type}) {
+            if let date = date {
+                cares[index].update(count: cares[index].count, period: cares[index].period, date: date)
+            } else {
+                cares[index].update(count: selectedDay, period: selectedPeriod, date: cares[index].time)
+            }
+            tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .automatic)
+        }
     }
 }
 

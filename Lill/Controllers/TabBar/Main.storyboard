@@ -718,8 +718,8 @@
                             <constraint firstItem="doS-uE-B5C" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="Wjv-wB-8dt"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="zyc-OB-Vey" secondAttribute="trailing" constant="10" id="Xbm-4M-ODa"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="trailing" secondItem="d10-0g-iQ9" secondAttribute="trailing" id="YQ9-xc-iXz"/>
-                            <constraint firstItem="T7y-Mu-cvf" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" id="ZW9-k5-hkU"/>
                             <constraint firstItem="77e-li-0WU" firstAttribute="centerX" secondItem="h6Z-co-mj3" secondAttribute="centerX" id="aB9-AE-BHS"/>
+                            <constraint firstItem="q5Q-i6-jlZ" firstAttribute="bottom" secondItem="doS-uE-B5C" secondAttribute="bottom" constant="-14" id="aaI-4L-hsS"/>
                             <constraint firstItem="caZ-hE-877" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="atB-ha-eLa"/>
                             <constraint firstItem="77e-li-0WU" firstAttribute="top" secondItem="h6Z-co-mj3" secondAttribute="bottom" constant="15" id="bV0-5f-Dzs"/>
                             <constraint firstItem="caZ-hE-877" firstAttribute="top" secondItem="ebB-eI-sdE" secondAttribute="top" id="cM8-z5-PPu"/>
@@ -729,13 +729,13 @@
                             <constraint firstItem="d10-0g-iQ9" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" id="fTW-Eb-Qv4"/>
                             <constraint firstAttribute="bottom" secondItem="caZ-hE-877" secondAttribute="bottom" id="gof-rL-wyZ"/>
                             <constraint firstItem="zyc-OB-Vey" firstAttribute="leading" secondItem="B1r-u0-q8d" secondAttribute="leading" constant="10" id="jCw-Mv-t7c"/>
-                            <constraint firstItem="q5Q-i6-jlZ" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" id="jT4-l2-54f"/>
                             <constraint firstItem="B1r-u0-q8d" firstAttribute="bottom" secondItem="zyc-OB-Vey" secondAttribute="bottom" constant="-50" id="k1A-wa-0yt"/>
                             <constraint firstItem="d10-0g-iQ9" firstAttribute="top" secondItem="NZo-Js-jvq" secondAttribute="bottom" id="kf7-Yb-iTA"/>
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="top" secondItem="B1r-u0-q8d" secondAttribute="top" constant="70" id="lH4-PJ-2fz"/>
                             <constraint firstItem="h6Z-co-mj3" firstAttribute="centerX" secondItem="caZ-hE-877" secondAttribute="centerX" id="pR4-bA-xVX"/>
                             <constraint firstItem="NZo-Js-jvq" firstAttribute="centerX" secondItem="caZ-hE-877" secondAttribute="centerX" id="ydA-8x-1OD"/>
                             <constraint firstAttribute="bottom" secondItem="HKl-L3-pLw" secondAttribute="bottom" id="ysy-u7-fbS"/>
+                            <constraint firstItem="T7y-Mu-cvf" firstAttribute="top" secondItem="q5Q-i6-jlZ" secondAttribute="top" id="zKv-cX-OrI"/>
                             <constraint firstItem="caZ-hE-877" firstAttribute="trailing" secondItem="B1r-u0-q8d" secondAttribute="trailing" id="zgO-ZZ-DSB"/>
                         </constraints>
                     </view>
@@ -745,6 +745,7 @@
                         <outlet property="animationBackGroundSwipeLeftView" destination="HKl-L3-pLw" id="8VC-8Z-I6Y"/>
                         <outlet property="backToTopButton" destination="PGc-IL-8F9" id="BlO-oq-qQ7"/>
                         <outlet property="backToTopTrailingLayout" destination="IKj-if-kck" id="SZi-dQ-x0E"/>
+                        <outlet property="blurEffectHeighLayout" destination="iXE-of-hAz" id="biq-Lj-0sz"/>
                         <outlet property="blurEffectView" destination="doS-uE-B5C" id="T1g-oY-Rxs"/>
                         <outlet property="bottomViewConstraint" destination="8Pr-OI-XYC" id="7VP-DN-1sz"/>
                         <outlet property="buttonToThisView" destination="T7y-Mu-cvf" id="old-OM-3HR"/>
@@ -814,13 +815,13 @@
                                         <rect key="frame" x="0.0" y="105" width="414" height="620"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-4g-h1P">
-                                                <rect key="frame" x="97.5" y="240.5" width="219" height="139.5"/>
+                                                <rect key="frame" x="97.5" y="177.5" width="219" height="265.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheldure_bell_ic" translatesAutoresizingMaskIntoConstraints="NO" id="io2-eA-dqP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="46"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheldure_empty_ic" translatesAutoresizingMaskIntoConstraints="NO" id="io2-eA-dqP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="172"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-VH-tPB">
-                                                        <rect key="frame" x="0.0" y="71" width="219" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="197" width="219" height="68.5"/>
                                                         <string key="text">To have daily schedule and
 notifications - turn ON
 Ring icon in Plant card</string>
@@ -1077,7 +1078,7 @@ Ring icon in Plant card</string>
         <image name="ic_tab_menu" width="40" height="40"/>
         <image name="ic_tab_plants" width="40" height="40"/>
         <image name="ic_tab_schedule" width="40" height="40"/>
-        <image name="scheldure_bell_ic" width="42.5" height="46"/>
+        <image name="scheldure_empty_ic" width="207" height="172"/>
         <image name="scheldure_settings_ic" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

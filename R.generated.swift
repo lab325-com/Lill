@@ -780,8 +780,8 @@ struct R: Rswift.Validatable {
     static let plants_dots_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_dots_ic")
     /// Image `recognize_archive_ic`.
     static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
-    /// Image `scheldure_bell_ic`.
-    static let scheldure_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_bell_ic")
+    /// Image `scheldure_empty_ic`.
+    static let scheldure_empty_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_empty_ic")
     /// Image `scheldure_settings_bell_ic`.
     static let scheldure_settings_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_settings_bell_ic")
     /// Image `scheldure_settings_ic`.
@@ -1517,9 +1517,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "scheldure_bell_ic", bundle: ..., traitCollection: ...)`
-    static func scheldure_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.scheldure_bell_ic, compatibleWith: traitCollection)
+    /// `UIImage(named: "scheldure_empty_ic", bundle: ..., traitCollection: ...)`
+    static func scheldure_empty_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.scheldure_empty_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -9107,7 +9107,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_tab_menu", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_menu' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_plants", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_plants' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_schedule", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_schedule' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "scheldure_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_bell_ic' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scheldure_empty_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_empty_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "scheldure_settings_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_settings_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

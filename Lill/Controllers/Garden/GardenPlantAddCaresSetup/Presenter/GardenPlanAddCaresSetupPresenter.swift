@@ -39,7 +39,8 @@ class GardenPlanAddCaresSetupPresenter: GardenPlanAddCaresSetupPresenterProtocol
         
         for care in cares {
             group.enter()
-            let record = GardenPlantCareCreateInput(gardenPlantId: gardenPlantId, name: care.name, count: care.frequency, period: care.period, careTypeId: Int(care.type.id) ?? 1, sendNotificationAt: care.sendNotificationAt ?? "12:00")
+            guard let careTypeId = Int(care.type.id) else { return }
+            let record = GardenPlantCareCreateInput(gardenPlantId: gardenPlantId, name: care.name, count: care.count, period: care.period, careTypeId: careTypeId, sendNotificationAt: care.getTime)
             let mutation = GardenPlantCareCreateMutation(record: record)
             let _ = Network.shared.mutation(model: GardenPlantCareCreateModel.self, mutation, controller: view) { model in
                 group.leave()

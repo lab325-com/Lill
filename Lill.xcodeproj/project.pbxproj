@@ -313,6 +313,7 @@
 		FA40D718272854E200A10C10 /* CaresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40D717272854E200A10C10 /* CaresModel.swift */; };
 		FA49AA3F275642DC003B0CD4 /* GardenPlantCaresEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49AA3D275642DC003B0CD4 /* GardenPlantCaresEdit.swift */; };
 		FA49AA40275642DC003B0CD4 /* GardenPlantCaresEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA49AA3E275642DC003B0CD4 /* GardenPlantCaresEdit.xib */; };
+		FA4AD1CD27720FB500730395 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4AD1CC27720FB500730395 /* UIDevice.swift */; };
 		FA4F7FA92747BA7100E4B873 /* GardenChooseAddPlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F7FA72747BA7100E4B873 /* GardenChooseAddPlantController.swift */; };
 		FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */; };
 		FA545474274BCF53006B52F4 /* GardenCaresDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545472274BCF53006B52F4 /* GardenCaresDetail.swift */; };
@@ -712,6 +713,7 @@
 		FA40D717272854E200A10C10 /* CaresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaresModel.swift; sourceTree = "<group>"; };
 		FA49AA3D275642DC003B0CD4 /* GardenPlantCaresEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEdit.swift; sourceTree = "<group>"; };
 		FA49AA3E275642DC003B0CD4 /* GardenPlantCaresEdit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCaresEdit.xib; sourceTree = "<group>"; };
+		FA4AD1CC27720FB500730395 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		FA4F7FA72747BA7100E4B873 /* GardenChooseAddPlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenChooseAddPlantController.swift; sourceTree = "<group>"; };
 		FA4F7FA82747BA7100E4B873 /* GardenChooseAddPlantController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenChooseAddPlantController.xib; sourceTree = "<group>"; };
 		FA545472274BCF53006B52F4 /* GardenCaresDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCaresDetail.swift; sourceTree = "<group>"; };
@@ -1598,6 +1600,7 @@
 				02A4BA3D26FDD16C00DF6A08 /* UIPageViewController+Extension.swift */,
 				02089EC7275551510022E1BD /* Date+Extension.swift */,
 				0290C290275265B4001FE6F7 /* UIScrollView+Extension.swift */,
+				FA4AD1CC27720FB500730395 /* UIDevice.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3366,6 +3369,7 @@
 				02BFFF55276351B100140A5C /* SetGardenPlantNotificationsModel.swift in Sources */,
 				FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */,
 				0272DADA273523FF005E7880 /* PopUniquePlantController.swift in Sources */,
+				FA4AD1CD27720FB500730395 /* UIDevice.swift in Sources */,
 				0237862B2706ED5F0092F63A /* PlantsController+CollectionView.swift in Sources */,
 				02A8346C26F38B140009E147 /* RootRouter.swift in Sources */,
 				FAA0896D275802A100449D5B /* CareInfoCell.swift in Sources */,
@@ -3642,7 +3646,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3651,7 +3655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -3794,7 +3798,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3803,7 +3807,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -3826,7 +3830,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -3835,7 +3839,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
