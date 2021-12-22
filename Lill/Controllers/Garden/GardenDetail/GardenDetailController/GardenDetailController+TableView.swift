@@ -255,6 +255,10 @@ extension GardenDetailController: GardenDetailTitleCellDelegate {
     func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool) {
         presenter.getDetailSetNotification(gardenId: id, notification: notification)
     }
+    
+    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, careTypeId: Int) {
+        presenter.doneCare(gardenPlantId: id, careTypeId: careTypeId)
+    }
 }
 
 //----------------------------------------------

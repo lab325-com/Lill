@@ -9,6 +9,7 @@ import UIKit
 
 protocol GardenDetailTitleCellDelegate: AnyObject {
     func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool)
+    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, careTypeId: Int)
 }
 
 class GardenDetailTitleCell: UITableViewCell {
@@ -65,6 +66,7 @@ class GardenDetailTitleCell: UITableViewCell {
         
         for view in topCaresViews {
             view.isHidden = true
+            view.delegate = self
         }
         
         if cares.count == 0 {
@@ -74,7 +76,6 @@ class GardenDetailTitleCell: UITableViewCell {
         } else {
             topStackLayout.constant = 10
         }
-        
         
         for index in 0..<cares.count {
             if let care = cares[safe: index],
@@ -93,5 +94,16 @@ class GardenDetailTitleCell: UITableViewCell {
         AnalyticsHelper.sendFirebaseEvents(events: .edit_cares)
         guard let notification = model?.gardenPlantById.sendNotifications else { return }
         delegate?.gardenDetailTitleSelectBell(cell: self, notification: !notification)
+    }
+}
+
+//----------------------------------------------
+// MARK: - DetailCaresViewProtocol
+//----------------------------------------------
+
+extension GardenDetailTitleCell: DetailCaresViewProtocol {
+    func didSelectCare(index: Int) {
+        guard let careTypeId = model?.gardenPlantById.gardenPlantCares[index].type.id else { return }
+        delegate?.gardenDetailTitleSelectCare(cell: self, careTypeId: Int(careTypeId) ?? 0)
     }
 }

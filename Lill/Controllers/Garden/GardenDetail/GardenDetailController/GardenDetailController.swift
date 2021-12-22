@@ -193,6 +193,10 @@ extension GardenDetailController: GardenDetailOutputProtocol {
         }
     }
     
+    func successDoneCare() {
+        presenter.getDetailGarden(gardenId: id)
+    }
+    
     func successDoneAllCares() {
         presenter.getDetailGarden(gardenId: id)
     }
