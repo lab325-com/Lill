@@ -256,8 +256,8 @@ extension GardenDetailController: GardenDetailTitleCellDelegate {
         presenter.getDetailSetNotification(gardenId: id, notification: notification)
     }
     
-    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, careTypeId: Int) {
-        presenter.doneCare(gardenPlantId: id, careTypeId: careTypeId)
+    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, selectedCare: GardenShortPlantCaresModel) {
+        GardenRouter(presenter: navigationController).presentDoneSpecificCare(delegate: self, gardenId: id, care: selectedCare)
     }
 }
 

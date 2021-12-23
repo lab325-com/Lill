@@ -128,10 +128,14 @@
 "garden_hiistory_title" = "History";
 "garden_hiistory_view_all" = "view all";
 "garden_hiistory_water" = "Water drinked";
+"garden_history_add_new_photo" = "Add new Photo";
 "garden_history_add_notes" = "Add notes for this Photo";
 "garden_history_add_photo" = "Add Photo";
 "garden_history_add_photo_gallery" = "Add photo to gallery";
 "garden_history_cancel" = "Cancel";
+"garden_history_edit" = "Edit";
+"garden_history_set_main_photo" = "Set as Main Photo";
+"garden_histroy_set_main_success" = "Setted\nas main Photo";
 "garden_plan_done" = "Done";
 "garden_plan_missed" = "Missed";
 "garden_plan_upcoming" = "Upcoming";
@@ -214,6 +218,11 @@
 "pop_change_name_button" = "Change";
 "pop_change_name_subtitle" = "Give your plant name";
 "pop_change_name_title" = "Change Name";
+"pop_done_specific_care_cancel" = "Cancel";
+"pop_done_specific_care_done_info" = "Care is not required today.\nAre you want to record it?";
+"pop_done_specific_care_missed_info" = "Care is missed";
+"pop_done_specific_care_record_care" = "Record Care";
+"pop_done_specific_care_waiting_info" = "Care is waiting";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
 "scheldure_days" = "days";

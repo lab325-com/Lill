@@ -44,4 +44,10 @@ class GardenRouter: BaseRouter {
         let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId, delegate: delegate)
         push(controller: controller)
     }
+    
+    func presentDoneSpecificCare(delegate: PopDoneSpecificCareDelegate, gardenId: String, care: GardenShortPlantCaresModel) {
+        let controller = PopDoneSpecificCareController(delegate: delegate, gardenId: gardenId, care: care)
+        controller.modalTransitionStyle = .crossDissolve
+        present(controller: controller,animated: true, presentStyle: .overCurrentContext)
+    }
 }

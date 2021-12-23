@@ -42,7 +42,6 @@ protocol GardenDetailPresenterProtocol: AnyObject {
     
     func getDetailGarden(gardenId: String)
     func getDetailSetNotification(gardenId: String, notification: Bool)
-    func doneCare(gardenPlantId: String, careTypeId: Int)
     func doneAllCares(gardenPlantId: String)
     func historyList(gardenId: String)
 }
@@ -254,19 +253,6 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         let _ = Network.shared.mutation(model: SetGardenPlantNotificationsModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
             self?.view?.successNotificationChange(notification: notification)
-        } failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        }
-    }
-    
-    func doneCare(gardenPlantId: String, careTypeId: Int) {
-        view?.startLoader()
-        
-        let mutation = DoneCareByGardenPlantMutation(gardenPlantId: gardenPlantId, careTypeId: careTypeId)
-        let _ = Network.shared.mutation(model: DoneCareByGardenPlantModel.self, mutation, controller: view) { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successDoneCare()
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)

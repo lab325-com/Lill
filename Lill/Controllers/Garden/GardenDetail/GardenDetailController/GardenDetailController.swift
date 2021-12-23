@@ -335,3 +335,13 @@ extension GardenDetailController: GardenPlantCaresEditDelegate {
         presenter.getDetailGarden(gardenId: id)
     }
 }
+
+//----------------------------------------------
+// MARK: - PopDoneSpecificCareDelegate
+//----------------------------------------------
+
+extension GardenDetailController: PopDoneSpecificCareDelegate {
+    func popDoneSpecificCareSuccess(controller: PopDoneSpecificCareController) {
+        presenter.getDetailGarden(gardenId: id)
+    }
+}

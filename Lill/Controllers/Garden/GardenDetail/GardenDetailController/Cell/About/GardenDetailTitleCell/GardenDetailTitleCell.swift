@@ -9,7 +9,7 @@ import UIKit
 
 protocol GardenDetailTitleCellDelegate: AnyObject {
     func gardenDetailTitleSelectBell(cell: GardenDetailTitleCell, notification: Bool)
-    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, careTypeId: Int)
+    func gardenDetailTitleSelectCare(cell: GardenDetailTitleCell, selectedCare: GardenShortPlantCaresModel)
 }
 
 class GardenDetailTitleCell: UITableViewCell {
@@ -103,7 +103,7 @@ class GardenDetailTitleCell: UITableViewCell {
 
 extension GardenDetailTitleCell: DetailCaresViewProtocol {
     func didSelectCare(index: Int) {
-        guard let careTypeId = model?.gardenPlantById.gardenPlantCares[index].type.id else { return }
-        delegate?.gardenDetailTitleSelectCare(cell: self, careTypeId: Int(careTypeId) ?? 0)
+        guard let selectedCare = model?.gardenPlantById.gardenPlantCares[index] else { return }
+        delegate?.gardenDetailTitleSelectCare(cell: self, selectedCare: selectedCare)
     }
 }
