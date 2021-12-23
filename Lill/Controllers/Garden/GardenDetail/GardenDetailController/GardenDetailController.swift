@@ -83,7 +83,7 @@ class GardenDetailController: BaseController {
         super.viewDidLoad()
         
         tableView.alpha = 0.0
-        presenter.getDetailGarden(gardenId: id)
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
         setup()
     }
     
@@ -194,7 +194,7 @@ extension GardenDetailController: GardenDetailOutputProtocol {
     }
     
     func successDoneAllCares() {
-        presenter.getDetailGarden(gardenId: id)
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
     }
     
     func failure(error: String) {
@@ -328,6 +328,6 @@ extension GardenDetailController: PopClonePlantDelegate {
 
 extension GardenDetailController: GardenPlantCaresEditDelegate {
     func gardenPlantCaresEditSuccessDelete() {
-        presenter.getDetailGarden(gardenId: id)
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
     }
 }

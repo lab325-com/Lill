@@ -38,7 +38,7 @@ extension GardenDetailOutputProtocol {
 protocol GardenDetailPresenterProtocol: AnyObject {
     init(view: GardenDetailOutputProtocol)
     
-    func getDetailGarden(gardenId: String)
+    func getDetailGarden(gardenId: String, updateHistoryOnly: Bool, updateTiteImage: Bool)
     func getDetailSetNotification(gardenId: String, notification: Bool)
     func doneAllCares(gardenPlantId: String)
     func historyList(gardenId: String)
@@ -64,83 +64,128 @@ class GardenDetailPresenter: GardenDetailPresenterProtocol {
         self.view = view
     }
     
-    func getDetailGarden(gardenId: String) {
+    func getDetailGarden(gardenId: String, updateHistoryOnly: Bool, updateTiteImage: Bool) {
         view?.startLoader()
         var errors: [Error?] = []
         
+        
         let group = DispatchGroup()
         
-        group.enter()
-        let query = GardenPlantByIdQuery(id: gardenId)
-        let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, controller: view, successHandler: { [weak self] model in
-            guard let `self` = self else {
+        if updateTiteImage {
+            group.enter()
+            let query = GardenPlantByIdQuery(id: gardenId)
+            let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, controller: view, successHandler: { [weak self] model in
+                guard let `self` = self else {
+                    group.leave()
+                    return
+                }
+                
+                self.model = model
+                
+                let about = self.createAbout(model: model.gardenPlantById.plant?.climate)
+                self.about = about
+                
+                let cares = self.createCares(model: model)
+                self.cares = cares
                 group.leave()
-                return
-            }
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+        } else if !updateHistoryOnly {
+            group.enter()
+            let query = GardenPlantByIdQuery(id: gardenId)
+            let _ = Network.shared.query(model: GardenPlanByIDModel.self, query, controller: view, successHandler: { [weak self] model in
+                guard let `self` = self else {
+                    group.leave()
+                    return
+                }
+                
+                self.model = model
+                
+                let about = self.createAbout(model: model.gardenPlantById.plant?.climate)
+                self.about = about
+                
+                let cares = self.createCares(model: model)
+                self.cares = cares
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
             
-            self.model = model
-
-            let about = self.createAbout(model: model.gardenPlantById.plant?.climate)
-            self.about = about
+            group.enter()
+            let query2 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: true)
+            let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query2, controller: view, successHandler: { [weak self] model in
+                self?.scheduleFuture = model.scheduleByGardenPlant
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
             
-            let cares = self.createCares(model: model)
-            self.cares = cares
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
-
-        group.enter()
-        let query2 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: true)
-        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query2, controller: view, successHandler: { [weak self] model in
-            self?.scheduleFuture = model.scheduleByGardenPlant
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
-
-        group.enter()
-        let query3 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: false)
-        let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, controller: view, successHandler: { [weak self] model in
-            self?.scheduleNoFuture = model.scheduleByGardenPlant
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
-        
-        group.enter()
-        let query4 = GardenPlantStatisticsQuery(gardenPlantId: gardenId)
-        let _ = Network.shared.query(model: GardenPlantStatisticsModel.self, query4, controller: view, successHandler: { [weak self] model in
-            self?.historyStatistics = model.gardenPlantStatistics
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
-        
-        group.enter()
-        let query5 = GardenPlantHistoryQuery(gardenPlantId: gardenId, pagination: InputPagination(offset: 0, limit: 8))
-        let _ = Network.shared.query(model: GardenPlantHistoryModel.self, query5, controller: view, successHandler: { [weak self] model in
-            self?.historyList = model.gardenPlantHistory.gardenPlantsHistoryList
-            self?.historyPagination = model.gardenPlantHistory.pagination
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
-        
-        group.enter()
-        let query6 = GalleryImagesQuery(gardenPlantId: gardenId)
-        let _ = Network.shared.query(model: GalleryImagesModel.self, query6, controller: view, successHandler: { [weak self] model in
-            self?.historyMediaModel = model.galleryImages
-            group.leave()
-        }, failureHandler: { error in
-            errors.append(error)
-            group.leave()
-        })
+            group.enter()
+            let query3 = ScheduleByGardenPlantQuery(gardenPlantId: gardenId, onlyFuture: false)
+            let _ = Network.shared.query(model: ScheduleByGardenPlantModel.self, query3, controller: view, successHandler: { [weak self] model in
+                self?.scheduleNoFuture = model.scheduleByGardenPlant
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+            
+            group.enter()
+            let query4 = GardenPlantStatisticsQuery(gardenPlantId: gardenId)
+            let _ = Network.shared.query(model: GardenPlantStatisticsModel.self, query4, controller: view, successHandler: { [weak self] model in
+                self?.historyStatistics = model.gardenPlantStatistics
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+            
+            group.enter()
+            let query5 = GardenPlantHistoryQuery(gardenPlantId: gardenId, pagination: InputPagination(offset: 0, limit: 8))
+            let _ = Network.shared.query(model: GardenPlantHistoryModel.self, query5, controller: view, successHandler: { [weak self] model in
+                self?.historyList = model.gardenPlantHistory.gardenPlantsHistoryList
+                self?.historyPagination = model.gardenPlantHistory.pagination
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+            
+            group.enter()
+            let query6 = GalleryImagesQuery(gardenPlantId: gardenId)
+            let _ = Network.shared.query(model: GalleryImagesModel.self, query6, controller: view, successHandler: { [weak self] model in
+                self?.historyMediaModel = model.galleryImages
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+        } else {
+            group.enter()
+            let query5 = GardenPlantHistoryQuery(gardenPlantId: gardenId, pagination: InputPagination(offset: 0, limit: 8))
+            let _ = Network.shared.query(model: GardenPlantHistoryModel.self, query5, controller: view, successHandler: { [weak self] model in
+                self?.historyList = model.gardenPlantHistory.gardenPlantsHistoryList
+                self?.historyPagination = model.gardenPlantHistory.pagination
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+            
+            group.enter()
+            let query6 = GalleryImagesQuery(gardenPlantId: gardenId)
+            let _ = Network.shared.query(model: GalleryImagesModel.self, query6, controller: view, successHandler: { [weak self] model in
+                self?.historyMediaModel = model.galleryImages
+                group.leave()
+            }, failureHandler: { error in
+                errors.append(error)
+                group.leave()
+            })
+        }
         
         group.notify(queue: DispatchQueue.main) { [weak self] in
             self?.view?.stopLoading()

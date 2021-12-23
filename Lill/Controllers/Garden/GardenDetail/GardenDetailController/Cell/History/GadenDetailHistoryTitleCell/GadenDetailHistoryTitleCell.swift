@@ -7,12 +7,20 @@
 
 import UIKit
 
+protocol GadenDetailHistoryTitleDelegate: AnyObject {
+    func gardenDetailAddPhoto(cell: GadenDetailHistoryTitleCell)
+    func gardenDetailViewAll(cell: GadenDetailHistoryTitleCell)
+    func gardenDetailSelectedMedia(cell: GadenDetailHistoryTitleCell, model: MediaModel)
+}
+
 class GadenDetailHistoryTitleCell: UITableViewCell {
 
     @IBOutlet weak var heightCollectionView: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var galleryLabel: UILabel!
     @IBOutlet weak var viewAllLabel: UILabel!
+    
+    weak var delegate: GadenDetailHistoryTitleDelegate?
     
     private let cellIdentifier = String(describing: GalleryHistoryCell.self)
     private let cellAddIdenfier = String(describing: GaleryHistoryAddCell.self)
@@ -45,6 +53,12 @@ class GadenDetailHistoryTitleCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
+    
+    @IBAction func actionViewAll(_ sender: UIButton) {
+        if mediaModel.count > 0 {
+            delegate?.gardenDetailViewAll(cell: self)
+        }
+    }
 }
 
 //----------------------------------------------
@@ -67,6 +81,14 @@ extension GadenDetailHistoryTitleCell: UICollectionViewDataSource, UICollectionV
                 cell.setupCell(model: model)
             }
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            delegate?.gardenDetailAddPhoto(cell: self)
+        } else {
+            delegate?.gardenDetailSelectedMedia(cell: self, model: mediaModel[indexPath.row - 1])
         }
     }
 }

@@ -173,6 +173,7 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellHistoryTitleIdentifier) as? GadenDetailHistoryTitleCell else { return UITableViewCell() }
+                cell.delegate = self
                 cell.setupCell(model: presenter.historyMediaModel)
                 return cell
             case 3:
@@ -274,5 +275,75 @@ extension GardenDetailController: GardenDetailEditCareCellDelegate {
 extension GardenDetailController: GardenDetailAllWaitingCellDelegate {
     func gardenDetailAllWaitingCellDoneCares(cell: GardenDetailAllWaitingCell) {
         presenter.doneAllCares(gardenPlantId: id)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GadenDetailHistoryTitleDelegate
+//----------------------------------------------
+
+extension GardenDetailController: GadenDetailHistoryTitleDelegate {
+    func gardenDetailSelectedMedia(cell: GadenDetailHistoryTitleCell, model: MediaModel) {
+        GardenRouter(presenter: navigationController).pushGardenDeteilPhoto(gardenID: id, selectedModel: model, models: presenter.historyMediaModel, delegate: self)
+    }
+    
+    func gardenDetailViewAll(cell: GadenDetailHistoryTitleCell) {
+        GardenRouter(presenter: navigationController).pushGardenListPhoto(gardenID: id, model: presenter.historyMediaModel, delegate: self)
+    }
+    
+    func gardenDetailAddPhoto(cell: GadenDetailHistoryTitleCell) {
+        GardenRouter(presenter: navigationController).presentHistoryAddPhoto(gardenPlantId: id, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenHistoryAddPhotoProtocol
+//----------------------------------------------
+
+extension GardenDetailController: GardenHistoryAddPhotoProtocol {
+    func gardenHistoryAddPhotoSuccess(controller: GardenHistoryAddPhotoController) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: true, updateTiteImage: false)
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
+    func gardenHistoryAddPhotoCancel(controller: GardenHistoryAddPhotoController) {
+        self.dismiss(animated: true) {
+            
+        }
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenHistoryAddPhotoProtocol
+//----------------------------------------------
+
+
+extension GardenDetailController: GardenDetailListPhotoDelegate {
+    func gardenDetailListUpdateOnyMain(controller: GardenDetailListPhotoController) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: true)
+    }
+    
+    func gardenDetailListUpdate(controller: GardenDetailListPhotoController) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: true, updateTiteImage: false)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenHistoryAddPhotoProtocol
+//----------------------------------------------
+
+extension GardenDetailController: GardenPhotoDeteilDelegate {
+    func gardenPhotoDeteilUpdateNotes(controller: GardenPhotoDeteilController, model: MediaModel) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: true, updateTiteImage: false)
+    }
+    
+    func gardenPhotoDeteilDetele(controller: GardenPhotoDeteilController, model: MediaModel) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: true, updateTiteImage: false)
+    }
+    
+    func gardenPhotoDeteilSuccessSet(controlle: GardenPhotoDeteilController) {
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: true, updateTiteImage: false)
     }
 }

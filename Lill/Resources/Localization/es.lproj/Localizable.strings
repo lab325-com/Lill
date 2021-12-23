@@ -106,7 +106,7 @@
 "garden_choose_add_plant_catalog" = "Catalogar";
 "garden_choose_add_plant_identify" = "Identificar";
 "garden_clone_plant_button" = "Planta de clon";
-"garden_clone_plant_subtitle" = "Dar nombre a clon de esta planta.";
+"garden_clone_plant_subtitle" = "Dar nombre para clonar de esta planta.";
 "garden_clone_plant_title" = "Planta de clon";
 "garden_delete_cancel" = "Cancelar";
 "garden_delete_plant" = "Borrar la planta";
@@ -128,6 +128,14 @@
 "garden_hiistory_title" = "Historia";
 "garden_hiistory_view_all" = "ver todo";
 "garden_hiistory_water" = "Agua bebida";
+"garden_history_add_new_photo" = "Añadir nueva foto";
+"garden_history_add_notes" = "Añadir notas para esta foto";
+"garden_history_add_photo" = "Añadir foto";
+"garden_history_add_photo_gallery" = "Añadir foto a la galería";
+"garden_history_cancel" = "Cancelar";
+"garden_history_edit" = "Editar";
+"garden_history_set_main_photo" = "Establecer como foto principal";
+"garden_histroy_set_main_success" = "Foto principal \ nas";
 "garden_plan_done" = "Hecho";
 "garden_plan_missed" = "Omitido";
 "garden_plan_upcoming" = "Próximo";
@@ -210,6 +218,11 @@
 "pop_change_name_button" = "Cambio";
 "pop_change_name_subtitle" = "Dale el nombre de tu planta";
 "pop_change_name_title" = "Cambiar nombre";
+"pop_done_specific_care_cancel" = "Cancelar";
+"pop_done_specific_care_done_info" = "El cuidado no se requiere hoy. \ Nare ¿Quieres grabarlo?";
+"pop_done_specific_care_missed_info" = "Se pierde el cuidado";
+"pop_done_specific_care_record_care" = "Atención de registro";
+"pop_done_specific_care_waiting_info" = "Cuidado está esperando";
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
 "scheldure_days" = "días";
@@ -226,7 +239,7 @@
 "scheldure_setting_cares_notification_sub" = "¡No te perderás cuidar a las plantas, incluso con cerrado \ Napplication!";
 "scheldure_setting_done" = "Hecho";
 "scheldure_setting_frequency" = "Frecuencia de notificaciones";
-"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n momento especificado";
+"scheldure_setting_frequency_sub" = "Enviar notificaciones no más a menudo que el período \ n tiempo especificado";
 "scheldure_setting_hour" = "Hora";
 "scheldure_setting_list_notification" = "Hoy enumerar la notificación";
 "scheldure_setting_missed" = "Omitido";

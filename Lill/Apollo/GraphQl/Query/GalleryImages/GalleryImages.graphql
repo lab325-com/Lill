@@ -4,5 +4,6 @@ query GalleryImages($gardenPlantId: String!) {
         urlIosFull
         urlIosPrev
         notes
+        createdAt
 	}
 }
