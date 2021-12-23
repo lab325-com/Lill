@@ -193,6 +193,10 @@ extension GardenDetailController: GardenDetailOutputProtocol {
         }
     }
     
+    func successDoneCare() {
+        presenter.getDetailGarden(gardenId: id)
+    }
+    
     func successDoneAllCares() {
         presenter.getDetailGarden(gardenId: id)
     }
@@ -328,6 +332,16 @@ extension GardenDetailController: PopClonePlantDelegate {
 
 extension GardenDetailController: GardenPlantCaresEditDelegate {
     func gardenPlantCaresEditSuccessDelete() {
+        presenter.getDetailGarden(gardenId: id)
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopDoneSpecificCareDelegate
+//----------------------------------------------
+
+extension GardenDetailController: PopDoneSpecificCareDelegate {
+    func popDoneSpecificCareSuccess(controller: PopDoneSpecificCareController) {
         presenter.getDetailGarden(gardenId: id)
     }
 }

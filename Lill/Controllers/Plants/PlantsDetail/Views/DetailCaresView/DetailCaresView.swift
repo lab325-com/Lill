@@ -1,6 +1,10 @@
 
 import UIKit
 
+protocol DetailCaresViewProtocol: AnyObject {
+    func didSelectCare(index: Int)
+}
+
 class DetailCaresView: UIView, LoadFromXibProtocol {
     
     @IBOutlet weak var backView: UIView!
@@ -8,6 +12,9 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
     @IBOutlet weak var careImageView: UIImageView!
     @IBOutlet weak var careTitleLabel: UILabel!
     @IBOutlet weak var careValueLabel: UILabel!
+    
+    weak var delegate: DetailCaresViewProtocol?
+    private var selectedType: PlantsCareType?
     
     //----------------------------------------------
     // MARK: - Init
@@ -65,5 +72,9 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         } else {
             careValueLabel.text = "\(days) days"
         }
+    }
+    
+    @IBAction func selectCareAction(_ sender: UIButton) {
+        delegate?.didSelectCare(index: self.tag)
     }
 }

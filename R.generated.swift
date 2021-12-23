@@ -1617,7 +1617,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 72 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 73 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1743,6 +1743,8 @@ struct R: Rswift.Validatable {
     static let popChangeNameController = _R.nib._PopChangeNameController()
     /// Nib `PopClonePlantController`.
     static let popClonePlantController = _R.nib._PopClonePlantController()
+    /// Nib `PopDoneSpecificCareController`.
+    static let popDoneSpecificCareController = _R.nib._PopDoneSpecificCareController()
     /// Nib `PopUniquePlantController`.
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
@@ -2261,6 +2263,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopDoneSpecificCareController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popDoneSpecificCareController) instead")
+    static func popDoneSpecificCareController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popDoneSpecificCareController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopUniquePlantController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popUniquePlantController) instead")
     static func popUniquePlantController(_: Void = ()) -> UIKit.UINib {
@@ -2588,6 +2598,10 @@ struct R: Rswift.Validatable {
       return R.nib.popClonePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func popDoneSpecificCareController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popDoneSpecificCareController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func popUniquePlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.popUniquePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2729,7 +2743,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 275 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 288 localization keys.
     struct localizable {
       /// en translation: A
       ///
@@ -2783,6 +2797,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_add_cares_add_custom_care = Rswift.StringResource(key: "garden_plant_add_cares_add_custom_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Photo
+      ///
+      /// Locales: en, es
+      static let garden_history_add_photo = Rswift.StringResource(key: "garden_history_add_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -2799,6 +2817,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let uniquel_plan_name_title = Rswift.StringResource(key: "uniquel_plan_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add new Photo
+      ///
+      /// Locales: en, es
+      static let garden_history_add_new_photo = Rswift.StringResource(key: "garden_history_add_new_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add notes for this Photo
+      ///
+      /// Locales: en, es
+      static let garden_history_add_notes = Rswift.StringResource(key: "garden_history_add_notes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add photo to gallery
+      ///
+      /// Locales: en, es
+      static let garden_history_add_photo_gallery = Rswift.StringResource(key: "garden_history_add_photo_gallery", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add to My Garden
       ///
       /// Locales: en, es
@@ -2902,6 +2932,10 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static let garden_history_cancel = Rswift.StringResource(key: "garden_history_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static let garden_plant_add_cares_cancel = Rswift.StringResource(key: "garden_plant_add_cares_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
@@ -2911,6 +2945,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_cares_edit_cancel = Rswift.StringResource(key: "garden_plant_cares_edit_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static let pop_done_specific_care_cancel = Rswift.StringResource(key: "pop_done_specific_care_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, es
@@ -2947,6 +2985,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_detail_care_plan = Rswift.StringResource(key: "garden_detail_care_plan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Care is missed
+      ///
+      /// Locales: en, es
+      static let pop_done_specific_care_missed_info = Rswift.StringResource(key: "pop_done_specific_care_missed_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Care is not required today. Are you want to record it?
+      ///
+      /// Locales: en, es
+      static let pop_done_specific_care_done_info = Rswift.StringResource(key: "pop_done_specific_care_done_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Care is waiting
+      ///
+      /// Locales: en, es
+      static let pop_done_specific_care_waiting_info = Rswift.StringResource(key: "pop_done_specific_care_waiting_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cares
       ///
       /// Locales: en, es
@@ -3159,6 +3209,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_done_all = Rswift.StringResource(key: "scheldure_done_all", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static let garden_history_edit = Rswift.StringResource(key: "garden_history_edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Edit Care Plan
       ///
       /// Locales: en, es
@@ -3491,6 +3545,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let recognize_archive_title = Rswift.StringResource(key: "recognize_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Record Care
+      ///
+      /// Locales: en, es
+      static let pop_done_specific_care_record_care = Rswift.StringResource(key: "pop_done_specific_care_record_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recurring monthly billing
       ///
       /// Locales: en, es
@@ -3587,10 +3645,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_setting_frequency_sub = Rswift.StringResource(key: "scheldure_setting_frequency_sub", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Set as Main Photo
+      ///
+      /// Locales: en, es
+      static let garden_history_set_main_photo = Rswift.StringResource(key: "garden_history_set_main_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Set to Recommended Cares
       ///
       /// Locales: en, es
       static let garden_plant_cares_edit_set_to_recommended = Rswift.StringResource(key: "garden_plant_cares_edit_set_to_recommended", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Setted as main Photo
+      ///
+      /// Locales: en, es
+      static let garden_histroy_set_main_success = Rswift.StringResource(key: "garden_histroy_set_main_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, es
@@ -4027,6 +4093,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plant_add_cares_add_custom_care", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add Photo
+      ///
+      /// Locales: en, es
+      static func garden_history_add_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_add_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_add_photo"
+        }
+
+        return NSLocalizedString("garden_history_add_photo", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -4085,6 +4166,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("uniquel_plan_name_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add new Photo
+      ///
+      /// Locales: en, es
+      static func garden_history_add_new_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_add_new_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_add_new_photo"
+        }
+
+        return NSLocalizedString("garden_history_add_new_photo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add notes for this Photo
+      ///
+      /// Locales: en, es
+      static func garden_history_add_notes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_add_notes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_add_notes"
+        }
+
+        return NSLocalizedString("garden_history_add_notes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add photo to gallery
+      ///
+      /// Locales: en, es
+      static func garden_history_add_photo_gallery(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_add_photo_gallery", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_add_photo_gallery"
+        }
+
+        return NSLocalizedString("garden_history_add_photo_gallery", bundle: bundle, comment: "")
       }
 
       /// en translation: Add to My Garden
@@ -4465,6 +4591,21 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static func garden_history_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_cancel"
+        }
+
+        return NSLocalizedString("garden_history_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static func garden_plant_add_cares_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("garden_plant_add_cares_cancel", bundle: hostingBundle, comment: "")
@@ -4505,6 +4646,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_plant_cares_edit_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static func pop_done_specific_care_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_done_specific_care_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_done_specific_care_cancel"
+        }
+
+        return NSLocalizedString("pop_done_specific_care_cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -4640,6 +4796,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_detail_care_plan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Care is missed
+      ///
+      /// Locales: en, es
+      static func pop_done_specific_care_missed_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_done_specific_care_missed_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_done_specific_care_missed_info"
+        }
+
+        return NSLocalizedString("pop_done_specific_care_missed_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Care is not required today. Are you want to record it?
+      ///
+      /// Locales: en, es
+      static func pop_done_specific_care_done_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_done_specific_care_done_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_done_specific_care_done_info"
+        }
+
+        return NSLocalizedString("pop_done_specific_care_done_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Care is waiting
+      ///
+      /// Locales: en, es
+      static func pop_done_specific_care_waiting_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_done_specific_care_waiting_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_done_specific_care_waiting_info"
+        }
+
+        return NSLocalizedString("pop_done_specific_care_waiting_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Cares
@@ -5437,6 +5638,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_done_all", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static func garden_history_edit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_edit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_edit"
+        }
+
+        return NSLocalizedString("garden_history_edit", bundle: bundle, comment: "")
       }
 
       /// en translation: Edit Care Plan
@@ -6684,6 +6900,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("recognize_archive_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Record Care
+      ///
+      /// Locales: en, es
+      static func pop_done_specific_care_record_care(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pop_done_specific_care_record_care", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pop_done_specific_care_record_care"
+        }
+
+        return NSLocalizedString("pop_done_specific_care_record_care", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recurring monthly billing
       ///
       /// Locales: en, es
@@ -7044,6 +7275,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_setting_frequency_sub", bundle: bundle, comment: "")
       }
 
+      /// en translation: Set as Main Photo
+      ///
+      /// Locales: en, es
+      static func garden_history_set_main_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_history_set_main_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_history_set_main_photo"
+        }
+
+        return NSLocalizedString("garden_history_set_main_photo", bundle: bundle, comment: "")
+      }
+
       /// en translation: Set to Recommended Cares
       ///
       /// Locales: en, es
@@ -7057,6 +7303,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_plant_cares_edit_set_to_recommended", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Setted as main Photo
+      ///
+      /// Locales: en, es
+      static func garden_histroy_set_main_success(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_histroy_set_main_success", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_histroy_set_main_success"
+        }
+
+        return NSLocalizedString("garden_histroy_set_main_success", bundle: bundle, comment: "")
       }
 
       /// en translation: Settings
@@ -8029,6 +8290,7 @@ struct _R: Rswift.Validatable {
       try _PlantsDetailController.validate()
       try _PopChangeNameController.validate()
       try _PopClonePlantController.validate()
+      try _PopDoneSpecificCareController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
       try _ScheduleCell.validate()
@@ -9061,6 +9323,23 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopClonePlantController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PopDoneSpecificCareController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PopDoneSpecificCareController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plants_detail_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_watering_ic' is used in nib 'PopDoneSpecificCareController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
