@@ -354,6 +354,7 @@
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
 		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
+		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
 		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
 		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
 		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
@@ -861,6 +862,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				023786272706DAEC0092F63A /* Kingfisher in Frameworks */,
+				FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */,
 				FA8A31062701C98B00F99516 /* Toast in Frameworks */,
 				FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */,
 				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
@@ -3132,6 +3134,7 @@
 				020FE33F274BDD6E00FF69F7 /* FirebaseMessaging */,
 				020FE341274BDD6E00FF69F7 /* FirebaseRemoteConfig */,
 				FAD18C8A2768C28300E3C59D /* Siren */,
+				FA78D95D2775FA1B00721D68 /* AppsFlyerLib */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -3173,6 +3176,7 @@
 				02C6C10F273A69CE003C47FF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				020FE336274BDD6E00FF69F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */,
+				FA78D95C2775FA1B00721D68 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -4112,6 +4116,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		FA78D95C2775FA1B00721D68 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -4209,6 +4221,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA24A5972732B94A0059AF6A /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
 			productName = SwiftEntryKit;
+		};
+		FA78D95D2775FA1B00721D68 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA78D95C2775FA1B00721D68 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
 		};
 		FA7C8CD526FB6688000D2976 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
