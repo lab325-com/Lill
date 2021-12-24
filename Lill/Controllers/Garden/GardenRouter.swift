@@ -44,13 +44,12 @@ class GardenRouter: BaseRouter {
         let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId, delegate: delegate)
         push(controller: controller)
     }
-    
+
     func presentHistoryAddPhoto(gardenPlantId: String, delegate: GardenHistoryAddPhotoProtocol) {
         let controller = GardenHistoryAddPhotoController(gardenPlantId: gardenPlantId, delegate: delegate)
         let nc = UINavigationController(rootViewController: controller)
         nc.modalPresentationStyle = .fullScreen
         present(controller: nc, presentStyle: .fullScreen)
-
     }
     
     func presentGadrenHistoryNotes(delegate: GardenHistoryNotesDelegate) {
@@ -73,5 +72,11 @@ class GardenRouter: BaseRouter {
     func pushGardenDeteilEdit(model: MediaModel, delegate: GardenDetailEditDelegate) {
         let controller = GardenDetailEditController(model: model, delegate: delegate)
         push(controller: controller)
+    }
+    
+    func presentDoneSpecificCare(delegate: PopDoneSpecificCareDelegate, gardenId: String, care: GardenShortPlantCaresModel) {
+        let controller = PopDoneSpecificCareController(delegate: delegate, gardenId: gardenId, care: care)
+        controller.modalTransitionStyle = .crossDissolve
+        present(controller: controller,animated: true, presentStyle: .overCurrentContext)
     }
 }

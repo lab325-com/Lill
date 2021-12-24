@@ -78,6 +78,11 @@ class GardenPhotoDeteilController: BaseController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        changeView()
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
@@ -102,6 +107,7 @@ class GardenPhotoDeteilController: BaseController {
     }
     
     @objc func editAction() {
+        navigationItem.title = RLocalization.wish_list_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         GardenRouter(presenter: navigationController).pushGardenDeteilEdit(model: selectedModel, delegate: self)
     }
     

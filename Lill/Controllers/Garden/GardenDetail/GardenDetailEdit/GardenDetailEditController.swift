@@ -68,6 +68,11 @@ class GardenDetailEditController: BaseController {
     }
     
     private func setup() {
+        
+        addNoteLabel.text = RLocalization.garden_history_changing_nottes.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        saveChangeButton.setTitle(RLocalization.garden_history_save_changes.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        deleteButton.setTitle(RLocalization.garden_history_delete_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        
         plantImageView.kf.setImage(with: URL(string: model.urlIosFull), placeholder: RImage.placeholder_big_ic(), options: [.transition(.fade(0.25))])
         
         navigationItem.title = RLocalization.garden_history_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue)

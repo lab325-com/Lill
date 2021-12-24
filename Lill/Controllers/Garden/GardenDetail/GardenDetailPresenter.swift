@@ -18,6 +18,7 @@ protocol GardenDetailOutputProtocol: BaseController {
     func successNotificationChange(notification: Bool)
     func successDelete()
     func successUploadMedia(imageUrl: String)
+    func successDoneCare()
     func successDoneAllCares()
     func failure(error: String)
 }
@@ -27,6 +28,7 @@ extension GardenDetailOutputProtocol {
     func success() {}
     func successDelete() {}
     func successUploadMedia(imageUrl: String) {}
+    func successDoneCare() {}
     func successDoneAllCares () {}
     func failure(error: String) {}
 }
