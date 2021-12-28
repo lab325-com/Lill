@@ -74,6 +74,7 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {

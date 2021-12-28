@@ -20,6 +20,7 @@
 "care_period_type_mounths" = "Meses";
 "care_period_type_unknown" = "Desconocido";
 "care_period_type_weeks" = "Semanas";
+"care_type_all" = "Todo";
 "care_type_humidity" = "Humedad";
 "care_type_misting" = "Empañado";
 "care_type_rotating" = "Rotación";
@@ -100,6 +101,7 @@
 "garde_edit_delete_delete_cares" = "Eliminar Cuidados";
 "garde_edit_delete_sub_title" = "Seleccione los Cuidados que quiera eliminar";
 "garde_edit_delete_title" = "Eliminar Cuidado";
+"garden_add_plant" = "añadir";
 "garden_cares_detail_cares" = "Cuidados";
 "garden_cares_detail_info" = "¿Seguro que quieres marcarlo como hecho?";
 "garden_choose_add_plant_cancel" = "Cancelar";
@@ -117,6 +119,11 @@
 "garden_detail_care_edit_my_plan" = "Editar mi Plan de Cuidado";
 "garden_detail_care_plan" = "Plan de Cuidado";
 "garden_detail_check_all" = "Marcar todos los Cuidados en Espera como hechos";
+"garden_done_all_cares" = "Hecho todos los cares";
+"garden_done_all_humidity" = "Hecho toda la humedad";
+"garden_done_all_misting" = "Hecho todas las nieblas";
+"garden_done_all_rotate" = "Hecho todo giro";
+"garden_done_all_watering" = "Hecho todo el riego";
 "garden_hiistory_age" = "Edad";
 "garden_hiistory_cares" = "cuidados";
 "garden_hiistory_cares_done" = "Cuidados realizados";
@@ -139,6 +146,7 @@
 "garden_history_save_changes" = "Guardar cambios";
 "garden_history_set_main_photo" = "Establecer como foto principal";
 "garden_histroy_set_main_success" = "Establecida como foto principal";
+"garden_need_cares" = "Necesito cuidado:";
 "garden_plan_done" = "Hecho";
 "garden_plan_missed" = "Omitido";
 "garden_plan_upcoming" = "Próximo";
@@ -158,6 +166,8 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
+"garden_plant_is_happy" = "La planta esta feliz";
+"garden_title" = "Mi jardín";
 "identify_analize_identify_plant" = "Identificando planta";
 "identify_analize_image" = "Analizando la imagen";
 "identify_capture" = "Capturar";

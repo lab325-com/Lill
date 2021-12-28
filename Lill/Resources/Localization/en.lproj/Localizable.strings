@@ -20,6 +20,7 @@
 "care_period_type_mounths" = "Months";
 "care_period_type_unknown" = "Unknown";
 "care_period_type_weeks" = "Weeks";
+"care_type_all" = "All";
 "care_type_humidity" = "Humidity";
 "care_type_misting" = "Misting";
 "care_type_rotating" = "Rotating";
@@ -100,6 +101,7 @@
 "garde_edit_delete_delete_cares" = "Delete Cares";
 "garde_edit_delete_sub_title" = "Select Cares that you want to delete";
 "garde_edit_delete_title" = "Delete Care";
+"garden_add_plant" = "add Plant";
 "garden_cares_detail_cares" = "Cares";
 "garden_cares_detail_info" = "Are you sure want to mark as done?";
 "garden_choose_add_plant_cancel" = "Cancel";
@@ -117,6 +119,11 @@
 "garden_detail_care_edit_my_plan" = "Edit My Care Plan";
 "garden_detail_care_plan" = "Care Plan";
 "garden_detail_check_all" = "Check all Waiting Cares as done";
+"garden_done_all_cares" = "Done all Cares";
+"garden_done_all_humidity" = "Done all Humidity";
+"garden_done_all_misting" = "Done all Misting";
+"garden_done_all_rotate" = "Done all Rotate";
+"garden_done_all_watering" = "Done all Watering";
 "garden_hiistory_age" = "Age";
 "garden_hiistory_cares" = "cares";
 "garden_hiistory_cares_done" = "Cares done";
@@ -139,6 +146,7 @@
 "garden_history_save_changes" = "Save Changes";
 "garden_history_set_main_photo" = "Set as Main Photo";
 "garden_histroy_set_main_success" = "Setted as main Photo";
+"garden_need_cares" = "Need Cares:";
 "garden_plan_done" = "Done";
 "garden_plan_missed" = "Missed";
 "garden_plan_upcoming" = "Upcoming";
@@ -158,6 +166,8 @@
 "garden_plant_cares_edit_title" = "Edit Care Plan";
 "garden_plant_detail_added_in_schedule" = "Added in Schedule";
 "garden_plant_detail_removed_from_schedule" = "Removed from Schedule";
+"garden_plant_is_happy" = "Plant is happy";
+"garden_title" = "My Garden";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
 "identify_capture" = "Capture";
