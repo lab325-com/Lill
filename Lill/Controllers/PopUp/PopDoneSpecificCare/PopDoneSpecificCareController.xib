@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopDoneSpecificCareController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="bottomLayout" destination="cQK-Hy-Te1" id="9yC-jm-bwu"/>
                 <outlet property="cancelButton" destination="oj2-Ly-1HD" id="rkD-nc-e5B"/>
                 <outlet property="careImageView" destination="yfT-be-95N" id="G1D-nW-Fx6"/>
                 <outlet property="careInfoLabel" destination="5Ld-be-Zvw" id="oYr-JZ-A8Z"/>
@@ -33,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-fI-UHR">
-                    <rect key="frame" x="12" y="518" width="390" height="332"/>
+                    <rect key="frame" x="12" y="930" width="390" height="332"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="yfT-be-95N">
                             <rect key="frame" x="160" y="34" width="70" height="70"/>
@@ -118,9 +119,9 @@ Are you want to record it?</string>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Hlf-fI-UHR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-12" id="cQK-Hy-Te1"/>
+                <constraint firstItem="Hlf-fI-UHR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" priority="999" constant="400" id="cQK-Hy-Te1"/>
                 <constraint firstItem="Hlf-fI-UHR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="qRL-l9-EJF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hlf-fI-UHR" secondAttribute="trailing" constant="12" id="yeR-sh-o4A"/>
             </constraints>
