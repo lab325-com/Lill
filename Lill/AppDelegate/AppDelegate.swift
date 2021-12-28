@@ -9,10 +9,12 @@ import FirebaseMessaging
 import SwiftyStoreKit
 import StoreKit
 import Siren
+import AppsFlyerLib
 
 //----------------------------------------------
 // MARK: - Typealias
 //----------------------------------------------
+
 typealias RLocalization = R.string.localizable
 typealias RImage = R.image
 typealias RColor = R.color
@@ -34,6 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.applicationIconBadgeNumber = 0
         
         Messaging.messaging().delegate = self
+        
+        AppsFlyerLib.shared().appsFlyerDevKey = "sapALRVCHUnGS6xNLJQPjS"
+        AppsFlyerLib.shared().appleAppID = "1586099684"
+        AppsFlyerLib.shared().delegate = self
+        AppsFlyerLib.shared().isDebug = true
+        AppsFlyerLib.shared().useReceiptValidationSandbox = true
         
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
@@ -59,14 +67,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppsFlyerLib.shared().start()
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
+        return true
+    }
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        AppsFlyerLib.shared().handleOpen(url, sourceApplication: sourceApplication, withAnnotation: annotation)
+        return true
+    }
+    
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        AppsFlyerLib.shared().handleOpen(url, options: options)
         
         ApplicationDelegate.shared.application(app,
                                                open: url,
                                                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        return true
     }
     
     private func checkingPurchase() {
@@ -121,6 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
+        
+        AppsFlyerLib.shared().handlePushNotification(userInfo)
     }
 }
 
@@ -192,5 +220,53 @@ extension AppDelegate: MessagingDelegate {
         PreferencesManager.sharedManager.fcmToken = fcmToken
         let deviceToken:[String: String] = ["token": fcmToken ?? ""]
         print("Device token: ", deviceToken) // This token can be used for testing notifications on FCM
+    }
+}
+
+//----------------------------------------------
+// MARK: - AppsFlyerLibDelegate
+//----------------------------------------------
+
+extension AppDelegate: AppsFlyerLibDelegate {
+    
+    // Handle Organic/Non-organic installation
+    func onConversionDataSuccess(_ data: [AnyHashable: Any]) {
+        print("onConversionDataSuccess data:")
+        for (key, value) in data {
+            print(key, ":", value)
+        }
+        if let status = data["af_status"] as? String {
+            if (status == "Non-organic") {
+                if let sourceID = data["media_source"],
+                    let campaign = data["campaign"] {
+                    print("This is a Non-Organic install. Media source: \(sourceID)  Campaign: \(campaign)")
+                }
+            } else {
+                print("This is an organic install.")
+            }
+            if let is_first_launch = data["is_first_launch"] as? Bool,
+                is_first_launch {
+                print("First Launch")
+            } else {
+                print("Not First Launch")
+            }
+        }
+    }
+    
+    func onConversionDataFail(_ error: Error) {
+        print("\(error)")
+    }
+    
+    // Handle Deeplink
+    func onAppOpenAttribution(_ attributionData: [AnyHashable: Any]) {
+        //Handle Deep Link Data
+        print("onAppOpenAttribution data:")
+        for (key, value) in attributionData {
+            print(key, ":",value)
+        }
+    }
+    
+    func onAppOpenAttributionFailure(_ error: Error) {
+        print("\(error)")
     }
 }

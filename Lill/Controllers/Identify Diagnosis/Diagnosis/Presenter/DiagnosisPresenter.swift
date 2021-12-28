@@ -66,6 +66,7 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
                 AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_results_success_not_sick)
             } else {
                 AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_results_success_sick)
+                AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_diagnose_success)
             }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
