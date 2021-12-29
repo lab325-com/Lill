@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().isDebug = true
         AppsFlyerLib.shared().useReceiptValidationSandbox = true
+        AppsFlyerLib.shared().useUninstallSandbox = true
         
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
@@ -229,7 +230,6 @@ extension AppDelegate: MessagingDelegate {
 
 extension AppDelegate: AppsFlyerLibDelegate {
     
-    // Handle Organic/Non-organic installation
     func onConversionDataSuccess(_ data: [AnyHashable: Any]) {
         print("onConversionDataSuccess data:")
         for (key, value) in data {
@@ -257,9 +257,7 @@ extension AppDelegate: AppsFlyerLibDelegate {
         print("\(error)")
     }
     
-    // Handle Deeplink
     func onAppOpenAttribution(_ attributionData: [AnyHashable: Any]) {
-        //Handle Deep Link Data
         print("onAppOpenAttribution data:")
         for (key, value) in attributionData {
             print(key, ":",value)
