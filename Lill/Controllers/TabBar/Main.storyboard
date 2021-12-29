@@ -815,13 +815,13 @@
                                         <rect key="frame" x="0.0" y="105" width="414" height="620"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-4g-h1P">
-                                                <rect key="frame" x="97.5" y="177.5" width="219" height="265.5"/>
+                                                <rect key="frame" x="68" y="177.5" width="278" height="265.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheldure_empty_ic" translatesAutoresizingMaskIntoConstraints="NO" id="io2-eA-dqP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="172"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-VH-tPB">
-                                                        <rect key="frame" x="0.0" y="197" width="219" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="197" width="278" height="68.5"/>
                                                         <string key="text">To have daily schedule and
 notifications - turn ON
 Ring icon in Plant card</string>
@@ -834,7 +834,8 @@ Ring icon in Plant card</string>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="u8y-4g-h1P" firstAttribute="centerX" secondItem="Wvi-LB-y22" secondAttribute="centerX" id="oT5-UG-XIX"/>
+                                            <constraint firstItem="u8y-4g-h1P" firstAttribute="leading" secondItem="Wvi-LB-y22" secondAttribute="leading" constant="68" id="bml-fe-Hjl"/>
+                                            <constraint firstAttribute="trailing" secondItem="u8y-4g-h1P" secondAttribute="trailing" constant="68" id="oMl-J2-q8D"/>
                                             <constraint firstItem="u8y-4g-h1P" firstAttribute="centerY" secondItem="Wvi-LB-y22" secondAttribute="centerY" id="w05-4l-Su0"/>
                                         </constraints>
                                     </view>

@@ -63,6 +63,7 @@ class PlantsController: BaseController {
     
     override func viewDidLoad() {
         hiddenNavigationBar = true
+        addSwipeOnScreen = true
         super.viewDidLoad()
         
         AnalyticsHelper.sendFirebaseEvents(events: .main_screen_open)

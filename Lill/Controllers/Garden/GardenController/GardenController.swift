@@ -39,6 +39,7 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     override func viewDidLoad() {
+        addSwipeOnScreen = true
         super.viewDidLoad()
 
         setup()
