@@ -2964,7 +2964,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_detail_added_in_schedule = Rswift.StringResource(key: "garden_plant_detail_added_in_schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Added in Wishlist
+      /// en translation: Added to Wishlist
       ///
       /// Locales: en, es
       static let plant_detail_added_to_wishlist = Rswift.StringResource(key: "plant_detail_added_to_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
@@ -4422,7 +4422,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plant_detail_added_in_schedule", bundle: bundle, comment: "")
       }
 
-      /// en translation: Added in Wishlist
+      /// en translation: Added to Wishlist
       ///
       /// Locales: en, es
       static func plant_detail_added_to_wishlist(preferredLanguages: [String]? = nil) -> String {

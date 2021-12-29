@@ -217,7 +217,7 @@
 "plant_add_to_garden_title" = "¡Felicitaciones!";
 "plant_detail_about" = "Acerca de";
 "plant_detail_add_to_my_garden" = "Añadir a Mi Jardín";
-"plant_detail_added_to_wishlist" = "Añadido en la lista de deseos";
+"plant_detail_added_to_wishlist" = "Añadido a la lista de deseos";
 "plant_detail_back" = "Atrás";
 "plant_detail_cares" = "Cuidados";
 "plant_detail_more_on_wiki" = "Más info en el Wiki";
@@ -264,7 +264,7 @@
 "scheldure_today" = "Hoy";
 "subscription_active" = "Activo";
 "subscription_cancel_any_time" = "Cancela en cualquier momento";
-"subscription_description" = "Puedes cancenlar su suscripción de prueba gratuita en cualquier momento cancelando tu suscripción a través de la configuración de tu cuenta Itunes, de lo contrario se renovará automáticamente. Esto debe hacerse al menos 24 horas antes del final de la prueba gratuita o cualquier período de suscripción para evitar el cobro. Una suscripción con un período de prueba gratuita se renovará automáticamente a una suscripción de pago. Por favor tenga en cuenta que cualquier porción no utilizada de período de prueba gratuita (en caso de ofrecerse) se perderá al comprar una suscripción premium durante el período de prueba gratuita. Los pagos de la suscripción se cargarán a tu cuenta iTunes al confirmar la compra y tras el comienzo de cada término de renovación. Para más información, por favor revisa nuestros Términos de Uso y Política de Privacidad.";
+"subscription_description" = "Puede cancenlar su suscripción de prueba gratuita en cualquier momento cancelando su suscripción a través de la configuración de su cuenta Itunes, de lo contrario se renovará automáticamente. Esto debe hacerse al menos 24 horas antes del final de la prueba gratuita o cualquier período de suscripción para evitar el cobro. Una suscripción con un período de prueba gratuita se renovará automáticamente a una suscripción de pago. Por favor tenga en cuenta que cualquier porción no utilizada de período de prueba gratuita (en caso de ofrecerse) se perderá al comprar una suscripción premium durante el período de prueba gratuita. Los pagos de la suscripción se cargarán a tu cuenta iTunes al confirmar la compra y tras el comienzo de cada término de renovación. Para más información, por favor revise nuestros Términos de Uso y Política de Privacidad.";
 "subscription_month" = "mes";
 "subscription_privacy" = "Política de privacidad";
 "subscription_recurring" = "Facturación mensual recurrente";

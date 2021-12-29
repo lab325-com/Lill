@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseAnalytics
+import AppsFlyerLib
 
 enum FirebaseScreenEvents: String {
     case login_screen = "login_screen" ///LoginController
@@ -146,6 +147,12 @@ enum FirebaseEvents: String {
     case add_care = "add_care"
 }
 
+enum AppsFlyerEvents: String {
+    case appsflyer_identify_success = "appsflyer_identify_success"
+    case appsflyer_diagnose_success = "appsflyer_diagnose_success"
+    case appsflyer_purchase_success = "appsflyer_purchase_success"
+}
+
 class AnalyticsHelper: NSObject {
     static func sendFirebaseEvents(events: String, params: [String : Any]? = nil) {
         Analytics.logEvent(events, parameters: params)
@@ -158,5 +165,9 @@ class AnalyticsHelper: NSObject {
     static func sendFirebaseScreenEvent(screen: FirebaseScreenEvents) {
         Analytics.logEvent(AnalyticsEventScreenView,
                            parameters: [AnalyticsParameterScreenName: screen.rawValue])
+    }
+    
+    static func sendAppsFlyerEvent(event: AppsFlyerEvents, values: [AnyHashable : Any]? = nil) {
+        AppsFlyerLib.shared().logEvent(event.rawValue, withValues: values)
     }
 }
