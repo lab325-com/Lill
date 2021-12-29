@@ -16,6 +16,7 @@ class PopDoneSpecificCareController: BaseController {
     @IBOutlet weak var careInfoLabel: UILabel!
     @IBOutlet weak var recordCareButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var bottomLayout: NSLayoutConstraint!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -51,11 +52,20 @@ class PopDoneSpecificCareController: BaseController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        animate(isHidden: false) {
+            
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
     
     private func setup() {
+    
         careImageView.image = care.type.name.image
         careNameLabel.text = care.type.name.text
         
@@ -79,6 +89,17 @@ class PopDoneSpecificCareController: BaseController {
         cancelButton.setTitle(RLocalization.pop_done_specific_care_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
+    private func animate(isHidden: Bool, completion: @escaping () -> ()) {
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            guard let `self` = self else { return }
+            self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: isHidden ? 0.0 : 0.7)
+            self.bottomLayout.constant = isHidden ? 400 : -14
+            self.view.layoutIfNeeded()
+        } completion: { result in
+            completion()
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - IBAction
     //----------------------------------------------
@@ -89,8 +110,11 @@ class PopDoneSpecificCareController: BaseController {
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
-        dismiss(animated: true)
+        animate(isHidden: true) {
+            self.dismiss(animated: true)
+        }
     }
+    
 }
 
 //----------------------------------------------
@@ -99,8 +123,9 @@ class PopDoneSpecificCareController: BaseController {
 
 extension PopDoneSpecificCareController: PopDoneSpecificCareOutputProtocol {
     func success() {
-        dismiss(animated: true) {
-            self.delegate?.popDoneSpecificCareSuccess(controller: self)
+        self.delegate?.popDoneSpecificCareSuccess(controller: self)
+        animate(isHidden: true) {
+            self.dismiss(animated: true)
         }
     }
     

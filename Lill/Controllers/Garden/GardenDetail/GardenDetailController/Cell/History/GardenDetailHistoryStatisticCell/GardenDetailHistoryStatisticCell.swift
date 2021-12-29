@@ -36,8 +36,8 @@ class GardenDetailHistoryStatisticCell: UITableViewCell {
         caresTitleLabel.text = RLocalization.garden_hiistory_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
     
         ageSubitleLabel.text = RLocalization.garden_hiistory_age.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        caresSubTitleLabel.text = RLocalization.garden_hiistory_water.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        waterSubTitleLabel.text = RLocalization.garden_hiistory_cares_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        caresSubTitleLabel.text = RLocalization.garden_hiistory_cares_done.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        waterSubTitleLabel.text = RLocalization.garden_hiistory_water.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         
         ageView.layer.borderWidth = 1.0

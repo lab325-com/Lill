@@ -49,9 +49,12 @@ class GardenViewCell: UICollectionViewCell {
     //----------------------------------------------
     
     func configure(model: GardenPlantModel) {
+        let plantHappy = RLocalization.garden_plant_is_happy.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let needCares = RLocalization.garden_need_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         plantNameLabel.text = model.name
         plantImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
-        plantCareButton.setTitle(model.isHappy ? "Plant is happy" : model.gardenPlantCares.count == 1 ? model.gardenPlantCares.first?.careType.name.text : "Need Cares: \(model.gardenPlantCares.count)", for: .normal)
+        plantCareButton.setTitle(model.isHappy ? "\(plantHappy)" : model.gardenPlantCares.count == 1 ? model.gardenPlantCares.first?.careType.name.text : "\(needCares) \(model.gardenPlantCares.count)", for: .normal)
         plantCareButton.backgroundColor = model.isHappy ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)
         plantCareButton.isUserInteractionEnabled = !model.isHappy
     }

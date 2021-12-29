@@ -65,7 +65,7 @@ class BaseController: UIViewController {
         timeline?.play()
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
         
-        if #available(iOS 13.0, *) {
+        if #available(iOS 15.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
@@ -83,7 +83,7 @@ class BaseController: UIViewController {
                 navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
                 navigationController?.navigationBar.shadowImage = UIImage()
                 navigationController?.navigationBar.isTranslucent = true
-                navigationController?.navigationBar.backgroundColor = .clear
+                navigationController?.navigationBar.backgroundColor = backgroundNavigationColor
                 navigationController?.navigationBar.barTintColor = .black
             } else {
                 navigationController?.navigationBar.setBackgroundImage(nil, for: .default)

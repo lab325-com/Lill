@@ -47,6 +47,11 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let careLabel = careLabels.first(where: {$0.tag == 0})
+        careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        titleLabel.text = RLocalization.garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        addPantLabel.text = "+ " + RLocalization.garden_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         for careView in careViews {
             switch careView.tag {
             case 0: careView.isHidden = false
@@ -131,6 +136,11 @@ class GardenController: BaseController {
 
     @IBAction func addPlantAction(_ sender: UIButton) {
         GardenRouter(presenter: navigationController).presentChooseAddPlant()
+    }
+    
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        collectionView.reloadData()
     }
 }
 
