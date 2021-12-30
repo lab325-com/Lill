@@ -28,8 +28,9 @@ class GardenRouter: BaseRouter {
         present(controller: controller, presentStyle: .overCurrentContext)
     }
     
-    func presentChooseAddPlant() {
+    func presentChooseAddPlant(delegate: GardenChooseAddPlantDelegate) {
         let controller = GardenChooseAddPlantController()
+        controller.delegate = delegate
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }
     
