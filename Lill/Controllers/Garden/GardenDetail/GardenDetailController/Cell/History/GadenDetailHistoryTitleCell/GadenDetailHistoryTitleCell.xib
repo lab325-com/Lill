@@ -48,23 +48,35 @@
                             <inset key="sectionInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcO-4R-gdE">
+                        <rect key="frame" x="324.5" y="3" width="47.5" height="34"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <connections>
+                            <action selector="actionViewAll:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lJZ-ZF-hVT"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="g1a-G2-s8k" firstAttribute="top" secondItem="BA1-J6-ohD" secondAttribute="bottom" constant="16" id="24X-3K-LBv"/>
                     <constraint firstAttribute="trailing" secondItem="g1a-G2-s8k" secondAttribute="trailing" id="6Mm-gQ-EsT"/>
+                    <constraint firstItem="xcO-4R-gdE" firstAttribute="centerX" secondItem="0JI-9w-00a" secondAttribute="centerX" id="DLZ-mQ-8OO"/>
                     <constraint firstAttribute="trailing" secondItem="0JI-9w-00a" secondAttribute="trailing" constant="24" id="Das-ze-d7Q"/>
                     <constraint firstItem="BA1-J6-ohD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="DiA-Zr-eYv"/>
                     <constraint firstAttribute="bottom" secondItem="g1a-G2-s8k" secondAttribute="bottom" constant="10" id="KPn-dA-ehJ"/>
                     <constraint firstItem="BA1-J6-ohD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="RK4-u9-rz1"/>
                     <constraint firstItem="g1a-G2-s8k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dat-MZ-wjh"/>
+                    <constraint firstItem="xcO-4R-gdE" firstAttribute="centerY" secondItem="0JI-9w-00a" secondAttribute="centerY" id="iUs-zQ-8vz"/>
                     <constraint firstItem="0JI-9w-00a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nS2-yg-bIA"/>
+                    <constraint firstItem="xcO-4R-gdE" firstAttribute="width" secondItem="0JI-9w-00a" secondAttribute="width" multiplier="1.2" id="qeN-4T-6zj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="collectionView" destination="g1a-G2-s8k" id="1kR-Nn-lo8"/>
+                <outlet property="galleryLabel" destination="BA1-J6-ohD" id="LzS-CM-9WH"/>
                 <outlet property="heightCollectionView" destination="aAm-LC-rLg" id="fcK-cf-Zxa"/>
+                <outlet property="viewAllLabel" destination="0JI-9w-00a" id="9tb-6j-8Fu"/>
             </connections>
             <point key="canvasLocation" x="189.85507246376812" y="126.22767857142857"/>
         </tableViewCell>

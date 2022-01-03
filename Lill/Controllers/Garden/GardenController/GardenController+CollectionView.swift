@@ -37,12 +37,13 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
             case presenter.sadGardenPlants.count + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellButtonIdentifier, for: indexPath) as! GardenButtonCell
                 cell.delegate = self
+                
                 switch selectedCareType {
-                case 1: cell.configure(title: "Done all Humidity")
-                case 2: cell.configure(title: "Done all Misting")
-                case 3: cell.configure(title: "Done all Rotate")
-                case 4: cell.configure(title: "Done all Watering")
-                default: cell.configure(title: "Done all Cares")
+                case 1: cell.configure(title: RLocalization.garden_done_all_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+                case 2: cell.configure(title: RLocalization.garden_done_all_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+                case 3: cell.configure(title: RLocalization.garden_done_all_rotate.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+                case 4: cell.configure(title: RLocalization.garden_done_all_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+                default: cell.configure(title: RLocalization.garden_done_all_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue))
                 }
                 return cell
             default:

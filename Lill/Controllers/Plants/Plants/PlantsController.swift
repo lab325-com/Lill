@@ -63,6 +63,7 @@ class PlantsController: BaseController {
     
     override func viewDidLoad() {
         hiddenNavigationBar = true
+        addSwipeOnScreen = true
         super.viewDidLoad()
         
         AnalyticsHelper.sendFirebaseEvents(events: .main_screen_open)
@@ -74,6 +75,7 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {

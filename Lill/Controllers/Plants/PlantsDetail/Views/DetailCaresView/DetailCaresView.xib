@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,11 +48,20 @@
                             <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4X-iS-tmU">
+                            <rect key="frame" x="0.0" y="0.0" width="304" height="285"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="selectCareAction:" destination="-1" eventType="touchUpInside" id="4qv-6f-H0b"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Vzo-Ma-FKc" firstAttribute="leading" secondItem="pP0-Cf-VJ1" secondAttribute="leading" id="7tC-TI-tET"/>
                         <constraint firstItem="vm1-Wq-QF4" firstAttribute="top" secondItem="Vzo-Ma-FKc" secondAttribute="bottom" id="DfH-BZ-0G5"/>
+                        <constraint firstItem="Q4X-iS-tmU" firstAttribute="top" secondItem="pP0-Cf-VJ1" secondAttribute="top" id="DwO-dw-jNN"/>
+                        <constraint firstAttribute="bottom" secondItem="Q4X-iS-tmU" secondAttribute="bottom" id="NoG-ji-pMD"/>
                         <constraint firstItem="u2h-Ar-Qoi" firstAttribute="top" secondItem="vm1-Wq-QF4" secondAttribute="bottom" constant="5" id="T3n-2V-Doc"/>
                         <constraint firstAttribute="trailing" secondItem="Vzo-Ma-FKc" secondAttribute="trailing" id="Wju-re-EX6"/>
                         <constraint firstAttribute="trailing" secondItem="vm1-Wq-QF4" secondAttribute="trailing" id="Zcx-TX-WtD"/>
@@ -60,7 +69,9 @@
                         <constraint firstItem="u2h-Ar-Qoi" firstAttribute="leading" secondItem="pP0-Cf-VJ1" secondAttribute="leading" id="edy-4h-22r"/>
                         <constraint firstItem="Vzo-Ma-FKc" firstAttribute="top" secondItem="pP0-Cf-VJ1" secondAttribute="top" id="g8S-48-8gj"/>
                         <constraint firstItem="vm1-Wq-QF4" firstAttribute="leading" secondItem="pP0-Cf-VJ1" secondAttribute="leading" id="iiN-Za-Dd2"/>
+                        <constraint firstItem="Q4X-iS-tmU" firstAttribute="leading" secondItem="pP0-Cf-VJ1" secondAttribute="leading" id="tli-gW-2uc"/>
                         <constraint firstAttribute="trailing" secondItem="u2h-Ar-Qoi" secondAttribute="trailing" id="yxx-fh-tEj"/>
+                        <constraint firstAttribute="trailing" secondItem="Q4X-iS-tmU" secondAttribute="trailing" id="zGv-3V-k9v"/>
                     </constraints>
                 </view>
             </subviews>
@@ -76,12 +87,6 @@
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                     <integer key="value" value="24"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                    <integer key="value" value="1"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                    <color key="value" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="59.420289855072468" y="202.56696428571428"/>

@@ -1,5 +1,6 @@
-mutation UploadMedia($image: Upload!) {
-	uploadMedia(image: $image) {
+mutation UploadMedia($image: Upload!
+                     $notes: String) {
+	uploadMedia(image: $image, notes: $notes) {
 		id
 		urlIosFull
 		urlIosPrev

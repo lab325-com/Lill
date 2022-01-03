@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8C6C8340-B8DB-4A7D-AC17-C13B4D562936"
+            uuid = "95C129E2-50A4-43BF-B85E-4FC8901D5FB9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenPlanCaresEdit/GardenPlantCaresEdit.swift"
+            filePath = "Lill/Controllers/Garden/GardenController/GardenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "pickerCareSelected(controller:selectedDay:selectedPeriod:model:date:)"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "didPressedAddUniquePlant()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

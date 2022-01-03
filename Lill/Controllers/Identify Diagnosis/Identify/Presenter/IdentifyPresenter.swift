@@ -68,6 +68,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
             self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] modelRecognize in
                 guard let `self` = self else { return }
                 AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": modelRecognize.startRecognize.count])
+                AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_identify_success)
                 
                 let queryMe = MeQuery()
                 

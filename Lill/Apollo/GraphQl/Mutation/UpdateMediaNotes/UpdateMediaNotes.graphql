@@ -1,0 +1,8 @@
+mutation UpdateMediaNotes($mediaId: String!, $notes: String!) {
+	updateMediaNotes(mediaId: $mediaId, notes: $notes) {
+        id
+        urlIosFull
+        urlIosPrev
+        notes
+	}
+}

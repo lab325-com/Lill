@@ -5,7 +5,7 @@
 //  Created by Andrey S on 16.11.2021.
 //
 
-import Foundation
+import UIKit
 
 class GardenRouter: BaseRouter {
     
@@ -28,8 +28,9 @@ class GardenRouter: BaseRouter {
         present(controller: controller, presentStyle: .overCurrentContext)
     }
     
-    func presentChooseAddPlant() {
+    func presentChooseAddPlant(delegate: GardenChooseAddPlantDelegate) {
         let controller = GardenChooseAddPlantController()
+        controller.delegate = delegate
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }
     
@@ -43,5 +44,40 @@ class GardenRouter: BaseRouter {
     func pushEditCarePlant(gardenPlantId: String, delegate: GardenPlantCaresEditDelegate) {
         let controller = GardenPlantCaresEdit(gardenPlantId: gardenPlantId, delegate: delegate)
         push(controller: controller)
+    }
+
+    func presentHistoryAddPhoto(gardenPlantId: String, delegate: GardenHistoryAddPhotoProtocol) {
+        let controller = GardenHistoryAddPhotoController(gardenPlantId: gardenPlantId, delegate: delegate)
+        let nc = UINavigationController(rootViewController: controller)
+        nc.modalPresentationStyle = .fullScreen
+        present(controller: nc, presentStyle: .fullScreen)
+    }
+    
+    func presentGadrenHistoryNotes(delegate: GardenHistoryNotesDelegate) {
+        let controller = GardenHistoryNotesController(delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
+    
+    func pushGardenListPhoto(gardenID: String, model: [MediaModel], delegate: GardenDetailListPhotoDelegate) {
+        let controller = GardenDetailListPhotoController(gardenID: gardenID, model: model, delegate: delegate)
+        push(controller: controller)
+    }
+    
+    func pushGardenDeteilPhoto(gardenID: String, selectedModel: MediaModel, models: [MediaModel], delegate: GardenPhotoDeteilDelegate) {
+        let controller = GardenPhotoDeteilController(gardenID: gardenID, selectedModel: selectedModel, models: models, delegate: delegate)
+        push(controller: controller)
+    }
+    
+    func pushGardenDeteilEdit(model: MediaModel, delegate: GardenDetailEditDelegate) {
+        let controller = GardenDetailEditController(model: model, delegate: delegate)
+        push(controller: controller)
+    }
+    
+    func presentDoneSpecificCare(delegate: PopDoneSpecificCareDelegate, gardenId: String, care: GardenShortPlantCaresModel) {
+        let controller = PopDoneSpecificCareController(delegate: delegate, gardenId: gardenId, care: care)
+        controller.modalTransitionStyle = .crossDissolve
+        present(controller: controller,animated: true, presentStyle: .overCurrentContext)
     }
 }

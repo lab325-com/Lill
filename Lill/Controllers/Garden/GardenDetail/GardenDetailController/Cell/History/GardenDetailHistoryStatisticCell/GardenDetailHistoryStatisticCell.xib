@@ -58,7 +58,7 @@
                                         <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="months" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-8v-VKx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-8v-VKx">
                                         <rect key="frame" x="7" y="53" width="109" height="11"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="9"/>
                                         <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,6 +212,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="LkM-LU-TDf" firstAttribute="top" secondItem="W1c-iF-ZYF" secondAttribute="bottom" constant="6" id="Rho-vz-bLK"/>
                     <constraint firstAttribute="bottom" secondItem="LkM-LU-TDf" secondAttribute="bottom" constant="10" id="SSe-Nc-n1c"/>
@@ -222,10 +223,21 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="ageLabel" destination="OX0-WV-DoG" id="nS7-1x-RkZ"/>
+                <outlet property="ageSubitleLabel" destination="KOq-wL-KZz" id="aaO-iJ-Ocp"/>
                 <outlet property="ageView" destination="lIi-yN-chW" id="U4t-Rc-DQi"/>
+                <outlet property="caresLabel" destination="EhT-PH-DAO" id="yhT-cH-Jay"/>
+                <outlet property="caresSubTitleLabel" destination="n3g-Kf-hjL" id="pNC-gM-Er3"/>
+                <outlet property="caresTitleLabel" destination="b4K-jc-W2M" id="Geo-tK-4yw"/>
                 <outlet property="caresView" destination="wfn-wq-kRk" id="66y-pi-ohc"/>
+                <outlet property="daysLabel" destination="5eE-8v-VKx" id="YY5-tm-7jw"/>
+                <outlet property="litersLabel" destination="90x-yb-1kc" id="7ke-S1-piE"/>
+                <outlet property="statisticLabel" destination="W1c-iF-ZYF" id="SFy-1S-iby"/>
+                <outlet property="waterLabel" destination="Wd2-tw-nfA" id="E30-Dl-Tao"/>
+                <outlet property="waterSubTitleLabel" destination="7oC-2O-4dZ" id="qH5-gT-zxL"/>
                 <outlet property="waterView" destination="Gw7-0Y-K39" id="QzZ-tX-Ezl"/>
             </connections>
             <point key="canvasLocation" x="205.07246376811597" y="152.34375"/>

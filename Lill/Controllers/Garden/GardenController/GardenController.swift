@@ -39,6 +39,7 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     override func viewDidLoad() {
+        addSwipeOnScreen = true
         super.viewDidLoad()
 
         setup()
@@ -47,6 +48,11 @@ class GardenController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let careLabel = careLabels.first(where: {$0.tag == 0})
+        careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        titleLabel.text = RLocalization.garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        addPantLabel.text = "+ " + RLocalization.garden_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         for careView in careViews {
             switch careView.tag {
             case 0: careView.isHidden = false
@@ -130,7 +136,12 @@ class GardenController: BaseController {
     }
 
     @IBAction func addPlantAction(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).presentChooseAddPlant()
+        GardenRouter(presenter: navigationController).presentChooseAddPlant(delegate: self)
+    }
+    
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        collectionView.reloadData()
     }
 }
 
@@ -178,5 +189,31 @@ extension GardenController: GardenOutputProtocol {
 
     func failure(error: String) {
 
+    }
+}
+
+//----------------------------------------------
+// MARK: - ChooseIdentifyDelegate
+//----------------------------------------------
+
+extension GardenController: GardenChooseAddPlantDelegate {
+    func didPressedAddUniquePlant() {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - PopUniqePlanProtocol
+//----------------------------------------------
+
+extension GardenController: PopUniqePlanProtocol {
+    func dissmiss(controller: PopUniquePlantController, text: String) {
+        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
+    }
+}
+
+extension GardenController: AddCoverIdentifierProtocol {
+    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
+        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
     }
 }

@@ -17,7 +17,6 @@ class BaseController: UIViewController {
     @IBOutlet weak var animationBackGroundSwipeRightView: AnimationBackGroundSwipeRightView!
     @IBOutlet weak var animationBackGroundSwipeLeftView: AnimationBackGroundSwipeLeftView!
     
-    
     var transparentNavigationBar = false
     var hiddenNavigationBar = false
     var colorTitleNavigation = UIColor(rgb: 0xC36ED1)
@@ -29,7 +28,7 @@ class BaseController: UIViewController {
     var keyboardHeight: CGFloat = 0.0
     var isNeedBottomPagging = true
     var addTapOnScreen = true
-    
+    var addSwipeOnScreen = false
     
     var timeline: Timeline?
     
@@ -53,6 +52,10 @@ class BaseController: UIViewController {
             setupTapOnScreen()
         }
         
+        if addSwipeOnScreen {
+            setupSwipeOnScreen()
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowMain(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideMain(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(changeLanguageNotifications),
@@ -65,7 +68,7 @@ class BaseController: UIViewController {
         timeline?.play()
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
         
-        if #available(iOS 13.0, *) {
+        if #available(iOS 15.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
@@ -83,7 +86,7 @@ class BaseController: UIViewController {
                 navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
                 navigationController?.navigationBar.shadowImage = UIImage()
                 navigationController?.navigationBar.isTranslucent = true
-                navigationController?.navigationBar.backgroundColor = .clear
+                navigationController?.navigationBar.backgroundColor = backgroundNavigationColor
                 navigationController?.navigationBar.barTintColor = .black
             } else {
                 navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
@@ -122,10 +125,37 @@ class BaseController: UIViewController {
     //----------------------------------------------
     
     private func setupTapOnScreen() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(hideKeyboard))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.isUserInteractionEnabled = true
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    private func setupSwipeOnScreen() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    @objc func swiped(gesture: UISwipeGestureRecognizer) {
+        guard let tabBarController = tabBarController, let viewControllers = tabBarController.viewControllers else { return }
+        let tabs = viewControllers.count
+        switch gesture.direction {
+        case .right:
+            if (tabBarController.selectedIndex) > 0 {
+                tabBarController.selectedIndex -= 1
+            }
+        case .left:
+            if (tabBarController.selectedIndex) < tabs {
+                tabBarController.selectedIndex += 1
+            }
+        default:
+            print("other swipe")
+        }
     }
     
     @objc func hideKeyboard() {

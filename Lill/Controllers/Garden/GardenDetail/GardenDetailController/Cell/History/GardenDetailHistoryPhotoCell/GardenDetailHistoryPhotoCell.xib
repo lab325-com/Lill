@@ -65,13 +65,16 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K7J-J9-MhJ">
-                        <rect key="frame" x="117" y="23" width="97" height="16"/>
+                        <rect key="frame" x="117" y="23" width="98" height="16"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_phoho_ic" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-if-tYA">
-                                <rect key="frame" x="0.0" y="0.0" width="19" height="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="FXy-qm-7GX"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpP-a7-qL1">
-                                <rect key="frame" x="34" y="0.0" width="63" height="16"/>
+                                <rect key="frame" x="35" y="0.0" width="63" height="16"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -127,6 +130,10 @@
             <connections>
                 <outlet property="bottomSeparatorView" destination="Qst-eF-Skl" id="ZcN-tb-Drz"/>
                 <outlet property="circleView" destination="Xrn-Ks-Y1Y" id="Ws0-qU-hAA"/>
+                <outlet property="dateLabel" destination="JPz-kx-cmm" id="4N0-Cl-f2j"/>
+                <outlet property="notesLabel" destination="NUh-p9-R11" id="U5V-mS-VpN"/>
+                <outlet property="photoImageView" destination="igp-Gb-lKl" id="Fx3-Hd-RpJ"/>
+                <outlet property="photoTitleNoteLabel" destination="OpP-a7-qL1" id="bd4-F8-V9L"/>
                 <outlet property="topSeparatorView" destination="GcY-Ca-UFq" id="jLI-bf-eUI"/>
             </connections>
             <point key="canvasLocation" x="183" y="224"/>

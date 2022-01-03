@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenDetailEditController" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="addNoteLabel" destination="TrK-H4-pvk" id="RFe-X0-dWE"/>
+                <outlet property="bottomView" destination="Sp3-Mt-ILx" id="DaP-UX-s2O"/>
+                <outlet property="bottomViewConstraint" destination="lHB-oZ-wsX" id="Fcc-qI-CfN"/>
+                <outlet property="dateLabel" destination="5NN-ex-T2K" id="zEN-XA-sOV"/>
+                <outlet property="deleteButton" destination="VEl-O5-pkL" id="NEn-7X-xqL"/>
+                <outlet property="notesTextView" destination="JCH-pH-f9F" id="5p7-fe-rRx"/>
+                <outlet property="plantImageView" destination="8Qv-PW-nw2" id="f8P-bb-Orz"/>
+                <outlet property="saveChangeButton" destination="Ww9-za-fjj" id="f9C-dz-QHv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Qv-PW-nw2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="618"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp3-Mt-ILx">
+                    <rect key="frame" x="0.0" y="547" width="414" height="315"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 12 | 13:14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-ex-T2K">
+                            <rect key="frame" x="168" y="24" width="78" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changing notes for this Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrK-H4-pvk">
+                            <rect key="frame" x="31" y="60" width="160.5" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <color key="textColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaL-mv-fFV">
+                            <rect key="frame" x="16" y="84" width="382" height="100"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JCH-pH-f9F">
+                                    <rect key="frame" x="9" y="9" width="364" height="82"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" systemColor="labelColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="1GY-xP-WN1"/>
+                                <constraint firstAttribute="trailing" secondItem="JCH-pH-f9F" secondAttribute="trailing" constant="9" id="OBf-2T-GHg"/>
+                                <constraint firstAttribute="bottom" secondItem="JCH-pH-f9F" secondAttribute="bottom" constant="9" id="dgg-qs-IFv"/>
+                                <constraint firstItem="JCH-pH-f9F" firstAttribute="top" secondItem="AaL-mv-fFV" secondAttribute="top" constant="9" id="iez-1n-yiJ"/>
+                                <constraint firstItem="JCH-pH-f9F" firstAttribute="leading" secondItem="AaL-mv-fFV" secondAttribute="leading" constant="9" id="mlY-oE-tnw"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-za-fjj">
+                            <rect key="frame" x="24" y="208" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="0km-oF-IvJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Save Changes"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionSaveChange:" destination="-1" eventType="touchUpInside" id="eP1-Ug-sXR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEl-O5-pkL">
+                            <rect key="frame" x="24" y="261" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="eEo-op-9Pw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Delete Photo"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionDeletePhoto:" destination="-1" eventType="touchUpInside" id="G0q-e4-JH9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="5NN-ex-T2K" firstAttribute="top" secondItem="Sp3-Mt-ILx" secondAttribute="top" constant="24" id="3KF-cF-obO"/>
+                        <constraint firstItem="Ww9-za-fjj" firstAttribute="leading" secondItem="Sp3-Mt-ILx" secondAttribute="leading" constant="24" id="Iyd-Wx-Ugj"/>
+                        <constraint firstItem="AaL-mv-fFV" firstAttribute="top" secondItem="TrK-H4-pvk" secondAttribute="bottom" constant="8" id="MY6-HY-9DA"/>
+                        <constraint firstItem="5NN-ex-T2K" firstAttribute="centerX" secondItem="Sp3-Mt-ILx" secondAttribute="centerX" id="Rc2-Mf-er8"/>
+                        <constraint firstItem="VEl-O5-pkL" firstAttribute="top" secondItem="Ww9-za-fjj" secondAttribute="bottom" constant="9" id="RsN-Lc-CYi"/>
+                        <constraint firstAttribute="trailing" secondItem="Ww9-za-fjj" secondAttribute="trailing" constant="24" id="UvF-7P-Zm9"/>
+                        <constraint firstItem="AaL-mv-fFV" firstAttribute="leading" secondItem="Sp3-Mt-ILx" secondAttribute="leading" constant="16" id="Znv-9T-MTM"/>
+                        <constraint firstItem="Ww9-za-fjj" firstAttribute="top" secondItem="AaL-mv-fFV" secondAttribute="bottom" constant="24" id="bX7-dc-p0V"/>
+                        <constraint firstItem="VEl-O5-pkL" firstAttribute="leading" secondItem="Sp3-Mt-ILx" secondAttribute="leading" constant="24" id="sbc-rv-WtJ"/>
+                        <constraint firstAttribute="trailing" secondItem="AaL-mv-fFV" secondAttribute="trailing" constant="16" id="tlX-4c-RqQ"/>
+                        <constraint firstItem="TrK-H4-pvk" firstAttribute="leading" secondItem="Sp3-Mt-ILx" secondAttribute="leading" constant="31" id="uR3-rz-64E"/>
+                        <constraint firstAttribute="bottom" secondItem="VEl-O5-pkL" secondAttribute="bottom" constant="10" id="uVY-r9-OKh"/>
+                        <constraint firstItem="TrK-H4-pvk" firstAttribute="top" secondItem="5NN-ex-T2K" secondAttribute="bottom" constant="20" id="v9m-be-pxY"/>
+                        <constraint firstAttribute="trailing" secondItem="VEl-O5-pkL" secondAttribute="trailing" constant="24" id="vu7-Ru-wBJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sp3-Mt-ILx" secondAttribute="trailing" id="4Uh-zi-Mze"/>
+                <constraint firstItem="8Qv-PW-nw2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HhN-bl-aaZ"/>
+                <constraint firstItem="Sp3-Mt-ILx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ah3-ne-IDf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8Qv-PW-nw2" secondAttribute="bottom" constant="200" id="k9X-lo-hDW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Sp3-Mt-ILx" secondAttribute="bottom" id="lHB-oZ-wsX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Qv-PW-nw2" secondAttribute="trailing" id="sNa-8I-gpH"/>
+                <constraint firstItem="8Qv-PW-nw2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vAw-H1-QQm"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="108"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

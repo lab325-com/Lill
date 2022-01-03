@@ -28,6 +28,7 @@ class GardenDetailSegmentCell: UITableViewCell {
         }
         segmentControl.setTitle(RLocalization.garden_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
         segmentControl.setTitle(RLocalization.garden_detail_care_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+        segmentControl.setTitle(RLocalization.garden_hiistory_title.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

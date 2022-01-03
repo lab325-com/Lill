@@ -1,0 +1,3 @@
+mutation GalleryImageDelete($id: String!) {
+	galleryImageDelete(id: $id)
+}

@@ -13,6 +13,13 @@ class GardenDetailListCaresCell: UITableViewCell {
     
     @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var bottomSeparatorView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var careImageView: UIImageView!
+    @IBOutlet weak var careTitleLabel: UILabel!
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statucImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +34,23 @@ class GardenDetailListCaresCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(isHiddenTop: Bool, isHiddenBottom: Bool) {
+    func setupCell(model: GardenPlantsHistoryListModel, isHiddenTop: Bool, isHiddenBottom: Bool) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd\nHH:mm"
+        let dateString = dateFormatter.string(from: model.date)
+        dateLabel.text = dateString
+        
+        careImageView.image = model.gardenPlantCare?.name.darklmage
+        careTitleLabel.text = model.gardenPlantCare?.name.text
+        careImageView.tintColor = UIColor.black
+        
+        statucImageView.isHidden = model.gardenPlantCare?.status == .missed ? false : true
+        statusLabel.text = model.gardenPlantCare?.status.text
+        statusLabel.textColor = model.gardenPlantCare?.status.colorScheldure
+        
+        statucImageView.tintColor = model.gardenPlantCare?.status.colorScheldure
+        
         topSeparatorView.isHidden = isHiddenTop
         bottomSeparatorView.isHidden = isHiddenBottom
         
