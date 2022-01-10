@@ -14,7 +14,14 @@ class GardensController: BaseController {
     @IBOutlet weak var gardensSegment: UISegmentedControl!
     
     @IBOutlet weak var gardensTableView: UITableView!
-    @IBOutlet weak var plantsCollectionView: UICollectionView!
+    
+    //----------------------------------------------
+    // MARK: - Gobal property
+    //----------------------------------------------
+
+    lazy var presenter = GardensPresenter(view: self)
+    
+    let gardenCellIdentifier = String(describing: GardenCell.self)
 
     //----------------------------------------------
     // MARK: - Life cycle
@@ -22,7 +29,14 @@ class GardensController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.getGardens()
     }
     
     //----------------------------------------------
@@ -31,6 +45,8 @@ class GardensController: BaseController {
     
     private func setup() {
         hiddenNavigationBar = true
+        
+        gardensTableView.register(UINib(nibName: gardenCellIdentifier, bundle: nil), forCellReuseIdentifier: gardenCellIdentifier)
     }
     
     private func updateView() {
@@ -67,6 +83,20 @@ class GardensController: BaseController {
 //                }
 //            }
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardensOutputProtocol
+//----------------------------------------------
+
+extension GardensController: GardensOutputProtocol {
+    func successGetGardens() {
+        gardensTableView.reloadData()
+    }
+    
+    func failure(error: String) {
+        
     }
 }
 

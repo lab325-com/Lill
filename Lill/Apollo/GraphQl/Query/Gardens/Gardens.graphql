@@ -1,0 +1,14 @@
+query Gardens($pagination: InputPagination) {
+	gardens(pagination: $pagination) {
+		Gardens {
+			id
+			name
+			userMainImage {
+				id
+				urlIosFull
+				urlIosPrev
+			}
+			isDefault
+		}
+	}
+}
