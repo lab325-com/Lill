@@ -394,6 +394,10 @@
 		FAB3BD272704AF3A0075C0C0 /* GardenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD262704AF3A0075C0C0 /* GardenController.swift */; };
 		FAB3BD292704AF530075C0C0 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD282704AF530075C0C0 /* ScheduleController.swift */; };
 		FAB3BD2B2704AF670075C0C0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BD2A2704AF670075C0C0 /* MenuController.swift */; };
+		FAC64532278753D7004E56D5 /* GardenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC64531278753D7004E56D5 /* GardenController.xib */; };
+		FAC64534278826DD004E56D5 /* GardensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC64533278826DD004E56D5 /* GardensController.swift */; };
+		FAC6453627883A04004E56D5 /* GardensController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6453527883A04004E56D5 /* GardensController+TableView.swift */; };
+		FAC6453827883A17004E56D5 /* GardensController+ColloctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6453727883A17004E56D5 /* GardensController+ColloctionView.swift */; };
 		FAC6D99B2701E24F000A551F /* GetCatalogPlants.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */; };
 		FAD1833226F8A5CA007A67DC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833126F8A5CA007A67DC /* API.swift */; };
 		FAD1833826F9DD2C007A67DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1833626F9DD2C007A67DC /* LoginController.swift */; };
@@ -816,6 +820,10 @@
 		FAB3BD262704AF3A0075C0C0 /* GardenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenController.swift; sourceTree = "<group>"; };
 		FAB3BD282704AF530075C0C0 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		FAB3BD2A2704AF670075C0C0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		FAC64531278753D7004E56D5 /* GardenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenController.xib; sourceTree = "<group>"; };
+		FAC64533278826DD004E56D5 /* GardensController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensController.swift; sourceTree = "<group>"; };
+		FAC6453527883A04004E56D5 /* GardensController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GardensController+TableView.swift"; sourceTree = "<group>"; };
+		FAC6453727883A17004E56D5 /* GardensController+ColloctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GardensController+ColloctionView.swift"; sourceTree = "<group>"; };
 		FAC6D99A2701E24F000A551F /* GetCatalogPlants.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCatalogPlants.graphql; sourceTree = "<group>"; };
 		FAD1833126F8A5CA007A67DC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FAD1833626F9DD2C007A67DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -1859,6 +1867,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB3BD262704AF3A0075C0C0 /* GardenController.swift */,
+				FAC64531278753D7004E56D5 /* GardenController.xib */,
 				FA24A5A6273417760059AF6A /* GardenController+CollectionView.swift */,
 				026CFC09270C1FD4003A0687 /* Cell */,
 				FA24A5AF273475EE0059AF6A /* Presenter */,
@@ -2846,6 +2855,7 @@
 			isa = PBXGroup;
 			children = (
 				023BBB192744150900DCFFF1 /* GardenRouter.swift */,
+				FAC6453027875395004E56D5 /* GardensController */,
 				02BFFF502763335800140A5C /* GardenController */,
 				023BBB1B2744171100DCFFF1 /* GardenDetail */,
 				FA4F7FA62747BA3200E4B873 /* GardenChooseAddPlant */,
@@ -2879,6 +2889,16 @@
 				021D6CF92731139100C73183 /* LanguageController */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		FAC6453027875395004E56D5 /* GardensController */ = {
+			isa = PBXGroup;
+			children = (
+				FAC64533278826DD004E56D5 /* GardensController.swift */,
+				FAC6453527883A04004E56D5 /* GardensController+TableView.swift */,
+				FAC6453727883A17004E56D5 /* GardensController+ColloctionView.swift */,
+			);
+			path = GardensController;
 			sourceTree = "<group>";
 		};
 		FAC6D9962701E1E4000A551F /* GetCatalogPlants */ = {
@@ -3226,6 +3246,7 @@
 				FA8FCD2E27185FCD00173725 /* StartRecognize.graphql in Resources */,
 				02A4BA2D26FDCF6700DF6A08 /* OnboardingFirsController.xib in Resources */,
 				FA24A5AA273474190059AF6A /* CaresByGarden.graphql in Resources */,
+				FAC64532278753D7004E56D5 /* GardenController.xib in Resources */,
 				028C9BF5274D1B2B0043EA31 /* ScheduleCell.xib in Resources */,
 				FA49AA40275642DC003B0CD4 /* GardenPlantCaresEdit.xib in Resources */,
 				FA8FCD4227199DCA00173725 /* DiagnosisController.xib in Resources */,
@@ -3539,6 +3560,7 @@
 				02D4BFBD2743B94D00B9322B /* Sound.swift in Sources */,
 				021BC13E2771D7260083DC65 /* GardenPlantHistoryModel.swift in Sources */,
 				0273B8BA27453D1A009A2247 /* GardenDetailTitleCell.swift in Sources */,
+				FAC64534278826DD004E56D5 /* GardensController.swift in Sources */,
 				0261FA662748FDA8002BB6CE /* PopClonePresenter.swift in Sources */,
 				FAA08956275796B100449D5B /* GardenPlantCaresEdit+TableView.swift in Sources */,
 				02BBBE75273E5FC200E97712 /* AddPlantTitleCell.swift in Sources */,
@@ -3583,6 +3605,7 @@
 				025ECF21273D5CFE0041A7BD /* AddPlantTimeCell.swift in Sources */,
 				02D142DF2757DD6D008A7FA3 /* IPhoneSe4Timeline.swift in Sources */,
 				FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */,
+				FAC6453827883A17004E56D5 /* GardensController+ColloctionView.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021BC11027706A000083DC65 /* GadenDetailHistoryTitleCell.swift in Sources */,
 				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
@@ -3642,6 +3665,7 @@
 				FA24A5A7273417760059AF6A /* GardenController+CollectionView.swift in Sources */,
 				0273B8C527455D8B009A2247 /* GardenDetailCaresCell.swift in Sources */,
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
+				FAC6453627883A04004E56D5 /* GardensController+TableView.swift in Sources */,
 				02527D93274642E900126022 /* GardenDetailScheduleCell.swift in Sources */,
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
 				FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */,

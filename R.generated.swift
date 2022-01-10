@@ -1642,7 +1642,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 80 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 81 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1694,6 +1694,8 @@ struct R: Rswift.Validatable {
     static let gardenCaresDetail = _R.nib._GardenCaresDetail()
     /// Nib `GardenChooseAddPlantController`.
     static let gardenChooseAddPlantController = _R.nib._GardenChooseAddPlantController()
+    /// Nib `GardenController`.
+    static let gardenController = _R.nib._GardenController()
     /// Nib `GardenDetailAboutCell`.
     static let gardenDetailAboutCell = _R.nib._GardenDetailAboutCell()
     /// Nib `GardenDetailAllWaitingCell`.
@@ -2002,6 +2004,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenChooseAddPlantController) instead")
     static func gardenChooseAddPlantController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenChooseAddPlantController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenController) instead")
+    static func gardenController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenController)
     }
     #endif
 
@@ -2543,6 +2553,10 @@ struct R: Rswift.Validatable {
 
     static func gardenChooseAddPlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenChooseAddPlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenDetailAboutCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailAboutCell? {
@@ -8643,6 +8657,7 @@ struct _R: Rswift.Validatable {
       try _GalleryGardenHistroyCell.validate()
       try _GardenCareDetailView.validate()
       try _GardenChooseAddPlantController.validate()
+      try _GardenController.validate()
       try _GardenDetailController.validate()
       try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
@@ -9102,6 +9117,23 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "choose_identify_add_unique_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_add_unique_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_diagnosis_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_diagnosis_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_photo_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_photo_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -10043,15 +10075,15 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let gardenController = StoryboardViewControllerResource<GardenController>(identifier: "GardenController")
+      let gardensController = StoryboardViewControllerResource<GardensController>(identifier: "GardensController")
       let mainTabBarController = StoryboardViewControllerResource<MainTabBarController>(identifier: "MainTabBarController")
       let menuController = StoryboardViewControllerResource<MenuController>(identifier: "MenuController")
       let name = "Main"
       let plantsController = StoryboardViewControllerResource<PlantsController>(identifier: "PlantsController")
       let scheduleController = StoryboardViewControllerResource<ScheduleController>(identifier: "ScheduleController")
 
-      func gardenController(_: Void = ()) -> GardenController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gardenController)
+      func gardensController(_: Void = ()) -> GardensController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gardensController)
       }
 
       func mainTabBarController(_: Void = ()) -> MainTabBarController? {
@@ -10089,7 +10121,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "scheldure_settings_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_settings_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.main().gardenController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardenController' could not be loaded from storyboard 'Main' as 'GardenController'.") }
+        if _R.storyboard.main().gardensController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardensController' could not be loaded from storyboard 'Main' as 'GardensController'.") }
         if _R.storyboard.main().mainTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarController' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
         if _R.storyboard.main().menuController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuController' could not be loaded from storyboard 'Main' as 'MenuController'.") }
         if _R.storyboard.main().plantsController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'plantsController' could not be loaded from storyboard 'Main' as 'PlantsController'.") }

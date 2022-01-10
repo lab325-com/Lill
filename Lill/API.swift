@@ -6845,17 +6845,7 @@ public final class MeQuery: GraphQLQuery {
           __typename
           id
           name
-          userDescription
           userMainImage {
-            __typename
-            id
-            urlIosFull
-            urlIosPrev
-            urlAndroidPhone
-            urlAndroidTablet
-            notes
-          }
-          userGalleryImages {
             __typename
             id
             urlIosFull
@@ -7350,9 +7340,7 @@ public final class MeQuery: GraphQLQuery {
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("id", type: .scalar(GraphQLID.self)),
             GraphQLField("name", type: .scalar(String.self)),
-            GraphQLField("userDescription", type: .scalar(String.self)),
             GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
-            GraphQLField("userGalleryImages", type: .list(.object(UserGalleryImage.selections))),
             GraphQLField("isDefault", type: .scalar(Bool.self)),
           ]
         }
@@ -7363,8 +7351,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, userDescription: String? = nil, userMainImage: UserMainImage? = nil, userGalleryImages: [UserGalleryImage?]? = nil, isDefault: Bool? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userDescription": userDescription, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "userGalleryImages": userGalleryImages.flatMap { (value: [UserGalleryImage?]) -> [ResultMap?] in value.map { (value: UserGalleryImage?) -> ResultMap? in value.flatMap { (value: UserGalleryImage) -> ResultMap in value.resultMap } } }, "isDefault": isDefault])
+        public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault])
         }
 
         public var __typename: String {
@@ -7394,30 +7382,12 @@ public final class MeQuery: GraphQLQuery {
           }
         }
 
-        public var userDescription: String? {
-          get {
-            return resultMap["userDescription"] as? String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "userDescription")
-          }
-        }
-
         public var userMainImage: UserMainImage? {
           get {
             return (resultMap["userMainImage"] as? ResultMap).flatMap { UserMainImage(unsafeResultMap: $0) }
           }
           set {
             resultMap.updateValue(newValue?.resultMap, forKey: "userMainImage")
-          }
-        }
-
-        public var userGalleryImages: [UserGalleryImage?]? {
-          get {
-            return (resultMap["userGalleryImages"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [UserGalleryImage?] in value.map { (value: ResultMap?) -> UserGalleryImage? in value.flatMap { (value: ResultMap) -> UserGalleryImage in UserGalleryImage(unsafeResultMap: value) } } }
-          }
-          set {
-            resultMap.updateValue(newValue.flatMap { (value: [UserGalleryImage?]) -> [ResultMap?] in value.map { (value: UserGalleryImage?) -> ResultMap? in value.flatMap { (value: UserGalleryImage) -> ResultMap in value.resultMap } } }, forKey: "userGalleryImages")
           }
         }
 
@@ -7431,95 +7401,6 @@ public final class MeQuery: GraphQLQuery {
         }
 
         public struct UserMainImage: GraphQLSelectionSet {
-          public static let possibleTypes: [String] = ["MediaModel"]
-
-          public static var selections: [GraphQLSelection] {
-            return [
-              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("id", type: .scalar(GraphQLID.self)),
-              GraphQLField("urlIosFull", type: .scalar(String.self)),
-              GraphQLField("urlIosPrev", type: .scalar(String.self)),
-              GraphQLField("urlAndroidPhone", type: .scalar(String.self)),
-              GraphQLField("urlAndroidTablet", type: .scalar(String.self)),
-              GraphQLField("notes", type: .scalar(String.self)),
-            ]
-          }
-
-          public private(set) var resultMap: ResultMap
-
-          public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-          }
-
-          public init(id: GraphQLID? = nil, urlIosFull: String? = nil, urlIosPrev: String? = nil, urlAndroidPhone: String? = nil, urlAndroidTablet: String? = nil, notes: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "MediaModel", "id": id, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev, "urlAndroidPhone": urlAndroidPhone, "urlAndroidTablet": urlAndroidTablet, "notes": notes])
-          }
-
-          public var __typename: String {
-            get {
-              return resultMap["__typename"]! as! String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "__typename")
-            }
-          }
-
-          public var id: GraphQLID? {
-            get {
-              return resultMap["id"] as? GraphQLID
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "id")
-            }
-          }
-
-          public var urlIosFull: String? {
-            get {
-              return resultMap["urlIosFull"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "urlIosFull")
-            }
-          }
-
-          public var urlIosPrev: String? {
-            get {
-              return resultMap["urlIosPrev"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "urlIosPrev")
-            }
-          }
-
-          public var urlAndroidPhone: String? {
-            get {
-              return resultMap["urlAndroidPhone"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "urlAndroidPhone")
-            }
-          }
-
-          public var urlAndroidTablet: String? {
-            get {
-              return resultMap["urlAndroidTablet"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "urlAndroidTablet")
-            }
-          }
-
-          public var notes: String? {
-            get {
-              return resultMap["notes"] as? String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "notes")
-            }
-          }
-        }
-
-        public struct UserGalleryImage: GraphQLSelectionSet {
           public static let possibleTypes: [String] = ["MediaModel"]
 
           public static var selections: [GraphQLSelection] {

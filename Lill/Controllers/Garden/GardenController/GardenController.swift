@@ -135,9 +135,9 @@ class GardenController: BaseController {
         }
     }
 
-    @IBAction func addPlantAction(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).presentChooseAddPlant(delegate: self)
-    }
+//    @IBAction func addPlantAction(_ sender: UIButton) {
+//        GardenRouter(presenter: navigationController).presentChooseAddPlant(delegate: self)
+//    }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
@@ -192,28 +192,28 @@ extension GardenController: GardenOutputProtocol {
     }
 }
 
-//----------------------------------------------
-// MARK: - ChooseIdentifyDelegate
-//----------------------------------------------
-
-extension GardenController: GardenChooseAddPlantDelegate {
-    func didPressedAddUniquePlant() {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
-    }
-}
-
-//----------------------------------------------
-// MARK: - PopUniqePlanProtocol
-//----------------------------------------------
-
-extension GardenController: PopUniqePlanProtocol {
-    func dissmiss(controller: PopUniquePlantController, text: String) {
-        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
-    }
-}
-
-extension GardenController: AddCoverIdentifierProtocol {
-    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
-    }
-}
+////----------------------------------------------
+//// MARK: - ChooseIdentifyDelegate
+////----------------------------------------------
+//
+//extension GardenController: GardenChooseAddPlantDelegate {
+//    func didPressedAddUniquePlant() {
+//        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+//    }
+//}
+//
+////----------------------------------------------
+//// MARK: - PopUniqePlanProtocol
+////----------------------------------------------
+//
+//extension GardenController: PopUniqePlanProtocol {
+//    func dissmiss(controller: PopUniquePlantController, text: String) {
+//        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
+//    }
+//}
+//
+//extension GardenController: AddCoverIdentifierProtocol {
+//    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
+//        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+//    }
+//}

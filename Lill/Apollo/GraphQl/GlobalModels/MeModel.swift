@@ -7,10 +7,10 @@ struct MeModel: Codable {
     let email: String?
     let timezone: String?
     let defaultGardenId: String?
+    var notificationSettings: NotificationSettings?
     let Language: LanguageModel
     let Gardens: [GardenModel]
     let access: AccessModel
-    var notificationSettings: NotificationSettings?
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification

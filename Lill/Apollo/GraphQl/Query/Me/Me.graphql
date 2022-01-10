@@ -33,16 +33,7 @@ query Me {
 		Gardens {
 			id
 			name
-			userDescription
 			userMainImage {
-				id
-				urlIosFull
-				urlIosPrev
-				urlAndroidPhone
-				urlAndroidTablet
-				notes
-			}
-			userGalleryImages {
 				id
 				urlIosFull
 				urlIosPrev
