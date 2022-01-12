@@ -28,6 +28,13 @@ class GardenRouter: BaseRouter {
         push(controller: controller)
     }
     
+    func presentEditGardenChangeName(gardenId: String, delegate: GardenEditChangeNameDelegate) {
+        let controller = GardenEditChangeName(gardenId: gardenId, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
     func pushDeleteGarden(cares: [CaresModel], delegate: GardenPlantCaresEditDeleteDelegate) {
         let controller = GardenPlantCaresEditDelete(cares: cares, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true
