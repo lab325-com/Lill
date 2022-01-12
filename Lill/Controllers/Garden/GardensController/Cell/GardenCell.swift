@@ -12,6 +12,7 @@ class GardenCell: UITableViewCell {
     @IBOutlet weak var gardenNameLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountInfoLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountLabel: UILabel!
+    @IBOutlet weak var gardenCaresView: UIView!
     @IBOutlet weak var gardenCaresLabel: UILabel!
     
     //----------------------------------------------
@@ -20,10 +21,9 @@ class GardenCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        DispatchQueue.main.async {
-            self.shadowView.roundCorners(corners: [.topLeft, .topRight, .bottomRight], radius: 24.0)
-        }
+
+        gardenImageView.layer.cornerRadius = 24
+        gardenImageView.layer.maskedCorners = [.layerMinXMinYCorner]
     }
     
     //----------------------------------------------
@@ -41,6 +41,13 @@ class GardenCell: UITableViewCell {
     func configure(model: GardenModel) {
         gardenImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
         gardenNameLabel.text = model.name
-        
+        if let totalPlants = model.totalPlants {
+            gadenPlantsCountLabel.text = "\(totalPlants)"
+            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
+        }
+        if let needCaresCount = model.needCareCount {
+            gardenCaresView.backgroundColor = needCaresCount == 0 ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)
+            gardenCaresLabel.text = needCaresCount == 0 ? "Plants are happy" : "Plants Need Cares: \(needCaresCount)"
+        }
     }
 }

@@ -22,6 +22,7 @@ class GardensController: BaseController {
     lazy var presenter = GardensPresenter(view: self)
     
     let gardenCellIdentifier = String(describing: GardenCell.self)
+    let addPlaceCellIdentifier = String(describing: AddPlaceCell.self)
 
     //----------------------------------------------
     // MARK: - Life cycle
@@ -46,7 +47,12 @@ class GardensController: BaseController {
     private func setup() {
         hiddenNavigationBar = true
         
+        navigationItem.title = "My Garden"
+        
+        gardensTableView.contentInset.top = 52.0
+        
         gardensTableView.register(UINib(nibName: gardenCellIdentifier, bundle: nil), forCellReuseIdentifier: gardenCellIdentifier)
+        gardensTableView.register(UINib(nibName: addPlaceCellIdentifier, bundle: nil), forCellReuseIdentifier: addPlaceCellIdentifier)
     }
     
     private func updateView() {

@@ -9,6 +9,24 @@ import UIKit
 
 class GardenRouter: BaseRouter {
     
+    func pushToGarden(gardenId: String, gardenName: String) {
+        let controller = GardenController(gardenId: gardenId, gardenName: gardenName)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
+    func pushToEditGarden(gardenId: String) {
+        let controller = GardenEdit(gardenId: gardenId)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
+    func pushToEditGardenChangeCover(gardenId: String) {
+        let controller = GardenEditChangeCover(gardenId: gardenId)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
     func pushDeleteGarden(cares: [CaresModel], delegate: GardenPlantCaresEditDeleteDelegate) {
         let controller = GardenPlantCaresEditDelete(cares: cares, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true

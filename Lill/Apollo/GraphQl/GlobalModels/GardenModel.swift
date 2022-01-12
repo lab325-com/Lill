@@ -6,4 +6,6 @@ struct GardenModel: Codable {
     let name: String
     let userMainImage: MediaModel?
     let isDefault: Bool
+    let totalPlants: Int?
+    let needCareCount: Int?
 }

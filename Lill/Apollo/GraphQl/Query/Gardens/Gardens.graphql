@@ -9,6 +9,8 @@ query Gardens($pagination: InputPagination) {
 				urlIosPrev
 			}
 			isDefault
+			totalPlants
+			needCareCount
 		}
 	}
 }

@@ -4086,6 +4086,218 @@ public final class GalleryImagesQuery: GraphQLQuery {
   }
 }
 
+public final class GardenByIdQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query GardenById($id: String!) {
+      gardenById(id: $id) {
+        __typename
+        id
+        name
+        userMainImage {
+          __typename
+          id
+          urlIosFull
+          urlIosPrev
+        }
+        isDefault
+        totalPlants
+        needCareCount
+      }
+    }
+    """
+
+  public let operationName: String = "GardenById"
+
+  public var id: String
+
+  public init(id: String) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenById", arguments: ["id": GraphQLVariable("id")], type: .object(GardenById.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenById: GardenById? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "gardenById": gardenById.flatMap { (value: GardenById) -> ResultMap in value.resultMap }])
+    }
+
+    public var gardenById: GardenById? {
+      get {
+        return (resultMap["gardenById"] as? ResultMap).flatMap { GardenById(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "gardenById")
+      }
+    }
+
+    public struct GardenById: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Garden"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
+          GraphQLField("isDefault", type: .scalar(Bool.self)),
+          GraphQLField("totalPlants", type: .scalar(Int.self)),
+          GraphQLField("needCareCount", type: .scalar(Int.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil, totalPlants: Int? = nil, needCareCount: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault, "totalPlants": totalPlants, "needCareCount": needCareCount])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return resultMap["name"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var userMainImage: UserMainImage? {
+        get {
+          return (resultMap["userMainImage"] as? ResultMap).flatMap { UserMainImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "userMainImage")
+        }
+      }
+
+      public var isDefault: Bool? {
+        get {
+          return resultMap["isDefault"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "isDefault")
+        }
+      }
+
+      public var totalPlants: Int? {
+        get {
+          return resultMap["totalPlants"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalPlants")
+        }
+      }
+
+      public var needCareCount: Int? {
+        get {
+          return resultMap["needCareCount"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "needCareCount")
+        }
+      }
+
+      public struct UserMainImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaModel"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("urlIosFull", type: .scalar(String.self)),
+            GraphQLField("urlIosPrev", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, urlIosFull: String? = nil, urlIosPrev: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaModel", "id": id, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var urlIosFull: String? {
+          get {
+            return resultMap["urlIosFull"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "urlIosFull")
+          }
+        }
+
+        public var urlIosPrev: String? {
+          get {
+            return resultMap["urlIosPrev"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "urlIosPrev")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class GardenPlantByIdQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -6428,6 +6640,8 @@ public final class GardensQuery: GraphQLQuery {
             urlIosPrev
           }
           isDefault
+          totalPlants
+          needCareCount
         }
       }
     }
@@ -6521,6 +6735,8 @@ public final class GardensQuery: GraphQLQuery {
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
             GraphQLField("isDefault", type: .scalar(Bool.self)),
+            GraphQLField("totalPlants", type: .scalar(Int.self)),
+            GraphQLField("needCareCount", type: .scalar(Int.self)),
           ]
         }
 
@@ -6530,8 +6746,8 @@ public final class GardensQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault])
+        public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil, totalPlants: Int? = nil, needCareCount: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault, "totalPlants": totalPlants, "needCareCount": needCareCount])
         }
 
         public var __typename: String {
@@ -6576,6 +6792,24 @@ public final class GardensQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "isDefault")
+          }
+        }
+
+        public var totalPlants: Int? {
+          get {
+            return resultMap["totalPlants"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "totalPlants")
+          }
+        }
+
+        public var needCareCount: Int? {
+          get {
+            return resultMap["needCareCount"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "needCareCount")
           }
         }
 

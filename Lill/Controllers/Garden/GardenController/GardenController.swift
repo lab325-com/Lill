@@ -8,8 +8,8 @@ class GardenController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var addPantLabel: UILabel!
+//    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var addPantLabel: UILabel!
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -22,6 +22,9 @@ class GardenController: BaseController {
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
+    
+    private let gardenId: String
+    private let gardenName: String
 
     //----------------------------------------------
     // MARK: - Gobal property
@@ -33,6 +36,20 @@ class GardenController: BaseController {
 
     let cellIdentifier = String(describing: GardenViewCell.self)
     let cellButtonIdentifier = String(describing: GardenButtonCell.self)
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(gardenId: String, gardenName: String) {
+        self.gardenId = gardenId
+        self.gardenName = gardenName
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //----------------------------------------------
     // MARK: - Life cycle
@@ -42,39 +59,45 @@ class GardenController: BaseController {
         addSwipeOnScreen = true
         super.viewDidLoad()
 
-        setup()
+        getGardenPlants()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setup()
+        
+//        titleLabel.text = RLocalization.garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        addPantLabel.text = "+ " + RLocalization.garden_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+    }
+
+    //----------------------------------------------
+    // MARK: - Private methods
+    //----------------------------------------------
+    
+    private func getGardenPlants() {
+//        guard let gardenId = self.gardenId else { return }
+        presenter.getCaresByGarden(gardenId: gardenId)
+        presenter.getGardenPlants(gardenId: gardenId)
+    }
+
+    private func setup() {
+        hiddenNavigationBar = false
+        
+        navigationItem.title = gardenName
+        navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
+        let rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editGardenAction))
+        rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        titleLabel.text = RLocalization.garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        addPantLabel.text = "+ " + RLocalization.garden_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         for careView in careViews {
             switch careView.tag {
             case 0: careView.isHidden = false
             default: careView.isHidden = true
             }
         }
-        
-        getGardenPlants()
-    }
-
-    //----------------------------------------------
-    // MARK: - Setup
-    //----------------------------------------------
-    
-    private func getGardenPlants() {
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-        presenter.getCaresByGarden(gardenId: gardenId)
-        presenter.getGardenPlants(gardenId: gardenId)
-    }
-
-    private func setup() {
-        hiddenNavigationBar = true
         
         scrollView.contentInset.left = 12
         scrollView.contentInset.right = 12
@@ -135,9 +158,9 @@ class GardenController: BaseController {
         }
     }
 
-//    @IBAction func addPlantAction(_ sender: UIButton) {
-//        GardenRouter(presenter: navigationController).presentChooseAddPlant(delegate: self)
-//    }
+    @objc func editGardenAction() {
+        GardenRouter(presenter: navigationController).pushToEditGarden(gardenId: gardenId)
+    }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
