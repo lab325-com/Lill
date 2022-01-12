@@ -85,7 +85,7 @@ class GardenEdit: BaseController {
     }
     
     @IBAction func changeCoverAction(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId)
+        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId, delegate: self)
     }
     
     @IBAction func changeNameAction(_ sender: UIButton) {
@@ -113,5 +113,11 @@ extension GardenEdit: GardenEditOutputProtocol {
     
     func failure(error: String) {
         
+    }
+}
+
+extension GardenEdit: GardenEditChangeCoverDelegate {
+    func didChangeGardenCover(img: UIImage) {
+        gardenImageView.image = img
     }
 }

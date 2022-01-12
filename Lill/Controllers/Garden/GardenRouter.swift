@@ -21,8 +21,9 @@ class GardenRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func pushToEditGardenChangeCover(gardenId: String) {
-        let controller = GardenEditChangeCover(gardenId: gardenId)
+    func pushToEditGardenChangeCover(gardenId: String, delegate: GardenEditChangeCoverDelegate) {
+        let controller = GardenEditChangeCover(gardenId: gardenId, delegate: delegate)
+        controller.delegate = delegate
         controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }

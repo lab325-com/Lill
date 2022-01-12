@@ -2,6 +2,10 @@
 import UIKit
 import AVFoundation
 
+protocol GardenEditChangeCoverDelegate: AnyObject {
+    func didChangeGardenCover(img: UIImage)
+}
+
 class GardenEditChangeCover: BaseController {
     
     //----------------------------------------------
@@ -12,6 +16,8 @@ class GardenEditChangeCover: BaseController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var borderView: UIView!
+    
+    @IBOutlet weak var capturedImageView: UIImageView!
     
     @IBOutlet weak var flashButton: UIButton!
     
@@ -36,14 +42,16 @@ class GardenEditChangeCover: BaseController {
     // MARK: - Gobal property
     //----------------------------------------------
     
+    weak var delegate: GardenEditChangeCoverDelegate?
     lazy var presenter = GardenEditChangeCoverPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(gardenId: String) {
+    init(gardenId: String, delegate: GardenEditChangeCoverDelegate) {
         self.gardenId = gardenId
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -211,11 +219,15 @@ extension GardenEditChangeCover: UIImagePickerControllerDelegate, UINavigationCo
         self.capturedImage = image
         
         DispatchQueue.main.async {
-//            if let id = self.sendToGardenId {
-//                self.presenter.uploadMedia(id: id, img: image)
-//            } else {
-//                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: image, text: self.text, delegate: self)
-//            }
+            self.presenter.uploadMedia(id: self.gardenId, img: image)
+            
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+            
+            self.flashButton.isHidden = true
+            self.capturedImageView.image = image
+            self.capturedImage = image
+            self.takePicture = false
         }
     }
 }
@@ -231,15 +243,17 @@ extension GardenEditChangeCover: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         let ciImage = CIImage(cvImageBuffer: cvBuffer)
-        let uiImage = UIImage(ciImage: ciImage)
+        let image = UIImage(ciImage: ciImage)
         
         DispatchQueue.main.async {
-//            if let id = self.gardenId {
-//                self.presenter.uploadMedia(id: id, img: uiImage)
-//            } else {
-//                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
-//            }
-            self.capturedImage = uiImage
+            self.presenter.uploadMedia(id: self.gardenId, img: image)
+            
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+            
+            self.flashButton.isHidden = true
+            self.capturedImageView.image = image
+            self.capturedImage = image
             self.takePicture = false
         }
     }
@@ -250,11 +264,9 @@ extension GardenEditChangeCover: AVCaptureVideoDataOutputSampleBufferDelegate {
 //----------------------------------------------
 
 extension GardenEditChangeCover: GardenEditChangeCoverOutputProtocol {
-    func successUploadMedia(imageUrl: String) {
-        dismiss(animated: true) { [weak self] in
-            guard let `self` = self else { return }
-            //self.delegate?.addCoverIdentifierSuccessUpload(controller: self, imageUrl: imageUrl)
-        }
+    func successUploadMedia(img: UIImage) {
+        navigationController?.popViewController(animated: true)
+        delegate?.didChangeGardenCover(img: img)
     }
     
     func failure(error: String) {
