@@ -81,6 +81,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="avatarImageView" destination="LA1-Pv-vKJ" id="dne-fe-0Pt"/>
+                <outlet property="countGardenLabel" destination="qdN-I0-Hl5" id="Tmb-T6-Qxs"/>
+                <outlet property="nameLabel" destination="1MT-F9-FIa" id="Ppk-9Q-Ftb"/>
+                <outlet property="plantsLabel" destination="f5e-Ku-9mT" id="nXH-3r-gea"/>
+            </connections>
             <point key="canvasLocation" x="162.31884057971016" y="121.54017857142857"/>
         </tableViewCell>
     </objects>

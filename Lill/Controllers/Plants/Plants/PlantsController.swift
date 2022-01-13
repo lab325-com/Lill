@@ -218,8 +218,8 @@ class PlantsController: BaseController {
 // MARK: - PlantsOutputProtocol
 //----------------------------------------------
 
-extension PlantsController: PlantsOutputProtocol {
-    func successAddToGarden() {
+extension PlantsController: PlantsOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
         
         CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))

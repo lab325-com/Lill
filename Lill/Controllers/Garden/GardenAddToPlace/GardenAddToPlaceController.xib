@@ -22,7 +22,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenAddToPlaceController" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="mfr-3I-M3q" id="mwf-xi-pqm"/>
+                <outlet property="bottomLayout" destination="RoZ-wi-xCe" id="xBv-jP-H6h"/>
                 <outlet property="heightTableLayout" destination="N4q-lK-Spn" id="Je3-0B-9zd"/>
+                <outlet property="mainLabel" destination="Evm-20-yfg" id="E77-aG-Ytm"/>
+                <outlet property="orLabel" destination="AWu-7z-vFB" id="2r9-ZG-u3H"/>
+                <outlet property="subtitleLabel" destination="ayJ-91-prr" id="8cw-gg-H1T"/>
                 <outlet property="tableView" destination="1OM-en-UfF" id="hkz-SX-6q2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,7 +38,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-9y-6aD">
-                    <rect key="frame" x="12" y="539" width="390" height="344"/>
+                    <rect key="frame" x="12" y="529" width="390" height="344"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evm-20-yfg">
                             <rect key="frame" x="130.5" y="24" width="129" height="27.5"/>
@@ -45,6 +50,9 @@
                             <rect key="frame" x="336" y="22" width="32" height="32"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="sub_close_ic"/>
+                            <connections>
+                                <action selector="actionClose:" destination="-1" eventType="touchUpInside" id="vq8-rS-B6d"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a place to add your plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayJ-91-prr">
                             <rect key="frame" x="116" y="62.5" width="158" height="16"/>
@@ -97,6 +105,9 @@
                                     <integer key="value" value="24"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionAddToNew:" destination="-1" eventType="touchUpInside" id="m6O-bo-nZH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,7 +145,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A4q-9y-6aD" secondAttribute="trailing" constant="12" id="0xQ-Db-lrA"/>
-                <constraint firstAttribute="bottom" secondItem="A4q-9y-6aD" secondAttribute="bottom" constant="13" id="RoZ-wi-xCe"/>
+                <constraint firstAttribute="bottom" secondItem="A4q-9y-6aD" secondAttribute="bottom" constant="23" id="RoZ-wi-xCe"/>
                 <constraint firstItem="A4q-9y-6aD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="13" id="opn-sK-IX4"/>
                 <constraint firstItem="A4q-9y-6aD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="wNT-5J-Xij"/>
             </constraints>

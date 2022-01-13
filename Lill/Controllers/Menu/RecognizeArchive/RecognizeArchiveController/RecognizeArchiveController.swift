@@ -74,12 +74,12 @@ class RecognizeArchiveController: BaseController {
 }
 
 //----------------------------------------------
-// MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout, GardenAddToPlaceDelegate
 //----------------------------------------------
 
-extension RecognizeArchiveController: RecognizeArchiveOutputProtocol {
-    func successAddPlants(model: PlantToGardenDataModel) {
-        
+extension RecognizeArchiveController: RecognizeArchiveOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
+        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
     func successFavorite(isFavorite: Bool, id: String) {

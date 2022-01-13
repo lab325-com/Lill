@@ -35,6 +35,7 @@
 		021836BF279003450041F302 /* GardenAddToPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021836BD279003450041F302 /* GardenAddToPlaceCell.swift */; };
 		021836C0279003450041F302 /* GardenAddToPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021836BE279003450041F302 /* GardenAddToPlaceCell.xib */; };
 		021836C227900B550041F302 /* GardenNeedCaresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021836C127900B550041F302 /* GardenNeedCaresPresenter.swift */; };
+		021836C4279019800041F302 /* GardenAddToPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021836C3279019800041F302 /* GardenAddToPlacePresenter.swift */; };
 		021BC11027706A000083DC65 /* GadenDetailHistoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC10E27706A000083DC65 /* GadenDetailHistoryTitleCell.swift */; };
 		021BC11127706A000083DC65 /* GadenDetailHistoryTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021BC10F27706A000083DC65 /* GadenDetailHistoryTitleCell.xib */; };
 		021BC11527706BAB0083DC65 /* GalleryHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC11327706BAB0083DC65 /* GalleryHistoryCell.swift */; };
@@ -491,6 +492,7 @@
 		021836BD279003450041F302 /* GardenAddToPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenAddToPlaceCell.swift; sourceTree = "<group>"; };
 		021836BE279003450041F302 /* GardenAddToPlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenAddToPlaceCell.xib; sourceTree = "<group>"; };
 		021836C127900B550041F302 /* GardenNeedCaresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenNeedCaresPresenter.swift; sourceTree = "<group>"; };
+		021836C3279019800041F302 /* GardenAddToPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenAddToPlacePresenter.swift; sourceTree = "<group>"; };
 		021BC10E27706A000083DC65 /* GadenDetailHistoryTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GadenDetailHistoryTitleCell.swift; sourceTree = "<group>"; };
 		021BC10F27706A000083DC65 /* GadenDetailHistoryTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GadenDetailHistoryTitleCell.xib; sourceTree = "<group>"; };
 		021BC11327706BAB0083DC65 /* GalleryHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryHistoryCell.swift; sourceTree = "<group>"; };
@@ -1014,6 +1016,7 @@
 		021836B7278FFC330041F302 /* GardenAddToPlace */ = {
 			isa = PBXGroup;
 			children = (
+				021836C3279019800041F302 /* GardenAddToPlacePresenter.swift */,
 				021836BC2790031E0041F302 /* Cell */,
 				021836B8278FFC560041F302 /* GardenAddToPlaceController.swift */,
 				021836B9278FFC560041F302 /* GardenAddToPlaceController.xib */,
@@ -3883,6 +3886,7 @@
 				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				021BC11B277072F70083DC65 /* GaleryHistoryAddCell.swift in Sources */,
 				02089EC627554E530022E1BD /* ScheduleSettingsPresenter.swift in Sources */,
+				021836C4279019800041F302 /* GardenAddToPlacePresenter.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
 				027B5FAD27590B2B00A84D98 /* LoaderTimeline.swift in Sources */,
 				02D04ED426F5E7B000F86B87 /* AppConfigurationBridge.m in Sources */,

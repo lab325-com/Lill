@@ -285,11 +285,11 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 //----------------------------------------------
-// MARK: - IdentifyOutputProtocol
+// MARK: - IdentifyOutputProtocol, GardenAddToPlaceDelegate
 //----------------------------------------------
 
-extension IdentifyController: IdentifyOutputProtocol {
-    func successAddToGarden() {
+extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     

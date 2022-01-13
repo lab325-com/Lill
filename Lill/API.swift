@@ -7583,6 +7583,8 @@ public final class MeQuery: GraphQLQuery {
             notes
           }
           isDefault
+          totalPlants
+          needCareCount
         }
         access {
           __typename
@@ -8070,6 +8072,8 @@ public final class MeQuery: GraphQLQuery {
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
             GraphQLField("isDefault", type: .scalar(Bool.self)),
+            GraphQLField("totalPlants", type: .scalar(Int.self)),
+            GraphQLField("needCareCount", type: .scalar(Int.self)),
           ]
         }
 
@@ -8079,8 +8083,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault])
+        public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil, totalPlants: Int? = nil, needCareCount: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault, "totalPlants": totalPlants, "needCareCount": needCareCount])
         }
 
         public var __typename: String {
@@ -8125,6 +8129,24 @@ public final class MeQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "isDefault")
+          }
+        }
+
+        public var totalPlants: Int? {
+          get {
+            return resultMap["totalPlants"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "totalPlants")
+          }
+        }
+
+        public var needCareCount: Int? {
+          get {
+            return resultMap["needCareCount"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "needCareCount")
           }
         }
 

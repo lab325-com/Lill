@@ -166,9 +166,8 @@ class PlantsDetailController: BaseController {
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
-        presenter.addPlantToGarden(plantId: id, gardenId: gardenId)
+        GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
     }
     
     @IBAction func wikiAction(_ sender: Any) {
@@ -180,11 +179,11 @@ class PlantsDetailController: BaseController {
 }
 
 //----------------------------------------------
-// MARK: - PlantsDetailOutputProtocol
+// MARK: - PlantsDetailOutputProtocol, GardenAddToPlaceDelegate
 //----------------------------------------------
 
-extension PlantsDetailController: PlantsDetailOutputProtocol {
-    func success(model: PlantToGardenDataModel) {
+extension PlantsDetailController: PlantsDetailOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         CongradsViewPresenter.showCongradsView()
     }
     
