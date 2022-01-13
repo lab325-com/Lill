@@ -1683,11 +1683,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-<<<<<<< HEAD
-  /// This `R.nib` struct is generated, and contains static references to 88 nibs.
-=======
   /// This `R.nib` struct is generated, and contains static references to 90 nibs.
->>>>>>> lill-132
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
