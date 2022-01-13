@@ -9,6 +9,7 @@ import UIKit
 
 protocol GardensOutputProtocol: BaseController {
     func successGetGardens()
+    func successGetPlants()
     
     func failure(error: String)
 }
@@ -21,6 +22,7 @@ protocol GardensPresenterProtocol: AnyObject {
     init(view: GardensOutputProtocol)
     
     func getGardens()
+    func getPlants()
 }
 
 class GardensPresenter: GardensPresenterProtocol {
@@ -29,6 +31,9 @@ class GardensPresenter: GardensPresenterProtocol {
     private var request: Cancellable?
     
     var gardens = [GardenModel]()
+    var gardenPlants = [GardenPlantModel]()
+    var sadGardenPlants = [GardenPlantModel]()
+    var happyGardenPlants = [GardenPlantModel]()
 
     required init(view: GardensOutputProtocol) {
         self.view = view
@@ -48,5 +53,48 @@ class GardensPresenter: GardensPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func getPlants() {
+        clearData()
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        let query1 = GardenPlantsQuery(gardenId: "", pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: false)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query1, controller: view, successHandler: { [weak self] model in
+            group.leave()
+            if let sadPlants = model.gardenPlants.gardenPlants {
+                self?.sadGardenPlants = sadPlants
+            }
+        }, failureHandler: { [weak self] error in
+            group.leave()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+
+        group.enter()
+        let query2 = GardenPlantsQuery(gardenId: "", pagination: InputPagination(offset: 0, limit: 100), careTypeId: nil, isHappy: true)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query2, controller: view, successHandler: { [weak self] model in
+            group.leave()
+            if let happyPlants = model.gardenPlants.gardenPlants {
+                self?.happyGardenPlants = happyPlants
+            }
+        }, failureHandler: { [weak self] error in
+            group.leave()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+
+        group.notify(queue: DispatchQueue.main) { [weak self] in
+            if let sadGardenPlants = self?.sadGardenPlants, let happyGardenPlants = self?.happyGardenPlants {
+                self?.gardenPlants = sadGardenPlants + happyGardenPlants
+            }
+            self?.view?.successGetPlants()
+        }
+    }
+    
+    func clearData() {
+        gardenPlants.removeAll()
+        sadGardenPlants.removeAll()
+        happyGardenPlants.removeAll()
     }
 }
