@@ -29,7 +29,7 @@ class GardenAddToPlaceCell: UITableViewCell {
     func setup(model: GardenModel) {
         nameLabel.text = model.name
         plantsLabel.text = RLocalization.garden_add_to_plants(model.totalPlants ?? 0, preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
-        countGardenLabel.text = String(model.needCareCount ?? 0)
+        countGardenLabel.text = String(model.totalPlants ?? 0)
         
         avatarImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
     }
