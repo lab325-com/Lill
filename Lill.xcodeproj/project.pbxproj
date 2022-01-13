@@ -388,6 +388,9 @@
 		FA8C937F278F1D540009DA6D /* GardenEditChangeNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C937E278F1D540009DA6D /* GardenEditChangeNamePresenter.swift */; };
 		FA8C9383278F40970009DA6D /* GardenEditDeleteSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */; };
 		FA8C9384278F40970009DA6D /* GardenEditDeleteSpace.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */; };
+		FA8C9388279009870009DA6D /* GardenDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C9386279009870009DA6D /* GardenDeleteModel.swift */; };
+		FA8C9389279009870009DA6D /* GardenDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8C9387279009870009DA6D /* GardenDelete.graphql */; };
+		FA8C938C27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C938B27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift */; };
 		FA8D7E6A2762044800AD0E57 /* GardenPlantAddCaresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
@@ -837,6 +840,9 @@
 		FA8C937E278F1D540009DA6D /* GardenEditChangeNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditChangeNamePresenter.swift; sourceTree = "<group>"; };
 		FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditDeleteSpace.swift; sourceTree = "<group>"; };
 		FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenEditDeleteSpace.xib; sourceTree = "<group>"; };
+		FA8C9386279009870009DA6D /* GardenDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenDeleteModel.swift; sourceTree = "<group>"; };
+		FA8C9387279009870009DA6D /* GardenDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenDelete.graphql; sourceTree = "<group>"; };
+		FA8C938B27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditDeleteSpacePresenter.swift; sourceTree = "<group>"; };
 		FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresPresenter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
@@ -2553,6 +2559,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FA8C9385279008250009DA6D /* GardenDelete */,
 				FA8C9373278F0AA00009DA6D /* GardenUpdate */,
 				02BD7A922774DE8600A8B943 /* UpdateMediaNotes */,
 				02BD7A8D2774DDB400A8B943 /* GalleryImageDelete */,
@@ -2858,8 +2865,26 @@
 			children = (
 				FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */,
 				FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */,
+				FA8C938A27900CC40009DA6D /* Presenter */,
 			);
 			path = GardenEditDeleteSpace;
+			sourceTree = "<group>";
+		};
+		FA8C9385279008250009DA6D /* GardenDelete */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C9387279009870009DA6D /* GardenDelete.graphql */,
+				FA8C9386279009870009DA6D /* GardenDeleteModel.swift */,
+			);
+			path = GardenDelete;
+			sourceTree = "<group>";
+		};
+		FA8C938A27900CC40009DA6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C938B27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		FA8D7E682762042700AD0E57 /* Presenter */ = {
@@ -3401,6 +3426,7 @@
 				021D6CFE273118C000C73183 /* LanguageCell.xib in Resources */,
 				025ECF22273D5CFE0041A7BD /* AddPlantTimeCell.xib in Resources */,
 				FA8C935D278D62620009DA6D /* AddPlaceCell.xib in Resources */,
+				FA8C9389279009870009DA6D /* GardenDelete.graphql in Resources */,
 				FA36BC5D27747A8800A878AA /* PopDoneSpecificCareController.xib in Resources */,
 				FA545475274BCF53006B52F4 /* GardenCaresDetail.xib in Resources */,
 				0273B8BB27453D1A009A2247 /* GardenDetailTitleCell.xib in Resources */,
@@ -3803,6 +3829,7 @@
 				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
+				FA8C938C27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift in Sources */,
 				FAFCF3602715D0F800C3134E /* IdentifyController.swift in Sources */,
 				02D143062757E88C008A7FA3 /* IPhone11ProX4Timeline.swift in Sources */,
 				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,
@@ -3907,6 +3934,7 @@
 				02AE739B277447F7008DE4E6 /* GalleryGardenHistroyCell.swift in Sources */,
 				0292D6762761012A00E8A21F /* GardenPlantCaresDeleteModel.swift in Sources */,
 				021C8ECA2705D54800F0F589 /* UIView+Extension.swift in Sources */,
+				FA8C9388279009870009DA6D /* GardenDeleteModel.swift in Sources */,
 				029C520527307F9300BD30B4 /* Rswift+Extension.swift in Sources */,
 				027B5FAC27590B2B00A84D98 /* LoaderView.swift in Sources */,
 				02089EBF275528280022E1BD /* UITextField+Extension.swift in Sources */,

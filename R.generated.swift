@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 53 files.
+  /// This `R.file` struct is generated, and contains static references to 54 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -181,6 +181,8 @@ struct R: Rswift.Validatable {
     static let galleryImagesGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GalleryImages", pathExtension: "graphql")
     /// Resource file `GardenById.graphql`.
     static let gardenByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenById", pathExtension: "graphql")
+    /// Resource file `GardenDelete.graphql`.
+    static let gardenDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenDelete", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantByIds.graphql`.
@@ -337,6 +339,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenById", withExtension: "graphql")`
     static func gardenByIdGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenByIdGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenDelete", withExtension: "graphql")`
+    static func gardenDeleteGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenDeleteGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1675,7 +1683,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 87 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 88 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -3019,7 +3027,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 308 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 313 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3121,6 +3129,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_add_to_my_garden = Rswift.StringResource(key: "plant_detail_add_to_my_garden", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add within new Place
+      ///
+      /// Locales: en, es
+      static let garden_add_to_add = Rswift.StringResource(key: "garden_add_to_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Added in Schedule
       ///
       /// Locales: en, es
@@ -3821,6 +3833,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_photo_quality_title = Rswift.StringResource(key: "identify_photo_quality_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Pick a place to add your plant
+      ///
+      /// Locales: en, es
+      static let garden_add_to_subtitle = Rswift.StringResource(key: "garden_add_to_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant Cover is captured
       ///
       /// Locales: en, es
@@ -3849,6 +3865,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_plants = Rswift.StringResource(key: "scheldure_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants: %d
+      ///
+      /// Locales: en, es
+      static let garden_add_to_plants = Rswift.StringResource(key: "garden_add_to_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Please Select Care you want to add to Plant Care Plan
       ///
       /// Locales: en, es
@@ -3973,6 +3993,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_add_cares_info = Rswift.StringResource(key: "garden_plant_add_cares_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Select Place
+      ///
+      /// Locales: en, es
+      static let garden_add_to_title = Rswift.StringResource(key: "garden_add_to_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -4241,6 +4265,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let period_type_month = Rswift.StringResource(key: "period_type_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: or
+      ///
+      /// Locales: en, es
+      static let garden_add_to_or = Rswift.StringResource(key: "garden_add_to_or", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: settings
       ///
       /// Locales: en, es
@@ -4633,6 +4661,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("plant_detail_add_to_my_garden", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add within new Place
+      ///
+      /// Locales: en, es
+      static func garden_add_to_add(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_add", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_add"
+        }
+
+        return NSLocalizedString("garden_add_to_add", bundle: bundle, comment: "")
       }
 
       /// en translation: Added in Schedule
@@ -7264,6 +7307,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_photo_quality_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Pick a place to add your plant
+      ///
+      /// Locales: en, es
+      static func garden_add_to_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_subtitle"
+        }
+
+        return NSLocalizedString("garden_add_to_subtitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Plant Cover is captured
       ///
       /// Locales: en, es
@@ -7367,6 +7425,23 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_plants", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants: %d
+      ///
+      /// Locales: en, es
+      static func garden_add_to_plants(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_add_to_plants", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_plants"
+        }
+
+        let format = NSLocalizedString("garden_add_to_plants", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
       }
 
       /// en translation: Please Select Care you want to add to Plant Care Plan
@@ -7832,6 +7907,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_plant_add_cares_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select Place
+      ///
+      /// Locales: en, es
+      static func garden_add_to_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_title"
+        }
+
+        return NSLocalizedString("garden_add_to_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Send Time:
@@ -8837,6 +8927,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("period_type_month", bundle: bundle, comment: "")
+      }
+
+      /// en translation: or
+      ///
+      /// Locales: en, es
+      static func garden_add_to_or(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_or", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_or"
+        }
+
+        return NSLocalizedString("garden_add_to_or", bundle: bundle, comment: "")
       }
 
       /// en translation: settings

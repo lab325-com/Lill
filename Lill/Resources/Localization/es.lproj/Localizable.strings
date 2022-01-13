@@ -102,6 +102,11 @@
 "garde_edit_delete_sub_title" = "Seleccione los Cuidados que quiera eliminar";
 "garde_edit_delete_title" = "Eliminar Cuidado";
 "garden_add_plant" = "añadir";
+"garden_add_to_add" = "Añadir dentro del nuevo lugar";
+"garden_add_to_or" = "o";
+"garden_add_to_plants" = "Plantas: %d";
+"garden_add_to_subtitle" = "Elige un lugar para agregar tu planta.";
+"garden_add_to_title" = "Seleccione lugar";
 "garden_cares_detail_cares" = "Cuidados";
 "garden_cares_detail_info" = "¿Seguro que quieres marcarlo como hecho?";
 "garden_choose_add_plant_cancel" = "Cancelar";

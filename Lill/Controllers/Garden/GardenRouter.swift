@@ -35,6 +35,13 @@ class GardenRouter: BaseRouter {
         present(controller: controller, animated: true, presentStyle: .overCurrentContext)
     }
     
+    func presentEditDeleteSpace(gardenId: String, gardenName: String, delegate: GardenEditDeleteSpaceDelegate) {
+        let controller = GardenEditDeleteSpace(gardenId: gardenId, gardenName: gardenName, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
     func pushDeleteGarden(cares: [CaresModel], delegate: GardenPlantCaresEditDeleteDelegate) {
         let controller = GardenPlantCaresEditDelete(cares: cares, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true

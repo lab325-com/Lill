@@ -16,6 +16,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenEditDeleteSpace" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="MGz-Ge-89T" id="h4R-4q-QIl"/>
+                <outlet property="deleteSpaceButton" destination="TvY-C1-8fY" id="m9K-Mm-cb2"/>
+                <outlet property="gardenNameLabel" destination="LCq-P1-bTw" id="gg6-Cc-19Z"/>
+                <outlet property="infoLabel" destination="A7J-nm-1OD" id="DwB-Ar-Fn1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,6 +65,9 @@
                                     <integer key="value" value="22"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="X4T-Q2-P7a"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvY-C1-8fY">
                             <rect key="frame" x="12" y="219" width="366" height="44"/>
@@ -76,6 +83,9 @@
                                     <integer key="value" value="22"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="deleteSpaceAction:" destination="-1" eventType="touchUpInside" id="IVz-Ku-2Iu"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

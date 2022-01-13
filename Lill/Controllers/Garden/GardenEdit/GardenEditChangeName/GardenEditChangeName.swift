@@ -23,7 +23,6 @@ class GardenEditChangeName: BaseController {
     //----------------------------------------------
     
     private let gardenId: String
-    
     private weak var delegate: GardenEditChangeNameDelegate?
     lazy var presenter = GardenEditChangeNamePresenter(view: self)
     
@@ -58,7 +57,7 @@ class GardenEditChangeName: BaseController {
     }
     
     //----------------------------------------------
-    // MARK: - Setup
+    // MARK: - Private methods
     //----------------------------------------------
     
     private func setup() {

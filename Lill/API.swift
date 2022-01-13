@@ -1335,6 +1335,57 @@ public final class GalleryImageDeleteMutation: GraphQLMutation {
   }
 }
 
+public final class GardenDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenDelete($id: String!) {
+      gardenDelete(id: $id)
+    }
+    """
+
+  public let operationName: String = "GardenDelete"
+
+  public var id: String
+
+  public init(id: String) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenDelete", arguments: ["id": GraphQLVariable("id")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenDelete: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenDelete": gardenDelete])
+    }
+
+    public var gardenDelete: Bool? {
+      get {
+        return resultMap["gardenDelete"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "gardenDelete")
+      }
+    }
+  }
+}
+
 public final class GardenPlantCareCreateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

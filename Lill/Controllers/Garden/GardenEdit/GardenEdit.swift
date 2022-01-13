@@ -100,7 +100,8 @@ class GardenEdit: BaseController {
     }
     
     @IBAction func deleteSpaceAction(_ sender: UIButton) {
-
+        let gardenName = KeychainService.standard.me?.gardens.first(where: {$0.id == gardenId})?.name ?? ""
+        GardenRouter(presenter: navigationController).presentEditDeleteSpace(gardenId: gardenId, gardenName: gardenName, delegate: self)
     }
 }
 
@@ -140,5 +141,15 @@ extension GardenEdit: GardenEditChangeCoverDelegate {
 extension GardenEdit: GardenEditChangeNameDelegate {
     func didChangeName(text: String) {
         gardenNameLabel.text = text
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenEditDeleteSpaceDelegate
+//----------------------------------------------
+
+extension GardenEdit: GardenEditDeleteSpaceDelegate {
+    func didDeleteSpace() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
