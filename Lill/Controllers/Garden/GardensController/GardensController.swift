@@ -52,6 +52,7 @@ class GardensController: BaseController {
         
         presenter.getGardens()
         presenter.getPlants()
+        presenter.getCares()
     }
     
     //----------------------------------------------

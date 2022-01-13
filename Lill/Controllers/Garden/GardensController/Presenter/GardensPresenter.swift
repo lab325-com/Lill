@@ -23,6 +23,7 @@ protocol GardensPresenterProtocol: AnyObject {
     
     func getGardens()
     func getPlants()
+    func getCares()
 }
 
 class GardensPresenter: GardensPresenterProtocol {
@@ -90,6 +91,20 @@ class GardensPresenter: GardensPresenterProtocol {
             }
             self?.view?.successGetPlants()
         }
+    }
+    
+    func getCares() {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+//        let query = CaresByGardensQuery()
+//        request = Network.shared.query(model: CaresByGardensDataModel.self, query, controller: view, successHandler: { [weak self] model in
+//            self?.view?.stopLoading()
+//        }, failureHandler: { [weak self] error in
+//            self?.view?.stopLoading()
+//            self?.view?.failure(error: error.localizedDescription)
+//        })
     }
     
     func clearData() {

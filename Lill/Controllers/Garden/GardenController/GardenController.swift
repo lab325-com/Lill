@@ -107,7 +107,6 @@ class GardenController: BaseController {
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.register(UINib.init(nibName: cellButtonIdentifier, bundle: nil), forCellWithReuseIdentifier: cellButtonIdentifier)
         collectionView.contentInset.top = 40
-        collectionView.reloadData()
     }
 
     private func updateCaresSection() {
@@ -143,7 +142,6 @@ class GardenController: BaseController {
         scrollToTop(animated: true)
         updateCaresSection()
 
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         switch sender.tag {  
         case 1:
             presenter.getGardenPlants(gardenId: gardenId, careTypeId: 1)
@@ -195,9 +193,6 @@ extension GardenController: GardenOutputProtocol {
     }
 
     func successGardenPlants() {
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-        presenter.getCaresByGarden(gardenId: gardenId)
-        
         collectionView.reloadData()
     }
 

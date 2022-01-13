@@ -1,0 +1,9 @@
+query CaresByGardens {
+	caresByGarden {
+		careCount
+		CareType {
+			id
+			name
+		}
+	}
+}
