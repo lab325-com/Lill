@@ -37,6 +37,7 @@ class GardenNeedCaresController: BaseController {
     
     private let model: GardenModel
     weak var delegate: GardenNeedCaresDelegate?
+    private lazy var presenter = GardenNeedCaresPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
@@ -100,7 +101,7 @@ class GardenNeedCaresController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionDoneAll(_ sender: UIButton) {
-        
+        presenter.doneCares(gardenId: model.id)
     }
     
     @IBAction func actionCancel(_ sender: UIButton) {
@@ -109,4 +110,17 @@ class GardenNeedCaresController: BaseController {
         }
     }
     
+}
+
+//----------------------------------------------
+// MARK: - GardenNeedCaresOutputProtocol
+//----------------------------------------------
+
+extension GardenNeedCaresController: GardenNeedCaresOutputProtocol {
+    func success() {
+        delegate?.gardenNeedCaresSuccess(controller: self)
+        animate(isHidden: true) { [weak self] in
+            self?.dismiss(animated: true)
+        }
+    }
 }

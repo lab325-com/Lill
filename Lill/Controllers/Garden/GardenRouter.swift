@@ -113,4 +113,11 @@ class GardenRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         tabBarController?.present(controller, animated: true, completion: nil)
     }
+    
+    func presentAddToGarden(tabBarController: UITabBarController?) {
+        let controller = GardenAddToPlaceController()
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        tabBarController?.present(controller, animated: true, completion: nil)
+    }
 }
