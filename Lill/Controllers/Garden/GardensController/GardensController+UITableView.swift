@@ -64,7 +64,7 @@ extension GardensController: GardenCreateNameDelegate {
 //----------------------------------------------
 
 extension GardensController: GardenCreateCoverDelegate {
-    func didCreateGarden() {
+    func didCreateGarden(model: GardenModel) {
         presenter.getGardens()
     }
 }

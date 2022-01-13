@@ -9,11 +9,15 @@ struct MeModel: Codable {
     let defaultGardenId: String?
     var notificationSettings: NotificationSettings?
     let language: LanguageModel
-    let gardens: [GardenModel]
+    var gardens: [GardenModel]
     let access: AccessModel
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification
+    }
+    
+    mutating func updateGardens(gardens: [GardenModel]) {
+        self.gardens = gardens
     }
     
     enum CodingKeys: String, CodingKey {

@@ -135,12 +135,13 @@ class GardenRouter: BaseRouter {
     
     func presentAddToGarden(tabBarController: UITabBarController?, delegate: GardenAddToPlaceDelegate, plantId: String) {
         let controller = GardenAddToPlaceController(delegate: delegate, plantId: plantId)
-        controller.modalTransitionStyle = .crossDissolve
-        controller.modalPresentationStyle = .overCurrentContext
+        let nc = NavigationController(rootViewController: controller)
+        nc.modalTransitionStyle = .crossDissolve
+        nc.modalPresentationStyle = .overCurrentContext
         if let tabBarController = tabBarController {
-            tabBarController.present(controller, animated: true, completion: nil)
+            tabBarController.present(nc, animated: true, completion: nil)
         } else {
-            present(controller: controller, presentStyle: .overFullScreen)
+            present(controller: nc, presentStyle: .overFullScreen)
         }
     }
 }
