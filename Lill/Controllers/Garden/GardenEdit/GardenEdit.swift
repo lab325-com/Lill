@@ -85,11 +85,11 @@ class GardenEdit: BaseController {
     }
     
     @IBAction func changeCoverAction(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId)
+        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId, delegate: self)
     }
     
     @IBAction func changeNameAction(_ sender: UIButton) {
-
+        GardenRouter(presenter: navigationController).presentEditGardenChangeName(gardenId: gardenId, delegate: self)
     }
     
     @IBAction func deleteSpaceAction(_ sender: UIButton) {
@@ -113,5 +113,25 @@ extension GardenEdit: GardenEditOutputProtocol {
     
     func failure(error: String) {
         
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenEditChangeCoverDelegate
+//----------------------------------------------
+
+extension GardenEdit: GardenEditChangeCoverDelegate {
+    func didChangeGardenCover(img: UIImage) {
+        gardenImageView.image = img
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenEditChangeCoverDelegate
+//----------------------------------------------
+
+extension GardenEdit: GardenEditChangeNameDelegate {
+    func didChangeName(text: String) {
+        gardenNameLabel.text = text
     }
 }

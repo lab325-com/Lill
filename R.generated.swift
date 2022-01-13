@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 52 files.
+  /// This `R.file` struct is generated, and contains static references to 53 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -211,6 +211,8 @@ struct R: Rswift.Validatable {
     static let gardenPlantUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantUpdate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
     static let gardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlants", pathExtension: "graphql")
+    /// Resource file `GardenUpdate.graphql`.
+    static let gardenUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenUpdate", pathExtension: "graphql")
     /// Resource file `Gardens.graphql`.
     static let gardensGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Gardens", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
@@ -425,6 +427,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlants", withExtension: "graphql")`
     static func gardenPlantsGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantsGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenUpdate", withExtension: "graphql")`
+    static func gardenUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenUpdateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -1757,6 +1765,8 @@ struct R: Rswift.Validatable {
     static let gardenDetailTitleCell = _R.nib._GardenDetailTitleCell()
     /// Nib `GardenEditChangeCover`.
     static let gardenEditChangeCover = _R.nib._GardenEditChangeCover()
+    /// Nib `GardenEditChangeName`.
+    static let gardenEditChangeName = _R.nib._GardenEditChangeName()
     /// Nib `GardenEdit`.
     static let gardenEdit = _R.nib._GardenEdit()
     /// Nib `GardenHistoryAddPhotoController`.
@@ -2199,6 +2209,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditChangeCover) instead")
     static func gardenEditChangeCover(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenEditChangeCover)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEditChangeName", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditChangeName) instead")
+    static func gardenEditChangeName(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEditChangeName)
     }
     #endif
 
@@ -2708,6 +2726,10 @@ struct R: Rswift.Validatable {
 
     static func gardenEditChangeCover(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenEditChangeCover.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenEditChangeName(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEditChangeName.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenHistoryAddPhotoController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -8908,6 +8930,7 @@ struct _R: Rswift.Validatable {
       try _GardenDetailTitleCell.validate()
       try _GardenEdit.validate()
       try _GardenEditChangeCover.validate()
+      try _GardenEditChangeName.validate()
       try _GardenHistoryAddPhotoController.validate()
       try _GardenNeedCaresController.validate()
       try _GardenPhotoDeteilCell.validate()
@@ -9695,10 +9718,28 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
         if UIKit.UIImage(named: "unique_cover_capture_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_capture_ic' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenEditChangeName: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEditChangeName"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'GardenEditChangeName', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

@@ -8,7 +8,7 @@ import UIKit
 //----------------------------------------------
 
 protocol GardenEditChangeCoverOutputProtocol: BaseController {
-    func successUploadMedia(imageUrl: String)
+    func successUploadMedia(img: UIImage)
     
     func failure(error: String)
 }
@@ -42,17 +42,14 @@ class GardenEditChangeCoverPresenter: GardenEditChangeCoverPresenterProtocol {
         let mutation = UploadMediaMutation(image: "image")
         
         let _ = Network.shared.upload(model: MediaDataModel.self, mutation, controller: view, files: [file]) { [weak self] model in
-            self?.view?.stopLoading()
-            
-            let mutation2 = GardenPlantUpdateMutation(record: GardenPlantUpdateInput(id: id, userMainImageId: model.uploadMedia.id  ?? ""))
-            let _ = Network.shared.mutation(model: GardenPlantUpdateModel.self, mutation2, controller: self?.view) { [weak self] model in
+            let mutation2 = GardenUpdateMutation(record: GardenUpdateInput(id: id, name: nil, userMainImageId: model.uploadMedia.id  ?? ""))
+            let _ = Network.shared.mutation(model: GardenUpdateModel.self, mutation2, controller: self?.view) { [weak self] model in
                 self?.view?.stopLoading()
-                self?.view?.successUploadMedia(imageUrl: model.gardenPlantUpdate.userMainImage?.urlIosFull ?? "")
+                self?.view?.successUploadMedia(img: img)
             } failureHandler: { [weak self] error in
                 self?.view?.stopLoading()
                 self?.view?.failure(error: error.localizedDescription)
             }
-            
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
