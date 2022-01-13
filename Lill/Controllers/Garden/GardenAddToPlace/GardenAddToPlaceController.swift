@@ -39,7 +39,7 @@ class GardenAddToPlaceController: BaseController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
         
-        let countGarden = CGFloat(KeychainService.standard.me?.Gardens.count ?? 0)
+        let countGarden = CGFloat(KeychainService.standard.me?.gardens.count ?? 0)
         if (UIScreen.main.bounds.size.height - 220) > (82 * countGarden) {
             heightTableLayout.constant = 82 * countGarden
         } else {
@@ -66,7 +66,7 @@ class GardenAddToPlaceController: BaseController {
 extension GardenAddToPlaceController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return KeychainService.standard.me?.Gardens.count ?? 0
+        return KeychainService.standard.me?.gardens.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

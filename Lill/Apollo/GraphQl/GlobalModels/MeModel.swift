@@ -8,8 +8,8 @@ struct MeModel: Codable {
     let timezone: String?
     let defaultGardenId: String?
     var notificationSettings: NotificationSettings?
-    let Language: LanguageModel
-    let Gardens: [GardenModel]
+    let language: LanguageModel
+    let gardens: [GardenModel]
     let access: AccessModel
     
     mutating func changeNotification(notification: NotificationSettings?) {
@@ -22,8 +22,8 @@ struct MeModel: Codable {
         case email = "email"
         case timezone = "timezone"
         case defaultGardenId = "defaultGardenId"
-        case Language = "Language"
-        case Gardens = "Gardens"
+        case language = "Language"
+        case gardens = "Gardens"
         case access = "access"
         case notificationSettings = "NotificationSettings"
     }

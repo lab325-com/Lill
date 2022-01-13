@@ -1675,7 +1675,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 89 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 90 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1771,6 +1771,8 @@ struct R: Rswift.Validatable {
     static let gardenEditChangeCover = _R.nib._GardenEditChangeCover()
     /// Nib `GardenEditChangeName`.
     static let gardenEditChangeName = _R.nib._GardenEditChangeName()
+    /// Nib `GardenEditDeleteSpace`.
+    static let gardenEditDeleteSpace = _R.nib._GardenEditDeleteSpace()
     /// Nib `GardenEdit`.
     static let gardenEdit = _R.nib._GardenEdit()
     /// Nib `GardenHistoryAddPhotoController`.
@@ -2237,6 +2239,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditChangeName) instead")
     static func gardenEditChangeName(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenEditChangeName)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEditDeleteSpace", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditDeleteSpace) instead")
+    static func gardenEditDeleteSpace(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEditDeleteSpace)
     }
     #endif
 
@@ -2758,6 +2768,10 @@ struct R: Rswift.Validatable {
 
     static func gardenEditChangeName(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenEditChangeName.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenEditDeleteSpace(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEditDeleteSpace.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenHistoryAddPhotoController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -8963,6 +8977,7 @@ struct _R: Rswift.Validatable {
       try _GardenEdit.validate()
       try _GardenEditChangeCover.validate()
       try _GardenEditChangeName.validate()
+      try _GardenEditDeleteSpace.validate()
       try _GardenHistoryAddPhotoController.validate()
       try _GardenNeedCaresController.validate()
       try _GardenPhotoDeteilCell.validate()
@@ -9810,6 +9825,23 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'GardenEditChangeName', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenEditDeleteSpace: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEditDeleteSpace"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plants_detail_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_watering_ic' is used in nib 'GardenEditDeleteSpace', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
