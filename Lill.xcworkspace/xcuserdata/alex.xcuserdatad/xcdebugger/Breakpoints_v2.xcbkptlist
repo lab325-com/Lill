@@ -14,8 +14,8 @@
             filePath = "Lill/Controllers/Garden/GardensController/GardensController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "gardensSegmentAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Lill/Controllers/Garden/GardensController/GardensController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "gardensSegmentAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,6 +49,22 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F171132B-6523-48CF-AFBD-A718D74438C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lill/Controllers/Garden/GardensController/Presenter/GardensPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "getPlants()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
