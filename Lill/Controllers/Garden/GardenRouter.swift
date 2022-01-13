@@ -98,4 +98,11 @@ class GardenRouter: BaseRouter {
         controller.modalTransitionStyle = .crossDissolve
         present(controller: controller,animated: true, presentStyle: .overCurrentContext)
     }
+    
+    func presentNeedCares(tabBarController: UITabBarController?, model: GardenModel, delegate: GardenNeedCaresDelegate) {
+        let controller = GardenNeedCaresController(model: model, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        tabBarController?.present(controller, animated: true, completion: nil)
+    }
 }

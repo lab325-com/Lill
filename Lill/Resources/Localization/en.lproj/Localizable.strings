@@ -147,6 +147,13 @@
 "garden_history_set_main_photo" = "Set as Main Photo";
 "garden_histroy_set_main_success" = "Setted as main Photo";
 "garden_need_cares" = "Need Cares:";
+"garden_need_cares_cancel" = "Cancel";
+"garden_need_cares_count" = "%d Cares";
+"garden_need_cares_count_plants" = "%d Plants";
+"garden_need_cares_done_all_cares" = "Done all Cares";
+"garden_need_cares_sub_title" = "Are you sure want to mark all %@\nCares as done?";
+"garden_need_cares_title" = "%@ Cares";
+"garden_need_cares_waiting" = "Waiting";
 "garden_plan_done" = "Done";
 "garden_plan_missed" = "Missed";
 "garden_plan_upcoming" = "Upcoming";
