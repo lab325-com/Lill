@@ -42,6 +42,8 @@ query Me {
 				notes
 			}
 			isDefault
+            totalPlants
+            needCareCount
 		}
 		access {
 			diagnosisAvaliable

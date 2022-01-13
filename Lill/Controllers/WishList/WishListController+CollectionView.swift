@@ -54,8 +54,7 @@ extension WishListController: UICollectionViewDelegateFlowLayout {
 
 extension WishListController: PlantCollectionDelegate {
     func setToGarden(cell: PlantCollectionCell, id: String) {
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-        presenter.addPlantToGarden(gardenId: gardenId, plantId: id)
+        GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
     }
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {

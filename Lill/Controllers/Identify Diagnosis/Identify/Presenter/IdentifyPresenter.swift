@@ -7,7 +7,6 @@ import UIKit
 // MARK: - Outputs Protocol
 //----------------------------------------------
 protocol IdentifyOutputProtocol: BaseController {
-    func successAddToGarden()
     func successFavorite(isFavorite: Bool, id: String)
     func successUpload(model: MediaDataModel)
     func successRecognize(model: RecognitionDataModel)
@@ -22,7 +21,6 @@ protocol IdentifyPresenterProtocol: AnyObject {
     
     func uploadPhoto(img: UIImage)
     func setFavoritePlant(id: String, isFavorite: Bool)
-    func addPlantToGarden(plantId: String, gardenId: String)
 }
 
 class IdentifyPresenter: IdentifyPresenterProtocol {
@@ -94,18 +92,6 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
         let mutation = SetFavoritePlantByIdMutation(id: id, isFavorite: !isFavorite)
         let _ = Network.shared.mutation(model: FavoritePlantDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.successFavorite(isFavorite: !isFavorite, id: id)
-            self?.view?.stopLoading()
-        }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        })
-    }
-    
-    func addPlantToGarden(plantId: String, gardenId: String) {
-        view?.startLoader()
-        let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
-        let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
-            self?.view?.successAddToGarden()
             self?.view?.stopLoading()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
