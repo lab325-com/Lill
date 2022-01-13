@@ -2,11 +2,11 @@
 import UIKit
 import AVFoundation
 
-protocol GardenEditChangeCoverDelegate: AnyObject {
-    func didChangeGardenCover(img: UIImage)
+protocol GardenCreateCoverDelegate: AnyObject {
+    func didCreateGarden()
 }
 
-class GardenEditChangeCover: BaseController {
+class GardenCreateCover: BaseController {
     
     //----------------------------------------------
     // MARK: - IBOutlet
@@ -21,7 +21,6 @@ class GardenEditChangeCover: BaseController {
     
     @IBOutlet weak var flashButton: UIButton!
     
-    @IBOutlet weak var gardenNameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var captureLabel: UILabel!
     
@@ -29,7 +28,6 @@ class GardenEditChangeCover: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private let gardenId: String
     private var captureSession : AVCaptureSession!
     private var previewLayer : AVCaptureVideoPreviewLayer?
     private var backCamera : AVCaptureDevice!
@@ -37,20 +35,21 @@ class GardenEditChangeCover: BaseController {
     private var videoOutput : AVCaptureVideoDataOutput!
     private var takePicture = false
     private var capturedImage: UIImage?
+    private var gardenName: String
     
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
     
-    weak var delegate: GardenEditChangeCoverDelegate?
-    lazy var presenter = GardenEditChangeCoverPresenter(view: self)
+    private weak var delegate: GardenCreateCoverDelegate?
+    lazy var presenter = GardenCreateCoverPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(gardenId: String, delegate: GardenEditChangeCoverDelegate) {
-        self.gardenId = gardenId
+    init(gardenName: String, delegate: GardenCreateCoverDelegate) {
+        self.gardenName = gardenName
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -82,9 +81,6 @@ class GardenEditChangeCover: BaseController {
     private func setup() {
         navigationItem.title = "Add Place"
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
-        rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
-        navigationItem.rightBarButtonItem = rightBarButtonItem
         
         topView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 24.0)
         bottomView.roundCorners(corners: [.topRight, .topLeft], radius: 24.0)
@@ -99,10 +95,6 @@ class GardenEditChangeCover: BaseController {
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
-    
-    @objc func done() {
-        navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func galleryAction(_ sender: Any) {
         let vc = UIImagePickerController()
@@ -139,7 +131,7 @@ class GardenEditChangeCover: BaseController {
 // MARK: - Camera Setup
 //----------------------------------------------
 
-extension GardenEditChangeCover {
+extension GardenCreateCover {
     
     func setupAndStartCaptureSession() {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -207,7 +199,7 @@ extension GardenEditChangeCover {
 // MARK: - UIImagePickerControllerDelegate
 //----------------------------------------------
 
-extension GardenEditChangeCover: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension GardenCreateCover: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         
@@ -227,7 +219,7 @@ extension GardenEditChangeCover: UIImagePickerControllerDelegate, UINavigationCo
             self.capturedImage = image
             self.takePicture = false
             
-            self.presenter.uploadMedia(id: self.gardenId, img: image)
+            self.presenter.createGarden(image: image, name: self.gardenName)
         }
     }
 }
@@ -236,7 +228,7 @@ extension GardenEditChangeCover: UIImagePickerControllerDelegate, UINavigationCo
 // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
 //----------------------------------------------
 
-extension GardenEditChangeCover: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension GardenCreateCover: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !takePicture { return }
         
@@ -254,7 +246,7 @@ extension GardenEditChangeCover: AVCaptureVideoDataOutputSampleBufferDelegate {
             self.capturedImage = image
             self.takePicture = false
             
-            self.presenter.uploadMedia(id: self.gardenId, img: image)
+            self.presenter.createGarden(image: image, name: self.gardenName)
         }
     }
 }
@@ -263,10 +255,11 @@ extension GardenEditChangeCover: AVCaptureVideoDataOutputSampleBufferDelegate {
 // MARK: - GardenEditChangeCoverOutputProtocol
 //----------------------------------------------
 
-extension GardenEditChangeCover: GardenEditChangeCoverOutputProtocol {
-    func successUploadMedia(img: UIImage) {
-        navigationController?.popViewController(animated: true)
-        delegate?.didChangeGardenCover(img: img)
+extension GardenCreateCover: GardenCreateCoverOutputProtocol {
+    func successCreateGarden() {
+        dismiss(animated: true) {
+            self.delegate?.didCreateGarden()
+        }
     }
     
     func failure(error: String) {

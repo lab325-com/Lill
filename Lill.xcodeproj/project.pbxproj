@@ -397,6 +397,13 @@
 		FA8C9388279009870009DA6D /* GardenDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C9386279009870009DA6D /* GardenDeleteModel.swift */; };
 		FA8C9389279009870009DA6D /* GardenDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8C9387279009870009DA6D /* GardenDelete.graphql */; };
 		FA8C938C27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C938B27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift */; };
+		FA8C939127902C990009DA6D /* GardenCreateCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C938F27902C990009DA6D /* GardenCreateCover.swift */; };
+		FA8C939227902C990009DA6D /* GardenCreateCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8C939027902C990009DA6D /* GardenCreateCover.xib */; };
+		FA8C939527902CB30009DA6D /* GardenCreateCoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C939427902CB30009DA6D /* GardenCreateCoverPresenter.swift */; };
+		FA8C939827902F410009DA6D /* GardenCreateName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C939627902F410009DA6D /* GardenCreateName.swift */; };
+		FA8C939927902F410009DA6D /* GardenCreateName.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8C939727902F410009DA6D /* GardenCreateName.xib */; };
+		FA8C93A22790334C0009DA6D /* GardenCreate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8C93A02790334C0009DA6D /* GardenCreate.graphql */; };
+		FA8C93A32790334C0009DA6D /* GardenCreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C93A12790334C0009DA6D /* GardenCreateModel.swift */; };
 		FA8D7E6A2762044800AD0E57 /* GardenPlantAddCaresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
@@ -855,6 +862,13 @@
 		FA8C9386279009870009DA6D /* GardenDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenDeleteModel.swift; sourceTree = "<group>"; };
 		FA8C9387279009870009DA6D /* GardenDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenDelete.graphql; sourceTree = "<group>"; };
 		FA8C938B27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditDeleteSpacePresenter.swift; sourceTree = "<group>"; };
+		FA8C938F27902C990009DA6D /* GardenCreateCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCreateCover.swift; sourceTree = "<group>"; };
+		FA8C939027902C990009DA6D /* GardenCreateCover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenCreateCover.xib; sourceTree = "<group>"; };
+		FA8C939427902CB30009DA6D /* GardenCreateCoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCreateCoverPresenter.swift; sourceTree = "<group>"; };
+		FA8C939627902F410009DA6D /* GardenCreateName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCreateName.swift; sourceTree = "<group>"; };
+		FA8C939727902F410009DA6D /* GardenCreateName.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenCreateName.xib; sourceTree = "<group>"; };
+		FA8C93A02790334C0009DA6D /* GardenCreate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenCreate.graphql; sourceTree = "<group>"; };
+		FA8C93A12790334C0009DA6D /* GardenCreateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenCreateModel.swift; sourceTree = "<group>"; };
 		FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresPresenter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
@@ -2592,6 +2606,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FA8C939F279033220009DA6D /* GardenCreate */,
 				FA8C9385279008250009DA6D /* GardenDelete */,
 				FA8C9373278F0AA00009DA6D /* GardenUpdate */,
 				02BD7A922774DE8600A8B943 /* UpdateMediaNotes */,
@@ -2920,6 +2935,51 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA8C938E27902C720009DA6D /* GardenCreate */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C939E27902F940009DA6D /* GardenCreateName */,
+				FA8C939A27902F4A0009DA6D /* GardenCreateCover */,
+			);
+			path = GardenCreate;
+			sourceTree = "<group>";
+		};
+		FA8C939327902C9F0009DA6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C939427902CB30009DA6D /* GardenCreateCoverPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA8C939A27902F4A0009DA6D /* GardenCreateCover */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C938F27902C990009DA6D /* GardenCreateCover.swift */,
+				FA8C939027902C990009DA6D /* GardenCreateCover.xib */,
+				FA8C939327902C9F0009DA6D /* Presenter */,
+			);
+			path = GardenCreateCover;
+			sourceTree = "<group>";
+		};
+		FA8C939E27902F940009DA6D /* GardenCreateName */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C939627902F410009DA6D /* GardenCreateName.swift */,
+				FA8C939727902F410009DA6D /* GardenCreateName.xib */,
+			);
+			path = GardenCreateName;
+			sourceTree = "<group>";
+		};
+		FA8C939F279033220009DA6D /* GardenCreate */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C93A02790334C0009DA6D /* GardenCreate.graphql */,
+				FA8C93A12790334C0009DA6D /* GardenCreateModel.swift */,
+			);
+			path = GardenCreate;
+			sourceTree = "<group>";
+		};
 		FA8D7E682762042700AD0E57 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -3085,6 +3145,7 @@
 			isa = PBXGroup;
 			children = (
 				023BBB192744150900DCFFF1 /* GardenRouter.swift */,
+				FA8C938E27902C720009DA6D /* GardenCreate */,
 				FAC6453027875395004E56D5 /* GardensController */,
 				02BFFF502763335800140A5C /* GardenController */,
 				FA8C935E278EB32A0009DA6D /* GardenEdit */,
@@ -3504,6 +3565,7 @@
 				021BC1372771C6550083DC65 /* GardenPlantStatistics.graphql in Resources */,
 				02F3ADF5274E9E4C00A07FEA /* ScheduleDoneAllCell.xib in Resources */,
 				F3D378B6272F9B360015C6EE /* DiseaseArchiveViewController.xib in Resources */,
+				FA8C939927902F410009DA6D /* GardenCreateName.xib in Resources */,
 				FAA0895B2757976D00449D5B /* CareCell.xib in Resources */,
 				02527D8D274639A600126022 /* ScheduleByGardenPlant.graphql in Resources */,
 				02AE739C277447F7008DE4E6 /* GalleryGardenHistroyCell.xib in Resources */,
@@ -3563,6 +3625,7 @@
 				02BD7A942774DEA800A8B943 /* UpdateMediaNotes.graphql in Resources */,
 				FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */,
 				02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */,
+				FA8C939227902C990009DA6D /* GardenCreateCover.xib in Resources */,
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
 				0228B48D2760DE3300F7101C /* GardenPlantCaresEditDelete.xib in Resources */,
 				02E0B1A4270431B400A56840 /* Main.storyboard in Resources */,
@@ -3595,6 +3658,7 @@
 				FA8C9376278F0AE00009DA6D /* GardenUpdate.graphql in Resources */,
 				023BBB18274413EF00DCFFF1 /* GardenDetailController.xib in Resources */,
 				02359B99274D730600109C69 /* GardenPlantClone.graphql in Resources */,
+				FA8C93A22790334C0009DA6D /* GardenCreate.graphql in Resources */,
 				FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3849,6 +3913,7 @@
 				02D142C92757DA6E008A7FA3 /* IPhone13ProMax4Timeline.swift in Sources */,
 				02D4BFB62743B94D00B9322B /* UIViewFlow+Extension.swift in Sources */,
 				FAF93FF82763736D004B784B /* GardenPlantCareCreateModel.swift in Sources */,
+				FA8C939527902CB30009DA6D /* GardenCreateCoverPresenter.swift in Sources */,
 				FAA0895A2757976D00449D5B /* CareCell.swift in Sources */,
 				02C6C10B273A68F4003C47FF /* RestAuth.swift in Sources */,
 				02AE73A5277460C7008DE4E6 /* GardenPhotoDeteilCell.swift in Sources */,
@@ -3872,6 +3937,7 @@
 				FA1CEC5A273C6488003A4F84 /* LanguageModel.swift in Sources */,
 				FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */,
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
+				FA8C93A32790334C0009DA6D /* GardenCreateModel.swift in Sources */,
 				02BD7A8C2774DCDD00A8B943 /* GardenDetailEditPresenter.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
@@ -3909,6 +3975,7 @@
 				FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */,
 				FAEFA7B32760E6D900900EE0 /* GardenPlantCareView.swift in Sources */,
 				02BD7A892774D71000A8B943 /* GardenDetailEditController.swift in Sources */,
+				FA8C939827902F410009DA6D /* GardenCreateName.swift in Sources */,
 				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
 				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				021BC11B277072F70083DC65 /* GaleryHistoryAddCell.swift in Sources */,
@@ -3927,6 +3994,7 @@
 				02A8347126F38B5F0009E147 /* UIViewController+Extension.swift in Sources */,
 				FAC6453627883A04004E56D5 /* GardensController+UITableView.swift in Sources */,
 				02527D93274642E900126022 /* GardenDetailScheduleCell.swift in Sources */,
+				FA8C939127902C990009DA6D /* GardenCreateCover.swift in Sources */,
 				FA40D7142728534F00A10C10 /* MediaModel.swift in Sources */,
 				FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */,
 				02A4605127427A6A00D5D931 /* CareTypesModel.swift in Sources */,

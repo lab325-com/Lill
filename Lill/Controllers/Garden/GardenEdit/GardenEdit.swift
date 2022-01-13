@@ -24,11 +24,11 @@ class GardenEdit: BaseController {
     
     private let gardenId: String
     
-//    //----------------------------------------------
-//    // MARK: - Gobal property
-//    //----------------------------------------------
-//    
-//    lazy var presenter = GardenEditPresenter(view: self)
+    //----------------------------------------------
+    // MARK: - Gobal property
+    //----------------------------------------------
+    
+    lazy var presenter = GardenEditPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
@@ -50,7 +50,7 @@ class GardenEdit: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        presenter.getGarden(gardenId: gardenId)
+        presenter.getGarden(gardenId: gardenId)
         setup()
     }
     
@@ -76,13 +76,6 @@ class GardenEdit: BaseController {
         guard let gardens = KeychainService.standard.me?.gardens else { return }
         deleteSpaceButton.isUserInteractionEnabled = gardens.count > 1 ? true : false
         deleteSpaceButton.alpha = gardens.count > 1 ? 1.0 : 0.5
-        let garden = gardens.first(where: {$0.id == gardenId})
-        gardenImageView.kf.setImage(with: URL(string: garden?.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
-        gardenNameLabel.text = garden?.name
-        if let totalPlants = garden?.totalPlants {
-            gadenPlantsCountLabel.text = "\(totalPlants)"
-            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
-        }
     }
     
     //----------------------------------------------
@@ -111,24 +104,24 @@ class GardenEdit: BaseController {
     }
 }
 
-////----------------------------------------------
-//// MARK: - GardensOutputProtocol
-////----------------------------------------------
-//
-//extension GardenEdit: GardenEditOutputProtocol {
-//    func successGetGarden(garden: GardenModel) {
-//        gardenImageView.kf.setImage(with: URL(string: garden.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
-//        gardenNameLabel.text = garden.name
-//        if let totalPlants = garden.totalPlants {
-//            gadenPlantsCountLabel.text = "\(totalPlants)"
-//            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
-//        }
-//    }
-//
-//    func failure(error: String) {
-//
-//    }
-//}
+//----------------------------------------------
+// MARK: - GardensOutputProtocol
+//----------------------------------------------
+
+extension GardenEdit: GardenEditOutputProtocol {
+    func successGetGarden(garden: GardenModel) {
+        gardenImageView.kf.setImage(with: URL(string: garden.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
+        gardenNameLabel.text = garden.name
+        if let totalPlants = garden.totalPlants {
+            gadenPlantsCountLabel.text = "\(totalPlants)"
+            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
+        }
+    }
+
+    func failure(error: String) {
+
+    }
+}
 
 //----------------------------------------------
 // MARK: - GardenEditChangeCoverDelegate

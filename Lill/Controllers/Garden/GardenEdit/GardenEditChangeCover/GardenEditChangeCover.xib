@@ -159,11 +159,6 @@
                         <constraint firstItem="6vy-XR-sIx" firstAttribute="centerX" secondItem="zsb-bt-bQA" secondAttribute="centerX" id="mXf-4w-3Nq"/>
                         <constraint firstItem="ap6-wS-21F" firstAttribute="top" secondItem="Kea-Rr-psi" secondAttribute="bottom" constant="10" id="pJe-7j-51t"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="24"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

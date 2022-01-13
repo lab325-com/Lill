@@ -4,6 +4,35 @@
 import Apollo
 import Foundation
 
+public struct GardenCreateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - name
+  ///   - userMainImageId
+  public init(name: Swift.Optional<String?> = nil, userMainImageId: Swift.Optional<String?> = nil) {
+    graphQLMap = ["name": name, "userMainImageId": userMainImageId]
+  }
+
+  public var name: Swift.Optional<String?> {
+    get {
+      return graphQLMap["name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var userMainImageId: Swift.Optional<String?> {
+    get {
+      return graphQLMap["userMainImageId"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userMainImageId")
+    }
+  }
+}
+
 public struct GardenPlantCareCreateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -1330,6 +1359,229 @@ public final class GalleryImageDeleteMutation: GraphQLMutation {
       }
       set {
         resultMap.updateValue(newValue, forKey: "galleryImageDelete")
+      }
+    }
+  }
+}
+
+public final class GardenCreateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GardenCreate($record: GardenCreateInput!) {
+      gardenCreate(record: $record) {
+        __typename
+        id
+        name
+        userMainImage {
+          __typename
+          id
+          urlIosFull
+          urlIosPrev
+        }
+        isDefault
+        totalPlants
+        needCareCount
+        isHappy
+      }
+    }
+    """
+
+  public let operationName: String = "GardenCreate"
+
+  public var record: GardenCreateInput
+
+  public init(record: GardenCreateInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("gardenCreate", arguments: ["record": GraphQLVariable("record")], type: .object(GardenCreate.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(gardenCreate: GardenCreate? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "gardenCreate": gardenCreate.flatMap { (value: GardenCreate) -> ResultMap in value.resultMap }])
+    }
+
+    public var gardenCreate: GardenCreate? {
+      get {
+        return (resultMap["gardenCreate"] as? ResultMap).flatMap { GardenCreate(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "gardenCreate")
+      }
+    }
+
+    public struct GardenCreate: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Garden"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("userMainImage", type: .object(UserMainImage.selections)),
+          GraphQLField("isDefault", type: .scalar(Bool.self)),
+          GraphQLField("totalPlants", type: .scalar(Int.self)),
+          GraphQLField("needCareCount", type: .scalar(Int.self)),
+          GraphQLField("isHappy", type: .scalar(Bool.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, name: String? = nil, userMainImage: UserMainImage? = nil, isDefault: Bool? = nil, totalPlants: Int? = nil, needCareCount: Int? = nil, isHappy: Bool? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Garden", "id": id, "name": name, "userMainImage": userMainImage.flatMap { (value: UserMainImage) -> ResultMap in value.resultMap }, "isDefault": isDefault, "totalPlants": totalPlants, "needCareCount": needCareCount, "isHappy": isHappy])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return resultMap["name"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var userMainImage: UserMainImage? {
+        get {
+          return (resultMap["userMainImage"] as? ResultMap).flatMap { UserMainImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "userMainImage")
+        }
+      }
+
+      public var isDefault: Bool? {
+        get {
+          return resultMap["isDefault"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "isDefault")
+        }
+      }
+
+      public var totalPlants: Int? {
+        get {
+          return resultMap["totalPlants"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalPlants")
+        }
+      }
+
+      public var needCareCount: Int? {
+        get {
+          return resultMap["needCareCount"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "needCareCount")
+        }
+      }
+
+      public var isHappy: Bool? {
+        get {
+          return resultMap["isHappy"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "isHappy")
+        }
+      }
+
+      public struct UserMainImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaModel"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("urlIosFull", type: .scalar(String.self)),
+            GraphQLField("urlIosPrev", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, urlIosFull: String? = nil, urlIosPrev: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaModel", "id": id, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var urlIosFull: String? {
+          get {
+            return resultMap["urlIosFull"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "urlIosFull")
+          }
+        }
+
+        public var urlIosPrev: String? {
+          get {
+            return resultMap["urlIosPrev"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "urlIosPrev")
+          }
+        }
       }
     }
   }

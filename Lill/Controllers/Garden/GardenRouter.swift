@@ -9,6 +9,18 @@ import UIKit
 
 class GardenRouter: BaseRouter {
     
+    func presentGardenCreateCover(gardenName: String, delegate: GardenCreateCoverDelegate) {
+        let controller = GardenCreateCover(gardenName: gardenName, delegate: delegate)
+        present(controller: controller, animated: false, presentStyle: .overFullScreen)
+    }
+    
+    func presentGardenCreateName(delegate: GardenCreateNameDelegate) {
+        let controller = GardenCreateName(delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
     func pushToGarden(gardenId: String, gardenName: String) {
         let controller = GardenController(gardenId: gardenId, gardenName: gardenName)
         controller.hidesBottomBarWhenPushed = true

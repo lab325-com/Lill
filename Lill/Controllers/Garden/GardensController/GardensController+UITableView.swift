@@ -45,7 +45,27 @@ extension GardensController: UITableViewDelegate, UITableViewDataSource {
 
 extension GardensController: AddPlaceCellDelegate {
     func didTappedAddPlaceButton() {
-        /// Open add place logic
+        GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCreateNameDelegate
+//----------------------------------------------
+
+extension GardensController: GardenCreateNameDelegate {
+    func didCreateName(text: String) {
+        GardenRouter(presenter: navigationController).presentGardenCreateCover(gardenName: text, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCreateCoverDelegate
+//----------------------------------------------
+
+extension GardensController: GardenCreateCoverDelegate {
+    func didCreateGarden() {
+        presenter.getGardens()
     }
 }
 
