@@ -20,6 +20,7 @@ extension GardensController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: self.gardenCellIdentifier) as? GardenCell else { return UITableViewCell() }
                 if let model = presenter.gardens[safe: indexPath.row] {
                     cell.configure(model: model)
+                    cell.delegate = self
                 }
                 return cell
             }
@@ -45,5 +46,25 @@ extension GardensController: UITableViewDelegate, UITableViewDataSource {
 extension GardensController: AddPlaceCellDelegate {
     func didTappedAddPlaceButton() {
         /// Open add place logic
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCellDelegate
+//----------------------------------------------
+
+extension GardensController: GardenCellDelegate {
+    func gardenCellNeedCares(cell: GardenCell, model: GardenModel) {
+        GardenRouter(presenter: navigationController).presentNeedCares(tabBarController: tabBarController, model: model, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCellDelegate
+//----------------------------------------------
+
+extension GardensController: GardenNeedCaresDelegate {
+    func gardenNeedCaresSuccess(controller: GardenNeedCaresController) {
+        presenter.getGardens()
     }
 }
