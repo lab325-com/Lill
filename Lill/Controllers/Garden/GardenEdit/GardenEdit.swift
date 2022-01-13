@@ -7,14 +7,16 @@ class GardenEdit: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
-    @IBOutlet var headerView: UIView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var footerView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var footerView: UIView!
     
     @IBOutlet weak var gardenImageView: UIImageView!
     @IBOutlet weak var gardenNameLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountInfoLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountLabel: UILabel!
+    
+    @IBOutlet weak var deleteSpaceButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -70,6 +72,11 @@ class GardenEdit: BaseController {
         let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        if let gardens = KeychainService.standard.me?.gardens {
+            deleteSpaceButton.isUserInteractionEnabled = gardens.count > 1 ? true : false
+            deleteSpaceButton.alpha = gardens.count > 1 ? 1.0 : 0.5
+        }
     }
     
     //----------------------------------------------

@@ -384,6 +384,8 @@
 		FA8C937B278F19580009DA6D /* GardenEditChangeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C9379278F19580009DA6D /* GardenEditChangeName.swift */; };
 		FA8C937C278F19580009DA6D /* GardenEditChangeName.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8C937A278F19580009DA6D /* GardenEditChangeName.xib */; };
 		FA8C937F278F1D540009DA6D /* GardenEditChangeNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C937E278F1D540009DA6D /* GardenEditChangeNamePresenter.swift */; };
+		FA8C9383278F40970009DA6D /* GardenEditDeleteSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */; };
+		FA8C9384278F40970009DA6D /* GardenEditDeleteSpace.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */; };
 		FA8D7E6A2762044800AD0E57 /* GardenPlantAddCaresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */; };
 		FA8FCD2927182CAA00173725 /* UploadMedia.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA8FCD2827182CAA00173725 /* UploadMedia.graphql */; };
 		FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */; };
@@ -829,6 +831,8 @@
 		FA8C9379278F19580009DA6D /* GardenEditChangeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditChangeName.swift; sourceTree = "<group>"; };
 		FA8C937A278F19580009DA6D /* GardenEditChangeName.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenEditChangeName.xib; sourceTree = "<group>"; };
 		FA8C937E278F1D540009DA6D /* GardenEditChangeNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditChangeNamePresenter.swift; sourceTree = "<group>"; };
+		FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenEditDeleteSpace.swift; sourceTree = "<group>"; };
+		FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenEditDeleteSpace.xib; sourceTree = "<group>"; };
 		FA8D7E692762044800AD0E57 /* GardenPlantAddCaresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresPresenter.swift; sourceTree = "<group>"; };
 		FA8FCD2827182CAA00173725 /* UploadMedia.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UploadMedia.graphql; sourceTree = "<group>"; };
 		FA8FCD2A27182D3600173725 /* UploadMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMediaModel.swift; sourceTree = "<group>"; };
@@ -2769,6 +2773,7 @@
 				FA8C9363278EC2710009DA6D /* Presenter */,
 				FA8C936B278ED6190009DA6D /* GardenEditChangeCover */,
 				FA8C9378278F165B0009DA6D /* GardenEditChangeName */,
+				FA8C9380278F3FAF0009DA6D /* GardenEditDeleteSpace */,
 			);
 			path = GardenEdit;
 			sourceTree = "<group>";
@@ -2833,6 +2838,15 @@
 				FA8C937E278F1D540009DA6D /* GardenEditChangeNamePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA8C9380278F3FAF0009DA6D /* GardenEditDeleteSpace */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C9381278F40970009DA6D /* GardenEditDeleteSpace.swift */,
+				FA8C9382278F40970009DA6D /* GardenEditDeleteSpace.xib */,
+			);
+			path = GardenEditDeleteSpace;
 			sourceTree = "<group>";
 		};
 		FA8D7E682762042700AD0E57 /* Presenter */ = {
@@ -3500,6 +3514,7 @@
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
 				FA1E693D278C3BA500030600 /* GardenCell.xib in Resources */,
+				FA8C9384278F40970009DA6D /* GardenEditDeleteSpace.xib in Resources */,
 				FA8C9376278F0AE00009DA6D /* GardenUpdate.graphql in Resources */,
 				023BBB18274413EF00DCFFF1 /* GardenDetailController.xib in Resources */,
 				02359B99274D730600109C69 /* GardenPlantClone.graphql in Resources */,
@@ -3665,6 +3680,7 @@
 				02D4BFB52743B94D00B9322B /* Animation.swift in Sources */,
 				FA545485274E89C6006B52F4 /* PlantsAboutType.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
+				FA8C9383278F40970009DA6D /* GardenEditDeleteSpace.swift in Sources */,
 				02D4BFB82743B94D00B9322B /* Timeline.swift in Sources */,
 				028C9BFA274D2FE20043EA31 /* ScheduleColapsView.swift in Sources */,
 				02D142F22757E769008A7FA3 /* IPhone84View.swift in Sources */,

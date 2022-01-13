@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenEdit" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="deleteSpaceButton" destination="kR6-tH-kPw" id="uJb-Br-ltK"/>
                 <outlet property="footerView" destination="6Q0-EM-tyU" id="FRR-IU-pMo"/>
                 <outlet property="gadenPlantsCountInfoLabel" destination="Yr2-eo-3UF" id="qK2-7d-qfa"/>
                 <outlet property="gadenPlantsCountLabel" destination="O0F-Gh-hoP" id="clR-t5-jLb"/>

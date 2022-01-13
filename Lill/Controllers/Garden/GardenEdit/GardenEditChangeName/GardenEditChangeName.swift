@@ -70,6 +70,8 @@ class GardenEditChangeName: BaseController {
         changeButton.setTitle("Change", for: .normal)
         
         gardenNameTextField.addTarget(self, action: #selector(GardenEditChangeName.textFieldDidChange(_:)), for: .editingChanged)
+        
+        changeButton.alpha = 0.5
     }
     
     //----------------------------------------------
@@ -88,7 +90,8 @@ class GardenEditChangeName: BaseController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        gardenNameTextField.alpha = textField.text?.count ?? 0 > 0 ? 1.0 : 0.5
+        changeButton.isUserInteractionEnabled = textField.text?.count ?? 0 > 0 ? true : false
+        changeButton.alpha = textField.text?.count ?? 0 > 0 ? 1.0 : 0.5
     }
 }
 
