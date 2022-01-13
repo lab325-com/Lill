@@ -3,7 +3,7 @@ import UIKit
 import AVFoundation
 
 protocol GardenCreateCoverDelegate: AnyObject {
-    func didCreateGarden()
+    func didCreateGarden(model: GardenModel)
 }
 
 class GardenCreateCover: BaseController {
@@ -256,9 +256,9 @@ extension GardenCreateCover: AVCaptureVideoDataOutputSampleBufferDelegate {
 //----------------------------------------------
 
 extension GardenCreateCover: GardenCreateCoverOutputProtocol {
-    func successCreateGarden() {
+    func successCreateGarden(model: GardenModel) {
         dismiss(animated: true) {
-            self.delegate?.didCreateGarden()
+            self.delegate?.didCreateGarden(model: model)
         }
     }
     

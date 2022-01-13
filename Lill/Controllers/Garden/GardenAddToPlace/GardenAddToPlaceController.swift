@@ -55,6 +55,7 @@ class GardenAddToPlaceController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
 
         setup()
@@ -106,6 +107,7 @@ class GardenAddToPlaceController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionAddToNew(_ sender: UIButton) {
+        GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
     }
     
     @IBAction func actionClose(_ sender: UIButton) {
@@ -153,5 +155,36 @@ extension GardenAddToPlaceController: GardenAddToPlaceOutputProtocol {
             self.delegate?.gardenAddToPlaceSuccessAdd(controller: self)
             self.dismiss(animated: true)
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCreateNameDelegate
+//----------------------------------------------
+
+extension GardenAddToPlaceController: GardenCreateNameDelegate {
+    func didCreateName(text: String) {
+        GardenRouter(presenter: navigationController).presentGardenCreateCover(gardenName: text, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - GardenCreateCoverDelegate
+//----------------------------------------------
+
+extension GardenAddToPlaceController: GardenCreateCoverDelegate {
+    func didCreateGarden(model: GardenModel) {
+        tableView.reloadData()
+        
+        let countGarden = CGFloat(KeychainService.standard.me?.gardens.count ?? 0)
+        if (UIScreen.main.bounds.size.height - 240) > (82 * countGarden) {
+            heightTableLayout.constant = 82 * countGarden
+        } else {
+            heightTableLayout.constant = (UIScreen.main.bounds.size.height - 240)
+        }
+        
+        view.layoutIfNeeded()
+        
+        presenter.addPlantToGarden(plantId: plantId, gardenId: model.id)
     }
 }

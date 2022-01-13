@@ -8,7 +8,7 @@ import UIKit
 //----------------------------------------------
 
 protocol GardenCreateCoverOutputProtocol: BaseController {
-    func successCreateGarden()
+    func successCreateGarden(model: GardenModel)
     
     func failure(error: String)
 }
@@ -45,8 +45,17 @@ class GardenCreateCoverPresenter: GardenCreateCoverPresenterProtocol {
             
             let mutation2 = GardenCreateMutation(record: GardenCreateInput(name: name, userMainImageId: model.uploadMedia.id  ?? ""))
             let _ = Network.shared.mutation(model: GardenCreateModel.self, mutation2, controller: self?.view) { [weak self] model in
+                
+                var gardens = KeychainService.standard.me?.gardens ?? []
+                gardens.insert(model.gardenCreate, at: 0)
+                
+                var meModel = KeychainService.standard.me
+                meModel?.updateGardens(gardens: gardens)
+                
+                KeychainService.standard.me = meModel
+                
                 self?.view?.stopLoading()
-                self?.view?.successCreateGarden()
+                self?.view?.successCreateGarden(model: model.gardenCreate)
             } failureHandler: { [weak self] error in
                 self?.view?.stopLoading()
                 self?.view?.failure(error: error.localizedDescription)
