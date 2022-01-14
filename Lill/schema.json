@@ -1237,6 +1237,22 @@
             "deprecationReason": null
           },
           {
+            "name": "caresByGardens",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CareMeta",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "gardenById",
             "description": null,
             "args": [
@@ -4467,18 +4483,6 @@
             "deprecationReason": null
           },
           {
-            "name": "userDescription",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "userMainImage",
             "description": null,
             "args": [],
@@ -4491,23 +4495,43 @@
             "deprecationReason": null
           },
           {
-            "name": "userGalleryImages",
+            "name": "isDefault",
             "description": null,
             "args": [],
             "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "MediaModel",
-                "ofType": null
-              }
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "isDefault",
+            "name": "totalPlants",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "needCareCount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isHappy",
             "description": null,
             "args": [],
             "type": {
@@ -5500,11 +5524,11 @@
             "deprecationReason": null
           },
           {
-            "name": "image",
+            "name": "userMainImageId",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Upload",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -5552,11 +5576,11 @@
             "deprecationReason": null
           },
           {
-            "name": "image",
+            "name": "userMainImageId",
             "description": null,
             "type": {
               "kind": "SCALAR",
-              "name": "Upload",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -7624,20 +7648,7 @@
           {
             "name": "args",
             "description": null,
-            "args": [
-              {
-                "name": "includeDeprecated",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                },
-                "defaultValue": "false",
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
+            "args": [],
             "type": {
               "kind": "NON_NULL",
               "name": null,

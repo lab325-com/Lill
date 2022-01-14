@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 50 files.
+  /// This `R.file` struct is generated, and contains static references to 56 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -161,6 +161,8 @@ struct R: Rswift.Validatable {
     static let careTypeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CareType", pathExtension: "graphql")
     /// Resource file `CaresByGarden.graphql`.
     static let caresByGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGarden", pathExtension: "graphql")
+    /// Resource file `CaresByGardens.graphql`.
+    static let caresByGardensGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "CaresByGardens", pathExtension: "graphql")
     /// Resource file `Debug.xcconfig`.
     static let debugXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Debug", pathExtension: "xcconfig")
     /// Resource file `DiagnoseArhive.graphql`.
@@ -179,6 +181,12 @@ struct R: Rswift.Validatable {
     static let galleryImageDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GalleryImageDelete", pathExtension: "graphql")
     /// Resource file `GalleryImages.graphql`.
     static let galleryImagesGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GalleryImages", pathExtension: "graphql")
+    /// Resource file `GardenById.graphql`.
+    static let gardenByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenById", pathExtension: "graphql")
+    /// Resource file `GardenCreate.graphql`.
+    static let gardenCreateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenCreate", pathExtension: "graphql")
+    /// Resource file `GardenDelete.graphql`.
+    static let gardenDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenDelete", pathExtension: "graphql")
     /// Resource file `GardenPlanById.graphql`.
     static let gardenPlanByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlanById", pathExtension: "graphql")
     /// Resource file `GardenPlantByIds.graphql`.
@@ -209,6 +217,10 @@ struct R: Rswift.Validatable {
     static let gardenPlantUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlantUpdate", pathExtension: "graphql")
     /// Resource file `GardenPlants.graphql`.
     static let gardenPlantsGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenPlants", pathExtension: "graphql")
+    /// Resource file `GardenUpdate.graphql`.
+    static let gardenUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "GardenUpdate", pathExtension: "graphql")
+    /// Resource file `Gardens.graphql`.
+    static let gardensGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "Gardens", pathExtension: "graphql")
     /// Resource file `Generator.xcconfig`.
     static let generatorXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Generator", pathExtension: "xcconfig")
     /// Resource file `GetCatalogPlants.graphql`.
@@ -274,6 +286,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "CaresByGardens", withExtension: "graphql")`
+    static func caresByGardensGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.caresByGardensGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "Debug", withExtension: "xcconfig")`
     static func debugXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.debugXcconfig
@@ -325,6 +343,24 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GalleryImages", withExtension: "graphql")`
     static func galleryImagesGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.galleryImagesGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenById", withExtension: "graphql")`
+    static func gardenByIdGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenByIdGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenCreate", withExtension: "graphql")`
+    static func gardenCreateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenCreateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenDelete", withExtension: "graphql")`
+    static func gardenDeleteGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenDeleteGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -415,6 +451,18 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GardenPlants", withExtension: "graphql")`
     static func gardenPlantsGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.gardenPlantsGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "GardenUpdate", withExtension: "graphql")`
+    static func gardenUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardenUpdateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Gardens", withExtension: "graphql")`
+    static func gardensGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gardensGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -592,7 +640,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 116 images.
+  /// This `R.image` struct is generated, and contains static references to 117 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -658,6 +706,8 @@ struct R: Rswift.Validatable {
     static let garden_schelure_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_schelure_ic")
     /// Image `garden_selected_bell_ic`.
     static let garden_selected_bell_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_selected_bell_ic")
+    /// Image `garden_sheet_ic`.
+    static let garden_sheet_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_sheet_ic")
     /// Image `garden_success_set_main_ic`.
     static let garden_success_set_main_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "garden_success_set_main_ic")
     /// Image `ic_background`.
@@ -1048,6 +1098,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "garden_selected_bell_ic", bundle: ..., traitCollection: ...)`
     static func garden_selected_bell_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.garden_selected_bell_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "garden_sheet_ic", bundle: ..., traitCollection: ...)`
+    static func garden_sheet_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.garden_sheet_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1642,7 +1699,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 80 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 92 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1650,6 +1707,8 @@ struct R: Rswift.Validatable {
     static let addCoverAddController = _R.nib._AddCoverAddController()
     /// Nib `AddCoverIdentifierController`.
     static let addCoverIdentifierController = _R.nib._AddCoverIdentifierController()
+    /// Nib `AddPlaceCell`.
+    static let addPlaceCell = _R.nib._AddPlaceCell()
     /// Nib `AddPlantCareView`.
     static let addPlantCareView = _R.nib._AddPlantCareView()
     /// Nib `AddPlantTimeCell`.
@@ -1686,14 +1745,26 @@ struct R: Rswift.Validatable {
     static let galleryGardenHistroyCell = _R.nib._GalleryGardenHistroyCell()
     /// Nib `GalleryHistoryCell`.
     static let galleryHistoryCell = _R.nib._GalleryHistoryCell()
+    /// Nib `GardenAddToPlaceCell`.
+    static let gardenAddToPlaceCell = _R.nib._GardenAddToPlaceCell()
+    /// Nib `GardenAddToPlaceController`.
+    static let gardenAddToPlaceController = _R.nib._GardenAddToPlaceController()
     /// Nib `GardenButtonCell`.
     static let gardenButtonCell = _R.nib._GardenButtonCell()
     /// Nib `GardenCareDetailView`.
     static let gardenCareDetailView = _R.nib._GardenCareDetailView()
     /// Nib `GardenCaresDetail`.
     static let gardenCaresDetail = _R.nib._GardenCaresDetail()
+    /// Nib `GardenCell`.
+    static let gardenCell = _R.nib._GardenCell()
     /// Nib `GardenChooseAddPlantController`.
     static let gardenChooseAddPlantController = _R.nib._GardenChooseAddPlantController()
+    /// Nib `GardenController`.
+    static let gardenController = _R.nib._GardenController()
+    /// Nib `GardenCreateCover`.
+    static let gardenCreateCover = _R.nib._GardenCreateCover()
+    /// Nib `GardenCreateName`.
+    static let gardenCreateName = _R.nib._GardenCreateName()
     /// Nib `GardenDetailAboutCell`.
     static let gardenDetailAboutCell = _R.nib._GardenDetailAboutCell()
     /// Nib `GardenDetailAllWaitingCell`.
@@ -1724,10 +1795,20 @@ struct R: Rswift.Validatable {
     static let gardenDetailSegmentCell = _R.nib._GardenDetailSegmentCell()
     /// Nib `GardenDetailTitleCell`.
     static let gardenDetailTitleCell = _R.nib._GardenDetailTitleCell()
+    /// Nib `GardenEditChangeCover`.
+    static let gardenEditChangeCover = _R.nib._GardenEditChangeCover()
+    /// Nib `GardenEditChangeName`.
+    static let gardenEditChangeName = _R.nib._GardenEditChangeName()
+    /// Nib `GardenEditDeleteSpace`.
+    static let gardenEditDeleteSpace = _R.nib._GardenEditDeleteSpace()
+    /// Nib `GardenEdit`.
+    static let gardenEdit = _R.nib._GardenEdit()
     /// Nib `GardenHistoryAddPhotoController`.
     static let gardenHistoryAddPhotoController = _R.nib._GardenHistoryAddPhotoController()
     /// Nib `GardenHistoryNotesController`.
     static let gardenHistoryNotesController = _R.nib._GardenHistoryNotesController()
+    /// Nib `GardenNeedCaresController`.
+    static let gardenNeedCaresController = _R.nib._GardenNeedCaresController()
     /// Nib `GardenPhotoDeteilCell`.
     static let gardenPhotoDeteilCell = _R.nib._GardenPhotoDeteilCell()
     /// Nib `GardenPhotoDeteilController`.
@@ -1826,6 +1907,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addCoverIdentifierController) instead")
     static func addCoverIdentifierController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addCoverIdentifierController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPlaceCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPlaceCell) instead")
+    static func addPlaceCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPlaceCell)
     }
     #endif
 
@@ -1974,6 +2063,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenAddToPlaceCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenAddToPlaceCell) instead")
+    static func gardenAddToPlaceCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenAddToPlaceCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenAddToPlaceController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenAddToPlaceController) instead")
+    static func gardenAddToPlaceController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenAddToPlaceController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardenButtonCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenButtonCell) instead")
     static func gardenButtonCell(_: Void = ()) -> UIKit.UINib {
@@ -1998,10 +2103,42 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenCell) instead")
+    static func gardenCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardenChooseAddPlantController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenChooseAddPlantController) instead")
     static func gardenChooseAddPlantController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenChooseAddPlantController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenController) instead")
+    static func gardenController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenCreateCover", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenCreateCover) instead")
+    static func gardenCreateCover(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenCreateCover)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenCreateName", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenCreateName) instead")
+    static func gardenCreateName(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenCreateName)
     }
     #endif
 
@@ -2126,6 +2263,38 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEdit", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEdit) instead")
+    static func gardenEdit(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEdit)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEditChangeCover", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditChangeCover) instead")
+    static func gardenEditChangeCover(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEditChangeCover)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEditChangeName", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditChangeName) instead")
+    static func gardenEditChangeName(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEditChangeName)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenEditDeleteSpace", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenEditDeleteSpace) instead")
+    static func gardenEditDeleteSpace(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenEditDeleteSpace)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GardenHistoryAddPhotoController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenHistoryAddPhotoController) instead")
     static func gardenHistoryAddPhotoController(_: Void = ()) -> UIKit.UINib {
@@ -2138,6 +2307,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenHistoryNotesController) instead")
     static func gardenHistoryNotesController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.gardenHistoryNotesController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GardenNeedCaresController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gardenNeedCaresController) instead")
+    static func gardenNeedCaresController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gardenNeedCaresController)
     }
     #endif
 
@@ -2457,6 +2634,10 @@ struct R: Rswift.Validatable {
       return R.nib.addCoverIdentifierController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func addPlaceCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlaceCell? {
+      return R.nib.addPlaceCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlaceCell
+    }
+
     static func addPlantCareView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.addPlantCareView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -2529,6 +2710,14 @@ struct R: Rswift.Validatable {
       return R.nib.galleryHistoryCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GalleryHistoryCell
     }
 
+    static func gardenAddToPlaceCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenAddToPlaceCell? {
+      return R.nib.gardenAddToPlaceCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenAddToPlaceCell
+    }
+
+    static func gardenAddToPlaceController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenAddToPlaceController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenButtonCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenButtonCell? {
       return R.nib.gardenButtonCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenButtonCell
     }
@@ -2541,8 +2730,24 @@ struct R: Rswift.Validatable {
       return R.nib.gardenCaresDetail.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func gardenCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenCell? {
+      return R.nib.gardenCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenCell
+    }
+
     static func gardenChooseAddPlantController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenChooseAddPlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenCreateCover(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenCreateCover.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenCreateName(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenCreateName.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenDetailAboutCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenDetailAboutCell? {
@@ -2605,12 +2810,32 @@ struct R: Rswift.Validatable {
       return R.nib.gardenDetailTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenDetailTitleCell
     }
 
+    static func gardenEdit(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEdit.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenEditChangeCover(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEditChangeCover.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenEditChangeName(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEditChangeName.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenEditDeleteSpace(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenEditDeleteSpace.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func gardenHistoryAddPhotoController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenHistoryAddPhotoController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenHistoryNotesController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.gardenHistoryNotesController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gardenNeedCaresController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gardenNeedCaresController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func gardenPhotoDeteilCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenPhotoDeteilCell? {
@@ -2768,10 +2993,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 25 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 28 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AddCareCell`.
     static let addCareCell: Rswift.ReuseIdentifier<AddCareCell> = Rswift.ReuseIdentifier(identifier: "AddCareCell")
+    /// Reuse identifier `AddPlaceCell`.
+    static let addPlaceCell: Rswift.ReuseIdentifier<AddPlaceCell> = Rswift.ReuseIdentifier(identifier: "AddPlaceCell")
     /// Reuse identifier `AddPlantTimeCell`.
     static let addPlantTimeCell: Rswift.ReuseIdentifier<AddPlantTimeCell> = Rswift.ReuseIdentifier(identifier: "AddPlantTimeCell")
     /// Reuse identifier `AddPlantTitleCell`.
@@ -2790,6 +3017,10 @@ struct R: Rswift.Validatable {
     static let galleryGardenHistroyCell: Rswift.ReuseIdentifier<GalleryGardenHistroyCell> = Rswift.ReuseIdentifier(identifier: "GalleryGardenHistroyCell")
     /// Reuse identifier `GalleryHistoryCell`.
     static let galleryHistoryCell: Rswift.ReuseIdentifier<GalleryHistoryCell> = Rswift.ReuseIdentifier(identifier: "GalleryHistoryCell")
+    /// Reuse identifier `GardenAddToPlaceCell`.
+    static let gardenAddToPlaceCell: Rswift.ReuseIdentifier<GardenAddToPlaceCell> = Rswift.ReuseIdentifier(identifier: "GardenAddToPlaceCell")
+    /// Reuse identifier `GardenCell`.
+    static let gardenCell: Rswift.ReuseIdentifier<GardenCell> = Rswift.ReuseIdentifier(identifier: "GardenCell")
     /// Reuse identifier `GardenDetailAboutCell`.
     static let gardenDetailAboutCell: Rswift.ReuseIdentifier<GardenDetailAboutCell> = Rswift.ReuseIdentifier(identifier: "GardenDetailAboutCell")
     /// Reuse identifier `GardenDetailAllWaitingCell`.
@@ -2870,8 +3101,20 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 301 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 333 localization keys.
     struct localizable {
+      /// en translation: %@ Cares
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_title = Rswift.StringResource(key: "garden_need_cares_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: %d Cares
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_count = Rswift.StringResource(key: "garden_need_cares_count", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: %d Plants
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_count_plants = Rswift.StringResource(key: "garden_need_cares_count_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: A
       ///
       /// Locales: en, es
@@ -2924,10 +3167,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_add_cares_add_custom_care = Rswift.StringResource(key: "garden_plant_add_cares_add_custom_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Name
+      ///
+      /// Locales: en, es
+      static let garden_create_name_title = Rswift.StringResource(key: "garden_create_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Photo
       ///
       /// Locales: en, es
       static let garden_history_add_photo = Rswift.StringResource(key: "garden_history_add_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static let add_place_cell_add_place = Rswift.StringResource(key: "add_place_cell_add_place", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static let garden_create_cover_title = Rswift.StringResource(key: "garden_create_cover_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static let garden_create_name_add_place = Rswift.StringResource(key: "garden_create_name_add_place", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Add Plant
       ///
       /// Locales: en, es
@@ -2960,6 +3219,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_add_to_my_garden = Rswift.StringResource(key: "plant_detail_add_to_my_garden", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Add within new Place
+      ///
+      /// Locales: en, es
+      static let garden_add_to_add = Rswift.StringResource(key: "garden_add_to_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Added in Schedule
       ///
       /// Locales: en, es
@@ -2976,6 +3239,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let care_type_all = Rswift.StringResource(key: "care_type_all", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: All Plants in place will be deleted
+      ///
+      /// Locales: en, es
+      static let garden_edit_delete_space_info = Rswift.StringResource(key: "garden_edit_delete_space_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Analyzed Photo
       ///
       /// Locales: en, es
@@ -3000,6 +3267,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let allert_logout_message = Rswift.StringResource(key: "allert_logout_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Are you sure want to mark all %@ Cares as done?
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_sub_title = Rswift.StringResource(key: "garden_need_cares_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Are you sure want to mark as done?
       ///
       /// Locales: en, es
@@ -3063,7 +3334,15 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static let garden_edit_delete_space_cancel = Rswift.StringResource(key: "garden_edit_delete_space_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static let garden_history_cancel = Rswift.StringResource(key: "garden_history_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_cancel = Rswift.StringResource(key: "garden_need_cares_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, es
@@ -3159,11 +3438,19 @@ struct R: Rswift.Validatable {
       /// en translation: Change
       ///
       /// Locales: en, es
+      static let garden_edit_change_name_change = Rswift.StringResource(key: "garden_edit_change_name_change", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Change
+      ///
+      /// Locales: en, es
       static let pop_change_name_button = Rswift.StringResource(key: "pop_change_name_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Change Name
       ///
       /// Locales: en, es
       static let action_edit_change_name = Rswift.StringResource(key: "action_edit_change_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Change Name
+      ///
+      /// Locales: en, es
+      static let garden_edit_change_name_title = Rswift.StringResource(key: "garden_edit_change_name_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Change Name
       ///
       /// Locales: en, es
@@ -3292,6 +3579,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_delete_plant = Rswift.StringResource(key: "garden_delete_plant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Delete Space
+      ///
+      /// Locales: en, es
+      static let garden_edit_delete_space_delete = Rswift.StringResource(key: "garden_edit_delete_space_delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Deleting Plant
       ///
       /// Locales: en, es
@@ -3335,6 +3626,14 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es
+      static let garden_edit_change_cover_done = Rswift.StringResource(key: "garden_edit_change_cover_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static let garden_edit_done = Rswift.StringResource(key: "garden_edit_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es
       static let garden_plan_done = Rswift.StringResource(key: "garden_plan_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Done
       ///
@@ -3348,6 +3647,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_done_all_cares = Rswift.StringResource(key: "garden_done_all_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done all Cares
+      ///
+      /// Locales: en, es
+      static let garden_need_cares_done_all_cares = Rswift.StringResource(key: "garden_need_cares_done_all_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Done all Humidity
       ///
       /// Locales: en, es
@@ -3368,6 +3671,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_done_all_watering = Rswift.StringResource(key: "garden_done_all_watering", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static let garden_controller_edit = Rswift.StringResource(key: "garden_controller_edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static let garden_edit_edit = Rswift.StringResource(key: "garden_edit_edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Edit
       ///
       /// Locales: en, es
@@ -3428,10 +3739,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let subscription_sub_title = Rswift.StringResource(key: "subscription_sub_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Give name for Place
+      ///
+      /// Locales: en, es
+      static let garden_create_name_subtitle = Rswift.StringResource(key: "garden_create_name_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Give name for the clone of this plant
       ///
       /// Locales: en, es
       static let garden_clone_plant_subtitle = Rswift.StringResource(key: "garden_clone_plant_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Give new name for Place
+      ///
+      /// Locales: en, es
+      static let garden_edit_change_name_subtitle = Rswift.StringResource(key: "garden_edit_change_name_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Give your plant a name
       ///
       /// Locales: en, es
@@ -3592,6 +3911,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_title = Rswift.StringResource(key: "garden_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: My Garden
+      ///
+      /// Locales: en, es
+      static let gardens_controller_title = Rswift.StringResource(key: "gardens_controller_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: N
       ///
       /// Locales: en, es
@@ -3648,6 +3971,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let identify_photo_quality_title = Rswift.StringResource(key: "identify_photo_quality_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Pick a place to add your plant
+      ///
+      /// Locales: en, es
+      static let garden_add_to_subtitle = Rswift.StringResource(key: "garden_add_to_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Plant Cover is captured
       ///
       /// Locales: en, es
@@ -3676,6 +4003,26 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_plants = Rswift.StringResource(key: "scheldure_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants Need Cares:
+      ///
+      /// Locales: en, es
+      static let garden_cell_plants_need_cares = Rswift.StringResource(key: "garden_cell_plants_need_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants are happy
+      ///
+      /// Locales: en, es
+      static let garden_cell_plants_happy = Rswift.StringResource(key: "garden_cell_plants_happy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants:
+      ///
+      /// Locales: en, es
+      static let garden_cell_plants = Rswift.StringResource(key: "garden_cell_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants:
+      ///
+      /// Locales: en, es
+      static let garden_edit_plants = Rswift.StringResource(key: "garden_edit_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Plants: %d
+      ///
+      /// Locales: en, es
+      static let garden_add_to_plants = Rswift.StringResource(key: "garden_add_to_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Please Select Care you want to add to Plant Care Plan
       ///
       /// Locales: en, es
@@ -3800,6 +4147,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_plant_add_cares_info = Rswift.StringResource(key: "garden_plant_add_cares_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Select Place
+      ///
+      /// Locales: en, es
+      static let garden_add_to_title = Rswift.StringResource(key: "garden_add_to_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -3963,6 +4314,10 @@ struct R: Rswift.Validatable {
       /// en translation: Waiting
       ///
       /// Locales: en, es
+      static let garden_need_cares_waiting = Rswift.StringResource(key: "garden_need_cares_waiting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Waiting
+      ///
+      /// Locales: en, es
       static let garden_plan_waiting = Rswift.StringResource(key: "garden_plan_waiting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Waiting
       ///
@@ -4064,6 +4419,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let period_type_month = Rswift.StringResource(key: "period_type_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: or
+      ///
+      /// Locales: en, es
+      static let garden_add_to_or = Rswift.StringResource(key: "garden_add_to_or", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: settings
       ///
       /// Locales: en, es
@@ -4076,6 +4435,57 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+
+      /// en translation: %@ Cares
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_title(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_need_cares_title", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_title"
+        }
+
+        let format = NSLocalizedString("garden_need_cares_title", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %d Cares
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_count(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_need_cares_count", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_count"
+        }
+
+        let format = NSLocalizedString("garden_need_cares_count", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %d Plants
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_count_plants(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_need_cares_count_plants", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_count_plants"
+        }
+
+        let format = NSLocalizedString("garden_need_cares_count_plants", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
 
       /// en translation: A
       ///
@@ -4272,6 +4682,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plant_add_cares_add_custom_care", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add Name
+      ///
+      /// Locales: en, es
+      static func garden_create_name_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_create_name_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_create_name_title"
+        }
+
+        return NSLocalizedString("garden_create_name_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add Photo
       ///
       /// Locales: en, es
@@ -4285,6 +4710,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_history_add_photo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static func add_place_cell_add_place(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add_place_cell_add_place", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add_place_cell_add_place"
+        }
+
+        return NSLocalizedString("add_place_cell_add_place", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static func garden_create_cover_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_create_cover_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_create_cover_title"
+        }
+
+        return NSLocalizedString("garden_create_cover_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Place
+      ///
+      /// Locales: en, es
+      static func garden_create_name_add_place(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_create_name_add_place", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_create_name_add_place"
+        }
+
+        return NSLocalizedString("garden_create_name_add_place", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Plant
@@ -4407,6 +4877,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plant_detail_add_to_my_garden", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add within new Place
+      ///
+      /// Locales: en, es
+      static func garden_add_to_add(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_add", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_add"
+        }
+
+        return NSLocalizedString("garden_add_to_add", bundle: bundle, comment: "")
+      }
+
       /// en translation: Added in Schedule
       ///
       /// Locales: en, es
@@ -4465,6 +4950,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("care_type_all", bundle: bundle, comment: "")
+      }
+
+      /// en translation: All Plants in place will be deleted
+      ///
+      /// Locales: en, es
+      static func garden_edit_delete_space_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_delete_space_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_delete_space_info"
+        }
+
+        return NSLocalizedString("garden_edit_delete_space_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Analyzed Photo
@@ -4555,6 +5055,23 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("allert_logout_message", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Are you sure want to mark all %@ Cares as done?
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_sub_title(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_need_cares_sub_title", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_sub_title"
+        }
+
+        let format = NSLocalizedString("garden_need_cares_sub_title", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
       }
 
       /// en translation: Are you sure want to mark as done?
@@ -4785,6 +5302,21 @@ struct R: Rswift.Validatable {
       /// en translation: Cancel
       ///
       /// Locales: en, es
+      static func garden_edit_delete_space_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_delete_space_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_delete_space_cancel"
+        }
+
+        return NSLocalizedString("garden_edit_delete_space_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
       static func garden_history_cancel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("garden_history_cancel", bundle: hostingBundle, comment: "")
@@ -4795,6 +5327,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_history_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_need_cares_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_cancel"
+        }
+
+        return NSLocalizedString("garden_need_cares_cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -5145,6 +5692,21 @@ struct R: Rswift.Validatable {
       /// en translation: Change
       ///
       /// Locales: en, es
+      static func garden_edit_change_name_change(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_change_name_change", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_change_name_change"
+        }
+
+        return NSLocalizedString("garden_edit_change_name_change", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change
+      ///
+      /// Locales: en, es
       static func pop_change_name_button(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("pop_change_name_button", bundle: hostingBundle, comment: "")
@@ -5170,6 +5732,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_change_name", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Name
+      ///
+      /// Locales: en, es
+      static func garden_edit_change_name_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_change_name_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_change_name_title"
+        }
+
+        return NSLocalizedString("garden_edit_change_name_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Change Name
@@ -5654,6 +6231,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_delete_plant", bundle: bundle, comment: "")
       }
 
+      /// en translation: Delete Space
+      ///
+      /// Locales: en, es
+      static func garden_edit_delete_space_delete(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_delete_space_delete", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_delete_space_delete"
+        }
+
+        return NSLocalizedString("garden_edit_delete_space_delete", bundle: bundle, comment: "")
+      }
+
       /// en translation: Deleting Plant
       ///
       /// Locales: en, es
@@ -5807,6 +6399,36 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es
+      static func garden_edit_change_cover_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_change_cover_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_change_cover_done"
+        }
+
+        return NSLocalizedString("garden_edit_change_cover_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es
+      static func garden_edit_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_done"
+        }
+
+        return NSLocalizedString("garden_edit_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es
       static func garden_plan_done(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("garden_plan_done", bundle: hostingBundle, comment: "")
@@ -5862,6 +6484,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_done_all_cares", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done all Cares
+      ///
+      /// Locales: en, es
+      static func garden_need_cares_done_all_cares(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_need_cares_done_all_cares", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_done_all_cares"
+        }
+
+        return NSLocalizedString("garden_need_cares_done_all_cares", bundle: bundle, comment: "")
       }
 
       /// en translation: Done all Humidity
@@ -5937,6 +6574,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_done_all_watering", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static func garden_controller_edit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_controller_edit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_controller_edit"
+        }
+
+        return NSLocalizedString("garden_controller_edit", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit
+      ///
+      /// Locales: en, es
+      static func garden_edit_edit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_edit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_edit"
+        }
+
+        return NSLocalizedString("garden_edit_edit", bundle: bundle, comment: "")
       }
 
       /// en translation: Edit
@@ -6164,6 +6831,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_sub_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Give name for Place
+      ///
+      /// Locales: en, es
+      static func garden_create_name_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_create_name_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_create_name_subtitle"
+        }
+
+        return NSLocalizedString("garden_create_name_subtitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Give name for the clone of this plant
       ///
       /// Locales: en, es
@@ -6177,6 +6859,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_clone_plant_subtitle", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Give new name for Place
+      ///
+      /// Locales: en, es
+      static func garden_edit_change_name_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_change_name_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_change_name_subtitle"
+        }
+
+        return NSLocalizedString("garden_edit_change_name_subtitle", bundle: bundle, comment: "")
       }
 
       /// en translation: Give your plant a name
@@ -6779,6 +7476,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: My Garden
+      ///
+      /// Locales: en, es
+      static func gardens_controller_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gardens_controller_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gardens_controller_title"
+        }
+
+        return NSLocalizedString("gardens_controller_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: N
       ///
       /// Locales: en, es
@@ -6989,6 +7701,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("identify_photo_quality_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Pick a place to add your plant
+      ///
+      /// Locales: en, es
+      static func garden_add_to_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_subtitle"
+        }
+
+        return NSLocalizedString("garden_add_to_subtitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Plant Cover is captured
       ///
       /// Locales: en, es
@@ -7092,6 +7819,83 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_plants", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants Need Cares:
+      ///
+      /// Locales: en, es
+      static func garden_cell_plants_need_cares(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_cell_plants_need_cares", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_cell_plants_need_cares"
+        }
+
+        return NSLocalizedString("garden_cell_plants_need_cares", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants are happy
+      ///
+      /// Locales: en, es
+      static func garden_cell_plants_happy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_cell_plants_happy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_cell_plants_happy"
+        }
+
+        return NSLocalizedString("garden_cell_plants_happy", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants:
+      ///
+      /// Locales: en, es
+      static func garden_cell_plants(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_cell_plants", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_cell_plants"
+        }
+
+        return NSLocalizedString("garden_cell_plants", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants:
+      ///
+      /// Locales: en, es
+      static func garden_edit_plants(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_edit_plants", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_edit_plants"
+        }
+
+        return NSLocalizedString("garden_edit_plants", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Plants: %d
+      ///
+      /// Locales: en, es
+      static func garden_add_to_plants(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("garden_add_to_plants", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_plants"
+        }
+
+        let format = NSLocalizedString("garden_add_to_plants", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
       }
 
       /// en translation: Please Select Care you want to add to Plant Care Plan
@@ -7557,6 +8361,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_plant_add_cares_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select Place
+      ///
+      /// Locales: en, es
+      static func garden_add_to_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_title"
+        }
+
+        return NSLocalizedString("garden_add_to_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Send Time:
@@ -8162,6 +8981,21 @@ struct R: Rswift.Validatable {
       /// en translation: Waiting
       ///
       /// Locales: en, es
+      static func garden_need_cares_waiting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_need_cares_waiting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_need_cares_waiting"
+        }
+
+        return NSLocalizedString("garden_need_cares_waiting", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Waiting
+      ///
+      /// Locales: en, es
       static func garden_plan_waiting(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("garden_plan_waiting", bundle: hostingBundle, comment: "")
@@ -8549,6 +9383,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("period_type_month", bundle: bundle, comment: "")
       }
 
+      /// en translation: or
+      ///
+      /// Locales: en, es
+      static func garden_add_to_or(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_add_to_or", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_add_to_or"
+        }
+
+        return NSLocalizedString("garden_add_to_or", bundle: bundle, comment: "")
+      }
+
       /// en translation: settings
       ///
       /// Locales: en, es
@@ -8641,8 +9490,14 @@ struct _R: Rswift.Validatable {
       try _DiseaseArchiveViewController.validate()
       try _GaleryHistoryAddCell.validate()
       try _GalleryGardenHistroyCell.validate()
+      try _GardenAddToPlaceCell.validate()
+      try _GardenAddToPlaceController.validate()
       try _GardenCareDetailView.validate()
+      try _GardenCell.validate()
       try _GardenChooseAddPlantController.validate()
+      try _GardenController.validate()
+      try _GardenCreateCover.validate()
+      try _GardenCreateName.validate()
       try _GardenDetailController.validate()
       try _GardenDetailDeletePlanController.validate()
       try _GardenDetailEditCareCell.validate()
@@ -8650,7 +9505,12 @@ struct _R: Rswift.Validatable {
       try _GardenDetailListCaresCell.validate()
       try _GardenDetailScheduleCell.validate()
       try _GardenDetailTitleCell.validate()
+      try _GardenEdit.validate()
+      try _GardenEditChangeCover.validate()
+      try _GardenEditChangeName.validate()
+      try _GardenEditDeleteSpace.validate()
       try _GardenHistoryAddPhotoController.validate()
+      try _GardenNeedCaresController.validate()
       try _GardenPhotoDeteilCell.validate()
       try _GardenPhotoDeteilController.validate()
       try _GardenPlantAddCares.validate()
@@ -8727,6 +9587,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "unique_cover_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_close_ic' is used in nib 'AddCoverIdentifierController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPlaceCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = AddPlaceCell
+
+      let bundle = R.hostingBundle
+      let identifier = "AddPlaceCell"
+      let name = "AddPlaceCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AddPlaceCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AddPlaceCell
       }
 
       fileprivate init() {}
@@ -9050,6 +9924,44 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _GardenAddToPlaceCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GardenAddToPlaceCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenAddToPlaceCell"
+      let name = "GardenAddToPlaceCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenAddToPlaceCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenAddToPlaceCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_sheet_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_sheet_ic' is used in nib 'GardenAddToPlaceCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'GardenAddToPlaceCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenAddToPlaceController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenAddToPlaceController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'GardenAddToPlaceController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _GardenButtonCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "GardenButtonCell"
@@ -9090,6 +10002,27 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _GardenCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = GardenCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GardenCell"
+      let name = "GardenCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GardenCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GardenCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_sheet_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_sheet_ic' is used in nib 'GardenCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'GardenCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _GardenChooseAddPlantController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GardenChooseAddPlantController"
@@ -9102,6 +10035,61 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "choose_identify_add_unique_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_add_unique_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_diagnosis_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_diagnosis_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_photo_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_photo_ic' is used in nib 'GardenChooseAddPlantController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenCreateCover: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenCreateCover"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenCreateCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'GardenCreateCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'GardenCreateCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'GardenCreateCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unique_cover_capture_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_capture_ic' is used in nib 'GardenCreateCover', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenCreateName: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenCreateName"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'GardenCreateName', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -9356,6 +10344,80 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _GardenEdit: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEdit"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenEdit', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_sheet_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_sheet_ic' is used in nib 'GardenEdit', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_little_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_little_ic' is used in nib 'GardenEdit', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenEditChangeCover: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEditChangeCover"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_off", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_off' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_flash_on", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_flash_on' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_gallery", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_gallery' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unique_cover_capture_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unique_cover_capture_ic' is used in nib 'GardenEditChangeCover', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenEditChangeName: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEditChangeName"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'GardenEditChangeName', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenEditDeleteSpace: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenEditDeleteSpace"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "plants_detail_watering_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_watering_ic' is used in nib 'GardenEditDeleteSpace', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _GardenHistoryAddPhotoController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GardenHistoryAddPhotoController"
@@ -9383,6 +10445,25 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GardenNeedCaresController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GardenNeedCaresController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "garden_bell_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_bell_ic' is used in nib 'GardenNeedCaresController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "garden_schelure_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_schelure_ic' is used in nib 'GardenNeedCaresController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'GardenNeedCaresController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -10043,15 +11124,15 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let gardenController = StoryboardViewControllerResource<GardenController>(identifier: "GardenController")
+      let gardensController = StoryboardViewControllerResource<GardensController>(identifier: "GardensController")
       let mainTabBarController = StoryboardViewControllerResource<MainTabBarController>(identifier: "MainTabBarController")
       let menuController = StoryboardViewControllerResource<MenuController>(identifier: "MenuController")
       let name = "Main"
       let plantsController = StoryboardViewControllerResource<PlantsController>(identifier: "PlantsController")
       let scheduleController = StoryboardViewControllerResource<ScheduleController>(identifier: "ScheduleController")
 
-      func gardenController(_: Void = ()) -> GardenController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gardenController)
+      func gardensController(_: Void = ()) -> GardensController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: gardensController)
       }
 
       func mainTabBarController(_: Void = ()) -> MainTabBarController? {
@@ -10089,7 +11170,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "scheldure_settings_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scheldure_settings_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.main().gardenController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardenController' could not be loaded from storyboard 'Main' as 'GardenController'.") }
+        if _R.storyboard.main().gardensController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'gardensController' could not be loaded from storyboard 'Main' as 'GardensController'.") }
         if _R.storyboard.main().mainTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarController' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
         if _R.storyboard.main().menuController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuController' could not be loaded from storyboard 'Main' as 'MenuController'.") }
         if _R.storyboard.main().plantsController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'plantsController' could not be loaded from storyboard 'Main' as 'PlantsController'.") }

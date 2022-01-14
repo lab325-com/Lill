@@ -1,4 +1,6 @@
-mutation DoneAllCaresByGardens($gardenIds: [String!]) {
-	doneAllCaresByGardens(gardenIds: $gardenIds)
+mutation DoneAllCaresByGardens($gardenIds: [String!],
+							   $careTypeId: Int) {
+	doneAllCaresByGardens(gardenIds: $gardenIds,
+						  careTypeId: $careTypeId)
 }
 

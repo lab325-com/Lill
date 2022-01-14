@@ -67,10 +67,14 @@ class WishListController: BaseController {
 }
 
 //----------------------------------------------
-// MARK: - PlantsOutputProtocol
+// MARK: - PlantsOutputProtocol, GardenAddToPlaceDelegate
 //----------------------------------------------
 
-extension WishListController: WishListOutputProtocol {
+extension WishListController: WishListOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
+        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+    }
+    
     func successGetWishList(model: CatalogPlantsModel) {
         wishList = model.getCatalogPlants.plants
         
@@ -83,10 +87,6 @@ extension WishListController: WishListOutputProtocol {
     func succesRemoveFromFavorite() {
         presenter.getWishList()
         delegate?.updatePlants()
-    }
-    
-    func successAddToGarden() {
-        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
     func failure(error: String) {

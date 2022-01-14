@@ -1,0 +1,3 @@
+mutation GardenDelete($id: String!) {
+	gardenDelete(id: $id)
+}

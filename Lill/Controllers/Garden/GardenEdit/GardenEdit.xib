@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenEdit" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteSpaceButton" destination="kR6-tH-kPw" id="uJb-Br-ltK"/>
+                <outlet property="footerView" destination="6Q0-EM-tyU" id="FRR-IU-pMo"/>
+                <outlet property="gadenPlantsCountInfoLabel" destination="Yr2-eo-3UF" id="qK2-7d-qfa"/>
+                <outlet property="gadenPlantsCountLabel" destination="O0F-Gh-hoP" id="clR-t5-jLb"/>
+                <outlet property="gardenImageView" destination="V9m-S4-c84" id="DHs-QT-Zdj"/>
+                <outlet property="gardenNameLabel" destination="pN8-xh-quJ" id="VC2-O1-opS"/>
+                <outlet property="headerView" destination="YKl-q2-UWw" id="eA8-Ij-HLD"/>
+                <outlet property="titleLabel" destination="f7E-Me-aAT" id="a6V-e6-wsz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="66A-Lj-fZG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-q2-UWw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-Me-aAT">
+                            <rect key="frame" x="16" y="0.0" width="215.5" height="50"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="f7E-Me-aAT" firstAttribute="leading" secondItem="YKl-q2-UWw" secondAttribute="leading" constant="16" id="Ssy-hJ-IZg"/>
+                        <constraint firstAttribute="height" constant="50" id="UzH-Uf-hsC"/>
+                        <constraint firstItem="f7E-Me-aAT" firstAttribute="top" secondItem="YKl-q2-UWw" secondAttribute="top" id="stM-L6-qVT"/>
+                        <constraint firstAttribute="bottom" secondItem="f7E-Me-aAT" secondAttribute="bottom" id="tJi-hs-y6K"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-jq-vVQ" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="12" y="194" width="390" height="154"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_little_ic" translatesAutoresizingMaskIntoConstraints="NO" id="V9m-S4-c84">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="154"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="5B7-VB-Qa5"/>
+                                <constraint firstAttribute="height" constant="154" id="JXx-pM-i67"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN8-xh-quJ">
+                            <rect key="frame" x="168" y="19" width="64.5" height="27"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr2-eo-3UF">
+                            <rect key="frame" x="168" y="50" width="47.5" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <color key="textColor" red="0.81568627449999997" green="0.75686274509999996" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_sheet_ic" translatesAutoresizingMaskIntoConstraints="NO" id="501-as-iWN">
+                            <rect key="frame" x="351" y="10" width="28" height="39"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0F-Gh-hoP">
+                            <rect key="frame" x="354" y="21.5" width="22" height="16"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="501-as-iWN" firstAttribute="top" secondItem="0Pg-jq-vVQ" secondAttribute="top" constant="10" id="DaI-Tf-jGp"/>
+                        <constraint firstItem="O0F-Gh-hoP" firstAttribute="centerX" secondItem="501-as-iWN" secondAttribute="centerX" id="EfF-eJ-AwV"/>
+                        <constraint firstItem="O0F-Gh-hoP" firstAttribute="centerY" secondItem="501-as-iWN" secondAttribute="centerY" id="Ixe-NF-N05"/>
+                        <constraint firstItem="Yr2-eo-3UF" firstAttribute="leading" secondItem="V9m-S4-c84" secondAttribute="trailing" constant="18" id="LhY-WN-eZG"/>
+                        <constraint firstAttribute="trailing" secondItem="501-as-iWN" secondAttribute="trailing" constant="11" id="Me8-0f-7tM"/>
+                        <constraint firstItem="V9m-S4-c84" firstAttribute="top" secondItem="0Pg-jq-vVQ" secondAttribute="top" id="Ygz-MP-Vz7"/>
+                        <constraint firstAttribute="height" constant="154" id="dDn-Gr-hHn"/>
+                        <constraint firstItem="V9m-S4-c84" firstAttribute="leading" secondItem="0Pg-jq-vVQ" secondAttribute="leading" id="dQa-aD-kca"/>
+                        <constraint firstItem="pN8-xh-quJ" firstAttribute="top" secondItem="0Pg-jq-vVQ" secondAttribute="top" constant="19" id="rfq-rs-E1v"/>
+                        <constraint firstAttribute="bottom" secondItem="V9m-S4-c84" secondAttribute="bottom" id="sMp-1C-2la"/>
+                        <constraint firstItem="Yr2-eo-3UF" firstAttribute="top" secondItem="pN8-xh-quJ" secondAttribute="bottom" constant="4" id="v99-Hp-FRq"/>
+                        <constraint firstItem="pN8-xh-quJ" firstAttribute="leading" secondItem="V9m-S4-c84" secondAttribute="trailing" constant="18" id="wJS-qM-sVo"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-AK-gEf">
+                    <rect key="frame" x="58" y="348" width="298" height="281"/>
+                    <string key="text">Here Preview of your Place.
+Do you want to make some changes?</string>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Q0-EM-tyU">
+                    <rect key="frame" x="0.0" y="629" width="414" height="267"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJY-YF-GhH">
+                            <rect key="frame" x="24" y="18" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="lM7-w9-zVa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="doneAction:" destination="-1" eventType="touchUpInside" id="mOM-Ig-gMC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-je-YwV">
+                            <rect key="frame" x="24" y="77" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.96470588235294119" green="0.75686274509803919" blue="0.21568627450980393" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Fuy-dD-fZH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Change cover">
+                                <color key="titleColor" red="0.49019607843137253" green="0.43529411764705883" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeCoverAction:" destination="-1" eventType="touchUpInside" id="JzP-dc-Enr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-L0-60f">
+                            <rect key="frame" x="24" y="132" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.75686274509999996" blue="0.2156862745" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="alf-bo-PPf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Change name">
+                                <color key="titleColor" red="0.49019607840000001" green="0.43529411759999997" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeNameAction:" destination="-1" eventType="touchUpInside" id="L0i-pc-MFg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR6-tH-kPw">
+                            <rect key="frame" x="24" y="187" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.99215686274509807" green="0.40000000000000002" blue="0.32156862745098036" alpha="0.22" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Qsr-qa-KFN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Delete Space">
+                                <color key="titleColor" red="0.59999999999999998" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="deleteSpaceAction:" destination="-1" eventType="touchUpInside" id="Lb4-Uv-8yT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="KxG-je-YwV" firstAttribute="top" secondItem="lJY-YF-GhH" secondAttribute="bottom" constant="15" id="1cs-cS-W1G"/>
+                        <constraint firstItem="KxG-je-YwV" firstAttribute="leading" secondItem="6Q0-EM-tyU" secondAttribute="leading" constant="24" id="5Ph-hu-wwk"/>
+                        <constraint firstAttribute="trailing" secondItem="fGH-L0-60f" secondAttribute="trailing" constant="24" id="5Xa-0P-Pgo"/>
+                        <constraint firstItem="lJY-YF-GhH" firstAttribute="top" secondItem="6Q0-EM-tyU" secondAttribute="top" constant="18" id="A6N-2r-ZKS"/>
+                        <constraint firstItem="fGH-L0-60f" firstAttribute="top" secondItem="KxG-je-YwV" secondAttribute="bottom" constant="11" id="FhC-vg-ySk"/>
+                        <constraint firstAttribute="trailing" secondItem="KxG-je-YwV" secondAttribute="trailing" constant="24" id="PoB-iO-8Ta"/>
+                        <constraint firstAttribute="trailing" secondItem="kR6-tH-kPw" secondAttribute="trailing" constant="24" id="QMU-U9-zU7"/>
+                        <constraint firstItem="fGH-L0-60f" firstAttribute="leading" secondItem="6Q0-EM-tyU" secondAttribute="leading" constant="24" id="RVs-bc-942"/>
+                        <constraint firstAttribute="bottom" secondItem="kR6-tH-kPw" secondAttribute="bottom" constant="36" id="TA1-QD-hux"/>
+                        <constraint firstAttribute="trailing" secondItem="lJY-YF-GhH" secondAttribute="trailing" constant="24" id="Wwb-4I-wdU"/>
+                        <constraint firstItem="kR6-tH-kPw" firstAttribute="leading" secondItem="6Q0-EM-tyU" secondAttribute="leading" constant="24" id="awJ-wj-6gd"/>
+                        <constraint firstItem="kR6-tH-kPw" firstAttribute="top" secondItem="fGH-L0-60f" secondAttribute="bottom" constant="11" id="ifG-y4-W6L"/>
+                        <constraint firstItem="lJY-YF-GhH" firstAttribute="leading" secondItem="6Q0-EM-tyU" secondAttribute="leading" constant="24" id="zz9-M1-mym"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nfe-AK-gEf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="58" id="2LX-zk-Azb"/>
+                <constraint firstAttribute="bottom" secondItem="66A-Lj-fZG" secondAttribute="bottom" id="652-d0-rz8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Q0-EM-tyU" secondAttribute="trailing" id="6hs-e6-O6F"/>
+                <constraint firstItem="nfe-AK-gEf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9Vc-zP-BAg"/>
+                <constraint firstItem="6Q0-EM-tyU" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="D7j-Ld-hDn"/>
+                <constraint firstItem="0Pg-jq-vVQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="Gtx-CD-9Ak"/>
+                <constraint firstItem="66A-Lj-fZG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ims-Ra-eJp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Pg-jq-vVQ" secondAttribute="trailing" constant="12" id="MO2-Pp-eW0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YKl-q2-UWw" secondAttribute="trailing" id="MVC-gM-Hib"/>
+                <constraint firstItem="nfe-AK-gEf" firstAttribute="top" secondItem="0Pg-jq-vVQ" secondAttribute="bottom" id="N35-Qb-4D0"/>
+                <constraint firstItem="66A-Lj-fZG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b6i-X2-OMC"/>
+                <constraint firstItem="0Pg-jq-vVQ" firstAttribute="top" secondItem="YKl-q2-UWw" secondAttribute="bottom" constant="100" id="eYJ-xx-uzS"/>
+                <constraint firstItem="6Q0-EM-tyU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gSW-03-NTZ"/>
+                <constraint firstItem="YKl-q2-UWw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pSw-fr-n2e"/>
+                <constraint firstItem="YKl-q2-UWw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="whl-hO-bHL"/>
+                <constraint firstItem="66A-Lj-fZG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xOP-hF-zbe"/>
+                <constraint firstItem="6Q0-EM-tyU" firstAttribute="top" secondItem="nfe-AK-gEf" secondAttribute="bottom" id="ykM-ps-hmp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nfe-AK-gEf" secondAttribute="trailing" constant="58" id="zyc-5R-toM"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="garden_back_ic" width="390" height="734"/>
+        <image name="garden_sheet_ic" width="28" height="39"/>
+        <image name="placeholder_little_ic" width="227" height="171"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

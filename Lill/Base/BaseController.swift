@@ -66,6 +66,7 @@ class BaseController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         timeline?.play()
+        
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
         
         if #available(iOS 15.0, *) {

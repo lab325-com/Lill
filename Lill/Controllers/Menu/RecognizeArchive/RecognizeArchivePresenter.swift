@@ -15,7 +15,7 @@ import UIKit
 protocol RecognizeArchiveOutputProtocol: BaseController {
     func success(model: RecognizeArchiveModel)
     func successFavorite(isFavorite: Bool, id: String)
-    func successAddPlants(model: PlantToGardenDataModel)
+    //func successAddPlants(model: PlantToGardenDataModel)
     func failure(error: String)
 }
 
@@ -61,16 +61,16 @@ class RecognizeArchivePresenter: RecognizeArchivePresenterProtocol {
         })
     }
     
-    func addPlantToGarden(plantId: String, gardenId: String) {
-        view?.startLoader()
-        
-        let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
-        let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successAddPlants(model: model)
-        }, failureHandler: { [weak self] error in
-            self?.view?.stopLoading()
-            self?.view?.failure(error: error.localizedDescription)
-        })
-    }
+//    func addPlantToGarden(plantId: String, gardenId: String) {
+//        view?.startLoader()
+//
+//        let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
+//        let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
+//            self?.view?.stopLoading()
+//            self?.view?.successAddPlants(model: model)
+//        }, failureHandler: { [weak self] error in
+//            self?.view?.stopLoading()
+//            self?.view?.failure(error: error.localizedDescription)
+//        })
+//    }
 }

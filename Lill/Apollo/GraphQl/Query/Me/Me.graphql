@@ -33,7 +33,6 @@ query Me {
 		Gardens {
 			id
 			name
-			userDescription
 			userMainImage {
 				id
 				urlIosFull
@@ -42,15 +41,9 @@ query Me {
 				urlAndroidTablet
 				notes
 			}
-			userGalleryImages {
-				id
-				urlIosFull
-				urlIosPrev
-				urlAndroidPhone
-				urlAndroidTablet
-				notes
-			}
 			isDefault
+            totalPlants
+            needCareCount
 		}
 		access {
 			diagnosisAvaliable

@@ -285,11 +285,11 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 //----------------------------------------------
-// MARK: - IdentifyOutputProtocol
+// MARK: - IdentifyOutputProtocol, GardenAddToPlaceDelegate
 //----------------------------------------------
 
-extension IdentifyController: IdentifyOutputProtocol {
-    func successAddToGarden() {
+extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
     }
     
@@ -414,9 +414,7 @@ extension IdentifyController {
 extension IdentifyController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if !takePicture { return }
-        
-        
-        
+
         guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: cvBuffer)
         let uiImage = UIImage(ciImage: ciImage)
