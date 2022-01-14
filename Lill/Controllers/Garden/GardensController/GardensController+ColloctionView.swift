@@ -14,7 +14,7 @@ fileprivate let gardenButtonCellSize = CGSize(width: UIScreen.main.bounds.size.w
 extension GardensController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.gardenPlants.count
+        return presenter.gardenPlants.count + (presenter.sadGardenPlants.count == 0 ? 0 : 1) + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,7 +38,6 @@ extension GardensController: UICollectionViewDataSource, UICollectionViewDelegat
             case presenter.sadGardenPlants.count + (presenter.sadGardenPlants.count % 2 == 0 ? 0 : 1):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gardenButtonCellIdentifier, for: indexPath) as! GardenButtonCell
                 cell.delegate = self
-                
                 switch selectedCareType {
                 case 1: cell.configure(title: RLocalization.garden_done_all_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue))
                 case 2: cell.configure(title: RLocalization.garden_done_all_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue))
@@ -101,8 +100,7 @@ extension GardensController: UICollectionViewDelegateFlowLayout {
 
 extension GardensController: GardenButtonCellDelegate {
     func didTappedDoneCaresButton() {
-//        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-//        presenter.doneCares(gardenId: gardenId, careTypeId: selectedCareType)
+        presenter.doneCares(careTypeId: selectedCareType)
     }
 }
 
@@ -123,14 +121,14 @@ extension GardensController: GardenViewCellDelegate {
 
 extension GardensController: GardenDetailProtocolo {
     func gardenDetailDelete(controller: GardenDetailController, id: String) {
-        
+        presenter.getPlants()
     }
-    
+
     func gardenDetailChangeName(controller: GardenDetailController, text: String, id: String) {
-        
+        presenter.getPlants()
     }
-    
+
     func gardenDetailChangePhoto(controller: GardenDetailController, imageUrl: String, id: String) {
-        
+        presenter.getPlants()
     }
 }

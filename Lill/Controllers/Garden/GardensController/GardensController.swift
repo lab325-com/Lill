@@ -50,9 +50,7 @@ class GardensController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.getGardens()
-        presenter.getPlants()
-        presenter.getCares()
+        getData()
     }
     
     //----------------------------------------------
@@ -62,17 +60,12 @@ class GardensController: BaseController {
     private func setup() {
         hiddenNavigationBar = true
         
-        navigationItem.title = "My Garden"
+        navigationItem.title = RLocalization.gardens_controller_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        for careView in careViews {
-            switch careView.tag {
-            case 0: careView.isHidden = false
-            default: careView.isHidden = true
-            }
-        }
         
+        resetCaresViews()
         updateCaresSection()
         
         scrollView.contentInset.left = 12
@@ -85,6 +78,21 @@ class GardensController: BaseController {
         
         tableView.contentInset.top = 52.0
         collectionView.contentInset.top = 100.0
+    }
+    
+    private func resetCaresViews() {
+        for careView in careViews {
+            switch careView.tag {
+            case 0: careView.isHidden = false
+            default: careView.isHidden = true
+            }
+        }
+    }
+    
+    private func getData() {
+        presenter.getGardens()
+        presenter.getPlants()
+        presenter.getCares()
     }
     
     private func updateCaresSection() {
@@ -108,7 +116,7 @@ class GardensController: BaseController {
     }
     
     private func scrollToTop(animated: Bool) {
-        collectionView.setContentOffset(CGPoint(x: 0, y: -40), animated: animated)
+        collectionView.setContentOffset(CGPoint(x: 0, y: -100), animated: animated)
     }
     
     //----------------------------------------------
@@ -124,28 +132,10 @@ class GardensController: BaseController {
             tableView.isHidden = false
             collectionView.isHidden = true
             caresView.isHidden = true
-//            if presenter.currentSchedule.count == 0 && presenter.futureSchedule.count == 0 {
-//                emptyView.isHidden = false
-//                tableView.alpha = 0
-//            } else {
-//                UIView.animate(withDuration: 0.3) {
-//                    self.emptyView.isHidden = true
-//                    self.tableView.alpha = 1.0
-//                }
-//            }
         } else {
             tableView.isHidden = true
             collectionView.isHidden = false
             caresView.isHidden = false
-//            if presenter.nextWeekSchedule.count == 0 {
-//                emptyView.isHidden = false
-//                tableView.alpha = 0
-//            } else {
-//                UIView.animate(withDuration: 0.3) {
-//                    self.emptyView.isHidden = true
-//                    self.tableView.alpha = 1.0
-//                }
-//            }
         }
     }
     
@@ -154,19 +144,18 @@ class GardensController: BaseController {
         scrollToTop(animated: true)
         updateCaresSection()
 
-//        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
-//        switch sender.tag {
-//        case 1:
-//            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 1)
-//        case 2:
-//            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 2)
-//        case 3:
-//            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 3)
-//        case 4:
-//            presenter.getGardenPlants(gardenId: gardenId, careTypeId: 4)
-//        default:
-//            presenter.getGardenPlants(gardenId: gardenId)
-//        }
+        switch sender.tag {
+        case 1:
+            presenter.getPlantsByCareType(careTypeId: 1)
+        case 2:
+            presenter.getPlantsByCareType(careTypeId: 2)
+        case 3:
+            presenter.getPlantsByCareType(careTypeId: 3)
+        case 4:
+            presenter.getPlantsByCareType(careTypeId: 4)
+        default:
+            presenter.getPlants()
+        }
     }
 }
 
@@ -175,12 +164,43 @@ class GardensController: BaseController {
 //----------------------------------------------
 
 extension GardensController: GardensOutputProtocol {
+    
+    func successGetCares(cares: [CaresByGardensModel]) {
+        
+        resetCaresViews()
+        
+        for care in cares {
+            switch care.careType.name {
+            case .humidity :
+                careViews.first(where:{$0.tag == 1})?.isHidden = false
+                careLabels.first(where: {$0.tag == 1})?.text = RLocalization.care_type_humidity.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
+            case .misting:
+                careViews.first(where:{$0.tag == 2})?.isHidden = false
+                careLabels.first(where: {$0.tag == 2})?.text = RLocalization.care_type_misting.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
+            case .rotating:
+                careViews.first(where:{$0.tag == 3})?.isHidden = false
+                careLabels.first(where: {$0.tag == 3})?.text = RLocalization.care_type_rotating.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
+            case .watering:
+                careViews.first(where:{$0.tag == 4})?.isHidden = false
+                careLabels.first(where: {$0.tag == 4})?.text = RLocalization.care_type_watering.localized(PreferencesManager.sharedManager.languageCode.rawValue) + ": " + "\(care.careCount)"
+            }
+        }
+    }
+    
     func successGetPlants() {
         collectionView.reloadData()
     }
     
     func successGetGardens() {
         tableView.reloadData()
+    }
+    
+    func successDoneCares() {
+        selectedCareType = 0
+        updateCaresSection()
+        scrollToTop(animated: true)
+        
+        getData()
     }
     
     func failure(error: String) {

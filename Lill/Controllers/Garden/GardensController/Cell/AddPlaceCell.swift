@@ -36,7 +36,7 @@ class AddPlaceCell: UITableViewCell {
         addPlaceButton.layer.borderWidth = 1
         addPlaceButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
         
-        addPlaceButton.setTitle("Add Place", for: .normal)
+        addPlaceButton.setTitle(RLocalization.add_place_cell_add_place.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------

@@ -54,11 +54,11 @@ class GardenCell: UITableViewCell {
         gardenNameLabel.text = model.name
         if let totalPlants = model.totalPlants {
             gadenPlantsCountLabel.text = "\(totalPlants)"
-            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
+            gadenPlantsCountInfoLabel.text = RLocalization.garden_cell_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue) +  "\(totalPlants)"
         }
         if let needCaresCount = model.needCareCount {
             gardenCaresView.backgroundColor = needCaresCount == 0 ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)
-            gardenCaresLabel.text = needCaresCount == 0 ? "Plants are happy" : "Plants Need Cares: \(needCaresCount)"
+            gardenCaresLabel.text = needCaresCount == 0 ? RLocalization.garden_cell_plants_happy.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.garden_cell_plants_need_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue) +  "\(needCaresCount)"
         }
     }
     

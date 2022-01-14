@@ -55,9 +55,9 @@ class GardenEditDeleteSpace: BaseController {
     
     private func setup() {
         gardenNameLabel.text = gardenName
-        infoLabel.text = "All Plants in place will be deleted"
-        deleteSpaceButton.setTitle("Delete Space", for: .normal)
-        cancelButton.setTitle("Cancel", for: .normal)
+        infoLabel.text = RLocalization.garden_edit_delete_space_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        deleteSpaceButton.setTitle(RLocalization.garden_edit_delete_space_delete.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        cancelButton.setTitle(RLocalization.garden_edit_delete_space_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------

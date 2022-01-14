@@ -67,9 +67,9 @@ class GardenEdit: BaseController {
         gardenImageView.layer.cornerRadius = 24
         gardenImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         
-        navigationItem.title = "Edit"
+        navigationItem.title = RLocalization.garden_edit_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(done))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
@@ -91,7 +91,8 @@ class GardenEdit: BaseController {
     }
     
     @IBAction func changeCoverAction(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId, delegate: self)
+        let gardenName = KeychainService.standard.me?.gardens.first(where: {$0.id == gardenId})?.name ?? ""
+        GardenRouter(presenter: navigationController).pushToEditGardenChangeCover(gardenId: gardenId, gardenName: gardenName, delegate: self)
     }
     
     @IBAction func changeNameAction(_ sender: UIButton) {
@@ -114,7 +115,7 @@ extension GardenEdit: GardenEditOutputProtocol {
         gardenNameLabel.text = garden.name
         if let totalPlants = garden.totalPlants {
             gadenPlantsCountLabel.text = "\(totalPlants)"
-            gadenPlantsCountInfoLabel.text = "Plants: \(totalPlants)"
+            gadenPlantsCountInfoLabel.text = RLocalization.garden_edit_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue) + "\(totalPlants)"
         }
     }
 

@@ -1160,21 +1160,23 @@ public final class DoneAllCaresByGardensMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation DoneAllCaresByGardens($gardenIds: [String!]) {
-      doneAllCaresByGardens(gardenIds: $gardenIds)
+    mutation DoneAllCaresByGardens($gardenIds: [String!], $careTypeId: Int) {
+      doneAllCaresByGardens(gardenIds: $gardenIds, careTypeId: $careTypeId)
     }
     """
 
   public let operationName: String = "DoneAllCaresByGardens"
 
   public var gardenIds: [String]?
+  public var careTypeId: Int?
 
-  public init(gardenIds: [String]?) {
+  public init(gardenIds: [String]?, careTypeId: Int? = nil) {
     self.gardenIds = gardenIds
+    self.careTypeId = careTypeId
   }
 
   public var variables: GraphQLMap? {
-    return ["gardenIds": gardenIds]
+    return ["gardenIds": gardenIds, "careTypeId": careTypeId]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -1182,7 +1184,7 @@ public final class DoneAllCaresByGardensMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("doneAllCaresByGardens", arguments: ["gardenIds": GraphQLVariable("gardenIds")], type: .scalar(Bool.self)),
+        GraphQLField("doneAllCaresByGardens", arguments: ["gardenIds": GraphQLVariable("gardenIds"), "careTypeId": GraphQLVariable("careTypeId")], type: .scalar(Bool.self)),
       ]
     }
 
@@ -3716,7 +3718,7 @@ public final class CaresByGardensQuery: GraphQLQuery {
   public let operationDefinition: String =
     """
     query CaresByGardens {
-      caresByGarden {
+      caresByGardens {
         __typename
         careCount
         CareType {
@@ -3738,7 +3740,7 @@ public final class CaresByGardensQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("caresByGarden", type: .list(.object(CaresByGarden.selections))),
+        GraphQLField("caresByGardens", type: .list(.object(CaresByGarden.selections))),
       ]
     }
 
@@ -3748,16 +3750,16 @@ public final class CaresByGardensQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(caresByGarden: [CaresByGarden?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "caresByGarden": caresByGarden.flatMap { (value: [CaresByGarden?]) -> [ResultMap?] in value.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } } }])
+    public init(caresByGardens: [CaresByGarden?]? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "caresByGardens": caresByGardens.flatMap { (value: [CaresByGarden?]) -> [ResultMap?] in value.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } } }])
     }
 
-    public var caresByGarden: [CaresByGarden?]? {
+    public var caresByGardens: [CaresByGarden?]? {
       get {
-        return (resultMap["caresByGarden"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [CaresByGarden?] in value.map { (value: ResultMap?) -> CaresByGarden? in value.flatMap { (value: ResultMap) -> CaresByGarden in CaresByGarden(unsafeResultMap: value) } } }
+        return (resultMap["caresByGardens"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [CaresByGarden?] in value.map { (value: ResultMap?) -> CaresByGarden? in value.flatMap { (value: ResultMap) -> CaresByGarden in CaresByGarden(unsafeResultMap: value) } } }
       }
       set {
-        resultMap.updateValue(newValue.flatMap { (value: [CaresByGarden?]) -> [ResultMap?] in value.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } } }, forKey: "caresByGarden")
+        resultMap.updateValue(newValue.flatMap { (value: [CaresByGarden?]) -> [ResultMap?] in value.map { (value: CaresByGarden?) -> ResultMap? in value.flatMap { (value: CaresByGarden) -> ResultMap in value.resultMap } } }, forKey: "caresByGardens")
       }
     }
 

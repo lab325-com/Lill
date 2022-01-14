@@ -29,6 +29,7 @@ class GardenEditChangeCover: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
+    private let gardenName: String
     private let gardenId: String
     private var captureSession : AVCaptureSession!
     private var previewLayer : AVCaptureVideoPreviewLayer?
@@ -49,8 +50,9 @@ class GardenEditChangeCover: BaseController {
     // MARK: - Init
     //----------------------------------------------
     
-    init(gardenId: String, delegate: GardenEditChangeCoverDelegate) {
+    init(gardenId: String, gardenName: String, delegate: GardenEditChangeCoverDelegate) {
         self.gardenId = gardenId
+        self.gardenName = gardenName
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -80,9 +82,9 @@ class GardenEditChangeCover: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        navigationItem.title = "Add Place"
+        navigationItem.title = gardenName
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_edit_change_cover_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(done))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         

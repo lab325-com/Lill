@@ -8,9 +8,6 @@ class GardenController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
 
-//    @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var addPantLabel: UILabel!
-
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var careViews: [ShadowView]!
@@ -23,13 +20,13 @@ class GardenController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private let gardenId: String
     private let gardenName: String
 
     //----------------------------------------------
     // MARK: - Gobal property
     //----------------------------------------------
 
+    let gardenId: String
     var selectedCareType = 0
 
     lazy var presenter = GardenPresenter(view: self)
@@ -66,9 +63,6 @@ class GardenController: BaseController {
         super.viewWillAppear(animated)
         
         setup()
-        
-//        titleLabel.text = RLocalization.garden_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-//        addPantLabel.text = "+ " + RLocalization.garden_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
     }
 
     //----------------------------------------------
@@ -76,9 +70,8 @@ class GardenController: BaseController {
     //----------------------------------------------
     
     private func getGardenPlants() {
-//        guard let gardenId = self.gardenId else { return }
         presenter.getCaresByGarden(gardenId: gardenId)
-        presenter.getGardenPlants(gardenId: gardenId)
+        presenter.getGardenPlants(gardenId: gardenId)        
     }
 
     private func setup() {
@@ -86,27 +79,31 @@ class GardenController: BaseController {
         
         navigationItem.title = gardenName
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
-        let rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editGardenAction))
+        let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_controller_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(editGardenAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        resetCaresViews()
+        updateCaresSection()
+        
+        scrollView.contentInset.left = 12
+        scrollView.contentInset.right = 12
+
+        collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UINib.init(nibName: cellButtonIdentifier, bundle: nil), forCellWithReuseIdentifier: cellButtonIdentifier)
+        collectionView.contentInset.top = 40
+    }
+    
+    private func resetCaresViews() {
         for careView in careViews {
             switch careView.tag {
             case 0: careView.isHidden = false
             default: careView.isHidden = true
             }
         }
-        
-        scrollView.contentInset.left = 12
-        scrollView.contentInset.right = 12
-        
-        updateCaresSection()
-
-        collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.register(UINib.init(nibName: cellButtonIdentifier, bundle: nil), forCellWithReuseIdentifier: cellButtonIdentifier)
-        collectionView.contentInset.top = 40
     }
 
     private func updateCaresSection() {
@@ -173,7 +170,9 @@ class GardenController: BaseController {
 extension GardenController: GardenOutputProtocol {
 
     func successCaresByGarden(model: CaresByGardenDataModel) {
-                        
+                
+        resetCaresViews()
+        
         for care in model.caresByGarden {
             switch care.careType.name {
             case .humidity :
@@ -209,29 +208,3 @@ extension GardenController: GardenOutputProtocol {
 
     }
 }
-
-////----------------------------------------------
-//// MARK: - ChooseIdentifyDelegate
-////----------------------------------------------
-//
-//extension GardenController: GardenChooseAddPlantDelegate {
-//    func didPressedAddUniquePlant() {
-//        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
-//    }
-//}
-//
-////----------------------------------------------
-//// MARK: - PopUniqePlanProtocol
-////----------------------------------------------
-//
-//extension GardenController: PopUniqePlanProtocol {
-//    func dissmiss(controller: PopUniquePlantController, text: String) {
-//        AddCoverRouter(presenter: navigationController).presentAddCoverIdentifier(tabBarController: tabBarController, text: text, delegate: self)
-//    }
-//}
-//
-//extension GardenController: AddCoverIdentifierProtocol {
-//    func addCoverIdentifierGoToPlantName(controller: AddCoverIdentifierController) {
-//        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
-//    }
-//}

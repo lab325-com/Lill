@@ -79,7 +79,7 @@ class GardenCreateCover: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        navigationItem.title = "Add Place"
+        navigationItem.title = RLocalization.garden_create_cover_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
         
         topView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 24.0)

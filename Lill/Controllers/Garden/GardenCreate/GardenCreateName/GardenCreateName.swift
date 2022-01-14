@@ -61,12 +61,12 @@ class GardenCreateName: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        titleLabel.text = "Add Name"
-        subtitleLabel.text = "Give name for Place"
+        titleLabel.text = RLocalization.garden_create_name_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        subtitleLabel.text = RLocalization.garden_create_name_subtitle.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         mainView.layer.cornerRadius = 24.0
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        addPlaceButton.setTitle("Add Place", for: .normal)
+        addPlaceButton.setTitle(RLocalization.garden_create_name_add_place.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         gardenNameTextField.addTarget(self, action: #selector(GardenEditChangeName.textFieldDidChange(_:)), for: .editingChanged)
         

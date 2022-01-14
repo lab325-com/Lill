@@ -10,6 +10,8 @@ import UIKit
 protocol GardensOutputProtocol: BaseController {
     func successGetGardens()
     func successGetPlants()
+    func successGetCares(cares: [CaresByGardensModel])
+    func successDoneCares()
     
     func failure(error: String)
 }
@@ -24,6 +26,7 @@ protocol GardensPresenterProtocol: AnyObject {
     func getGardens()
     func getPlants()
     func getCares()
+    func doneCares(careTypeId: Int)
 }
 
 class GardensPresenter: GardensPresenterProtocol {
@@ -42,9 +45,7 @@ class GardensPresenter: GardensPresenterProtocol {
     
     func getGardens() {
         view?.startLoader()
-        
-        request?.cancel()
-        
+                
         let query = GardensQuery(pagination: InputPagination(all: true))
         request = Network.shared.query(model: GardensDataModel.self, query, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
@@ -95,16 +96,52 @@ class GardensPresenter: GardensPresenterProtocol {
     
     func getCares() {
         view?.startLoader()
+                
+        let query = CaresByGardensQuery()
+        request = Network.shared.query(model: CaresByGardensDataModel.self, query, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successGetCares(cares: model.caresByGardens)
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func getPlantsByCareType(careTypeId: Int) {
+        clearData()
+                
+        let query = GardenPlantsQuery(gardenId: "", pagination: InputPagination(offset: 0, limit: 100), careTypeId: careTypeId, isHappy: false)
+        request = Network.shared.query(model: GardenPlantsDataModel.self, query, controller: view, successHandler: { [weak self] model in
+            self?.sadGardenPlants = model.gardenPlants.gardenPlants ?? []
+            self?.gardenPlants = self?.sadGardenPlants ?? []
+            self?.view?.successGetPlants()
+        }, failureHandler: { [weak self] error in
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func doneCares(careTypeId: Int) {
+        clearData()
+        
+        view?.startLoader()
         
         request?.cancel()
         
-//        let query = CaresByGardensQuery()
-//        request = Network.shared.query(model: CaresByGardensDataModel.self, query, controller: view, successHandler: { [weak self] model in
-//            self?.view?.stopLoading()
-//        }, failureHandler: { [weak self] error in
-//            self?.view?.stopLoading()
-//            self?.view?.failure(error: error.localizedDescription)
-//        })
+        let gardensIds = gardens.map({$0.id})
+        
+        let mutation = DoneAllCaresByGardensMutation(gardenIds: gardensIds)
+        if careTypeId != 0 {
+            mutation.careTypeId = careTypeId
+        }
+        request = Network.shared.mutation(model: DoneAllCaresByGardensModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.doneAllCaresByGardens {
+                self?.view?.successDoneCares()
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
     }
     
     func clearData() {
