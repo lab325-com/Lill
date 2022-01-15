@@ -9,6 +9,51 @@ import UIKit
 
 class GardenRouter: BaseRouter {
     
+    func presentGardenCreateCover(gardenName: String, delegate: GardenCreateCoverDelegate) {
+        let controller = GardenCreateCover(gardenName: gardenName, delegate: delegate)
+        present(controller: controller, animated: false, presentStyle: .overFullScreen)
+    }
+    
+    func presentGardenCreateName(delegate: GardenCreateNameDelegate) {
+        let controller = GardenCreateName(delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
+    func pushToGarden(gardenId: String, gardenName: String) {
+        let controller = GardenController(gardenId: gardenId, gardenName: gardenName)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
+    func pushToEditGarden(gardenId: String) {
+        let controller = GardenEdit(gardenId: gardenId)
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
+    func pushToEditGardenChangeCover(gardenId: String, gardenName: String, delegate: GardenEditChangeCoverDelegate) {
+        let controller = GardenEditChangeCover(gardenId: gardenId, gardenName: gardenName, delegate: delegate)
+        controller.delegate = delegate
+        controller.hidesBottomBarWhenPushed = true
+        push(controller: controller)
+    }
+    
+    func presentEditGardenChangeName(gardenId: String, delegate: GardenEditChangeNameDelegate) {
+        let controller = GardenEditChangeName(gardenId: gardenId, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
+    func presentEditDeleteSpace(gardenId: String, gardenName: String, delegate: GardenEditDeleteSpaceDelegate) {
+        let controller = GardenEditDeleteSpace(gardenId: gardenId, gardenName: gardenName, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, animated: true, presentStyle: .overCurrentContext)
+    }
+    
     func pushDeleteGarden(cares: [CaresModel], delegate: GardenPlantCaresEditDeleteDelegate) {
         let controller = GardenPlantCaresEditDelete(cares: cares, delegate: delegate)
         controller.hidesBottomBarWhenPushed = true
@@ -79,5 +124,24 @@ class GardenRouter: BaseRouter {
         let controller = PopDoneSpecificCareController(delegate: delegate, gardenId: gardenId, care: care)
         controller.modalTransitionStyle = .crossDissolve
         present(controller: controller,animated: true, presentStyle: .overCurrentContext)
+    }
+    
+    func presentNeedCares(tabBarController: UITabBarController?, model: GardenModel, delegate: GardenNeedCaresDelegate) {
+        let controller = GardenNeedCaresController(model: model, delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        tabBarController?.present(controller, animated: true, completion: nil)
+    }
+    
+    func presentAddToGarden(tabBarController: UITabBarController?, delegate: GardenAddToPlaceDelegate, plantId: String) {
+        let controller = GardenAddToPlaceController(delegate: delegate, plantId: plantId)
+        let nc = NavigationController(rootViewController: controller)
+        nc.modalTransitionStyle = .crossDissolve
+        nc.modalPresentationStyle = .overCurrentContext
+        if let tabBarController = tabBarController {
+            tabBarController.present(nc, animated: true, completion: nil)
+        } else {
+            present(controller: nc, presentStyle: .overFullScreen)
+        }
     }
 }

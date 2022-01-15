@@ -7,13 +7,17 @@ struct MeModel: Codable {
     let email: String?
     let timezone: String?
     let defaultGardenId: String?
-    let Language: LanguageModel
-    let Gardens: [GardenModel]
-    let access: AccessModel
     var notificationSettings: NotificationSettings?
+    let language: LanguageModel
+    var gardens: [GardenModel]
+    let access: AccessModel
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification
+    }
+    
+    mutating func updateGardens(gardens: [GardenModel]) {
+        self.gardens = gardens
     }
     
     enum CodingKeys: String, CodingKey {
@@ -22,8 +26,8 @@ struct MeModel: Codable {
         case email = "email"
         case timezone = "timezone"
         case defaultGardenId = "defaultGardenId"
-        case Language = "Language"
-        case Gardens = "Gardens"
+        case language = "Language"
+        case gardens = "Gardens"
         case access = "access"
         case notificationSettings = "NotificationSettings"
     }

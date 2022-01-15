@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenEditDeleteSpace" customModule="Lill" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="MGz-Ge-89T" id="h4R-4q-QIl"/>
+                <outlet property="deleteSpaceButton" destination="TvY-C1-8fY" id="m9K-Mm-cb2"/>
+                <outlet property="gardenNameLabel" destination="LCq-P1-bTw" id="gg6-Cc-19Z"/>
+                <outlet property="infoLabel" destination="A7J-nm-1OD" id="DwB-Ar-Fn1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROM-4O-9UU">
+                    <rect key="frame" x="12" y="517" width="390" height="332"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plants_detail_watering_ic" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-Hy-a2d">
+                            <rect key="frame" x="160" y="34" width="70" height="70"/>
+                            <color key="tintColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="VqJ-FI-s1N"/>
+                                <constraint firstAttribute="width" secondItem="lFG-Hy-a2d" secondAttribute="height" multiplier="1:1" id="khN-Cl-Tfs"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCq-P1-bTw">
+                            <rect key="frame" x="163" y="121" width="64.5" height="27.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Plants in place will be deleted" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7J-nm-1OD">
+                            <rect key="frame" x="85.5" y="168" width="219.5" height="18"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <color key="textColor" red="0.97647058819999999" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGz-Ge-89T">
+                            <rect key="frame" x="12" y="273" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="3wf-Dz-1Vn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Cancel"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="X4T-Q2-P7a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvY-C1-8fY">
+                            <rect key="frame" x="12" y="219" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="zO3-Li-ImB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Delete Space"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="deleteSpaceAction:" destination="-1" eventType="touchUpInside" id="IVz-Ku-2Iu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="A7J-nm-1OD" firstAttribute="centerX" secondItem="ROM-4O-9UU" secondAttribute="centerX" id="0UQ-J3-ePw"/>
+                        <constraint firstItem="lFG-Hy-a2d" firstAttribute="centerX" secondItem="ROM-4O-9UU" secondAttribute="centerX" id="1oB-g4-O3Q"/>
+                        <constraint firstItem="MGz-Ge-89T" firstAttribute="leading" secondItem="ROM-4O-9UU" secondAttribute="leading" constant="12" id="6mm-0u-gDL"/>
+                        <constraint firstAttribute="bottom" secondItem="MGz-Ge-89T" secondAttribute="bottom" constant="15" id="9tD-Du-CSN"/>
+                        <constraint firstItem="TvY-C1-8fY" firstAttribute="top" secondItem="A7J-nm-1OD" secondAttribute="bottom" constant="33" id="IhS-Bk-8ww"/>
+                        <constraint firstAttribute="trailing" secondItem="MGz-Ge-89T" secondAttribute="trailing" constant="12" id="OQe-7H-aUm"/>
+                        <constraint firstAttribute="trailing" secondItem="TvY-C1-8fY" secondAttribute="trailing" constant="12" id="S9E-Qe-05E"/>
+                        <constraint firstAttribute="height" constant="332" id="d4w-yf-ha9"/>
+                        <constraint firstItem="lFG-Hy-a2d" firstAttribute="top" secondItem="ROM-4O-9UU" secondAttribute="top" constant="34" id="dEZ-1a-nbD"/>
+                        <constraint firstItem="LCq-P1-bTw" firstAttribute="centerX" secondItem="ROM-4O-9UU" secondAttribute="centerX" id="dYd-uW-4mX"/>
+                        <constraint firstItem="TvY-C1-8fY" firstAttribute="leading" secondItem="ROM-4O-9UU" secondAttribute="leading" constant="12" id="nWJ-gn-ieJ"/>
+                        <constraint firstItem="LCq-P1-bTw" firstAttribute="top" secondItem="lFG-Hy-a2d" secondAttribute="bottom" constant="17" id="xFV-fV-BVf"/>
+                        <constraint firstItem="MGz-Ge-89T" firstAttribute="top" secondItem="TvY-C1-8fY" secondAttribute="bottom" constant="10" id="xKP-GO-hzP"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ROM-4O-9UU" secondAttribute="bottom" constant="13" id="WoW-Qr-d8h"/>
+                <constraint firstItem="ROM-4O-9UU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="t18-TV-avp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ROM-4O-9UU" secondAttribute="trailing" constant="12" id="xug-rw-XdY"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="84"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plants_detail_watering_ic" width="35" height="35"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

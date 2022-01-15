@@ -1,0 +1,14 @@
+query GardenById($id: String!) {
+	gardenById(id: $id) {
+		id
+		name
+		userMainImage {
+			id
+			urlIosFull
+			urlIosPrev
+		}
+		isDefault
+		totalPlants
+		needCareCount
+	}
+}
