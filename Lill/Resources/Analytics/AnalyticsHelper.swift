@@ -102,6 +102,7 @@ enum FirebaseEvents: String {
     case menu_privacy = "menu_privacy"
     
     ///SubcribeController(purchase_screen)
+    case start_subscription_process = "start_subscription_process"
     case subscribe_start = "subscribe_start"
     case purchase_success = "purchase_success"
     case purchase_cancel = "purchase_cancel"
@@ -151,6 +152,7 @@ enum AppsFlyerEvents: String {
     case appsflyer_identify_success = "appsflyer_identify_success"
     case appsflyer_diagnose_success = "appsflyer_diagnose_success"
     case appsflyer_purchase_success = "appsflyer_purchase_success"
+    case appsflyer_start_subscription_process = "appsflyer_start_subscription_process"
 }
 
 class AnalyticsHelper: NSObject {
