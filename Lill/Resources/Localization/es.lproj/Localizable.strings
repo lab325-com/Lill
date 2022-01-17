@@ -271,6 +271,7 @@
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
 "scheldure_days" = "días";
+"scheldure_done" = "CUIDADO HECHO";
 "scheldure_done_all" = "Marcar como hechos todos los Cuidados en Espera";
 "scheldure_empty_title" = "Para tener un calendario y notificaciones diarias, encienda el ícono de anillo en la tarjeta de la Planta";
 "scheldure_next_days" = "Próximos 7 días";

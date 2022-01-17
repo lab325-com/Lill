@@ -3101,7 +3101,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 333 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 334 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3671,6 +3671,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_done_all_watering = Rswift.StringResource(key: "garden_done_all_watering", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done cares
+      ///
+      /// Locales: en, es
+      static let scheldure_done = Rswift.StringResource(key: "scheldure_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Edit
       ///
       /// Locales: en, es
@@ -6574,6 +6578,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_done_all_watering", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done cares
+      ///
+      /// Locales: en, es
+      static func scheldure_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_done"
+        }
+
+        return NSLocalizedString("scheldure_done", bundle: bundle, comment: "")
       }
 
       /// en translation: Edit
