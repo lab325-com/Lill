@@ -74,9 +74,10 @@ class BaseController: UIViewController {
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
             navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
-            if transparentNavigationBar {
-                navBarAppearance.shadowColor = .clear
-            }
+//            if transparentNavigationBar {
+//                navBarAppearance.shadowColor = .clear
+//            }
+            navBarAppearance.shadowColor = .clear
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.compactAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
