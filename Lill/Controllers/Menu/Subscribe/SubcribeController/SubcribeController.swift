@@ -33,9 +33,9 @@ enum SubscribeType: String, CaseIterable {
     func priceLabel(sub: PaymentsModel) -> String {
         switch self {
         case .yearProduct:
-            return "\(sub.currencySymbol ?? "$") \(sub.price)"
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
         case .monthProduct:
-            return "\(sub.currencySymbol ?? "$") \(sub.price)"
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
         }
     }
     
