@@ -10,6 +10,7 @@ class PreferencesManager : NSObject {
     static let isFirstRun = "isFirstRun"
     static let languageCode = "languageCode"
     static let fcmToken = "fcmToken"
+    static let isNeedSendReceipts = "isNeedSendReceipts"
     
     var userDefaults: UserDefaults
     
@@ -90,6 +91,16 @@ class PreferencesManager : NSObject {
     }
     
     //MARK: - Vars
+    
+    var isNeedSendReceipts: Bool {
+        get {
+            return userDefaults.bool(forKey: PreferencesManager.isNeedSendReceipts)
+        }
+        set {
+            userDefaults.set(newValue, forKey: PreferencesManager.isNeedSendReceipts)
+            userDefaults.synchronize()
+        }
+    }
     
     var isFirstRun: Bool {
         get {

@@ -2,6 +2,7 @@
 import Foundation
 import Apollo
 import UIKit
+import SwiftyStoreKit
 
 //----------------------------------------------
 // MARK: - Outputs Protocol
@@ -20,6 +21,7 @@ protocol PlantsPresenterProtocol: AnyObject {
     
     func getPlants(offset: Int, search: String)
     func updateMe()
+    func checkRecepts(restoreCompletion: @escaping (Bool)->())
 }
 
 class PlantsPresenter: PlantsPresenterProtocol {
@@ -63,9 +65,33 @@ class PlantsPresenter: PlantsPresenterProtocol {
     func updateMe() {
         let query = MeQuery()
         
-        let _ = Network.shared.query(model: MeDataModel.self, query, controller: view) { [weak self] model in
+        let _ = Network.shared.query(model: MeDataModel.self, query, controller: view) { model in
             KeychainService.standard.me = model.me
-        } failureHandler: { [weak self] error in
+        } failureHandler: { _ in
+        }
+    }
+    
+    func checkRecepts(restoreCompletion: @escaping (Bool)->()) {
+        if PreferencesManager.sharedManager.isNeedSendReceipts == true {
+            let receiptData = SwiftyStoreKit.localReceiptData
+            if let receiptString = receiptData?.base64EncodedString(options: []) {
+                view?.startLoader()
+                let mutation = OrderCreateMutation(receipt: receiptString)
+                let _ = Network.shared.mutation(model: OrderCreate.self, mutation, controller: self.view, successHandler: { [weak self] model in
+                    let _ = Network.shared.query(model: MeDataModel.self, MeQuery(), controller: self?.view) { [weak self] model in
+                        KeychainService.standard.me = model.me
+                        self?.view?.stopLoading()
+                        restoreCompletion(true)
+                    } failureHandler: { [weak self] error in
+                        self?.view?.stopLoading()
+                        restoreCompletion(false)
+                    }
+                    
+                }, failureHandler: { [weak self] error in
+                    self?.view?.stopLoading()
+                    restoreCompletion(false)
+                })
+            }
         }
     }
 }
