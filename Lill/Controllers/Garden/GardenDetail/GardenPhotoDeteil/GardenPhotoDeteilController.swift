@@ -157,7 +157,7 @@ class GardenPhotoDeteilController: BaseController {
     }
     
     @IBAction func actionShare(_ sender: UIButton) {
-        guard let url = URL(string: selectedModel.urlIosFull) else { return }
+        guard let url = URL(string: selectedModel.urlIosPrev) else { return }
         let resource = ImageResource(downloadURL: url)
         KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { result in
             switch result {
