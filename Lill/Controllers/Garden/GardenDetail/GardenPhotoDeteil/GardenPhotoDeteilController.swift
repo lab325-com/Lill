@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol GardenPhotoDeteilDelegate: AnyObject {
     func gardenPhotoDeteilSuccessSet(controlle: GardenPhotoDeteilController)
@@ -24,6 +25,7 @@ class GardenPhotoDeteilController: BaseController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var setMainPhotoButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var successView: UIView!
     @IBOutlet weak var settedLabel: UILabel!
     
@@ -93,6 +95,7 @@ class GardenPhotoDeteilController: BaseController {
         changeView()
         
         setMainPhotoButton.setTitle(RLocalization.garden_history_set_main_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        shareButton.setTitle(RLocalization.garden_history_share.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_history_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(editAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -150,6 +153,24 @@ class GardenPhotoDeteilController: BaseController {
             self.stopLoading()
         } failureHandler: { [weak self] error in
             self?.stopLoading()
+        }
+    }
+    
+    @IBAction func actionShare(_ sender: UIButton) {
+        guard let url = URL(string: selectedModel.urlIosFull) else { return }
+        let resource = ImageResource(downloadURL: url)
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil, downloadTaskUpdated: nil) { result in
+            switch result {
+            case .success(let value):
+                let imageToShare = [value.image]
+                let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+                activityViewController.completionWithItemsHandler = { _, _, _, _ in
+                    self.dismiss(animated: true)
+                }
+                self.present(activityViewController, animated: true, completion: nil)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
         }
     }
 }

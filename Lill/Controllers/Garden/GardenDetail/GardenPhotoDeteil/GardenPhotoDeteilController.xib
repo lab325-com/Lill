@@ -28,6 +28,7 @@
                 <outlet property="notesLabel" destination="tN5-Pe-uGE" id="h5j-rS-f6i"/>
                 <outlet property="setMainPhotoButton" destination="ggs-5l-3i4" id="1fC-cO-3fJ"/>
                 <outlet property="settedLabel" destination="1GK-gr-J4N" id="Y3Q-DH-rwQ"/>
+                <outlet property="shareButton" destination="lOd-cc-b2B" id="fWU-8O-EsI"/>
                 <outlet property="successView" destination="Lu0-P8-CpU" id="xtE-9L-MSf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,7 +53,7 @@
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iP-b8-oA6">
-                    <rect key="frame" x="0.0" y="693" width="414" height="203"/>
+                    <rect key="frame" x="0.0" y="632" width="414" height="264"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-5l-3i4">
                             <rect key="frame" x="24" y="129" width="366" height="44"/>
@@ -70,6 +71,24 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="actionSetMainPhoto:" destination="-1" eventType="touchUpInside" id="nHp-VE-nNe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOd-cc-b2B">
+                            <rect key="frame" x="24" y="182" width="366" height="44"/>
+                            <color key="backgroundColor" red="0.76470588235294112" green="0.43137254901960786" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="DFh-OQ-RV2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Share"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionShare:" destination="-1" eventType="touchUpInside" id="ckQ-L7-QcM"/>
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="hcu-wa-XEu">
@@ -93,12 +112,15 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ggs-5l-3i4" secondAttribute="trailing" constant="24" id="26U-gB-vqL"/>
+                        <constraint firstAttribute="bottom" secondItem="lOd-cc-b2B" secondAttribute="bottom" constant="38" id="5S5-Za-D0P"/>
                         <constraint firstItem="hcu-wa-XEu" firstAttribute="leading" secondItem="3iP-b8-oA6" secondAttribute="leading" constant="36" id="LUR-Gd-Zye"/>
-                        <constraint firstAttribute="bottom" secondItem="ggs-5l-3i4" secondAttribute="bottom" constant="30" id="PpP-t1-7qs"/>
                         <constraint firstItem="hcu-wa-XEu" firstAttribute="top" secondItem="3iP-b8-oA6" secondAttribute="top" constant="24" id="QFn-g5-izK"/>
                         <constraint firstItem="ggs-5l-3i4" firstAttribute="top" secondItem="hcu-wa-XEu" secondAttribute="bottom" constant="36" id="RhN-NV-YH2"/>
+                        <constraint firstItem="lOd-cc-b2B" firstAttribute="leading" secondItem="3iP-b8-oA6" secondAttribute="leading" constant="24" id="oTf-al-yvd"/>
                         <constraint firstAttribute="trailing" secondItem="hcu-wa-XEu" secondAttribute="trailing" constant="36" id="tN2-NQ-BIq"/>
                         <constraint firstItem="ggs-5l-3i4" firstAttribute="leading" secondItem="3iP-b8-oA6" secondAttribute="leading" constant="24" id="tXa-sG-l0C"/>
+                        <constraint firstAttribute="trailing" secondItem="lOd-cc-b2B" secondAttribute="trailing" constant="24" id="uVF-Cu-FS1"/>
+                        <constraint firstItem="lOd-cc-b2B" firstAttribute="top" secondItem="ggs-5l-3i4" secondAttribute="bottom" constant="9" id="z1q-zh-2gD"/>
                     </constraints>
                 </view>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lu0-P8-CpU">
