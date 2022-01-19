@@ -88,6 +88,10 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        presenter.checkRecepts { result in
+            debugPrint("Sended recept to store: \(result)")
+        }
+        
         navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         identifireLabel.text = RLocalization.plants_identifier()
         explorerLabel.text = RLocalization.plants_explore()

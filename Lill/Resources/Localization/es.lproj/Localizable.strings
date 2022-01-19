@@ -169,6 +169,7 @@
 "garden_history_edit" = "Editar";
 "garden_history_save_changes" = "Guardar cambios";
 "garden_history_set_main_photo" = "Establecer como foto principal";
+"garden_history_share" = "Cuota";
 "garden_histroy_set_main_success" = "Establecida como foto principal";
 "garden_need_cares" = "Necesito cuidado:";
 "garden_need_cares_cancel" = "Cancelar";
@@ -197,7 +198,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_title" = "Mi jardín";
 "identify_analize_identify_plant" = "Identificando planta";
@@ -271,6 +272,7 @@
 "recognize_archive_button" = "Reconocer la planta";
 "recognize_archive_title" = "Archivo reconocido";
 "scheldure_days" = "días";
+"scheldure_done" = "CUIDADO HECHO";
 "scheldure_done_all" = "Marcar como hechos todos los Cuidados en Espera";
 "scheldure_empty_title" = "Para tener un calendario y notificaciones diarias, encienda el ícono de anillo en la tarjeta de la Planta";
 "scheldure_next_days" = "Próximos 7 días";

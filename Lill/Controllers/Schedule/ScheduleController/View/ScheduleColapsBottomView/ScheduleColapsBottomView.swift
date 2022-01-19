@@ -37,6 +37,7 @@ class ScheduleColapsBottomView: UIView, LoadFromXibProtocol {
         addSubviewLoadedFromXib()
         mainView.layer.cornerRadius = 27
         mainView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        doneButton.setTitle(RLocalization.scheldure_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
 
     func setupView(model: ScheduleMainModel, isHiddenButton: Bool) {
