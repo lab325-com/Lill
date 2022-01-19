@@ -165,6 +165,15 @@ class GardenDetailController: BaseController {
             }
         }
     }
+    
+    //----------------------------------------------
+    // MARK: - IBActions
+    //----------------------------------------------
+    
+    @IBAction func galleryAction(_ sender: Any) {
+        guard let seletedModel = presenter.historyMediaModel.first else { return }
+        GardenRouter(presenter: navigationController).pushGardenDeteilPhoto(gardenID: id, selectedModel: seletedModel, models: presenter.historyMediaModel, delegate: self)
+    }
 }
 
 //----------------------------------------------

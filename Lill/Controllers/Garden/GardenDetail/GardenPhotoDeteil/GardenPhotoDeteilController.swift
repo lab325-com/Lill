@@ -136,6 +136,10 @@ class GardenPhotoDeteilController: BaseController {
         }
     }
     
+    //----------------------------------------------
+    // MARK: - IBActions
+    //----------------------------------------------
+    
     @IBAction func actionSetMainPhoto(_ sender: UIButton) {
         startLoader()
         let mutation2 = GardenPlantUpdateMutation(record: GardenPlantUpdateInput(id: gardenID, userMainImageId: selectedModel.id))

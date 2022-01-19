@@ -41,13 +41,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="bsv-hv-YoW">
                                 <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sI-A2-rIb">
+                                <rect key="frame" x="0.0" y="0.0" width="409" height="300"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="galleryAction:" destination="-1" eventType="touchUpInside" id="wRq-YV-LlV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.0039215686269999999" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7sI-A2-rIb" secondAttribute="bottom" id="7cv-Xh-84N"/>
                             <constraint firstItem="bsv-hv-YoW" firstAttribute="leading" secondItem="nez-Ct-6PW" secondAttribute="leading" id="Ge6-Ys-Qzi"/>
                             <constraint firstAttribute="bottom" secondItem="bsv-hv-YoW" secondAttribute="bottom" id="QbA-pS-fnH"/>
                             <constraint firstAttribute="trailing" secondItem="bsv-hv-YoW" secondAttribute="trailing" id="V6V-9n-Caj"/>
                             <constraint firstItem="bsv-hv-YoW" firstAttribute="top" secondItem="nez-Ct-6PW" secondAttribute="top" id="hLa-yj-XkG"/>
+                            <constraint firstItem="7sI-A2-rIb" firstAttribute="leading" secondItem="nez-Ct-6PW" secondAttribute="leading" id="lee-rV-JbY"/>
+                            <constraint firstAttribute="trailing" secondItem="7sI-A2-rIb" secondAttribute="trailing" id="mW4-lR-n1k"/>
+                            <constraint firstItem="7sI-A2-rIb" firstAttribute="top" secondItem="nez-Ct-6PW" secondAttribute="top" id="tGm-0Z-rdV"/>
                         </constraints>
                     </view>
                     <connections>
