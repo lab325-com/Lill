@@ -16,15 +16,20 @@ extension GardenDetailController: UITableViewDataSource, UITableViewDelegate {
         var count = 1
         
         if selectedTag == 0 {
-            if presenter.about.count != 0 || presenter.cares.count != 0 {
-                count += 1
-            }
             
-            if presenter.about.count != 0 {
-                count += 1
-            }
-            
-            if presenter.cares.count != 0 {
+            if let _ = presenter.model?.gardenPlantById.plant?.climate {
+                if presenter.about.count != 0 || presenter.cares.count != 0 {
+                    count += 1
+                }
+                
+                if presenter.about.count != 0 {
+                    count += 1
+                }
+                
+                if presenter.cares.count != 0 {
+                    count += 1
+                }
+            } else {
                 count += 1
             }
             
