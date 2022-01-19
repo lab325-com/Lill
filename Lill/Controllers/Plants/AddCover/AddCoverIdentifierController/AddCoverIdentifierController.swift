@@ -164,11 +164,14 @@ extension AddCoverIdentifierController: UIImagePickerControllerDelegate, UINavig
         self.capturedImage = image
         
         DispatchQueue.main.async {
-            if let id = self.sendToGardenId {
-                self.presenter.uploadMedia(id: id, img: image)
-            } else {
-                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: image, text: self.text, delegate: self)
-            }
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+        }
+        
+        if let id = self.sendToGardenId {
+            self.presenter.uploadMedia(id: id, img: image)
+        } else {
+            AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: image, text: self.text, delegate: self)
         }
     }
 }
@@ -187,13 +190,14 @@ extension AddCoverIdentifierController: AVCaptureVideoDataOutputSampleBufferDele
         let uiImage = UIImage(ciImage: ciImage)
         
         DispatchQueue.main.async {
-            if let id = self.sendToGardenId {
-                self.presenter.uploadMedia(id: id, img: uiImage)
-            }  else {
-                AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
-            }
-            self.capturedImage = uiImage
-            self.takePicture = false
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+        }
+        
+        if let id = self.sendToGardenId {
+            self.presenter.uploadMedia(id: id, img: uiImage)
+        }  else {
+            AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
         }
     }
 }
