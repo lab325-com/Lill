@@ -82,18 +82,19 @@ class GardenDetailController: BaseController {
         transparentNavigationBar = true
         super.viewDidLoad()
         
-        tableView.alpha = 0.0
-        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.navigationBar.tintColor = UIColor.white
+        presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .card_plan)
     }
     
@@ -102,14 +103,14 @@ class GardenDetailController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        tableView.rowHeight = UITableView.automaticDimension
-        
         headerView = tableView.tableHeaderView
+        
+        tableView.alpha = 0.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.tableHeaderView = nil
         tableView.addSubview(headerView)
         tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
-        updateHeaderView()
         
         tableView.register(UINib(nibName: cellCaresIdentifier, bundle: nil), forCellReuseIdentifier: cellCaresIdentifier)
         tableView.register(UINib(nibName: cellAboutIdentifier, bundle: nil), forCellReuseIdentifier: cellAboutIdentifier)
@@ -118,7 +119,6 @@ class GardenDetailController: BaseController {
         tableView.register(UINib(nibName: cellEditIdentifier, bundle: nil), forCellReuseIdentifier: cellEditIdentifier)
         tableView.register(UINib(nibName: cellScheldureIdentifier, bundle: nil), forCellReuseIdentifier: cellScheldureIdentifier)
         tableView.register(UINib(nibName: cellAllWaitingIdentifier, bundle: nil), forCellReuseIdentifier: cellAllWaitingIdentifier)
-        
         tableView.register(UINib(nibName: cellHistoryTitleIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryTitleIdentifier)
         tableView.register(UINib(nibName: cellHistoryStatisticIdentifier, bundle: nil), forCellReuseIdentifier: cellHistoryStatisticIdentifier)
         tableView.register(UINib(nibName: cellHistoryListHeaderCell, bundle: nil), forCellReuseIdentifier: cellHistoryListHeaderCell)
@@ -126,8 +126,7 @@ class GardenDetailController: BaseController {
         tableView.register(UINib(nibName: cellHistoryListPhotoCell, bundle: nil), forCellReuseIdentifier: cellHistoryListPhotoCell)
         
         tableView.tableFooterView = UIView()
-        
-        
+        updateHeaderView()
         
         let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
         navigationItem.rightBarButtonItems = [dots]

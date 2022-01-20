@@ -16,10 +16,11 @@ class AddPlantsCareController: BaseController {
     @IBOutlet weak var addCaresLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var caresCountLabel: UILabel!
+    
     @IBOutlet weak var topView: ShadowView!
     @IBOutlet weak var firstDetailCareView: DetailCaresView!
     @IBOutlet var caresViews: [AddPlantCareView]!
-    @IBOutlet weak var caresCountLabel: UILabel!
     
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var addCaresButton: UIButton!
@@ -133,6 +134,10 @@ class AddPlantsCareController: BaseController {
         if selectedCares.count > 0 {
             AddCoverRouter(presenter: navigationController).pushAddTime(coverImage: coverImage, text: text, selectedCares: selectedCares)
         }
+    }
+    
+    @IBAction func actionSkip(_ sender: UIButton) {
+        AddCoverRouter(presenter: navigationController).pushAddTime(coverImage: coverImage, text: text, selectedCares: selectedCares)
     }
     
     @objc func playTapped() {

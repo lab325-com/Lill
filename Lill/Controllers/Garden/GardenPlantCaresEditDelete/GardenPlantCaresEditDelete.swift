@@ -118,8 +118,6 @@ class GardenPlantCaresEditDelete: BaseController {
             alert.addAction(deletePlant)
             alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)
-            
-            
         }
     }
     
@@ -143,9 +141,7 @@ class GardenPlantCaresEditDelete: BaseController {
                 button?.setImage(RImage.garden_delete_select_ic(), for: .normal)
             }
         }
-        
     }
-    
 }
 
 //----------------------------------------------
