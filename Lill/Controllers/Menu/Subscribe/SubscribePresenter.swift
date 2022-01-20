@@ -56,6 +56,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
             case .success(let product):
                 AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_purchase_success, values: ["id": id])
+                AnalyticsHelper.sendFacebookEvent(event: .fb_purchase_success, values: ["id": id])
                 
                 //self?.sendPrepay()
                 // fetch content from your server, then:

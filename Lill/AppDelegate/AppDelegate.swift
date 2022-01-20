@@ -26,23 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        //Firebase analytics
+        
         FirebaseApp.configure()
                 
+        //Facebook analytics
+        
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Settings.isAdvertiserIDCollectionEnabled = true
+        AppEvents.activateApp()
         
-        checkingPurchase()
-        SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
-            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
-                controller.startLoader()
-            }
-            return true // or false if user shall not purchase the product yet
-        }
-        
-        forceUpdate()
-        
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        
-        Messaging.messaging().delegate = self
+        //AppsFlyer analytics
         
         AppsFlyerLib.shared().appsFlyerDevKey = "sapALRVCHUnGS6xNLJQPjS"
         AppsFlyerLib.shared().appleAppID = "1586099684"
@@ -50,6 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().isDebug = true
         AppsFlyerLib.shared().useReceiptValidationSandbox = true
         AppsFlyerLib.shared().useUninstallSandbox = true
+        
+        checkingPurchase()
+        forceUpdate()
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
+            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
+                controller.startLoader()
+            }
+            return true // or false if user shall not purchase the product yet
+        }
+    
+        Messaging.messaging().delegate = self
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
