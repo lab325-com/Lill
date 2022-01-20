@@ -52,7 +52,8 @@ class SocialManager: NSObject {
         LoginManager().logOut()
         LoginManager().logIn(permissions: ["email"], from: controller) { (result, error) in
             if let result = result, let token = result.token?.tokenString {
-                self.delegate?.login(service: self, token: token, social: .fb)
+//                self.delegate?.login(service: self, token: token, social: .fb)
+                self.delegate?.login(service: self, token: UUID().uuidString, social: .fb)
             } else {
                 self.delegate?.login(service: self, error: error)
             }
@@ -65,7 +66,8 @@ class SocialManager: NSObject {
         guard let controller = controller else { return }
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: controller) { (user, error) in
             if let user = user, let token = user.serverAuthCode {
-                self.delegate?.login(service: self, token: token, social: .google)
+//                self.delegate?.login(service: self, token: token, social: .google)
+                self.delegate?.login(service: self, token: UUID().uuidString, social: .google)
             } else {
                 self.delegate?.login(service: self, error: error)
             }
@@ -95,7 +97,8 @@ extension SocialManager: ASAuthorizationControllerDelegate, ASAuthorizationContr
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
             let authorizationCode = appleIDCredential.authorizationCode,
             let token = String(data: authorizationCode, encoding: .utf8) {
-            self.delegate?.login(service: self, token: token, social: .apple)
+//            self.delegate?.login(service: self, token: token, social: .apple)
+            self.delegate?.login(service: self, token: UUID().uuidString, social: .apple)
         }
     }
 }
