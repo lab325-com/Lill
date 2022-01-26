@@ -3101,7 +3101,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 335 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 339 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3319,6 +3319,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let action_edit_cancel = Rswift.StringResource(key: "action_edit_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static let allert_camer_permission_cancel = Rswift.StringResource(key: "allert_camer_permission_cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Cancel
       ///
       /// Locales: en, es
@@ -3759,6 +3763,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let pop_change_name_subtitle = Rswift.StringResource(key: "pop_change_name_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Go to settings for camera permission?
+      ///
+      /// Locales: en, es
+      static let allert_camer_permission_subtittle = Rswift.StringResource(key: "allert_camer_permission_subtittle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Great!
       ///
       /// Locales: en, es
@@ -3967,6 +3975,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_perenial_climber = Rswift.StringResource(key: "climate_habit_perenial_climber", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Permissions
+      ///
+      /// Locales: en, es
+      static let allert_camer_permission_title = Rswift.StringResource(key: "allert_camer_permission_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Photo Note
       ///
       /// Locales: en, es
@@ -4187,6 +4199,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_histroy_set_main_success = Rswift.StringResource(key: "garden_histroy_set_main_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Settings
+      ///
+      /// Locales: en, es
+      static let allert_camer_permission_settings = Rswift.StringResource(key: "allert_camer_permission_settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, es
@@ -5260,6 +5276,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("action_edit_cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, es
+      static func allert_camer_permission_cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_camer_permission_cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_camer_permission_cancel"
+        }
+
+        return NSLocalizedString("allert_camer_permission_cancel", bundle: bundle, comment: "")
       }
 
       /// en translation: Cancel
@@ -6914,6 +6945,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("pop_change_name_subtitle", bundle: bundle, comment: "")
       }
 
+      /// en translation: Go to settings for camera permission?
+      ///
+      /// Locales: en, es
+      static func allert_camer_permission_subtittle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_camer_permission_subtittle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_camer_permission_subtittle"
+        }
+
+        return NSLocalizedString("allert_camer_permission_subtittle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Great!
       ///
       /// Locales: en, es
@@ -7692,6 +7738,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("climate_habit_perenial_climber", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Permissions
+      ///
+      /// Locales: en, es
+      static func allert_camer_permission_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_camer_permission_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_camer_permission_title"
+        }
+
+        return NSLocalizedString("allert_camer_permission_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Photo Note
@@ -8519,6 +8580,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_histroy_set_main_success", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Settings
+      ///
+      /// Locales: en, es
+      static func allert_camer_permission_settings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_camer_permission_settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_camer_permission_settings"
+        }
+
+        return NSLocalizedString("allert_camer_permission_settings", bundle: bundle, comment: "")
       }
 
       /// en translation: Settings

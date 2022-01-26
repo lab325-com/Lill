@@ -14,6 +14,10 @@
 "add_plant_time" = "Time";
 "add_plant_time_subtitle" = "Please Setup your Care for new Plant";
 "add_plants_success" = "Plant is added to your Garden!";
+"allert_camer_permission_cancel" = "Cancel";
+"allert_camer_permission_settings" = "Settings";
+"allert_camer_permission_subtittle" = "Go to settings for camera permission?";
+"allert_camer_permission_title" = "Permissions";
 "allert_logout_message" = "Are you sure want log out?";
 "allert_no" = "NO";
 "allert_yes" = "YES";

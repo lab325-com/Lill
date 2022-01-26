@@ -14,6 +14,10 @@
 "add_plant_time" = "Hora";
 "add_plant_time_subtitle" = "Por favor, establezca el Cuidado para su nueva Planta";
 "add_plants_success" = "¡La planta se agregó a tu jardín!";
+"allert_camer_permission_cancel" = "Cancelar";
+"allert_camer_permission_settings" = "Ajustes";
+"allert_camer_permission_subtittle" = "Ir a la configuración del permiso de la cámara?";
+"allert_camer_permission_title" = "Permisos";
 "allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
 "allert_no" = "NO";
 "allert_yes" = "SÍ";
@@ -198,7 +202,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_title" = "Mi jardín";
 "identify_analize_identify_plant" = "Identificando planta";
