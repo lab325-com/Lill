@@ -3724,7 +3724,6 @@
 		02AB244A26F39EF100309CFF /* Localize */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
-			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
 			files = (
 			);
 			inputFileListPaths = (
