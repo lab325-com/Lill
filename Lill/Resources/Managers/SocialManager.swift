@@ -51,8 +51,8 @@ class SocialManager: NSObject {
     func loginFacebook() {
         LoginManager().logOut()
         LoginManager().logIn(permissions: ["email"], from: controller) { (result, error) in
-            if let result = result, let token = result.token?.tokenString {
-                self.delegate?.login(service: self, token: token, social: .fb, udid: UUID().uuidString)
+            if let result = result, let token = result.token?.tokenString, let udid = UIDevice.current.identifierForVendor?.uuidString {
+                self.delegate?.login(service: self, token: token, social: .fb, udid: udid)
             } else {
                 self.delegate?.login(service: self, error: error)
             }
@@ -64,8 +64,8 @@ class SocialManager: NSObject {
         let signInConfig = GIDConfiguration.init(clientID: clientID, serverClientID: "1031354065646-4cs83oecmt3rh972ilr9hct01m357gld.apps.googleusercontent.com")
         guard let controller = controller else { return }
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: controller) { (user, error) in
-            if let user = user, let token = user.serverAuthCode {
-                self.delegate?.login(service: self, token: token, social: .google, udid: UUID().uuidString)
+            if let user = user, let token = user.serverAuthCode, let udid = UIDevice.current.identifierForVendor?.uuidString {
+                self.delegate?.login(service: self, token: token, social: .google, udid: udid)
             } else {
                 self.delegate?.login(service: self, error: error)
             }
@@ -94,8 +94,9 @@ extension SocialManager: ASAuthorizationControllerDelegate, ASAuthorizationContr
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
             let authorizationCode = appleIDCredential.authorizationCode,
-            let token = String(data: authorizationCode, encoding: .utf8) {
-            self.delegate?.login(service: self, token: token, social: .apple, udid: UUID().uuidString)
+            let token = String(data: authorizationCode, encoding: .utf8),
+            let udid = UIDevice.current.identifierForVendor?.uuidString {
+            self.delegate?.login(service: self, token: token, social: .apple, udid: udid)
         }
     }
 }
