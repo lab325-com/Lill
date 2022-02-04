@@ -47,14 +47,14 @@ class LoginPresenter: LoginPresenterProtocol {
         case .apple:
             socialManager.loginApple()
         case .none:
-            loginUser(token: uuid, firebaseId: "", social: .none)
+            loginUser(token: uuid, firebaseId: "", social: .none, udid: "")
         }
     }
     
-    func loginUser(token: String, firebaseId: String, social: Social) {
+    func loginUser(token: String, firebaseId: String, social: Social, udid: String) {
         view?.startLoader()
     
-        RestAuth().login(token: token, social: social) { [weak self] model in
+        RestAuth().login(token: token, social: social, udid: udid) { [weak self] model in
             KeychainService.standard.newAuthToken = model
             
             switch social {
@@ -91,8 +91,8 @@ class LoginPresenter: LoginPresenterProtocol {
 //----------------------------------------------
 
 extension LoginPresenter: SocialManagerDelegate {
-    func login(service: SocialManager, token: String, social: Social) {
-        loginUser(token: token, firebaseId: "", social: social)
+    func login(service: SocialManager, token: String, social: Social, udid: String) {
+        loginUser(token: token, firebaseId: "", social: social, udid: udid)
     }
     
     func login(service: SocialManager, error: Error?) {

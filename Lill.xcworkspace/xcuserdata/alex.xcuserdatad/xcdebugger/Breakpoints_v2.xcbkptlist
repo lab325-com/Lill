@@ -7,97 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65DC74CD-F852-458E-A075-AA65D4EEFC3C"
+            uuid = "BD6C45ED-FFD0-4E49-954F-DE29C3653F3F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardensController/GardensController.swift"
+            filePath = "Lill/Resources/Managers/SocialManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "gardensSegmentAction(_:)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1E5325A3-2C38-4815-9CD8-4C048FFD6ECF"
+            uuid = "2580C449-75AA-4629-95F4-C03040BE8F79"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardensController/GardensController.swift"
+            filePath = "Lill/REST/Operations/Auth/RestAuth.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "gardensSegmentAction(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "login(token:social:udid:name:success:failure:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "86AC5550-11E1-4C33-9B4C-2D19092D431E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardensController/Presenter/GardensPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getGardens()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "86AC5550-11E1-4C33-9B4C-2D19092D431E - 20718212d5ef3cfc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Lill.GardensPresenter.getGardens() -&gt; ()"
-                  moduleName = "Lill"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alex/Downloads/PROJECTS/lill/Lill/Controllers/Garden/GardensController/Presenter/GardensPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "948">
-               </Location>
-               <Location
-                  uuid = "86AC5550-11E1-4C33-9B4C-2D19092D431E - b5f8e026ce395f19"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Error) -&gt; () in Lill.GardensPresenter.getGardens() -&gt; ()"
-                  moduleName = "Lill"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alex/Downloads/PROJECTS/lill/Lill/Controllers/Garden/GardensController/Presenter/GardensPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "79">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14FC4836-425E-4A2B-AA52-3D49AFEEAF81"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardensController/Cell/GardenCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "GardenCell"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
