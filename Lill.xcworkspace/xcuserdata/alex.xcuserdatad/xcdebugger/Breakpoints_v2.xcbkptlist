@@ -7,22 +7,34 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "BD6C45ED-FFD0-4E49-954F-DE29C3653F3F"
             shouldBeEnabled = "No"
+=======
+            uuid = "9A4B086F-6AB6-4A2A-AB10-3369461382FC"
+            shouldBeEnabled = "Yes"
+>>>>>>> develop
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lill/Resources/Managers/SocialManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "98"
             endingLineNumber = "98"
             landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
+=======
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "loginGoogle()"
+>>>>>>> develop
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "2580C449-75AA-4629-95F4-C03040BE8F79"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -33,6 +45,18 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "login(token:social:udid:name:success:failure:)"
+=======
+            uuid = "1B9D3D2C-EA24-4309-9943-EA5E68351529"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lill/Resources/Managers/SocialManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
+>>>>>>> develop
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
