@@ -35,4 +35,11 @@ class MenuRouter: BaseRouter {
         let controller = SubcribeController()
         present(controller: controller)
     }
+    
+    func presentYearSubscription() {
+        let controller = SubscribeYearController()
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
 }

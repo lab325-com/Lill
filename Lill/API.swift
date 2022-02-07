@@ -431,6 +431,45 @@ public struct GardenUpdateInput: GraphQLMapConvertible {
   }
 }
 
+public struct GeneratePromoOfferRecordInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - productId
+  ///   - offerId
+  ///   - userName
+  public init(productId: String, offerId: String, userName: String) {
+    graphQLMap = ["productID": productId, "offerID": offerId, "userName": userName]
+  }
+
+  public var productId: String {
+    get {
+      return graphQLMap["productID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "productID")
+    }
+  }
+
+  public var offerId: String {
+    get {
+      return graphQLMap["offerID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "offerID")
+    }
+  }
+
+  public var userName: String {
+    get {
+      return graphQLMap["userName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userName")
+    }
+  }
+}
+
 public struct NotificationSettingsUpdateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -2869,6 +2908,143 @@ public final class GardenUpdateMutation: GraphQLMutation {
           set {
             resultMap.updateValue(newValue, forKey: "urlIosPrev")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class GeneratePromoOfferMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation GeneratePromoOffer($record: GeneratePromoOfferRecordInput!) {
+      generatePromoOffer(record: $record) {
+        __typename
+        keyID
+        nonce
+        timestamp
+        signature
+        applicationUsername
+      }
+    }
+    """
+
+  public let operationName: String = "GeneratePromoOffer"
+
+  public var record: GeneratePromoOfferRecordInput
+
+  public init(record: GeneratePromoOfferRecordInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("generatePromoOffer", arguments: ["record": GraphQLVariable("record")], type: .object(GeneratePromoOffer.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(generatePromoOffer: GeneratePromoOffer? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "generatePromoOffer": generatePromoOffer.flatMap { (value: GeneratePromoOffer) -> ResultMap in value.resultMap }])
+    }
+
+    public var generatePromoOffer: GeneratePromoOffer? {
+      get {
+        return (resultMap["generatePromoOffer"] as? ResultMap).flatMap { GeneratePromoOffer(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "generatePromoOffer")
+      }
+    }
+
+    public struct GeneratePromoOffer: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["PromoOffer"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("keyID", type: .scalar(String.self)),
+          GraphQLField("nonce", type: .scalar(String.self)),
+          GraphQLField("timestamp", type: .scalar(String.self)),
+          GraphQLField("signature", type: .scalar(String.self)),
+          GraphQLField("applicationUsername", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(keyId: String? = nil, nonce: String? = nil, timestamp: String? = nil, signature: String? = nil, applicationUsername: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "PromoOffer", "keyID": keyId, "nonce": nonce, "timestamp": timestamp, "signature": signature, "applicationUsername": applicationUsername])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var keyId: String? {
+        get {
+          return resultMap["keyID"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "keyID")
+        }
+      }
+
+      public var nonce: String? {
+        get {
+          return resultMap["nonce"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "nonce")
+        }
+      }
+
+      public var timestamp: String? {
+        get {
+          return resultMap["timestamp"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "timestamp")
+        }
+      }
+
+      public var signature: String? {
+        get {
+          return resultMap["signature"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "signature")
+        }
+      }
+
+      public var applicationUsername: String? {
+        get {
+          return resultMap["applicationUsername"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "applicationUsername")
         }
       }
     }
