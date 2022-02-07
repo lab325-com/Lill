@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 56 files.
+  /// This `R.file` struct is generated, and contains static references to 57 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -247,6 +247,8 @@ struct R: Rswift.Validatable {
     static let sfProDisplayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Medium", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Regular.ttf`.
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
+    /// Resource file `SaveUDID.graphql`.
+    static let saveUDIDGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SaveUDID", pathExtension: "graphql")
     /// Resource file `ScheduleByGardenPlant.graphql`.
     static let scheduleByGardenPlantGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ScheduleByGardenPlant", pathExtension: "graphql")
     /// Resource file `ScheduleByGardens.graphql`.
@@ -541,6 +543,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "SFProDisplay-Regular", withExtension: "ttf")`
     static func sfProDisplayRegularTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sfProDisplayRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SaveUDID", withExtension: "graphql")`
+    static func saveUDIDGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.saveUDIDGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 

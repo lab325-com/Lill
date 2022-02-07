@@ -73,8 +73,23 @@ class LoginPresenter: LoginPresenterProtocol {
             let query = MeQuery()
             let _ = Network.shared.query(model: MeDataModel.self, query, controller: self?.view) { [weak self] model in
                 KeychainService.standard.me = model.me
-                self?.view?.stopLoading()
-                self?.view?.success()
+                if model.me.hasUdid {
+                    self?.view?.stopLoading()
+                    self?.view?.success()
+                } else {
+                    if let udid = UIDevice.current.identifierForVendor?.uuidString {
+                        let mutation = SaveUdidMutation(udid: udid)
+                        let _ = Network.shared.mutation(model: SaveUdidModel.self, mutation, controller: self?.view) { [weak self] model in
+                            if model.saveUdid {
+                                self?.view?.stopLoading()
+                                self?.view?.success()
+                            }
+                        } failureHandler: { [weak self] error in
+                            self?.view?.stopLoading()
+                            self?.view?.failure(error: error.localizedDescription)
+                        }
+                    }
+                }
             } failureHandler: { [weak self] error in
                 self?.view?.stopLoading()
                 self?.view?.success()
