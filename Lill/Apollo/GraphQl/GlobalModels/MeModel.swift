@@ -7,6 +7,7 @@ struct MeModel: Codable {
     let email: String?
     let timezone: String?
     let defaultGardenId: String?
+    var hasUdid: Bool
     var notificationSettings: NotificationSettings?
     let language: LanguageModel
     var gardens: [GardenModel]
@@ -26,6 +27,7 @@ struct MeModel: Codable {
         case email = "email"
         case timezone = "timezone"
         case defaultGardenId = "defaultGardenId"
+        case hasUdid = "hasUdid"
         case language = "Language"
         case gardens = "Gardens"
         case access = "access"

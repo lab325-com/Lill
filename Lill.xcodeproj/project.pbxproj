@@ -373,6 +373,8 @@
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
 		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
+		FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */; };
+		FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834727B13FB600124CB4 /* SaveUDID.graphql */; };
 		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
 		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
 		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
@@ -850,6 +852,8 @@
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
 		FA6405122722FA97000124A5 /* StartDiagoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDiagoseModel.swift; sourceTree = "<group>"; };
+		FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUDIDModel.swift; sourceTree = "<group>"; };
+		FA77834727B13FB600124CB4 /* SaveUDID.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SaveUDID.graphql; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialManager.swift; sourceTree = "<group>"; };
 		FA7C8CFC26FE0A6B000D2976 /* Lill.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lill.entitlements; sourceTree = "<group>"; };
@@ -2642,6 +2646,7 @@
 			isa = PBXGroup;
 			children = (
 				0207E1BF27B1549300DCD693 /* GeneratePromoOffer */,
+				FA77834527B13F4B00124CB4 /* SaveUdid */,
 				FA8C939F279033220009DA6D /* GardenCreate */,
 				FA8C9385279008250009DA6D /* GardenDelete */,
 				FA8C9373278F0AA00009DA6D /* GardenUpdate */,
@@ -2847,6 +2852,15 @@
 				FA6405122722FA97000124A5 /* StartDiagoseModel.swift */,
 			);
 			path = StartDiagnose;
+			sourceTree = "<group>";
+		};
+		FA77834527B13F4B00124CB4 /* SaveUdid */ = {
+			isa = PBXGroup;
+			children = (
+				FA77834727B13FB600124CB4 /* SaveUDID.graphql */,
+				FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */,
+			);
+			path = SaveUdid;
 			sourceTree = "<group>";
 		};
 		FA7C8CF926FDFED8000D2976 /* Managers */ = {
@@ -3562,6 +3576,7 @@
 				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
 				02BBBE7B273E623900E97712 /* PickerCaresController.xib in Resources */,
 				02DF6B432756A5410069CFF6 /* OnboardingWelcomeController.xib in Resources */,
+				FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */,
 				021BC12127707A8F0083DC65 /* GardenDetailHistoryStatisticCell.xib in Resources */,
 				021836BB278FFC560041F302 /* GardenAddToPlaceController.xib in Resources */,
 				02089EBD2754EDFA0022E1BD /* ScheduleSettingsController.xib in Resources */,
@@ -3773,7 +3788,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4034,6 +4049,7 @@
 				FA8FCD2B27182D3600173725 /* UploadMediaModel.swift in Sources */,
 				02D142C32757D9B0008A7FA3 /* IPhone13ProMax3View.swift in Sources */,
 				021BC11B277072F70083DC65 /* GaleryHistoryAddCell.swift in Sources */,
+				FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */,
 				02089EC627554E530022E1BD /* ScheduleSettingsPresenter.swift in Sources */,
 				021836C4279019800041F302 /* GardenAddToPlacePresenter.swift in Sources */,
 				02D04ED326F5E7B000F86B87 /* AppConfiguration.swift in Sources */,
@@ -4250,7 +4266,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4259,7 +4275,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4402,7 +4418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4411,7 +4427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4434,7 +4450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 48;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4443,7 +4459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

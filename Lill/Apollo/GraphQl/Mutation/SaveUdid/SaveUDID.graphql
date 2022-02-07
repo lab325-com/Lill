@@ -1,0 +1,3 @@
+mutation SaveUdid($udid: String!) {
+	saveUdid(udid: $udid)
+}

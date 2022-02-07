@@ -26,12 +26,14 @@ extension Social {
 class RestAuth: RestCalls {
     func login(token: String,
                social: Social,
+               udid: String,
                name: String = "",
                success: @escaping (AuthModel) -> (),
                failure: ((String?, Error?)->())?) {
         
         var params = ["token": token,
-                      "social" : social.valueApiRest]
+                      "social": social.valueApiRest,
+                      "udid": udid]
         
         if let fcmToken = PreferencesManager.sharedManager.fcmToken {
             params["firebaseId"] = fcmToken

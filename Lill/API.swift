@@ -3444,6 +3444,57 @@ public final class PlantToGardenMutation: GraphQLMutation {
   }
 }
 
+public final class SaveUdidMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SaveUdid($udid: String!) {
+      saveUdid(udid: $udid)
+    }
+    """
+
+  public let operationName: String = "SaveUdid"
+
+  public var udid: String
+
+  public init(udid: String) {
+    self.udid = udid
+  }
+
+  public var variables: GraphQLMap? {
+    return ["udid": udid]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("saveUdid", arguments: ["udid": GraphQLVariable("udid")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(saveUdid: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "saveUdid": saveUdid])
+    }
+
+    public var saveUdid: Bool? {
+      get {
+        return resultMap["saveUdid"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "saveUdid")
+      }
+    }
+  }
+}
+
 public final class OrderCreateMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -8171,6 +8222,7 @@ public final class MeQuery: GraphQLQuery {
         email
         timezone
         defaultGardenId
+        hasUdid
         Language {
           __typename
           id
@@ -8280,6 +8332,7 @@ public final class MeQuery: GraphQLQuery {
           GraphQLField("email", type: .scalar(String.self)),
           GraphQLField("timezone", type: .scalar(String.self)),
           GraphQLField("defaultGardenId", type: .scalar(String.self)),
+          GraphQLField("hasUdid", type: .scalar(Bool.self)),
           GraphQLField("Language", type: .object(Language.selections)),
           GraphQLField("NotificationSettings", type: .object(NotificationSetting.selections)),
           GraphQLField("Gardens", type: .list(.object(Garden.selections))),
@@ -8293,8 +8346,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -8348,6 +8401,15 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "defaultGardenId")
+        }
+      }
+
+      public var hasUdid: Bool? {
+        get {
+          return resultMap["hasUdid"] as? Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "hasUdid")
         }
       }
 
