@@ -6,5 +6,6 @@ target 'Lill' do
   
   pod 'R.swift'
   pod 'SpreadsheetView'
+  pod 'FBSDKLoginKit'
 
 end
