@@ -246,6 +246,8 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"paywall_year_new_price" = "Nuevo precio:";
+"paywall_year_old_price" = "Precio anterior:";
 "period_type_day" = "días";
 "period_type_month" = "meses";
 "period_type_week" = "semanas";

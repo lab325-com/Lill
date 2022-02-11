@@ -1,6 +1,5 @@
 
 import Foundation
-import FBSDKLoginKit
 import GoogleSignIn
 import AuthenticationServices
 import Firebase

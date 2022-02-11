@@ -3158,7 +3158,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 345 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 347 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -4012,6 +4012,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_need_cares = Rswift.StringResource(key: "garden_need_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: New price:
+      ///
+      /// Locales: en, es
+      static let paywall_year_new_price = Rswift.StringResource(key: "paywall_year_new_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Next 7 days
       ///
       /// Locales: en, es
@@ -4024,6 +4028,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_no_data = Rswift.StringResource(key: "diagnosis_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Old price:
+      ///
+      /// Locales: en, es
+      static let paywall_year_old_price = Rswift.StringResource(key: "paywall_year_old_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Overview
       ///
       /// Locales: en, es
@@ -7746,6 +7754,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_need_cares", bundle: bundle, comment: "")
       }
 
+      /// en translation: New price:
+      ///
+      /// Locales: en, es
+      static func paywall_year_new_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("paywall_year_new_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "paywall_year_new_price"
+        }
+
+        return NSLocalizedString("paywall_year_new_price", bundle: bundle, comment: "")
+      }
+
       /// en translation: Next 7 days
       ///
       /// Locales: en, es
@@ -7789,6 +7812,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_no_data", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Old price:
+      ///
+      /// Locales: en, es
+      static func paywall_year_old_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("paywall_year_old_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "paywall_year_old_price"
+        }
+
+        return NSLocalizedString("paywall_year_old_price", bundle: bundle, comment: "")
       }
 
       /// en translation: Overview

@@ -1,17 +1,20 @@
 PODS:
-  - FBAEMKit (12.3.2):
-    - FBSDKCoreKit_Basics (= 12.3.2)
-  - FBSDKCoreKit (12.3.2):
-    - FBAEMKit (= 12.3.2)
-    - FBSDKCoreKit_Basics (= 12.3.2)
-  - FBSDKCoreKit_Basics (12.3.2)
-  - R.swift (6.1.0):
+  - FBAEMKit (12.1.0):
+    - FBSDKCoreKit_Basics (= 12.1.0)
+  - FBSDKCoreKit (12.1.0):
+    - FBAEMKit (= 12.1.0)
+    - FBSDKCoreKit_Basics (= 12.1.0)
+  - FBSDKCoreKit_Basics (12.1.0)
+  - FBSDKLoginKit (12.1.0):
+    - FBSDKCoreKit (= 12.1.0)
+  - R.swift (5.4.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SpreadsheetView (0.9.1)
 
 DEPENDENCIES:
   - FBSDKCoreKit
+  - FBSDKLoginKit
   - R.swift
   - SpreadsheetView
 
@@ -20,18 +23,20 @@ SPEC REPOS:
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
     - R.swift
     - R.swift.Library
     - SpreadsheetView
 
 SPEC CHECKSUMS:
-  FBAEMKit: 955ca52eba8219c20f90774e8c6ff8bc7b3192a3
-  FBSDKCoreKit: 678f64eda3f0ff25c189c2ebbfe87b1d96a85a6d
-  FBSDKCoreKit_Basics: 6bee7c1f0932432901781203fa5e587ec5099148
-  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  FBAEMKit: 56c0bb9b42e3747cd82b67934f0c2b19325382ea
+  FBSDKCoreKit: 75368765d9c2303073145a7925dfaa9d60bcd77b
+  FBSDKCoreKit_Basics: 39865aff97e5f6951a78fb3e89dc4460e35e1895
+  FBSDKLoginKit: e993f97c7cc794c5da4056d8aec3c3d66033a727
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
 
-PODFILE CHECKSUM: 2cef27ea4727bebc2abc24677e62e68dbd2273c3
+PODFILE CHECKSUM: c95a3ac4a01f09f31b4b420fb26ea6b0cfb8e0bc
 
 COCOAPODS: 1.11.2
