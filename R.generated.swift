@@ -1742,7 +1742,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 93 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 94 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1896,6 +1896,8 @@ struct R: Rswift.Validatable {
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
     /// Nib `OnboardingWelcomeController`.
     static let onboardingWelcomeController = _R.nib._OnboardingWelcomeController()
+    /// Nib `PaywallYearController`.
+    static let paywallYearController = _R.nib._PaywallYearController()
     /// Nib `PickerCaresController`.
     static let pickerCaresController = _R.nib._PickerCaresController()
     /// Nib `PlantCollectionCell`.
@@ -2540,6 +2542,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaywallYearController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallYearController) instead")
+    static func paywallYearController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallYearController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PickerCaresController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.pickerCaresController) instead")
     static func pickerCaresController(_: Void = ()) -> UIKit.UINib {
@@ -2979,6 +2989,10 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingWelcomeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func paywallYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallYearController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func pickerCaresController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.pickerCaresController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3158,7 +3172,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 345 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 347 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -4012,6 +4026,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_need_cares = Rswift.StringResource(key: "garden_need_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: New price:
+      ///
+      /// Locales: en, es
+      static let paywall_year_new_price = Rswift.StringResource(key: "paywall_year_new_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Next 7 days
       ///
       /// Locales: en, es
@@ -4024,6 +4042,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_no_data = Rswift.StringResource(key: "diagnosis_no_data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Old price:
+      ///
+      /// Locales: en, es
+      static let paywall_year_old_price = Rswift.StringResource(key: "paywall_year_old_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Overview
       ///
       /// Locales: en, es
@@ -7746,6 +7768,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_need_cares", bundle: bundle, comment: "")
       }
 
+      /// en translation: New price:
+      ///
+      /// Locales: en, es
+      static func paywall_year_new_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("paywall_year_new_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "paywall_year_new_price"
+        }
+
+        return NSLocalizedString("paywall_year_new_price", bundle: bundle, comment: "")
+      }
+
       /// en translation: Next 7 days
       ///
       /// Locales: en, es
@@ -7789,6 +7826,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_no_data", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Old price:
+      ///
+      /// Locales: en, es
+      static func paywall_year_old_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("paywall_year_old_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "paywall_year_old_price"
+        }
+
+        return NSLocalizedString("paywall_year_old_price", bundle: bundle, comment: "")
       }
 
       /// en translation: Overview
@@ -9809,6 +9861,7 @@ struct _R: Rswift.Validatable {
       try _LoginController.validate()
       try _MenuAccauntInfoTableViewCell.validate()
       try _OnboardingWelcomeController.validate()
+      try _PaywallYearController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
       try _PopChangeNameController.validate()
@@ -11095,6 +11148,25 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "welcome_plant_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'welcome_plant_ic' is used in nib 'OnboardingWelcomeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "welcome_plant_title_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'welcome_plant_title_ic' is used in nib 'OnboardingWelcomeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PaywallYearController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaywallYearController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'PaywallYearController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallYearController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'PaywallYearController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

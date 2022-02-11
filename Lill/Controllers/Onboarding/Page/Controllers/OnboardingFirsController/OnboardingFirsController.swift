@@ -23,6 +23,8 @@ class OnboardingFirsController: BaseController {
         hiddenNavigationBar = true
         super.viewDidLoad()
         
+        PreferencesManager.sharedManager.firstPaywall = true
+        
         animationView1.isHidden = true
         animationView2.isHidden = true
         animationView3.isHidden = true
