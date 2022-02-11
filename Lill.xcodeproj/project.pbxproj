@@ -378,8 +378,6 @@
 		FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */; };
 		FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834727B13FB600124CB4 /* SaveUDID.graphql */; };
 		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
-		FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD526FB6688000D2976 /* FacebookCore */; };
-		FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CD726FB6688000D2976 /* FacebookLogin */; };
 		FA7C8CDD26FB992B000D2976 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */; };
 		FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FA7C8CEE26FCC082000D2976 /* GoogleSignIn */; };
 		FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C8CFA26FDFEFE000D2976 /* SocialManager.swift */; };
@@ -977,7 +975,6 @@
 				FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */,
 				FA8A31062701C98B00F99516 /* Toast in Frameworks */,
 				FA7C8CEF26FCC082000D2976 /* GoogleSignIn in Frameworks */,
-				FA7C8CD826FB6688000D2976 /* FacebookLogin in Frameworks */,
 				020FE33E274BDD6E00FF69F7 /* FirebaseDynamicLinks in Frameworks */,
 				02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
@@ -985,7 +982,6 @@
 				FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */,
 				020FE338274BDD6E00FF69F7 /* FirebaseAnalytics in Frameworks */,
 				02E329A827342629004344C0 /* SwiftyStoreKit in Frameworks */,
-				FA7C8CD626FB6688000D2976 /* FacebookCore in Frameworks */,
 				FAD18C8B2768C28300E3C59D /* Siren in Frameworks */,
 				FAAA234A26F51A5800E10E89 /* Apollo in Frameworks */,
 				02C6C111273A69CF003C47FF /* Alamofire in Frameworks */,
@@ -3510,8 +3506,6 @@
 			name = Lill;
 			packageProductDependencies = (
 				FAAA234926F51A5800E10E89 /* Apollo */,
-				FA7C8CD526FB6688000D2976 /* FacebookCore */,
-				FA7C8CD726FB6688000D2976 /* FacebookLogin */,
 				FA7C8CEE26FCC082000D2976 /* GoogleSignIn */,
 				FA8A31052701C98B00F99516 /* Toast */,
 				023786262706DAEC0092F63A /* Kingfisher */,
@@ -3558,7 +3552,6 @@
 			mainGroup = FAAA230326F3624F00E10E89;
 			packageReferences = (
 				FAAA234826F51A5800E10E89 /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				FA8A31042701C98B00F99516 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				023786252706DAEC0092F63A /* XCRemoteSwiftPackageReference "Kingfisher" */,
@@ -3804,6 +3797,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4572,14 +4566,6 @@
 				kind = branch;
 			};
 		};
-		FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		FA7C8CED26FCC082000D2976 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -4674,16 +4660,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA78D95C2775FA1B00721D68 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
 			productName = AppsFlyerLib;
-		};
-		FA7C8CD526FB6688000D2976 /* FacebookCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
-		};
-		FA7C8CD726FB6688000D2976 /* FacebookLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA7C8CD426FB6688000D2976 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
 		};
 		FA7C8CEE26FCC082000D2976 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

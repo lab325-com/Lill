@@ -1,24 +1,37 @@
 PODS:
-  - R.swift (5.4.0):
+  - FBAEMKit (12.3.2):
+    - FBSDKCoreKit_Basics (= 12.3.2)
+  - FBSDKCoreKit (12.3.2):
+    - FBAEMKit (= 12.3.2)
+    - FBSDKCoreKit_Basics (= 12.3.2)
+  - FBSDKCoreKit_Basics (12.3.2)
+  - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SpreadsheetView (0.9.1)
 
 DEPENDENCIES:
+  - FBSDKCoreKit
   - R.swift
   - SpreadsheetView
 
 SPEC REPOS:
   trunk:
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
     - R.swift
     - R.swift.Library
     - SpreadsheetView
 
 SPEC CHECKSUMS:
-  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  FBAEMKit: 955ca52eba8219c20f90774e8c6ff8bc7b3192a3
+  FBSDKCoreKit: 678f64eda3f0ff25c189c2ebbfe87b1d96a85a6d
+  FBSDKCoreKit_Basics: 6bee7c1f0932432901781203fa5e587ec5099148
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
 
-PODFILE CHECKSUM: a569d1dd6df6605f5be4389d4ab865c0df2b136f
+PODFILE CHECKSUM: 2cef27ea4727bebc2abc24677e62e68dbd2273c3
 
 COCOAPODS: 1.11.2

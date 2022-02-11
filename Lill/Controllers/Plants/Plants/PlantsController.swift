@@ -225,16 +225,19 @@ class PlantsController: BaseController {
                 ATTrackingManager.requestTrackingAuthorization {  status in
                     switch status {
                     case .authorized:
-                        Settings.isAdvertiserIDCollectionEnabled = true
+                        Settings.shared.isAdvertiserIDCollectionEnabled = true
+                        Settings.shared.isAdvertiserTrackingEnabled = true
                         break
                     case .denied:
-                        Settings.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
                         break
                     case .notDetermined:
                         // Tracking authorization dialog has not been shown
                         print("Not Determined")
                     case .restricted:
-                        Settings.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
                         print("Restricted")
                     @unknown default:
                         print("Unknown")

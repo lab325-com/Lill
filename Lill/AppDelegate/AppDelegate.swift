@@ -10,6 +10,7 @@ import SwiftyStoreKit
 import StoreKit
 import Siren
 import AppsFlyerLib
+import SwiftUI
 
 //----------------------------------------------
 // MARK: - Typealias
@@ -35,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Facebook analytics
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        Settings.isAdvertiserIDCollectionEnabled = true
-        AppEvents.activateApp()
+//        Settings.shared.isAdvertiserTrackingEnabled = true
+        AppEvents.shared.activateApp()
         
         //AppsFlyer analytics
         
