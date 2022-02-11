@@ -11,6 +11,7 @@ import StoreKit
 import Siren
 import AppsFlyerLib
 import SwiftUI
+import AppTrackingTransparency
 
 //----------------------------------------------
 // MARK: - Typealias
@@ -36,8 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Facebook analytics
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-//        Settings.shared.isAdvertiserTrackingEnabled = true
         AppEvents.shared.activateApp()
+        
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus == .authorized {
+                Settings.shared.isAdvertiserIDCollectionEnabled = true
+                Settings.shared.isAdvertiserTrackingEnabled = true
+            } else {
+                Settings.shared.isAdvertiserIDCollectionEnabled = false
+                Settings.shared.isAdvertiserTrackingEnabled = false
+            }
+        }
         
         //AppsFlyer analytics
         
