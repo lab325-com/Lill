@@ -8284,6 +8284,11 @@ public final class MeQuery: GraphQLQuery {
             duration
           }
         }
+        Sales {
+          __typename
+          id
+          name
+        }
       }
     }
     """
@@ -8337,6 +8342,7 @@ public final class MeQuery: GraphQLQuery {
           GraphQLField("NotificationSettings", type: .object(NotificationSetting.selections)),
           GraphQLField("Gardens", type: .list(.object(Garden.selections))),
           GraphQLField("access", type: .object(Access.selections)),
+          GraphQLField("Sales", type: .list(.object(Sale.selections))),
         ]
       }
 
@@ -8346,8 +8352,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil, sales: [Sale?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }, "Sales": sales.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -8446,6 +8452,15 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue?.resultMap, forKey: "access")
+        }
+      }
+
+      public var sales: [Sale?]? {
+        get {
+          return (resultMap["Sales"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Sale?] in value.map { (value: ResultMap?) -> Sale? in value.flatMap { (value: ResultMap) -> Sale in Sale(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }, forKey: "Sales")
         }
       }
 
@@ -9087,6 +9102,55 @@ public final class MeQuery: GraphQLQuery {
             set {
               resultMap.updateValue(newValue, forKey: "duration")
             }
+          }
+        }
+      }
+
+      public struct Sale: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Sale"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("name", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, name: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Sale", "id": id, "name": name])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return resultMap["name"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
           }
         }
       }

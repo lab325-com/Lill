@@ -138,7 +138,7 @@ class PlantsController: BaseController {
 //        collectionView.contentInset = UIEdgeInsetsMake(98,0,0,0)
 //        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
         
-        if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false {
+        if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
             MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil)
         }
     }
@@ -170,7 +170,7 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
-        if KeychainService.standard.me?.access.isPremium == false {
+        if KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
             if let date = PreferencesManager.sharedManager.datePaywall, let countDate = PreferencesManager.sharedManager.countInDatePaywall {
                 let calendar = Calendar.current
                 

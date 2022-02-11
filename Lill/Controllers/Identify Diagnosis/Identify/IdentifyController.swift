@@ -221,7 +221,11 @@ class IdentifyController: BaseController {
     @IBAction func subscribeAction(_ sender: Any) {
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+            if StoreKitManager.sharedInstance.isYearly50() {
+                MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+            } else {
+                MenuRouter(presenter: currentNavigationController).presentSubscription()
+            }
         }
     }
     

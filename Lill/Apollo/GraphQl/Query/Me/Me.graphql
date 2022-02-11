@@ -59,5 +59,9 @@ query Me {
 				duration
 			}
 		}
+        Sales {
+            id
+            name
+        }
 	}
 }

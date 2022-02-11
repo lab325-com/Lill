@@ -3099,10 +3099,10 @@
 			children = (
 				02E329A427342586004344C0 /* SubscribePresenter.swift */,
 				0207E1A927B0FF3300DCD693 /* SubscribeYearPresenter.swift */,
+				0271C53827AD76C300479376 /* StoreKitManager.swift */,
 				021B351027B568B4002DAC0E /* PaywallYearController */,
 				02A3C67427AD546900AF7398 /* SubscribeYearController */,
 				02E329A927343270004344C0 /* SubcribeController */,
-				0271C53827AD76C300479376 /* StoreKitManager.swift */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -3796,7 +3796,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {

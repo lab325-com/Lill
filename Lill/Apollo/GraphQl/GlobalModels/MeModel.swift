@@ -12,6 +12,7 @@ struct MeModel: Codable {
     let language: LanguageModel
     var gardens: [GardenModel]
     let access: AccessModel
+    let sales: [SalesModel]?
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification
@@ -32,6 +33,7 @@ struct MeModel: Codable {
         case gardens = "Gardens"
         case access = "access"
         case notificationSettings = "NotificationSettings"
+        case sales = "Sales"
     }
 }
 
@@ -51,4 +53,9 @@ struct NotificationsHours:  Codable {
     let hours: Int
     let minutes: Int?
     let seconds: Int?
+}
+
+struct SalesModel: Codable {
+    let id: String
+    let name: String
 }
