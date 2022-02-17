@@ -3444,6 +3444,57 @@ public final class PlantToGardenMutation: GraphQLMutation {
   }
 }
 
+public final class ReportRecognizeMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation ReportRecognize($recognizeId: String!) {
+      reportRecognize(recognizeId: $recognizeId)
+    }
+    """
+
+  public let operationName: String = "ReportRecognize"
+
+  public var recognizeId: String
+
+  public init(recognizeId: String) {
+    self.recognizeId = recognizeId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["recognizeId": recognizeId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("reportRecognize", arguments: ["recognizeId": GraphQLVariable("recognizeId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(reportRecognize: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "reportRecognize": reportRecognize])
+    }
+
+    public var reportRecognize: Bool? {
+      get {
+        return resultMap["reportRecognize"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "reportRecognize")
+      }
+    }
+  }
+}
+
 public final class SaveUdidMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

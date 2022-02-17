@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 58 files.
+  /// This `R.file` struct is generated, and contains static references to 59 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -243,6 +243,8 @@ struct R: Rswift.Validatable {
     static let recognizeArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognizeArhive", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
+    /// Resource file `ReportRecognize.graphql`.
+    static let reportRecognizeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ReportRecognize", pathExtension: "graphql")
     /// Resource file `SFProDisplay-Bold.ttf`.
     static let sfProDisplayBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Bold", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Medium.ttf`.
@@ -533,6 +535,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Release", withExtension: "xcconfig")`
     static func releaseXcconfig(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.releaseXcconfig
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ReportRecognize", withExtension: "graphql")`
+    static func reportRecognizeGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.reportRecognizeGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 

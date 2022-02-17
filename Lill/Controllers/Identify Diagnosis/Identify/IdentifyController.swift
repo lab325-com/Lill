@@ -10,6 +10,7 @@ class IdentifyController: BaseController {
     
     @IBOutlet weak var topView: ShadowView!
     @IBOutlet weak var bottomView: ShadowView!
+    @IBOutlet weak var noResultsView: ShadowView!
     @IBOutlet weak var captureView: ShadowView!
     
     @IBOutlet weak var identifyOnboardingView: UIView!
@@ -22,6 +23,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var capturedView: UIView!
     
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var noResultsStackView: UIStackView!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var makePhotoTitleLabel: UILabel!
@@ -44,11 +46,15 @@ class IdentifyController: BaseController {
     @IBOutlet weak var identifyAnalyzeIdentifyPlantLabel: UILabel!
     @IBOutlet weak var identifyResultsLabel: UILabel!
     @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var noResultsLabel: UILabel!
     
     @IBOutlet weak var startIdentifyButton: UIButton!
     @IBOutlet weak var identifyPhotoButton: UIButton!
     @IBOutlet weak var retakePhotoButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var noResulsRetakeButton: UIButton!
+    @IBOutlet weak var noResulsSearchButton: UIButton!
+    @IBOutlet weak var noResulsReportButton: UIButton!
     
     @IBOutlet weak var analizeActivity: UIActivityIndicatorView!
     @IBOutlet weak var identifyActivity: UIActivityIndicatorView!
@@ -59,10 +65,6 @@ class IdentifyController: BaseController {
     @IBOutlet weak var capturedImageView: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var identifierRecongizeCount: UILabel!
-    @IBOutlet weak var recognizeArchiveTitle: UILabel!
-    @IBOutlet weak var recognizeBottomView: ShadowView!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -112,7 +114,7 @@ class IdentifyController: BaseController {
     //----------------------------------------------
     
     func setup() {
-        recognizeArchiveTitle.text = RLocalization.menu_item_archive_recognized.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),
                                 forCellWithReuseIdentifier: cellIdentifier)
@@ -120,6 +122,8 @@ class IdentifyController: BaseController {
         captureView.layer.borderColor = UIColor.white.cgColor
         capturedView.layer.borderColor = UIColor.white.cgColor
         
+        noResultsView.layer.cornerRadius = 24.0
+        noResultsView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         bottomView.layer.cornerRadius = 24.0
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         topView.layer.cornerRadius = 24.0
@@ -149,9 +153,15 @@ class IdentifyController: BaseController {
         
         noDataLabel.text = RLocalization.identify_no_data()
         
+        noResultsLabel.text = "No correct results?"
+        noResultsStackView.setCustomSpacing(9.0, after: noResulsSearchButton)
+        
         startIdentifyButton.setTitle(RLocalization.identify_start_identify(), for: .normal)
         identifyPhotoButton.setTitle(RLocalization.identify_result_identify_photo(), for: .normal)
         retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo(), for: .normal)
+        noResulsReportButton.setTitle("Retake Photo", for: .normal)
+        noResulsSearchButton.setTitle("Search by Catalog", for: .normal)
+        noResulsReportButton.setTitle("Send Report!", for: .normal)
         
         guard let meModel = KeychainService.standard.me else { return }
         identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"
@@ -256,8 +266,16 @@ class IdentifyController: BaseController {
         }
     }
     
-    @IBAction func actionGoToRecognizeArchive(_ sender: UIButton) {
-        MenuRouter(presenter: self.navigationController).pushRecognizedArchive()
+    @IBAction func noResultsRetakeAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func noResultsSearchAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func noResultsReportAction(_ sender: Any) {
+        
     }
 }
 
@@ -324,10 +342,9 @@ extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
             self.identifyImageView.isHidden = false
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.recognizeBottomView.isHidden = false
-                self.identifierRecongizeCount.text = KeychainService.standard.me?.access.identifyTotal == nil ? "\(KeychainService.standard.me?.access.identifyUsed ?? 0)/\(KeychainService.standard.me?.access.identifyUsed ?? 0)" : "\(KeychainService.standard.me?.access.identifyUsed ?? 0)/\(KeychainService.standard.me?.access.identifyTotal ?? 0)"
                 self.bottomView.isHidden = true
                 self.capturedView.isHidden = true
+                self.noResultsView.isHidden = false
                 self.identifyResultsLabel.isHidden = false
                 self.identifyResultsLabel.text = RLocalization.identify_results()
                 
