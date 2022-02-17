@@ -92,7 +92,11 @@ class ChooseIdentify: BaseController {
             if meModel.access.identifyUsed < total {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
-                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+                if StoreKitManager.sharedInstance.isYearly50() {
+                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+                } else {
+                    MenuRouter(presenter: currentNavigationController).presentSubscription()
+                }
             }
         }
     }
@@ -111,7 +115,11 @@ class ChooseIdentify: BaseController {
             if meModel.access.diagnosisUsed < total {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
-                PlantsRouter(presenter: currentNavigationController).presentSubscribe()
+                if StoreKitManager.sharedInstance.isYearly50() {
+                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+                } else {
+                    MenuRouter(presenter: currentNavigationController).presentSubscription()
+                }
             }
         }
     }

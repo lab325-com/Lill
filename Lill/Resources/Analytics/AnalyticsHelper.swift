@@ -155,6 +155,13 @@ enum AppsFlyerEvents: String {
     case appsflyer_start_subscription_process = "appsflyer_start_subscription_process"
 }
 
+enum FacebookEvents: String {
+    case fb_identify_success = "fb_identify_success"
+    case fb_diagnose_success = "fb_diagnose_success"
+    case fb_purchase_success = "fb_purchase_success"
+    case fb_start_subscription_process = "fb_start_subscription_process"
+}
+
 class AnalyticsHelper: NSObject {
     static func sendFirebaseEvents(events: String, params: [String : Any]? = nil) {
         Analytics.logEvent(events, parameters: params)
@@ -171,5 +178,9 @@ class AnalyticsHelper: NSObject {
     
     static func sendAppsFlyerEvent(event: AppsFlyerEvents, values: [AnyHashable : Any]? = nil) {
         AppsFlyerLib.shared().logEvent(event.rawValue, withValues: values)
+    }
+    
+    static func sendFacebookEvent(event: FacebookEvents, values: [String : Any]? = nil) {
+        Analytics.logEvent(event.rawValue, parameters: values)
     }
 }

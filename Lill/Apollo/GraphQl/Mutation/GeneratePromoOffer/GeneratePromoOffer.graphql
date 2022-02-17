@@ -1,0 +1,9 @@
+mutation GeneratePromoOffer($record: GeneratePromoOfferRecordInput!) {
+	generatePromoOffer(record: $record) {
+		keyID
+        nonce
+        timestamp
+        signature
+        applicationUsername
+	}
+}

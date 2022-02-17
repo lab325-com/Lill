@@ -1,6 +1,5 @@
 
 import Foundation
-import FBSDKLoginKit
 import GoogleSignIn
 import AuthenticationServices
 import Firebase
@@ -47,14 +46,14 @@ class LoginPresenter: LoginPresenterProtocol {
         case .apple:
             socialManager.loginApple()
         case .none:
-            loginUser(token: uuid, firebaseId: "", social: .none)
+            loginUser(token: uuid, firebaseId: "", social: .none, udid: "")
         }
     }
     
-    func loginUser(token: String, firebaseId: String, social: Social) {
+    func loginUser(token: String, firebaseId: String, social: Social, udid: String) {
         view?.startLoader()
     
-        RestAuth().login(token: token, social: social) { [weak self] model in
+        RestAuth().login(token: token, social: social, udid: udid) { [weak self] model in
             KeychainService.standard.newAuthToken = model
             
             switch social {
@@ -73,8 +72,23 @@ class LoginPresenter: LoginPresenterProtocol {
             let query = MeQuery()
             let _ = Network.shared.query(model: MeDataModel.self, query, controller: self?.view) { [weak self] model in
                 KeychainService.standard.me = model.me
-                self?.view?.stopLoading()
-                self?.view?.success()
+                if model.me.hasUdid {
+                    self?.view?.stopLoading()
+                    self?.view?.success()
+                } else {
+                    if let udid = UIDevice.current.identifierForVendor?.uuidString {
+                        let mutation = SaveUdidMutation(udid: udid)
+                        let _ = Network.shared.mutation(model: SaveUdidModel.self, mutation, controller: self?.view) { [weak self] model in
+                            if model.saveUdid {
+                                self?.view?.stopLoading()
+                                self?.view?.success()
+                            }
+                        } failureHandler: { [weak self] error in
+                            self?.view?.stopLoading()
+                            self?.view?.failure(error: error.localizedDescription)
+                        }
+                    }
+                }
             } failureHandler: { [weak self] error in
                 self?.view?.stopLoading()
                 self?.view?.success()
@@ -91,8 +105,8 @@ class LoginPresenter: LoginPresenterProtocol {
 //----------------------------------------------
 
 extension LoginPresenter: SocialManagerDelegate {
-    func login(service: SocialManager, token: String, social: Social) {
-        loginUser(token: token, firebaseId: "", social: social)
+    func login(service: SocialManager, token: String, social: Social, udid: String) {
+        loginUser(token: token, firebaseId: "", social: social, udid: udid)
     }
     
     func login(service: SocialManager, error: Error?) {

@@ -194,6 +194,8 @@ class SubcribeController: BaseController {
     @IBAction func actionYearSubscription(_ sender: UIButton) {
         AnalyticsHelper.sendFirebaseEvents(events: .start_subscription_process, params: ["subscription_type": "year"])
         AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "year"])
+        AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "year"])
+        
         presenter.purchase(id: self.fistSub.rawValue) { [weak self] result, error in
             if result {
                 self?.dismiss(animated: true, completion: nil)
@@ -206,6 +208,8 @@ class SubcribeController: BaseController {
     @IBAction func actionMonthSubscription(_ sender: UIButton) {
         AnalyticsHelper.sendFirebaseEvents(events: .start_subscription_process, params: ["subscription_type": "mounth"])
         AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "mounth"])
+        AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "mounth"])
+        
         presenter.purchase(id: self.secondSub.rawValue) { [weak self] result, error in
             self?.checkSubscribeUI()
             if result {

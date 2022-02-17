@@ -31,9 +31,4 @@ class PlantsRouter: BaseRouter {
         let controller = DiagnosisController()
         present(controller: controller)
     }
-    
-    func presentSubscribe() {
-        let controller = SubcribeController()
-        present(controller: controller)
-    }
 }

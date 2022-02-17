@@ -67,6 +67,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
                 guard let `self` = self else { return }
                 AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": modelRecognize.startRecognize.count])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_identify_success)
+                AnalyticsHelper.sendFacebookEvent(event: .fb_identify_success)
                 
                 let queryMe = MeQuery()
                 

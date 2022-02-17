@@ -9,6 +9,7 @@ import Foundation
 
 class MenuRouter: BaseRouter {
     func logOut(){
+        PreferencesManager.sharedManager.removePreference()
         KeychainService.standard.removeAll()
         RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
     }
@@ -34,5 +35,19 @@ class MenuRouter: BaseRouter {
     func presentSubscription() {
         let controller = SubcribeController()
         present(controller: controller)
+    }
+    
+    func presentYearSubscription() {
+        let controller = SubscribeYearController()
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
+    
+    func presentYearPaywall(delegate: PaywallYearDelegate?) {
+        let controller = PaywallYearController(delegate: delegate)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
     }
 }

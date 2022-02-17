@@ -14,6 +14,10 @@
 "add_plant_time" = "Hora";
 "add_plant_time_subtitle" = "Por favor, establezca el Cuidado para su nueva Planta";
 "add_plants_success" = "¡La planta se agregó a tu jardín!";
+"allert_camer_permission_cancel" = "Cancelar";
+"allert_camer_permission_settings" = "Ajustes";
+"allert_camer_permission_subtittle" = "Ir a la configuración del permiso de la cámara?";
+"allert_camer_permission_title" = "Permisos";
 "allert_logout_message" = "¿Seguro que quieres cerrar sesión?";
 "allert_no" = "NO";
 "allert_yes" = "SÍ";
@@ -225,7 +229,7 @@
 "login_apple" = "Inicia sesión con Apple";
 "login_facebook" = "Inicia sesión con Facebook";
 "login_google" = "Inicia sesión con Google";
-"login_info" = "Explora plantas y crea el jardín de tus sueños";
+"login_info" = "Explora plantas y crea\nel jardín de tus sueños";
 "login_instagram" = "Inicia sesión con Instagram";
 "menu_account" = "cuenta";
 "menu_item_archive_disease" = "Archivado de la enfermedad";
@@ -242,6 +246,8 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"paywall_year_new_price" = "Nuevo precio:";
+"paywall_year_old_price" = "Precio anterior:";
 "period_type_day" = "días";
 "period_type_month" = "meses";
 "period_type_week" = "semanas";
@@ -296,6 +302,12 @@
 "scheldure_setting_waiting" = "Espera";
 "scheldure_title" = "Calendario";
 "scheldure_today" = "Hoy";
+"subscribe_year_one" = "1 año";
+"subscribe_year_plant_identification" = "identificación de la planta\ny diagnóstico";
+"subscribe_year_premium" = "Convertirse en una prima";
+"subscribe_year_save" = "Ahorre un 33% de descuento";
+"subscribe_year_subscribe" = "Suscribir";
+"subscribe_year_unlimited" = "Ilimitado";
 "subscription_active" = "Activo";
 "subscription_cancel_any_time" = "Cancela en cualquier momento";
 "subscription_description" = "Puede cancenlar su suscripción de prueba gratuita en cualquier momento cancelando su suscripción a través de la configuración de su cuenta Itunes, de lo contrario se renovará automáticamente. Esto debe hacerse al menos 24 horas antes del final de la prueba gratuita o cualquier período de suscripción para evitar el cobro. Una suscripción con un período de prueba gratuita se renovará automáticamente a una suscripción de pago. Por favor tenga en cuenta que cualquier porción no utilizada de período de prueba gratuita (en caso de ofrecerse) se perderá al comprar una suscripción premium durante el período de prueba gratuita. Los pagos de la suscripción se cargarán a tu cuenta iTunes al confirmar la compra y tras el comienzo de cada término de renovación. Para más información, por favor revise nuestros Términos de Uso y Política de Privacidad.";

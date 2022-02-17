@@ -10,6 +10,8 @@ import SwiftyStoreKit
 import StoreKit
 import Siren
 import AppsFlyerLib
+import SwiftUI
+import AppTrackingTransparency
 
 //----------------------------------------------
 // MARK: - Typealias
@@ -26,23 +28,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+       // SKPaymentQueue.default().add(StoreKitManager.sharedInstance)
+        
+        //Firebase analytics
+        
         FirebaseApp.configure()
                 
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        //Facebook analytics
         
-        checkingPurchase()
-        SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
-            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
-                controller.startLoader()
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        AppEvents.shared.activateApp()
+        
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus == .authorized {
+                Settings.shared.isAdvertiserIDCollectionEnabled = true
+                Settings.shared.isAdvertiserTrackingEnabled = true
+            } else {
+                Settings.shared.isAdvertiserIDCollectionEnabled = false
+                Settings.shared.isAdvertiserTrackingEnabled = false
             }
-            return true // or false if user shall not purchase the product yet
         }
         
-        forceUpdate()
-        
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        
-        Messaging.messaging().delegate = self
+        //AppsFlyer analytics
         
         AppsFlyerLib.shared().appsFlyerDevKey = "sapALRVCHUnGS6xNLJQPjS"
         AppsFlyerLib.shared().appleAppID = "1586099684"
@@ -50,6 +57,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().isDebug = true
         AppsFlyerLib.shared().useReceiptValidationSandbox = true
         AppsFlyerLib.shared().useUninstallSandbox = true
+        
+        checkingPurchase()
+        forceUpdate()
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
+            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
+                controller.startLoader()
+            }
+            return true // or false if user shall not purchase the product yet
+        }
+    
+        Messaging.messaging().delegate = self
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self

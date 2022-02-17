@@ -137,6 +137,10 @@ class PlantsController: BaseController {
         
 //        collectionView.contentInset = UIEdgeInsetsMake(98,0,0,0)
 //        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
+        
+        if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil)
+        }
     }
     
     //----------------------------------------------
@@ -166,7 +170,33 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
-        PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+        if KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
+            if let date = PreferencesManager.sharedManager.datePaywall, let countDate = PreferencesManager.sharedManager.countInDatePaywall {
+                let calendar = Calendar.current
+                
+                let date1 = calendar.startOfDay(for: date)
+                let date2 = calendar.startOfDay(for: Date())
+                
+                let components = calendar.dateComponents([.day], from: date1, to: date2)
+                
+                if components.day == 0, countDate < 3 {
+                    PreferencesManager.sharedManager.countInDatePaywall = countDate + 1
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+                } else if components.day == 0, countDate > 2 {
+                    PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+                } else {
+                    PreferencesManager.sharedManager.countInDatePaywall = 1
+                    PreferencesManager.sharedManager.datePaywall = Date()
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+                }
+            } else {
+                PreferencesManager.sharedManager.countInDatePaywall = 1
+                PreferencesManager.sharedManager.datePaywall = Date()
+                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+            }
+        } else {
+            PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -195,16 +225,19 @@ class PlantsController: BaseController {
                 ATTrackingManager.requestTrackingAuthorization {  status in
                     switch status {
                     case .authorized:
-                        Settings.isAdvertiserIDCollectionEnabled = true
+                        Settings.shared.isAdvertiserIDCollectionEnabled = true
+                        Settings.shared.isAdvertiserTrackingEnabled = true
                         break
                     case .denied:
-                        Settings.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
                         break
                     case .notDetermined:
                         // Tracking authorization dialog has not been shown
                         print("Not Determined")
                     case .restricted:
-                        Settings.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
                         print("Restricted")
                     @unknown default:
                         print("Unknown")
@@ -214,6 +247,18 @@ class PlantsController: BaseController {
             }
         } else {
             
+        }
+    }
+}
+
+//----------------------------------------------
+// MARK: - PlantsOutputProtocol
+//----------------------------------------------
+
+extension PlantsController: PaywallYearDelegate {
+    func paywallYearClose(controller: PaywallYearController) {
+        DispatchQueue.main.async {
+            PopUpRouter(presenter: self.navigationController).presentUniquePlant(tabBarController: self.tabBarController, delegate: self)
         }
     }
 }

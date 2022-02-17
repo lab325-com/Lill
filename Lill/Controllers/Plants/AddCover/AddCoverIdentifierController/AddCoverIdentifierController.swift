@@ -164,6 +164,9 @@ extension AddCoverIdentifierController: UIImagePickerControllerDelegate, UINavig
         self.capturedImage = image
         
         DispatchQueue.main.async {
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+            
             if let id = self.sendToGardenId {
                 self.presenter.uploadMedia(id: id, img: image)
             } else {
@@ -187,13 +190,14 @@ extension AddCoverIdentifierController: AVCaptureVideoDataOutputSampleBufferDele
         let uiImage = UIImage(ciImage: ciImage)
         
         DispatchQueue.main.async {
+            self.captureSession.stopRunning()
+            self.previewLayer?.removeFromSuperlayer()
+            
             if let id = self.sendToGardenId {
                 self.presenter.uploadMedia(id: id, img: uiImage)
             }  else {
                 AddCoverRouter(presenter: self.navigationController).pushAddCover(coverImage: uiImage, text: self.text, delegate: self)
             }
-            self.capturedImage = uiImage
-            self.takePicture = false
         }
     }
 }
@@ -219,24 +223,52 @@ extension AddCoverIdentifierController: AddCoverAddProtocol {
 extension AddCoverIdentifierController {
     
     func setupAndStartCaptureSession() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.captureSession = AVCaptureSession()
-            self.captureSession.beginConfiguration()
-            if self.captureSession.canSetSessionPreset(.photo) {
-                self.captureSession.sessionPreset = .photo
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized, .notDetermined:
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.captureSession = AVCaptureSession()
+                self.captureSession.beginConfiguration()
+                if self.captureSession.canSetSessionPreset(.photo) {
+                    self.captureSession.sessionPreset = .photo
+                }
+                self.captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
+                
+                self.setupInputs()
+                
+                DispatchQueue.main.async {
+                    self.setupPreviewLayer()
+                }
+                
+                self.setupOutput()
+                
+                self.captureSession.commitConfiguration()
+                self.captureSession.startRunning()
             }
-            self.captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
-            
-            self.setupInputs()
-            
-            DispatchQueue.main.async {
-                self.setupPreviewLayer()
-            }
-            
-            self.setupOutput()
-            
-            self.captureSession.commitConfiguration()
-            self.captureSession.startRunning()
+        default:
+            let alert = UIAlertController(title: RLocalization.allert_camer_permission_title.localized(PreferencesManager.sharedManager.languageCode.rawValue), message: RLocalization.allert_camer_permission_subtittle.localized(PreferencesManager.sharedManager.languageCode.rawValue), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: RLocalization.allert_camer_permission_settings.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .default, handler: { action in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        self.dismiss(animated: true)
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }))
+            alert.addAction(UIAlertAction(title: RLocalization.allert_camer_permission_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .default, handler: { action in
+                self.dismiss(animated: true)
+                self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            break
         }
     }
     

@@ -11,6 +11,9 @@ class PreferencesManager : NSObject {
     static let languageCode = "languageCode"
     static let fcmToken = "fcmToken"
     static let isNeedSendReceipts = "isNeedSendReceipts"
+    static let datePaywall = "datePaywall"
+    static let firstPaywall = "firstPaywall"
+    static let countInDatePaywall = "countInDatePaywall"
     
     var userDefaults: UserDefaults
     
@@ -129,5 +132,40 @@ class PreferencesManager : NSObject {
         set {
             self.set(newValue, forKey: PreferencesManager.fcmToken)
         }
+    }
+    
+    var datePaywall: Date? {
+        get {
+            return self.model(forKey: PreferencesManager.datePaywall)
+        }
+        set {
+            self.set(newValue, forKey: PreferencesManager.datePaywall)
+        }
+    }
+    
+    var firstPaywall: Bool {
+        get {
+            return userDefaults.bool(forKey: PreferencesManager.firstPaywall)
+        }
+        set {
+            userDefaults.set(newValue, forKey: PreferencesManager.firstPaywall)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var countInDatePaywall: Int? {
+        get {
+            return userDefaults.integer(forKey: PreferencesManager.countInDatePaywall)
+        }
+        set {
+            userDefaults.set(newValue, forKey: PreferencesManager.countInDatePaywall)
+            userDefaults.synchronize()
+        }
+    }
+    
+    func removePreference() {
+        PreferencesManager.sharedManager.firstPaywall = false
+        PreferencesManager.sharedManager.countInDatePaywall = nil
+        PreferencesManager.sharedManager.datePaywall = nil
     }
 }

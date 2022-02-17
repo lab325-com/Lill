@@ -5,6 +5,7 @@ query Me {
 		email
 		timezone
 		defaultGardenId
+		hasUdid
 		Language {
 			id
 			name
@@ -58,5 +59,9 @@ query Me {
 				duration
 			}
 		}
+        Sales {
+            id
+            name
+        }
 	}
 }
