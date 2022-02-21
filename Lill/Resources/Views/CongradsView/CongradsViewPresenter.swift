@@ -1,11 +1,12 @@
 
+import UIKit
 import Foundation
 import SwiftEntryKit
 
 final class CongradsViewPresenter {
     
-    static func showCongradsView(textSubtitle: String? = nil) {
-        let congradsView = CongradsView.defaultView(textSubtitle: textSubtitle)
+    static func showCongradsView() {
+        let congradsView = CongradsView.defaultView()
         
         var attributes = EKAttributes()
         attributes = .centerFloat

@@ -1,0 +1,4 @@
+
+mutation ReportRecognize($recognizeId: String!) {
+	reportRecognize(recognizeId: $recognizeId)
+}

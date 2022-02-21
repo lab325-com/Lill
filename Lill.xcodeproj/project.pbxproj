@@ -371,6 +371,11 @@
 		FA545487274E8C7A006B52F4 /* StatusGardenCareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545486274E8C7A006B52F4 /* StatusGardenCareType.swift */; };
 		FA54548C274F00EF006B52F4 /* DoneAllCaresByGardenPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54548A274F00EF006B52F4 /* DoneAllCaresByGardenPlantModel.swift */; };
 		FA54548D274F00EF006B52F4 /* DoneAllCaresByGardenPlant.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA54548B274F00EF006B52F4 /* DoneAllCaresByGardenPlant.graphql */; };
+		FA5785DB27C386920095BC0F /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5785D927C386920095BC0F /* ReportView.swift */; };
+		FA5785E027C3BFF40095BC0F /* ReportViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5785DF27C3BFF40095BC0F /* ReportViewPresenter.swift */; };
+		FA5785E227C3D6040095BC0F /* ReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5785E127C3D6040095BC0F /* ReportView.xib */; };
+		FA62365B27BE5D75005C593B /* ReportRecognizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62365927BE5D75005C593B /* ReportRecognizeModel.swift */; };
+		FA62365C27BE5D75005C593B /* ReportRecognize.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA62365A27BE5D75005C593B /* ReportRecognize.graphql */; };
 		FA64050B27205515000124A5 /* AccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050A27205515000124A5 /* AccessModel.swift */; };
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
@@ -850,6 +855,11 @@
 		FA545486274E8C7A006B52F4 /* StatusGardenCareType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusGardenCareType.swift; sourceTree = "<group>"; };
 		FA54548A274F00EF006B52F4 /* DoneAllCaresByGardenPlantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenPlantModel.swift; sourceTree = "<group>"; };
 		FA54548B274F00EF006B52F4 /* DoneAllCaresByGardenPlant.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGardenPlant.graphql; sourceTree = "<group>"; };
+		FA5785D927C386920095BC0F /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		FA5785DF27C3BFF40095BC0F /* ReportViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewPresenter.swift; sourceTree = "<group>"; };
+		FA5785E127C3D6040095BC0F /* ReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportView.xib; sourceTree = "<group>"; };
+		FA62365927BE5D75005C593B /* ReportRecognizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportRecognizeModel.swift; sourceTree = "<group>"; };
+		FA62365A27BE5D75005C593B /* ReportRecognize.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportRecognize.graphql; sourceTree = "<group>"; };
 		FA64050A27205515000124A5 /* AccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessModel.swift; sourceTree = "<group>"; };
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
@@ -2654,6 +2664,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FA62365827BE5D3A005C593B /* ReportRecognize */,
 				0207E1BF27B1549300DCD693 /* GeneratePromoOffer */,
 				FA77834527B13F4B00124CB4 /* SaveUdid */,
 				FA8C939F279033220009DA6D /* GardenCreate */,
@@ -2716,9 +2727,9 @@
 		FA24A59A2732BB870059AF6A /* CongradsView */ = {
 			isa = PBXGroup;
 			children = (
-				FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */,
 				FA24A59D2732BCCE0059AF6A /* CongradsView.swift */,
 				FA24A59F2732BCD80059AF6A /* CongradsView.xib */,
+				FA24A59B2732BC830059AF6A /* CongradsViewPresenter.swift */,
 			);
 			path = CongradsView;
 			sourceTree = "<group>";
@@ -2836,6 +2847,25 @@
 				FA54548A274F00EF006B52F4 /* DoneAllCaresByGardenPlantModel.swift */,
 			);
 			path = DoneAllCaresByGardenPlant;
+			sourceTree = "<group>";
+		};
+		FA5785D827C3864A0095BC0F /* ReportView */ = {
+			isa = PBXGroup;
+			children = (
+				FA5785D927C386920095BC0F /* ReportView.swift */,
+				FA5785E127C3D6040095BC0F /* ReportView.xib */,
+				FA5785DF27C3BFF40095BC0F /* ReportViewPresenter.swift */,
+			);
+			path = ReportView;
+			sourceTree = "<group>";
+		};
+		FA62365827BE5D3A005C593B /* ReportRecognize */ = {
+			isa = PBXGroup;
+			children = (
+				FA62365A27BE5D75005C593B /* ReportRecognize.graphql */,
+				FA62365927BE5D75005C593B /* ReportRecognizeModel.swift */,
+			);
+			path = ReportRecognize;
 			sourceTree = "<group>";
 		};
 		FA640509272041FD000124A5 /* Presenter */ = {
@@ -3437,6 +3467,7 @@
 		FAFCF350271575D400C3134E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA5785D827C3864A0095BC0F /* ReportView */,
 				FA24A59A2732BB870059AF6A /* CongradsView */,
 				FAB26ACE2716C89A00B3EFDF /* ShadowView.swift */,
 				FAFCF3512715760A00C3134E /* GradientView.swift */,
@@ -3579,6 +3610,7 @@
 			files = (
 				FA54548D274F00EF006B52F4 /* DoneAllCaresByGardenPlant.graphql in Resources */,
 				02A4BA3726FDCFEF00DF6A08 /* OnboardingSecondController.xib in Resources */,
+				FA62365C27BE5D75005C593B /* ReportRecognize.graphql in Resources */,
 				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
 				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
 				02BBBE7B273E623900E97712 /* PickerCaresController.xib in Resources */,
@@ -3726,6 +3758,7 @@
 				0273B8C627455D8B009A2247 /* GardenDetailCaresCell.xib in Resources */,
 				02A4604E274279E300D5D931 /* CareType.graphql in Resources */,
 				02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */,
+				FA5785E227C3D6040095BC0F /* ReportView.xib in Resources */,
 				FAAA231926F3625200E10E89 /* Assets.xcassets in Resources */,
 				FA1E693D278C3BA500030600 /* GardenCell.xib in Resources */,
 				FA8C9384278F40970009DA6D /* GardenEditDeleteSpace.xib in Resources */,
@@ -3796,7 +3829,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3872,6 +3905,7 @@
 				FA40D718272854E200A10C10 /* CaresModel.swift in Sources */,
 				FA545474274BCF53006B52F4 /* GardenCaresDetail.swift in Sources */,
 				02E0255827326C8B00988F12 /* DiseaseArchiveCell.swift in Sources */,
+				FA62365B27BE5D75005C593B /* ReportRecognizeModel.swift in Sources */,
 				02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */,
 				FADCE356275D033400119C51 /* AddPlantTimeModel.swift in Sources */,
 				02017AAD2747922000EE093C /* GardenDetailDeletePlanController.swift in Sources */,
@@ -4007,6 +4041,7 @@
 				FAC6453827883A17004E56D5 /* GardensController+ColloctionView.swift in Sources */,
 				FA40D716272854CC00A10C10 /* ClimatModel.swift in Sources */,
 				021BC11027706A000083DC65 /* GadenDetailHistoryTitleCell.swift in Sources */,
+				FA5785DB27C386920095BC0F /* ReportView.swift in Sources */,
 				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
@@ -4089,6 +4124,7 @@
 				FA64050B27205515000124A5 /* AccessModel.swift in Sources */,
 				FAEFA7A5275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift in Sources */,
 				FA8C937F278F1D540009DA6D /* GardenEditChangeNamePresenter.swift in Sources */,
+				FA5785E027C3BFF40095BC0F /* ReportViewPresenter.swift in Sources */,
 				025ECF27273D82E20041A7BD /* OrderCreate.swift in Sources */,
 				02D142DA2757DCD8008A7FA3 /* IPhoneSe3Timeline.swift in Sources */,
 				021836C227900B550041F302 /* GardenNeedCaresPresenter.swift in Sources */,

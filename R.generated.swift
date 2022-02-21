@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 58 files.
+  /// This `R.file` struct is generated, and contains static references to 59 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -243,6 +243,8 @@ struct R: Rswift.Validatable {
     static let recognizeArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognizeArhive", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
     static let releaseXcconfig = Rswift.FileResource(bundle: R.hostingBundle, name: "Release", pathExtension: "xcconfig")
+    /// Resource file `ReportRecognize.graphql`.
+    static let reportRecognizeGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ReportRecognize", pathExtension: "graphql")
     /// Resource file `SFProDisplay-Bold.ttf`.
     static let sfProDisplayBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Bold", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Medium.ttf`.
@@ -536,6 +538,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "ReportRecognize", withExtension: "graphql")`
+    static func reportRecognizeGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.reportRecognizeGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "SFProDisplay-Bold", withExtension: "ttf")`
     static func sfProDisplayBoldTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sfProDisplayBoldTtf
@@ -656,7 +664,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 120 images.
+  /// This `R.image` struct is generated, and contains static references to 124 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -768,6 +776,12 @@ struct R: Rswift.Validatable {
     static let ic_identify_photo_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_photo_white")
     /// Image `ic_identify_recognize_arhive`.
     static let ic_identify_recognize_arhive = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_recognize_arhive")
+    /// Image `ic_identify_report`.
+    static let ic_identify_report = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_report")
+    /// Image `ic_identify_retake`.
+    static let ic_identify_retake = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_retake")
+    /// Image `ic_identify_search`.
+    static let ic_identify_search = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_search")
     /// Image `ic_login_apple`.
     static let ic_login_apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_login_apple")
     /// Image `ic_login_bg`.
@@ -864,6 +878,8 @@ struct R: Rswift.Validatable {
     static let plants_dots_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "plants_dots_ic")
     /// Image `recognize_archive_ic`.
     static let recognize_archive_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "recognize_archive_ic")
+    /// Image `report_view_flower_ic`.
+    static let report_view_flower_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "report_view_flower_ic")
     /// Image `scheldure_empty_ic`.
     static let scheldure_empty_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "scheldure_empty_ic")
     /// Image `scheldure_settings_bell_ic`.
@@ -1285,6 +1301,27 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_report", bundle: ..., traitCollection: ...)`
+    static func ic_identify_report(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_report, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_retake", bundle: ..., traitCollection: ...)`
+    static func ic_identify_retake(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_retake, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_identify_search", bundle: ..., traitCollection: ...)`
+    static func ic_identify_search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_identify_search, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_login_apple", bundle: ..., traitCollection: ...)`
     static func ic_login_apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_login_apple, compatibleWith: traitCollection)
@@ -1621,6 +1658,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "report_view_flower_ic", bundle: ..., traitCollection: ...)`
+    static func report_view_flower_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.report_view_flower_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "scheldure_empty_ic", bundle: ..., traitCollection: ...)`
     static func scheldure_empty_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.scheldure_empty_ic, compatibleWith: traitCollection)
@@ -1742,7 +1786,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 94 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 95 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -1914,6 +1958,8 @@ struct R: Rswift.Validatable {
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
     /// Nib `RecognizeArchiveController`.
     static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
+    /// Nib `ReportView`.
+    static let reportView = _R.nib._ReportView()
     /// Nib `ScheduleCell`.
     static let scheduleCell = _R.nib._ScheduleCell()
     /// Nib `ScheduleColapsBottomView`.
@@ -2614,6 +2660,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ReportView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.reportView) instead")
+    static func reportView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.reportView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ScheduleCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.scheduleCell) instead")
     static func scheduleCell(_: Void = ()) -> UIKit.UINib {
@@ -3025,6 +3079,10 @@ struct R: Rswift.Validatable {
       return R.nib.recognizeArchiveController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func reportView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ReportView? {
+      return R.nib.reportView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ReportView
+    }
+
     static func scheduleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScheduleCell? {
       return R.nib.scheduleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScheduleCell
     }
@@ -3172,7 +3230,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 347 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 355 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3734,7 +3792,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_need_cares_done_all_cares = Rswift.StringResource(key: "garden_need_cares_done_all_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Done all Humidity
+      /// en translation: Done all Fertilizer
       ///
       /// Locales: en, es
       static let garden_done_all_humidity = Rswift.StringResource(key: "garden_done_all_humidity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
@@ -3758,6 +3816,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_done = Rswift.StringResource(key: "scheldure_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Done!
+      ///
+      /// Locales: en, es
+      static let report_view_title = Rswift.StringResource(key: "report_view_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Edit
       ///
       /// Locales: en, es
@@ -3806,6 +3868,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let climate_habit_fern = Rswift.StringResource(key: "climate_habit_fern", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Fertilizer
+      ///
+      /// Locales: en, es
+      static let care_type_humidity = Rswift.StringResource(key: "care_type_humidity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Frequency
       ///
       /// Locales: en, es
@@ -3850,6 +3916,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_add_to_garden_great = Rswift.StringResource(key: "plant_add_to_garden_great", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Great!
+      ///
+      /// Locales: en, es
+      static let report_view_great = Rswift.StringResource(key: "report_view_great", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Habit
       ///
       /// Locales: en, es
@@ -3870,10 +3940,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_setting_hour = Rswift.StringResource(key: "scheldure_setting_hour", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
-      /// en translation: Humidity
-      ///
-      /// Locales: en, es
-      static let care_type_humidity = Rswift.StringResource(key: "care_type_humidity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Identification Results:
       ///
       /// Locales: en, es
@@ -4038,6 +4104,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let add_plant_next_date = Rswift.StringResource(key: "add_plant_next_date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: No correct results?
+      ///
+      /// Locales: en, es
+      static let identify_no_results = Rswift.StringResource(key: "identify_no_results", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -4154,6 +4224,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Re-identify
+      ///
+      /// Locales: en, es
+      static let identify_no_results_reidentify = Rswift.StringResource(key: "identify_no_results_reidentify", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Recognize Plant
       ///
       /// Locales: en, es
@@ -4186,6 +4260,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let plant_detail_removed_from_wishlist = Rswift.StringResource(key: "plant_detail_removed_from_wishlist", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Report Send!
+      ///
+      /// Locales: en, es
+      static let report_view_subtitle = Rswift.StringResource(key: "report_view_subtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Restart Diagnosing
       ///
       /// Locales: en, es
@@ -4198,6 +4276,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let diagnosis_preview_retake = Rswift.StringResource(key: "diagnosis_preview_retake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en, es
+      static let identify_no_results_retake_photo = Rswift.StringResource(key: "identify_no_results_retake_photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Retake Photo
       ///
       /// Locales: en, es
@@ -4238,6 +4320,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let scheldure_title = Rswift.StringResource(key: "scheldure_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Search by Catalog
+      ///
+      /// Locales: en, es
+      static let identify_no_results_search_by_catalog = Rswift.StringResource(key: "identify_no_results_search_by_catalog", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Search by Name
       ///
       /// Locales: en, es
@@ -4258,6 +4344,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es
       static let garden_add_to_title = Rswift.StringResource(key: "garden_add_to_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
+      /// en translation: Send Report!
+      ///
+      /// Locales: en, es
+      static let identify_no_results_send_report = Rswift.StringResource(key: "identify_no_results_send_report", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es"], comment: nil)
       /// en translation: Send Time:
       ///
       /// Locales: en, es
@@ -6673,7 +6763,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_need_cares_done_all_cares", bundle: bundle, comment: "")
       }
 
-      /// en translation: Done all Humidity
+      /// en translation: Done all Fertilizer
       ///
       /// Locales: en, es
       static func garden_done_all_humidity(preferredLanguages: [String]? = nil) -> String {
@@ -6761,6 +6851,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done!
+      ///
+      /// Locales: en, es
+      static func report_view_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("report_view_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "report_view_title"
+        }
+
+        return NSLocalizedString("report_view_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Edit
@@ -6943,6 +7048,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_habit_fern", bundle: bundle, comment: "")
       }
 
+      /// en translation: Fertilizer
+      ///
+      /// Locales: en, es
+      static func care_type_humidity(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("care_type_humidity", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "care_type_humidity"
+        }
+
+        return NSLocalizedString("care_type_humidity", bundle: bundle, comment: "")
+      }
+
       /// en translation: Frequency
       ///
       /// Locales: en, es
@@ -7108,6 +7228,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plant_add_to_garden_great", bundle: bundle, comment: "")
       }
 
+      /// en translation: Great!
+      ///
+      /// Locales: en, es
+      static func report_view_great(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("report_view_great", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "report_view_great"
+        }
+
+        return NSLocalizedString("report_view_great", bundle: bundle, comment: "")
+      }
+
       /// en translation: Habit
       ///
       /// Locales: en, es
@@ -7181,21 +7316,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("scheldure_setting_hour", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Humidity
-      ///
-      /// Locales: en, es
-      static func care_type_humidity(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("care_type_humidity", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "care_type_humidity"
-        }
-
-        return NSLocalizedString("care_type_humidity", bundle: bundle, comment: "")
       }
 
       /// en translation: Identification Results:
@@ -7813,6 +7933,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("add_plant_next_date", bundle: bundle, comment: "")
       }
 
+      /// en translation: No correct results?
+      ///
+      /// Locales: en, es
+      static func identify_no_results(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_results", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_results"
+        }
+
+        return NSLocalizedString("identify_no_results", bundle: bundle, comment: "")
+      }
+
       /// en translation: No problems detected
       ///
       /// Locales: en, es
@@ -8250,6 +8385,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_item_rate", bundle: bundle, comment: "")
       }
 
+      /// en translation: Re-identify
+      ///
+      /// Locales: en, es
+      static func identify_no_results_reidentify(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_results_reidentify", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_results_reidentify"
+        }
+
+        return NSLocalizedString("identify_no_results_reidentify", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recognize Plant
       ///
       /// Locales: en, es
@@ -8370,6 +8520,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("plant_detail_removed_from_wishlist", bundle: bundle, comment: "")
       }
 
+      /// en translation: Report Send!
+      ///
+      /// Locales: en, es
+      static func report_view_subtitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("report_view_subtitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "report_view_subtitle"
+        }
+
+        return NSLocalizedString("report_view_subtitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Restart Diagnosing
       ///
       /// Locales: en, es
@@ -8413,6 +8578,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_preview_retake", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Retake Photo
+      ///
+      /// Locales: en, es
+      static func identify_no_results_retake_photo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_results_retake_photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_results_retake_photo"
+        }
+
+        return NSLocalizedString("identify_no_results_retake_photo", bundle: bundle, comment: "")
       }
 
       /// en translation: Retake Photo
@@ -8565,6 +8745,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Search by Catalog
+      ///
+      /// Locales: en, es
+      static func identify_no_results_search_by_catalog(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_results_search_by_catalog", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_results_search_by_catalog"
+        }
+
+        return NSLocalizedString("identify_no_results_search_by_catalog", bundle: bundle, comment: "")
+      }
+
       /// en translation: Search by Name
       ///
       /// Locales: en, es
@@ -8638,6 +8833,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_add_to_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Send Report!
+      ///
+      /// Locales: en, es
+      static func identify_no_results_send_report(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_no_results_send_report", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_no_results_send_report"
+        }
+
+        return NSLocalizedString("identify_no_results_send_report", bundle: bundle, comment: "")
       }
 
       /// en translation: Send Time:
@@ -9869,6 +10079,7 @@ struct _R: Rswift.Validatable {
       try _PopDoneSpecificCareController.validate()
       try _PopUniquePlantController.validate()
       try _RecognizeArchiveController.validate()
+      try _ReportView.validate()
       try _ScheduleCell.validate()
       try _ScheduleColapsView.validate()
       try _ScheduleSettingsController.validate()
@@ -10970,7 +11181,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_identify_onboarding_3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_onboarding_3' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_black' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_photo_white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_photo_white' is used in nib 'IdentifyController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic_identify_recognize_arhive", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_recognize_arhive' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_report", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_report' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_retake", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_retake' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_identify_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_search' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -11304,6 +11517,23 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "recognize_archive_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'recognize_archive_ic' is used in nib 'RecognizeArchiveController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ReportView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ReportView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ReportView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ReportView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "report_view_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'report_view_flower_ic' is used in nib 'ReportView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

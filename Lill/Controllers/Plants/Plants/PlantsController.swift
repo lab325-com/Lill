@@ -271,7 +271,7 @@ extension PlantsController: PlantsOutputProtocol, GardenAddToPlaceDelegate {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
         
-        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+        CongradsViewPresenter.showCongradsView()
     }
     
     func successFavorite(isFavorite: Bool, id: String) {

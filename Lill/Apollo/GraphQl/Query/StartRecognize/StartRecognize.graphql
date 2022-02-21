@@ -1,35 +1,38 @@
 query StartRecognize($mediaId: String!) {
 	startRecognize(mediaId: $mediaId) {
-		PlantCares {
-			count
-			id
-			period
-			CareType {
+		recognizeId
+		plants {
+			PlantCares {
+				count
 				id
-				name
+				period
+				CareType {
+					id
+					name
+				}
 			}
-		}
-		Climate {
-			deciduous
-			habit
-			hardiness
-			height
-			moisture
-			ph
-			shade
-			soil
-		}
-		descriptionFull
-		descriptionWikiHtml
-		id
-		isFavourite
-		latinName
-		plantImages {
+			Climate {
+				deciduous
+				habit
+				hardiness
+				height
+				moisture
+				ph
+				shade
+				soil
+			}
+			descriptionFull
+			descriptionWikiHtml
 			id
-			urlIosFull
-			urlIosPrev
+			isFavourite
+			latinName
+			plantImages {
+				id
+				urlIosFull
+				urlIosPrev
+			}
+			names
+			wikiUrl
 		}
-		names
-		wikiUrl
 	}
 }

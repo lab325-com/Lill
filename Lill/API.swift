@@ -3444,6 +3444,57 @@ public final class PlantToGardenMutation: GraphQLMutation {
   }
 }
 
+public final class ReportRecognizeMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation ReportRecognize($recognizeId: String!) {
+      reportRecognize(recognizeId: $recognizeId)
+    }
+    """
+
+  public let operationName: String = "ReportRecognize"
+
+  public var recognizeId: String
+
+  public init(recognizeId: String) {
+    self.recognizeId = recognizeId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["recognizeId": recognizeId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("reportRecognize", arguments: ["recognizeId": GraphQLVariable("recognizeId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(reportRecognize: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "reportRecognize": reportRecognize])
+    }
+
+    public var reportRecognize: Bool? {
+      get {
+        return resultMap["reportRecognize"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "reportRecognize")
+      }
+    }
+  }
+}
+
 public final class SaveUdidMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -10906,41 +10957,45 @@ public final class StartRecognizeQuery: GraphQLQuery {
     query StartRecognize($mediaId: String!) {
       startRecognize(mediaId: $mediaId) {
         __typename
-        PlantCares {
+        recognizeId
+        plants {
           __typename
-          count
+          PlantCares {
+            __typename
+            count
+            id
+            period
+            CareType {
+              __typename
+              id
+              name
+            }
+          }
+          Climate {
+            __typename
+            deciduous
+            habit
+            hardiness
+            height
+            moisture
+            ph
+            shade
+            soil
+          }
+          descriptionFull
+          descriptionWikiHtml
           id
-          period
-          CareType {
+          isFavourite
+          latinName
+          plantImages {
             __typename
             id
-            name
+            urlIosFull
+            urlIosPrev
           }
+          names
+          wikiUrl
         }
-        Climate {
-          __typename
-          deciduous
-          habit
-          hardiness
-          height
-          moisture
-          ph
-          shade
-          soil
-        }
-        descriptionFull
-        descriptionWikiHtml
-        id
-        isFavourite
-        latinName
-        plantImages {
-          __typename
-          id
-          urlIosFull
-          urlIosPrev
-        }
-        names
-        wikiUrl
       }
     }
     """
@@ -10962,7 +11017,7 @@ public final class StartRecognizeQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("startRecognize", arguments: ["mediaId": GraphQLVariable("mediaId")], type: .list(.object(StartRecognize.selections))),
+        GraphQLField("startRecognize", arguments: ["mediaId": GraphQLVariable("mediaId")], type: .object(StartRecognize.selections)),
       ]
     }
 
@@ -10972,35 +11027,27 @@ public final class StartRecognizeQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(startRecognize: [StartRecognize?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "startRecognize": startRecognize.flatMap { (value: [StartRecognize?]) -> [ResultMap?] in value.map { (value: StartRecognize?) -> ResultMap? in value.flatMap { (value: StartRecognize) -> ResultMap in value.resultMap } } }])
+    public init(startRecognize: StartRecognize? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "startRecognize": startRecognize.flatMap { (value: StartRecognize) -> ResultMap in value.resultMap }])
     }
 
-    public var startRecognize: [StartRecognize?]? {
+    public var startRecognize: StartRecognize? {
       get {
-        return (resultMap["startRecognize"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [StartRecognize?] in value.map { (value: ResultMap?) -> StartRecognize? in value.flatMap { (value: ResultMap) -> StartRecognize in StartRecognize(unsafeResultMap: value) } } }
+        return (resultMap["startRecognize"] as? ResultMap).flatMap { StartRecognize(unsafeResultMap: $0) }
       }
       set {
-        resultMap.updateValue(newValue.flatMap { (value: [StartRecognize?]) -> [ResultMap?] in value.map { (value: StartRecognize?) -> ResultMap? in value.flatMap { (value: StartRecognize) -> ResultMap in value.resultMap } } }, forKey: "startRecognize")
+        resultMap.updateValue(newValue?.resultMap, forKey: "startRecognize")
       }
     }
 
     public struct StartRecognize: GraphQLSelectionSet {
-      public static let possibleTypes: [String] = ["Plant"]
+      public static let possibleTypes: [String] = ["RecognizeResponse"]
 
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("PlantCares", type: .list(.object(PlantCare.selections))),
-          GraphQLField("Climate", type: .object(Climate.selections)),
-          GraphQLField("descriptionFull", type: .scalar(String.self)),
-          GraphQLField("descriptionWikiHtml", type: .scalar(String.self)),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
-          GraphQLField("isFavourite", type: .scalar(Bool.self)),
-          GraphQLField("latinName", type: .scalar(String.self)),
-          GraphQLField("plantImages", type: .list(.object(PlantImage.selections))),
-          GraphQLField("names", type: .scalar(String.self)),
-          GraphQLField("wikiUrl", type: .scalar(String.self)),
+          GraphQLField("recognizeId", type: .scalar(String.self)),
+          GraphQLField("plants", type: .list(.object(Plant.selections))),
         ]
       }
 
@@ -11010,8 +11057,8 @@ public final class StartRecognizeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(plantCares: [PlantCare?]? = nil, climate: Climate? = nil, descriptionFull: String? = nil, descriptionWikiHtml: String? = nil, id: GraphQLID? = nil, isFavourite: Bool? = nil, latinName: String? = nil, plantImages: [PlantImage?]? = nil, names: String? = nil, wikiUrl: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Plant", "PlantCares": plantCares.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, "Climate": climate.flatMap { (value: Climate) -> ResultMap in value.resultMap }, "descriptionFull": descriptionFull, "descriptionWikiHtml": descriptionWikiHtml, "id": id, "isFavourite": isFavourite, "latinName": latinName, "plantImages": plantImages.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, "names": names, "wikiUrl": wikiUrl])
+      public init(recognizeId: String? = nil, plants: [Plant?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "RecognizeResponse", "recognizeId": recognizeId, "plants": plants.flatMap { (value: [Plant?]) -> [ResultMap?] in value.map { (value: Plant?) -> ResultMap? in value.flatMap { (value: Plant) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -11023,106 +11070,40 @@ public final class StartRecognizeQuery: GraphQLQuery {
         }
       }
 
-      public var plantCares: [PlantCare?]? {
+      public var recognizeId: String? {
         get {
-          return (resultMap["PlantCares"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [PlantCare?] in value.map { (value: ResultMap?) -> PlantCare? in value.flatMap { (value: ResultMap) -> PlantCare in PlantCare(unsafeResultMap: value) } } }
+          return resultMap["recognizeId"] as? String
         }
         set {
-          resultMap.updateValue(newValue.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, forKey: "PlantCares")
+          resultMap.updateValue(newValue, forKey: "recognizeId")
         }
       }
 
-      public var climate: Climate? {
+      public var plants: [Plant?]? {
         get {
-          return (resultMap["Climate"] as? ResultMap).flatMap { Climate(unsafeResultMap: $0) }
+          return (resultMap["plants"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Plant?] in value.map { (value: ResultMap?) -> Plant? in value.flatMap { (value: ResultMap) -> Plant in Plant(unsafeResultMap: value) } } }
         }
         set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "Climate")
+          resultMap.updateValue(newValue.flatMap { (value: [Plant?]) -> [ResultMap?] in value.map { (value: Plant?) -> ResultMap? in value.flatMap { (value: Plant) -> ResultMap in value.resultMap } } }, forKey: "plants")
         }
       }
 
-      public var descriptionFull: String? {
-        get {
-          return resultMap["descriptionFull"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "descriptionFull")
-        }
-      }
-
-      public var descriptionWikiHtml: String? {
-        get {
-          return resultMap["descriptionWikiHtml"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "descriptionWikiHtml")
-        }
-      }
-
-      public var id: GraphQLID? {
-        get {
-          return resultMap["id"] as? GraphQLID
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "id")
-        }
-      }
-
-      public var isFavourite: Bool? {
-        get {
-          return resultMap["isFavourite"] as? Bool
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "isFavourite")
-        }
-      }
-
-      public var latinName: String? {
-        get {
-          return resultMap["latinName"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "latinName")
-        }
-      }
-
-      public var plantImages: [PlantImage?]? {
-        get {
-          return (resultMap["plantImages"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [PlantImage?] in value.map { (value: ResultMap?) -> PlantImage? in value.flatMap { (value: ResultMap) -> PlantImage in PlantImage(unsafeResultMap: value) } } }
-        }
-        set {
-          resultMap.updateValue(newValue.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, forKey: "plantImages")
-        }
-      }
-
-      public var names: String? {
-        get {
-          return resultMap["names"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "names")
-        }
-      }
-
-      public var wikiUrl: String? {
-        get {
-          return resultMap["wikiUrl"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "wikiUrl")
-        }
-      }
-
-      public struct PlantCare: GraphQLSelectionSet {
-        public static let possibleTypes: [String] = ["PlantCare"]
+      public struct Plant: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Plant"]
 
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("count", type: .scalar(Int.self)),
+            GraphQLField("PlantCares", type: .list(.object(PlantCare.selections))),
+            GraphQLField("Climate", type: .object(Climate.selections)),
+            GraphQLField("descriptionFull", type: .scalar(String.self)),
+            GraphQLField("descriptionWikiHtml", type: .scalar(String.self)),
             GraphQLField("id", type: .scalar(GraphQLID.self)),
-            GraphQLField("period", type: .scalar(PeriodType.self)),
-            GraphQLField("CareType", type: .object(CareType.selections)),
+            GraphQLField("isFavourite", type: .scalar(Bool.self)),
+            GraphQLField("latinName", type: .scalar(String.self)),
+            GraphQLField("plantImages", type: .list(.object(PlantImage.selections))),
+            GraphQLField("names", type: .scalar(String.self)),
+            GraphQLField("wikiUrl", type: .scalar(String.self)),
           ]
         }
 
@@ -11132,8 +11113,8 @@ public final class StartRecognizeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(count: Int? = nil, id: GraphQLID? = nil, period: PeriodType? = nil, careType: CareType? = nil) {
-          self.init(unsafeResultMap: ["__typename": "PlantCare", "count": count, "id": id, "period": period, "CareType": careType.flatMap { (value: CareType) -> ResultMap in value.resultMap }])
+        public init(plantCares: [PlantCare?]? = nil, climate: Climate? = nil, descriptionFull: String? = nil, descriptionWikiHtml: String? = nil, id: GraphQLID? = nil, isFavourite: Bool? = nil, latinName: String? = nil, plantImages: [PlantImage?]? = nil, names: String? = nil, wikiUrl: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Plant", "PlantCares": plantCares.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, "Climate": climate.flatMap { (value: Climate) -> ResultMap in value.resultMap }, "descriptionFull": descriptionFull, "descriptionWikiHtml": descriptionWikiHtml, "id": id, "isFavourite": isFavourite, "latinName": latinName, "plantImages": plantImages.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, "names": names, "wikiUrl": wikiUrl])
         }
 
         public var __typename: String {
@@ -11145,12 +11126,39 @@ public final class StartRecognizeQuery: GraphQLQuery {
           }
         }
 
-        public var count: Int? {
+        public var plantCares: [PlantCare?]? {
           get {
-            return resultMap["count"] as? Int
+            return (resultMap["PlantCares"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [PlantCare?] in value.map { (value: ResultMap?) -> PlantCare? in value.flatMap { (value: ResultMap) -> PlantCare in PlantCare(unsafeResultMap: value) } } }
           }
           set {
-            resultMap.updateValue(newValue, forKey: "count")
+            resultMap.updateValue(newValue.flatMap { (value: [PlantCare?]) -> [ResultMap?] in value.map { (value: PlantCare?) -> ResultMap? in value.flatMap { (value: PlantCare) -> ResultMap in value.resultMap } } }, forKey: "PlantCares")
+          }
+        }
+
+        public var climate: Climate? {
+          get {
+            return (resultMap["Climate"] as? ResultMap).flatMap { Climate(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "Climate")
+          }
+        }
+
+        public var descriptionFull: String? {
+          get {
+            return resultMap["descriptionFull"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "descriptionFull")
+          }
+        }
+
+        public var descriptionWikiHtml: String? {
+          get {
+            return resultMap["descriptionWikiHtml"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "descriptionWikiHtml")
           }
         }
 
@@ -11163,32 +11171,61 @@ public final class StartRecognizeQuery: GraphQLQuery {
           }
         }
 
-        public var period: PeriodType? {
+        public var isFavourite: Bool? {
           get {
-            return resultMap["period"] as? PeriodType
+            return resultMap["isFavourite"] as? Bool
           }
           set {
-            resultMap.updateValue(newValue, forKey: "period")
+            resultMap.updateValue(newValue, forKey: "isFavourite")
           }
         }
 
-        public var careType: CareType? {
+        public var latinName: String? {
           get {
-            return (resultMap["CareType"] as? ResultMap).flatMap { CareType(unsafeResultMap: $0) }
+            return resultMap["latinName"] as? String
           }
           set {
-            resultMap.updateValue(newValue?.resultMap, forKey: "CareType")
+            resultMap.updateValue(newValue, forKey: "latinName")
           }
         }
 
-        public struct CareType: GraphQLSelectionSet {
-          public static let possibleTypes: [String] = ["CareType"]
+        public var plantImages: [PlantImage?]? {
+          get {
+            return (resultMap["plantImages"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [PlantImage?] in value.map { (value: ResultMap?) -> PlantImage? in value.flatMap { (value: ResultMap) -> PlantImage in PlantImage(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [PlantImage?]) -> [ResultMap?] in value.map { (value: PlantImage?) -> ResultMap? in value.flatMap { (value: PlantImage) -> ResultMap in value.resultMap } } }, forKey: "plantImages")
+          }
+        }
+
+        public var names: String? {
+          get {
+            return resultMap["names"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "names")
+          }
+        }
+
+        public var wikiUrl: String? {
+          get {
+            return resultMap["wikiUrl"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "wikiUrl")
+          }
+        }
+
+        public struct PlantCare: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["PlantCare"]
 
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("count", type: .scalar(Int.self)),
               GraphQLField("id", type: .scalar(GraphQLID.self)),
-              GraphQLField("name", type: .scalar(String.self)),
+              GraphQLField("period", type: .scalar(PeriodType.self)),
+              GraphQLField("CareType", type: .object(CareType.selections)),
             ]
           }
 
@@ -11198,8 +11235,234 @@ public final class StartRecognizeQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(id: GraphQLID? = nil, name: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "CareType", "id": id, "name": name])
+          public init(count: Int? = nil, id: GraphQLID? = nil, period: PeriodType? = nil, careType: CareType? = nil) {
+            self.init(unsafeResultMap: ["__typename": "PlantCare", "count": count, "id": id, "period": period, "CareType": careType.flatMap { (value: CareType) -> ResultMap in value.resultMap }])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var count: Int? {
+            get {
+              return resultMap["count"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "count")
+            }
+          }
+
+          public var id: GraphQLID? {
+            get {
+              return resultMap["id"] as? GraphQLID
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "id")
+            }
+          }
+
+          public var period: PeriodType? {
+            get {
+              return resultMap["period"] as? PeriodType
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "period")
+            }
+          }
+
+          public var careType: CareType? {
+            get {
+              return (resultMap["CareType"] as? ResultMap).flatMap { CareType(unsafeResultMap: $0) }
+            }
+            set {
+              resultMap.updateValue(newValue?.resultMap, forKey: "CareType")
+            }
+          }
+
+          public struct CareType: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["CareType"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("id", type: .scalar(GraphQLID.self)),
+                GraphQLField("name", type: .scalar(String.self)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(id: GraphQLID? = nil, name: String? = nil) {
+              self.init(unsafeResultMap: ["__typename": "CareType", "id": id, "name": name])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var id: GraphQLID? {
+              get {
+                return resultMap["id"] as? GraphQLID
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "id")
+              }
+            }
+
+            public var name: String? {
+              get {
+                return resultMap["name"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "name")
+              }
+            }
+          }
+        }
+
+        public struct Climate: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Climate"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("deciduous", type: .scalar(ClimateDeciduous.self)),
+              GraphQLField("habit", type: .scalar(ClimateHabit.self)),
+              GraphQLField("hardiness", type: .scalar(Int.self)),
+              GraphQLField("height", type: .scalar(Int.self)),
+              GraphQLField("moisture", type: .scalar(ClimateMoisture.self)),
+              GraphQLField("ph", type: .scalar(ClimatePh.self)),
+              GraphQLField("shade", type: .scalar(ClimateShade.self)),
+              GraphQLField("soil", type: .scalar(ClimateSoil.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(deciduous: ClimateDeciduous? = nil, habit: ClimateHabit? = nil, hardiness: Int? = nil, height: Int? = nil, moisture: ClimateMoisture? = nil, ph: ClimatePh? = nil, shade: ClimateShade? = nil, soil: ClimateSoil? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Climate", "deciduous": deciduous, "habit": habit, "hardiness": hardiness, "height": height, "moisture": moisture, "ph": ph, "shade": shade, "soil": soil])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var deciduous: ClimateDeciduous? {
+            get {
+              return resultMap["deciduous"] as? ClimateDeciduous
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "deciduous")
+            }
+          }
+
+          public var habit: ClimateHabit? {
+            get {
+              return resultMap["habit"] as? ClimateHabit
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "habit")
+            }
+          }
+
+          public var hardiness: Int? {
+            get {
+              return resultMap["hardiness"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "hardiness")
+            }
+          }
+
+          public var height: Int? {
+            get {
+              return resultMap["height"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "height")
+            }
+          }
+
+          public var moisture: ClimateMoisture? {
+            get {
+              return resultMap["moisture"] as? ClimateMoisture
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "moisture")
+            }
+          }
+
+          public var ph: ClimatePh? {
+            get {
+              return resultMap["ph"] as? ClimatePh
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "ph")
+            }
+          }
+
+          public var shade: ClimateShade? {
+            get {
+              return resultMap["shade"] as? ClimateShade
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "shade")
+            }
+          }
+
+          public var soil: ClimateSoil? {
+            get {
+              return resultMap["soil"] as? ClimateSoil
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "soil")
+            }
+          }
+        }
+
+        public struct PlantImage: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["MediaModel"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("id", type: .scalar(GraphQLID.self)),
+              GraphQLField("urlIosFull", type: .scalar(String.self)),
+              GraphQLField("urlIosPrev", type: .scalar(String.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(id: GraphQLID? = nil, urlIosFull: String? = nil, urlIosPrev: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "MediaModel", "id": id, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
           }
 
           public var __typename: String {
@@ -11220,181 +11483,22 @@ public final class StartRecognizeQuery: GraphQLQuery {
             }
           }
 
-          public var name: String? {
+          public var urlIosFull: String? {
             get {
-              return resultMap["name"] as? String
+              return resultMap["urlIosFull"] as? String
             }
             set {
-              resultMap.updateValue(newValue, forKey: "name")
+              resultMap.updateValue(newValue, forKey: "urlIosFull")
             }
           }
-        }
-      }
 
-      public struct Climate: GraphQLSelectionSet {
-        public static let possibleTypes: [String] = ["Climate"]
-
-        public static var selections: [GraphQLSelection] {
-          return [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("deciduous", type: .scalar(ClimateDeciduous.self)),
-            GraphQLField("habit", type: .scalar(ClimateHabit.self)),
-            GraphQLField("hardiness", type: .scalar(Int.self)),
-            GraphQLField("height", type: .scalar(Int.self)),
-            GraphQLField("moisture", type: .scalar(ClimateMoisture.self)),
-            GraphQLField("ph", type: .scalar(ClimatePh.self)),
-            GraphQLField("shade", type: .scalar(ClimateShade.self)),
-            GraphQLField("soil", type: .scalar(ClimateSoil.self)),
-          ]
-        }
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(deciduous: ClimateDeciduous? = nil, habit: ClimateHabit? = nil, hardiness: Int? = nil, height: Int? = nil, moisture: ClimateMoisture? = nil, ph: ClimatePh? = nil, shade: ClimateShade? = nil, soil: ClimateSoil? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Climate", "deciduous": deciduous, "habit": habit, "hardiness": hardiness, "height": height, "moisture": moisture, "ph": ph, "shade": shade, "soil": soil])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var deciduous: ClimateDeciduous? {
-          get {
-            return resultMap["deciduous"] as? ClimateDeciduous
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "deciduous")
-          }
-        }
-
-        public var habit: ClimateHabit? {
-          get {
-            return resultMap["habit"] as? ClimateHabit
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "habit")
-          }
-        }
-
-        public var hardiness: Int? {
-          get {
-            return resultMap["hardiness"] as? Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "hardiness")
-          }
-        }
-
-        public var height: Int? {
-          get {
-            return resultMap["height"] as? Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "height")
-          }
-        }
-
-        public var moisture: ClimateMoisture? {
-          get {
-            return resultMap["moisture"] as? ClimateMoisture
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "moisture")
-          }
-        }
-
-        public var ph: ClimatePh? {
-          get {
-            return resultMap["ph"] as? ClimatePh
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "ph")
-          }
-        }
-
-        public var shade: ClimateShade? {
-          get {
-            return resultMap["shade"] as? ClimateShade
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "shade")
-          }
-        }
-
-        public var soil: ClimateSoil? {
-          get {
-            return resultMap["soil"] as? ClimateSoil
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "soil")
-          }
-        }
-      }
-
-      public struct PlantImage: GraphQLSelectionSet {
-        public static let possibleTypes: [String] = ["MediaModel"]
-
-        public static var selections: [GraphQLSelection] {
-          return [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("id", type: .scalar(GraphQLID.self)),
-            GraphQLField("urlIosFull", type: .scalar(String.self)),
-            GraphQLField("urlIosPrev", type: .scalar(String.self)),
-          ]
-        }
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(id: GraphQLID? = nil, urlIosFull: String? = nil, urlIosPrev: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "MediaModel", "id": id, "urlIosFull": urlIosFull, "urlIosPrev": urlIosPrev])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var id: GraphQLID? {
-          get {
-            return resultMap["id"] as? GraphQLID
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "id")
-          }
-        }
-
-        public var urlIosFull: String? {
-          get {
-            return resultMap["urlIosFull"] as? String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "urlIosFull")
-          }
-        }
-
-        public var urlIosPrev: String? {
-          get {
-            return resultMap["urlIosPrev"] as? String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "urlIosPrev")
+          public var urlIosPrev: String? {
+            get {
+              return resultMap["urlIosPrev"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "urlIosPrev")
+            }
           }
         }
       }
