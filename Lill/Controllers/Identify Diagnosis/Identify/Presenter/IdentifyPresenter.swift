@@ -10,6 +10,7 @@ protocol IdentifyOutputProtocol: BaseController {
     func successFavorite(isFavorite: Bool, id: String)
     func successUpload(model: MediaDataModel)
     func successRecognize(model: RecognitionDataModel)
+    func successReportRecognize()
     func failure(error: String)
 }
 
@@ -21,6 +22,7 @@ protocol IdentifyPresenterProtocol: AnyObject {
     
     func uploadPhoto(img: UIImage)
     func setFavoritePlant(id: String, isFavorite: Bool)
+    func reportRecognize(recognizeId: String)
 }
 
 class IdentifyPresenter: IdentifyPresenterProtocol {
@@ -65,7 +67,7 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
             
             self.request = Network.shared.query(model: RecognitionDataModel.self, query, controller: self.view, successHandler: { [weak self] modelRecognize in
                 guard let `self` = self else { return }
-                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": modelRecognize.startRecognize.count])
+                AnalyticsHelper.sendFirebaseEvents(events: .identify_results_many, params: ["count": modelRecognize.startRecognize.plants.count])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_identify_success)
                 AnalyticsHelper.sendFacebookEvent(event: .fb_identify_success)
                 
@@ -98,5 +100,23 @@ class IdentifyPresenter: IdentifyPresenterProtocol {
             self?.view?.stopLoading()
             self?.view?.failure(error: error.localizedDescription)
         })
+    }
+    
+    func reportRecognize(recognizeId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = ReportRecognizeMutation(recognizeId: recognizeId)
+        
+        let _ = Network.shared.mutation(model: ReportRecognizeModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            if model.reportRecognize {
+                self?.view?.successReportRecognize()
+            }
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
     }
 }

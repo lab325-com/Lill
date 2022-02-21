@@ -3,10 +3,10 @@ import UIKit
 import Foundation
 import SwiftEntryKit
 
-final class CongradsViewPresenter {
+final class ReportViewPresenter {
     
-    static func showCongradsView() {
-        let congradsView = CongradsView.defaultView()
+    static func showReportView() {
+        let reportView = ReportView.defaultView()
         
         var attributes = EKAttributes()
         attributes = .centerFloat
@@ -43,7 +43,7 @@ final class CongradsViewPresenter {
         )
         
         if !SwiftEntryKit.isCurrentlyDisplaying {
-            SwiftEntryKit.display(entry: congradsView, using: attributes)
+            SwiftEntryKit.display(entry: reportView, using: attributes)
         }
     }
 }

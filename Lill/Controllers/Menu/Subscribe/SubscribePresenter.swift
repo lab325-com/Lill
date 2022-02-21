@@ -107,8 +107,6 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 
                 AnalyticsHelper.sendFirebaseEvents(events: .purchase_error, params: ["message": errorMessage])
                 purchaseSuccess(false, errorMessage)
-            case .deferred(purchase: let purchase):
-                print(purchase)
             }
         }
     }

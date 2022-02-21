@@ -26,7 +26,7 @@
 "care_period_type_unknown" = "Unknown";
 "care_period_type_weeks" = "Weeks";
 "care_type_all" = "All";
-"care_type_humidity" = "Humidity";
+"care_type_humidity" = "Fertilizer";
 "care_type_misting" = "Misting";
 "care_type_rotating" = "Rotating";
 "care_type_watering" = "Watering";
@@ -138,7 +138,7 @@
 "garden_detail_care_plan" = "Care Plan";
 "garden_detail_check_all" = "Check all Waiting Cares as done";
 "garden_done_all_cares" = "Done all Cares";
-"garden_done_all_humidity" = "Done all Humidity";
+"garden_done_all_humidity" = "Done all Fertilizer";
 "garden_done_all_misting" = "Done all Misting";
 "garden_done_all_rotate" = "Done all Rotate";
 "garden_done_all_watering" = "Done all Watering";
@@ -213,6 +213,11 @@
 "identify_make_photo_info" = "Full-size photo of Plant";
 "identify_make_photo_title" = "Take full-size photo of your plant";
 "identify_no_data" = "Sorry, no results found";
+"identify_no_results" = "No correct results?";
+"identify_no_results_reidentify" = "Re-identify";
+"identify_no_results_retake_photo" = "Retake Photo";
+"identify_no_results_search_by_catalog" = "Search by Catalog";
+"identify_no_results_send_report" = "Send Report!";
 "identify_overview_info" = "Make sure that the plant is isolated from other plants";
 "identify_overview_title" = "Overview";
 "identify_photo_quality_info" = "Make sure the photo is sharp and in high resolution";
@@ -277,6 +282,9 @@
 "pop_done_specific_care_waiting_info" = "Care is waiting";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
+"report_view_great" = "Great!";
+"report_view_subtitle" = "Report Send!";
+"report_view_title" = "Done!";
 "scheldure_days" = "days";
 "scheldure_done" = "Done cares";
 "scheldure_done_all" = "Done all Waiting Cares";

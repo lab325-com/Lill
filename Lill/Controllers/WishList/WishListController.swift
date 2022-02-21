@@ -72,7 +72,7 @@ class WishListController: BaseController {
 
 extension WishListController: WishListOutputProtocol, GardenAddToPlaceDelegate {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
-        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+        CongradsViewPresenter.showCongradsView()
     }
     
     func successGetWishList(model: CatalogPlantsModel) {

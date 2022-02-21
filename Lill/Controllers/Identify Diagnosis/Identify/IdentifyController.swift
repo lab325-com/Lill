@@ -55,6 +55,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var noResulsRetakeButton: UIButton!
     @IBOutlet weak var noResulsSearchButton: UIButton!
     @IBOutlet weak var noResulsReportButton: UIButton!
+    @IBOutlet weak var reIdentifyButton: UIButton!
     
     @IBOutlet weak var analizeActivity: UIActivityIndicatorView!
     @IBOutlet weak var identifyActivity: UIActivityIndicatorView!
@@ -63,6 +64,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var identifyImageView: UIImageView!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var capturedImageView: UIImageView!
+    @IBOutlet weak var reIdentifyImageView: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -78,6 +80,7 @@ class IdentifyController: BaseController {
     
     let cellIdentifier = String(describing: PlantCollectionCell.self)
     var identifyResults = [PlantModel]()
+    var recognizeId: String = ""
     
     var captureSession : AVCaptureSession!
     var backCamera : AVCaptureDevice!
@@ -152,16 +155,17 @@ class IdentifyController: BaseController {
         identifyAnalyzeIdentifyPlantLabel.text = RLocalization.identify_analize_identify_plant()
         
         noDataLabel.text = RLocalization.identify_no_data()
+        noResultsLabel.text = RLocalization.identify_no_results()
         
-        noResultsLabel.text = "No correct results?"
         noResultsStackView.setCustomSpacing(9.0, after: noResulsSearchButton)
         
         startIdentifyButton.setTitle(RLocalization.identify_start_identify(), for: .normal)
         identifyPhotoButton.setTitle(RLocalization.identify_result_identify_photo(), for: .normal)
         retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo(), for: .normal)
-        noResulsReportButton.setTitle("Retake Photo", for: .normal)
-        noResulsSearchButton.setTitle("Search by Catalog", for: .normal)
-        noResulsReportButton.setTitle("Send Report!", for: .normal)
+        noResulsReportButton.setTitle(RLocalization.identify_no_results_retake_photo(), for: .normal)
+        noResulsSearchButton.setTitle(RLocalization.identify_no_results_search_by_catalog(), for: .normal)
+        noResulsReportButton.setTitle(RLocalization.identify_no_results_send_report(), for: .normal)
+        reIdentifyButton.setTitle(RLocalization.identify_no_results_reidentify(), for: .normal)
         
         guard let meModel = KeychainService.standard.me else { return }
         identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"
@@ -267,15 +271,28 @@ class IdentifyController: BaseController {
     }
     
     @IBAction func noResultsRetakeAction(_ sender: Any) {
+        collectionView.isHidden = true
+        noResultsView.isHidden = true
+        identifyResultsLabel.isHidden = true
         
+        capturedImage = nil
+        capturedImageView.image = nil
+        
+        stackView.isHidden = false
+        bottomView.isHidden = false
+        identifyAnalyzingView.isHidden = true
+        identifyOnboardingView.isHidden = false
     }
     
     @IBAction func noResultsSearchAction(_ sender: Any) {
-        
+        dismiss(animated: true) {
+            let currentController = RootRouter.sharedInstance.topViewController?.navigationController
+            currentController?.tabBarController?.selectedIndex = 0
+        }
     }
     
     @IBAction func noResultsReportAction(_ sender: Any) {
-        
+        presenter.reportRecognize(recognizeId: recognizeId)
     }
 }
 
@@ -312,7 +329,7 @@ extension IdentifyController: UIImagePickerControllerDelegate, UINavigationContr
 
 extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
-        CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+        CongradsViewPresenter.showCongradsView()
     }
     
     func successFavorite(isFavorite: Bool, id: String) {
@@ -337,6 +354,8 @@ extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
     
     func successRecognize(model: RecognitionDataModel) {
         
+        recognizeId = model.startRecognize.recognizeId
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.identifyActivity.stopAnimating()
             self.identifyImageView.isHidden = false
@@ -346,16 +365,22 @@ extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
                 self.capturedView.isHidden = true
                 self.noResultsView.isHidden = false
                 self.identifyResultsLabel.isHidden = false
-                self.identifyResultsLabel.text = RLocalization.identify_results()
+                self.identifyResultsLabel.text = RLocalization.identify_results() + " \(model.startRecognize.plants.count)"
                 
-                self.identifyResults = model.startRecognize
+                self.identifyResults = model.startRecognize.plants
                 self.noDataImage.isHidden = self.identifyResults.count > 0
                 self.noDataImage.isHidden = self.identifyResults.count > 0
+                self.reIdentifyButton.isHidden = self.identifyResults.count > 0
+                self.reIdentifyImageView.isHidden = self.identifyResults.count > 0
                 
                 self.collectionView.isHidden = false
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func successReportRecognize() {
+        ReportViewPresenter.showReportView()
     }
     
     func failure(error: String) {
