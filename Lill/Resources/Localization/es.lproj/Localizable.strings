@@ -96,7 +96,8 @@
 "diagnosis_preview_diagnose" = "Diagnosticar foto";
 "diagnosis_preview_info" = "Asegúrate que la foto sea clara y contenga la parte enferma";
 "diagnosis_preview_retake" = "Volver a tomar foto";
-"diagnosis_restart_diagnosing" = "Reiniciar diagnóstico";
+"diagnosis_report" = "Informe Enviar!";
+"diagnosis_restart_diagnosing" = "Volver a tomar foto";
 "diagnosis_start_diagnose" = "Empezar a diagnosticar";
 "diagnosis_title" = "Diagnosticar";
 "disease_archive_button" = "Diagnosticar enfermedad";
@@ -202,7 +203,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_title" = "Mi jardín";
 "identify_analize_identify_plant" = "Identificando planta";

@@ -348,6 +348,8 @@
 		FA24A5B3273564400059AF6A /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5B2273564400059AF6A /* PaginationModel.swift */; };
 		FA24A5B6273564C80059AF6A /* GardenPlants.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA24A5B5273564C80059AF6A /* GardenPlants.graphql */; };
 		FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */; };
+		FA29D9E627C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */; };
+		FA29D9E727C4EAAD00A4B6C6 /* ReportDiagnosee.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */; };
 		FA36BC5C27747A8800A878AA /* PopDoneSpecificCareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */; };
 		FA36BC5D27747A8800A878AA /* PopDoneSpecificCareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */; };
 		FA36BC5F27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */; };
@@ -832,6 +834,8 @@
 		FA24A5B2273564400059AF6A /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
 		FA24A5B5273564C80059AF6A /* GardenPlants.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlants.graphql; sourceTree = "<group>"; };
 		FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantsModel.swift; sourceTree = "<group>"; };
+		FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDiagnoseModel.swift; sourceTree = "<group>"; };
+		FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportDiagnosee.graphql; sourceTree = "<group>"; };
 		FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCareController.swift; sourceTree = "<group>"; };
 		FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopDoneSpecificCareController.xib; sourceTree = "<group>"; };
 		FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCarePresenter.swift; sourceTree = "<group>"; };
@@ -2664,6 +2668,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FA29D9E327C4EA8300A4B6C6 /* ReportDiagnose */,
 				FA62365827BE5D3A005C593B /* ReportRecognize */,
 				0207E1BF27B1549300DCD693 /* GeneratePromoOffer */,
 				FA77834527B13F4B00124CB4 /* SaveUdid */,
@@ -2767,6 +2772,15 @@
 				FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */,
 			);
 			path = GardenPlants;
+			sourceTree = "<group>";
+		};
+		FA29D9E327C4EA8300A4B6C6 /* ReportDiagnose */ = {
+			isa = PBXGroup;
+			children = (
+				FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */,
+				FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */,
+			);
+			path = ReportDiagnose;
 			sourceTree = "<group>";
 		};
 		FA36BC5927747A0500A878AA /* PopDoneSpecificCare */ = {
@@ -3694,6 +3708,7 @@
 				02BBBE76273E5FC200E97712 /* AddPlantTitleCell.xib in Resources */,
 				0272DAE327354170005E7880 /* AddCoverIdentifierController.xib in Resources */,
 				021836C0279003450041F302 /* GardenAddToPlaceCell.xib in Resources */,
+				FA29D9E727C4EAAD00A4B6C6 /* ReportDiagnosee.graphql in Resources */,
 				FA87220126FB503400BB8125 /* SFProDisplay-Bold.ttf in Resources */,
 				FA87220226FB503400BB8125 /* SFProDisplay-Medium.ttf in Resources */,
 				02A4B6482742C389007E0DA2 /* PopChangeNameController.xib in Resources */,
@@ -3829,7 +3844,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4201,6 +4216,7 @@
 				02527D8727462DDF00126022 /* GardenDetailEditCareCell.swift in Sources */,
 				02D142BC2757D90D008A7FA3 /* IPhone13ProMax2TimeLine.swift in Sources */,
 				0273B8C02745584A009A2247 /* GardenDetailAboutCell.swift in Sources */,
+				FA29D9E627C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift in Sources */,
 				FAB26ACF2716C89A00B3EFDF /* ShadowView.swift in Sources */,
 				0271C53927AD76C300479376 /* StoreKitManager.swift in Sources */,
 				021D6D012731263D00C73183 /* Constants.swift in Sources */,

@@ -96,7 +96,8 @@
 "diagnosis_preview_diagnose" = "Diagnose Photo";
 "diagnosis_preview_info" = "Make sure that the Photo is sharp and contains the diseased part";
 "diagnosis_preview_retake" = "Retake Photo";
-"diagnosis_restart_diagnosing" = "Restart Diagnosing";
+"diagnosis_report" = "Send Report!";
+"diagnosis_restart_diagnosing" = "Retake Photo";
 "diagnosis_start_diagnose" = "Start Diagnosing";
 "diagnosis_title" = "Diagnose";
 "disease_archive_button" = "Diagnose Disease";

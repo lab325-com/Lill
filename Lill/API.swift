@@ -3444,6 +3444,57 @@ public final class PlantToGardenMutation: GraphQLMutation {
   }
 }
 
+public final class ReportDiagnoseMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation ReportDiagnose($diagnoseId: String!) {
+      reportDiagnose(diagnoseId: $diagnoseId)
+    }
+    """
+
+  public let operationName: String = "ReportDiagnose"
+
+  public var diagnoseId: String
+
+  public init(diagnoseId: String) {
+    self.diagnoseId = diagnoseId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["diagnoseId": diagnoseId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("reportDiagnose", arguments: ["diagnoseId": GraphQLVariable("diagnoseId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(reportDiagnose: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "reportDiagnose": reportDiagnose])
+    }
+
+    public var reportDiagnose: Bool? {
+      get {
+        return resultMap["reportDiagnose"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "reportDiagnose")
+      }
+    }
+  }
+}
+
 public final class ReportRecognizeMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -10661,6 +10712,7 @@ public final class StartDiagnoseQuery: GraphQLQuery {
     query StartDiagnose($mediaId: String!) {
       startDiagnose(mediaId: $mediaId) {
         __typename
+        id
         Plant {
           __typename
           latinName
@@ -10728,6 +10780,7 @@ public final class StartDiagnoseQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("Plant", type: .object(Plant.selections)),
           GraphQLField("Disease", type: .object(Disease.selections)),
         ]
@@ -10739,8 +10792,8 @@ public final class StartDiagnoseQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(plant: Plant? = nil, disease: Disease? = nil) {
-        self.init(unsafeResultMap: ["__typename": "DiagnoseResult", "Plant": plant.flatMap { (value: Plant) -> ResultMap in value.resultMap }, "Disease": disease.flatMap { (value: Disease) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, plant: Plant? = nil, disease: Disease? = nil) {
+        self.init(unsafeResultMap: ["__typename": "DiagnoseResult", "id": id, "Plant": plant.flatMap { (value: Plant) -> ResultMap in value.resultMap }, "Disease": disease.flatMap { (value: Disease) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -10749,6 +10802,15 @@ public final class StartDiagnoseQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
 

@@ -6,10 +6,12 @@ struct DiagnoseDataModel: Codable {
 }
 
 struct DiagnoseResultModel: Codable {
+    let id: String
     let plant: DiagnosePlantModel?
     let desease: DiagnoseDiseaseModel?
     
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case plant = "Plant"
         case desease = "Disease"
     }

@@ -36,6 +36,7 @@ class DiagnosisController: BaseController {
     @IBOutlet weak var diagnoseButton: UIButton!
     @IBOutlet weak var retakeButton: UIButton!
     @IBOutlet weak var restartDiagnosingButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
         
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var onboardingInfoLabel: UILabel!
@@ -71,6 +72,7 @@ class DiagnosisController: BaseController {
     var videoOutput : AVCaptureVideoDataOutput!
     var takePicture = false
     var capturedImage: UIImage?
+    var diagnoseId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +104,7 @@ class DiagnosisController: BaseController {
         startDiagnosingButton.setTitle(RLocalization.diagnosis_start_diagnose(), for: .normal)
         retakeButton.setTitle(RLocalization.diagnosis_preview_retake(), for: .normal)
         restartDiagnosingButton.setTitle(RLocalization.diagnosis_restart_diagnosing(), for: .normal)
+        reportButton.setTitle(RLocalization.diagnosis_report(), for: .normal)
     }
     
     //----------------------------------------------
@@ -185,7 +188,6 @@ class DiagnosisController: BaseController {
 
     @IBAction func restartAction(_ sender: Any) {
         
-        
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .diagnosis_results)
         AnalyticsHelper.sendFirebaseEvents(events: .re_diagnose)
         
@@ -208,6 +210,10 @@ class DiagnosisController: BaseController {
         bottomViewHeighConstraint.constant = 272.0
         
         setupAndStartCaptureSession()
+    }
+    
+    @IBAction func reportAction(_ sender: Any) {
+        presenter.reportDiagnose(diagnoseId: diagnoseId)
     }
 }
 
@@ -243,6 +249,7 @@ extension DiagnosisController: UIImagePickerControllerDelegate, UINavigationCont
 //----------------------------------------------
 
 extension DiagnosisController: DiagnosisOutputProtocol {
+    
     func successUpload(model: MediaDataModel) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -259,10 +266,11 @@ extension DiagnosisController: DiagnosisOutputProtocol {
         capturedView.isHidden = true
         
         guard let result = model.startDiagnose else { return }
+        diagnoseId = result.id
         
         if let plant = result.plant, let desease = result.desease {
             diagnosingResultView.isHidden = false
-            bottomViewHeighConstraint.constant = 480.0
+            bottomViewHeighConstraint.constant = 400.0
             diagnoseLargePlantImageView.isHidden = false
             
             diagnoseLargePlantImageView.kf.setImage(with: URL(string: plant.plantImages.first?.urlIosFull ?? ""), options: [.transition(.fade(0.25))])
@@ -274,11 +282,15 @@ extension DiagnosisController: DiagnosisOutputProtocol {
             diagnoseTitleLabel.text = desease.name
             diagnoseInfoLabel.text = desease.description
         } else {
-            bottomViewHeighConstraint.constant = 120.0
+            bottomViewHeighConstraint.constant = 150.0
             diagnosingNoResultView.isHidden = false
             noDiagnoseView.isHidden = false
             noDiagnoseImageView.image = capturedImage
         }
+    }
+    
+    func successReportDiagnose() {
+        ReportViewPresenter.showReportView()
     }
     
     func failure(error: String) {
