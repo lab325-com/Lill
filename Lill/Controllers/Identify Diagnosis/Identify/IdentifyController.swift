@@ -380,6 +380,7 @@ extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
     }
     
     func successReportRecognize() {
+        AnalyticsHelper.sendFirebaseEvents(events: .identify_report)
         ReportViewPresenter.showReportView()
     }
     

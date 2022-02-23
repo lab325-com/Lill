@@ -290,6 +290,7 @@ extension DiagnosisController: DiagnosisOutputProtocol {
     }
     
     func successReportDiagnose() {
+        AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_report)
         ReportViewPresenter.showReportView()
     }
     
