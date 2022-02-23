@@ -1,5 +1,6 @@
 query StartDiagnose($mediaId: String!) {
 	startDiagnose(mediaId: $mediaId) {
+		id
 		Plant {
 			latinName
 			names

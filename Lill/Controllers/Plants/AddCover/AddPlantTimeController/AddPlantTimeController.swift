@@ -170,7 +170,7 @@ extension AddPlantTimeController: PickerCareDelegate {
 extension AddPlantTimeController: AddPlantsCareOutputProtocol {
     func successSaveUniquesPlant() {
         dismiss(animated: true) {
-            CongradsViewPresenter.showCongradsView(textSubtitle: RLocalization.add_plants_success.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+            CongradsViewPresenter.showCongradsView()
             let currentController = RootRouter.sharedInstance.topViewController?.navigationController
             currentController?.tabBarController?.selectedIndex = 1
         }

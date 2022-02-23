@@ -10,6 +10,7 @@ import GameController
 protocol DiagnosisOutputProtocol: BaseController {
     func successUpload(model: MediaDataModel)
     func successDiagnose(model: DiagnoseDataModel)
+    func successReportDiagnose()
     func failure(error: String)
 }
 
@@ -20,6 +21,7 @@ protocol DiagnosisPresenterProtocol: AnyObject {
     init(view: DiagnosisOutputProtocol)
     
     func uploadPhoto(img: UIImage)
+    func reportDiagnose(diagnoseId: String)
 }
 
 class DiagnosisPresenter: DiagnosisPresenterProtocol {
@@ -68,6 +70,24 @@ class DiagnosisPresenter: DiagnosisPresenterProtocol {
                 AnalyticsHelper.sendFirebaseEvents(events: .diagnosis_results_success_sick)
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_diagnose_success)
                 AnalyticsHelper.sendFacebookEvent(event: .fb_diagnose_success)
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        })
+    }
+    
+    func reportDiagnose(diagnoseId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = ReportDiagnoseMutation(diagnoseId: diagnoseId)
+        
+        request = Network.shared.mutation(model: ReportDiagnoseModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.reportDiagnose {
+                self?.view?.successReportDiagnose()
             }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()

@@ -1,0 +1,4 @@
+
+mutation ReportDiagnose($diagnoseId: String!) {
+	reportDiagnose(diagnoseId: $diagnoseId)
+}
