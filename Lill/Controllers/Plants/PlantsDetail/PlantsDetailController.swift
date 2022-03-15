@@ -80,7 +80,8 @@ class PlantsDetailController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
-        transparentNavigationBar = true
+        hiddenNavigationBar = true
+        
         super.viewDidLoad()
         
         presenter.getPlantDetail(id: id)
@@ -99,9 +100,7 @@ class PlantsDetailController: BaseController {
     
     private func setup() {
         scrollView.alpha = 1.0
-        
-        navigationController?.navigationBar.tintColor = UIColor.white
-        
+                
         aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
@@ -154,6 +153,10 @@ class PlantsDetailController: BaseController {
     //----------------------------------------------
     // MARK: - @IBActions
     //----------------------------------------------
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func plantFavoriteAction(_ sender: Any) {
         guard let isFavorite = model?.plantById.isFavourite else { return }

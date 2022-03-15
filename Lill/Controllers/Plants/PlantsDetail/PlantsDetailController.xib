@@ -401,6 +401,65 @@
                         <constraint firstItem="pCH-Ba-jzf" firstAttribute="top" secondItem="oSy-dc-sRC" secondAttribute="top" id="zxL-5h-AaZ"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-5Q-Xw4" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="12" y="22" width="86.5" height="36"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-1x-hq9">
+                            <rect key="frame" x="13" y="8" width="11.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="11.5" id="DWb-ou-F8U"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-Ar-R7n">
+                            <rect key="frame" x="37.5" y="8" width="36" height="20.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                            <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUY-iG-onN">
+                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="36"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                            <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="e5v-ks-e3h"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Vqz-1x-hq9" firstAttribute="centerY" secondItem="XYQ-5Q-Xw4" secondAttribute="centerY" id="16F-3q-MfC"/>
+                        <constraint firstAttribute="bottom" secondItem="OUY-iG-onN" secondAttribute="bottom" id="FMc-hC-NAv"/>
+                        <constraint firstAttribute="height" constant="36" id="Ilw-vQ-Ouc"/>
+                        <constraint firstItem="2XH-Ar-R7n" firstAttribute="centerY" secondItem="XYQ-5Q-Xw4" secondAttribute="centerY" id="SRI-eU-jsM"/>
+                        <constraint firstAttribute="trailing" secondItem="2XH-Ar-R7n" secondAttribute="trailing" constant="13" id="Vjd-8N-O1f"/>
+                        <constraint firstItem="Vqz-1x-hq9" firstAttribute="leading" secondItem="XYQ-5Q-Xw4" secondAttribute="leading" constant="13" id="ZTF-E5-aTC"/>
+                        <constraint firstItem="2XH-Ar-R7n" firstAttribute="leading" secondItem="Vqz-1x-hq9" secondAttribute="trailing" constant="13" id="e1K-Q7-JdW"/>
+                        <constraint firstItem="OUY-iG-onN" firstAttribute="top" secondItem="XYQ-5Q-Xw4" secondAttribute="top" id="guC-qo-lUi"/>
+                        <constraint firstAttribute="trailing" secondItem="OUY-iG-onN" secondAttribute="trailing" id="kug-Ui-WVm"/>
+                        <constraint firstItem="OUY-iG-onN" firstAttribute="leading" secondItem="XYQ-5Q-Xw4" secondAttribute="leading" id="wfu-RI-ini"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Is-Oa-8Bd" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="24" y="-60" width="386" height="60"/>
                     <subviews>
@@ -450,9 +509,11 @@
                 <constraint firstAttribute="trailing" secondItem="7Is-Oa-8Bd" secondAttribute="trailing" constant="24" id="RB1-Ty-Waq"/>
                 <constraint firstItem="7Is-Oa-8Bd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="So4-0D-0rt"/>
                 <constraint firstAttribute="bottom" secondItem="oSy-dc-sRC" secondAttribute="bottom" id="Y7o-Gm-IOv"/>
+                <constraint firstItem="XYQ-5Q-Xw4" firstAttribute="top" secondItem="7Is-Oa-8Bd" secondAttribute="bottom" constant="22" id="fmp-8O-ik9"/>
                 <constraint firstAttribute="top" secondItem="YaP-BC-ua1" secondAttribute="top" priority="900" id="h65-Kx-2ly"/>
                 <constraint firstItem="oSy-dc-sRC" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="kdZ-Og-79U"/>
                 <constraint firstItem="c8A-HE-Rbk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lV9-ZC-sm1"/>
+                <constraint firstItem="XYQ-5Q-Xw4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="n8d-Vr-dQI"/>
                 <constraint firstAttribute="bottom" secondItem="c8A-HE-Rbk" secondAttribute="bottom" id="nGB-ts-fGi"/>
                 <constraint firstItem="c8A-HE-Rbk" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="xyl-wf-vWR"/>
                 <constraint firstItem="c8A-HE-Rbk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zr4-Gn-pfD"/>
@@ -462,6 +523,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back_ic" width="11.5" height="20"/>
         <image name="placeholder_big_ic" width="390" height="241"/>
         <image name="plants_detail_back_ic" width="390" height="1041"/>
         <image name="plants_detail_green_ic" width="34" height="61"/>
