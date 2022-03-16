@@ -93,7 +93,7 @@ class ChooseIdentify: BaseController {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
                 if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                 } else {
                     MenuRouter(presenter: currentNavigationController).presentSubscription()
                 }
@@ -116,7 +116,7 @@ class ChooseIdentify: BaseController {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
                 if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                 } else {
                     MenuRouter(presenter: currentNavigationController).presentSubscription()
                 }

@@ -213,7 +213,7 @@
 "identify_info" = "Идентификация завода по фотографии";
 "identify_make_photo_info" = "Полноразмерная фотография завода";
 "identify_make_photo_title" = "Возьмите полноразмерное фото вашего завода";
-"identify_no_data" = "Извините, результаты не найдены";
+"identify_no_data" = "Извините, результатов не найдено";
 "identify_no_results" = "Нет правильных результатов?";
 "identify_no_results_reidentify" = "Повторно идентифицировать";
 "identify_no_results_retake_photo" = "Photo.etake Photo.";

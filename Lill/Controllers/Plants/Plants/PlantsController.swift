@@ -139,7 +139,7 @@ class PlantsController: BaseController {
 //        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
         
         if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
-            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil)
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
         }
     }
     
@@ -181,18 +181,18 @@ class PlantsController: BaseController {
                 
                 if components.day == 0, countDate < 3 {
                     PreferencesManager.sharedManager.countInDatePaywall = countDate + 1
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
                 } else if components.day == 0, countDate > 2 {
                     PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
                 } else {
                     PreferencesManager.sharedManager.countInDatePaywall = 1
                     PreferencesManager.sharedManager.datePaywall = Date()
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
                 }
             } else {
                 PreferencesManager.sharedManager.countInDatePaywall = 1
                 PreferencesManager.sharedManager.datePaywall = Date()
-                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self)
+                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
             }
         } else {
             PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)

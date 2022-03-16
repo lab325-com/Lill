@@ -44,8 +44,8 @@ class MenuRouter: BaseRouter {
         present(controller: controller, presentStyle: .overFullScreen)
     }
     
-    func presentYearPaywall(delegate: PaywallYearDelegate?) {
-        let controller = PaywallYearController(delegate: delegate)
+    func presentYearPaywall(delegate: PaywallYearDelegate?, controller: String) {
+        let controller = PaywallYearController(delegate: delegate, controller: controller)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)

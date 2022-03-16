@@ -236,7 +236,7 @@ class IdentifyController: BaseController {
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
             if StoreKitManager.sharedInstance.isYearly50() {
-                MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil)
+                MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
             } else {
                 MenuRouter(presenter: currentNavigationController).presentSubscription()
             }
