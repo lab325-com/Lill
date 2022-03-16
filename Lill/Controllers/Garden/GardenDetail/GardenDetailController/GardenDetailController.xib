@@ -70,7 +70,7 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQS-hR-yl9" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                    <rect key="frame" x="12" y="22" width="86.5" height="36"/>
+                    <rect key="frame" x="12" y="44" width="86.5" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-IB-ejt">
                             <rect key="frame" x="13" y="8" width="11.5" height="20"/>
@@ -129,7 +129,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52e-pW-o5G" customClass="ShadowView" customModule="Lill" customModuleProvider="target">
-                    <rect key="frame" x="343" y="22" width="54" height="36"/>
+                    <rect key="frame" x="343" y="44" width="54" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-4I-rAG">
                             <rect key="frame" x="0.0" y="0.0" width="54" height="36"/>
@@ -228,17 +228,17 @@
                 <constraint firstItem="BQS-hR-yl9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="7p0-aB-WXa"/>
                 <constraint firstItem="zFK-7O-Wbd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8za-3n-l3a"/>
                 <constraint firstItem="Mgd-Pk-cnL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Z9-ST-dUG"/>
-                <constraint firstItem="52e-pW-o5G" firstAttribute="top" secondItem="VUO-i5-5fG" secondAttribute="bottom" constant="22" id="LCA-zL-oEM"/>
                 <constraint firstAttribute="trailing" secondItem="52e-pW-o5G" secondAttribute="trailing" constant="12" id="NQb-4G-586"/>
                 <constraint firstAttribute="trailing" secondItem="zFK-7O-Wbd" secondAttribute="trailing" id="Qy9-4C-Ixt"/>
                 <constraint firstItem="Mgd-Pk-cnL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBY-kw-O5N"/>
                 <constraint firstItem="zFK-7O-Wbd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uwp-pd-4Lx"/>
                 <constraint firstItem="VUO-i5-5fG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="WSh-Ll-5PB"/>
+                <constraint firstItem="52e-pW-o5G" firstAttribute="top" secondItem="BQS-hR-yl9" secondAttribute="top" id="Wsh-9V-bfz"/>
                 <constraint firstItem="Mgd-Pk-cnL" firstAttribute="top" secondItem="VUO-i5-5fG" secondAttribute="bottom" id="aM8-Lg-Wdz"/>
                 <constraint firstAttribute="bottom" secondItem="Mgd-Pk-cnL" secondAttribute="bottom" id="or0-yr-DZg"/>
                 <constraint firstAttribute="trailing" secondItem="Mgd-Pk-cnL" secondAttribute="trailing" id="tiy-2I-sDT"/>
                 <constraint firstAttribute="trailing" secondItem="VUO-i5-5fG" secondAttribute="trailing" constant="24" id="wHF-Be-okz"/>
-                <constraint firstItem="BQS-hR-yl9" firstAttribute="top" secondItem="VUO-i5-5fG" secondAttribute="bottom" constant="22" id="z40-RR-WB4"/>
+                <constraint firstItem="BQS-hR-yl9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="zt4-ae-noh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="134.05797101449275" y="-165.06696428571428"/>

@@ -267,12 +267,11 @@
 "plant_detail_cares" = "Cuidados";
 "plant_detail_more_on_wiki" = "Más info en el Wiki";
 "plant_detail_removed_from_wishlist" = "Eliminado de la lista de deseos";
-"plants_backToTop" = "Volver arriba";
+"plants_backToTop" = "¿No se puede identificar o encontrar en el catálogo?";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar Mis Plantas";
 "plants_search" = "Buscar por nombre";
 "plants_uniquePlantButton" = "Añadir planta única";
-"plants_uniquePlantLabel" = "¿No se puede identificar o encontrar en el catálogo?";
 "pop_change_name_button" = "Cambiar";
 "pop_change_name_subtitle" = "Dale un nombre a tu planta";
 "pop_change_name_title" = "Cambiar nombre";
