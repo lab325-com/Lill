@@ -98,12 +98,26 @@ class SubcribeController: BaseController {
     private lazy var presenter = SubscribePresenter(view: self)
     private var fistSub = SubscribeType.yearProduct
     private var secondSub = SubscribeType.monthProduct
+    var controller: String
     
     private let yourAttributes: [NSAttributedString.Key: Any] = [
         .font: UIFont.systemFont(ofSize: 13),
         .foregroundColor: UIColor.black,
         .underlineStyle: NSUnderlineStyle.single.rawValue
     ]
+    
+    //----------------------------------------------
+    // MARK: - Init
+    //----------------------------------------------
+    
+    init(controller: String) {
+        self.controller = controller
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -196,7 +210,7 @@ class SubcribeController: BaseController {
         AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "year"])
         AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "year"])
         
-        presenter.purchase(id: self.fistSub.rawValue) { [weak self] result, error in
+        presenter.purchase(id: self.fistSub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
             if result {
                 self?.dismiss(animated: true, completion: nil)
             } else {
@@ -210,7 +224,7 @@ class SubcribeController: BaseController {
         AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "mounth"])
         AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "mounth"])
         
-        presenter.purchase(id: self.secondSub.rawValue) { [weak self] result, error in
+        presenter.purchase(id: self.secondSub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
             self?.checkSubscribeUI()
             if result {
                 self?.dismiss(animated: true, completion: nil)

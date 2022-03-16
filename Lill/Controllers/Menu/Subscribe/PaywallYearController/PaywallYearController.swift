@@ -98,7 +98,7 @@ class PaywallYearController: BaseController {
     }
     
     @IBAction func actionSubscription(_ sender: UIButton) {
-        presenter.purchase(id: self.id.first!) { [weak self] result, error in
+        presenter.purchase(id: self.id.first!, controller: controller) { [weak self] result, error in
             guard let `self` = self else { return }
             if result {
                 self.delegate?.paywallYearClose(controller: self)

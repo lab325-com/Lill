@@ -32,8 +32,8 @@ class MenuRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func presentSubscription() {
-        let controller = SubcribeController()
+    func presentSubscription(controller: String) {
+        let controller = SubcribeController(controller: controller)
         present(controller: controller)
     }
     
