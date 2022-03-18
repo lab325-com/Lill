@@ -8,14 +8,19 @@ class GardenEdit: BaseController {
     //----------------------------------------------
     
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var footerView: UIView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     @IBOutlet weak var gardenImageView: UIImageView!
     @IBOutlet weak var gardenNameLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountInfoLabel: UILabel!
     @IBOutlet weak var gadenPlantsCountLabel: UILabel!
     
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var changeCoverButton: UIButton!
+    @IBOutlet weak var changeNameButton: UIButton!
     @IBOutlet weak var deleteSpaceButton: UIButton!
     
     //----------------------------------------------
@@ -60,6 +65,13 @@ class GardenEdit: BaseController {
     
     private func setup() {
         hiddenNavigationBar = false
+        
+        titleLabel.text = RLocalization.garden_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        infoLabel.text = RLocalization.garden_edit_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        doneButton.setTitle(RLocalization.garden_edit_done.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        changeCoverButton.setTitle(RLocalization.garden_edit_change_cover.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        changeNameButton.setTitle(RLocalization.garden_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        deleteSpaceButton.setTitle(RLocalization.garden_edit_delete_space.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         headerView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 24.0)
         footerView.roundCorners(corners: [.topRight, .topLeft], radius: 24.0)

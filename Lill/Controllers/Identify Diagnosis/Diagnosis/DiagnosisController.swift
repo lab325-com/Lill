@@ -37,6 +37,8 @@ class DiagnosisController: BaseController {
     @IBOutlet weak var retakeButton: UIButton!
     @IBOutlet weak var restartDiagnosingButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var noProblemRetakeButton: UIButton!
+    @IBOutlet weak var noProblemSendReportButton: UIButton!
         
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var onboardingInfoLabel: UILabel!
@@ -93,18 +95,21 @@ class DiagnosisController: BaseController {
         topView.layer.cornerRadius = 24.0
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        titleLabel.text = RLocalization.diagnosis_title()
-        onboardingInfoLabel.text = RLocalization.diagnosis_onboarding_info()
-        captureInfoLabel.text = RLocalization.diagnosis_capture_info()
-        captureLabel.text = RLocalization.diagnosis_capture()
-        previewInfoLabel.text = RLocalization.diagnosis_preview_info()
-        analyzeInfoLabel.text = RLocalization.diagnosis_analyze_info()
-        noDiagnoseLabel.text = RLocalization.diagnosis_no_data()
+        titleLabel.text = RLocalization.diagnosis_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        onboardingInfoLabel.text = RLocalization.diagnosis_onboarding_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        captureInfoLabel.text = RLocalization.diagnosis_capture_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        captureLabel.text = RLocalization.diagnosis_capture.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        previewInfoLabel.text = RLocalization.diagnosis_preview_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        analyzeInfoLabel.text = RLocalization.diagnosis_analyze_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        noDiagnoseLabel.text = RLocalization.diagnosis_no_data.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        startDiagnosingButton.setTitle(RLocalization.diagnosis_start_diagnose(), for: .normal)
-        retakeButton.setTitle(RLocalization.diagnosis_preview_retake(), for: .normal)
-        restartDiagnosingButton.setTitle(RLocalization.diagnosis_restart_diagnosing(), for: .normal)
-        reportButton.setTitle(RLocalization.diagnosis_report(), for: .normal)
+        startDiagnosingButton.setTitle(RLocalization.diagnosis_start_diagnose.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        retakeButton.setTitle(RLocalization.diagnosis_preview_retake.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        diagnoseButton.setTitle(RLocalization.diagnosis_preview_diagnose.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        restartDiagnosingButton.setTitle(RLocalization.diagnosis_restart_diagnosing.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        reportButton.setTitle(RLocalization.diagnosis_report.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        noProblemRetakeButton.setTitle(RLocalization.diagnosis_restart_diagnosing.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        noProblemSendReportButton.setTitle(RLocalization.diagnosis_report.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------

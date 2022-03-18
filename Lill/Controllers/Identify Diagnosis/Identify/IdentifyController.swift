@@ -109,7 +109,6 @@ class IdentifyController: BaseController {
         DispatchQueue.main.async {
             AnalyticsHelper.sendFirebaseScreenEvent(screen: .identify_screen_step_1)
         }
-        
     }
     
     //----------------------------------------------
@@ -132,40 +131,40 @@ class IdentifyController: BaseController {
         topView.layer.cornerRadius = 24.0
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
                 
-        titleLabel.text = RLocalization.identify_title()
+        titleLabel.text = RLocalization.identify_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        makePhotoTitleLabel.text = RLocalization.identify_make_photo_title()
-        makePhotoInfoLabel.text = RLocalization.identify_make_photo_info()
-        photoQualityTitleLabel.text = RLocalization.identify_photo_quality_title()
-        photoQualityInfoLabel.text = RLocalization.identify_photo_quality_info()
-        overviewTitleLabel.text = RLocalization.identify_overview_title()
-        overviewInfoLabel.text = RLocalization.identify_overview_info()
+        makePhotoTitleLabel.text = RLocalization.identify_make_photo_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        makePhotoInfoLabel.text = RLocalization.identify_make_photo_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        photoQualityTitleLabel.text = RLocalization.identify_photo_quality_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        photoQualityInfoLabel.text = RLocalization.identify_photo_quality_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        overviewTitleLabel.text = RLocalization.identify_overview_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        overviewInfoLabel.text = RLocalization.identify_overview_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        identifyTitleLabel.text = RLocalization.identify_title()
-        identifyInfoLabel.text = RLocalization.identify_info()
-        identifyFreeSnapsLabel.text = RLocalization.identify_free_snaps()
-        identifyPremiumLabel.text = RLocalization.identify_premium()
-        identifyCaptureLabel.text = RLocalization.identify_capture()
+        identifyTitleLabel.text = RLocalization.identify_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyInfoLabel.text = RLocalization.identify_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyFreeSnapsLabel.text = RLocalization.identify_free_snaps.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyPremiumLabel.text = RLocalization.identify_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyCaptureLabel.text = RLocalization.identify_capture.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        identifyResultTitleLabel.text = RLocalization.identify_result_title()
-        identifyResultSnapsLeftLabel.text = RLocalization.identify_result_snaps_left()
-        identifyResultInfoLabel.text = RLocalization.identify_result_info()
+        identifyResultTitleLabel.text = RLocalization.identify_result_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyResultSnapsLeftLabel.text = RLocalization.identify_result_snaps_left.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyResultInfoLabel.text = RLocalization.identify_result_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        identifyAnalyzeImageLabel.text = RLocalization.identify_analize_image()
-        identifyAnalyzeIdentifyPlantLabel.text = RLocalization.identify_analize_identify_plant()
+        identifyAnalyzeImageLabel.text = RLocalization.identify_analize_image.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyAnalyzeIdentifyPlantLabel.text = RLocalization.identify_analize_identify_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        noDataLabel.text = RLocalization.identify_no_data()
-        noResultsLabel.text = RLocalization.identify_no_results()
+        noDataLabel.text = RLocalization.identify_no_data.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        noResultsLabel.text = RLocalization.identify_no_results.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         noResultsStackView.setCustomSpacing(9.0, after: noResulsSearchButton)
         
-        startIdentifyButton.setTitle(RLocalization.identify_start_identify(), for: .normal)
-        identifyPhotoButton.setTitle(RLocalization.identify_result_identify_photo(), for: .normal)
-        retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo(), for: .normal)
-        noResulsReportButton.setTitle(RLocalization.identify_no_results_retake_photo(), for: .normal)
-        noResulsSearchButton.setTitle(RLocalization.identify_no_results_search_by_catalog(), for: .normal)
-        noResulsReportButton.setTitle(RLocalization.identify_no_results_send_report(), for: .normal)
-        reIdentifyButton.setTitle(RLocalization.identify_no_results_reidentify(), for: .normal)
+        startIdentifyButton.setTitle(RLocalization.identify_start_identify.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        identifyPhotoButton.setTitle(RLocalization.identify_result_identify_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        retakePhotoButton.setTitle(RLocalization.identify_result_retake_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        noResulsRetakeButton.setTitle(RLocalization.identify_no_results_retake_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        noResulsSearchButton.setTitle(RLocalization.identify_no_results_search_by_catalog.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        noResulsReportButton.setTitle(RLocalization.identify_no_results_send_report.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        reIdentifyButton.setTitle(RLocalization.identify_no_results_reidentify.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         guard let meModel = KeychainService.standard.me else { return }
         identifyCountLabel.text = "\(meModel.access.identifyUsed)" + "/" + "\(meModel.access.identifyTotal ?? 0)"

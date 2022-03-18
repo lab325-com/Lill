@@ -55,6 +55,10 @@ class CareCell: UITableViewCell {
         let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         careFrequencyLabel.text = every + " \(caresModel.count)" + " \(caresModel.period.text)"
         careDateLabel.text = caresModel.nextTime
+        
+        careTimeTitleLabel.text = RLocalization.garden_plant_cares_edit_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        careFrequencyTitleLabel.text = RLocalization.garden_plant_cares_edit_frequency.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        careDateTitleLabel.text = RLocalization.garden_plant_cares_edit_next_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
     }
         
     @IBAction func careTimeimeAction(_ sender: Any) {
