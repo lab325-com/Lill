@@ -45,7 +45,7 @@ class PlantsController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    let searchText = RLocalization.plants_search()
+    var searchText = ""
     private var isNeedAnimate = true
     
     //----------------------------------------------
@@ -92,12 +92,6 @@ class PlantsController: BaseController {
             debugPrint("Sended recept to store: \(result)")
         }
         
-        navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        identifireLabel.text = RLocalization.plants_identifier()
-        explorerLabel.text = RLocalization.plants_explore()
-        uniquePlantLabel.text = RLocalization.plants_uniquePlantLabel()
-        
-        searchTextField.text = searchText
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         blurEffectView.alpha = 0.0
@@ -121,8 +115,6 @@ class PlantsController: BaseController {
         photoButton.setTitle("", for: .normal)
         closeButton.setTitle("", for: .normal)
         wishListButton.setTitle("", for: .normal)
-        backToTopButton.setTitle(RLocalization.plants_backToTop(), for: .normal)
-        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton(), for: .normal)
         
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.contentInset.bottom = 54
@@ -135,12 +127,22 @@ class PlantsController: BaseController {
         
         blurEffectHeighLayout.constant = UIDevice.current.hasSafeArea ? 98.0 : 82.0
         
-//        collectionView.contentInset = UIEdgeInsetsMake(98,0,0,0)
-//        collectionview.scrollIndicatorInsets = UIEdgeInsetsMake(44,0,0,0)
-        
         if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
             MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
         }
+        
+        setupLocalization()
+    }
+    
+    func setupLocalization() {
+        navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifireLabel.text = RLocalization.plants_identifier.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        explorerLabel.text = RLocalization.plants_explore.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        uniquePlantLabel.text = RLocalization.plants_uniquePlantLabel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        backToTopButton.setTitle(RLocalization.plants_backToTop.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        searchTextField.text = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        searchText = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
     }
     
     //----------------------------------------------
@@ -197,6 +199,11 @@ class PlantsController: BaseController {
         } else {
             PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
         }
+    }
+    
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        setupLocalization()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

@@ -926,6 +926,9 @@
 		FAA089682757B90D00449D5B /* GardenPlantCaresEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditPresenter.swift; sourceTree = "<group>"; };
 		FAA0896B275802A100449D5B /* CareInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareInfoCell.swift; sourceTree = "<group>"; };
 		FAA0896C275802A100449D5B /* CareInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CareInfoCell.xib; sourceTree = "<group>"; };
+		FAA3C4A227E339560080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FAA3C4A327E3395A0080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAA3C4A427E33A4D0080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAAA230C26F3624F00E10E89 /* Lill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA230F26F3624F00E10E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA231826F3625200E10E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -3593,6 +3596,7 @@
 				en,
 				Base,
 				es,
+				ru,
 			);
 			mainGroup = FAAA230326F3624F00E10E89;
 			packageReferences = (
@@ -4232,6 +4236,7 @@
 			children = (
 				02AB244826F39D8E00309CFF /* en */,
 				029C5202273078D300BD30B4 /* es */,
+				FAA3C4A427E33A4D0080947B /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4241,6 +4246,7 @@
 			children = (
 				FA0F608B2764B1100043E72C /* en */,
 				FA0F608D2764B1120043E72C /* es */,
+				FAA3C4A327E3395A0080947B /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4249,6 +4255,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAAA231B26F3625200E10E89 /* Base */,
+				FAA3C4A227E339560080947B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

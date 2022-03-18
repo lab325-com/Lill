@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenDetailController">
             <connections>
+                <outlet property="backLabel" destination="9N6-Af-yQm" id="Kam-Nn-DMe"/>
                 <outlet property="scheduleStatusImage" destination="VjR-in-5jR" id="O2U-ec-QAO"/>
                 <outlet property="scheduleStatusLabel" destination="NEL-5b-bmX" id="1Ek-2y-hB5"/>
                 <outlet property="scheduleStatusViewBottomLayout" destination="aM8-Lg-Wdz" id="lij-Zl-70i"/>

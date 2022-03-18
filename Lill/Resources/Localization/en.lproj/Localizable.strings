@@ -205,6 +205,9 @@
 "garden_plant_detail_removed_from_schedule" = "Removed from Schedule";
 "garden_plant_is_happy" = "Plant is happy";
 "garden_title" = "My Garden";
+"gardens_controller_add_plant" = "add plant";
+"gardens_controller_places" = "My Places";
+"gardens_controller_plants" = "My Plants";
 "gardens_controller_title" = "My Garden";
 "identify_analize_identify_plant" = "Identifying plant";
 "identify_analize_image" = "Analyzing image";
@@ -252,6 +255,7 @@
 "menu_section_archive_title" = "archive";
 "menu_section_settings_title" = "settings";
 "menu_title" = "Menu";
+"navigation_back" = "Back";
 "paywall_year_new_price" = "New price:";
 "paywall_year_old_price" = "Old price:";
 "period_type_day" = "days";
