@@ -60,7 +60,10 @@ class GardensController: BaseController {
     private func setup() {
         hiddenNavigationBar = true
         
-        navigationItem.title = RLocalization.gardens_controller_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        titleLabel.text = RLocalization.gardens_controller_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        addPantLabel.text = RLocalization.gardens_controller_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        gardensSegment.setTitle(RLocalization.gardens_controller_places.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
+        gardensSegment.setTitle(RLocalization.gardens_controller_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
         
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -78,6 +81,13 @@ class GardensController: BaseController {
         
         tableView.contentInset.top = 52.0
         collectionView.contentInset.top = 100.0
+    }
+    
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        updateLanguage()
+        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     private func resetCaresViews() {
@@ -156,6 +166,12 @@ class GardensController: BaseController {
         default:
             presenter.getPlants()
         }
+    }
+}
+
+extension GardensController {
+    private func updateLanguage() {
+        setup()
     }
 }
 

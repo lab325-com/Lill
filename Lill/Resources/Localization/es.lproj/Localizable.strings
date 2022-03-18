@@ -205,6 +205,9 @@
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
 "garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
+"gardens_controller_add_plant" = "añadir";
+"gardens_controller_places" = "Mis lugares";
+"gardens_controller_plants" = "Mis plantas";
 "gardens_controller_title" = "Mi jardín";
 "identify_analize_identify_plant" = "Identificando planta";
 "identify_analize_image" = "Analizando la imagen";
@@ -252,6 +255,7 @@
 "menu_section_archive_title" = "archivo";
 "menu_section_settings_title" = "ajustes";
 "menu_title" = "Menú";
+"navigation_back" = "Atrás";
 "paywall_year_new_price" = "Nuevo precio:";
 "paywall_year_old_price" = "Precio anterior:";
 "period_type_day" = "días";

@@ -21,6 +21,7 @@ class GardenDetailController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var scheduleStatusLabel: UILabel!
@@ -105,6 +106,8 @@ class GardenDetailController: BaseController {
     private func setup() {
         headerView = tableView.tableHeaderView
         
+        backLabel.text = RLocalization.navigation_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         tableView.alpha = 0.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableHeaderView = nil
@@ -127,9 +130,6 @@ class GardenDetailController: BaseController {
         
         tableView.tableFooterView = UIView()
         updateHeaderView()
-        
-//        let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
-//        navigationItem.rightBarButtonItems = [dots]
     }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {

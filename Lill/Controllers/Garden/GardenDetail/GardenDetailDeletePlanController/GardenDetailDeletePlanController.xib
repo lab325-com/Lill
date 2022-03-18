@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +14,9 @@
         </array>
         <array key="SFProDisplay-Medium.ttf">
             <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -131,23 +134,17 @@
                                         <constraint firstItem="RfM-vv-VcM" firstAttribute="leading" secondItem="4Z8-eT-yVL" secondAttribute="leading" id="rjC-vR-e3H"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRe-Hx-sHo">
                                     <rect key="frame" x="0.0" y="67" width="366" height="44"/>
                                     <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="prm-mt-8ff"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain">
-                                        <attributedString key="attributedTitle">
-                                            <fragment content="Delete Plant">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="15"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                    </buttonConfiguration>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Delete Plant">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                             <integer key="value" value="24"/>
@@ -157,29 +154,17 @@
                                         <action selector="actionDeletePlant:" destination="-1" eventType="touchUpInside" id="fNG-Lq-7NQ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-us-geH">
                                     <rect key="frame" x="0.0" y="120" width="366" height="44"/>
                                     <color key="backgroundColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="wYf-ZN-PpU"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain">
-                                        <attributedString key="attributedTitle">
-                                            <fragment content="Cancel">
-                                                <attributes>
-                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                    <color key="NSStrokeColor" red="0.26667000000000002" green="0.26667000000000002" blue="0.26667000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                    </buttonConfiguration>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                             <integer key="value" value="24"/>

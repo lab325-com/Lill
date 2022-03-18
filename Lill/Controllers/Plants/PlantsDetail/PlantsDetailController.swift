@@ -19,6 +19,7 @@ class PlantsDetailController: BaseController {
     
     @IBOutlet weak var aboutTitleLabel: UILabel!
     @IBOutlet weak var caresTitleLabel: UILabel!
+    @IBOutlet weak var backLabel: UILabel!
     
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToGardenButton: UIButton!
@@ -100,6 +101,8 @@ class PlantsDetailController: BaseController {
     
     private func setup() {
         scrollView.alpha = 1.0
+        
+        backLabel.text = RLocalization.navigation_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 
         aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)

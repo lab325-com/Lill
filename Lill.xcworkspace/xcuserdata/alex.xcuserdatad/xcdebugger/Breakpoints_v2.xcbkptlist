@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3F6FF730-61C3-42DF-9E57-8C8163B3C576"
+            uuid = "429541B7-E5FD-4A5D-9C82-2A1B9C319D4E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lill/Controllers/Garden/GardenDetail/GardenDetailController/GardenDetailController.swift"
+            filePath = "Lill/Controllers/Plants/Plants/PlantsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "setup()"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "setupLocalization()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

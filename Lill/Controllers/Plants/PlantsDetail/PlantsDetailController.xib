@@ -24,6 +24,7 @@
                 <outlet property="aboutTitleLabel" destination="J21-go-j76" id="r9Y-Ab-bg4"/>
                 <outlet property="aboutView" destination="PZu-Se-DMy" id="ABa-r8-4Hp"/>
                 <outlet property="addToGardenButton" destination="kxN-TC-u5w" id="1D1-d9-dba"/>
+                <outlet property="backLabel" destination="2XH-Ar-R7n" id="mcD-Vh-tAw"/>
                 <outlet property="careView" destination="5vc-zO-TKz" id="d5x-3B-6oh"/>
                 <outlet property="caresTitleLabel" destination="Ngb-fQ-l8C" id="zYs-cn-akf"/>
                 <outlet property="descriptionLabel" destination="JHw-lH-yAz" id="1L0-md-Kha"/>
