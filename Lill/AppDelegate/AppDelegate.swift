@@ -75,19 +75,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
         
-//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-//        UNUserNotificationCenter.current().requestAuthorization(
-//            options: authOptions,
-//            completionHandler: {(granted, error) in
-//                DispatchQueue.main.async {
-//                    if (granted) {
-//                        application.registerForRemoteNotifications()
-//                    }
-//                    else {
-//                        //Do stuff if unsuccessful...
-//                    }
-//                }
-//            })
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { (granted, error) in
+            DispatchQueue.main.async {
+                if (granted) {
+                    application.registerForRemoteNotifications()
+                }
+                else {
+                    //Do stuff if unsuccessful...
+                }
+            }
+        })
         
         SKAdNetwork.registerAppForAdNetworkAttribution()
         
@@ -218,7 +216,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        
         let userInfo = notification.request.content.userInfo
         
         if let messageID = userInfo[gcmMessageIDKey] {
@@ -260,6 +257,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID from userNotificationCenter didReceive: \(messageID)")
         }
         
+        if let type = userInfo["Type"], type as! String == "Subscription" {
+            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
+                MenuRouter(presenter: controller.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+            }
+        }
+                
         print(userInfo)
         
         completionHandler()
