@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 60 files.
+  /// This `R.file` struct is generated, and contains static references to 61 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -253,6 +253,8 @@ struct R: Rswift.Validatable {
     static let sfProDisplayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Medium", pathExtension: "ttf")
     /// Resource file `SFProDisplay-Regular.ttf`.
     static let sfProDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProDisplay-Regular", pathExtension: "ttf")
+    /// Resource file `SFProRounded-Bold.ttf`.
+    static let sfProRoundedBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFProRounded-Bold", pathExtension: "ttf")
     /// Resource file `SaveUDID.graphql`.
     static let saveUDIDGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "SaveUDID", pathExtension: "graphql")
     /// Resource file `ScheduleByGardenPlant.graphql`.
@@ -570,6 +572,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "SFProRounded-Bold", withExtension: "ttf")`
+    static func sfProRoundedBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfProRoundedBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "SaveUDID", withExtension: "graphql")`
     static func saveUDIDGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.saveUDIDGraphql
@@ -639,7 +647,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 3 fonts.
+  /// This `R.font` struct is generated, and contains static references to 4 fonts.
   struct font: Rswift.Validatable {
     /// Font `SFProDisplay-Bold`.
     static let sfProDisplayBold = Rswift.FontResource(fontName: "SFProDisplay-Bold")
@@ -647,6 +655,8 @@ struct R: Rswift.Validatable {
     static let sfProDisplayMedium = Rswift.FontResource(fontName: "SFProDisplay-Medium")
     /// Font `SFProDisplay-Regular`.
     static let sfProDisplayRegular = Rswift.FontResource(fontName: "SFProDisplay-Regular")
+    /// Font `SFRounded-Ultralight`.
+    static let sfRoundedUltralight = Rswift.FontResource(fontName: "SFRounded-Ultralight")
 
     /// `UIFont(name: "SFProDisplay-Bold", size: ...)`
     static func sfProDisplayBold(size: CGFloat) -> UIKit.UIFont? {
@@ -663,10 +673,16 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: sfProDisplayRegular, size: size)
     }
 
+    /// `UIFont(name: "SFRounded-Ultralight", size: ...)`
+    static func sfRoundedUltralight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfRoundedUltralight, size: size)
+    }
+
     static func validate() throws {
       if R.font.sfProDisplayBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Bold' could not be loaded, is 'SFProDisplay-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfProDisplayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Medium' could not be loaded, is 'SFProDisplay-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfProDisplayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFProDisplay-Regular' could not be loaded, is 'SFProDisplay-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sfRoundedUltralight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFRounded-Ultralight' could not be loaded, is 'SFProRounded-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
@@ -4366,14 +4382,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let climate_shade_sn = Rswift.StringResource(key: "climate_shade_sn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: Save 33% Off
+      /// en translation: Save 50% Off
       ///
       /// Locales: en, es, ru
       static let subscribe_year_save = Rswift.StringResource(key: "subscribe_year_save", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: Save 33% Off
+      /// en translation: Save 50% Off
       ///
       /// Locales: en, es, ru
-      static let subscription_save_33 = Rswift.StringResource(key: "subscription_save_33", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      static let subscription_save_50 = Rswift.StringResource(key: "subscription_save_50", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Save Changes
       ///
       /// Locales: en, es, ru
@@ -8909,7 +8925,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("climate_shade_sn", bundle: bundle, comment: "")
       }
 
-      /// en translation: Save 33% Off
+      /// en translation: Save 50% Off
       ///
       /// Locales: en, es, ru
       static func subscribe_year_save(preferredLanguages: [String]? = nil) -> String {
@@ -8924,19 +8940,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscribe_year_save", bundle: bundle, comment: "")
       }
 
-      /// en translation: Save 33% Off
+      /// en translation: Save 50% Off
       ///
       /// Locales: en, es, ru
-      static func subscription_save_33(preferredLanguages: [String]? = nil) -> String {
+      static func subscription_save_50(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("subscription_save_33", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("subscription_save_50", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscription_save_33"
+          return "subscription_save_50"
         }
 
-        return NSLocalizedString("subscription_save_33", bundle: bundle, comment: "")
+        return NSLocalizedString("subscription_save_50", bundle: bundle, comment: "")
       }
 
       /// en translation: Save Changes

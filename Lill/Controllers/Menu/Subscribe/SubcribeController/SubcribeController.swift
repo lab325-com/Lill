@@ -156,7 +156,7 @@ class SubcribeController: BaseController {
         restoreButton.setAttributedTitle(attributeString, for: .normal)
         
     
-        yearSaveLabel.text = RLocalization.subscription_save_33.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        yearSaveLabel.text = RLocalization.subscription_save_50.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         yearSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
