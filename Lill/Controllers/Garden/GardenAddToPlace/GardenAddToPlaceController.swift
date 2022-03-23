@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol GardenAddToPlaceDelegate: AnyObject {
+@objc protocol GardenAddToPlaceDelegate: AnyObject {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController)
+    @objc optional func selectedGarden(gardenId: String)
 }
 
 class GardenAddToPlaceController: BaseController {
@@ -140,7 +141,11 @@ extension GardenAddToPlaceController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let gardenId = KeychainService.standard.me?.gardens[safe: indexPath.row]?.id {
-            presenter.addPlantToGarden(plantId: plantId, gardenId: gardenId)
+            if plantId.isEmpty {
+                delegate?.selectedGarden?(gardenId: gardenId)
+            } else {
+                presenter.addPlantToGarden(plantId: plantId, gardenId: gardenId)
+            }
         }
     }
 }

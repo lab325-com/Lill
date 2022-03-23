@@ -30,7 +30,7 @@ protocol AddPlantsCarePresenterProtocol: AnyObject {
     init(view: AddPlantsCareOutputProtocol)
     
     func getCares()
-    func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel])
+    func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel], gardenId: String)
 }
 
 class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
@@ -57,9 +57,7 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
         }
     }
     
-    
-    
-    func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel]) {
+    func sendUniquesPlants(img: UIImage, text: String, plantsTime: [AddPlantTimeModel], gardenId: String) {
         func dateToString(fromDate date: Date) -> String {
             //let dateFormmater = DateFormatter()
             //dateFormmater.timeZone = TimeZone(identifier: "UTC")
@@ -73,8 +71,6 @@ class AddPlantsCarePresenter: AddPlantsCarePresenterProtocol {
             
             return "\(hour):\(minutes):\(seconds)"
         }
-        
-        guard let gardenId = KeychainService.standard.me?.defaultGardenId else { return }
         
         view?.startLoader()
         
