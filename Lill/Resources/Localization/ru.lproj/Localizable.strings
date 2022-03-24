@@ -298,9 +298,11 @@
 "report_view_great" = "Отлично!";
 "report_view_subtitle" = "Отчет Отправлен!";
 "report_view_title" = "Готово!";
+"scheldure_care" = "Уход";
 "scheldure_days" = "дни";
-"scheldure_done" = "Шаги ухода готовы";
+"scheldure_done" = "Готово";
 "scheldure_done_all" = "Сделаны все ожидающие шаги ухода";
+"scheldure_done_cares" = "Шаги ухода готовы";
 "scheldure_empty_title" = "Чтобы видеть ежедневное расписание и уведомления - включите колокольчик в карточке растения";
 "scheldure_next_days" = "Следующие 7 дней";
 "scheldure_plants" = "Растения";

@@ -3268,7 +3268,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 368 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 370 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3574,6 +3574,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let diagnosis_capture_info = Rswift.StringResource(key: "diagnosis_capture_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Care
+      ///
+      /// Locales: en, es, ru
+      static let scheldure_care = Rswift.StringResource(key: "scheldure_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Care Plan
       ///
       /// Locales: en, es, ru
@@ -3837,6 +3841,10 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es, ru
+      static let scheldure_done = Rswift.StringResource(key: "scheldure_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, es, ru
       static let scheldure_setting_done = Rswift.StringResource(key: "scheldure_setting_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Done all Cares
       ///
@@ -3869,7 +3877,7 @@ struct R: Rswift.Validatable {
       /// en translation: Done cares
       ///
       /// Locales: en, es, ru
-      static let scheldure_done = Rswift.StringResource(key: "scheldure_done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      static let scheldure_done_cares = Rswift.StringResource(key: "scheldure_done_cares", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Done!
       ///
       /// Locales: en, es, ru
@@ -5891,6 +5899,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("diagnosis_capture_info", bundle: bundle, comment: "")
       }
 
+      /// en translation: Care
+      ///
+      /// Locales: en, es, ru
+      static func scheldure_care(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_care", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_care"
+        }
+
+        return NSLocalizedString("scheldure_care", bundle: bundle, comment: "")
+      }
+
       /// en translation: Care Plan
       ///
       /// Locales: en, es, ru
@@ -6871,6 +6894,21 @@ struct R: Rswift.Validatable {
       /// en translation: Done
       ///
       /// Locales: en, es, ru
+      static func scheldure_done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("scheldure_done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "scheldure_done"
+        }
+
+        return NSLocalizedString("scheldure_done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, es, ru
       static func scheldure_setting_done(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("scheldure_setting_done", bundle: hostingBundle, comment: "")
@@ -6991,16 +7029,16 @@ struct R: Rswift.Validatable {
       /// en translation: Done cares
       ///
       /// Locales: en, es, ru
-      static func scheldure_done(preferredLanguages: [String]? = nil) -> String {
+      static func scheldure_done_cares(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("scheldure_done", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("scheldure_done_cares", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "scheldure_done"
+          return "scheldure_done_cares"
         }
 
-        return NSLocalizedString("scheldure_done", bundle: bundle, comment: "")
+        return NSLocalizedString("scheldure_done_cares", bundle: bundle, comment: "")
       }
 
       /// en translation: Done!

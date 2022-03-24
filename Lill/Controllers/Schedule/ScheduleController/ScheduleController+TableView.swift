@@ -15,7 +15,6 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
             if presenter.currentSchedule.count > 0 {
                 count += 1
             }
-            
             return count
         } else {
             return presenter.nextWeekSchedule.count
@@ -73,7 +72,6 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexSelected.contains(indexPath.row) {
@@ -81,11 +79,9 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadRows(at: [indexPath], with: .automatic)
         } else {
             var model: ScheduleMainModel?
-            
             if scheldureSegment.selectedSegmentIndex == 1 {
                 model = presenter.nextWeekSchedule[safe: indexPath.row]
             } else {
-                
                 if presenter.currentSchedule.count > 0 {
                     switch indexPath.row {
                     case 0..<presenter.currentSchedule.count:
@@ -108,7 +104,6 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
                     presenter.gardensById(ids: model.gardenPlantIds, modelSchedule: model, row: indexPath.row)
                 }
             }
-           
         }
     }
 }
