@@ -211,7 +211,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
 "gardens_controller_places" = "Mis lugares";
@@ -300,7 +300,7 @@
 "scheldure_days" = "días";
 "scheldure_done" = "CUIDADO HECHO";
 "scheldure_done_all" = "Marcar como hechos todos los Cuidados en Espera";
-"scheldure_empty_title" = "Para tener un calendario y notificaciones diarias, encienda el ícono de anillo en la tarjeta de la Planta";
+"scheldure_empty_title" = "Tener calendario y notificaciones diarias: encienda el icono de la campana en la tarjeta de plantas";
 "scheldure_next_days" = "Próximos 7 días";
 "scheldure_plants" = "Plantas";
 "scheldure_setting_after" = "Enviar después de:";

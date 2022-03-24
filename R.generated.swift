@@ -4558,7 +4558,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_plant_cares_edit_time = Rswift.StringResource(key: "garden_plant_cares_edit_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: To have daily schedule and notifications - turn ON the Ring icon in Plant card
+      /// en translation: To have daily schedule and notifications - turn ON the Bell icon in Plant card
       ///
       /// Locales: en, es, ru
       static let scheldure_empty_title = Rswift.StringResource(key: "scheldure_empty_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
@@ -9585,7 +9585,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_plant_cares_edit_time", bundle: bundle, comment: "")
       }
 
-      /// en translation: To have daily schedule and notifications - turn ON the Ring icon in Plant card
+      /// en translation: To have daily schedule and notifications - turn ON the Bell icon in Plant card
       ///
       /// Locales: en, es, ru
       static func scheldure_empty_title(preferredLanguages: [String]? = nil) -> String {

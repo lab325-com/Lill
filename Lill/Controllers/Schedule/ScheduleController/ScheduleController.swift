@@ -56,8 +56,7 @@ class ScheduleController: BaseController {
         tableView.register(UINib(nibName: cellScheduleDoneIdentifier, bundle: nil), forCellReuseIdentifier: cellScheduleDoneIdentifier)
         
         tableView.tableFooterView = UIView()
-        tableView.addHeader(withTarget: self,
-                            action: #selector(self.headerRefresh(sender:)))
+        tableView.addHeader(withTarget: self, action: #selector(self.headerRefresh(sender:)))
         tableView.reloadData()
     }
     

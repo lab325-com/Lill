@@ -134,10 +134,10 @@
 "garden_delete_sub_title" = "Подтвердите удаление растения из вашего сада";
 "garden_delete_success" = "Растение было Удалено";
 "garden_delete_title" = "Удаление растения";
-"garden_detail_about" = "Про";
+"garden_detail_about" = "О растении";
 "garden_detail_care_edit_my_plan" = "Редактировать Мой План по уходу";
 "garden_detail_care_plan" = "План ухода";
-"garden_detail_check_all" = "Проверьте, все ли ожидающие шаги по уходу сделаны.";
+"garden_detail_check_all" = "Отметить весь уход как выполненый";
 "garden_done_all_cares" = "Весь уход выполнен";
 "garden_done_all_humidity" = "Все удобрение выполнено";
 "garden_done_all_misting" = "Все распыление выполнено";
@@ -301,7 +301,7 @@
 "scheldure_days" = "дни";
 "scheldure_done" = "Шаги ухода готовы";
 "scheldure_done_all" = "Сделаны все ожидающие шаги ухода";
-"scheldure_empty_title" = "Чтобы иметь ежедневное расписание и уведомления - включите значок кольца в карточке растения";
+"scheldure_empty_title" = "Чтобы видеть ежедневное расписание и уведомления - включите колокольчик в карточке растения";
 "scheldure_next_days" = "Следующие 7 дней";
 "scheldure_plants" = "Растения";
 "scheldure_setting_after" = "Отправить после:";
@@ -345,8 +345,8 @@
 "subscription_title" = "Получить Премиум";
 "subscription_unsubscribe" = "Отписаться";
 "subscription_your_plan" = "Ваш план";
-"unique_ident_cover_capture_title" = "Запечатлить";
-"unique_ident_cover_sub_title" = "Создать ковер вашего нового места";
+"unique_ident_cover_capture_title" = "Фото";
+"unique_ident_cover_sub_title" = "Создать обложку вашего нового места";
 "uniquel_plan_create" = "Переименовать растение";
 "uniquel_plan_name_sub_title" = "Переименовать растение";
 "uniquel_plan_name_title" = "Добавить новое растение";

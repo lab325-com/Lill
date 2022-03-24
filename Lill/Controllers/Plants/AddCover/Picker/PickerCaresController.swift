@@ -104,7 +104,7 @@ extension PickerCaresController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             return "\(first[row])"
         default:
-            return String(second[row].text.dropLast()).uppercased()
+            return second[row].text
         }
     }
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {

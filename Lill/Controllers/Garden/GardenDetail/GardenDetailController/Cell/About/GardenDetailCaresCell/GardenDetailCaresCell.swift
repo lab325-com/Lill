@@ -9,6 +9,7 @@ import UIKit
 
 class GardenDetailCaresCell: UITableViewCell {
 
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var caresViews: [DetailCaresView]!
     
     override func awakeFromNib() {
@@ -23,6 +24,8 @@ class GardenDetailCaresCell: UITableViewCell {
     }
     
     func setupCell(model: GardenPlanByIDModel, cares: [(type: PlantsCareType, care: GardenShortPlantCaresModel)]) {
+        titleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         for view in caresViews {
             view.isHidden = true
         }

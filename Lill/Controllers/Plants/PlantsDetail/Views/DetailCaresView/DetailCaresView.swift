@@ -66,11 +66,11 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         careTitleLabel.text = care.type.text
         
         if days < 0 {
-            careValueLabel.text = "\(days * -1) days"
+            careValueLabel.text = "\(days * -1) \(care.care.period.localization)"
         } else if days == 0 {
-            careValueLabel.text = "today"
+            careValueLabel.text = RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         } else {
-            careValueLabel.text = "\(days) days"
+            careValueLabel.text = "\(days) \(care.care.period.localization)"
         }
     }
     
