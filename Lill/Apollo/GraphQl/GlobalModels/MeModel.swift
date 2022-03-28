@@ -13,6 +13,9 @@ struct MeModel: Codable {
     var gardens: [GardenModel]
     let access: AccessModel
     let sales: [SalesModel]?
+    let totalGardens: Int
+    let totalFavouritePlants: Int
+    let totalGardenPlants: Int
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification
@@ -34,6 +37,9 @@ struct MeModel: Codable {
         case access = "access"
         case notificationSettings = "NotificationSettings"
         case sales = "Sales"
+        case totalGardens = "totalGardens"
+        case totalFavouritePlants = "totalFavouritePlants"
+        case totalGardenPlants = "totalGardenPlants"
     }
 }
 

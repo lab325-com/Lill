@@ -8391,6 +8391,9 @@ public final class MeQuery: GraphQLQuery {
           id
           name
         }
+        totalGardens
+        totalFavouritePlants
+        totalGardenPlants
       }
     }
     """
@@ -8445,6 +8448,9 @@ public final class MeQuery: GraphQLQuery {
           GraphQLField("Gardens", type: .list(.object(Garden.selections))),
           GraphQLField("access", type: .object(Access.selections)),
           GraphQLField("Sales", type: .list(.object(Sale.selections))),
+          GraphQLField("totalGardens", type: .scalar(Int.self)),
+          GraphQLField("totalFavouritePlants", type: .scalar(Int.self)),
+          GraphQLField("totalGardenPlants", type: .scalar(Int.self)),
         ]
       }
 
@@ -8454,8 +8460,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil, sales: [Sale?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }, "Sales": sales.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }])
+      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil, sales: [Sale?]? = nil, totalGardens: Int? = nil, totalFavouritePlants: Int? = nil, totalGardenPlants: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }, "Sales": sales.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }, "totalGardens": totalGardens, "totalFavouritePlants": totalFavouritePlants, "totalGardenPlants": totalGardenPlants])
       }
 
       public var __typename: String {
@@ -8563,6 +8569,33 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }, forKey: "Sales")
+        }
+      }
+
+      public var totalGardens: Int? {
+        get {
+          return resultMap["totalGardens"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalGardens")
+        }
+      }
+
+      public var totalFavouritePlants: Int? {
+        get {
+          return resultMap["totalFavouritePlants"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalFavouritePlants")
+        }
+      }
+
+      public var totalGardenPlants: Int? {
+        get {
+          return resultMap["totalGardenPlants"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalGardenPlants")
         }
       }
 

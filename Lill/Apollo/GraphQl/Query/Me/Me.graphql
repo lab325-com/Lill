@@ -63,5 +63,8 @@ query Me {
             id
             name
         }
+		totalGardens
+		totalFavouritePlants
+		totalGardenPlants
 	}
 }

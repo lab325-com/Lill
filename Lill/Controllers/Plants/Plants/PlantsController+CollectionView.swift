@@ -67,11 +67,19 @@ extension PlantsController: UICollectionViewDelegateFlowLayout {
 
 extension PlantsController: PlantCollectionDelegate {
     func setToGarden(cell: PlantCollectionCell, id: String) {
-        GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+        } else {
+            GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        }
     }
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
-        presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
+        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+        } else {
+            presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
+        }
     }
 }
 

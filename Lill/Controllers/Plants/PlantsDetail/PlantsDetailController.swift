@@ -167,13 +167,22 @@ class PlantsDetailController: BaseController {
             AnalyticsHelper.sendFirebaseEvents(events: .add_to_fav)
         }
         
-        presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
+        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
+        } else {
+            presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
+        }
+        
         delegate?.updatePlants()
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
-        GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
+        } else {
+            AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
+            GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        }
     }
     
     @IBAction func wikiAction(_ sender: Any) {

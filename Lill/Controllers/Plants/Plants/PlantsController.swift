@@ -294,6 +294,8 @@ extension PlantsController: PlantsOutputProtocol, GardenAddToPlaceDelegate {
                 countLabel.text = "\(tempCount)"
             }
         }
+        
+        presenter.updateMe()
     }
     
     func success(model: CatalogPlantsModel) {

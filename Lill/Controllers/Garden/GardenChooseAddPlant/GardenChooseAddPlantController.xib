@@ -84,8 +84,8 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose_identify_photo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="vhL-x2-Q2z">
                             <rect key="frame" x="34" y="20" width="40" height="34"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-bJ-p3y">
-                            <rect key="frame" x="31.5" y="72" width="45.5" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-bJ-p3y">
+                            <rect key="frame" x="8" y="72" width="92" height="16"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -100,12 +100,14 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yl9-bJ-p3y" secondAttribute="trailing" constant="8" id="9DX-J0-o9p"/>
                         <constraint firstAttribute="width" constant="108" id="Edp-wF-ynn"/>
                         <constraint firstItem="yl9-bJ-p3y" firstAttribute="centerX" secondItem="TU0-2z-k38" secondAttribute="centerX" id="Hf5-6H-3Nv"/>
                         <constraint firstAttribute="bottom" secondItem="yl9-bJ-p3y" secondAttribute="bottom" constant="12" id="JO5-GO-64x"/>
                         <constraint firstItem="CSZ-tl-qWh" firstAttribute="top" secondItem="TU0-2z-k38" secondAttribute="top" id="OvW-ff-ryQ"/>
                         <constraint firstItem="vhL-x2-Q2z" firstAttribute="centerX" secondItem="TU0-2z-k38" secondAttribute="centerX" id="bXh-fj-qeC"/>
                         <constraint firstItem="CSZ-tl-qWh" firstAttribute="leading" secondItem="TU0-2z-k38" secondAttribute="leading" id="evs-sS-7hP"/>
+                        <constraint firstItem="yl9-bJ-p3y" firstAttribute="leading" secondItem="TU0-2z-k38" secondAttribute="leading" constant="8" id="n3h-y5-l8L"/>
                         <constraint firstItem="vhL-x2-Q2z" firstAttribute="top" secondItem="TU0-2z-k38" secondAttribute="top" constant="20" id="qUo-sO-roC"/>
                         <constraint firstAttribute="bottom" secondItem="CSZ-tl-qWh" secondAttribute="bottom" id="sVq-x7-rFQ"/>
                         <constraint firstAttribute="trailing" secondItem="CSZ-tl-qWh" secondAttribute="trailing" id="wGZ-mM-Bbw"/>
