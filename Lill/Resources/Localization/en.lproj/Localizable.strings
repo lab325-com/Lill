@@ -30,9 +30,11 @@
 "care_type_misting" = "Misting";
 "care_type_rotating" = "Rotating";
 "care_type_watering" = "Watering";
+"choose_identify_add_unique" = "Add Unique";
 "choose_identify_cancel" = "Cancel";
 "choose_identify_diagnosis" = "Diagnosis";
 "choose_identify_identify" = "Identify";
+"choose_identify_onboarding_title" = "Capture your Plant";
 "choose_identify_premium" = "Premium";
 "climante_deciduous_unknown" = "Climate Deciduous Unknown";
 "climate_deciduous" = "Type";
@@ -282,7 +284,9 @@
 "plants_backToTop" = "Back to top";
 "plants_explore" = "Explore catalog";
 "plants_identifier" = "Identify my Plants";
+"plants_onbording_title" = "Add your first Plant to Garden";
 "plants_search" = "Search by Name";
+"plants_skip_onbording_button" = "Skip onboarding";
 "plants_uniquePlantButton" = "Add Unique Plant";
 "plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
 "pop_change_name_button" = "Change";

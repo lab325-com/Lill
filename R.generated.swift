@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 61 files.
+  /// This `R.file` struct is generated, and contains static references to 62 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -275,6 +275,8 @@ struct R: Rswift.Validatable {
     static let updateMediaNotesGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UpdateMediaNotes", pathExtension: "graphql")
     /// Resource file `UploadMedia.graphql`.
     static let uploadMediaGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "UploadMedia", pathExtension: "graphql")
+    /// Resource file `arrow_down.json`.
+    static let arrow_downJson = Rswift.FileResource(bundle: R.hostingBundle, name: "arrow_down", pathExtension: "json")
     /// Resource file `schema.json`.
     static let schemaJson = Rswift.FileResource(bundle: R.hostingBundle, name: "schema", pathExtension: "json")
 
@@ -638,6 +640,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "arrow_down", withExtension: "json")`
+    static func arrow_downJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.arrow_downJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "schema", withExtension: "json")`
     static func schemaJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.schemaJson
@@ -688,7 +696,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 125 images.
+  /// This `R.image` struct is generated, and contains static references to 128 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -830,8 +838,14 @@ struct R: Rswift.Validatable {
     static let ic_plants_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_close")
     /// Image `ic_plants_favorite`.
     static let ic_plants_favorite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_favorite")
+    /// Image `ic_plants_flower`.
+    static let ic_plants_flower = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_flower")
     /// Image `ic_plants_line`.
     static let ic_plants_line = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_line")
+    /// Image `ic_plants_petal`.
+    static let ic_plants_petal = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_petal")
+    /// Image `ic_plants_photo_border`.
+    static let ic_plants_photo_border = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_photo_border")
     /// Image `ic_plants_photo`.
     static let ic_plants_photo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_photo")
     /// Image `ic_plants_search`.
@@ -1432,6 +1446,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_flower", bundle: ..., traitCollection: ...)`
+    static func ic_plants_flower(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_flower, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_plants_line", bundle: ..., traitCollection: ...)`
     static func ic_plants_line(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_plants_line, compatibleWith: traitCollection)
@@ -1439,9 +1460,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_petal", bundle: ..., traitCollection: ...)`
+    static func ic_plants_petal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_petal, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_plants_photo", bundle: ..., traitCollection: ...)`
     static func ic_plants_photo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_plants_photo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_plants_photo_border", bundle: ..., traitCollection: ...)`
+    static func ic_plants_photo_border(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_plants_photo_border, compatibleWith: traitCollection)
     }
     #endif
 
@@ -3268,7 +3303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 370 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 374 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3366,6 +3401,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let uniques_cares_title = Rswift.StringResource(key: "uniques_cares_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static let choose_identify_add_unique = Rswift.StringResource(key: "choose_identify_add_unique", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Add Unique Plant
       ///
       /// Locales: en, es, ru
@@ -3394,6 +3433,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_add_to_add = Rswift.StringResource(key: "garden_add_to_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Add your first Plant to Garden
+      ///
+      /// Locales: en, es, ru
+      static let plants_onbording_title = Rswift.StringResource(key: "plants_onbording_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Added in Schedule
       ///
       /// Locales: en, es, ru
@@ -3574,6 +3617,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let diagnosis_capture_info = Rswift.StringResource(key: "diagnosis_capture_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Capture your Plant
+      ///
+      /// Locales: en, es, ru
+      static let choose_identify_onboarding_title = Rswift.StringResource(key: "choose_identify_onboarding_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Care
       ///
       /// Locales: en, es, ru
@@ -4510,6 +4557,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let uniques_skip_care = Rswift.StringResource(key: "uniques_skip_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Skip onboarding
+      ///
+      /// Locales: en, es, ru
+      static let plants_skip_onbording_button = Rswift.StringResource(key: "plants_skip_onbording_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Soil
       ///
       /// Locales: en, es, ru
@@ -5117,6 +5168,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("uniques_cares_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static func choose_identify_add_unique(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_add_unique", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_add_unique"
+        }
+
+        return NSLocalizedString("choose_identify_add_unique", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add Unique Plant
       ///
       /// Locales: en, es, ru
@@ -5220,6 +5286,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_add_to_add", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add your first Plant to Garden
+      ///
+      /// Locales: en, es, ru
+      static func plants_onbording_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_onbording_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_onbording_title"
+        }
+
+        return NSLocalizedString("plants_onbording_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Added in Schedule
@@ -5897,6 +5978,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("diagnosis_capture_info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Capture your Plant
+      ///
+      /// Locales: en, es, ru
+      static func choose_identify_onboarding_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("choose_identify_onboarding_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "choose_identify_onboarding_title"
+        }
+
+        return NSLocalizedString("choose_identify_onboarding_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Care
@@ -9413,6 +9509,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("uniques_skip_care", bundle: bundle, comment: "")
       }
 
+      /// en translation: Skip onboarding
+      ///
+      /// Locales: en, es, ru
+      static func plants_skip_onbording_button(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plants_skip_onbording_button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plants_skip_onbording_button"
+        }
+
+        return NSLocalizedString("plants_skip_onbording_button", bundle: bundle, comment: "")
+      }
+
       /// en translation: Soil
       ///
       /// Locales: en, es, ru
@@ -10610,6 +10721,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "choose_identify_add_unique_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_add_unique_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_diagnosis_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_diagnosis_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
         if UIKit.UIImage(named: "choose_identify_photo_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'choose_identify_photo_ic' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_flower", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_flower' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_petal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_petal' is used in nib 'ChooseIdentify', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -12092,8 +12205,10 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_plants_backToTop", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_backToTop' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_close' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_favorite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_favorite' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_flower", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_flower' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_line", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_line' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "ic_plants_photo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_photo' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_petal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_petal' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_photo_border", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_photo_border' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_search' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_unique", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_unique' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tab_garden", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tab_garden' is used in storyboard 'Main', but couldn't be loaded.") }

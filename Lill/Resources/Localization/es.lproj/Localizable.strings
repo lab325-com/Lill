@@ -30,9 +30,11 @@
 "care_type_misting" = "Empañado";
 "care_type_rotating" = "Rotación";
 "care_type_watering" = "Riego";
+"choose_identify_add_unique" = "Añadir unico";
 "choose_identify_cancel" = "Cancelar";
 "choose_identify_diagnosis" = "Diagnóstico";
 "choose_identify_identify" = "Identificar";
+"choose_identify_onboarding_title" = "Captura tu planta";
 "choose_identify_premium" = "Premium";
 "climante_deciduous_unknown" = "Clima caduco desconocido";
 "climate_deciduous" = "Escribe";
@@ -211,7 +213,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
 "gardens_controller_places" = "Mis lugares";
@@ -282,7 +284,9 @@
 "plants_backToTop" = "¿No se puede identificar o encontrar en el catálogo?";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar Mis Plantas";
+"plants_onbording_title" = "Añade tu primera planta al jardín";
 "plants_search" = "Buscar por nombre";
+"plants_skip_onbording_button" = "Skip Onboarding";
 "plants_uniquePlantButton" = "Añadir planta única";
 "pop_change_name_button" = "Cambiar";
 "pop_change_name_subtitle" = "Dale un nombre a tu planta";

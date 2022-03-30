@@ -484,6 +484,9 @@
 		FAF93FF227637147004B784B /* GardenPlanAddCaresSetupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93FF127637147004B784B /* GardenPlanAddCaresSetupPresenter.swift */; };
 		FAF93FF82763736D004B784B /* GardenPlantCareCreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93FF62763736D004B784B /* GardenPlantCareCreateModel.swift */; };
 		FAF93FF92763736D004B784B /* GardenPlantCareCreate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAF93FF72763736D004B784B /* GardenPlantCareCreate.graphql */; };
+		FAFCC94A27F33C6200827CE2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FAFCC94927F33C6200827CE2 /* Lottie */; };
+		FAFCC94D27F33D2B00827CE2 /* arrow_down.json in Resources */ = {isa = PBXBuildFile; fileRef = FAFCC94C27F33D2A00827CE2 /* arrow_down.json */; };
+		FAFCC95027F35AB400827CE2 /* LaunchChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCC94F27F35AB400827CE2 /* LaunchChecker.swift */; };
 		FAFCF33A27106CFB00C3134E /* WishListController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */; };
 		FAFCF34627147DC800C3134E /* PlantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34527147DC800C3134E /* PlantsRouter.swift */; };
 		FAFCF34927147E4100C3134E /* WishListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCF34827147E4100C3134E /* WishListPresenter.swift */; };
@@ -972,6 +975,8 @@
 		FAF93FF127637147004B784B /* GardenPlanAddCaresSetupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlanAddCaresSetupPresenter.swift; sourceTree = "<group>"; };
 		FAF93FF62763736D004B784B /* GardenPlantCareCreateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareCreateModel.swift; sourceTree = "<group>"; };
 		FAF93FF72763736D004B784B /* GardenPlantCareCreate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareCreate.graphql; sourceTree = "<group>"; };
+		FAFCC94C27F33D2A00827CE2 /* arrow_down.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow_down.json; sourceTree = "<group>"; };
+		FAFCC94F27F35AB400827CE2 /* LaunchChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchChecker.swift; sourceTree = "<group>"; };
 		FAFCF33927106CFB00C3134E /* WishListController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishListController+CollectionView.swift"; sourceTree = "<group>"; };
 		FAFCF34527147DC800C3134E /* PlantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsRouter.swift; sourceTree = "<group>"; };
 		FAFCF34827147E4100C3134E /* WishListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListPresenter.swift; sourceTree = "<group>"; };
@@ -997,6 +1002,7 @@
 				020FE33E274BDD6E00FF69F7 /* FirebaseDynamicLinks in Frameworks */,
 				02FCBFB3270A44310089CEF8 /* SwiftKeychainWrapper in Frameworks */,
 				E38B5A977E798D56582F06F9 /* Pods_Lill.framework in Frameworks */,
+				FAFCC94A27F33C6200827CE2 /* Lottie in Frameworks */,
 				020FE340274BDD6E00FF69F7 /* FirebaseMessaging in Frameworks */,
 				FA24A5992732B94A0059AF6A /* SwiftEntryKit in Frameworks */,
 				020FE338274BDD6E00FF69F7 /* FirebaseAnalytics in Frameworks */,
@@ -1928,6 +1934,8 @@
 		02AB244B26F3B8C100309CFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAFCC94E27F35AA300827CE2 /* LaunchChecker */,
+				FAFCC94B27F33C7300827CE2 /* Lottie */,
 				02DCC49C27621C5900F976BA /* Analytics */,
 				027B5FA42758F15B00A84D98 /* ActivityIndicator */,
 				FA545481274E88FD006B52F4 /* Enums */,
@@ -3457,6 +3465,22 @@
 			path = GardenPlantCareCreate;
 			sourceTree = "<group>";
 		};
+		FAFCC94B27F33C7300827CE2 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCC94C27F33D2A00827CE2 /* arrow_down.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		FAFCC94E27F35AA300827CE2 /* LaunchChecker */ = {
+			isa = PBXGroup;
+			children = (
+				FAFCC94F27F35AB400827CE2 /* LaunchChecker.swift */,
+			);
+			path = LaunchChecker;
+			sourceTree = "<group>";
+		};
 		FAFCF34727147E1300C3134E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -3572,6 +3596,7 @@
 				020FE341274BDD6E00FF69F7 /* FirebaseRemoteConfig */,
 				FAD18C8A2768C28300E3C59D /* Siren */,
 				FA78D95D2775FA1B00721D68 /* AppsFlyerLib */,
+				FAFCC94927F33C6200827CE2 /* Lottie */,
 			);
 			productName = Lill;
 			productReference = FAAA230C26F3624F00E10E89 /* Lill.app */;
@@ -3614,6 +3639,7 @@
 				020FE336274BDD6E00FF69F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */,
 				FA78D95C2775FA1B00721D68 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				FAFCC94827F33C6200827CE2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = FAAA230D26F3624F00E10E89 /* Products */;
 			projectDirPath = "";
@@ -3752,6 +3778,7 @@
 				02BD7A942774DEA800A8B943 /* UpdateMediaNotes.graphql in Resources */,
 				FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */,
 				02FCBFAB270A36500089CEF8 /* WishListController.xib in Resources */,
+				FAFCC94D27F33D2B00827CE2 /* arrow_down.json in Resources */,
 				FA8C939227902C990009DA6D /* GardenCreateCover.xib in Resources */,
 				0207E1C127B154BD00DCD693 /* GeneratePromoOffer.graphql in Resources */,
 				029C520327307B8100BD30B4 /* Localizable.strings in Resources */,
@@ -4028,6 +4055,7 @@
 				FAA089652757B5F900449D5B /* GardenPlantEditCaresModel.swift in Sources */,
 				FA8C9377278F0AE00009DA6D /* GardenUpdateModel.swift in Sources */,
 				02A4BA3B26FDD02600DF6A08 /* OnboardingThreeController.swift in Sources */,
+				FAFCC95027F35AB400827CE2 /* LaunchChecker.swift in Sources */,
 				FADEF76B27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift in Sources */,
 				02089EB42754CBC30022E1BD /* DoneAllCaresByGardensModel.swift in Sources */,
 				F3BED185272EF5C800614DEE /* MenuAccauntInfoTableViewCell.swift in Sources */,
@@ -4660,6 +4688,14 @@
 				version = 5.8.1;
 			};
 		};
+		FAFCC94827F33C6200827CE2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -4742,6 +4778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAD18C892768C28200E3C59D /* XCRemoteSwiftPackageReference "Siren" */;
 			productName = Siren;
+		};
+		FAFCC94927F33C6200827CE2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAFCC94827F33C6200827CE2 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
