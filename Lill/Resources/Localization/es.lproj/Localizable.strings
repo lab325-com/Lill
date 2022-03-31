@@ -280,8 +280,10 @@
 "plant_detail_added_to_wishlist" = "Añadido a la lista de deseos";
 "plant_detail_back" = "Atrás";
 "plant_detail_cares" = "Cuidados";
+"plant_detail_first_onboarding_title" = "Añadir la planta al jardín";
 "plant_detail_more_on_wiki" = "Más info en el Wiki";
 "plant_detail_removed_from_wishlist" = "Eliminado de la lista de deseos";
+"plant_detail_second_onboarding_title" = "Tu planta allrea en mi jardín";
 "plants_backToTop" = "¿No se puede identificar o encontrar en el catálogo?";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar Mis Plantas";

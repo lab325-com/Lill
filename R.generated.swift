@@ -3303,7 +3303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 375 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 377 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3425,6 +3425,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_history_add_photo_gallery = Rswift.StringResource(key: "garden_history_add_photo_gallery", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Add the Plant to Garden
+      ///
+      /// Locales: en, es, ru
+      static let plant_detail_first_onboarding_title = Rswift.StringResource(key: "plant_detail_first_onboarding_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Add to My Garden
       ///
       /// Locales: en, es, ru
@@ -4721,6 +4725,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let subscription_your_plan = Rswift.StringResource(key: "subscription_your_plan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Your Plant allready in my Garden
+      ///
+      /// Locales: en, es, ru
+      static let plant_detail_second_onboarding_title = Rswift.StringResource(key: "plant_detail_second_onboarding_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: account
       ///
       /// Locales: en, es, ru
@@ -5260,6 +5268,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_history_add_photo_gallery", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add the Plant to Garden
+      ///
+      /// Locales: en, es, ru
+      static func plant_detail_first_onboarding_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plant_detail_first_onboarding_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plant_detail_first_onboarding_title"
+        }
+
+        return NSLocalizedString("plant_detail_first_onboarding_title", bundle: bundle, comment: "")
       }
 
       /// en translation: Add to My Garden
@@ -10128,6 +10151,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_your_plan", bundle: bundle, comment: "")
       }
 
+      /// en translation: Your Plant allready in my Garden
+      ///
+      /// Locales: en, es, ru
+      static func plant_detail_second_onboarding_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("plant_detail_second_onboarding_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "plant_detail_second_onboarding_title"
+        }
+
+        return NSLocalizedString("plant_detail_second_onboarding_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: account
       ///
       /// Locales: en, es, ru
@@ -11887,6 +11925,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_flower", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_flower' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_petal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_petal' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_back_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plants_detail_green_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plants_detail_green_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }

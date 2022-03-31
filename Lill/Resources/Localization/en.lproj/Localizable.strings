@@ -280,8 +280,10 @@
 "plant_detail_added_to_wishlist" = "Added to Wishlist";
 "plant_detail_back" = "Back";
 "plant_detail_cares" = "Cares";
+"plant_detail_first_onboarding_title" = "Add the Plant to Garden";
 "plant_detail_more_on_wiki" = "More on Wiki";
 "plant_detail_removed_from_wishlist" = "Removed from Wishlist";
+"plant_detail_second_onboarding_title" = "Your Plant allready in my Garden";
 "plants_backToTop" = "Back to top";
 "plants_explore" = "Explore catalog";
 "plants_identifier" = "Identify my Plants";

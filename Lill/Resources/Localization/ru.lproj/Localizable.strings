@@ -280,8 +280,10 @@
 "plant_detail_added_to_wishlist" = "Добавлен в список желаний";
 "plant_detail_back" = "Назад";
 "plant_detail_cares" = "Уход";
+"plant_detail_first_onboarding_title" = "Добавить растение в сад";
 "plant_detail_more_on_wiki" = "Больше на Wiki";
 "plant_detail_removed_from_wishlist" = "Удален из списка желаний";
+"plant_detail_second_onboarding_title" = "Ваше растение уже в вашем саду";
 "plants_backToTop" = "В начало";
 "plants_explore" = "Изучите каталог";
 "plants_identifier" = "Определите мои растения";
