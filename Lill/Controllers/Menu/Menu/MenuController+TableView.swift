@@ -122,7 +122,7 @@ extension MenuController: UITableViewDelegate {
             }
         case .subscriptions:
             AnalyticsHelper.sendFirebaseEvents(events: .menu_subscription)
-            MenuRouter(presenter: navigationController).presentSubscription()
+            MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: MenuController.self))
         }
     }
 }

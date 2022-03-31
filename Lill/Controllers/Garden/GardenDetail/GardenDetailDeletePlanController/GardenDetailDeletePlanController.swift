@@ -78,7 +78,6 @@ class GardenDetailDeletePlanController: BaseController {
         deleteButton.setTitle(RLocalization.garden_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         cancelButton.setTitle(RLocalization.garden_delete_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
-        
         coverView.layer.cornerRadius = 24
         coverView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
         mainImageView.layer.cornerRadius = 24

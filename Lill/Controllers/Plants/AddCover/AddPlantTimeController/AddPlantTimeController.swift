@@ -109,7 +109,19 @@ class AddPlantTimeController: BaseController {
     }
     
     @IBAction func actionDone(_ sender: UIButton) {
-        presenter.sendUniquesPlants(img: coverImage, text: text, plantsTime: plantsTime)
+        if let gardensCount = KeychainService.standard.me?.gardens.count, gardensCount > 1 {
+            GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: "")
+        } else {
+            presenter.sendUniquesPlants(img: coverImage, text: text, plantsTime: plantsTime, gardenId: "")
+        }
+    }
+}
+
+extension AddPlantTimeController: GardenAddToPlaceDelegate {
+    func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) { }
+    
+    func selectedGarden(gardenId: String) {
+        presenter.sendUniquesPlants(img: coverImage, text: text, plantsTime: plantsTime, gardenId: gardenId)
     }
 }
 
@@ -169,11 +181,11 @@ extension AddPlantTimeController: PickerCareDelegate {
 
 extension AddPlantTimeController: AddPlantsCareOutputProtocol {
     func successSaveUniquesPlant() {
-        dismiss(animated: true) {
+        view.window?.rootViewController?.dismiss(animated: true, completion: {
             CongradsViewPresenter.showCongradsView()
             let currentController = RootRouter.sharedInstance.topViewController?.navigationController
             currentController?.tabBarController?.selectedIndex = 1
-        }
+        })
     }
     
     func failure(error: String) {

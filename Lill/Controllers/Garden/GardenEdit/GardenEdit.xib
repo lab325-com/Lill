@@ -19,13 +19,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenEdit" customModule="Lill" customModuleProvider="target">
             <connections>
+                <outlet property="changeCoverButton" destination="KxG-je-YwV" id="OSE-Zj-lpQ"/>
+                <outlet property="changeNameButton" destination="fGH-L0-60f" id="xQ9-eO-lSy"/>
                 <outlet property="deleteSpaceButton" destination="kR6-tH-kPw" id="uJb-Br-ltK"/>
+                <outlet property="doneButton" destination="lJY-YF-GhH" id="pcX-CC-gWD"/>
                 <outlet property="footerView" destination="6Q0-EM-tyU" id="FRR-IU-pMo"/>
                 <outlet property="gadenPlantsCountInfoLabel" destination="Yr2-eo-3UF" id="qK2-7d-qfa"/>
                 <outlet property="gadenPlantsCountLabel" destination="O0F-Gh-hoP" id="clR-t5-jLb"/>
                 <outlet property="gardenImageView" destination="V9m-S4-c84" id="DHs-QT-Zdj"/>
                 <outlet property="gardenNameLabel" destination="pN8-xh-quJ" id="VC2-O1-opS"/>
                 <outlet property="headerView" destination="YKl-q2-UWw" id="eA8-Ij-HLD"/>
+                <outlet property="infoLabel" destination="nfe-AK-gEf" id="EFy-wh-9ae"/>
                 <outlet property="titleLabel" destination="f7E-Me-aAT" id="a6V-e6-wsz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -41,8 +45,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-q2-UWw">
                     <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-Me-aAT">
-                            <rect key="frame" x="16" y="0.0" width="215.5" height="50"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-Me-aAT">
+                            <rect key="frame" x="16" y="0.0" width="382" height="50"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -52,6 +56,7 @@
                     <constraints>
                         <constraint firstItem="f7E-Me-aAT" firstAttribute="leading" secondItem="YKl-q2-UWw" secondAttribute="leading" constant="16" id="Ssy-hJ-IZg"/>
                         <constraint firstAttribute="height" constant="50" id="UzH-Uf-hsC"/>
+                        <constraint firstAttribute="trailing" secondItem="f7E-Me-aAT" secondAttribute="trailing" constant="16" id="l1B-kk-fFJ"/>
                         <constraint firstItem="f7E-Me-aAT" firstAttribute="top" secondItem="YKl-q2-UWw" secondAttribute="top" id="stM-L6-qVT"/>
                         <constraint firstAttribute="bottom" secondItem="f7E-Me-aAT" secondAttribute="bottom" id="tJi-hs-y6K"/>
                     </constraints>

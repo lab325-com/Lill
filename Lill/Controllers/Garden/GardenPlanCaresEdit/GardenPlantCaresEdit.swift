@@ -87,6 +87,9 @@ class GardenPlantCaresEdit: BaseController {
         tableView.register(UINib(nibName: cellAddCareIdentifier, bundle: nil), forCellReuseIdentifier: cellAddCareIdentifier)
         
         bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 24.0)
+        
+        setRecommendedButton.setTitle(RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        deleteCaresButton.setTitle(RLocalization.garden_plant_cares_edit_set_to_recommended.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {

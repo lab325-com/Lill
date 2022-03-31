@@ -50,6 +50,8 @@
                 <outlet property="noDiagnoseImageView" destination="hYU-t2-sPQ" id="cCK-Kf-IYP"/>
                 <outlet property="noDiagnoseLabel" destination="n26-fR-C7j" id="8Tm-3K-IHq"/>
                 <outlet property="noDiagnoseView" destination="S7V-8I-50G" id="LPQ-Gn-r4f"/>
+                <outlet property="noProblemRetakeButton" destination="hKE-mJ-QNd" id="Nzg-F5-pJD"/>
+                <outlet property="noProblemSendReportButton" destination="erK-d9-P3d" id="89l-Ls-x4Z"/>
                 <outlet property="onboardingInfoLabel" destination="BdK-5d-zDx" id="Gef-Oq-Tpw"/>
                 <outlet property="previewInfoLabel" destination="3ye-UE-ynh" id="jpd-GM-U63"/>
                 <outlet property="reportButton" destination="hke-3H-fqb" id="Yss-Q4-c1U"/>
@@ -928,7 +930,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure that Photo is sharp and contains the diseased part" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdK-5d-zDx">
-                    <rect key="frame" x="100" y="574" width="214" height="40"/>
+                    <rect key="frame" x="20" y="574" width="374" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="b7Y-rr-Ik7"/>
                     </constraints>
@@ -966,13 +968,13 @@
                 <constraint firstItem="hEe-LB-Fmj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Db2-fn-uVH"/>
                 <constraint firstAttribute="bottom" secondItem="Nd5-9X-5B7" secondAttribute="bottom" id="Dle-cg-1Dh"/>
                 <constraint firstItem="S7V-8I-50G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E8f-sv-PPr"/>
-                <constraint firstItem="BdK-5d-zDx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="Ftm-2b-R8Q"/>
+                <constraint firstItem="BdK-5d-zDx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ftm-2b-R8Q"/>
                 <constraint firstItem="2yL-j9-UNw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HTU-1O-28P"/>
                 <constraint firstItem="wzJ-Bb-L6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ipb-Q6-13h"/>
                 <constraint firstItem="BdK-5d-zDx" firstAttribute="top" secondItem="rVw-vY-khi" secondAttribute="bottom" constant="10" id="Jz0-FK-nQ6"/>
                 <constraint firstItem="wzJ-Bb-L6f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VdM-5r-Iev"/>
                 <constraint firstAttribute="bottom" secondItem="N9w-mQ-NlZ" secondAttribute="bottom" id="Xam-tH-tYT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BdK-5d-zDx" secondAttribute="trailing" constant="100" id="YTv-AK-hzS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BdK-5d-zDx" secondAttribute="trailing" constant="20" id="YTv-AK-hzS"/>
                 <constraint firstItem="gFC-Bh-7RB" firstAttribute="centerY" secondItem="hEe-LB-Fmj" secondAttribute="centerY" id="ZG1-s7-wM8"/>
                 <constraint firstItem="hEe-LB-Fmj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bzO-oF-kKk"/>
                 <constraint firstItem="gFC-Bh-7RB" firstAttribute="centerX" secondItem="hEe-LB-Fmj" secondAttribute="centerX" id="cs5-6w-waW"/>

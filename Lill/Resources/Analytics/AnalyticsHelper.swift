@@ -84,6 +84,12 @@ enum FirebaseEvents: String {
     case identify_results_wrong = "identify_results_wrong"
     case identify_results_many = "identify_results_many"
     
+    /// IdentifyController
+    case identify_report = "identify_report"
+    
+    /// DiagnosisController
+    case diagnosis_report = "diagnosis_report"
+    
     /// MainTabBarController(tap_bar)
     case add_bar = "add_bar"
     case garden_bar = "garden_bar"
@@ -122,7 +128,6 @@ enum FirebaseEvents: String {
     case edit_delete_plant = "edit_delete_plant"
     case edit_cancel = "edit_cancel"
     
-    
     /// Onboarding
     case onboarding_skip_1 = "onboarding_skip_1"
     case onboarding_next_1 = "onboarding_next_1"
@@ -144,7 +149,6 @@ enum FirebaseEvents: String {
     case diagnosis_results_success_not_sick = "diagnosis_results_success_not_sick"
     
     /// GardenPlantCaresEdit (edit_cares)
-    
     case add_care = "add_care"
 }
 

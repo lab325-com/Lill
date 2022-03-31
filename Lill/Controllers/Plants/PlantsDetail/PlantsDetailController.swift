@@ -19,6 +19,7 @@ class PlantsDetailController: BaseController {
     
     @IBOutlet weak var aboutTitleLabel: UILabel!
     @IBOutlet weak var caresTitleLabel: UILabel!
+    @IBOutlet weak var backLabel: UILabel!
     
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToGardenButton: UIButton!
@@ -80,7 +81,8 @@ class PlantsDetailController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
-        transparentNavigationBar = true
+        hiddenNavigationBar = true
+        
         super.viewDidLoad()
         
         presenter.getPlantDetail(id: id)
@@ -100,8 +102,8 @@ class PlantsDetailController: BaseController {
     private func setup() {
         scrollView.alpha = 1.0
         
-        navigationController?.navigationBar.tintColor = UIColor.white
-        
+        backLabel.text = RLocalization.navigation_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+                
         aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
@@ -155,19 +157,32 @@ class PlantsDetailController: BaseController {
     // MARK: - @IBActions
     //----------------------------------------------
     
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func plantFavoriteAction(_ sender: Any) {
         guard let isFavorite = model?.plantById.isFavourite else { return }
         if !isFavorite == true {
             AnalyticsHelper.sendFirebaseEvents(events: .add_to_fav)
         }
         
-        presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
+        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
+        } else {
+            presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
+        }
+        
         delegate?.updatePlants()
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
-        AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
-        GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
+        } else {
+            AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
+            GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
+        }
     }
     
     @IBAction func wikiAction(_ sender: Any) {

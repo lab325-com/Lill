@@ -470,6 +470,7 @@
 		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
 		FAE8D5F6275E88DB00C5A898 /* GardenPlantCaresToDefault.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8D5F4275E88DB00C5A898 /* GardenPlantCaresToDefault.graphql */; };
 		FAE8D5F7275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8D5F5275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift */; };
+		FAEB7ED827E9CF0C00402BBD /* SFProRounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAEB7ED727E9CF0C00402BBD /* SFProRounded-Bold.ttf */; };
 		FAEFA7A4275E4DA400900EE0 /* GardenPlantCareDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */; };
 		FAEFA7A5275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */; };
 		FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */; };
@@ -926,6 +927,9 @@
 		FAA089682757B90D00449D5B /* GardenPlantCaresEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditPresenter.swift; sourceTree = "<group>"; };
 		FAA0896B275802A100449D5B /* CareInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareInfoCell.swift; sourceTree = "<group>"; };
 		FAA0896C275802A100449D5B /* CareInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CareInfoCell.xib; sourceTree = "<group>"; };
+		FAA3C4A227E339560080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FAA3C4A327E3395A0080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAA3C4A427E33A4D0080947B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAAA230C26F3624F00E10E89 /* Lill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA230F26F3624F00E10E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA231826F3625200E10E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -954,6 +958,7 @@
 		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
 		FAE8D5F4275E88DB00C5A898 /* GardenPlantCaresToDefault.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCaresToDefault.graphql; sourceTree = "<group>"; };
 		FAE8D5F5275E88DB00C5A898 /* GardenPlantCaresToDefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresToDefaultModel.swift; sourceTree = "<group>"; };
+		FAEB7ED727E9CF0C00402BBD /* SFProRounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProRounded-Bold.ttf"; sourceTree = "<group>"; };
 		FAEFA7A2275E4DA400900EE0 /* GardenPlantCareDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareDelete.graphql; sourceTree = "<group>"; };
 		FAEFA7A3275E4DA400900EE0 /* GardenPlantCareDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareDeleteModel.swift; sourceTree = "<group>"; };
 		FAEFA7AD2760E46400900EE0 /* GardenPlantAddCares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCares.swift; sourceTree = "<group>"; };
@@ -2932,6 +2937,7 @@
 				FA8721FE26FB502200BB8125 /* SFProDisplay-Bold.ttf */,
 				FA8721FF26FB502B00BB8125 /* SFProDisplay-Medium.ttf */,
 				FA87220026FB503400BB8125 /* SFProDisplay-Regular.ttf */,
+				FAEB7ED727E9CF0C00402BBD /* SFProRounded-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -3593,6 +3599,7 @@
 				en,
 				Base,
 				es,
+				ru,
 			);
 			mainGroup = FAAA230326F3624F00E10E89;
 			packageReferences = (
@@ -3729,6 +3736,7 @@
 				02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */,
 				02AE73A127745F25008DE4E6 /* GardenPhotoDeteilController.xib in Resources */,
 				0267565B278F0BA500FBA4E9 /* GardenNeedCaresController.xib in Resources */,
+				FAEB7ED827E9CF0C00402BBD /* SFProRounded-Bold.ttf in Resources */,
 				0292D674276100F700E8A21F /* GardenPlantCaresDelete.graphql in Resources */,
 				FA8C936F278ED6540009DA6D /* GardenEditChangeCover.xib in Resources */,
 				02527D9B27467FF900126022 /* GardenDetailAllWaitingCell.xib in Resources */,
@@ -3844,7 +3852,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4232,6 +4240,7 @@
 			children = (
 				02AB244826F39D8E00309CFF /* en */,
 				029C5202273078D300BD30B4 /* es */,
+				FAA3C4A427E33A4D0080947B /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4241,6 +4250,7 @@
 			children = (
 				FA0F608B2764B1100043E72C /* en */,
 				FA0F608D2764B1120043E72C /* es */,
+				FAA3C4A327E3395A0080947B /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4249,6 +4259,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAAA231B26F3625200E10E89 /* Base */,
+				FAA3C4A227E339560080947B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -4327,7 +4338,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 55;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4336,7 +4347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4479,7 +4490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 55;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4488,7 +4499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4511,7 +4522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 55;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4520,7 +4531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

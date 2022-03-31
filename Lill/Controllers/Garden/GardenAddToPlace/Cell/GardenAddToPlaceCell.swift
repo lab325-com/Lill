@@ -33,5 +33,4 @@ class GardenAddToPlaceCell: UITableViewCell {
         
         avatarImageView.kf.setImage(with: URL(string: model.userMainImage?.urlIosPrev ?? ""), placeholder: RImage.placeholder_little_ic(), options: [.transition(.fade(0.25))])
     }
-    
 }

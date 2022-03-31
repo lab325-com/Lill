@@ -55,6 +55,7 @@ class GardenCell: UITableViewCell {
         if let totalPlants = model.totalPlants {
             gadenPlantsCountLabel.text = "\(totalPlants)"
             gadenPlantsCountInfoLabel.text = RLocalization.garden_cell_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue) +  "\(totalPlants)"
+            gardenCaresView.isHidden = totalPlants > 0 ? false : true
         }
         if let needCaresCount = model.needCareCount {
             gardenCaresView.backgroundColor = needCaresCount == 0 ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFF993C)

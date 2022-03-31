@@ -21,6 +21,7 @@ class GardenDetailController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var scheduleStatusLabel: UILabel!
@@ -79,7 +80,8 @@ class GardenDetailController: BaseController {
     //----------------------------------------------
     
     override func viewDidLoad() {
-        transparentNavigationBar = true
+        hiddenNavigationBar = true
+        
         super.viewDidLoad()
         
         setup()
@@ -88,7 +90,6 @@ class GardenDetailController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.tintColor = UIColor.white
         presenter.getDetailGarden(gardenId: id, updateHistoryOnly: false, updateTiteImage: false)
     }
     
@@ -104,6 +105,8 @@ class GardenDetailController: BaseController {
     
     private func setup() {
         headerView = tableView.tableHeaderView
+        
+        backLabel.text = RLocalization.navigation_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         tableView.alpha = 0.0
         tableView.rowHeight = UITableView.automaticDimension
@@ -127,9 +130,6 @@ class GardenDetailController: BaseController {
         
         tableView.tableFooterView = UIView()
         updateHeaderView()
-        
-        let dots = UIBarButtonItem(image: RImage.plants_dots_ic(), style: .plain, target: self, action: #selector(editTapped))
-        navigationItem.rightBarButtonItems = [dots]
     }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {
@@ -172,6 +172,69 @@ class GardenDetailController: BaseController {
     @IBAction func galleryAction(_ sender: Any) {
         guard let seletedModel = presenter.historyMediaModel.first else { return }
         GardenRouter(presenter: navigationController).pushGardenDeteilPhoto(gardenID: id, selectedModel: seletedModel, models: presenter.historyMediaModel, delegate: self)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func editAction(_ sender: Any) {
+        AnalyticsHelper.sendFirebaseScreenEvent(screen: .plant_edit_menu)
+        AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
+        
+        let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let changeNameTitle = RLocalization.action_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let addPhotoTitle = RLocalization.action_edit_add_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let editTitle = RLocalization.action_edit_care_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let cloneTitle = RLocalization.action_edit_clone_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let deleteTitle = RLocalization.action_edit_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_name)
+            PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
+        }
+        
+        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_photo)
+            AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
+        }
+        
+        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_care_plan)
+            GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
+        }
+        
+        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_clone_plant)
+            PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
+        }
+        
+        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
+            guard let `self` = self else { return }
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_delete_plant)
+            GardenRouter(presenter: self.navigationController).presentDeletePlan(plantID: self.id, imageUrl: self.presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? "", text: self.presenter.model?.gardenPlantById.name ?? "", delegate: self)
+        }
+        
+        let cancelAction = UIAlertAction(title: cancel, style: .cancel) { (action: UIAlertAction) in
+            
+            AnalyticsHelper.sendFirebaseEvents(events: .edit_cancel)
+        }
+                                         
+        alert.addAction(changeName)
+        alert.addAction(addPhoto)
+        alert.addAction(editCarePlan)
+        alert.addAction(clonePlant)
+        alert.addAction(deletePlant)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -236,67 +299,67 @@ extension GardenDetailController: PopChangeNameProtocol {
 // MARK: - Editable
 //----------------------------------------------
 
-extension GardenDetailController {
-    @objc func editTapped() {
-        
-        AnalyticsHelper.sendFirebaseScreenEvent(screen: .plant_edit_menu)
-        AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
-        
-        let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let changeNameTitle = RLocalization.action_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let addPhotoTitle = RLocalization.action_edit_add_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let editTitle = RLocalization.action_edit_care_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let cloneTitle = RLocalization.action_edit_clone_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let deleteTitle = RLocalization.action_edit_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        
-        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_name)
-            PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
-        }
-        
-        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_photo)
-            AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
-        }
-        
-        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_care_plan)
-            GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
-        }
-        
-        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_clone_plant)
-            PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
-        }
-        
-        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
-            guard let `self` = self else { return }
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_delete_plant)
-            GardenRouter(presenter: self.navigationController).presentDeletePlan(plantID: self.id, imageUrl: self.presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? "", text: self.presenter.model?.gardenPlantById.name ?? "", delegate: self)
-        }
-        
-        let cancelAction = UIAlertAction(title: cancel, style: .cancel) { (action: UIAlertAction) in
-            
-            AnalyticsHelper.sendFirebaseEvents(events: .edit_cancel)
-        }
-                                         
-                                         
-        alert.addAction(changeName)
-        alert.addAction(addPhoto)
-        alert.addAction(editCarePlan)
-        alert.addAction(clonePlant)
-        alert.addAction(deletePlant)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+//extension GardenDetailController {
+//    @objc func editTapped() {
+//
+//        AnalyticsHelper.sendFirebaseScreenEvent(screen: .plant_edit_menu)
+//        AnalyticsHelper.sendFirebaseEvents(events: .plant_edit_menu)
+//
+//        let title = RLocalization.action_edit_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let changeNameTitle = RLocalization.action_edit_change_name.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let addPhotoTitle = RLocalization.action_edit_add_photo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let editTitle = RLocalization.action_edit_care_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let cloneTitle = RLocalization.action_edit_clone_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let deleteTitle = RLocalization.action_edit_delete_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        let cancel = RLocalization.action_edit_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//
+//        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+//
+//        let changeName = UIAlertAction(title: changeNameTitle, style: .default) { [weak self] (action: UIAlertAction) in
+//            guard let `self` = self else { return }
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_name)
+//            PopUpRouter(presenter: self.navigationController).presentPopChangeName(delegate: self, text: self.presenter.model?.gardenPlantById.name, plantID: self.id)
+//        }
+//
+//        let addPhoto = UIAlertAction(title: addPhotoTitle, style: .default) { [weak self] (action: UIAlertAction) in
+//            guard let `self` = self else { return }
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_change_photo)
+//            AddCoverRouter(presenter: self.navigationController).presentAddCoverIdentifier(sendToGardenId: self.id, delegate: self)
+//        }
+//
+//        let editCarePlan = UIAlertAction(title: editTitle, style: .default) { [weak self] (action: UIAlertAction) in
+//            guard let `self` = self else { return }
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_care_plan)
+//            GardenRouter(presenter: self.navigationController).pushEditCarePlant(gardenPlantId: self.id, delegate: self)
+//        }
+//
+//        let clonePlant = UIAlertAction(title: cloneTitle, style: .default) { [weak self] (action: UIAlertAction) in
+//            guard let `self` = self else { return }
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_clone_plant)
+//            PopUpRouter(presenter: self.navigationController).presentPopClonePlant(delegate: self, id: self.id)
+//        }
+//
+//        let deletePlant = UIAlertAction(title: deleteTitle, style: .destructive) { [weak self] (action: UIAlertAction) in
+//            guard let `self` = self else { return }
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_delete_plant)
+//            GardenRouter(presenter: self.navigationController).presentDeletePlan(plantID: self.id, imageUrl: self.presenter.model?.gardenPlantById.userMainImage?.urlIosFull ?? "", text: self.presenter.model?.gardenPlantById.name ?? "", delegate: self)
+//        }
+//
+//        let cancelAction = UIAlertAction(title: cancel, style: .cancel) { (action: UIAlertAction) in
+//
+//            AnalyticsHelper.sendFirebaseEvents(events: .edit_cancel)
+//        }
+//
+//        alert.addAction(changeName)
+//        alert.addAction(addPhoto)
+//        alert.addAction(editCarePlan)
+//        alert.addAction(clonePlant)
+//        alert.addAction(deletePlant)
+//        alert.addAction(cancelAction)
+//
+//        self.present(alert, animated: true, completion: nil)
+//    }
+//}
 
 //----------------------------------------------
 // MARK: - AddCoverIdentifierProtocol

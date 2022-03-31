@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol GardenAddToPlaceDelegate: AnyObject {
+@objc protocol GardenAddToPlaceDelegate: AnyObject {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController)
+    @objc optional func selectedGarden(gardenId: String)
 }
 
 class GardenAddToPlaceController: BaseController {
@@ -107,7 +108,11 @@ class GardenAddToPlaceController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionAddToNew(_ sender: UIButton) {
-        GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
+        if let totalGardens = KeychainService.standard.me?.totalGardens, totalGardens > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
+            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+        } else {
+            GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
+        }
     }
     
     @IBAction func actionClose(_ sender: UIButton) {
@@ -140,7 +145,11 @@ extension GardenAddToPlaceController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let gardenId = KeychainService.standard.me?.gardens[safe: indexPath.row]?.id {
-            presenter.addPlantToGarden(plantId: plantId, gardenId: gardenId)
+            if plantId.isEmpty {
+                delegate?.selectedGarden?(gardenId: gardenId)
+            } else {
+                presenter.addPlantToGarden(plantId: plantId, gardenId: gardenId)
+            }
         }
     }
 }

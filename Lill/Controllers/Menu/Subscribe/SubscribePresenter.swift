@@ -46,15 +46,15 @@ class SubscribePresenter: SubscribePresenterProtocol {
         self.view = view
     }
     
-    func purchase(id: String, purchaseSuccess: @escaping (Bool, String?) -> Void) {
+    func purchase(id: String, controller: String, purchaseSuccess: @escaping (Bool, String?) -> Void) {
         view?.startLoader()
         
-        AnalyticsHelper.sendFirebaseEvents(events: .subscribe_start, params: ["id": id])
+        AnalyticsHelper.sendFirebaseEvents(events: .subscribe_start, params: ["id": id, "controller": controller])
         
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
             switch result {
             case .success(let product):
-                AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id])
+                AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id, "controller": controller])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_purchase_success, values: ["id": id])
                 AnalyticsHelper.sendFacebookEvent(event: .fb_purchase_success, values: ["id": id])
                 
@@ -107,8 +107,6 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 
                 AnalyticsHelper.sendFirebaseEvents(events: .purchase_error, params: ["message": errorMessage])
                 purchaseSuccess(false, errorMessage)
-            case .deferred(purchase: let purchase):
-                print(purchase)
             }
         }
     }

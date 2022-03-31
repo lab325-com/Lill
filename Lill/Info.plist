@@ -68,6 +68,7 @@
 		<string>SFProDisplay-Bold</string>
 		<string>SFProDisplay-Medium</string>
 		<string>SFProDisplay-Regular</string>
+		<string>SFProRounded-Bold</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

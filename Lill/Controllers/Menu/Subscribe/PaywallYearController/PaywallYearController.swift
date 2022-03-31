@@ -40,13 +40,15 @@ class PaywallYearController: BaseController {
     private lazy var presenter = SubscribePresenter(view: self)
     private let id: Set<String> = ["com.lill.subscription.yearly.50"]
     weak var delegate: PaywallYearDelegate?
+    var controller: String
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(delegate: PaywallYearDelegate?) {
+    init(delegate: PaywallYearDelegate?, controller: String) {
         self.delegate = delegate
+        self.controller = controller
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -96,7 +98,7 @@ class PaywallYearController: BaseController {
     }
     
     @IBAction func actionSubscription(_ sender: UIButton) {
-        presenter.purchase(id: self.id.first!) { [weak self] result, error in
+        presenter.purchase(id: self.id.first!, controller: controller) { [weak self] result, error in
             guard let `self` = self else { return }
             if result {
                 self.delegate?.paywallYearClose(controller: self)

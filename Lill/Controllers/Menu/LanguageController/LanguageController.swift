@@ -10,6 +10,7 @@ import UIKit
 enum LanguageType: String {
     case english = "en"
     case spanish = "es"
+    case russian = "ru"
     
     var codes: String {
         switch self {
@@ -17,6 +18,8 @@ enum LanguageType: String {
             return "Eng"
         case .spanish:
             return "Esp"
+        case .russian:
+            return "Rus"
         }
     }
 }
@@ -49,9 +52,7 @@ class LanguageController: BaseController {
         setup()
     }
     
-    
     private func setup() {
-        
         navigationItem.title = titleText
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
@@ -62,7 +63,6 @@ class LanguageController: BaseController {
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
     }
-    
 }
 
 //----------------------------------------------
@@ -71,7 +71,7 @@ class LanguageController: BaseController {
 
 extension LanguageController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,14 +81,17 @@ extension LanguageController: UITableViewDataSource {
             cell.languageLabel.text = "English"
             cell.languageSubLabel.text = "English"
             cell.accessoryType = PreferencesManager.sharedManager.languageCode == .english ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
-        } else {
+        } else if indexPath.row == 1 {
             cell.languageLabel.text = "Spanish"
             cell.languageSubLabel.text = "Español"
             cell.accessoryType = PreferencesManager.sharedManager.languageCode == .spanish ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
+        } else {
+            cell.languageLabel.text = "Russian"
+            cell.languageSubLabel.text = "Русский"
+            cell.accessoryType = PreferencesManager.sharedManager.languageCode == .russian ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
         }
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -120,6 +123,8 @@ extension LanguageController: UITableViewDelegate {
             PreferencesManager.sharedManager.languageCode = .english
         case 1:
             PreferencesManager.sharedManager.languageCode = .spanish
+        case 2:
+            PreferencesManager.sharedManager.languageCode = .russian
         default:
             break
         }
