@@ -95,8 +95,10 @@ class ChooseIdentify: BaseController {
     }
     
     @IBAction func identifyAction(_ sender: Any) {
-        lottieView.stop()
-        onboardingView.isHidden = true
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
         
         AnalyticsHelper.sendFirebaseEvents(events: .identify)
         guard let meModel = KeychainService.standard.me else { return }

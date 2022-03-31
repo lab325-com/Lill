@@ -239,6 +239,7 @@
 "identify_premium" = "go premium";
 "identify_result_identify_photo" = "Analyze Photo";
 "identify_result_info" = "Do you want to start analyzing Photo?";
+"identify_result_onboarding" = "Select a Plant that your want to add";
 "identify_result_retake_photo" = "Retake Photo";
 "identify_result_snaps_left" = "free snaps left";
 "identify_result_title" = "Identifying";

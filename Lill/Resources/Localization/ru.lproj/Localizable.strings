@@ -239,6 +239,7 @@
 "identify_premium" = "получить премиум";
 "identify_result_identify_photo" = "Анализировать фото";
 "identify_result_info" = "Хотите начать анализировать фото?";
+"identify_result_onboarding" = "Выберите растение, которое вы хотите добавить";
 "identify_result_retake_photo" = "Переснять фото";
 "identify_result_snaps_left" = "Оставшиеся бесплатные фото";
 "identify_result_title" = "Определение";

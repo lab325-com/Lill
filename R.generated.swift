@@ -3303,7 +3303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 374 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 375 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -4477,6 +4477,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_add_to_title = Rswift.StringResource(key: "garden_add_to_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Select a Plant that your want to add
+      ///
+      /// Locales: en, es, ru
+      static let identify_result_onboarding = Rswift.StringResource(key: "identify_result_onboarding", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Send Report!
       ///
       /// Locales: en, es, ru
@@ -9209,6 +9213,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_add_to_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Select a Plant that your want to add
+      ///
+      /// Locales: en, es, ru
+      static func identify_result_onboarding(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("identify_result_onboarding", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "identify_result_onboarding"
+        }
+
+        return NSLocalizedString("identify_result_onboarding", bundle: bundle, comment: "")
+      }
+
       /// en translation: Send Report!
       ///
       /// Locales: en, es, ru
@@ -11623,6 +11642,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "ic_identify_report", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_report' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_retake", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_retake' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_identify_search", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_identify_search' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_flower", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_flower' is used in nib 'IdentifyController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_plants_petal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_petal' is used in nib 'IdentifyController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

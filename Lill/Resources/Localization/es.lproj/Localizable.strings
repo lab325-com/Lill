@@ -213,7 +213,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta es feliz";
+"garden_plant_is_happy" = "La planta esta feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
 "gardens_controller_places" = "Mis lugares";
@@ -239,6 +239,7 @@
 "identify_premium" = "Hazte Premium";
 "identify_result_identify_photo" = "Foto analizada";
 "identify_result_info" = "¿Quieres empezar a analizar la foto?";
+"identify_result_onboarding" = "Seleccione una planta que desee agregar";
 "identify_result_retake_photo" = "Volver a tomar foto";
 "identify_result_snaps_left" = "Snaps gratis restantes";
 "identify_result_title" = "Identificando";
