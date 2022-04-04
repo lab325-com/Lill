@@ -228,7 +228,7 @@
 "identify_info" = "Определение растения по фото";
 "identify_make_photo_info" = "Полноразмерная фотография вашего растения";
 "identify_make_photo_title" = "Сделайте полноразмерное фото вашего растения";
-"identify_no_data" = "Извините, результаты не найдены";
+"identify_no_data" = "Извините, результатов не найдено";
 "identify_no_results" = "Нет правильных результатов?";
 "identify_no_results_reidentify" = "Повторно идентифицировать";
 "identify_no_results_retake_photo" = "Переснять фото";
@@ -279,16 +279,16 @@
 "plant_add_to_garden_title" = "Поздравляем!";
 "plant_detail_about" = "О растении";
 "plant_detail_add_to_my_garden" = "Добавить в мой сад";
-"plant_detail_added_to_wishlist" = "Добавлен в список желаний";
+"plant_detail_added_to_wishlist" = "Добавлен в список желаемого";
 "plant_detail_back" = "Назад";
 "plant_detail_cares" = "Уход";
 "plant_detail_first_onboarding_title" = "Добавить растение в сад";
 "plant_detail_more_on_wiki" = "Больше на Wiki";
-"plant_detail_removed_from_wishlist" = "Удален из списка желаний";
+"plant_detail_removed_from_wishlist" = "Удален из списка желаемого";
 "plant_detail_second_onboarding_title" = "Ваше растение уже в вашем саду";
 "plants_backToTop" = "В начало";
 "plants_explore" = "Изучите каталог";
-"plants_identifier" = "Определите мои растения";
+"plants_identifier" = "Распознать мои растения";
 "plants_onbording_title" = "Добавьте свое первое растение в сад";
 "plants_search" = "Поиск по названию";
 "plants_skip_onbording_button" = "Пропустить подсказки";
@@ -334,6 +334,7 @@
 "scheldure_setting_waiting" = "Ожидание";
 "scheldure_title" = "Расписание";
 "scheldure_today" = "Сегодня";
+"subscribe_month_one" = "1 месяц";
 "subscribe_year_one" = "1 год";
 "subscribe_year_plant_identification" = "идентификация растений и их диагноз";
 "subscribe_year_premium" = "Получить премиум";
@@ -375,5 +376,5 @@
 "uniques_cover_title" = "Добавить растение";
 "uniques_skip_care" = "Пропустить";
 "wish_list_back" = "Назад";
-"wish_list_no_data" = "Список желаний пуст";
-"wish_list_title" = "Список желаний";
+"wish_list_no_data" = "Список желаемого пуст";
+"wish_list_title" = "Список желаемого";

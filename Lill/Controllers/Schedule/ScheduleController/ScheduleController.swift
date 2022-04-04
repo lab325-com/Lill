@@ -35,14 +35,14 @@ class ScheduleController: BaseController {
         setup()
     }
     
+    @objc override func changeLanguageNotifications(_ notification: Notification) {
+        super.changeLanguageNotifications(notification)
+        
+        setupLocalization()
+    }
+    
     private func setup() {
-        navigationItem.title = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        scheduleTitleLabel.text = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        emptyTextLabel.text = RLocalization.scheldure_empty_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        
-        scheldureSegment.setTitle(RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
-        scheldureSegment.setTitle(RLocalization.scheldure_next_days.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+        setupLocalization()
         
         presenter.getScheduleAll()
         tableView.alpha = 0
@@ -60,6 +60,15 @@ class ScheduleController: BaseController {
         tableView.reloadData()
     }
     
+    private func setupLocalization() {
+        navigationItem.title = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        scheduleTitleLabel.text = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        emptyTextLabel.text = RLocalization.scheldure_empty_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        scheldureSegment.setTitle(RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
+        scheldureSegment.setTitle(RLocalization.scheldure_next_days.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+    }
     
     private func changeViews() {
         if scheldureSegment.selectedSegmentIndex == 0 {

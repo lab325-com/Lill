@@ -16,11 +16,11 @@ extension ClimateDeciduous: Codable {
     var localization: String {
         switch self {
         case .climateDeciduousDeciduous:
-            return RLocalization.climate_deciduous_deciduous()
+            return RLocalization.climate_deciduous_deciduous.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateDeciduousEvergreen:
-            return RLocalization.climate_deciduous_evergreen()
+            return RLocalization.climate_deciduous_evergreen.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climante_deciduous_unknown()
+            return RLocalization.climante_deciduous_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -29,31 +29,31 @@ extension ClimateHabit: Codable {
     var localization: String {
         switch self {
         case .climateHabitBamboo:
-            return RLocalization.climate_habit_bamboo()
+            return RLocalization.climate_habit_bamboo.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitFern:
-            return RLocalization.climate_habit_fern()
+            return RLocalization.climate_habit_fern.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitPerennialClimber:
-            return RLocalization.climate_habit_perenial_climber()
+            return RLocalization.climate_habit_perenial_climber.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitShrub:
-            return RLocalization.climate_habit_shrub()
+            return RLocalization.climate_habit_shrub.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitTree:
-            return RLocalization.climate_habit_tree()
+            return RLocalization.climate_habit_tree.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitAnnualClimber:
-            return RLocalization.climate_habit_climber()
+            return RLocalization.climate_habit_climber.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitAnnualPerennial:
-            return RLocalization.climate_habit_annual_perennial()
+            return RLocalization.climate_habit_annual_perennial.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitBiennial:
-            return RLocalization.climate_habit_biennial()
+            return RLocalization.climate_habit_biennial.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitBiennialPerennial:
-            return RLocalization.climate_habit_biennial_perennial()
+            return RLocalization.climate_habit_biennial_perennial.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitBulb:
-            return RLocalization.climate_habit_bulb()
+            return RLocalization.climate_habit_bulb.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitClimber:
-            return RLocalization.climate_habit_climber()
+            return RLocalization.climate_habit_climber.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateHabitPerennial:
-            return RLocalization.climate_habit_perenial()
+            return RLocalization.climate_habit_perenial.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climate_habit_unknown()
+            return RLocalization.climate_habit_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -62,27 +62,27 @@ extension ClimateMoisture: Codable {
     var localization: String {
         switch self {
         case .climateMoistureD:
-            return RLocalization.climate_moisture_d()
+            return RLocalization.climate_moisture_d.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureDm:
-            return RLocalization.climate_moisture_dm()
+            return RLocalization.climate_moisture_dm.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureM:
-            return RLocalization.climate_moisture_m()
+            return RLocalization.climate_moisture_m.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureDmw:
-            return RLocalization.climate_moisture_dmw()
+            return RLocalization.climate_moisture_dmw.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureDmwe:
-            return RLocalization.climate_moisture_dmwe()
+            return RLocalization.climate_moisture_dmwe.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureMwe:
-            return RLocalization.climate_moisture_mwe()
+            return RLocalization.climate_moisture_mwe.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureMweWa:
-            return RLocalization.climate_moisture_mwewa()
+            return RLocalization.climate_moisture_mwewa.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureWa:
-            return RLocalization.climate_moisture_wa()
+            return RLocalization.climate_moisture_wa.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureWem:
-            return RLocalization.climate_moisture_wem()
+            return RLocalization.climate_moisture_wem.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateMoistureWewa:
-            return RLocalization.climate_moisture_wewa()
+            return RLocalization.climate_moisture_wewa.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climate_moisture_unknown()
+            return RLocalization.climate_moisture_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -91,19 +91,19 @@ extension ClimatePh: Codable {
     var localization: String {
         switch self {
         case .climatePhB:
-            return RLocalization.climate_ph_b()
+            return RLocalization.climate_ph_b.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climatePhN:
-            return RLocalization.climate_ph_n()
+            return RLocalization.climate_ph_n.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climatePhNb:
-            return RLocalization.climate_ph_nb()
+            return RLocalization.climate_ph_nb.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climatePhA:
-            return RLocalization.climate_ph_a()
+            return RLocalization.climate_ph_a.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climatePhAn:
-            return RLocalization.climate_ph_an()
+            return RLocalization.climate_ph_an.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climatePhAnb:
-            return RLocalization.climate_ph_anb()
+            return RLocalization.climate_ph_anb.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climate_ph_unknown()
+            return RLocalization.climate_ph_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -112,17 +112,17 @@ extension ClimateShade: Codable {
     var localization: String {
         switch self {
         case .climateShadeN:
-            return RLocalization.climate_shade_n()
+            return RLocalization.climate_shade_n.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateShadeS:
-            return RLocalization.climate_shade_s()
+            return RLocalization.climate_shade_s.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateShadeSn:
-            return RLocalization.climate_shade_sn()
+            return RLocalization.climate_shade_sn.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateShadeFs:
-            return RLocalization.climate_shade_fs()
+            return RLocalization.climate_shade_fs.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateShadeFsn:
-            return RLocalization.climate_shade_fsn()
+            return RLocalization.climate_shade_fsn.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climate_shade_unknown()
+            return RLocalization.climate_shade_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -131,17 +131,17 @@ extension ClimateSoil: Codable {
     var localization: String {
         switch self {
         case .climateSoilM:
-            return RLocalization.climate_soil_m()
+            return RLocalization.climate_soil_m.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateSoilMh:
-            return RLocalization.climate_soil_mh()
+            return RLocalization.climate_soil_mh.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateSoilL:
-            return RLocalization.climate_soil_l()
+            return RLocalization.climate_soil_l.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateSoilLm:
-            return RLocalization.climate_soil_lm()
+            return RLocalization.climate_soil_lm.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .climateSoilLmh:
-            return RLocalization.climate_soil_lmh()
+            return RLocalization.climate_soil_lmh.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .__unknown(_):
-            return RLocalization.climate_soil_unknown()
+            return RLocalization.climate_soil_unknown.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }

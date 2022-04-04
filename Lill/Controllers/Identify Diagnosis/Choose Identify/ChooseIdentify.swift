@@ -75,7 +75,7 @@ class ChooseIdentify: BaseController {
         premiumLabel.text = RLocalization.choose_identify_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         addUniqueLabel.text = RLocalization.choose_identify_add_unique.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        cancelButton.setTitle(RLocalization.choose_identify_cancel(), for: .normal)
+        cancelButton.setTitle(RLocalization.choose_identify_cancel.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         guard let meModel = KeychainService.standard.me else { return }
         identifyCountView.isHidden = meModel.access.isPremium

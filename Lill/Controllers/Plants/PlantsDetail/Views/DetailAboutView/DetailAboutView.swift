@@ -25,35 +25,35 @@ class DetailAboutView: UIView, LoadFromXibProtocol {
         case .habit:
             aboutImageView.image = UIImage(named: "plants_detail_about_habit_ic")
             aboutValueLabel.text = model?.habit?.localization
-            aboutTitleLabel.text = RLocalization.climate_habit()
+            aboutTitleLabel.text = RLocalization.climate_habit.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .shade:
             aboutImageView.image = UIImage(named: "plants_detail_about_shade_ic")
             aboutValueLabel.text = model?.shade?.localization
-            aboutTitleLabel.text = RLocalization.climate_shade()
+            aboutTitleLabel.text = RLocalization.climate_shade.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .moisture:
             aboutImageView.image = UIImage(named: "plants_detail_about_moisture_ic")
             aboutValueLabel.text = model?.moisture?.localization
-            aboutTitleLabel.text = RLocalization.climate_moisture()
+            aboutTitleLabel.text = RLocalization.climate_moisture.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .height:
             aboutImageView.image = UIImage(named: "plants_detail_about_height_ic")
             aboutValueLabel.text = "\(model?.height ?? 0)"
-            aboutTitleLabel.text = RLocalization.climate_height()
+            aboutTitleLabel.text = RLocalization.climate_height.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .soil:
             aboutImageView.image = UIImage(named: "plants_detail_about_soil_ic")
             aboutValueLabel.text = model?.soil?.localization
-            aboutTitleLabel.text = RLocalization.climate_soil()
+            aboutTitleLabel.text = RLocalization.climate_soil.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .ph:
             aboutImageView.image = UIImage(named: "plants_detail_about_ph_ic")
             aboutValueLabel.text = model?.ph?.localization
-            aboutTitleLabel.text = RLocalization.climate_ph()
+            aboutTitleLabel.text = RLocalization.climate_ph.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .deciduous:
             aboutImageView.image = UIImage(named: "plants_detail_about_deciduous_ic")
             aboutValueLabel.text = model?.deciduous?.localization
-            aboutTitleLabel.text = RLocalization.climate_deciduous()
+            aboutTitleLabel.text = RLocalization.climate_deciduous.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .hardiness:
             aboutImageView.image = UIImage(named: "plants_detail_about_hardiness_ic")
             aboutValueLabel.text = "\(model?.hardiness ?? 0)"
-            aboutTitleLabel.text = RLocalization.climate_hardiness()
+            aboutTitleLabel.text = RLocalization.climate_hardiness.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }

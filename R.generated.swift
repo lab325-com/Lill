@@ -3303,7 +3303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 379 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 380 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3317,6 +3317,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_need_cares_count_plants = Rswift.StringResource(key: "garden_need_cares_count_plants", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: 1 Month
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_month_one = Rswift.StringResource(key: "subscribe_month_one", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: 1 Year
       ///
       /// Locales: en, es, ru
@@ -3603,8 +3607,8 @@ struct R: Rswift.Validatable {
       static let subscription_cancel_any_time = Rswift.StringResource(key: "subscription_cancel_any_time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Can’t identify or find in catalog?
       ///
-      /// Locales: en, ru
-      static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+      /// Locales: en, es, ru
+      static let plants_uniquePlantLabel = Rswift.StringResource(key: "plants_uniquePlantLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Capture
       ///
       /// Locales: en, es, ru
@@ -4873,6 +4877,21 @@ struct R: Rswift.Validatable {
         return String(format: format, locale: locale, value1)
       }
 
+      /// en translation: 1 Month
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_month_one(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_month_one", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_month_one"
+        }
+
+        return NSLocalizedString("subscribe_month_one", bundle: bundle, comment: "")
+      }
+
       /// en translation: 1 Year
       ///
       /// Locales: en, es, ru
@@ -5942,7 +5961,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Can’t identify or find in catalog?
       ///
-      /// Locales: en, ru
+      /// Locales: en, es, ru
       static func plants_uniquePlantLabel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("plants_uniquePlantLabel", bundle: hostingBundle, comment: "")

@@ -35,7 +35,7 @@
 "choose_identify_diagnosis" = "Diagnóstico";
 "choose_identify_identify" = "Identificar";
 "choose_identify_onboarding_title" = "Captura tu planta";
-"choose_identify_premium" = "Premium";
+"choose_identify_premium" = "Prima";
 "climante_deciduous_unknown" = "Clima caduco desconocido";
 "climate_deciduous" = "Escribe";
 "climate_deciduous_deciduous" = "Caduco";
@@ -214,7 +214,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta es feliz";
+"garden_plant_is_happy" = "La planta esta feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
 "gardens_controller_onboarding_title" = "Puedes encontrar planta en tu primer lugar.";
@@ -286,13 +286,14 @@
 "plant_detail_more_on_wiki" = "Más info en el Wiki";
 "plant_detail_removed_from_wishlist" = "Eliminado de la lista de deseos";
 "plant_detail_second_onboarding_title" = "Tu planta allrea en mi jardín";
-"plants_backToTop" = "¿No se puede identificar o encontrar en el catálogo?";
+"plants_backToTop" = "Volver arriba";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar Mis Plantas";
 "plants_onbording_title" = "Añade tu primera planta al jardín";
 "plants_search" = "Buscar por nombre";
 "plants_skip_onbording_button" = "Skip Onboarding";
 "plants_uniquePlantButton" = "Añadir planta única";
+"plants_uniquePlantLabel" = "¿No se puede identificar\no encontrar en el catálogo?";
 "pop_change_name_button" = "Cambiar";
 "pop_change_name_subtitle" = "Dale un nombre a tu planta";
 "pop_change_name_title" = "Cambiar nombre";
@@ -333,10 +334,11 @@
 "scheldure_setting_waiting" = "Esperando";
 "scheldure_title" = "Calendario";
 "scheldure_today" = "Hoy";
+"subscribe_month_one" = "1 mes";
 "subscribe_year_one" = "1 año";
 "subscribe_year_plant_identification" = "identificación de la planta\ny diagnóstico";
 "subscribe_year_premium" = "Convertirse en una prima";
-"subscribe_year_save" = "AHORRA 50% DE DESCUENTO";
+"subscribe_year_save" = "AHORRA 50%";
 "subscribe_year_subscribe" = "Suscribir";
 "subscribe_year_unlimited" = "Ilimitado";
 "subscription_active" = "Activo";
@@ -347,7 +349,7 @@
 "subscription_recurring" = "Facturación mensual recurrente";
 "subscription_recurring_yearly" = "Facturación anual recurrente";
 "subscription_restore" = "Restaura compras";
-"subscription_save_50" = "AHORRA 50% DE DESCUENTO";
+"subscription_save_50" = "AHORRA 50%";
 "subscription_sub_title" = "Obtenga acceso a identificaciones/diagnósticos de plantas ilimitados.";
 "subscription_subscribe" = "Suscribirse";
 "subscription_terms" = "Condiciones de uso";

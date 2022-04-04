@@ -293,8 +293,8 @@ extension SubcribeController: SubscribeOutputProtocol {
             }
             
             if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.fistSub.rawValue}) {
-                
-                self.yearTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
+                //self.yearTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
+                self.yearTitleLabel.text = RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 self.yearBilledLabel.text = self.fistSub.billed(sub: sub)
                 
                 self.yearPriceLabel.text = SubscribeType.yearProduct.priceLabel(sub: sub)
@@ -302,8 +302,8 @@ extension SubcribeController: SubscribeOutputProtocol {
             }
             
             if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.secondSub.rawValue}) {
-                self.monthTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
-                
+                //self.monthTitleLabel.text = "\(sub.number) \(sub.period.capitalized)"
+                self.monthTitleLabel.text = RLocalization.subscribe_month_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 self.monthPriceLabel.text = SubscribeType.monthProduct.priceLabel(sub: sub)
                 self.monthRecuringLabel.text = self.secondSub.billed(sub: sub)
                 self.mounthView.alpha = 1.0

@@ -447,7 +447,7 @@ extension PlantsController {
             self.navigationTralingToPhoto.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.topCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.heightCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 998 : 999)
-            self.uniqueViewBottomLayout.constant = isHidden ? 8.0 : -50.0
+            self.uniqueViewBottomLayout.constant = isHidden ? 10.0 : -50.0
             
             self.view.layoutIfNeeded()
             
