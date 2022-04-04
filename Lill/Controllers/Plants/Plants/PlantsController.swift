@@ -2,6 +2,7 @@
 import UIKit
 import AppTrackingTransparency
 import FBSDKCoreKit
+import Lottie
 
 class PlantsController: BaseController {
     
@@ -27,16 +28,21 @@ class PlantsController: BaseController {
     @IBOutlet weak var favoriteView: UIView!
     @IBOutlet weak var uniquePlantView: UIView!
     
+    @IBOutlet weak var onboardingView: GradientView!
+    @IBOutlet weak var lottieView: AnimationView!
+    
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var wishListButton: UIButton!
     @IBOutlet weak var backToTopButton: UIButton!
     @IBOutlet weak var uniquePlantButton: UIButton!
+    @IBOutlet weak var skipOnbordingButton: UIButton!
     
     @IBOutlet weak var dividerImageView: UIImageView!
     
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var uniquePlantLabel: UILabel!
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
     
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -88,6 +94,15 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        if LaunchChecker(for: PlantsController.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.onboardingView.isHidden = false
+                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
+            }
+        }
+        
         presenter.checkRecepts { result in
             debugPrint("Sended recept to store: \(result)")
         }
@@ -107,9 +122,7 @@ class PlantsController: BaseController {
         backToTopButton.layer.borderColor = UIColor.white.cgColor
         backToTopButton.layer.borderWidth = 3
         backToTopButton.layer.cornerRadius = 18
-        
         uniquePlantView.layer.cornerRadius = 24
-        
         uniquePlantButton.layer.cornerRadius = 18
         
         photoButton.setTitle("", for: .normal)
@@ -136,13 +149,17 @@ class PlantsController: BaseController {
     
     func setupLocalization() {
         navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         identifireLabel.text = RLocalization.plants_identifier.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         explorerLabel.text = RLocalization.plants_explore.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         uniquePlantLabel.text = RLocalization.plants_uniquePlantLabel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        backToTopButton.setTitle(RLocalization.plants_backToTop.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
-        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         searchTextField.text = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         searchText = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        onbordingTitleLabel.text = RLocalization.plants_onbording_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        backToTopButton.setTitle(RLocalization.plants_backToTop.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        skipOnbordingButton.setTitle(RLocalization.plants_skip_onbording_button.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------
@@ -160,6 +177,8 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionPhoto(_ sender: UIButton) {
+        lottieView.stop()
+        onboardingView.isHidden = true
         AnalyticsHelper.sendFirebaseEvents(events: .explore_photo)
         PlantsRouter(presenter: navigationController).presentChooseIdentify(delegate: self)
     }
@@ -199,6 +218,11 @@ class PlantsController: BaseController {
         } else {
             PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
         }
+    }
+    
+    @IBAction func actionSkipOnbording(_ sender: UIButton) {
+        lottieView.stop()
+        onboardingView.isHidden = true
     }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {

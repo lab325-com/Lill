@@ -30,9 +30,11 @@
 "care_type_misting" = "Распыление воды";
 "care_type_rotating" = "Вращение";
 "care_type_watering" = "Полив";
+"choose_identify_add_unique" = "Добавить уникальное";
 "choose_identify_cancel" = "Отмена";
 "choose_identify_diagnosis" = "Диагностика";
 "choose_identify_identify" = "Идентифицировать";
+"choose_identify_onboarding_title" = "Снимите растение";
 "choose_identify_premium" = "Премиум";
 "climante_deciduous_unknown" = "Лиственный климат неизвестен";
 "climate_deciduous" = "Тип";
@@ -125,6 +127,7 @@
 "garden_clone_plant_subtitle" = "Назовите дубликат данного Растения";
 "garden_clone_plant_title" = "Дублировать растение";
 "garden_controller_edit" = "Редактировать";
+"garden_controller_onboarding_title" = "Проверьте свое растение";
 "garden_create_cover_title" = "Добавить место";
 "garden_create_name_add_place" = "Добавить место";
 "garden_create_name_subtitle" = "Назвать место";
@@ -214,6 +217,7 @@
 "garden_plant_is_happy" = "Растение счатливо";
 "garden_title" = "Мой сад";
 "gardens_controller_add_plant" = "добавить растение";
+"gardens_controller_onboarding_title" = "Вы можете найти первое растение в саду";
 "gardens_controller_places" = "Мои места";
 "gardens_controller_plants" = "Мои растения";
 "gardens_controller_title" = "Мой сад";
@@ -237,6 +241,7 @@
 "identify_premium" = "получить премиум";
 "identify_result_identify_photo" = "Анализировать фото";
 "identify_result_info" = "Хотите начать анализировать фото?";
+"identify_result_onboarding" = "Выберите растение, которое вы хотите добавить";
 "identify_result_retake_photo" = "Переснять фото";
 "identify_result_snaps_left" = "Оставшиеся бесплатные фото";
 "identify_result_title" = "Определение";
@@ -277,12 +282,16 @@
 "plant_detail_added_to_wishlist" = "Добавлен в список желаний";
 "plant_detail_back" = "Назад";
 "plant_detail_cares" = "Уход";
+"plant_detail_first_onboarding_title" = "Добавить растение в сад";
 "plant_detail_more_on_wiki" = "Больше на Wiki";
 "plant_detail_removed_from_wishlist" = "Удален из списка желаний";
+"plant_detail_second_onboarding_title" = "Ваше растение уже в вашем саду";
 "plants_backToTop" = "В начало";
 "plants_explore" = "Изучите каталог";
 "plants_identifier" = "Определите мои растения";
+"plants_onbording_title" = "Добавьте свое первое растение в сад";
 "plants_search" = "Поиск по названию";
+"plants_skip_onbording_button" = "Пропустить подсказки";
 "plants_uniquePlantButton" = "Добавить уникальное\nрастение";
 "plants_uniquePlantLabel" = "Не можете определить\nили найти в каталоге?";
 "pop_change_name_button" = "Изменить";

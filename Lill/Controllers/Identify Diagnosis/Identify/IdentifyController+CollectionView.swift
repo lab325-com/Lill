@@ -23,6 +23,10 @@ extension IdentifyController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
         if let model = identifyResults[safe: indexPath.row] {
             PlantsRouter(presenter: navigationController).pushDetail(id: model.id, delegate: self)
         }

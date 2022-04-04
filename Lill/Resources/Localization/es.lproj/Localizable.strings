@@ -30,9 +30,11 @@
 "care_type_misting" = "Empañado";
 "care_type_rotating" = "Rotación";
 "care_type_watering" = "Riego";
+"choose_identify_add_unique" = "Añadir un único";
 "choose_identify_cancel" = "Cancelar";
 "choose_identify_diagnosis" = "Diagnóstico";
 "choose_identify_identify" = "Identificar";
+"choose_identify_onboarding_title" = "Captura tu planta";
 "choose_identify_premium" = "Premium";
 "climante_deciduous_unknown" = "Clima caduco desconocido";
 "climate_deciduous" = "Escribe";
@@ -125,6 +127,7 @@
 "garden_clone_plant_subtitle" = "Dar nombre al clon de esta planta.";
 "garden_clone_plant_title" = "Clonar Planta";
 "garden_controller_edit" = "Editar";
+"garden_controller_onboarding_title" = "Revisa tu planta";
 "garden_create_cover_title" = "Añadir lugar";
 "garden_create_name_add_place" = "Añadir lugar";
 "garden_create_name_subtitle" = "Dar nombre para el lugar";
@@ -211,9 +214,10 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
+"gardens_controller_onboarding_title" = "Puedes encontrar planta en tu primer lugar.";
 "gardens_controller_places" = "Mis lugares";
 "gardens_controller_plants" = "Mis plantas";
 "gardens_controller_title" = "Mi jardín";
@@ -237,6 +241,7 @@
 "identify_premium" = "Hazte Premium";
 "identify_result_identify_photo" = "Foto analizada";
 "identify_result_info" = "¿Quieres empezar a analizar la foto?";
+"identify_result_onboarding" = "Seleccione una planta que desee agregar";
 "identify_result_retake_photo" = "Volver a tomar foto";
 "identify_result_snaps_left" = "Snaps gratis restantes";
 "identify_result_title" = "Identificando";
@@ -277,12 +282,16 @@
 "plant_detail_added_to_wishlist" = "Añadido a la lista de deseos";
 "plant_detail_back" = "Atrás";
 "plant_detail_cares" = "Cuidados";
+"plant_detail_first_onboarding_title" = "Añadir la planta al jardín";
 "plant_detail_more_on_wiki" = "Más info en el Wiki";
 "plant_detail_removed_from_wishlist" = "Eliminado de la lista de deseos";
+"plant_detail_second_onboarding_title" = "Tu planta allrea en mi jardín";
 "plants_backToTop" = "¿No se puede identificar o encontrar en el catálogo?";
 "plants_explore" = "Explorar catálogo";
 "plants_identifier" = "Identificar Mis Plantas";
+"plants_onbording_title" = "Añade tu primera planta al jardín";
 "plants_search" = "Buscar por nombre";
+"plants_skip_onbording_button" = "Skip Onboarding";
 "plants_uniquePlantButton" = "Añadir planta única";
 "pop_change_name_button" = "Cambiar";
 "pop_change_name_subtitle" = "Dale un nombre a tu planta";

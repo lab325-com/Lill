@@ -5,9 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SFProDisplay-Medium.ttf">
+            <string>SFProDisplay-Medium</string>
+        </array>
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
@@ -16,6 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GardenController" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="brb-Qc-ZsW" id="5mh-SY-4FY"/>
+                <outlet property="lottieView" destination="BQV-nx-d4x" id="Q9N-He-fKm"/>
+                <outlet property="onboardingView" destination="cMw-TS-KSv" id="cUY-RW-f1q"/>
+                <outlet property="onbordingTitleLabel" destination="U0z-hX-1BP" id="lyi-Py-3IJ"/>
                 <outlet property="scrollView" destination="1C4-zk-B0H" id="6ch-X6-IRC"/>
                 <outlet property="view" destination="cOE-iv-vGn" id="pUc-69-mQg"/>
                 <outletCollection property="careButtons" destination="pjd-5o-ILp" collectionClass="NSMutableArray" id="Fws-Dq-t3x"/>
@@ -43,21 +50,6 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-AZ-IHf">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="brb-Qc-ZsW">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="gaE-It-sFK">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                    </collectionViewFlowLayout>
-                    <cells/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="c0Q-us-gpp"/>
-                        <outlet property="delegate" destination="-1" id="BDd-t6-zCc"/>
-                    </connections>
-                </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jh-5t-psf">
                     <rect key="frame" x="0.0" y="44" width="414" height="48"/>
                     <subviews>
@@ -313,6 +305,88 @@
                         <constraint firstAttribute="bottom" secondItem="1C4-zk-B0H" secondAttribute="bottom" id="y0m-DW-KAx"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-TS-KSv" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQV-nx-d4x" customClass="AnimationView" customModule="Lottie">
+                            <rect key="frame" x="55" y="300" width="100" height="100"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="Sfu-al-zAm"/>
+                                <constraint firstAttribute="height" constant="100" id="etJ-Tt-15l"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="arrow_down"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHB-eU-jJv">
+                            <rect key="frame" x="55" y="400" width="304" height="54"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your first Plant to Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0z-hX-1BP">
+                                    <rect key="frame" x="40" y="18" width="224" height="18"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="U0z-hX-1BP" firstAttribute="centerX" secondItem="LHB-eU-jJv" secondAttribute="centerX" id="CY6-rF-VQX"/>
+                                <constraint firstAttribute="trailing" secondItem="U0z-hX-1BP" secondAttribute="trailing" constant="40" id="Ipl-5V-pN5"/>
+                                <constraint firstAttribute="height" constant="54" id="YIc-Ln-HbF"/>
+                                <constraint firstItem="U0z-hX-1BP" firstAttribute="centerY" secondItem="LHB-eU-jJv" secondAttribute="centerY" id="m6f-NZ-XO9"/>
+                                <constraint firstItem="U0z-hX-1BP" firstAttribute="leading" secondItem="LHB-eU-jJv" secondAttribute="leading" constant="40" id="pn8-5e-GBo"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="27"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_petal" translatesAutoresizingMaskIntoConstraints="NO" id="zUS-NP-VfV">
+                            <rect key="frame" x="50" y="376" width="37" height="52"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_flower" translatesAutoresizingMaskIntoConstraints="NO" id="qhe-0K-gkJ">
+                            <rect key="frame" x="299" y="351.5" width="89" height="75"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="BQV-nx-d4x" firstAttribute="top" secondItem="cMw-TS-KSv" secondAttribute="top" constant="300" id="0Ls-wl-HW0"/>
+                        <constraint firstItem="BQV-nx-d4x" firstAttribute="leading" secondItem="LHB-eU-jJv" secondAttribute="leading" id="9dm-cO-aY4"/>
+                        <constraint firstItem="LHB-eU-jJv" firstAttribute="leading" secondItem="cMw-TS-KSv" secondAttribute="leading" constant="55" id="H2c-8A-E54"/>
+                        <constraint firstItem="qhe-0K-gkJ" firstAttribute="centerY" secondItem="LHB-eU-jJv" secondAttribute="centerY" constant="-38" id="JAI-J3-US5"/>
+                        <constraint firstItem="zUS-NP-VfV" firstAttribute="leading" secondItem="cMw-TS-KSv" secondAttribute="leading" constant="50" id="N4K-sM-Zel"/>
+                        <constraint firstItem="zUS-NP-VfV" firstAttribute="centerY" secondItem="LHB-eU-jJv" secondAttribute="centerY" constant="-25" id="QoC-dA-u9M"/>
+                        <constraint firstAttribute="trailing" secondItem="qhe-0K-gkJ" secondAttribute="trailing" constant="26" id="skO-aq-lIV"/>
+                        <constraint firstItem="LHB-eU-jJv" firstAttribute="top" secondItem="BQV-nx-d4x" secondAttribute="bottom" id="wQw-Zw-nV1"/>
+                        <constraint firstAttribute="trailing" secondItem="LHB-eU-jJv" secondAttribute="trailing" constant="55" id="yjj-gw-DtI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                            <color key="value" red="0.031372549020000001" green="0.32549019610000002" blue="0.23529411759999999" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                            <color key="value" red="0.21960784310000001" green="0.027450980390000001" blue="0.027450980390000001" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="brb-Qc-ZsW">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="gaE-It-sFK">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="c0Q-us-gpp"/>
+                        <outlet property="delegate" destination="-1" id="BDd-t6-zCc"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="94D-dX-yLE"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,16 +398,25 @@
                 <constraint firstItem="brb-Qc-ZsW" firstAttribute="leading" secondItem="94D-dX-yLE" secondAttribute="leading" id="6l9-iQ-PXT"/>
                 <constraint firstItem="6Jh-5t-psf" firstAttribute="top" secondItem="94D-dX-yLE" secondAttribute="top" id="JeY-tm-N0Q"/>
                 <constraint firstItem="brb-Qc-ZsW" firstAttribute="top" secondItem="94D-dX-yLE" secondAttribute="top" id="LDT-fn-ETG"/>
+                <constraint firstItem="cMw-TS-KSv" firstAttribute="leading" secondItem="94D-dX-yLE" secondAttribute="leading" id="O4V-hw-Pdr"/>
                 <constraint firstAttribute="bottom" secondItem="4LF-AZ-IHf" secondAttribute="bottom" id="QZO-lX-ysx"/>
+                <constraint firstAttribute="bottom" secondItem="cMw-TS-KSv" secondAttribute="bottom" id="RJP-bA-4tm"/>
                 <constraint firstItem="4LF-AZ-IHf" firstAttribute="top" secondItem="cOE-iv-vGn" secondAttribute="top" id="RNC-SC-yqC"/>
                 <constraint firstItem="6Jh-5t-psf" firstAttribute="leading" secondItem="94D-dX-yLE" secondAttribute="leading" id="gzp-eU-JWe"/>
                 <constraint firstAttribute="trailing" secondItem="brb-Qc-ZsW" secondAttribute="trailing" id="jwG-g6-VsU"/>
                 <constraint firstAttribute="bottom" secondItem="brb-Qc-ZsW" secondAttribute="bottom" id="lUC-Yg-DpG"/>
+                <constraint firstItem="cMw-TS-KSv" firstAttribute="top" secondItem="cOE-iv-vGn" secondAttribute="top" id="oZY-0E-VWx"/>
+                <constraint firstItem="cMw-TS-KSv" firstAttribute="trailing" secondItem="94D-dX-yLE" secondAttribute="trailing" id="qYy-Cq-vWK"/>
             </constraints>
             <point key="canvasLocation" x="115.94202898550725" y="39.508928571428569"/>
         </view>
     </objects>
     <resources>
         <image name="garden_back_ic" width="390" height="734"/>
+        <image name="ic_plants_flower" width="89" height="75"/>
+        <image name="ic_plants_petal" width="37" height="52"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

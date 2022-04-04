@@ -1,5 +1,6 @@
 
 import UIKit
+import Lottie
 
 protocol ChooseIdentifyDelegate: AnyObject {
     func didPressedAddUniquePlant()
@@ -11,19 +12,25 @@ class ChooseIdentify: BaseController {
     // MARK: - @IBOutlets
     //----------------------------------------------
     
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var diagnosisView: UIView!
     
     @IBOutlet weak var identifyView: GradientView!
     @IBOutlet weak var identifyCountView: GradientView!
-    @IBOutlet weak var diagnosisView: UIView!
     @IBOutlet weak var premiumView: GradientView!
+    @IBOutlet weak var onboardingView: GradientView!
+    
+    @IBOutlet weak var lottieView: AnimationView!
     
     @IBOutlet weak var identifyLabel: UILabel!
     @IBOutlet weak var identifyCountLabel: UILabel!
     @IBOutlet weak var diagnosisLabel: UILabel!
     @IBOutlet weak var premiumLabel: UILabel!
     @IBOutlet weak var addUniqueLabel: UILabel!
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    
     @IBOutlet weak var bottomLayoutCancelButton: NSLayoutConstraint!
     
     weak var delegate: ChooseIdentifyDelegate?
@@ -51,11 +58,22 @@ class ChooseIdentify: BaseController {
     //----------------------------------------------
     
     func configureView() {
+        if LaunchChecker(for: ChooseIdentify.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.backView.isHidden = true
+                self.onboardingView.isHidden = false
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
+            }
+        }
+        
         backView.backgroundColor = UIColor.clear
         
-        identifyLabel.text = RLocalization.choose_identify_identify()
-        diagnosisLabel.text = RLocalization.choose_identify_diagnosis()
-        premiumLabel.text = RLocalization.choose_identify_premium()
+        onbordingTitleLabel.text = RLocalization.choose_identify_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        identifyLabel.text = RLocalization.choose_identify_identify.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        diagnosisLabel.text = RLocalization.choose_identify_diagnosis.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        premiumLabel.text = RLocalization.choose_identify_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        addUniqueLabel.text = RLocalization.choose_identify_add_unique.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         cancelButton.setTitle(RLocalization.choose_identify_cancel(), for: .normal)
         
@@ -74,10 +92,14 @@ class ChooseIdentify: BaseController {
         animate(isHidden: true) { [weak self] in
             self?.dismiss(animated: false)
         }
-        
     }
     
     @IBAction func identifyAction(_ sender: Any) {
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
+        
         AnalyticsHelper.sendFirebaseEvents(events: .identify)
         guard let meModel = KeychainService.standard.me else { return }
         

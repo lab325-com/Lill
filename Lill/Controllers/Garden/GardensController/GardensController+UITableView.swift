@@ -33,6 +33,10 @@ extension GardensController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
         if let gardenId = presenter.gardens[safe: indexPath.row]?.id, let gardenName = presenter.gardens[safe: indexPath.row]?.name {
             GardenRouter(presenter: navigationController).pushToGarden(gardenId: gardenId, gardenName: gardenName)
         }
