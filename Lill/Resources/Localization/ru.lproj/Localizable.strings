@@ -216,6 +216,7 @@
 "garden_plant_is_happy" = "Растение счатливо";
 "garden_title" = "Мой сад";
 "gardens_controller_add_plant" = "добавить растение";
+"gardens_controller_onboarding_title" = "Вы можете найти первое растение в саду";
 "gardens_controller_places" = "Мои места";
 "gardens_controller_plants" = "Мои растения";
 "gardens_controller_title" = "Мой сад";

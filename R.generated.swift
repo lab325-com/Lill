@@ -3303,7 +3303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 377 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 378 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -4717,6 +4717,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let subscription_description = Rswift.StringResource(key: "subscription_description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: You can find Plant in your first Place
+      ///
+      /// Locales: en, es, ru
+      static let gardens_controller_onboarding_title = Rswift.StringResource(key: "gardens_controller_onboarding_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: You will not miss Caring for plants even with closed application!
       ///
       /// Locales: en, es, ru
@@ -10119,6 +10123,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscription_description", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can find Plant in your first Place
+      ///
+      /// Locales: en, es, ru
+      static func gardens_controller_onboarding_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gardens_controller_onboarding_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gardens_controller_onboarding_title"
+        }
+
+        return NSLocalizedString("gardens_controller_onboarding_title", bundle: bundle, comment: "")
       }
 
       /// en translation: You will not miss Caring for plants even with closed application!

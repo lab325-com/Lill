@@ -125,29 +125,6 @@
                                     <constraint firstItem="c36-uV-4Rf" firstAttribute="centerY" secondItem="kHI-xt-63b" secondAttribute="centerY" id="k1T-Tu-dnD"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Mt-4a-36s">
-                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="biz-0y-NvK"/>
-                                    <outlet property="delegate" destination="iQY-JI-GAl" id="iM1-av-jJ6"/>
-                                </connections>
-                            </tableView>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-m1-9Ks">
-                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="EoX-gf-gAG">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="MuR-53-zg2"/>
-                                    <outlet property="delegate" destination="iQY-JI-GAl" id="R3i-AC-K7T"/>
-                                </connections>
-                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-Mu-yyb">
                                 <rect key="frame" x="0.0" y="154" width="414" height="48"/>
                                 <subviews>
@@ -426,6 +403,95 @@
                                     <constraint firstAttribute="bottom" secondItem="hfj-vm-YPy" secondAttribute="bottom" id="tOC-iM-DZP"/>
                                 </constraints>
                             </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-m1-9Ks">
+                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="EoX-gf-gAG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="MuR-53-zg2"/>
+                                    <outlet property="delegate" destination="iQY-JI-GAl" id="R3i-AC-K7T"/>
+                                </connections>
+                            </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9JS-Hg-Arz" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-Ib-rwa" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="157" y="322" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="a13-DQ-qK4"/>
+                                            <constraint firstAttribute="height" constant="100" id="nnE-kq-OiE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="arrow_down"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-Ln-VEl">
+                                        <rect key="frame" x="55" y="422" width="304" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your first Plant to Garden" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-Wh-gnf">
+                                                <rect key="frame" x="40" y="18" width="224" height="18"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="1KI-uo-grh"/>
+                                            <constraint firstItem="OoO-Wh-gnf" firstAttribute="centerX" secondItem="RJ0-Ln-VEl" secondAttribute="centerX" id="4Sf-68-txx"/>
+                                            <constraint firstItem="OoO-Wh-gnf" firstAttribute="centerY" secondItem="RJ0-Ln-VEl" secondAttribute="centerY" id="Onr-9G-DJo"/>
+                                            <constraint firstAttribute="trailing" secondItem="OoO-Wh-gnf" secondAttribute="trailing" constant="40" id="YPN-Kz-Ufn"/>
+                                            <constraint firstItem="OoO-Wh-gnf" firstAttribute="leading" secondItem="RJ0-Ln-VEl" secondAttribute="leading" constant="40" id="vSg-ay-zF7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="27"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_petal" translatesAutoresizingMaskIntoConstraints="NO" id="k0D-f5-vmt">
+                                        <rect key="frame" x="50" y="398" width="37" height="52"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_flower" translatesAutoresizingMaskIntoConstraints="NO" id="9sy-sa-oF1">
+                                        <rect key="frame" x="299" y="373.5" width="89" height="75"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RJ0-Ln-VEl" firstAttribute="top" secondItem="nuC-Ib-rwa" secondAttribute="bottom" id="32y-Ik-0bX"/>
+                                    <constraint firstItem="k0D-f5-vmt" firstAttribute="centerY" secondItem="RJ0-Ln-VEl" secondAttribute="centerY" constant="-25" id="4bp-06-9wz"/>
+                                    <constraint firstAttribute="trailing" secondItem="RJ0-Ln-VEl" secondAttribute="trailing" constant="55" id="H2v-Li-63N"/>
+                                    <constraint firstItem="k0D-f5-vmt" firstAttribute="leading" secondItem="9JS-Hg-Arz" secondAttribute="leading" constant="50" id="Lan-fB-1FF"/>
+                                    <constraint firstItem="9sy-sa-oF1" firstAttribute="centerY" secondItem="RJ0-Ln-VEl" secondAttribute="centerY" constant="-38" id="R3g-dl-fSP"/>
+                                    <constraint firstItem="nuC-Ib-rwa" firstAttribute="centerX" secondItem="9JS-Hg-Arz" secondAttribute="centerX" id="TOT-3w-wcT"/>
+                                    <constraint firstItem="RJ0-Ln-VEl" firstAttribute="leading" secondItem="9JS-Hg-Arz" secondAttribute="leading" constant="55" id="W1b-Vg-B41"/>
+                                    <constraint firstAttribute="trailing" secondItem="9sy-sa-oF1" secondAttribute="trailing" constant="26" id="m42-vv-9vX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.031372549020000001" green="0.32549019610000002" blue="0.23529411759999999" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.21960784310000001" green="0.027450980390000001" blue="0.027450980390000001" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Mt-4a-36s">
+                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="biz-0y-NvK"/>
+                                    <outlet property="delegate" destination="iQY-JI-GAl" id="iM1-av-jJ6"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GgK-Xs-xXf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -440,18 +506,23 @@
                             <constraint firstItem="Qbc-Mu-yyb" firstAttribute="top" secondItem="jiK-Qh-rNa" secondAttribute="bottom" id="D73-eW-J0u"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="GBI-aa-DBy"/>
                             <constraint firstItem="7Mt-4a-36s" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="HGQ-f7-AQ3"/>
+                            <constraint firstItem="9JS-Hg-Arz" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="Ike-b3-3hj"/>
                             <constraint firstItem="Qbc-Mu-yyb" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="NKO-kZ-hcn"/>
                             <constraint firstItem="Qbc-Mu-yyb" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="OSK-Pt-9yL"/>
                             <constraint firstAttribute="bottom" secondItem="jdb-y6-lWd" secondAttribute="bottom" id="TFE-s5-DBa"/>
+                            <constraint firstAttribute="bottom" secondItem="9JS-Hg-Arz" secondAttribute="bottom" id="UFe-Jj-GPX"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="X09-Se-reD"/>
                             <constraint firstItem="jdb-y6-lWd" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="Xvz-qw-MUg"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="jdb-y6-lWd" secondAttribute="trailing" id="ehr-Jw-9am"/>
                             <constraint firstItem="tZx-NC-u7v" firstAttribute="top" secondItem="GgK-Xs-xXf" secondAttribute="top" id="fL3-SS-S3d"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="bottom" secondItem="7Mt-4a-36s" secondAttribute="bottom" id="fro-xl-HTq"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="jiK-Qh-rNa" secondAttribute="trailing" id="jvN-4R-Oxh"/>
+                            <constraint firstItem="nuC-Ib-rwa" firstAttribute="top" secondItem="Qbc-Mu-yyb" secondAttribute="bottom" constant="120" id="lfY-1D-z7R"/>
                             <constraint firstItem="7Mt-4a-36s" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="mub-DX-hTV"/>
+                            <constraint firstItem="9JS-Hg-Arz" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="pTM-z0-E1R"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="qaw-hD-YUJ"/>
                             <constraint firstItem="jiK-Qh-rNa" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="zK5-sB-1e6"/>
+                            <constraint firstItem="9JS-Hg-Arz" firstAttribute="top" secondItem="3Tk-Gt-Pxz" secondAttribute="top" id="zv7-8c-yP2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uer-S1-Bxx"/>
@@ -461,6 +532,9 @@
                         <outlet property="caresView" destination="Qbc-Mu-yyb" id="gi7-fo-9q2"/>
                         <outlet property="collectionView" destination="Meh-m1-9Ks" id="BT5-Ql-Joz"/>
                         <outlet property="gardensSegment" destination="hfj-vm-YPy" id="IHb-j7-3WV"/>
+                        <outlet property="lottieView" destination="nuC-Ib-rwa" id="3yP-yM-rZW"/>
+                        <outlet property="onboardingView" destination="9JS-Hg-Arz" id="x9R-Zz-CMl"/>
+                        <outlet property="onbordingTitleLabel" destination="OoO-Wh-gnf" id="aMJ-Uf-L3D"/>
                         <outlet property="scrollView" destination="yCy-CN-4qi" id="TPa-Cx-KEm"/>
                         <outlet property="tableView" destination="7Mt-4a-36s" id="VqR-H1-MEM"/>
                         <outlet property="titleLabel" destination="c36-uV-4Rf" id="kak-KA-nnO"/>

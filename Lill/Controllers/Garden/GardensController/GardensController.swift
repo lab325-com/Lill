@@ -1,6 +1,7 @@
 //
 import UIKit
 import Foundation
+import Lottie
 
 class GardensController: BaseController {
     
@@ -10,10 +11,14 @@ class GardensController: BaseController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addPantLabel: UILabel!
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
     
     @IBOutlet weak var gardensSegment: UISegmentedControl!
     
     @IBOutlet weak var caresView: UIView!
+    
+    @IBOutlet weak var onboardingView: GradientView!
+    @IBOutlet weak var lottieView: AnimationView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -53,6 +58,15 @@ class GardensController: BaseController {
         getData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Private methods
     //----------------------------------------------
@@ -60,8 +74,19 @@ class GardensController: BaseController {
     private func setup() {
         hiddenNavigationBar = true
         
+        if LaunchChecker(for: GardensController.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.onboardingView.isHidden = false
+                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
+            }
+        }
+        
         titleLabel.text = RLocalization.gardens_controller_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         addPantLabel.text = RLocalization.gardens_controller_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        onbordingTitleLabel.text = RLocalization.gardens_controller_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         gardensSegment.setTitle(RLocalization.gardens_controller_places.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
         gardensSegment.setTitle(RLocalization.gardens_controller_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
         

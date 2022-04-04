@@ -216,6 +216,7 @@
 "garden_plant_is_happy" = "Plant is happy";
 "garden_title" = "My Garden";
 "gardens_controller_add_plant" = "add plant";
+"gardens_controller_onboarding_title" = "You can find Plant in your first Place";
 "gardens_controller_places" = "My Places";
 "gardens_controller_plants" = "My Plants";
 "gardens_controller_title" = "My Garden";
