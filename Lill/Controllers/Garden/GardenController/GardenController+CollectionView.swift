@@ -66,6 +66,10 @@ extension GardenController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
         if let model = presenter.gardenPlants[safe: indexPath.row] {
             GardenRouter(presenter: navigationController).pushGardenDetail(id: model.id, delegate: self)
         }

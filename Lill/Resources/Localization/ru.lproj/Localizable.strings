@@ -127,6 +127,7 @@
 "garden_clone_plant_subtitle" = "Назовите дубликат данного Растения";
 "garden_clone_plant_title" = "Дублировать растение";
 "garden_controller_edit" = "Редактировать";
+"garden_controller_onboarding_title" = "Проверьте свое растение";
 "garden_create_cover_title" = "Добавить место";
 "garden_create_name_add_place" = "Добавить место";
 "garden_create_name_subtitle" = "Назвать место";
@@ -227,7 +228,7 @@
 "identify_info" = "Определение растения по фото";
 "identify_make_photo_info" = "Полноразмерная фотография вашего растения";
 "identify_make_photo_title" = "Сделайте полноразмерное фото вашего растения";
-"identify_no_data" = "Извините, результатов не найдено";
+"identify_no_data" = "Извините, результаты не найдены";
 "identify_no_results" = "Нет правильных результатов?";
 "identify_no_results_reidentify" = "Повторно идентифицировать";
 "identify_no_results_retake_photo" = "Переснять фото";

@@ -127,6 +127,7 @@
 "garden_clone_plant_subtitle" = "Give name for the clone of this plant";
 "garden_clone_plant_title" = "Clone Plant";
 "garden_controller_edit" = "Edit";
+"garden_controller_onboarding_title" = "Check your Plant";
 "garden_create_cover_title" = "Add Place";
 "garden_create_name_add_place" = "Add Place";
 "garden_create_name_subtitle" = "Give name for Place";
