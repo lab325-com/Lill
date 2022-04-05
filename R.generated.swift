@@ -12320,7 +12320,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "background_main", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background_main' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "garden_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'garden_back_ic' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_login_bg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_login_bg' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_backToTop", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_backToTop' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_close' is used in storyboard 'Main', but couldn't be loaded.") }

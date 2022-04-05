@@ -125,6 +125,69 @@
                                     <constraint firstItem="c36-uV-4Rf" firstAttribute="centerY" secondItem="kHI-xt-63b" secondAttribute="centerY" id="k1T-Tu-dnD"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiK-Qh-rNa">
+                                <rect key="frame" x="0.0" y="102" width="414" height="52"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-dq-RGR" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                        <rect key="frame" x="14" y="16" width="386" height="36"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-9W-mJQ" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="386" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                        <color key="value" red="0.59607843137254901" green="0.85490196078431369" blue="0.47843137254901957" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                        <color key="value" red="0.47843137254901957" green="0.85490196078431369" blue="0.65098039215686276" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="6v8-da-PHb"/>
+                                            <constraint firstAttribute="trailing" secondItem="mCB-9W-mJQ" secondAttribute="trailing" id="T0L-RE-Cbg"/>
+                                            <constraint firstAttribute="bottom" secondItem="mCB-9W-mJQ" secondAttribute="bottom" id="a0g-W8-s1l"/>
+                                            <constraint firstItem="mCB-9W-mJQ" firstAttribute="top" secondItem="XGj-dq-RGR" secondAttribute="top" id="byq-Sq-9ki"/>
+                                            <constraint firstItem="mCB-9W-mJQ" firstAttribute="leading" secondItem="XGj-dq-RGR" secondAttribute="leading" id="sYN-4a-x89"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="gardensSegmentAction:" destination="iQY-JI-GAl" eventType="valueChanged" id="Ayt-Z3-cHO"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XGj-dq-RGR" firstAttribute="leading" secondItem="jiK-Qh-rNa" secondAttribute="leading" constant="14" id="JuC-d7-KYh"/>
+                                    <constraint firstAttribute="trailing" secondItem="XGj-dq-RGR" secondAttribute="trailing" constant="14" id="SCU-sa-LtX"/>
+                                    <constraint firstAttribute="bottom" secondItem="XGj-dq-RGR" secondAttribute="bottom" id="YkW-2i-8Da"/>
+                                    <constraint firstItem="XGj-dq-RGR" firstAttribute="top" secondItem="jiK-Qh-rNa" secondAttribute="top" constant="16" id="ca9-fV-tIQ"/>
+                                </constraints>
+                            </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-m1-9Ks">
+                                <rect key="frame" x="0.0" y="159" width="414" height="654"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="EoX-gf-gAG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="MuR-53-zg2"/>
+                                    <outlet property="delegate" destination="iQY-JI-GAl" id="R3i-AC-K7T"/>
+                                </connections>
+                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbc-Mu-yyb">
                                 <rect key="frame" x="0.0" y="154" width="414" height="48"/>
                                 <subviews>
@@ -377,47 +440,6 @@
                                     <constraint firstItem="yCy-CN-4qi" firstAttribute="top" secondItem="Qbc-Mu-yyb" secondAttribute="top" id="u4w-HF-Kkw"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiK-Qh-rNa">
-                                <rect key="frame" x="0.0" y="102" width="414" height="52"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-vm-YPy">
-                                        <rect key="frame" x="14" y="16" width="386" height="37"/>
-                                        <color key="backgroundColor" red="0.59607843137254901" green="0.85490196078431369" blue="0.47843137254901957" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="bOt-fD-7v2"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="My Places"/>
-                                            <segment title="My Plants"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="gardensSegmentAction:" destination="iQY-JI-GAl" eventType="valueChanged" id="pVr-De-jDO"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="hfj-vm-YPy" firstAttribute="top" secondItem="jiK-Qh-rNa" secondAttribute="top" constant="16" id="1Vm-kG-Vth"/>
-                                    <constraint firstItem="hfj-vm-YPy" firstAttribute="leading" secondItem="jiK-Qh-rNa" secondAttribute="leading" constant="14" id="8av-D4-x4P"/>
-                                    <constraint firstAttribute="trailing" secondItem="hfj-vm-YPy" secondAttribute="trailing" constant="14" id="BYL-bt-Gx8"/>
-                                    <constraint firstAttribute="bottom" secondItem="hfj-vm-YPy" secondAttribute="bottom" id="tOC-iM-DZP"/>
-                                </constraints>
-                            </view>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Meh-m1-9Ks">
-                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="EoX-gf-gAG">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iQY-JI-GAl" id="MuR-53-zg2"/>
-                                    <outlet property="delegate" destination="iQY-JI-GAl" id="R3i-AC-K7T"/>
-                                </connections>
-                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9JS-Hg-Arz" customClass="GradientView" customModule="Lill" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
@@ -512,7 +534,6 @@
                             <constraint firstItem="Qbc-Mu-yyb" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="OSK-Pt-9yL"/>
                             <constraint firstAttribute="bottom" secondItem="jdb-y6-lWd" secondAttribute="bottom" id="TFE-s5-DBa"/>
                             <constraint firstAttribute="bottom" secondItem="9JS-Hg-Arz" secondAttribute="bottom" id="UFe-Jj-GPX"/>
-                            <constraint firstItem="Meh-m1-9Ks" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="X09-Se-reD"/>
                             <constraint firstItem="jdb-y6-lWd" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="Xvz-qw-MUg"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="jdb-y6-lWd" secondAttribute="trailing" id="ehr-Jw-9am"/>
                             <constraint firstItem="tZx-NC-u7v" firstAttribute="top" secondItem="GgK-Xs-xXf" secondAttribute="top" id="fL3-SS-S3d"/>
@@ -521,6 +542,7 @@
                             <constraint firstItem="nuC-Ib-rwa" firstAttribute="top" secondItem="Qbc-Mu-yyb" secondAttribute="bottom" constant="120" id="lfY-1D-z7R"/>
                             <constraint firstItem="9JS-Hg-Arz" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="pTM-z0-E1R"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="qaw-hD-YUJ"/>
+                            <constraint firstItem="Meh-m1-9Ks" firstAttribute="top" secondItem="jiK-Qh-rNa" secondAttribute="bottom" constant="5" id="ydh-9k-YCd"/>
                             <constraint firstItem="jiK-Qh-rNa" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="zK5-sB-1e6"/>
                             <constraint firstItem="9JS-Hg-Arz" firstAttribute="top" secondItem="3Tk-Gt-Pxz" secondAttribute="top" id="zv7-8c-yP2"/>
                         </constraints>
@@ -531,7 +553,7 @@
                         <outlet property="addPantLabel" destination="Ex2-0Q-37V" id="Bvo-fU-4m8"/>
                         <outlet property="caresView" destination="Qbc-Mu-yyb" id="gi7-fo-9q2"/>
                         <outlet property="collectionView" destination="Meh-m1-9Ks" id="BT5-Ql-Joz"/>
-                        <outlet property="gardensSegment" destination="hfj-vm-YPy" id="IHb-j7-3WV"/>
+                        <outlet property="gardensSegment" destination="XGj-dq-RGR" id="kh5-m0-MUk"/>
                         <outlet property="lottieView" destination="nuC-Ib-rwa" id="3yP-yM-rZW"/>
                         <outlet property="onboardingView" destination="9JS-Hg-Arz" id="x9R-Zz-CMl"/>
                         <outlet property="onbordingTitleLabel" destination="OoO-Wh-gnf" id="aMJ-Uf-L3D"/>
@@ -1029,10 +1051,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvi-LB-y22">
-                                        <rect key="frame" x="0.0" y="105" width="414" height="620"/>
+                                        <rect key="frame" x="0.0" y="110" width="414" height="615"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-4g-h1P">
-                                                <rect key="frame" x="68" y="177.5" width="278" height="265.5"/>
+                                                <rect key="frame" x="68" y="175" width="278" height="265.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheldure_empty_ic" translatesAutoresizingMaskIntoConstraints="NO" id="io2-eA-dqP">
                                                         <rect key="frame" x="0.0" y="0.0" width="278" height="172"/>
@@ -1071,17 +1093,43 @@ Ring icon in Plant card</string>
                                             <outlet property="delegate" destination="wfN-Lx-kdK" id="z7r-q0-IQO"/>
                                         </connections>
                                     </tableView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="abg-ff-jZI">
-                                        <rect key="frame" x="14" y="74" width="386" height="32"/>
-                                        <color key="backgroundColor" red="0.59607843137254901" green="0.85490196078431369" blue="0.47843137254901957" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <segments>
-                                            <segment title="Today"/>
-                                            <segment title="Next 7 days"/>
-                                        </segments>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvR-dy-oYL" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                        <rect key="frame" x="14" y="74" width="386" height="36"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0m-dS-SbR" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="386" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                        <color key="value" red="0.59607843140000005" green="0.85490196080000003" blue="0.47843137250000001" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                        <color key="value" red="0.47843137250000001" green="0.85490196080000003" blue="0.65098039220000004" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="m0m-dS-SbR" secondAttribute="trailing" id="U1f-hS-FGH"/>
+                                            <constraint firstItem="m0m-dS-SbR" firstAttribute="top" secondItem="FvR-dy-oYL" secondAttribute="top" id="Yyx-i8-fZS"/>
+                                            <constraint firstAttribute="bottom" secondItem="m0m-dS-SbR" secondAttribute="bottom" id="d5S-tS-OYz"/>
+                                            <constraint firstItem="m0m-dS-SbR" firstAttribute="leading" secondItem="FvR-dy-oYL" secondAttribute="leading" id="gKl-mt-fZX"/>
+                                            <constraint firstAttribute="height" constant="36" id="kqI-a8-S69"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="actionChangeSheldure:" destination="wfN-Lx-kdK" eventType="valueChanged" id="Ttt-7f-hHf"/>
+                                            <action selector="actionChangeSheldure:" destination="wfN-Lx-kdK" eventType="valueChanged" id="ldr-eE-odw"/>
+                                            <action selector="gardensSegmentAction:" destination="iQY-JI-GAl" eventType="valueChanged" id="sQ0-rV-8jt"/>
                                         </connections>
-                                    </segmentedControl>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ika-O3-Znk">
                                         <rect key="frame" x="364" y="18.5" width="40" height="40"/>
                                         <constraints>
@@ -1097,21 +1145,21 @@ Ring icon in Plant card</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="abg-ff-jZI" secondAttribute="trailing" constant="14" id="3VW-3Q-AV5"/>
-                                    <constraint firstItem="Wvi-LB-y22" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" id="F6f-yL-VVe"/>
+                                    <constraint firstItem="FvR-dy-oYL" firstAttribute="top" secondItem="KRj-Aq-6Ni" secondAttribute="bottom" constant="15" id="6rS-14-Qp2"/>
                                     <constraint firstAttribute="bottom" secondItem="dtc-kE-xCX" secondAttribute="bottom" id="G7h-1L-PEa"/>
                                     <constraint firstItem="KRj-Aq-6Ni" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="20" symbolic="YES" id="Hfk-5L-bbn"/>
                                     <constraint firstItem="KRj-Aq-6Ni" firstAttribute="top" secondItem="eBv-VJ-ts5" secondAttribute="top" constant="18" id="Mdq-ME-8qR"/>
                                     <constraint firstItem="Wvi-LB-y22" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" id="RRN-Hr-ZCn"/>
+                                    <constraint firstItem="Wvi-LB-y22" firstAttribute="top" secondItem="FvR-dy-oYL" secondAttribute="bottom" id="SKe-l9-Imx"/>
                                     <constraint firstAttribute="trailing" secondItem="dtc-kE-xCX" secondAttribute="trailing" id="TtL-Mu-6bM"/>
                                     <constraint firstAttribute="trailing" secondItem="Wvi-LB-y22" secondAttribute="trailing" id="Wz3-4f-qRn"/>
                                     <constraint firstItem="dtc-kE-xCX" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" id="YYr-GV-OWL"/>
-                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="top" secondItem="abg-ff-jZI" secondAttribute="bottom" constant="20" id="Yw6-Ce-qaD"/>
                                     <constraint firstAttribute="bottom" secondItem="Wvi-LB-y22" secondAttribute="bottom" id="as6-RH-hto"/>
-                                    <constraint firstItem="abg-ff-jZI" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="14" id="d3r-ak-qyR"/>
-                                    <constraint firstItem="abg-ff-jZI" firstAttribute="top" secondItem="KRj-Aq-6Ni" secondAttribute="bottom" constant="15" id="eGm-2G-UKE"/>
+                                    <constraint firstAttribute="trailing" secondItem="FvR-dy-oYL" secondAttribute="trailing" constant="14" id="dfp-hq-C8x"/>
                                     <constraint firstItem="Ika-O3-Znk" firstAttribute="centerY" secondItem="KRj-Aq-6Ni" secondAttribute="centerY" id="fhb-r4-UEM"/>
                                     <constraint firstAttribute="trailing" secondItem="Ika-O3-Znk" secondAttribute="trailing" constant="10" id="lEW-AD-gWV"/>
+                                    <constraint firstItem="FvR-dy-oYL" firstAttribute="leading" secondItem="eBv-VJ-ts5" secondAttribute="leading" constant="14" id="lkw-kK-3gJ"/>
+                                    <constraint firstItem="dtc-kE-xCX" firstAttribute="top" secondItem="FvR-dy-oYL" secondAttribute="bottom" constant="15" id="wob-6U-8VN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1134,7 +1182,7 @@ Ring icon in Plant card</string>
                         <outlet property="emptyTextLabel" destination="tbO-VH-tPB" id="hhK-cO-scn"/>
                         <outlet property="emptyView" destination="Wvi-LB-y22" id="7UJ-BZ-HW0"/>
                         <outlet property="scheduleTitleLabel" destination="KRj-Aq-6Ni" id="kS2-Ls-Lqu"/>
-                        <outlet property="scheldureSegment" destination="abg-ff-jZI" id="Ng8-tO-id2"/>
+                        <outlet property="scheldureSegment" destination="FvR-dy-oYL" id="rMv-uH-YrA"/>
                         <outlet property="tableView" destination="dtc-kE-xCX" id="f4m-R2-BRy"/>
                     </connections>
                 </viewController>

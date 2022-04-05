@@ -214,7 +214,7 @@
 "garden_plant_cares_edit_title" = "Editar Plan de Cuidados";
 "garden_plant_detail_added_in_schedule" = "Añadido en el horario";
 "garden_plant_detail_removed_from_schedule" = "Eliminado del horario";
-"garden_plant_is_happy" = "La planta esta feliz";
+"garden_plant_is_happy" = "La planta es feliz";
 "garden_title" = "Mi jardín";
 "gardens_controller_add_plant" = "añadir";
 "gardens_controller_onboarding_title" = "Puedes encontrar planta en tu primer lugar.";

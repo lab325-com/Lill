@@ -1,5 +1,6 @@
 
 import UIKit
+import BetterSegmentedControl
 
 class ScheduleController: BaseController {
 
@@ -8,7 +9,7 @@ class ScheduleController: BaseController {
     //----------------------------------------------
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var scheldureSegment: UISegmentedControl!
+    @IBOutlet weak var scheldureSegment: BetterSegmentedControl!
     @IBOutlet weak var emptyView: UIView!
     
     @IBOutlet weak var scheduleTitleLabel: UILabel!
@@ -66,12 +67,15 @@ class ScheduleController: BaseController {
         scheduleTitleLabel.text = RLocalization.scheldure_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         emptyTextLabel.text = RLocalization.scheldure_empty_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        scheldureSegment.setTitle(RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
-        scheldureSegment.setTitle(RLocalization.scheldure_next_days.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+        let titles = [RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue),
+                      RLocalization.scheldure_next_days.localized(PreferencesManager.sharedManager.languageCode.rawValue)]
+        scheldureSegment.segments = LabelSegment.segments(withTitles: titles,
+                                                          normalTextColor: .black,
+                                                          selectedTextColor: .black)
     }
     
     private func changeViews() {
-        if scheldureSegment.selectedSegmentIndex == 0 {
+        if scheldureSegment.index == 0 {
             if presenter.currentSchedule.count == 0 && presenter.futureSchedule.count == 0 {
                 emptyView.isHidden = false
                 tableView.alpha = 0
@@ -108,7 +112,7 @@ class ScheduleController: BaseController {
         ScheduleRouter(presenter: navigationController).pushScheduleSettings()
     }
     
-    @IBAction func actionChangeSheldure(_ sender: UISegmentedControl) {
+    @IBAction func actionChangeSheldure(_ sender: BetterSegmentedControl) {
         changeViews()
     }
 }

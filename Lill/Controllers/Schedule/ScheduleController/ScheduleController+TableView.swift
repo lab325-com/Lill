@@ -10,7 +10,7 @@ import UIKit
 
 extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if scheldureSegment.selectedSegmentIndex == 0 {
+        if scheldureSegment.index == 0 {
             var count = presenter.currentSchedule.count + presenter.futureSchedule.count
             if presenter.currentSchedule.count > 0 {
                 count += 1
@@ -22,7 +22,7 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if scheldureSegment.selectedSegmentIndex == 1 {
+        if scheldureSegment.index == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellScheduleIdentifier) as? ScheduleCell else { return UITableViewCell() }
             
             if let model = presenter.nextWeekSchedule[safe: indexPath.row] {
@@ -79,7 +79,7 @@ extension ScheduleController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadRows(at: [indexPath], with: .automatic)
         } else {
             var model: ScheduleMainModel?
-            if scheldureSegment.selectedSegmentIndex == 1 {
+            if scheldureSegment.index == 1 {
                 model = presenter.nextWeekSchedule[safe: indexPath.row]
             } else {
                 if presenter.currentSchedule.count > 0 {

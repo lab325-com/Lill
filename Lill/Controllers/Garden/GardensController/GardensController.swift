@@ -2,6 +2,7 @@
 import UIKit
 import Foundation
 import Lottie
+import BetterSegmentedControl
 
 class GardensController: BaseController {
     
@@ -13,7 +14,7 @@ class GardensController: BaseController {
     @IBOutlet weak var addPantLabel: UILabel!
     @IBOutlet weak var onbordingTitleLabel: UILabel!
     
-    @IBOutlet weak var gardensSegment: UISegmentedControl!
+    @IBOutlet weak var gardensSegment: BetterSegmentedControl!
     
     @IBOutlet weak var caresView: UIView!
     
@@ -89,8 +90,11 @@ class GardensController: BaseController {
         addPantLabel.text = RLocalization.gardens_controller_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         onbordingTitleLabel.text = RLocalization.gardens_controller_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        gardensSegment.setTitle(RLocalization.gardens_controller_places.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 0)
-        gardensSegment.setTitle(RLocalization.gardens_controller_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue), forSegmentAt: 1)
+        let titles = [RLocalization.gardens_controller_places.localized(PreferencesManager.sharedManager.languageCode.rawValue),
+                      RLocalization.gardens_controller_plants.localized(PreferencesManager.sharedManager.languageCode.rawValue)]
+        gardensSegment.segments = LabelSegment.segments(withTitles: titles,
+                                                        normalTextColor: .black,
+                                                        selectedTextColor: .black)
         
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -107,7 +111,7 @@ class GardensController: BaseController {
         collectionView.register(UINib.init(nibName: gardenButtonCellIdentifier, bundle: nil), forCellWithReuseIdentifier: gardenButtonCellIdentifier)
         
         //tableView.contentInset.top = 60.0
-        collectionView.contentInset.top = 100.0
+        collectionView.contentInset.top = 34.0
     }
     
     @objc override func changeLanguageNotifications(_ notification: Notification) {
@@ -164,8 +168,8 @@ class GardensController: BaseController {
         GardenRouter(presenter: navigationController).presentChooseAddPlant(delegate: self)
     }
     
-    @IBAction func gardensSegmentAction(_ sender: UIButton) {
-        if gardensSegment.selectedSegmentIndex == 0 {
+    @IBAction func gardensSegmentAction(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
             tableView.isHidden = false
             collectionView.isHidden = true
             caresView.isHidden = true
