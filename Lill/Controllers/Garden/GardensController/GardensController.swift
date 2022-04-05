@@ -55,6 +55,17 @@ class GardensController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let me = KeychainService.standard.me, me.totalGardenPlants > 0 {
+            if LaunchChecker(for: GardensController.self).isFirstLaunch()  {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.onboardingView.isHidden = false
+                    self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                    self.lottieView.loopMode = .loop
+                    self.lottieView.play()
+                }
+            }
+        }
+        
         getData()
     }
     
@@ -73,15 +84,6 @@ class GardensController: BaseController {
     
     private func setup() {
         hiddenNavigationBar = true
-        
-        if LaunchChecker(for: GardensController.self).isFirstLaunch() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.onboardingView.isHidden = false
-                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
-                self.lottieView.loopMode = .loop
-                self.lottieView.play()
-            }
-        }
         
         titleLabel.text = RLocalization.gardens_controller_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         addPantLabel.text = RLocalization.gardens_controller_add_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -104,7 +106,7 @@ class GardensController: BaseController {
         collectionView.register(UINib.init(nibName: gardenViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: gardenViewCellIdentifier)
         collectionView.register(UINib.init(nibName: gardenButtonCellIdentifier, bundle: nil), forCellWithReuseIdentifier: gardenButtonCellIdentifier)
         
-        tableView.contentInset.top = 52.0
+        //tableView.contentInset.top = 60.0
         collectionView.contentInset.top = 100.0
     }
     

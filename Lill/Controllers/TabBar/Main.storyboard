@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garden_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-y6-lWd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_main" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-y6-lWd">
                                 <rect key="frame" x="0.0" y="102" width="414" height="794"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-NC-u7v">
@@ -485,7 +485,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Mt-4a-36s">
-                                <rect key="frame" x="0.0" y="102" width="414" height="711"/>
+                                <rect key="frame" x="0.0" y="159" width="414" height="654"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="iQY-JI-GAl" id="biz-0y-NvK"/>
@@ -500,6 +500,7 @@
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="7Mt-4a-36s" secondAttribute="trailing" id="1gU-Zg-Nyi"/>
                             <constraint firstItem="tZx-NC-u7v" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="5df-fq-o1g"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="bottom" secondItem="GgK-Xs-xXf" secondAttribute="bottom" id="9dM-6y-UMI"/>
+                            <constraint firstItem="7Mt-4a-36s" firstAttribute="top" secondItem="jiK-Qh-rNa" secondAttribute="bottom" constant="5" id="A0O-Z4-HX0"/>
                             <constraint firstItem="jiK-Qh-rNa" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="A2C-Ha-oWk"/>
                             <constraint firstItem="jdb-y6-lWd" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="ApM-QL-b0V"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="tZx-NC-u7v" secondAttribute="trailing" id="Bcu-AK-K85"/>
@@ -518,7 +519,6 @@
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="bottom" secondItem="7Mt-4a-36s" secondAttribute="bottom" id="fro-xl-HTq"/>
                             <constraint firstItem="GgK-Xs-xXf" firstAttribute="trailing" secondItem="jiK-Qh-rNa" secondAttribute="trailing" id="jvN-4R-Oxh"/>
                             <constraint firstItem="nuC-Ib-rwa" firstAttribute="top" secondItem="Qbc-Mu-yyb" secondAttribute="bottom" constant="120" id="lfY-1D-z7R"/>
-                            <constraint firstItem="7Mt-4a-36s" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="mub-DX-hTV"/>
                             <constraint firstItem="9JS-Hg-Arz" firstAttribute="trailing" secondItem="GgK-Xs-xXf" secondAttribute="trailing" id="pTM-z0-E1R"/>
                             <constraint firstItem="Meh-m1-9Ks" firstAttribute="leading" secondItem="GgK-Xs-xXf" secondAttribute="leading" id="qaw-hD-YUJ"/>
                             <constraint firstItem="jiK-Qh-rNa" firstAttribute="top" secondItem="tZx-NC-u7v" secondAttribute="bottom" id="zK5-sB-1e6"/>
@@ -1283,7 +1283,6 @@ Ring icon in Plant card</string>
     <color key="tintColor" red="0.76470588235294112" green="0.43137254901960786" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="background_main" width="390" height="800"/>
-        <image name="garden_back_ic" width="390" height="734"/>
         <image name="ic_login_bg" width="390" height="844"/>
         <image name="ic_plants_backToTop" width="6.5" height="11"/>
         <image name="ic_plants_close" width="11" height="11"/>

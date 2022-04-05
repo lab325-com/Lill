@@ -33,8 +33,6 @@ class AddPlaceCell: UITableViewCell {
     
     func configure() {
         addPlaceButton.layer.cornerRadius = 22
-        addPlaceButton.layer.borderWidth = 1
-        addPlaceButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
         
         addPlaceButton.setTitle(RLocalization.add_place_cell_add_place.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }

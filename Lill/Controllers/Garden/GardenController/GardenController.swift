@@ -101,8 +101,9 @@ class GardenController: BaseController {
             }
         }
         
-        navigationItem.title = gardenName
+        navigationItem.title = gardenName.capitalized
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
+                
         let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_controller_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(editGardenAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem

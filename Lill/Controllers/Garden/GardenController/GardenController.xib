@@ -305,7 +305,7 @@
                         <constraint firstAttribute="bottom" secondItem="1C4-zk-B0H" secondAttribute="bottom" id="y0m-DW-KAx"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-TS-KSv" customClass="GradientView" customModule="Lill" customModuleProvider="target">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-TS-KSv" customClass="GradientView" customModule="Lill" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQV-nx-d4x" customClass="AnimationView" customModule="Lottie">

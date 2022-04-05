@@ -1,6 +1,5 @@
 
 import UIKit
-import AppTrackingTransparency
 import FBSDKCoreKit
 import Lottie
 
@@ -73,7 +72,6 @@ class PlantsController: BaseController {
         super.viewDidLoad()
         
         AnalyticsHelper.sendFirebaseEvents(events: .main_screen_open)
-        askTrackingTransparency()
         setup()
         presenter.getPlants(search: "")
     }
@@ -81,7 +79,7 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
-        navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
+        //navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -248,37 +246,6 @@ class PlantsController: BaseController {
     @objc func liveSearch() {
         AnalyticsHelper.sendFirebaseEvents(events: .explore_search)
         presenter.getPlants(search: searchTextField.text!)
-    }
-    
-    private func askTrackingTransparency() {
-        if #available(iOS 14, *) {
-            if ATTrackingManager.trackingAuthorizationStatus != .authorized && ATTrackingManager.trackingAuthorizationStatus != .denied {
-                ATTrackingManager.requestTrackingAuthorization {  status in
-                    switch status {
-                    case .authorized:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = true
-                        Settings.shared.isAdvertiserTrackingEnabled = true
-                        break
-                    case .denied:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = false
-                        Settings.shared.isAdvertiserTrackingEnabled = false
-                        break
-                    case .notDetermined:
-                        // Tracking authorization dialog has not been shown
-                        print("Not Determined")
-                    case .restricted:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = false
-                        Settings.shared.isAdvertiserTrackingEnabled = false
-                        print("Restricted")
-                    @unknown default:
-                        print("Unknown")
-                    }
-                    
-                }
-            }
-        } else {
-            
-        }
     }
 }
 

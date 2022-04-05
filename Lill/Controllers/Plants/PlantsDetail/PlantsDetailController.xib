@@ -394,7 +394,7 @@
                     <rect key="frame" x="12" y="44" width="86.5" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-1x-hq9">
-                            <rect key="frame" x="13" y="8" width="11.5" height="20"/>
+                            <rect key="frame" x="13" y="10" width="11.5" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="11.5" id="DWb-ou-F8U"/>
                             </constraints>
@@ -402,7 +402,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XH-Ar-R7n">
                             <rect key="frame" x="37.5" y="8" width="36" height="20.5"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                            <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUY-iG-onN">
@@ -670,7 +670,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back_ic" width="11.5" height="20"/>
+        <image name="back_ic" width="9" height="16"/>
         <image name="ic_plants_flower" width="89" height="75"/>
         <image name="ic_plants_petal" width="37" height="52"/>
         <image name="placeholder_big_ic" width="390" height="241"/>
