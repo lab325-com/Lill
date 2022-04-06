@@ -696,7 +696,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 128 images.
+  /// This `R.image` struct is generated, and contains static references to 129 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -784,6 +784,8 @@ struct R: Rswift.Validatable {
     static let ic_diagnosis_onboarding_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_onboarding_4")
     /// Image `ic_diagnosis_phonendoscope`.
     static let ic_diagnosis_phonendoscope = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_diagnosis_phonendoscope")
+    /// Image `ic_fake_tabbar`.
+    static let ic_fake_tabbar = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_fake_tabbar")
     /// Image `ic_identify_checkmark`.
     static let ic_identify_checkmark = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_identify_checkmark")
     /// Image `ic_identify_close`.
@@ -1253,6 +1255,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_diagnosis_phonendoscope", bundle: ..., traitCollection: ...)`
     static func ic_diagnosis_phonendoscope(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_diagnosis_phonendoscope, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_fake_tabbar", bundle: ..., traitCollection: ...)`
+    static func ic_fake_tabbar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_fake_tabbar, compatibleWith: traitCollection)
     }
     #endif
 
@@ -11984,6 +11993,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_fake_tabbar", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_fake_tabbar' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_flower", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_flower' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_plants_petal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_plants_petal' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "placeholder_big_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder_big_ic' is used in nib 'PlantsDetailController', but couldn't be loaded.") }
