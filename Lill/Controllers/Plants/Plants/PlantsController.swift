@@ -106,6 +106,7 @@ class PlantsController: BaseController {
         }
         
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        searchTextField.addTarget(self, action: #selector(textFieldDidTapped(_:)), for: .touchDown)
         
         blurEffectView.alpha = 0.0
         closeButton.isHidden = true
@@ -235,12 +236,10 @@ class PlantsController: BaseController {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.liveSearch), object: nil)
             self.perform(#selector(self.liveSearch), with: nil, afterDelay: 1.0)
         }
-        
-        if text.count >= 1 {
-            closeButton.isHidden = false
-        } else {
-            closeButton.isHidden = true
-        }
+    }
+    
+    @objc func textFieldDidTapped(_ textField: UITextField) {
+        closeButton.isHidden = false
     }
     
     @objc func liveSearch() {
@@ -448,6 +447,15 @@ extension PlantsController {
             
             isNeedAnimate = true
             animatePhotoButton(isHidden: false)
+            
+            if searchTextField.isFirstResponder {
+                searchTextField.resignFirstResponder()
+                view.endEditing(true)
+            }
+            
+            if !closeButton.isHidden {
+                closeButton.isHidden = true
+            }
             
             presenter.getPlants(search: "")
         }

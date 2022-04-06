@@ -29,6 +29,7 @@
                 <outlet property="captureView" destination="Gts-H9-ZCP" id="t49-SM-Y0p"/>
                 <outlet property="capturedImageView" destination="I1C-Q1-3hs" id="jgu-On-3zS"/>
                 <outlet property="capturedView" destination="6Ov-jd-UiM" id="GeD-m7-2bW"/>
+                <outlet property="closeButton" destination="fOM-6G-5ty" id="iL8-nO-wdw"/>
                 <outlet property="collectionView" destination="LAh-N1-W5x" id="Pja-kh-P8D"/>
                 <outlet property="flashButton" destination="7kd-wV-KJM" id="SuS-r6-AJK"/>
                 <outlet property="identifyActivity" destination="5xF-dR-OtG" id="IQi-Ha-EqQ"/>

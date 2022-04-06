@@ -35,6 +35,7 @@ class GardensController: BaseController {
     //----------------------------------------------
     
     var selectedCareType = 0
+    var isAddButton = true
 
     lazy var presenter = GardensPresenter(view: self)
     
@@ -56,14 +57,13 @@ class GardensController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let me = KeychainService.standard.me, me.totalGardenPlants > 0 {
-            if LaunchChecker(for: GardensController.self).isFirstLaunch()  {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    self.onboardingView.isHidden = false
-                    self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
-                    self.lottieView.loopMode = .loop
-                    self.lottieView.play()
-                }
+        if LaunchChecker(for: GardensController.self).isFirstLaunch()  {
+            isAddButton = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.onboardingView.isHidden = false
+                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
             }
         }
         
@@ -110,7 +110,6 @@ class GardensController: BaseController {
         collectionView.register(UINib.init(nibName: gardenViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: gardenViewCellIdentifier)
         collectionView.register(UINib.init(nibName: gardenButtonCellIdentifier, bundle: nil), forCellWithReuseIdentifier: gardenButtonCellIdentifier)
         
-        //tableView.contentInset.top = 60.0
         collectionView.contentInset.top = 34.0
     }
     

@@ -222,6 +222,13 @@ class PlantsDetailController: BaseController {
             UIApplication.shared.open(url)
         }
     }
+    
+    @IBAction func gardensAction(_ sender: Any) {
+        navigationController?.dismiss(animated: false, completion: {
+            let currentController = RootRouter.sharedInstance.topViewController?.navigationController
+            currentController?.tabBarController?.selectedIndex = 1
+        })
+    }
 }
 
 //----------------------------------------------

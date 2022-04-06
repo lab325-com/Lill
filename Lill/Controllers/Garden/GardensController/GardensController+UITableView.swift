@@ -5,7 +5,8 @@ import Foundation
 extension GardensController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.gardens.count > 0 ? presenter.gardens.count + 1 : 1
+//        return presenter.gardens.count > 0 ? presenter.gardens.count + 1 : 1
+        return isAddButton ? presenter.gardens.count + 1 : presenter.gardens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -572,7 +572,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="434" height="1430"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-b8-Pha" customClass="AnimationView" customModule="Lottie">
-                            <rect key="frame" x="100" y="1250" width="100" height="100"/>
+                            <rect key="frame" x="90" y="1258" width="100" height="100"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="0Va-XL-TzN"/>
@@ -583,7 +583,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKp-eE-mGJ">
-                            <rect key="frame" x="55" y="1196" width="324" height="54"/>
+                            <rect key="frame" x="55" y="1204" width="324" height="54"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture your Plant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-JD-ai5">
                                     <rect key="frame" x="40" y="18" width="244" height="18"/>
@@ -607,23 +607,42 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_petal" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-3j-WwQ">
-                            <rect key="frame" x="50" y="1172" width="37" height="52"/>
+                            <rect key="frame" x="50" y="1180" width="37" height="52"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plants_flower" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-CF-0Qd">
-                            <rect key="frame" x="319" y="1147.5" width="89" height="75"/>
+                            <rect key="frame" x="319" y="1155.5" width="89" height="75"/>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_fake_tabbar" translatesAutoresizingMaskIntoConstraints="NO" id="KVL-Ko-PJe">
+                            <rect key="frame" x="0.0" y="1344" width="434" height="86"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHS-2l-cAO">
+                            <rect key="frame" x="115" y="1358" width="100" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="TrB-1k-AWR"/>
+                                <constraint firstAttribute="width" constant="100" id="Wdo-Rc-T4O"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="gardensAction:" destination="-1" eventType="touchUpInside" id="RmV-px-zyT"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="KVL-Ko-PJe" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" id="0c1-Pi-EZy"/>
                         <constraint firstAttribute="trailing" secondItem="7E6-CF-0Qd" secondAttribute="trailing" constant="26" id="1eF-vE-riZ"/>
+                        <constraint firstAttribute="trailing" secondItem="KVL-Ko-PJe" secondAttribute="trailing" id="8xK-Jk-ysN"/>
                         <constraint firstItem="lkt-b8-Pha" firstAttribute="top" secondItem="VKp-eE-mGJ" secondAttribute="bottom" id="EFc-J9-lOb"/>
                         <constraint firstItem="5ma-3j-WwQ" firstAttribute="centerY" secondItem="VKp-eE-mGJ" secondAttribute="centerY" constant="-25" id="FfO-rP-WPA"/>
+                        <constraint firstAttribute="bottom" secondItem="MHS-2l-cAO" secondAttribute="bottom" id="GAq-NP-ZP5"/>
+                        <constraint firstAttribute="bottom" secondItem="KVL-Ko-PJe" secondAttribute="bottom" id="JCj-Sv-xyu"/>
                         <constraint firstItem="7E6-CF-0Qd" firstAttribute="centerY" secondItem="VKp-eE-mGJ" secondAttribute="centerY" constant="-38" id="Q3K-fV-8R4"/>
                         <constraint firstItem="5ma-3j-WwQ" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" constant="50" id="X8B-Z8-L6X"/>
                         <constraint firstItem="VKp-eE-mGJ" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" constant="55" id="cbY-cC-c2F"/>
-                        <constraint firstAttribute="bottom" secondItem="lkt-b8-Pha" secondAttribute="bottom" constant="80" id="eOw-el-oAz"/>
+                        <constraint firstItem="MHS-2l-cAO" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" constant="115" id="daQ-Ez-j4L"/>
+                        <constraint firstItem="lkt-b8-Pha" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" constant="90" id="j8d-Jf-InP"/>
                         <constraint firstAttribute="trailing" secondItem="VKp-eE-mGJ" secondAttribute="trailing" constant="55" id="nbT-cf-iBT"/>
-                        <constraint firstItem="lkt-b8-Pha" firstAttribute="leading" secondItem="JxD-iJ-yia" secondAttribute="leading" constant="100" id="tKU-e9-Pzz"/>
+                        <constraint firstItem="MHS-2l-cAO" firstAttribute="top" secondItem="lkt-b8-Pha" secondAttribute="bottom" id="vsy-cG-7mt"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -671,6 +690,7 @@
     </objects>
     <resources>
         <image name="back_ic" width="9" height="16"/>
+        <image name="ic_fake_tabbar" width="390" height="86"/>
         <image name="ic_plants_flower" width="89" height="75"/>
         <image name="ic_plants_petal" width="37" height="52"/>
         <image name="placeholder_big_ic" width="390" height="241"/>

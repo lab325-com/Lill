@@ -228,7 +228,7 @@
 "identify_info" = "Определение растения по фото";
 "identify_make_photo_info" = "Полноразмерная фотография вашего растения";
 "identify_make_photo_title" = "Сделайте полноразмерное фото вашего растения";
-"identify_no_data" = "Извините, результаты не найдены";
+"identify_no_data" = "Извините, результатов не найдено";
 "identify_no_results" = "Нет правильных результатов?";
 "identify_no_results_reidentify" = "Повторно идентифицировать";
 "identify_no_results_retake_photo" = "Переснять фото";

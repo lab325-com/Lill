@@ -61,6 +61,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var noResulsSearchButton: UIButton!
     @IBOutlet weak var noResulsReportButton: UIButton!
     @IBOutlet weak var reIdentifyButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     @IBOutlet weak var analizeActivity: UIActivityIndicatorView!
     @IBOutlet weak var identifyActivity: UIActivityIndicatorView!
@@ -116,11 +117,21 @@ class IdentifyController: BaseController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        onboardingView.isHidden = true
+        lottieView.stop()
+    }
+    
     //----------------------------------------------
     // MARK: - Private methods
     //----------------------------------------------
     
     func setup() {
+        if LaunchChecker(for: DiagnosisController.self).isFirstLaunch() {
+            closeButton.isHidden = true
+        }
         
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),
