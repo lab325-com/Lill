@@ -81,16 +81,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if (granted) {
                     application.registerForRemoteNotifications()
                 }
-                else {
-                    //Do stuff if unsuccessful...
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    if #available(iOS 14, *) {
+                        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                            switch status {
+                            case .authorized:
+                                Settings.shared.isAdvertiserIDCollectionEnabled = true
+                                Settings.shared.isAdvertiserTrackingEnabled = true
+                                break
+                            case .denied:
+                                Settings.shared.isAdvertiserIDCollectionEnabled = false
+                                Settings.shared.isAdvertiserTrackingEnabled = false
+                                break
+                            case .notDetermined:
+                                // Tracking authorization dialog has not been shown
+                                print("Not Determined")
+                            case .restricted:
+                                Settings.shared.isAdvertiserIDCollectionEnabled = false
+                                Settings.shared.isAdvertiserTrackingEnabled = false
+                                print("Restricted")
+                            @unknown default:
+                                print("Unknown")
+                            }
+                        })
+                    }
                 }
             }
         })
         
         SKAdNetwork.registerAppForAdNetworkAttribution()
-        
-        application.registerForRemoteNotifications()
-        
+                
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
     }
     

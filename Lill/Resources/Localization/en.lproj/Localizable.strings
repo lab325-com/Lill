@@ -30,9 +30,11 @@
 "care_type_misting" = "Misting";
 "care_type_rotating" = "Rotating";
 "care_type_watering" = "Watering";
+"choose_identify_add_unique" = "Add Unique";
 "choose_identify_cancel" = "Cancel";
 "choose_identify_diagnosis" = "Diagnosis";
 "choose_identify_identify" = "Identify";
+"choose_identify_onboarding_title" = "Capture your Plant";
 "choose_identify_premium" = "Premium";
 "climante_deciduous_unknown" = "Climate Deciduous Unknown";
 "climate_deciduous" = "Type";
@@ -125,6 +127,7 @@
 "garden_clone_plant_subtitle" = "Give name for the clone of this plant";
 "garden_clone_plant_title" = "Clone Plant";
 "garden_controller_edit" = "Edit";
+"garden_controller_onboarding_title" = "Check your Plant";
 "garden_create_cover_title" = "Add Place";
 "garden_create_name_add_place" = "Add Place";
 "garden_create_name_subtitle" = "Give name for Place";
@@ -214,6 +217,7 @@
 "garden_plant_is_happy" = "Plant is happy";
 "garden_title" = "My Garden";
 "gardens_controller_add_plant" = "add plant";
+"gardens_controller_onboarding_title" = "You can find Plant in your first Place";
 "gardens_controller_places" = "My Places";
 "gardens_controller_plants" = "My Plants";
 "gardens_controller_title" = "My Garden";
@@ -237,6 +241,7 @@
 "identify_premium" = "go premium";
 "identify_result_identify_photo" = "Analyze Photo";
 "identify_result_info" = "Do you want to start analyzing Photo?";
+"identify_result_onboarding" = "Select a Plant that your want to add";
 "identify_result_retake_photo" = "Retake Photo";
 "identify_result_snaps_left" = "free snaps left";
 "identify_result_title" = "Identifying";
@@ -277,12 +282,16 @@
 "plant_detail_added_to_wishlist" = "Added to Wishlist";
 "plant_detail_back" = "Back";
 "plant_detail_cares" = "Cares";
+"plant_detail_first_onboarding_title" = "Add the Plant to Garden";
 "plant_detail_more_on_wiki" = "More on Wiki";
 "plant_detail_removed_from_wishlist" = "Removed from Wishlist";
+"plant_detail_second_onboarding_title" = "Your Plant allready in my Garden";
 "plants_backToTop" = "Back to top";
 "plants_explore" = "Explore catalog";
 "plants_identifier" = "Identify my Plants";
+"plants_onbording_title" = "Add your first Plant to Garden";
 "plants_search" = "Search by Name";
+"plants_skip_onbording_button" = "Skip onboarding";
 "plants_uniquePlantButton" = "Add Unique Plant";
 "plants_uniquePlantLabel" = "Can’t identify or find in catalog?";
 "pop_change_name_button" = "Change";
@@ -325,6 +334,7 @@
 "scheldure_setting_waiting" = "Waiting";
 "scheldure_title" = "Schedule";
 "scheldure_today" = "Today";
+"subscribe_month_one" = "1 Month";
 "subscribe_year_one" = "1 Year";
 "subscribe_year_plant_identification" = "plant Identification\nand Diagnosis";
 "subscribe_year_premium" = "Become a Premium";

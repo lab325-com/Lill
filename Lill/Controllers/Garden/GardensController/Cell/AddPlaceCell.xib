@@ -23,14 +23,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CD-8o-8Wz">
-                        <rect key="frame" x="30" y="0.0" width="351" height="44"/>
+                        <rect key="frame" x="30" y="5" width="351" height="44"/>
+                        <color key="backgroundColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="Mvb-An-Jub"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="15"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Add Place">
-                            <color key="titleColor" red="0.48627450980392156" green="0.85490196078431369" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
                             <action selector="addPlaceAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nB1-1m-MM9"/>
@@ -38,9 +39,9 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="1CD-8o-8Wz" secondAttribute="bottom" constant="10" id="8Uh-ke-5Ro"/>
+                    <constraint firstAttribute="bottom" secondItem="1CD-8o-8Wz" secondAttribute="bottom" constant="5" id="CDX-ta-uum"/>
                     <constraint firstAttribute="trailing" secondItem="1CD-8o-8Wz" secondAttribute="trailing" constant="30" id="CVS-Bz-a9P"/>
-                    <constraint firstItem="1CD-8o-8Wz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mak-pg-Y8b"/>
+                    <constraint firstItem="1CD-8o-8Wz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Hku-Ao-wyN"/>
                     <constraint firstItem="1CD-8o-8Wz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="Ps5-X2-nJl"/>
                 </constraints>
             </tableViewCellContentView>

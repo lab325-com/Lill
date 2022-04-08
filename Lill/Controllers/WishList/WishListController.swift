@@ -51,12 +51,12 @@ class WishListController: BaseController {
     
     private func setup() {
         let backButton = UIBarButtonItem()
-        backButton.title = RLocalization.wish_list_back()
+        backButton.title = RLocalization.wish_list_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        navigationItem.title = RLocalization.wish_list_title()
+        navigationItem.title = RLocalization.wish_list_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        noDataLabel.text = RLocalization.wish_list_no_data()
+        noDataLabel.text = RLocalization.wish_list_no_data.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),

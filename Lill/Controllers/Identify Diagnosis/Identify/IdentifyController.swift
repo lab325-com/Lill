@@ -1,6 +1,7 @@
 
 import UIKit
 import AVFoundation
+import Lottie
 
 class IdentifyController: BaseController {
     
@@ -21,6 +22,9 @@ class IdentifyController: BaseController {
     @IBOutlet weak var identifyRsultPremiumView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var capturedView: UIView!
+    
+    @IBOutlet weak var onboardingView: GradientView!
+    @IBOutlet weak var lottieView: AnimationView!
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var noResultsStackView: UIStackView!
@@ -47,6 +51,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var identifyResultsLabel: UILabel!
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var noResultsLabel: UILabel!
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
     
     @IBOutlet weak var startIdentifyButton: UIButton!
     @IBOutlet weak var identifyPhotoButton: UIButton!
@@ -56,6 +61,7 @@ class IdentifyController: BaseController {
     @IBOutlet weak var noResulsSearchButton: UIButton!
     @IBOutlet weak var noResulsReportButton: UIButton!
     @IBOutlet weak var reIdentifyButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     @IBOutlet weak var analizeActivity: UIActivityIndicatorView!
     @IBOutlet weak var identifyActivity: UIActivityIndicatorView!
@@ -111,11 +117,21 @@ class IdentifyController: BaseController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        onboardingView.isHidden = true
+        lottieView.stop()
+    }
+    
     //----------------------------------------------
     // MARK: - Private methods
     //----------------------------------------------
     
     func setup() {
+        if LaunchChecker(for: DiagnosisController.self).isFirstLaunch() {
+            closeButton.isHidden = true
+        }
         
         collectionView.register(UINib.init(nibName: cellIdentifier,
                                            bundle: nil),
@@ -152,6 +168,8 @@ class IdentifyController: BaseController {
         
         identifyAnalyzeImageLabel.text = RLocalization.identify_analize_image.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         identifyAnalyzeIdentifyPlantLabel.text = RLocalization.identify_analize_identify_plant.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        onbordingTitleLabel.text = RLocalization.identify_result_onboarding.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         noDataLabel.text = RLocalization.identify_no_data.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         noResultsLabel.text = RLocalization.identify_no_results.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -374,6 +392,15 @@ extension IdentifyController: IdentifyOutputProtocol, GardenAddToPlaceDelegate {
                 
                 self.collectionView.isHidden = false
                 self.collectionView.reloadData()
+                
+                if LaunchChecker(for: IdentifyController.self).isFirstLaunch() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        self.onboardingView.isHidden = false
+                        self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                        self.lottieView.loopMode = .loop
+                        self.lottieView.play()
+                    }
+                }
             }
         }
     }

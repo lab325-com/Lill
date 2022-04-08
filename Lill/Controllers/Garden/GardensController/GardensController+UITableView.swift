@@ -5,7 +5,8 @@ import Foundation
 extension GardensController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.gardens.count > 0 ? presenter.gardens.count + 1 : 1
+//        return presenter.gardens.count > 0 ? presenter.gardens.count + 1 : 1
+        return isAddButton ? presenter.gardens.count + 1 : presenter.gardens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,6 +34,10 @@ extension GardensController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
         if let gardenId = presenter.gardens[safe: indexPath.row]?.id, let gardenName = presenter.gardens[safe: indexPath.row]?.name {
             GardenRouter(presenter: navigationController).pushToGarden(gardenId: gardenId, gardenName: gardenName)
         }

@@ -74,7 +74,7 @@
                     <rect key="frame" x="12" y="44" width="86.5" height="36"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-IB-ejt">
-                            <rect key="frame" x="13" y="8" width="11.5" height="20"/>
+                            <rect key="frame" x="13" y="10" width="11.5" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="11.5" id="XX0-uE-Q4s"/>
                             </constraints>
@@ -82,7 +82,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N6-Af-yQm">
                             <rect key="frame" x="37.5" y="8" width="36" height="20.5"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                            <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-cn-3Rq">
@@ -147,7 +147,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• • •" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyX-nb-sKk">
                             <rect key="frame" x="0.0" y="0.0" width="54" height="36"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
-                            <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.48627450979999998" green="0.85490196080000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -246,7 +246,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back_ic" width="11.5" height="20"/>
+        <image name="back_ic" width="9" height="16"/>
         <image name="garden_added_in_schedule_ic" width="86" height="44"/>
         <image name="placeholder_big_ic" width="390" height="241"/>
         <image name="plants_detail_back_ic" width="390" height="1041"/>

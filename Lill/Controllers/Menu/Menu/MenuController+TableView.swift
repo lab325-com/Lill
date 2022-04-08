@@ -95,7 +95,6 @@ extension MenuController: UITableViewDelegate {
                 safariViewController.preferredBarTintColor = .white
                 safariViewController.preferredControlTintColor = UIColor(rgb: 0x7CDAA3)
                 parent?.present(safariViewController, animated: true)
-//                UIApplication.shared.open(url)
             }
         case .terms:
             if let url = URL(string: "https://mob325.com/lill/terms_and_conditions.html") {
@@ -104,7 +103,6 @@ extension MenuController: UITableViewDelegate {
                 safariViewController.preferredBarTintColor = .white
                 safariViewController.preferredControlTintColor = UIColor(rgb: 0x7CDAA3)
                 parent?.present(safariViewController, animated: true)
-//                UIApplication.shared.open(url)
             }
         case .rate:
             AnalyticsHelper.sendFirebaseEvents(events: .menu_rate_app)

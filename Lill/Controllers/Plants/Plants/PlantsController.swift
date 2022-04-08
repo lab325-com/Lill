@@ -1,7 +1,7 @@
 
 import UIKit
-import AppTrackingTransparency
 import FBSDKCoreKit
+import Lottie
 
 class PlantsController: BaseController {
     
@@ -27,16 +27,21 @@ class PlantsController: BaseController {
     @IBOutlet weak var favoriteView: UIView!
     @IBOutlet weak var uniquePlantView: UIView!
     
+    @IBOutlet weak var onboardingView: GradientView!
+    @IBOutlet weak var lottieView: AnimationView!
+    
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var wishListButton: UIButton!
     @IBOutlet weak var backToTopButton: UIButton!
     @IBOutlet weak var uniquePlantButton: UIButton!
+    @IBOutlet weak var skipOnbordingButton: UIButton!
     
     @IBOutlet weak var dividerImageView: UIImageView!
     
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var uniquePlantLabel: UILabel!
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
     
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -67,7 +72,6 @@ class PlantsController: BaseController {
         super.viewDidLoad()
         
         AnalyticsHelper.sendFirebaseEvents(events: .main_screen_open)
-        askTrackingTransparency()
         setup()
         presenter.getPlants(search: "")
     }
@@ -75,7 +79,7 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
-        navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
+        //navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,11 +92,21 @@ class PlantsController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        if LaunchChecker(for: PlantsController.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.onboardingView.isHidden = false
+                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
+            }
+        }
+        
         presenter.checkRecepts { result in
             debugPrint("Sended recept to store: \(result)")
         }
         
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        searchTextField.addTarget(self, action: #selector(textFieldDidTapped(_:)), for: .touchDown)
         
         blurEffectView.alpha = 0.0
         closeButton.isHidden = true
@@ -107,9 +121,7 @@ class PlantsController: BaseController {
         backToTopButton.layer.borderColor = UIColor.white.cgColor
         backToTopButton.layer.borderWidth = 3
         backToTopButton.layer.cornerRadius = 18
-        
         uniquePlantView.layer.cornerRadius = 24
-        
         uniquePlantButton.layer.cornerRadius = 18
         
         photoButton.setTitle("", for: .normal)
@@ -136,13 +148,17 @@ class PlantsController: BaseController {
     
     func setupLocalization() {
         navigationItem.title = RLocalization.plant_detail_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
         identifireLabel.text = RLocalization.plants_identifier.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         explorerLabel.text = RLocalization.plants_explore.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         uniquePlantLabel.text = RLocalization.plants_uniquePlantLabel.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        backToTopButton.setTitle(RLocalization.plants_backToTop.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
-        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         searchTextField.text = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         searchText = RLocalization.plants_search.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        onbordingTitleLabel.text = RLocalization.plants_onbording_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        backToTopButton.setTitle(RLocalization.plants_backToTop.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        uniquePlantButton.setTitle(RLocalization.plants_uniquePlantButton.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        skipOnbordingButton.setTitle(RLocalization.plants_skip_onbording_button.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     }
     
     //----------------------------------------------
@@ -160,6 +176,8 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionPhoto(_ sender: UIButton) {
+        lottieView.stop()
+        onboardingView.isHidden = true
         AnalyticsHelper.sendFirebaseEvents(events: .explore_photo)
         PlantsRouter(presenter: navigationController).presentChooseIdentify(delegate: self)
     }
@@ -201,6 +219,11 @@ class PlantsController: BaseController {
         }
     }
     
+    @IBAction func actionSkipOnbording(_ sender: UIButton) {
+        lottieView.stop()
+        onboardingView.isHidden = true
+    }
+    
     @objc override func changeLanguageNotifications(_ notification: Notification) {
         super.changeLanguageNotifications(notification)
         setupLocalization()
@@ -213,48 +236,15 @@ class PlantsController: BaseController {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.liveSearch), object: nil)
             self.perform(#selector(self.liveSearch), with: nil, afterDelay: 1.0)
         }
-        
-        if text.count >= 1 {
-            closeButton.isHidden = false
-        } else {
-            closeButton.isHidden = true
-        }
+    }
+    
+    @objc func textFieldDidTapped(_ textField: UITextField) {
+        closeButton.isHidden = false
     }
     
     @objc func liveSearch() {
         AnalyticsHelper.sendFirebaseEvents(events: .explore_search)
         presenter.getPlants(search: searchTextField.text!)
-    }
-    
-    private func askTrackingTransparency() {
-        if #available(iOS 14, *) {
-            if ATTrackingManager.trackingAuthorizationStatus != .authorized && ATTrackingManager.trackingAuthorizationStatus != .denied {
-                ATTrackingManager.requestTrackingAuthorization {  status in
-                    switch status {
-                    case .authorized:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = true
-                        Settings.shared.isAdvertiserTrackingEnabled = true
-                        break
-                    case .denied:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = false
-                        Settings.shared.isAdvertiserTrackingEnabled = false
-                        break
-                    case .notDetermined:
-                        // Tracking authorization dialog has not been shown
-                        print("Not Determined")
-                    case .restricted:
-                        Settings.shared.isAdvertiserIDCollectionEnabled = false
-                        Settings.shared.isAdvertiserTrackingEnabled = false
-                        print("Restricted")
-                    @unknown default:
-                        print("Unknown")
-                    }
-                    
-                }
-            }
-        } else {
-            
-        }
     }
 }
 
@@ -423,7 +413,7 @@ extension PlantsController {
             self.navigationTralingToPhoto.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.topCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 999 : 998)
             self.heightCollectionLayout.priority = UILayoutPriority(rawValue: isHidden ? 998 : 999)
-            self.uniqueViewBottomLayout.constant = isHidden ? 8.0 : -50.0
+            self.uniqueViewBottomLayout.constant = isHidden ? 10.0 : -50.0
             
             self.view.layoutIfNeeded()
             
@@ -457,6 +447,15 @@ extension PlantsController {
             
             isNeedAnimate = true
             animatePhotoButton(isHidden: false)
+            
+            if searchTextField.isFirstResponder {
+                searchTextField.resignFirstResponder()
+                view.endEditing(true)
+            }
+            
+            if !closeButton.isHidden {
+                closeButton.isHidden = true
+            }
             
             presenter.getPlants(search: "")
         }

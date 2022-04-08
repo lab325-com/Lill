@@ -1,6 +1,7 @@
 
 import UIKit
 import Foundation
+import Lottie
 
 class GardenController: BaseController {
 
@@ -9,6 +10,11 @@ class GardenController: BaseController {
     //----------------------------------------------
 
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var onboardingView: GradientView!
+    @IBOutlet weak var lottieView: AnimationView!
+    
+    @IBOutlet weak var onbordingTitleLabel: UILabel!
     
     @IBOutlet var careViews: [ShadowView]!
     @IBOutlet var careButtons: [UIButton]!
@@ -64,6 +70,15 @@ class GardenController: BaseController {
         
         setup()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if !onboardingView.isHidden {
+            lottieView.stop()
+            onboardingView.isHidden = true
+        }
+    }
 
     //----------------------------------------------
     // MARK: - Private methods
@@ -77,14 +92,26 @@ class GardenController: BaseController {
     private func setup() {
         hiddenNavigationBar = false
         
-        navigationItem.title = gardenName
+        if LaunchChecker(for: GardenController.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.onboardingView.isHidden = false
+                self.lottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.lottieView.loopMode = .loop
+                self.lottieView.play()
+            }
+        }
+        
+        navigationItem.title = gardenName.capitalized
         navigationController?.navigationBar.tintColor = UIColor(rgb: 0x7CDAA3)
+                
         let rightBarButtonItem = UIBarButtonItem(title: RLocalization.garden_controller_edit.localized(PreferencesManager.sharedManager.languageCode.rawValue), style: .done, target: self, action: #selector(editGardenAction))
         rightBarButtonItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Regular", size: 17.0)!, NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x7CDAA3)], for: .normal)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
         let careLabel = careLabels.first(where: {$0.tag == 0})
         careLabel?.text = RLocalization.care_type_all.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        
+        onbordingTitleLabel.text = RLocalization.garden_controller_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         resetCaresViews()
         updateCaresSection()

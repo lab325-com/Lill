@@ -33,7 +33,7 @@ class GardenCell: UITableViewCell {
         super.layoutSubviews()
 
         gardenImageView.layer.cornerRadius = 24
-        gardenImageView.layer.maskedCorners = [.layerMinXMinYCorner]
+        gardenImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
     
     //----------------------------------------------

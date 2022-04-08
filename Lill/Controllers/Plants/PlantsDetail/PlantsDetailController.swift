@@ -1,6 +1,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 protocol PlantsDetailDelegate: AnyObject {
     func updatePlants()
@@ -20,6 +21,8 @@ class PlantsDetailController: BaseController {
     @IBOutlet weak var aboutTitleLabel: UILabel!
     @IBOutlet weak var caresTitleLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
+    @IBOutlet weak var firstOnbordingTitleLabel: UILabel!
+    @IBOutlet weak var secondOnbordingTitleLabel: UILabel!
     
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToGardenButton: UIButton!
@@ -28,6 +31,11 @@ class PlantsDetailController: BaseController {
     
     @IBOutlet var aboutViews: [DetailAboutView]!
     @IBOutlet var caresViews: [DetailCaresView]!
+    
+    @IBOutlet weak var firstOnboardingView: GradientView!
+    @IBOutlet weak var firstLottieView: AnimationView!
+    @IBOutlet weak var secondOnboardingView: GradientView!
+    @IBOutlet weak var secondLottieView: AnimationView!
     
     @IBOutlet var verticalStacks: [UIStackView]!
     @IBOutlet var separeteViews: [UIView]!
@@ -95,17 +103,36 @@ class PlantsDetailController: BaseController {
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .card_plant_explore)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !secondOnboardingView.isHidden {
+            secondLottieView.stop()
+            secondOnboardingView.isHidden = true
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Setup
     //----------------------------------------------
     
     private func setup() {
+        if LaunchChecker(for: PlantsDetailController.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.firstOnboardingView.isHidden = false
+                self.firstLottieView.transform = CGAffineTransform(rotationAngle: .pi);
+                self.firstLottieView.loopMode = .loop
+                self.firstLottieView.play()
+            }
+        }
+        
         scrollView.alpha = 1.0
         
         backLabel.text = RLocalization.navigation_back.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 
         aboutTitleLabel.text = RLocalization.plant_detail_about.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         caresTitleLabel.text = RLocalization.plant_detail_cares.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        firstOnbordingTitleLabel.text = RLocalization.plant_detail_first_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        secondOnbordingTitleLabel.text = RLocalization.plant_detail_second_onboarding_title.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         addToGardenButton.setTitle(RLocalization.plant_detail_add_to_my_garden.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         moreOnWikiButton.setTitle(RLocalization.plant_detail_more_on_wiki.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
@@ -177,6 +204,10 @@ class PlantsDetailController: BaseController {
     }
     
     @IBAction func addToGardenAction(_ sender: Any) {
+        if !firstOnboardingView.isHidden {
+            firstLottieView.stop()
+            firstOnboardingView.isHidden = true
+        }
         if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
             MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
         } else {
@@ -191,6 +222,13 @@ class PlantsDetailController: BaseController {
             UIApplication.shared.open(url)
         }
     }
+    
+    @IBAction func gardensAction(_ sender: Any) {
+        navigationController?.dismiss(animated: false, completion: {
+            let currentController = RootRouter.sharedInstance.topViewController?.navigationController
+            currentController?.tabBarController?.selectedIndex = 1
+        })
+    }
 }
 
 //----------------------------------------------
@@ -200,6 +238,13 @@ class PlantsDetailController: BaseController {
 extension PlantsDetailController: PlantsDetailOutputProtocol, GardenAddToPlaceDelegate {
     func gardenAddToPlaceSuccessAdd(controller: GardenAddToPlaceController) {
         CongradsViewPresenter.showCongradsView()
+        if LaunchChecker(for: CongradsView.self).isFirstLaunch() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.secondOnboardingView.isHidden = false
+                self.secondLottieView.loopMode = .loop
+                self.secondLottieView.play()
+            }
+        }
     }
     
     func successSetFavorite() {

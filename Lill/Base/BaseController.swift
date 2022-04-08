@@ -19,7 +19,7 @@ class BaseController: UIViewController {
     
     var transparentNavigationBar = false
     var hiddenNavigationBar = false
-    var colorTitleNavigation = UIColor(rgb: 0xC36ED1)
+    var colorTitleNavigation = UIColor.black
     var backgroundNavigationColor = UIColor.clear
     
     /// property to keyboard settings
@@ -73,7 +73,7 @@ class BaseController: UIViewController {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
-            navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
+            navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor.white
 //            if transparentNavigationBar {
 //                navBarAppearance.shadowColor = .clear
 //            }
