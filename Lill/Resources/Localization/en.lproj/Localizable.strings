@@ -123,6 +123,7 @@
 "garden_choose_add_plant_cancel" = "Cancel";
 "garden_choose_add_plant_catalog" = "Catalog";
 "garden_choose_add_plant_identify" = "Identify";
+"garden_choose_add_plant_unique" = "Add Unique";
 "garden_clone_plant_button" = "Clone Plant";
 "garden_clone_plant_subtitle" = "Give name for the clone of this plant";
 "garden_clone_plant_title" = "Clone Plant";

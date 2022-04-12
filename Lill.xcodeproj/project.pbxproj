@@ -466,6 +466,8 @@
 		FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */; };
 		FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */; };
 		FADE700927FC78F800CA4B31 /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = FADE700827FC78F800CA4B31 /* BetterSegmentedControl */; };
+		FADE700E280065E600CA4B31 /* ProfileUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */; };
+		FADE700F280065E600CA4B31 /* ProfileUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */; };
 		FADEF76B27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEF76A27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift */; };
 		FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */; };
 		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
@@ -957,6 +959,8 @@
 		FADCE355275D033400119C51 /* AddPlantTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantTimeModel.swift; sourceTree = "<group>"; };
 		FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareUpdateModel.swift; sourceTree = "<group>"; };
 		FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareUpdate.graphql; sourceTree = "<group>"; };
+		FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfileUpdate.graphql; sourceTree = "<group>"; };
+		FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUpdateModel.swift; sourceTree = "<group>"; };
 		FADEF76A27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresRouter.swift; sourceTree = "<group>"; };
 		FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGarden.graphql; sourceTree = "<group>"; };
 		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
@@ -2683,6 +2687,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FADE700B280065A800CA4B31 /* ProfileUpdate */,
 				FA29D9E327C4EA8300A4B6C6 /* ReportDiagnose */,
 				FA62365827BE5D3A005C593B /* ReportRecognize */,
 				0207E1BF27B1549300DCD693 /* GeneratePromoOffer */,
@@ -3375,6 +3380,15 @@
 			path = GardenPlantCareUpdate;
 			sourceTree = "<group>";
 		};
+		FADE700B280065A800CA4B31 /* ProfileUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */,
+				FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */,
+			);
+			path = ProfileUpdate;
+			sourceTree = "<group>";
+		};
 		FADEF76927628F6C007DDC12 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -3737,6 +3751,7 @@
 				0273B8C12745584A009A2247 /* GardenDetailAboutCell.xib in Resources */,
 				FAA089662757B5F900449D5B /* GardenPlantCares.graphql in Resources */,
 				021BC13C2771D47A0083DC65 /* GardenPlantHistory.graphql in Resources */,
+				FADE700E280065E600CA4B31 /* ProfileUpdate.graphql in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				021BC11127706A000083DC65 /* GadenDetailHistoryTitleCell.xib in Resources */,
 				027B5FA82758F23900A84D98 /* LillActivityIndicator.xib in Resources */,
@@ -4247,6 +4262,7 @@
 				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
 				02D142E32757DDD8008A7FA3 /* IPhoneSe5View.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
+				FADE700F280065E600CA4B31 /* ProfileUpdateModel.swift in Sources */,
 				02D142ED2757E728008A7FA3 /* IPhone83Timeline.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
 				02BD7A912774DE1800A8B943 /* GalleryImageDeleteModel.swift in Sources */,

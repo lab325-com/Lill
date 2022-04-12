@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 62 files.
+  /// This `R.file` struct is generated, and contains static references to 63 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -239,6 +239,8 @@ struct R: Rswift.Validatable {
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
     /// Resource file `PlantToGarden.graphql`.
     static let plantToGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantToGarden", pathExtension: "graphql")
+    /// Resource file `ProfileUpdate.graphql`.
+    static let profileUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ProfileUpdate", pathExtension: "graphql")
     /// Resource file `RecognizeArhive.graphql`.
     static let recognizeArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognizeArhive", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
@@ -529,6 +531,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "PlantToGarden", withExtension: "graphql")`
     static func plantToGardenGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.plantToGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ProfileUpdate", withExtension: "graphql")`
+    static func profileUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.profileUpdateGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -3312,7 +3320,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 380 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 381 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -3418,6 +3426,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let choose_identify_add_unique = Rswift.StringResource(key: "choose_identify_add_unique", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static let garden_choose_add_plant_unique = Rswift.StringResource(key: "garden_choose_add_plant_unique", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Add Unique Plant
       ///
       /// Locales: en, es, ru
@@ -5229,6 +5241,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("choose_identify_add_unique", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static func garden_choose_add_plant_unique(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_choose_add_plant_unique", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_choose_add_plant_unique"
+        }
+
+        return NSLocalizedString("garden_choose_add_plant_unique", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Unique Plant

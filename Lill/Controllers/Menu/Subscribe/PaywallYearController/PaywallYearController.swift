@@ -93,7 +93,7 @@ class PaywallYearController: BaseController {
     //----------------------------------------------
     
     @IBAction func closeAction(_ sender: Any) {
-        delegate?.paywallYearClose(controller: self)
+//        delegate?.paywallYearClose(controller: self)
         dismiss(animated: true)
     }
     

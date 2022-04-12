@@ -5,7 +5,7 @@
 "action_edit_clone_plant" = "Дублировать растение";
 "action_edit_delete_plant" = "Удалить растение";
 "action_edit_title" = "Действие с растением";
-"activity_title" = "Пожалуйста, подождите";
+"activity_title" = "Пожалуйста подождите";
 "add_place_cell_add_place" = "Добавить место";
 "add_plant_done" = "Сделанно";
 "add_plant_every" = "каждый";
@@ -123,6 +123,7 @@
 "garden_choose_add_plant_cancel" = "Отмена";
 "garden_choose_add_plant_catalog" = "Каталог";
 "garden_choose_add_plant_identify" = "Идентифицировать";
+"garden_choose_add_plant_unique" = "Добавить уникальное";
 "garden_clone_plant_button" = "Дублировать растение";
 "garden_clone_plant_subtitle" = "Назовите дубликат данного Растения";
 "garden_clone_plant_title" = "Дублировать растение";
@@ -146,7 +147,7 @@
 "garden_done_all_misting" = "Все распыление выполнено";
 "garden_done_all_rotate" = "Все врашение выполнено";
 "garden_done_all_watering" = "Весь полив выполнен";
-"garden_edit_change_cover" = "Изменение обложки";
+"garden_edit_change_cover" = "Изменение растительного покрова";
 "garden_edit_change_cover_done" = "Готово";
 "garden_edit_change_name" = "Изменить имя";
 "garden_edit_change_name_change" = "Изменить";
@@ -339,7 +340,7 @@
 "subscribe_year_plant_identification" = "идентификация растений и их диагноз";
 "subscribe_year_premium" = "Получить премиум";
 "subscribe_year_save" = "Сэкономьте 50%";
-"subscribe_year_subscribe" = "Подписаться";
+"subscribe_year_subscribe" = "Подписывайся";
 "subscribe_year_unlimited" = "Неограниченная";
 "subscription_active" = "Активна";
 "subscription_cancel_any_time" = "Можно отменить в любое время";

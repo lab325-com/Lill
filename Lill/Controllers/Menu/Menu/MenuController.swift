@@ -40,6 +40,16 @@ class MenuController: BaseController {
         AnalyticsHelper.sendFirebaseScreenEvent(screen: .menu)
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?){
+        if motion == .motionShake {
+            let alert = UIAlertController(title: "Push Token", message: PreferencesManager.sharedManager.fcmToken, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { action in
+                UIPasteboard.general.string = PreferencesManager.sharedManager.fcmToken
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Private func
     //----------------------------------------------

@@ -128,13 +128,7 @@ class ChooseIdentify: BaseController {
         guard let meModel = KeychainService.standard.me else { return }
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            
-            guard let total = meModel.access.diagnosisTotal else {
-                PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
-                return
-            }
-            
-            if meModel.access.diagnosisUsed < total {
+            if meModel.access.isPremium {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
                 if StoreKitManager.sharedInstance.isYearly50() {
@@ -149,7 +143,23 @@ class ChooseIdentify: BaseController {
     @IBAction func addUniqueAction(_ sender: Any) {
         dismiss(animated: false) { [weak self] in
             guard let `self` = self else { return }
-            self.delegate?.didPressedAddUniquePlant()
+            guard let meModel = KeychainService.standard.me else { return }
+            
+            let currentController = RootRouter.sharedInstance.topViewController?.navigationController
+            
+            if meModel.access.isPremium {
+                self.delegate?.didPressedAddUniquePlant()
+            } else {
+                if meModel.totalGardenPlants > 0 {
+                    if StoreKitManager.sharedInstance.isYearly50() {
+                        MenuRouter(presenter: currentController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                    } else {
+                        MenuRouter(presenter: currentController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+                    }
+                } else {
+                    self.delegate?.didPressedAddUniquePlant()
+                }
+            }
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Apollo
 
 enum LanguageType: String {
     case english = "en"
@@ -118,15 +119,27 @@ extension LanguageController: UITableViewDataSource {
 extension LanguageController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        var primaryLanguageId = 0
         switch indexPath.row {
         case 0:
             PreferencesManager.sharedManager.languageCode = .english
+            primaryLanguageId = 1
         case 1:
             PreferencesManager.sharedManager.languageCode = .spanish
+            primaryLanguageId = 2
         case 2:
             PreferencesManager.sharedManager.languageCode = .russian
+            primaryLanguageId = 3
         default:
             break
+        }
+        
+        let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(primaryLanguageId: primaryLanguageId))
+        let _ = Network.shared.mutation(model: ProfileUpdateDataModel.self, mutation, controller: self) { model in
+            print(model.profileUpdate.id)
+        } failureHandler: { error in
+            print(error.localizedDescription)
         }
         
         NotificationCenter.default.post(name: Constants.Notifications.languageChangeNotifications,
