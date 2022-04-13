@@ -382,6 +382,8 @@
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
 		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
+		FA6D68F52805DAF5008DB4AA /* SubscribePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */; };
+		FA6D68F62805DAF5008DB4AA /* SubscribePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */; };
 		FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */; };
 		FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834727B13FB600124CB4 /* SaveUDID.graphql */; };
 		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
@@ -875,6 +877,8 @@
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
 		FA6405122722FA97000124A5 /* StartDiagoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDiagoseModel.swift; sourceTree = "<group>"; };
+		FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePopupController.swift; sourceTree = "<group>"; };
+		FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribePopupController.xib; sourceTree = "<group>"; };
 		FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUDIDModel.swift; sourceTree = "<group>"; };
 		FA77834727B13FB600124CB4 /* SaveUDID.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SaveUDID.graphql; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -2927,6 +2931,15 @@
 			path = StartDiagnose;
 			sourceTree = "<group>";
 		};
+		FA6D68F22805DA93008DB4AA /* SupscribePopupController */ = {
+			isa = PBXGroup;
+			children = (
+				FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */,
+				FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */,
+			);
+			path = SupscribePopupController;
+			sourceTree = "<group>";
+		};
 		FA77834527B13F4B00124CB4 /* SaveUdid */ = {
 			isa = PBXGroup;
 			children = (
@@ -3168,6 +3181,7 @@
 				021B351027B568B4002DAC0E /* PaywallYearController */,
 				02A3C67427AD546900AF7398 /* SubscribeYearController */,
 				02E329A927343270004344C0 /* SubcribeController */,
+				FA6D68F22805DA93008DB4AA /* SupscribePopupController */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -3808,6 +3822,7 @@
 				021BC1262770864C0083DC65 /* GardenDetailListHeaderCell.xib in Resources */,
 				0261FA632748FC70002BB6CE /* PopClonePlantController.xib in Resources */,
 				028C9BFC274D30060043EA31 /* ScheduleColapsView.xib in Resources */,
+				FA6D68F62805DAF5008DB4AA /* SubscribePopupController.xib in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02356A2327738CAA00EE7071 /* GardenHistoryNotesController.xib in Resources */,
@@ -4113,6 +4128,7 @@
 				021BC11027706A000083DC65 /* GadenDetailHistoryTitleCell.swift in Sources */,
 				FA5785DB27C386920095BC0F /* ReportView.swift in Sources */,
 				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
+				FA6D68F52805DAF5008DB4AA /* SubscribePopupController.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
 				FA8C938C27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift in Sources */,

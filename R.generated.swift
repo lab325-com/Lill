@@ -704,7 +704,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 129 images.
+  /// This `R.image` struct is generated, and contains static references to 130 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -942,6 +942,8 @@ struct R: Rswift.Validatable {
     static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
     /// Image `sub_close_ic`.
     static let sub_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_close_ic")
+    /// Image `sub_lifetime_ic`.
+    static let sub_lifetime_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_lifetime_ic")
     /// Image `sub_oneyear_back_ic`.
     static let sub_oneyear_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_oneyear_back_ic")
     /// Image `sub_oneyear_close_ic`.
@@ -1792,6 +1794,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_lifetime_ic", bundle: ..., traitCollection: ...)`
+    static func sub_lifetime_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_lifetime_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "sub_oneyear_back_ic", bundle: ..., traitCollection: ...)`
     static func sub_oneyear_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.sub_oneyear_back_ic, compatibleWith: traitCollection)
@@ -1871,7 +1880,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 95 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 96 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -2059,6 +2068,8 @@ struct R: Rswift.Validatable {
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
     static let subcribeController = _R.nib._SubcribeController()
+    /// Nib `SubscribePopupController`.
+    static let subscribePopupController = _R.nib._SubscribePopupController()
     /// Nib `SubscribeYearController`.
     static let subscribeYearController = _R.nib._SubscribeYearController()
     /// Nib `WishListController`.
@@ -2809,6 +2820,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SubscribePopupController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.subscribePopupController) instead")
+    static func subscribePopupController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.subscribePopupController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SubscribeYearController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.subscribeYearController) instead")
     static func subscribeYearController(_: Void = ()) -> UIKit.UINib {
@@ -3196,6 +3215,10 @@ struct R: Rswift.Validatable {
       return R.nib.subcribeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func subscribePopupController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.subscribePopupController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func subscribeYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.subscribeYearController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3320,7 +3343,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 381 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 382 localization keys.
     struct localizable {
       /// en translation: %@ Cares
       ///
@@ -4146,6 +4169,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let menu_laguage_title = Rswift.StringResource(key: "menu_laguage_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Lifetime
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_lifetime = Rswift.StringResource(key: "subscribe_lifetime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Log out
       ///
       /// Locales: en, es, ru
@@ -7947,6 +7974,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu_laguage_title", bundle: bundle, comment: "")
       }
 
+      /// en translation: Lifetime
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_lifetime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_lifetime", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_lifetime"
+        }
+
+        return NSLocalizedString("subscribe_lifetime", bundle: bundle, comment: "")
+      }
+
       /// en translation: Log out
       ///
       /// Locales: en, es, ru
@@ -10669,6 +10711,7 @@ struct _R: Rswift.Validatable {
       try _ScheduleSettingsController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
+      try _SubscribePopupController.validate()
       try _SubscribeYearController.validate()
       try _WishListController.validate()
     }
@@ -12248,6 +12291,25 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "sub_active_check_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_active_check_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SubscribePopupController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SubscribePopupController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
