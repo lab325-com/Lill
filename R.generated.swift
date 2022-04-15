@@ -3343,12 +3343,32 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 383 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 388 localization keys.
     struct localizable {
-      /// en translation: %#@monthCount@
+      /// en translation: %#@VARIABLE@
       ///
-      /// Locales: en
-      static let month = Rswift.StringResource(key: "Month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ru, es
+      static let careCellDays = Rswift.StringResource(key: "CareCell.days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let careCellMonths = Rswift.StringResource(key: "CareCell.months", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let careCellWeeks = Rswift.StringResource(key: "CareCell.weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewDays = Rswift.StringResource(key: "DetailCaresView.days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewMonths = Rswift.StringResource(key: "DetailCaresView.months", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewWeeks = Rswift.StringResource(key: "DetailCaresView.weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
       /// en translation: %@ Cares
       ///
       /// Locales: en, es, ru
@@ -4878,20 +4898,105 @@ struct R: Rswift.Validatable {
       /// Locales: en, es, ru
       static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
 
-      /// en translation: %#@monthCount@
+      /// en translation: %#@VARIABLE@
       ///
-      /// Locales: en
-      static func month(monthCount value1: Int, preferredLanguages: [String]? = nil) -> String {
+      /// Locales: en, ru, es
+      static func careCellDays(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          let format = NSLocalizedString("Month", bundle: hostingBundle, comment: "")
+          let format = NSLocalizedString("CareCell.days", bundle: hostingBundle, comment: "")
           return String(format: format, locale: applicationLocale, value1)
         }
 
         guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Month"
+          return "CareCell.days"
         }
 
-        let format = NSLocalizedString("Month", bundle: bundle, comment: "")
+        let format = NSLocalizedString("CareCell.days", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func careCellMonths(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("CareCell.months", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CareCell.months"
+        }
+
+        let format = NSLocalizedString("CareCell.months", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func careCellWeeks(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("CareCell.weeks", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CareCell.weeks"
+        }
+
+        let format = NSLocalizedString("CareCell.weeks", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewDays(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.days", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.days"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.days", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewMonths(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.months", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.months"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.months", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewWeeks(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.weeks", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.weeks"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.weeks", bundle: bundle, comment: "")
         return String(format: format, locale: locale, value1)
       }
 
