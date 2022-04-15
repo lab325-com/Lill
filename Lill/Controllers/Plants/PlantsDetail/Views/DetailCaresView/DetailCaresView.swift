@@ -16,6 +16,12 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
     weak var delegate: DetailCaresViewProtocol?
     private var selectedType: PlantsCareType?
     
+    private enum LocalizationKeys: String {
+        case days = "DetailCaresView.days"
+        case weeks = "DetailCaresView.weeks"
+        case months = "DetailCaresView.months"
+    }
+    
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
@@ -41,8 +47,20 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         
         careImageView.image = care.type.image
         careTitleLabel.text = care.type.text
+//        careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
         
-        careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
+        var localizationKey = ""
+        switch care.care.period {
+        case .periodTypeDay:
+            localizationKey = LocalizationKeys.days.rawValue
+        case .periodTypeWeek:
+            localizationKey = LocalizationKeys.weeks.rawValue
+        case .periodTypeMonth:
+            localizationKey = LocalizationKeys.months.rawValue
+        case .__unknown(_):
+            print("unknown")
+        }
+        careValueLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: care.care.count)
     }
     
     func setup(care: (type: PlantsCareType, care: GardenShortPlantCaresModel)) {
@@ -50,7 +68,20 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         
         careImageView.image = care.type.image
         careTitleLabel.text = care.type.text
-        careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
+//        careValueLabel.text = "\(care.care.count) \(care.care.period.localization)"
+        
+        var localizationKey = ""
+        switch care.care.period {
+        case .periodTypeDay:
+            localizationKey = LocalizationKeys.days.rawValue
+        case .periodTypeWeek:
+            localizationKey = LocalizationKeys.weeks.rawValue
+        case .periodTypeMonth:
+            localizationKey = LocalizationKeys.months.rawValue
+        case .__unknown(_):
+            print("unknown")
+        }
+        careValueLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: care.care.count)
     }
     
     func setupWithDate(care: (type: PlantsCareType, care: GardenShortPlantCaresModel)) {
@@ -65,13 +96,32 @@ class DetailCaresView: UIView, LoadFromXibProtocol {
         careImageView.image = care.type.image
         careTitleLabel.text = care.type.text
         
-        if days < 0 {
-            careValueLabel.text = "\(days * -1) \(care.care.period.localization)"
-        } else if days == 0 {
-            careValueLabel.text = RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        } else {
-            careValueLabel.text = "\(days) \(care.care.period.localization)"
+        var localizationKey = ""
+        switch care.care.period {
+        case .periodTypeDay:
+            localizationKey = LocalizationKeys.days.rawValue
+        case .periodTypeWeek:
+            localizationKey = LocalizationKeys.weeks.rawValue
+        case .periodTypeMonth:
+            localizationKey = LocalizationKeys.months.rawValue
+        case .__unknown(_):
+            print("unknown")
         }
+        //careValueLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: care.care.count)
+        
+        if days < 0 {
+            careValueLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: (days * -1))
+        } else {
+            careValueLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: days)
+        }
+                
+//        if days < 0 {
+//            careValueLabel.text = "\(days * -1) \(care.care.period.localization)"
+//        } else if days == 0 {
+//            careValueLabel.text = RLocalization.scheldure_today.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        } else {
+//            careValueLabel.text = "\(days) \(care.care.period.localization)"
+//        }
     }
     
     @IBAction func selectCareAction(_ sender: UIButton) {

@@ -350,6 +350,7 @@
 		FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */; };
 		FA29D9E627C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */; };
 		FA29D9E727C4EAAD00A4B6C6 /* ReportDiagnosee.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */; };
+		FA2D5E1928083DAB001880CD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */; };
 		FA36BC5C27747A8800A878AA /* PopDoneSpecificCareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */; };
 		FA36BC5D27747A8800A878AA /* PopDoneSpecificCareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */; };
 		FA36BC5F27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */; };
@@ -384,6 +385,7 @@
 		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
 		FA6D68F52805DAF5008DB4AA /* SubscribePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */; };
 		FA6D68F62805DAF5008DB4AA /* SubscribePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */; };
+		FA74059D2808569400C224C8 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74059C2808569400C224C8 /* LocalizationService.swift */; };
 		FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */; };
 		FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834727B13FB600124CB4 /* SaveUDID.graphql */; };
 		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
@@ -845,6 +847,9 @@
 		FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantsModel.swift; sourceTree = "<group>"; };
 		FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDiagnoseModel.swift; sourceTree = "<group>"; };
 		FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportDiagnosee.graphql; sourceTree = "<group>"; };
+		FA2D5E1A28083DAB001880CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FA2D5E1C28083DAD001880CD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FA2D5E1D28083DB1001880CD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCareController.swift; sourceTree = "<group>"; };
 		FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopDoneSpecificCareController.xib; sourceTree = "<group>"; };
 		FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCarePresenter.swift; sourceTree = "<group>"; };
@@ -879,6 +884,7 @@
 		FA6405122722FA97000124A5 /* StartDiagoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDiagoseModel.swift; sourceTree = "<group>"; };
 		FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePopupController.swift; sourceTree = "<group>"; };
 		FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribePopupController.xib; sourceTree = "<group>"; };
+		FA74059C2808569400C224C8 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUDIDModel.swift; sourceTree = "<group>"; };
 		FA77834727B13FB600124CB4 /* SaveUDID.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SaveUDID.graphql; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -1298,6 +1304,7 @@
 			isa = PBXGroup;
 			children = (
 				021D6D0C2731AE4B00C73183 /* SharingManager.swift */,
+				FA74059C2808569400C224C8 /* LocalizationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1937,6 +1944,7 @@
 			isa = PBXGroup;
 			children = (
 				02AB244926F39D8E00309CFF /* Localizable.strings */,
+				FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -3800,6 +3808,7 @@
 				FA8C936F278ED6540009DA6D /* GardenEditChangeCover.xib in Resources */,
 				02527D9B27467FF900126022 /* GardenDetailAllWaitingCell.xib in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
+				FA2D5E1928083DAB001880CD /* Localizable.stringsdict in Resources */,
 				02AE73A6277460C7008DE4E6 /* GardenPhotoDeteilCell.xib in Resources */,
 				FAA089612757B3C100449D5B /* AddCareCell.xib in Resources */,
 				FA8C937C278F19580009DA6D /* GardenEditChangeName.xib in Resources */,
@@ -4035,6 +4044,7 @@
 				02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */,
 				FAF93FF227637147004B784B /* GardenPlanAddCaresSetupPresenter.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
+				FA74059D2808569400C224C8 /* LocalizationService.swift in Sources */,
 				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
 				02BBBE7A273E623900E97712 /* PickerCaresController.swift in Sources */,
 				02D4BFBC2743B94D00B9322B /* TextView.swift in Sources */,
@@ -4317,6 +4327,16 @@
 				FAA3C4A327E3395A0080947B /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2D5E1A28083DAB001880CD /* en */,
+				FA2D5E1C28083DAD001880CD /* ru */,
+				FA2D5E1D28083DB1001880CD /* es */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */ = {

@@ -3343,8 +3343,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 382 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 383 localization keys.
     struct localizable {
+      /// en translation: %#@monthCount@
+      ///
+      /// Locales: en
+      static let month = Rswift.StringResource(key: "Month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: %@ Cares
       ///
       /// Locales: en, es, ru
@@ -4873,6 +4877,23 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+
+      /// en translation: %#@monthCount@
+      ///
+      /// Locales: en
+      static func month(monthCount value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("Month", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Month"
+        }
+
+        let format = NSLocalizedString("Month", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
 
       /// en translation: %@ Cares
       ///
