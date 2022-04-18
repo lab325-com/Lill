@@ -81,7 +81,8 @@ class RecognizeArchiveController: BaseController {
             if StoreKitManager.sharedInstance.isYearly50() {
                 MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
             } else {
-                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: RecognizeArchiveController.self))
+//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: RecognizeArchiveController.self))
+                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: RecognizeArchiveController.self))
             }
         }
     }

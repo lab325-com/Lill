@@ -79,7 +79,6 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
-        //navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -226,7 +225,8 @@ class PlantsController: BaseController {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
-                    MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: PlantsController.self))
+//                    MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: PlantsController.self))
+                    MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: PlantsController.self))
                 }
             } else {
                 PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)

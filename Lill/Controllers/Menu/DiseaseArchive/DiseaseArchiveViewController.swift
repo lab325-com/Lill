@@ -68,7 +68,8 @@ class DiseaseArchiveViewController: BaseController {
             if StoreKitManager.sharedInstance.isYearly50() {
                 MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: DiseaseArchiveViewController.self))
             } else {
-                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: DiseaseArchiveViewController.self))
+//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: DiseaseArchiveViewController.self))
+                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: DiseaseArchiveViewController.self))
             }
         }
     }

@@ -117,7 +117,8 @@ class ChooseIdentify: BaseController {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                 } else {
-                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+//                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+                    MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
                 }
             }
         }
@@ -134,7 +135,8 @@ class ChooseIdentify: BaseController {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                 } else {
-                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+//                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+                    MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
                 }
             }
         }
@@ -154,7 +156,8 @@ class ChooseIdentify: BaseController {
                     if StoreKitManager.sharedInstance.isYearly50() {
                         MenuRouter(presenter: currentController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                     } else {
-                        MenuRouter(presenter: currentController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+//                        MenuRouter(presenter: currentController).presentSubscription(controller: String(describing: ChooseIdentify.self))
+                        MenuRouter(presenter: currentController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
                     }
                 } else {
                     self.delegate?.didPressedAddUniquePlant()

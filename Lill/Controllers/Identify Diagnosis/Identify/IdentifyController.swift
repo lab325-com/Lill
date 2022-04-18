@@ -255,7 +255,8 @@ class IdentifyController: BaseController {
             if StoreKitManager.sharedInstance.isYearly50() {
                 MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
             } else {
-                MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: IdentifyController.self))
+//                MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: IdentifyController.self))
+                MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: IdentifyController.self))
             }
         }
     }
