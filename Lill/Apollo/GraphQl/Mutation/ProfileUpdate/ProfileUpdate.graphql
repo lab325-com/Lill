@@ -1,0 +1,6 @@
+
+mutation ProfileUpdate($record: ProfileUpdateInput!) {
+	profileUpdate(record: $record) {
+		id
+	}
+}

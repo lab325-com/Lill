@@ -69,7 +69,22 @@ class RecognizeArchiveController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionRecognizePlant(_ sender: UIButton) {
-        PlantsRouter(presenter: navigationController).presentIdentify()
+        guard let meModel = KeychainService.standard.me else { return }
+        guard let total = meModel.access.identifyTotal else {
+            PlantsRouter(presenter: navigationController).presentIdentify()
+            return
+        }
+        
+        if meModel.access.identifyUsed < total {
+            PlantsRouter(presenter: navigationController).presentIdentify()
+        } else {
+            if StoreKitManager.sharedInstance.isYearly50() {
+                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+            } else {
+//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: RecognizeArchiveController.self))
+                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: RecognizeArchiveController.self))
+            }
+        }
     }
 }
 

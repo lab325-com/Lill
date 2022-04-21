@@ -79,7 +79,6 @@ class PlantsController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.updateMe()
-        //navigationController?.navigationBar.tintColor = UIColor(rgb: 0xC36ED1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -190,32 +189,48 @@ class PlantsController: BaseController {
     }
     
     @IBAction func actionAddUnique(_ sender: UIButton) {
-        if KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
-            if let date = PreferencesManager.sharedManager.datePaywall, let countDate = PreferencesManager.sharedManager.countInDatePaywall {
-                let calendar = Calendar.current
-                
-                let date1 = calendar.startOfDay(for: date)
-                let date2 = calendar.startOfDay(for: Date())
-                
-                let components = calendar.dateComponents([.day], from: date1, to: date2)
-                
-                if components.day == 0, countDate < 3 {
-                    PreferencesManager.sharedManager.countInDatePaywall = countDate + 1
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
-                } else if components.day == 0, countDate > 2 {
-                    PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+//        if KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
+//            if let date = PreferencesManager.sharedManager.datePaywall, let countDate = PreferencesManager.sharedManager.countInDatePaywall {
+//                let calendar = Calendar.current
+//
+//                let date1 = calendar.startOfDay(for: date)
+//                let date2 = calendar.startOfDay(for: Date())
+//
+//                let components = calendar.dateComponents([.day], from: date1, to: date2)
+//
+//                if components.day == 0, countDate < 3 {
+//                    PreferencesManager.sharedManager.countInDatePaywall = countDate + 1
+//                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
+//                } else if components.day == 0, countDate > 2 {
+//                    PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+//                } else {
+//                    PreferencesManager.sharedManager.countInDatePaywall = 1
+//                    PreferencesManager.sharedManager.datePaywall = Date()
+//                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
+//                }
+//            } else {
+//                PreferencesManager.sharedManager.countInDatePaywall = 1
+//                PreferencesManager.sharedManager.datePaywall = Date()
+//                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
+//            }
+//        } else {
+//            PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+//        }
+        guard let meModel = KeychainService.standard.me else { return }
+        
+        if meModel.access.isPremium {
+            PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
+        } else {
+            if meModel.totalGardenPlants > 0 {
+                if StoreKitManager.sharedInstance.isYearly50() {
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
-                    PreferencesManager.sharedManager.countInDatePaywall = 1
-                    PreferencesManager.sharedManager.datePaywall = Date()
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
+//                    MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: PlantsController.self))
+                    MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: PlantsController.self))
                 }
             } else {
-                PreferencesManager.sharedManager.countInDatePaywall = 1
-                PreferencesManager.sharedManager.datePaywall = Date()
-                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: self, controller: String(describing: PlantsController.self))
+                PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
             }
-        } else {
-            PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
         }
     }
     

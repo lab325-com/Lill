@@ -277,15 +277,81 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID from userNotificationCenter didReceive: \(messageID)")
         }
         
-        if let type = userInfo["Type"], type as! String == "Subscription" {
-            if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
-                MenuRouter(presenter: controller.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+        let controller = RootRouter.sharedInstance.topViewController as? BaseController
+        
+        if var subscription = userInfo["Subscription"] as? String {
+            if subscription == "All" {
+                MenuRouter(presenter: controller?.navigationController).presentSubscription(controller: "Push")
+            } else if subscription.contains(".immediately") {
+                if let range = subscription.range(of: ".immediately") {
+                    subscription.removeSubrange(range)
+                }
+                purchase(id: subscription, controller: "Push")
+            } else {
+                MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
             }
         }
-                
-        print(userInfo)
         
         completionHandler()
+    }
+    
+    func purchase(id: String, controller: String) {
+        LillActivityIndicator.shared.show()
+        
+        AnalyticsHelper.sendFirebaseEvents(events: .subscribe_start, params: ["id": id, "controller": controller])
+        
+        SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { result in
+            switch result {
+            case .success(let product):
+                AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id, "controller": controller])
+                AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_purchase_success, values: ["id": id])
+                AnalyticsHelper.sendFacebookEvent(event: .fb_purchase_success, values: ["id": id])
+                
+                // fetch content from your server, then:
+                if product.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(product.transaction)
+                }
+                print("Purchase Success: \(product.productId)")
+                
+                let receiptData = SwiftyStoreKit.localReceiptData
+                if let receiptString = receiptData?.base64EncodedString(options: []) {
+                    let mutation = OrderCreateMutation(receipt: receiptString)
+                    let _ = Network.shared.mutation(model: OrderCreate.self, mutation, controller: nil, successHandler: { model in
+                        let _ = Network.shared.query(model: MeDataModel.self, MeQuery(), controller: nil) { model in
+                            KeychainService.standard.me = model.me
+                            LillActivityIndicator.shared.hide()
+                        } failureHandler: { error in
+                            LillActivityIndicator.shared.hide()
+                        }
+                        
+                    }, failureHandler: { error in
+                        LillActivityIndicator.shared.hide()
+                    })
+                } else {
+                    LillActivityIndicator.shared.hide()
+                }
+                
+            case .error(let error):
+                LillActivityIndicator.shared.hide()
+                var errorMessage = ""
+                switch error.code {
+                case .unknown: errorMessage = "Unknown error. Please contact support"
+                case .clientInvalid: errorMessage = "Not allowed to make the payment"
+                case .paymentCancelled:
+                    AnalyticsHelper.sendFirebaseEvents(events: .purchase_cancel, params: ["id": id])
+                    return
+                case .paymentInvalid: errorMessage = "The purchase identifier was invalid"
+                case .paymentNotAllowed: errorMessage = "The device is not allowed to make the payment"
+                case .storeProductNotAvailable: errorMessage = "The product is not available in the current storefront"
+                case .cloudServicePermissionDenied: errorMessage = "Access to cloud service information is not allowed"
+                case .cloudServiceNetworkConnectionFailed: errorMessage = "Could not connect to the network"
+                case .cloudServiceRevoked: errorMessage = "User has revoked permission to use this cloud service"
+                default: errorMessage = (error as NSError).localizedDescription
+                }
+                
+                AnalyticsHelper.sendFirebaseEvents(events: .purchase_error, params: ["message": errorMessage])
+            }
+        }
     }
 }
 

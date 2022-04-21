@@ -173,11 +173,12 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 return
             }
             
+            let isLifetime = id.first == "com.lill.subscription.lifetime.50"
+            
             for product in results.retrievedProducts {
                 if let priceString = product.localizedPrice,
-                   let number = product.subscriptionPeriod?.numberOfUnits,
-                   let period = self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
-                    
+                   let number = isLifetime ? 0 : product.subscriptionPeriod?.numberOfUnits,
+                   let period = isLifetime ? "" : self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
                     let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
                     self?.paymentsInfo.append(model)
                 } else {

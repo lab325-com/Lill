@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DetailCaresView.days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>zero</key>
+			<string>Сегодня</string>
+			<key>one</key>
+			<string>1 День</string>
+			<key>few</key>
+			<string>%ld Дня</string>
+			<key>other</key>
+			<string>%ld Дней</string>
+		</dict>
+	</dict>
+	<key>DetailCaresView.weeks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>one</key>
+			<string>1 Неделя</string>
+			<key>few</key>
+			<string>%ld Недели</string>
+			<key>other</key>
+			<string>%ld  Недель</string>
+		</dict>
+	</dict>
+	<key>DetailCaresView.months</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>one</key>
+			<string>1 Месяц</string>
+			<key>few</key>
+			<string>%ld Месяца</string>
+			<key>other</key>
+			<string>%ld Месяцев</string>
+		</dict>
+	</dict>
+	<key>CareCell.days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>one</key>
+			<string>Каждый день</string>
+			<key>few</key>
+			<string>Каждые %ld дня</string>
+			<key>other</key>
+			<string>Каждые %ld дней</string>
+		</dict>
+	</dict>
+	<key>CareCell.weeks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>one</key>
+			<string>Каждую неделю</string>
+			<key>few</key>
+			<string>Каждые %ld недели</string>
+			<key>other</key>
+			<string>Каждые %ld недель</string>
+		</dict>
+	</dict>
+	<key>CareCell.months</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>ld</string>
+			<key>one</key>
+			<string>Каждый месяц</string>
+			<key>few</key>
+			<string>Каждые %ld месяца</string>
+			<key>other</key>
+			<string>Каждые %ld месяцев</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

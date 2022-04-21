@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 62 files.
+  /// This `R.file` struct is generated, and contains static references to 63 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -239,6 +239,8 @@ struct R: Rswift.Validatable {
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
     /// Resource file `PlantToGarden.graphql`.
     static let plantToGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantToGarden", pathExtension: "graphql")
+    /// Resource file `ProfileUpdate.graphql`.
+    static let profileUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ProfileUpdate", pathExtension: "graphql")
     /// Resource file `RecognizeArhive.graphql`.
     static let recognizeArhiveGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "RecognizeArhive", pathExtension: "graphql")
     /// Resource file `Release.xcconfig`.
@@ -532,6 +534,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "ProfileUpdate", withExtension: "graphql")`
+    static func profileUpdateGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.profileUpdateGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "RecognizeArhive", withExtension: "graphql")`
     static func recognizeArhiveGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.recognizeArhiveGraphql
@@ -696,7 +704,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 129 images.
+  /// This `R.image` struct is generated, and contains static references to 130 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -934,6 +942,8 @@ struct R: Rswift.Validatable {
     static let sub_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_back_ic")
     /// Image `sub_close_ic`.
     static let sub_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_close_ic")
+    /// Image `sub_lifetime_ic`.
+    static let sub_lifetime_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_lifetime_ic")
     /// Image `sub_oneyear_back_ic`.
     static let sub_oneyear_back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "sub_oneyear_back_ic")
     /// Image `sub_oneyear_close_ic`.
@@ -1784,6 +1794,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sub_lifetime_ic", bundle: ..., traitCollection: ...)`
+    static func sub_lifetime_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sub_lifetime_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "sub_oneyear_back_ic", bundle: ..., traitCollection: ...)`
     static func sub_oneyear_back_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.sub_oneyear_back_ic, compatibleWith: traitCollection)
@@ -1863,7 +1880,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 95 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 96 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -2051,6 +2068,8 @@ struct R: Rswift.Validatable {
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
     static let subcribeController = _R.nib._SubcribeController()
+    /// Nib `SubscribePopupController`.
+    static let subscribePopupController = _R.nib._SubscribePopupController()
     /// Nib `SubscribeYearController`.
     static let subscribeYearController = _R.nib._SubscribeYearController()
     /// Nib `WishListController`.
@@ -2801,6 +2820,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SubscribePopupController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.subscribePopupController) instead")
+    static func subscribePopupController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.subscribePopupController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SubscribeYearController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.subscribeYearController) instead")
     static func subscribeYearController(_: Void = ()) -> UIKit.UINib {
@@ -3188,6 +3215,10 @@ struct R: Rswift.Validatable {
       return R.nib.subcribeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func subscribePopupController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.subscribePopupController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func subscribeYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.subscribeYearController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3312,8 +3343,32 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 380 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 388 localization keys.
     struct localizable {
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let careCellDays = Rswift.StringResource(key: "CareCell.days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let careCellMonths = Rswift.StringResource(key: "CareCell.months", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let careCellWeeks = Rswift.StringResource(key: "CareCell.weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewDays = Rswift.StringResource(key: "DetailCaresView.days", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewMonths = Rswift.StringResource(key: "DetailCaresView.months", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static let detailCaresViewWeeks = Rswift.StringResource(key: "DetailCaresView.weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ru", "es"], comment: nil)
       /// en translation: %@ Cares
       ///
       /// Locales: en, es, ru
@@ -3418,6 +3473,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let choose_identify_add_unique = Rswift.StringResource(key: "choose_identify_add_unique", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static let garden_choose_add_plant_unique = Rswift.StringResource(key: "garden_choose_add_plant_unique", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Add Unique Plant
       ///
       /// Locales: en, es, ru
@@ -4134,6 +4193,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let menu_laguage_title = Rswift.StringResource(key: "menu_laguage_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Lifetime
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_lifetime = Rswift.StringResource(key: "subscribe_lifetime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Log out
       ///
       /// Locales: en, es, ru
@@ -4835,6 +4898,108 @@ struct R: Rswift.Validatable {
       /// Locales: en, es, ru
       static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
 
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func careCellDays(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("CareCell.days", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CareCell.days"
+        }
+
+        let format = NSLocalizedString("CareCell.days", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func careCellMonths(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("CareCell.months", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CareCell.months"
+        }
+
+        let format = NSLocalizedString("CareCell.months", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func careCellWeeks(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("CareCell.weeks", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CareCell.weeks"
+        }
+
+        let format = NSLocalizedString("CareCell.weeks", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewDays(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.days", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.days"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.days", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewMonths(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.months", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.months"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.months", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: %#@VARIABLE@
+      ///
+      /// Locales: en, ru, es
+      static func detailCaresViewWeeks(variablE value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("DetailCaresView.weeks", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "DetailCaresView.weeks"
+        }
+
+        let format = NSLocalizedString("DetailCaresView.weeks", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
       /// en translation: %@ Cares
       ///
       /// Locales: en, es, ru
@@ -5229,6 +5394,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("choose_identify_add_unique", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Add Unique
+      ///
+      /// Locales: en, es, ru
+      static func garden_choose_add_plant_unique(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("garden_choose_add_plant_unique", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "garden_choose_add_plant_unique"
+        }
+
+        return NSLocalizedString("garden_choose_add_plant_unique", bundle: bundle, comment: "")
       }
 
       /// en translation: Add Unique Plant
@@ -7918,6 +8098,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_laguage_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Lifetime
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_lifetime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_lifetime", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_lifetime"
+        }
+
+        return NSLocalizedString("subscribe_lifetime", bundle: bundle, comment: "")
       }
 
       /// en translation: Log out
@@ -10642,6 +10837,7 @@ struct _R: Rswift.Validatable {
       try _ScheduleSettingsController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
+      try _SubscribePopupController.validate()
       try _SubscribeYearController.validate()
       try _WishListController.validate()
     }
@@ -12221,6 +12417,25 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "sub_active_check_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_active_check_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SubscribePopupController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SubscribePopupController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

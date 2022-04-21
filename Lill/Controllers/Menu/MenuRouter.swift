@@ -50,4 +50,11 @@ class MenuRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)
     }
+    
+    func presentSubscribePopup(id: Set<String>, controller: String) {
+        let controller = SubscribePopupController(id: id, controller: controller)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
 }

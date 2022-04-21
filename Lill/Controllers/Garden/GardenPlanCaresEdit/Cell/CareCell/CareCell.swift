@@ -25,6 +25,12 @@ class CareCell: UITableViewCell {
     
     weak var delegate: CareCellDelegate?
     private var caresModel: CaresModel?
+    
+    private enum LocalizationKeys: String {
+        case days = "CareCell.days"
+        case weeks = "CareCell.weeks"
+        case months = "CareCell.months"
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,8 +58,22 @@ class CareCell: UITableViewCell {
             }
         }
         
-        let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        careFrequencyLabel.text = every + " \(caresModel.count)" + " \(caresModel.period.text)"
+//        let every = RLocalization.garden_plant_cares_edit_every.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+//        careFrequencyLabel.text = every + " \(caresModel.count)" + " \(caresModel.period.text)"
+        
+        var localizationKey = ""
+        switch caresModel.period {
+        case .periodTypeDay:
+            localizationKey = LocalizationKeys.days.rawValue
+        case .periodTypeWeek:
+            localizationKey = LocalizationKeys.weeks.rawValue
+        case .periodTypeMonth:
+            localizationKey = LocalizationKeys.months.rawValue
+        case .__unknown(_):
+            print("unknown")
+        }
+        
+        careFrequencyLabel.text = LocalizationService.shared.localizedString(key: localizationKey, args: caresModel.count)
         careDateLabel.text = caresModel.nextTime
         
         careTimeTitleLabel.text = RLocalization.garden_plant_cares_edit_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)

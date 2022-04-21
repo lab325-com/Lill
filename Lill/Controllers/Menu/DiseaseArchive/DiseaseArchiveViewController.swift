@@ -61,7 +61,17 @@ class DiseaseArchiveViewController: BaseController {
     //----------------------------------------------
     
     @IBAction func diagnoseButtonPressed(_ sender: Any) {
-        PlantsRouter(presenter: navigationController).presentDiagnosis()
+        guard let meModel = KeychainService.standard.me else { return }
+        if meModel.access.isPremium {
+            PlantsRouter(presenter: navigationController).presentDiagnosis()
+        } else {
+            if StoreKitManager.sharedInstance.isYearly50() {
+                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: DiseaseArchiveViewController.self))
+            } else {
+//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: DiseaseArchiveViewController.self))
+                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: DiseaseArchiveViewController.self))
+            }
+        }
     }
 }
 

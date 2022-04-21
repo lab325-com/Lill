@@ -350,6 +350,7 @@
 		FA24A5B8273568140059AF6A /* GardenPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */; };
 		FA29D9E627C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */; };
 		FA29D9E727C4EAAD00A4B6C6 /* ReportDiagnosee.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */; };
+		FA2D5E1928083DAB001880CD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */; };
 		FA36BC5C27747A8800A878AA /* PopDoneSpecificCareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */; };
 		FA36BC5D27747A8800A878AA /* PopDoneSpecificCareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */; };
 		FA36BC5F27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */; };
@@ -382,6 +383,9 @@
 		FA64050D2722D21A000124A5 /* DiagnosisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */; };
 		FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA6405102722FA1C000124A5 /* StartDiagnose.graphql */; };
 		FA6405132722FA97000124A5 /* StartDiagoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6405122722FA97000124A5 /* StartDiagoseModel.swift */; };
+		FA6D68F52805DAF5008DB4AA /* SubscribePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */; };
+		FA6D68F62805DAF5008DB4AA /* SubscribePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */; };
+		FA74059D2808569400C224C8 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74059C2808569400C224C8 /* LocalizationService.swift */; };
 		FA77834827B13FB600124CB4 /* SaveUDIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */; };
 		FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834727B13FB600124CB4 /* SaveUDID.graphql */; };
 		FA78D95E2775FA1B00721D68 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA78D95D2775FA1B00721D68 /* AppsFlyerLib */; };
@@ -466,6 +470,8 @@
 		FADCE35A275D185600119C51 /* GardenPlantCareUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */; };
 		FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */; };
 		FADE700927FC78F800CA4B31 /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = FADE700827FC78F800CA4B31 /* BetterSegmentedControl */; };
+		FADE700E280065E600CA4B31 /* ProfileUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */; };
+		FADE700F280065E600CA4B31 /* ProfileUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */; };
 		FADEF76B27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEF76A27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift */; };
 		FAE8C937273A797600685D85 /* DoneAllCaresByGarden.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */; };
 		FAE8C939273A7E8600685D85 /* DoneAllCaresByGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */; };
@@ -841,6 +847,9 @@
 		FA24A5B7273568140059AF6A /* GardenPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantsModel.swift; sourceTree = "<group>"; };
 		FA29D9E427C4EAAD00A4B6C6 /* ReportDiagnoseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDiagnoseModel.swift; sourceTree = "<group>"; };
 		FA29D9E527C4EAAD00A4B6C6 /* ReportDiagnosee.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportDiagnosee.graphql; sourceTree = "<group>"; };
+		FA2D5E1A28083DAB001880CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FA2D5E1C28083DAD001880CD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FA2D5E1D28083DB1001880CD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FA36BC5A27747A8800A878AA /* PopDoneSpecificCareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCareController.swift; sourceTree = "<group>"; };
 		FA36BC5B27747A8800A878AA /* PopDoneSpecificCareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopDoneSpecificCareController.xib; sourceTree = "<group>"; };
 		FA36BC5E27747AAD00A878AA /* PopDoneSpecificCarePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopDoneSpecificCarePresenter.swift; sourceTree = "<group>"; };
@@ -873,6 +882,9 @@
 		FA64050C2722D21A000124A5 /* DiagnosisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisPresenter.swift; sourceTree = "<group>"; };
 		FA6405102722FA1C000124A5 /* StartDiagnose.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartDiagnose.graphql; sourceTree = "<group>"; };
 		FA6405122722FA97000124A5 /* StartDiagoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDiagoseModel.swift; sourceTree = "<group>"; };
+		FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePopupController.swift; sourceTree = "<group>"; };
+		FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribePopupController.xib; sourceTree = "<group>"; };
+		FA74059C2808569400C224C8 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		FA77834627B13FB600124CB4 /* SaveUDIDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUDIDModel.swift; sourceTree = "<group>"; };
 		FA77834727B13FB600124CB4 /* SaveUDID.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SaveUDID.graphql; sourceTree = "<group>"; };
 		FA7C8CDC26FB992B000D2976 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -957,6 +969,8 @@
 		FADCE355275D033400119C51 /* AddPlantTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantTimeModel.swift; sourceTree = "<group>"; };
 		FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenPlantCareUpdateModel.swift; sourceTree = "<group>"; };
 		FADCE359275D185600119C51 /* GardenPlantCareUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GardenPlantCareUpdate.graphql; sourceTree = "<group>"; };
+		FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfileUpdate.graphql; sourceTree = "<group>"; };
+		FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUpdateModel.swift; sourceTree = "<group>"; };
 		FADEF76A27628F8B007DDC12 /* GardenPlantAddCaresRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresRouter.swift; sourceTree = "<group>"; };
 		FAE8C936273A797600685D85 /* DoneAllCaresByGarden.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoneAllCaresByGarden.graphql; sourceTree = "<group>"; };
 		FAE8C938273A7E8600685D85 /* DoneAllCaresByGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAllCaresByGardenModel.swift; sourceTree = "<group>"; };
@@ -1290,6 +1304,7 @@
 			isa = PBXGroup;
 			children = (
 				021D6D0C2731AE4B00C73183 /* SharingManager.swift */,
+				FA74059C2808569400C224C8 /* LocalizationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1929,6 +1944,7 @@
 			isa = PBXGroup;
 			children = (
 				02AB244926F39D8E00309CFF /* Localizable.strings */,
+				FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -2683,6 +2699,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FADE700B280065A800CA4B31 /* ProfileUpdate */,
 				FA29D9E327C4EA8300A4B6C6 /* ReportDiagnose */,
 				FA62365827BE5D3A005C593B /* ReportRecognize */,
 				0207E1BF27B1549300DCD693 /* GeneratePromoOffer */,
@@ -2920,6 +2937,15 @@
 				FA6405122722FA97000124A5 /* StartDiagoseModel.swift */,
 			);
 			path = StartDiagnose;
+			sourceTree = "<group>";
+		};
+		FA6D68F22805DA93008DB4AA /* SupscribePopupController */ = {
+			isa = PBXGroup;
+			children = (
+				FA6D68F32805DAF5008DB4AA /* SubscribePopupController.swift */,
+				FA6D68F42805DAF5008DB4AA /* SubscribePopupController.xib */,
+			);
+			path = SupscribePopupController;
 			sourceTree = "<group>";
 		};
 		FA77834527B13F4B00124CB4 /* SaveUdid */ = {
@@ -3163,6 +3189,7 @@
 				021B351027B568B4002DAC0E /* PaywallYearController */,
 				02A3C67427AD546900AF7398 /* SubscribeYearController */,
 				02E329A927343270004344C0 /* SubcribeController */,
+				FA6D68F22805DA93008DB4AA /* SupscribePopupController */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -3373,6 +3400,15 @@
 				FADCE358275D185600119C51 /* GardenPlantCareUpdateModel.swift */,
 			);
 			path = GardenPlantCareUpdate;
+			sourceTree = "<group>";
+		};
+		FADE700B280065A800CA4B31 /* ProfileUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				FADE700C280065E500CA4B31 /* ProfileUpdate.graphql */,
+				FADE700D280065E500CA4B31 /* ProfileUpdateModel.swift */,
+			);
+			path = ProfileUpdate;
 			sourceTree = "<group>";
 		};
 		FADEF76927628F6C007DDC12 /* Router */ = {
@@ -3737,6 +3773,7 @@
 				0273B8C12745584A009A2247 /* GardenDetailAboutCell.xib in Resources */,
 				FAA089662757B5F900449D5B /* GardenPlantCares.graphql in Resources */,
 				021BC13C2771D47A0083DC65 /* GardenPlantHistory.graphql in Resources */,
+				FADE700E280065E600CA4B31 /* ProfileUpdate.graphql in Resources */,
 				FA8FCD3E27199CD100173725 /* SubcribeController.xib in Resources */,
 				021BC11127706A000083DC65 /* GadenDetailHistoryTitleCell.xib in Resources */,
 				027B5FA82758F23900A84D98 /* LillActivityIndicator.xib in Resources */,
@@ -3771,6 +3808,7 @@
 				FA8C936F278ED6540009DA6D /* GardenEditChangeCover.xib in Resources */,
 				02527D9B27467FF900126022 /* GardenDetailAllWaitingCell.xib in Resources */,
 				02493DD72727E38A008C2064 /* PlantsDetailController.xib in Resources */,
+				FA2D5E1928083DAB001880CD /* Localizable.stringsdict in Resources */,
 				02AE73A6277460C7008DE4E6 /* GardenPhotoDeteilCell.xib in Resources */,
 				FAA089612757B3C100449D5B /* AddCareCell.xib in Resources */,
 				FA8C937C278F19580009DA6D /* GardenEditChangeName.xib in Resources */,
@@ -3793,6 +3831,7 @@
 				021BC1262770864C0083DC65 /* GardenDetailListHeaderCell.xib in Resources */,
 				0261FA632748FC70002BB6CE /* PopClonePlantController.xib in Resources */,
 				028C9BFC274D30060043EA31 /* ScheduleColapsView.xib in Resources */,
+				FA6D68F62805DAF5008DB4AA /* SubscribePopupController.xib in Resources */,
 				021D6CF82731137C00C73183 /* LanguageController.xib in Resources */,
 				02A4BA3C26FDD02600DF6A08 /* OnboardingThreeController.xib in Resources */,
 				02356A2327738CAA00EE7071 /* GardenHistoryNotesController.xib in Resources */,
@@ -4005,6 +4044,7 @@
 				02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */,
 				FAF93FF227637147004B784B /* GardenPlanAddCaresSetupPresenter.swift in Sources */,
 				FA8FCD3927196BD500173725 /* PlantsModel.swift in Sources */,
+				FA74059D2808569400C224C8 /* LocalizationService.swift in Sources */,
 				02E329A527342586004344C0 /* SubscribePresenter.swift in Sources */,
 				02BBBE7A273E623900E97712 /* PickerCaresController.swift in Sources */,
 				02D4BFBC2743B94D00B9322B /* TextView.swift in Sources */,
@@ -4098,6 +4138,7 @@
 				021BC11027706A000083DC65 /* GadenDetailHistoryTitleCell.swift in Sources */,
 				FA5785DB27C386920095BC0F /* ReportView.swift in Sources */,
 				FAEFA7AF2760E46400900EE0 /* GardenPlantAddCares.swift in Sources */,
+				FA6D68F52805DAF5008DB4AA /* SubscribePopupController.swift in Sources */,
 				021D6CFD273118C000C73183 /* LanguageCell.swift in Sources */,
 				02D142E42757DDD8008A7FA3 /* IPhoneSe5Timeline.swift in Sources */,
 				FA8C938C27900CDA0009DA6D /* GardenEditDeleteSpacePresenter.swift in Sources */,
@@ -4247,6 +4288,7 @@
 				0272DB0A27359DC9005E7880 /* AddCoverAddController.swift in Sources */,
 				02D142E32757DDD8008A7FA3 /* IPhoneSe5View.swift in Sources */,
 				FA8FCD4127199DCA00173725 /* DiagnosisController.swift in Sources */,
+				FADE700F280065E600CA4B31 /* ProfileUpdateModel.swift in Sources */,
 				02D142ED2757E728008A7FA3 /* IPhone83Timeline.swift in Sources */,
 				FA7C8CFB26FDFEFE000D2976 /* SocialManager.swift in Sources */,
 				02BD7A912774DE1800A8B943 /* GalleryImageDeleteModel.swift in Sources */,
@@ -4285,6 +4327,16 @@
 				FAA3C4A327E3395A0080947B /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA2D5E1B28083DAB001880CD /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2D5E1A28083DAB001880CD /* en */,
+				FA2D5E1C28083DAD001880CD /* ru */,
+				FA2D5E1D28083DB1001880CD /* es */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		FAAA231A26F3625200E10E89 /* LaunchScreen.storyboard */ = {
@@ -4370,7 +4422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 62;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4379,7 +4431,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4522,7 +4574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 62;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4531,7 +4583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4554,7 +4606,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 62;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4563,7 +4615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
