@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         checkingPurchase()
         forceUpdate()
+        loadConfig()
         
         SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
             if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
@@ -222,6 +223,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler(UIBackgroundFetchResult.newData)
         
         AppsFlyerLib.shared().handlePushNotification(userInfo)
+    }
+    
+    private func loadConfig() {
+        PreferencesManager.sharedManager.isLoadConfig = false
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let fetchDuration: TimeInterval = 43200 // 12 hours
+        remoteConfig.fetch(withExpirationDuration: fetchDuration) { (result, error) in
+            remoteConfig.activate() { (changed, error) in
+                DispatchQueue.main.async { [weak self] in
+                    PreferencesManager.sharedManager.isLoadConfig = true
+                    
+                    if let isShowFirstOnboarding = RemoteConfigParameters.isShowFirstOnboarding.value as? Bool {
+                        PreferencesManager.sharedManager.isShowFirstOnboarding = isShowFirstOnboarding
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        NotificationCenter.default.post(name: Constants.Notifications.endRemoteConfigEndNotification,
+                                                        object: self,
+                                                        userInfo: nil)
+                    }
+                }
+            }
+        }
     }
 }
 

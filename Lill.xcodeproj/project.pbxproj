@@ -223,6 +223,7 @@
 		02C6C10E273A6948003C47FF /* RestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C10D273A6948003C47FF /* RestMethods.swift */; };
 		02C6C111273A69CF003C47FF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 02C6C110273A69CF003C47FF /* Alamofire */; };
 		02C6C114273A6AA4003C47FF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6C113273A6AA4003C47FF /* AuthModel.swift */; };
+		02C9F3A32821018500214D85 /* RemoteConfigParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9F3A22821018400214D85 /* RemoteConfigParameters.swift */; };
 		02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */; };
 		02CF963F274FBFBF00F356C2 /* GardenPlantByIdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */; };
 		02D04ECF26F5E7B000F86B87 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */; };
@@ -717,6 +718,7 @@
 		02C6C10A273A68F4003C47FF /* RestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuth.swift; sourceTree = "<group>"; };
 		02C6C10D273A6948003C47FF /* RestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethods.swift; sourceTree = "<group>"; };
 		02C6C113273A6AA4003C47FF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		02C9F3A22821018400214D85 /* RemoteConfigParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigParameters.swift; sourceTree = "<group>"; };
 		02CF963C274FBFAE00F356C2 /* GardenPlantByIds.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; name = GardenPlantByIds.graphql; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIds.graphql; sourceTree = SOURCE_ROOT; };
 		02CF963E274FBFBF00F356C2 /* GardenPlantByIdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GardenPlantByIdsModel.swift; path = Lill/Apollo/GraphQl/Query/GardenPlantByIds/GardenPlantByIdsModel.swift; sourceTree = SOURCE_ROOT; };
 		02D04EC526F5E7AD00F86B87 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
@@ -1926,6 +1928,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAA230F26F3624F00E10E89 /* AppDelegate.swift */,
+				02C9F3A12821015600214D85 /* FirebaseConfig */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -2136,6 +2139,14 @@
 				02C6C113273A6AA4003C47FF /* AuthModel.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		02C9F3A12821015600214D85 /* FirebaseConfig */ = {
+			isa = PBXGroup;
+			children = (
+				02C9F3A22821018400214D85 /* RemoteConfigParameters.swift */,
+			);
+			path = FirebaseConfig;
 			sourceTree = "<group>";
 		};
 		02CF963B274FBF7F00F356C2 /* GardenPlantByIds */ = {
@@ -4025,6 +4036,7 @@
 				FA545485274E89C6006B52F4 /* PlantsAboutType.swift in Sources */,
 				02A8347926F38E580009E147 /* SplashController.swift in Sources */,
 				FA8C9383278F40970009DA6D /* GardenEditDeleteSpace.swift in Sources */,
+				02C9F3A32821018500214D85 /* RemoteConfigParameters.swift in Sources */,
 				02D4BFB82743B94D00B9322B /* Timeline.swift in Sources */,
 				028C9BFA274D2FE20043EA31 /* ScheduleColapsView.swift in Sources */,
 				02D142F22757E769008A7FA3 /* IPhone84View.swift in Sources */,

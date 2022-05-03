@@ -90,7 +90,11 @@ class LoginController: BaseController {
 //----------------------------------------------
 extension LoginController: LoginOutputProtocol {
     func success() {
-        RootRouter.sharedInstance.loadOnboarding(toWindow: RootRouter.sharedInstance.window)
+        if PreferencesManager.sharedManager.isShowFirstOnboarding {
+            RootRouter.sharedInstance.loadOnboarding(toWindow: RootRouter.sharedInstance.window)
+        } else {
+            RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window!)
+        }
     }
     
     func failure(error: String) {

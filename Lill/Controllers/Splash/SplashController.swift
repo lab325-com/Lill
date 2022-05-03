@@ -8,17 +8,24 @@ class SplashController: BaseController {
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         infoLabel.text = RLocalization.login_info.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if let _ = KeychainService.standard.newAuthToken {
-                RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window!)
-            } else {
-                RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
-            }
+       
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endLoadConfigNotification),
+                                               name: Constants.Notifications.endRemoteConfigEndNotification,
+                                               object: nil)
+    }
+    
+    @objc func endLoadConfigNotification(_ notification: Notification) {
+        NotificationCenter.default.removeObserver(self)
+        if let _ = KeychainService.standard.newAuthToken {
+            RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window!)
+        } else {
+            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
         }
     }
 }
