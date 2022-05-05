@@ -77,7 +77,7 @@ extension PlantsController: PlantCollectionDelegate {
         if meModel.access.isPremium {
             GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
         } else {
-            if meModel.totalGardenPlants > 0 {
+            if meModel.totalGardenPlants > 4 {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
@@ -101,7 +101,7 @@ extension PlantsController: PlantCollectionDelegate {
         if meModel.access.isPremium {
             presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
         } else {
-            if meModel.totalFavouritePlants > 0 && !isFavorite {
+            if meModel.totalFavouritePlants > 4 && !isFavorite {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
