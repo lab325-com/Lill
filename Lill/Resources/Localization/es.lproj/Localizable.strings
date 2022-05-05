@@ -347,8 +347,9 @@
 "subscription_cancel_any_time" = "Cancela en cualquier momento";
 "subscription_description" = "Puede cancenlar su suscripción de prueba gratuita en cualquier momento cancelando su suscripción a través de la configuración de su cuenta Itunes, de lo contrario se renovará automáticamente. Esto debe hacerse al menos 24 horas antes del final de la prueba gratuita o cualquier período de suscripción para evitar el cobro. Una suscripción con un período de prueba gratuita se renovará automáticamente a una suscripción de pago. Por favor tenga en cuenta que cualquier porción no utilizada de período de prueba gratuita (en caso de ofrecerse) se perderá al comprar una suscripción premium durante el período de prueba gratuita. Los pagos de la suscripción se cargarán a tu cuenta iTunes al confirmar la compra y tras el comienzo de cada término de renovación. Para más información, por favor revise nuestros Términos de Uso y Política de Privacidad.";
 "subscription_month" = "mes";
+"subscription_one_time" = "Pago único";
 "subscription_privacy" = "Política de privacidad";
-"subscription_recurring" = "Facturación mensual recurrente";
+"subscription_recurring_mounthly" = "Facturación mensual recurrente";
 "subscription_recurring_yearly" = "Facturación anual recurrente";
 "subscription_restore" = "Restaura compras";
 "subscription_save_50" = "AHORRA 50%";
