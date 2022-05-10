@@ -303,6 +303,13 @@
 "pop_done_specific_care_missed_info" = "Care is missed";
 "pop_done_specific_care_record_care" = "Record Care";
 "pop_done_specific_care_waiting_info" = "Care is waiting";
+"quiz_gardener_level_beginner" = "beginner";
+"quiz_gardener_level_info" = "Rate your level as a Gardener:";
+"quiz_gardener_level_next" = "Next";
+"quiz_gardener_level_professional" = "professional";
+"quiz_gardener_level_social" = "social";
+"quiz_gardener_level_title" = "Welcome!";
+"quiz_gardener_plants_info" = "How many houseplants do you have?";
 "recognize_archive_button" = "Recognize Plant";
 "recognize_archive_title" = "Recognized Archive";
 "report_view_great" = "Great!";

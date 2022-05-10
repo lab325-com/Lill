@@ -486,6 +486,10 @@
 		FAEFA7B32760E6D900900EE0 /* GardenPlantCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */; };
 		FAEFA7B52760E6F500900EE0 /* GardenPlantCareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */; };
 		FAEFA7B82760FEA200900EE0 /* GardenPlantCaresEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFA7B72760FEA200900EE0 /* GardenPlantCaresEditRouter.swift */; };
+		FAF3A4E8282A57280000D93C /* QuizGardenerLevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A4E6282A57280000D93C /* QuizGardenerLevelController.swift */; };
+		FAF3A4E9282A57280000D93C /* QuizGardenerLevelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3A4E7282A57280000D93C /* QuizGardenerLevelController.xib */; };
+		FAF3A4EE282A575B0000D93C /* QuizGardenerPlantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A4EC282A575B0000D93C /* QuizGardenerPlantsController.swift */; };
+		FAF3A4EF282A575B0000D93C /* QuizGardenerPlantsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3A4ED282A575B0000D93C /* QuizGardenerPlantsController.xib */; };
 		FAF93FEC27625B8B004B784B /* GardenPlantAddCaresSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93FEA27625B8B004B784B /* GardenPlantAddCaresSetup.swift */; };
 		FAF93FED27625B8B004B784B /* GardenPlantAddCaresSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF93FEB27625B8B004B784B /* GardenPlantAddCaresSetup.xib */; };
 		FAF93FF027625BCA004B784B /* GardenPlantAddCaresSetup+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93FEF27625BCA004B784B /* GardenPlantAddCaresSetup+TableView.swift */; };
@@ -986,6 +990,10 @@
 		FAEFA7B22760E6D900900EE0 /* GardenPlantCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCareView.swift; sourceTree = "<group>"; };
 		FAEFA7B42760E6F500900EE0 /* GardenPlantCareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCareView.xib; sourceTree = "<group>"; };
 		FAEFA7B72760FEA200900EE0 /* GardenPlantCaresEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditRouter.swift; sourceTree = "<group>"; };
+		FAF3A4E6282A57280000D93C /* QuizGardenerLevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGardenerLevelController.swift; sourceTree = "<group>"; };
+		FAF3A4E7282A57280000D93C /* QuizGardenerLevelController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGardenerLevelController.xib; sourceTree = "<group>"; };
+		FAF3A4EC282A575B0000D93C /* QuizGardenerPlantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGardenerPlantsController.swift; sourceTree = "<group>"; };
+		FAF3A4ED282A575B0000D93C /* QuizGardenerPlantsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizGardenerPlantsController.xib; sourceTree = "<group>"; };
 		FAF93FEA27625B8B004B784B /* GardenPlantAddCaresSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantAddCaresSetup.swift; sourceTree = "<group>"; };
 		FAF93FEB27625B8B004B784B /* GardenPlantAddCaresSetup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantAddCaresSetup.xib; sourceTree = "<group>"; };
 		FAF93FEF27625BCA004B784B /* GardenPlantAddCaresSetup+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GardenPlantAddCaresSetup+TableView.swift"; sourceTree = "<group>"; };
@@ -1901,6 +1909,7 @@
 			isa = PBXGroup;
 			children = (
 				02A8347B26F38F130009E147 /* Splash */,
+				FAF3A4E1282A542F0000D93C /* Quiz */,
 				FAD1833326F9DAB1007A67DC /* Login */,
 				02A8347E26F38F920009E147 /* Onboarding */,
 				02E0B1A22704315100A56840 /* TabBar */,
@@ -3486,6 +3495,33 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		FAF3A4E1282A542F0000D93C /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3A4E2282A547F0000D93C /* QuizGardenerLevelController */,
+				FAF3A4E3282A549A0000D93C /* QuizGardenerPlantsController */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		FAF3A4E2282A547F0000D93C /* QuizGardenerLevelController */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3A4E6282A57280000D93C /* QuizGardenerLevelController.swift */,
+				FAF3A4E7282A57280000D93C /* QuizGardenerLevelController.xib */,
+			);
+			path = QuizGardenerLevelController;
+			sourceTree = "<group>";
+		};
+		FAF3A4E3282A549A0000D93C /* QuizGardenerPlantsController */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3A4EC282A575B0000D93C /* QuizGardenerPlantsController.swift */,
+				FAF3A4ED282A575B0000D93C /* QuizGardenerPlantsController.xib */,
+			);
+			path = QuizGardenerPlantsController;
+			sourceTree = "<group>";
+		};
 		FAF93FE927625B5D004B784B /* GardenPlantAddCaresSetup */ = {
 			isa = PBXGroup;
 			children = (
@@ -3782,6 +3818,7 @@
 				025ECF25273D821D0041A7BD /* OrderCreate.graphql in Resources */,
 				FA4F7FAA2747BA7100E4B873 /* GardenChooseAddPlantController.xib in Resources */,
 				0273B8C12745584A009A2247 /* GardenDetailAboutCell.xib in Resources */,
+				FAF3A4EF282A575B0000D93C /* QuizGardenerPlantsController.xib in Resources */,
 				FAA089662757B5F900449D5B /* GardenPlantCares.graphql in Resources */,
 				021BC13C2771D47A0083DC65 /* GardenPlantHistory.graphql in Resources */,
 				FADE700E280065E600CA4B31 /* ProfileUpdate.graphql in Resources */,
@@ -3809,6 +3846,7 @@
 				021B351427B56913002DAC0E /* PaywallYearController.xib in Resources */,
 				FA24A5B6273564C80059AF6A /* GardenPlants.graphql in Resources */,
 				FADCE35B275D185600119C51 /* GardenPlantCareUpdate.graphql in Resources */,
+				FAF3A4E9282A57280000D93C /* QuizGardenerLevelController.xib in Resources */,
 				FAF93FF92763736D004B784B /* GardenPlantCareCreate.graphql in Resources */,
 				FA6405112722FA1C000124A5 /* StartDiagnose.graphql in Resources */,
 				02CF963D274FBFAE00F356C2 /* GardenPlantByIds.graphql in Resources */,
@@ -4065,6 +4103,7 @@
 				FADC80D1272FF64E00CA9ED3 /* SetFavoritePlantByIdModel.swift in Sources */,
 				021836BF279003450041F302 /* GardenAddToPlaceCell.swift in Sources */,
 				02D4BFB42743B94D00B9322B /* ShapeView.swift in Sources */,
+				FAF3A4EE282A575B0000D93C /* QuizGardenerPlantsController.swift in Sources */,
 				02A4B6502742C942007E0DA2 /* GardenRecordCreateModel.swift in Sources */,
 				02E0B1A62704325300A56840 /* MainTabBarController.swift in Sources */,
 				FA24A5AE273475100059AF6A /* CaresByGardenModel.swift in Sources */,
@@ -4244,6 +4283,7 @@
 				F3235D30272E6D3B00B4CE5E /* MenuController+TableView.swift in Sources */,
 				02D1430B2757E8EF008A7FA3 /* IPhone11ProX5Timeline.swift in Sources */,
 				0267565A278F0BA500FBA4E9 /* GardenNeedCaresController.swift in Sources */,
+				FAF3A4E8282A57280000D93C /* QuizGardenerLevelController.swift in Sources */,
 				021BC12027707A8F0083DC65 /* GardenDetailHistoryStatisticCell.swift in Sources */,
 				02089EAF2754CA9A0022E1BD /* DoneCareByGardenPlants.swift in Sources */,
 				021C8ECC2706115600F0F589 /* UIColor+Extension.swift in Sources */,

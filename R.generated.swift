@@ -704,7 +704,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 130 images.
+  /// This `R.image` struct is generated, and contains static references to 134 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -864,6 +864,14 @@ struct R: Rswift.Validatable {
     static let ic_plants_unfavorite = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_unfavorite")
     /// Image `ic_plants_unique`.
     static let ic_plants_unique = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_plants_unique")
+    /// Image `ic_quiz_background`.
+    static let ic_quiz_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_quiz_background")
+    /// Image `ic_quiz_plant`.
+    static let ic_quiz_plant = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_quiz_plant")
+    /// Image `ic_quiz_selected`.
+    static let ic_quiz_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_quiz_selected")
+    /// Image `ic_quiz_unselected`.
+    static let ic_quiz_unselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_quiz_unselected")
     /// Image `ic_tab_garden_act`.
     static let ic_tab_garden_act = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tab_garden_act")
     /// Image `ic_tab_garden`.
@@ -1521,6 +1529,34 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_quiz_background", bundle: ..., traitCollection: ...)`
+    static func ic_quiz_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_quiz_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_quiz_plant", bundle: ..., traitCollection: ...)`
+    static func ic_quiz_plant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_quiz_plant, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_quiz_selected", bundle: ..., traitCollection: ...)`
+    static func ic_quiz_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_quiz_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_quiz_unselected", bundle: ..., traitCollection: ...)`
+    static func ic_quiz_unselected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_quiz_unselected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic_tab_garden", bundle: ..., traitCollection: ...)`
     static func ic_tab_garden(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_tab_garden, compatibleWith: traitCollection)
@@ -1880,7 +1916,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 96 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 98 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -2050,6 +2086,10 @@ struct R: Rswift.Validatable {
     static let popDoneSpecificCareController = _R.nib._PopDoneSpecificCareController()
     /// Nib `PopUniquePlantController`.
     static let popUniquePlantController = _R.nib._PopUniquePlantController()
+    /// Nib `QuizGardenerLevelController`.
+    static let quizGardenerLevelController = _R.nib._QuizGardenerLevelController()
+    /// Nib `QuizGardenerPlantsController`.
+    static let quizGardenerPlantsController = _R.nib._QuizGardenerPlantsController()
     /// Nib `RecognizeArchiveController`.
     static let recognizeArchiveController = _R.nib._RecognizeArchiveController()
     /// Nib `ReportView`.
@@ -2748,6 +2788,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuizGardenerLevelController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quizGardenerLevelController) instead")
+    static func quizGardenerLevelController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quizGardenerLevelController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QuizGardenerPlantsController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.quizGardenerPlantsController) instead")
+    static func quizGardenerPlantsController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.quizGardenerPlantsController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "RecognizeArchiveController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.recognizeArchiveController) instead")
     static func recognizeArchiveController(_: Void = ()) -> UIKit.UINib {
@@ -3179,6 +3235,14 @@ struct R: Rswift.Validatable {
       return R.nib.popUniquePlantController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func quizGardenerLevelController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.quizGardenerLevelController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func quizGardenerPlantsController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.quizGardenerPlantsController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func recognizeArchiveController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.recognizeArchiveController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3343,7 +3407,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 389 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 396 localization keys.
     struct localizable {
       /// en translation: %#@VARIABLE@
       ///
@@ -4137,6 +4201,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let scheldure_setting_hour = Rswift.StringResource(key: "scheldure_setting_hour", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: How many houseplants do you have?
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_plants_info = Rswift.StringResource(key: "quiz_gardener_plants_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Identification Results:
       ///
       /// Locales: en, es, ru
@@ -4305,6 +4373,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let paywall_year_new_price = Rswift.StringResource(key: "paywall_year_new_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Next
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_next = Rswift.StringResource(key: "quiz_gardener_level_next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Next 7 days
       ///
       /// Locales: en, es, ru
@@ -4445,6 +4517,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let menu_item_rate = Rswift.StringResource(key: "menu_item_rate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Rate your level as a Gardener:
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_info = Rswift.StringResource(key: "quiz_gardener_level_info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Re-identify
       ///
       /// Locales: en, es, ru
@@ -4785,6 +4861,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let care_period_type_weeks = Rswift.StringResource(key: "care_period_type_weeks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Welcome!
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_title = Rswift.StringResource(key: "quiz_gardener_level_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Wishlist
       ///
       /// Locales: en, es, ru
@@ -4833,6 +4913,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let menu_section_archive_title = Rswift.StringResource(key: "menu_section_archive_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: beginner
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_beginner = Rswift.StringResource(key: "quiz_gardener_level_beginner", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: cares
       ///
       /// Locales: en, es, ru
@@ -4889,10 +4973,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let subscribe_year_plant_identification = Rswift.StringResource(key: "subscribe_year_plant_identification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: professional
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_professional = Rswift.StringResource(key: "quiz_gardener_level_professional", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: settings
       ///
       /// Locales: en, es, ru
       static let menu_section_settings_title = Rswift.StringResource(key: "menu_section_settings_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: social
+      ///
+      /// Locales: en, es, ru
+      static let quiz_gardener_level_social = Rswift.StringResource(key: "quiz_gardener_level_social", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: view all
       ///
       /// Locales: en, es, ru
@@ -7894,6 +7986,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("scheldure_setting_hour", bundle: bundle, comment: "")
       }
 
+      /// en translation: How many houseplants do you have?
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_plants_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_plants_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_plants_info"
+        }
+
+        return NSLocalizedString("quiz_gardener_plants_info", bundle: bundle, comment: "")
+      }
+
       /// en translation: Identification Results:
       ///
       /// Locales: en, es, ru
@@ -8524,6 +8631,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("paywall_year_new_price", bundle: bundle, comment: "")
       }
 
+      /// en translation: Next
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_next(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_next", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_next"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_next", bundle: bundle, comment: "")
+      }
+
       /// en translation: Next 7 days
       ///
       /// Locales: en, es, ru
@@ -9049,6 +9171,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_item_rate", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Rate your level as a Gardener:
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_info"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_info", bundle: bundle, comment: "")
       }
 
       /// en translation: Re-identify
@@ -10326,6 +10463,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("care_period_type_weeks", bundle: bundle, comment: "")
       }
 
+      /// en translation: Welcome!
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_title"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_title", bundle: bundle, comment: "")
+      }
+
       /// en translation: Wishlist
       ///
       /// Locales: en, es, ru
@@ -10504,6 +10656,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_section_archive_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: beginner
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_beginner(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_beginner", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_beginner"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_beginner", bundle: bundle, comment: "")
       }
 
       /// en translation: cares
@@ -10716,6 +10883,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscribe_year_plant_identification", bundle: bundle, comment: "")
       }
 
+      /// en translation: professional
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_professional(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_professional", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_professional"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_professional", bundle: bundle, comment: "")
+      }
+
       /// en translation: settings
       ///
       /// Locales: en, es, ru
@@ -10729,6 +10911,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("menu_section_settings_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: social
+      ///
+      /// Locales: en, es, ru
+      static func quiz_gardener_level_social(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("quiz_gardener_level_social", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "quiz_gardener_level_social"
+        }
+
+        return NSLocalizedString("quiz_gardener_level_social", bundle: bundle, comment: "")
       }
 
       /// en translation: view all
@@ -10849,6 +11046,8 @@ struct _R: Rswift.Validatable {
       try _PopClonePlantController.validate()
       try _PopDoneSpecificCareController.validate()
       try _PopUniquePlantController.validate()
+      try _QuizGardenerLevelController.validate()
+      try _QuizGardenerPlantsController.validate()
       try _RecognizeArchiveController.validate()
       try _ReportView.validate()
       try _ScheduleCell.validate()
@@ -12284,6 +12483,44 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'PopUniquePlantController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuizGardenerLevelController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "QuizGardenerLevelController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_quiz_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_background' is used in nib 'QuizGardenerLevelController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_quiz_plant", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_plant' is used in nib 'QuizGardenerLevelController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_quiz_unselected", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_unselected' is used in nib 'QuizGardenerLevelController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QuizGardenerPlantsController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "QuizGardenerPlantsController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_quiz_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_background' is used in nib 'QuizGardenerPlantsController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_quiz_plant", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_plant' is used in nib 'QuizGardenerPlantsController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_quiz_unselected", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_quiz_unselected' is used in nib 'QuizGardenerPlantsController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

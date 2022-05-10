@@ -303,6 +303,13 @@
 "pop_done_specific_care_missed_info" = "Упущен уход";
 "pop_done_specific_care_record_care" = "Запись ухода";
 "pop_done_specific_care_waiting_info" = "Ожидается уход";
+"quiz_gardener_level_beginner" = "новичок";
+"quiz_gardener_level_info" = "Оцените свой уровень как садовник:";
+"quiz_gardener_level_next" = "Далее";
+"quiz_gardener_level_professional" = "профессионал";
+"quiz_gardener_level_social" = "социал";
+"quiz_gardener_level_title" = "Добро пожаловать!";
+"quiz_gardener_plants_info" = "Сколько у вас комнатных растений?";
 "recognize_archive_button" = "Распознать растение";
 "recognize_archive_title" = "Архив распознанных растений";
 "report_view_great" = "Отлично!";

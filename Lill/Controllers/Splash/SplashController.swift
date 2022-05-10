@@ -25,7 +25,7 @@ class SplashController: BaseController {
         if let _ = KeychainService.standard.newAuthToken {
             RootRouter.sharedInstance.loadPlants(toWindow: RootRouter.sharedInstance.window!)
         } else {
-            RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+            RootRouter.sharedInstance.loadQuiz(toWindow: RootRouter.sharedInstance.window!)
         }
     }
 }
