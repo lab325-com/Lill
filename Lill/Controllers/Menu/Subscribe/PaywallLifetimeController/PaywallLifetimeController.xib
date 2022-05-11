@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscribePopupController" customModule="Lill" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaywallLifetimeController" customModule="Lill" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="i4Q-uc-vR9" id="efd-lg-Efz"/>
                 <outlet property="becomePremiumLabel" destination="1ly-RJ-aWH" id="dwe-YC-kQX"/>
@@ -39,7 +39,7 @@
                 <outlet property="subscribeButton" destination="YDz-CE-eW3" id="BxS-i1-P0w"/>
                 <outlet property="termsOfUserButton" destination="Ohp-Kr-gEz" id="iti-69-OEF"/>
                 <outlet property="unlimitedLabel" destination="dbJ-Uj-Kwn" id="r6h-mJ-XhP"/>
-                <outlet property="view" destination="9ph-1l-a3u" id="usH-hU-88u"/>
+                <outlet property="view" destination="9ph-1l-a3u" id="M6P-et-TiB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,7 +50,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-M7-jj0">
                     <rect key="frame" x="13" y="13" width="349" height="641"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sub_oneyear_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-81-2Wr">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sub_lifetime_ic" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-81-2Wr">
                             <rect key="frame" x="0.0" y="0.0" width="349" height="641"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become a Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ly-RJ-aWH">
@@ -142,11 +142,11 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save 50% Off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kC9-Af-U4V">
                                     <rect key="frame" x="40" y="15" width="233" height="55"/>
                                     <fontDescription key="fontDescription" name="SFRounded-Ultralight" family="SF Pro Rounded" pointSize="36"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="kC9-Af-U4V" secondAttribute="trailing" constant="40" id="4ZF-Y7-LiA"/>
                                 <constraint firstItem="kC9-Af-U4V" firstAttribute="leading" secondItem="MxP-MB-DYB" secondAttribute="leading" constant="40" id="c1J-Pn-bJR"/>
@@ -309,7 +309,7 @@ and Diagnosis</string>
         </view>
     </objects>
     <resources>
-        <image name="sub_oneyear_back_ic" width="375" height="667"/>
+        <image name="sub_lifetime_ic" width="364" height="709"/>
         <image name="sub_oneyear_close_ic" width="13" height="13"/>
         <image name="sub_oneyear_flower_ic" width="31" height="34"/>
         <systemColor name="systemBackgroundColor">

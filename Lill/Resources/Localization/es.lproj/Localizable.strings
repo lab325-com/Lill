@@ -344,8 +344,10 @@
 "scheldure_today" = "Hoy";
 "subscribe_lifetime" = "Toda la vida";
 "subscribe_month_one" = "1 mes";
+"subscribe_select_plan" = "Selecciona tu plan:";
+"subscribe_year" = "Año";
 "subscribe_year_one" = "1 año";
-"subscribe_year_plant_identification" = "identificación de plantas\ny diagnóstico";
+"subscribe_year_plant_identification" = "Plantas, identificación\ny diagnóstico";
 "subscribe_year_premium" = "Convertirse en una prima";
 "subscribe_year_save" = "AHORRA 50%";
 "subscribe_year_subscribe" = "Suscribir";

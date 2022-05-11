@@ -17,6 +17,7 @@ class PreferencesManager : NSObject {
     
     static let isLoadConfig = "isLoadConfig"
     static let isShowFirstOnboarding = "isShowFirstOnboarding"
+    static let currentPopUp = "currentPopUp"
     
     var userDefaults: UserDefaults
     
@@ -194,6 +195,16 @@ extension PreferencesManager {
         }
         set {
             userDefaults.set(newValue, forKey: PreferencesManager.isShowFirstOnboarding)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var currentPopUp: PopupType? {
+        get {
+            return PopupType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.currentPopUp) ?? "")
+        }
+        set {
+            userDefaults.set(newValue?.rawValue, forKey: PreferencesManager.currentPopUp)
             userDefaults.synchronize()
         }
     }

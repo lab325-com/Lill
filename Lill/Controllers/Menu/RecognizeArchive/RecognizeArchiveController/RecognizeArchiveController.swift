@@ -75,14 +75,21 @@ class RecognizeArchiveController: BaseController {
             return
         }
         
-        if meModel.access.identifyUsed < total {
+        if meModel.access.isPremium {
             PlantsRouter(presenter: navigationController).presentIdentify()
         } else {
-            if StoreKitManager.sharedInstance.isYearly50() {
-                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+            if meModel.access.identifyUsed < total {
+                PlantsRouter(presenter: navigationController).presentIdentify()
             } else {
-//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: RecognizeArchiveController.self))
-                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: RecognizeArchiveController.self))
+                if StoreKitManager.sharedInstance.isYearly50() {
+                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: RecognizeArchiveController.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
+                } else {
+                    
+                }
             }
         }
     }

@@ -239,6 +239,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         PreferencesManager.sharedManager.isShowFirstOnboarding = isShowFirstOnboarding
                     }
                     
+                    PreferencesManager.sharedManager.currentPopUp = RemoteConfigParameters.currentPopUp.value as? PopupType
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         NotificationCenter.default.post(name: Constants.Notifications.endRemoteConfigEndNotification,
                                                         object: self,
@@ -302,18 +304,31 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID from userNotificationCenter didReceive: \(messageID)")
         }
         
+        guard let meModel = KeychainService.standard.me else { return }
+        
         let controller = RootRouter.sharedInstance.topViewController as? BaseController
         
-        if var subscription = userInfo["Subscription"] as? String {
-            if subscription == "All" {
-                MenuRouter(presenter: controller?.navigationController).presentSubscription(controller: "Push")
-            } else if subscription.contains(".immediately") {
-                if let range = subscription.range(of: ".immediately") {
-                    subscription.removeSubrange(range)
+        if !meModel.access.isPremium {
+            if var subscription = userInfo["Subscription"] as? String {
+                if subscription == "All" {
+                    MenuRouter(presenter: controller?.navigationController).presentSubscription(controller: "Push")
+                } else if subscription.contains(".immediately") {
+                    if let range = subscription.range(of: ".immediately") {
+                        subscription.removeSubrange(range)
+                    }
+                    purchase(id: subscription, controller: "Push")
+                } else {
+//                    MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
+                    if StoreKitManager.sharedInstance.isYearly50() {
+                        MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                        MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
+                    } else if StoreKitManager.sharedInstance.isCombo() {
+                        
+                    } else {
+                        
+                    }
                 }
-                purchase(id: subscription, controller: "Push")
-            } else {
-                MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
             }
         }
         

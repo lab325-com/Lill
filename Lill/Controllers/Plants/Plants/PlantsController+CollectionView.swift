@@ -67,11 +67,7 @@ extension PlantsController: UICollectionViewDelegateFlowLayout {
 
 extension PlantsController: PlantCollectionDelegate {
     func setToGarden(cell: PlantCollectionCell, id: String) {
-//        if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
-//            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-//        } else {
-//            GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
-//        }
+
         guard let meModel = KeychainService.standard.me else { return }
         
         if meModel.access.isPremium {
@@ -80,8 +76,12 @@ extension PlantsController: PlantCollectionDelegate {
             if meModel.totalGardenPlants > 4 {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
                 } else {
-                    MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: PlantsController.self))
+                    
                 }
             } else {
                 GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
@@ -90,12 +90,7 @@ extension PlantsController: PlantCollectionDelegate {
     }
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
-//        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
-//            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-//        } else {
-//            presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
-//        }
-        
+
         guard let meModel = KeychainService.standard.me else { return }
         
         if meModel.access.isPremium {
@@ -104,8 +99,12 @@ extension PlantsController: PlantCollectionDelegate {
             if meModel.totalFavouritePlants > 4 && !isFavorite {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
                 } else {
-                    MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: PlantsController.self))
+                    
                 }
             } else {
                 presenter.setFavoritePlant(id: id, isFavorite: isFavorite)

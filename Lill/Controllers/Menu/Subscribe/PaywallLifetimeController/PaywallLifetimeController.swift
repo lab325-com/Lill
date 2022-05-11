@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SubscribePopupController: BaseController {
+class PaywallLifetimeController: BaseController {
     
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var offerView: UIView!
@@ -28,20 +28,19 @@ class SubscribePopupController: BaseController {
     //----------------------------------------------
     
     private lazy var presenter = SubscribePresenter(view: self)
+    private let id: Set<String> = ["com.lill.subscription.lifetime.50"]
     
     //----------------------------------------------
     // MARK: - Public property
     //----------------------------------------------
     
-    var id: Set<String>
     var controller: String
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(id: Set<String>, controller: String) {
-        self.id = id
+    init(controller: String) {
         self.controller = controller
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,26 +63,12 @@ class SubscribePopupController: BaseController {
     // MARK: - Private methods
     //----------------------------------------------
     
-    private func setup() {
-        if let id = id.first, !id.isEmpty {
-            if id == "com.lill.subscription.yearly.50" {
-                bgImageView.image = UIImage(named: "sub_oneyear_back_ic")
-                offerView.backgroundColor = UIColor(rgb: 0xFFCD4A)
-                saveOffLabel.textColor = .black
-                periodLabel.text = RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-            }
-            else if id == "com.lill.subscription.lifetime.50" {
-                bgImageView.image = UIImage(named: "sub_lifetime_ic")
-                offerView.backgroundColor = UIColor(rgb: 0xF96161)
-                saveOffLabel.textColor = .white
-                periodLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-            }
-        }
-        
+    private func setup() {        
         discountPriceLabel.alpha = 0.0
         currentPriceLabel.alpha = 0.0
         
         becomePremiumLabel.text = RLocalization.subscribe_year_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        periodLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         saveOffLabel.text = RLocalization.subscribe_year_save.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         unlimitedLabel.text = RLocalization.subscribe_year_unlimited.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         planIdentifierLabel.text = RLocalization.subscribe_year_plant_identification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -142,7 +127,7 @@ class SubscribePopupController: BaseController {
 // MARK: - SubscribeOutputProtocol
 //----------------------------------------------
 
-extension SubscribePopupController: SubscribeOutputProtocol {
+extension PaywallLifetimeController: SubscribeOutputProtocol {
     func successRetrive() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let `self` = self else { return }
