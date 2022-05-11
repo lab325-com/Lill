@@ -3448,7 +3448,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 398 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 399 localization keys.
     struct localizable {
       /// en translation: %#@VARIABLE@
       ///
@@ -3490,6 +3490,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let subscribe_month_one = Rswift.StringResource(key: "subscribe_month_one", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: 1 Week
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_week_one = Rswift.StringResource(key: "subscribe_week_one", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: 1 Year
       ///
       /// Locales: en, es, ru
@@ -5209,6 +5213,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("subscribe_month_one", bundle: bundle, comment: "")
+      }
+
+      /// en translation: 1 Week
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_week_one(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_week_one", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_week_one"
+        }
+
+        return NSLocalizedString("subscribe_week_one", bundle: bundle, comment: "")
       }
 
       /// en translation: 1 Year
