@@ -1916,7 +1916,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 98 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 99 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -2070,6 +2070,10 @@ struct R: Rswift.Validatable {
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
     /// Nib `OnboardingWelcomeController`.
     static let onboardingWelcomeController = _R.nib._OnboardingWelcomeController()
+    /// Nib `PaywallComboFullController`.
+    static let paywallComboFullController = _R.nib._PaywallComboFullController()
+    /// Nib `PaywallLifetimeController`.
+    static let paywallLifetimeController = _R.nib._PaywallLifetimeController()
     /// Nib `PaywallYearController`.
     static let paywallYearController = _R.nib._PaywallYearController()
     /// Nib `PickerCaresController`.
@@ -2108,8 +2112,6 @@ struct R: Rswift.Validatable {
     static let splashController = _R.nib._SplashController()
     /// Nib `SubcribeController`.
     static let subcribeController = _R.nib._SubcribeController()
-    /// Nib `SubscribePopupController`.
-    static let subscribePopupController = _R.nib._SubscribePopupController()
     /// Nib `SubscribeYearController`.
     static let subscribeYearController = _R.nib._SubscribeYearController()
     /// Nib `WishListController`.
@@ -2724,6 +2726,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaywallComboFullController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallComboFullController) instead")
+    static func paywallComboFullController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallComboFullController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaywallLifetimeController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallLifetimeController) instead")
+    static func paywallLifetimeController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallLifetimeController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PaywallYearController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallYearController) instead")
     static func paywallYearController(_: Void = ()) -> UIKit.UINib {
@@ -2872,14 +2890,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.subcribeController) instead")
     static func subcribeController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.subcribeController)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "SubscribePopupController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.subscribePopupController) instead")
-    static func subscribePopupController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.subscribePopupController)
     }
     #endif
 
@@ -3203,6 +3213,14 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingWelcomeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func paywallComboFullController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallComboFullController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func paywallLifetimeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallLifetimeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func paywallYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.paywallYearController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -3277,10 +3295,6 @@ struct R: Rswift.Validatable {
 
     static func subcribeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.subcribeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func subscribePopupController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.subscribePopupController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func subscribeYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -11039,6 +11053,8 @@ struct _R: Rswift.Validatable {
       try _LoginController.validate()
       try _MenuAccauntInfoTableViewCell.validate()
       try _OnboardingWelcomeController.validate()
+      try _PaywallComboFullController.validate()
+      try _PaywallLifetimeController.validate()
       try _PaywallYearController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
@@ -11055,7 +11071,6 @@ struct _R: Rswift.Validatable {
       try _ScheduleSettingsController.validate()
       try _SplashController.validate()
       try _SubcribeController.validate()
-      try _SubscribePopupController.validate()
       try _SubscribeYearController.validate()
       try _WishListController.validate()
     }
@@ -12348,6 +12363,43 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _PaywallComboFullController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaywallComboFullController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'PaywallComboFullController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallComboFullController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PaywallLifetimeController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaywallLifetimeController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "sub_lifetime_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_lifetime_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PaywallYearController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PaywallYearController"
@@ -12673,25 +12725,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "sub_active_check_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_active_check_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_back_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_close_ic' is used in nib 'SubcribeController', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _SubscribePopupController: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "SubscribePopupController"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'SubscribePopupController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
