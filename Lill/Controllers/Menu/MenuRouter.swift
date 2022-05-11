@@ -51,8 +51,8 @@ class MenuRouter: BaseRouter {
         present(controller: controller, presentStyle: .overFullScreen)
     }
     
-    func presentSubscribePopup(id: Set<String>, controller: String) {
-        let controller = SubscribePopupController(id: id, controller: controller)
+    func presentLifetimePayWall(controller: String) {
+        let controller = PaywallLifetimeController(controller: controller)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)

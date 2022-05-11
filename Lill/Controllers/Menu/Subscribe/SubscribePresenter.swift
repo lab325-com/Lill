@@ -39,7 +39,7 @@ protocol SubscribePresenterProtocol: AnyObject {
 
 class SubscribePresenter: SubscribePresenterProtocol {
     private weak var view: SubscribeOutputProtocol?
-   
+    
     var paymentsInfo = [PaymentsModel]()
     
     required init(view: SubscribeOutputProtocol) {
@@ -151,7 +151,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                     restoreCompletion(false)
                 }
                 print("Restore Success: \(results.restoredPurchases)")
-               
+                
                 
             }
             else {
@@ -172,7 +172,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 self?.view?.stopLoading()
                 return
             }
-                        
+            
             for product in results.retrievedProducts {
                 if let priceString = product.localizedPrice,
                    let number = product.productIdentifier == SubscribeType.lifetimeProduct.rawValue ? 0 : product.subscriptionPeriod?.numberOfUnits,

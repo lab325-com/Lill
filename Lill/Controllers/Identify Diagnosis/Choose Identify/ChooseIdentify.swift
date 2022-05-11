@@ -116,9 +116,12 @@ class ChooseIdentify: BaseController {
             } else {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
                 } else {
-//                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
-                    MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
+                    
                 }
             }
         }
@@ -134,9 +137,12 @@ class ChooseIdentify: BaseController {
             } else {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
                 } else {
-//                    MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: ChooseIdentify.self))
-                    MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
+                    
                 }
             }
         }
@@ -147,17 +153,20 @@ class ChooseIdentify: BaseController {
             guard let `self` = self else { return }
             guard let meModel = KeychainService.standard.me else { return }
             
-            let currentController = RootRouter.sharedInstance.topViewController?.navigationController
+            let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
             
             if meModel.access.isPremium {
                 self.delegate?.didPressedAddUniquePlant()
             } else {
                 if meModel.totalGardenPlants > 0 {
                     if StoreKitManager.sharedInstance.isYearly50() {
-                        MenuRouter(presenter: currentController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                        MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                    } else if StoreKitManager.sharedInstance.isCombo() {
+                        
                     } else {
-//                        MenuRouter(presenter: currentController).presentSubscription(controller: String(describing: ChooseIdentify.self))
-                        MenuRouter(presenter: currentController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: ChooseIdentify.self))
+                        
                     }
                 } else {
                     self.delegate?.didPressedAddUniquePlant()

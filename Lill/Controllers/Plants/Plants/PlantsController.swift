@@ -224,9 +224,12 @@ class PlantsController: BaseController {
             if meModel.totalGardenPlants > 0 {
                 if StoreKitManager.sharedInstance.isYearly50() {
                     MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                } else if StoreKitManager.sharedInstance.isCombo() {
+                    
                 } else {
-//                    MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: PlantsController.self))
-                    MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: PlantsController.self))
+                    
                 }
             } else {
                 PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
