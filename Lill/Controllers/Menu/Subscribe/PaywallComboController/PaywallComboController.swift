@@ -1,6 +1,11 @@
 
 import UIKit
 
+fileprivate let kLifetime50 = "com.lill.subscription.lifetime.50"
+fileprivate let kYearly50 = "com.lill.subscription.yearly.50"
+fileprivate let kYearly = "com.lill.subscription.yearly"
+fileprivate let kWeekly = "com.lill.subscription.weekly"
+
 class PaywallComboController: BaseController {
     
     //----------------------------------------------
@@ -15,7 +20,9 @@ class PaywallComboController: BaseController {
     @IBOutlet weak var firstSubView: UIView!
     @IBOutlet weak var secondSubView: UIView!
     @IBOutlet weak var thirdSubView: UIView!
+    @IBOutlet weak var lineView: UIView!
     
+    @IBOutlet weak var bestChoiseImage: UIImageView!
     @IBOutlet weak var saveOffLabel: UILabel!
     @IBOutlet weak var firstSubNameLabel: UILabel!
     @IBOutlet weak var firstSubDiscountPriceLabel: UILabel!
@@ -41,18 +48,21 @@ class PaywallComboController: BaseController {
     //----------------------------------------------
     
     private lazy var presenter = SubscribePresenter(view: self)
+    private var id: Set<String> = []
     
     //----------------------------------------------
     // MARK: - Public property
     //----------------------------------------------
     
     var controller: String
+    var popupType: PopupType
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(controller: String) {
+    init(popupType: PopupType ,controller: String) {
+        self.popupType = popupType
         self.controller = controller
         super.init(nibName: nil, bundle: nil)
     }
@@ -76,6 +86,20 @@ class PaywallComboController: BaseController {
     //----------------------------------------------
     
     func setup() {
+        thirdSubView.isHidden = self.popupType == .pop2 ? true : false
+        
+        firstSubDiscountPriceLabel.alpha = 0.0
+        firstSubCurrentPriceLabel.alpha = 0.0
+        secondSubPriceLabel.alpha = 0.0
+        thirdSubPriceLabel.alpha = 0.0
+        lineView.alpha = 0.0
+        
+        switch PreferencesManager.sharedManager.languageCode {
+        case .english: bestChoiseImage.image = UIImage(named: "best_choice_en_ic")
+        case .spanish: bestChoiseImage.image = UIImage(named: "best_choice_es_ic")
+        case .russian: bestChoiseImage.image = UIImage(named: "best_choice_ru_ic")
+        }
+        
         firstSubView.layer.borderWidth = 2.0
         firstSubView.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
         
@@ -90,6 +114,21 @@ class PaywallComboController: BaseController {
         
         thirdSubSubscribeButton.layer.borderWidth = 1.0
         thirdSubSubscribeButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
+        
+        becomePremiumLabel.text = RLocalization.subscribe_year_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        unlimitedLabel.text = RLocalization.subscribe_year_unlimited.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        planIdentifierLabel.text = RLocalization.subscribe_year_plant_identification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        selectPlanLabel.text = RLocalization.subscribe_select_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        firstSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        secondSubNameLabel.text = popupType == .pop2 ? "1 Year" : "1 Week"
+        thirdSubNameLabel.text = "Lifetime"
+        
+        let popup2ids = [kLifetime50, kYearly]
+        let popup3ids = [kYearly50, kWeekly, kLifetime50]
+        
+        popupType == .pop2 ? id.formUnion(popup2ids) : id.formUnion(popup3ids)
+        
+        presenter.retriveProduct(id: id)
     }
     
     //----------------------------------------------
@@ -101,15 +140,36 @@ class PaywallComboController: BaseController {
     }
     
     @IBAction func firstSubSubscribeAction(_ sender: Any) {
-        
+        presenter.purchase(id: popupType == .pop2 ? kLifetime50 : kYearly50, controller: controller) { [weak self] result, error in
+            guard let `self` = self else { return }
+            if result {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.view.makeToast(error)
+            }
+        }
     }
     
     @IBAction func secondSubSubscribeAction(_ sender: Any) {
-        
+        presenter.purchase(id: popupType == .pop2 ? kYearly : kWeekly, controller: controller) { [weak self] result, error in
+            guard let `self` = self else { return }
+            if result {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.view.makeToast(error)
+            }
+        }
     }
     
     @IBAction func thirdSubSubscribeAction(_ sender: Any) {
-        
+        presenter.purchase(id: kLifetime50, controller: controller) { [weak self] result, error in
+            guard let `self` = self else { return }
+            if result {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.view.makeToast(error)
+            }
+        }
     }
     
     @IBAction func actionRestore(_ sender: UIButton) {
@@ -144,15 +204,23 @@ extension PaywallComboController: SubscribeOutputProtocol {
             guard let `self` = self else { return }
 
             self.activityIndicator.isHidden = true
-//            self.discountPriceLabel.alpha = 1.0
-//            self.currentPriceLabel.alpha = 1.0
-
-//            self.currentPriceLabel.text = self.presenter.paymentsInfo.first?.prettyPrice ?? ""
-
-//            if let paymentsInfo = self.presenter.paymentsInfo.first {
-//                self.currentPriceLabel.text = paymentsInfo.prettyPrice
-//                self.discountPriceLabel.text = String(format: "%.2f %@", (paymentsInfo.price * 2), paymentsInfo.currencySymbol ?? "")
-//            }
+            
+            self.firstSubDiscountPriceLabel.alpha = 1.0
+            self.firstSubCurrentPriceLabel.alpha = 1.0
+            self.secondSubPriceLabel.alpha = 1.0
+            self.thirdSubPriceLabel.alpha = 1.0
+            self.lineView.alpha = 1.0
+         
+            let symbol = String(format: "%@ ", self.presenter.paymentsInfo.first?.currencySymbol ?? "")
+            let currentPrice = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice ?? "" : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.prettyPrice ?? ""
+            let discountPrice = self.popupType == .pop2 ? "119,99" : "29,99"
+            let year = self.popupType == .pop2 ? "" : String(format: " / %@", RLocalization.subscribe_year.localized(PreferencesManager.sharedManager.languageCode.rawValue))
+            
+            self.firstSubCurrentPriceLabel.text = symbol + currentPrice + year
+            self.firstSubDiscountPriceLabel.text = symbol + discountPrice + year
+            
+            self.secondSubPriceLabel.text = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kYearly})?.prettyPrice : self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice
+            self.thirdSubPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice
         }
     }
     

@@ -704,7 +704,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 134 images.
+  /// This `R.image` struct is generated, and contains static references to 137 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -720,6 +720,12 @@ struct R: Rswift.Validatable {
     static let back_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "back_ic")
     /// Image `background_main`.
     static let background_main = Rswift.ImageResource(bundle: R.hostingBundle, name: "background_main")
+    /// Image `best_choice_en_ic`.
+    static let best_choice_en_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "best_choice_en_ic")
+    /// Image `best_choice_es_ic`.
+    static let best_choice_es_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "best_choice_es_ic")
+    /// Image `best_choice_ru_ic`.
+    static let best_choice_ru_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "best_choice_ru_ic")
     /// Image `ce90603745001e15f304bfaf33f3d09971a2d951`.
     static let ce90603745001e15f304bfaf33f3d09971a2d951 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ce90603745001e15f304bfaf33f3d09971a2d951")
     /// Image `choose_identify_add_unique_ic`.
@@ -1021,6 +1027,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "background_main", bundle: ..., traitCollection: ...)`
     static func background_main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.background_main, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "best_choice_en_ic", bundle: ..., traitCollection: ...)`
+    static func best_choice_en_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.best_choice_en_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "best_choice_es_ic", bundle: ..., traitCollection: ...)`
+    static func best_choice_es_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.best_choice_es_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "best_choice_ru_ic", bundle: ..., traitCollection: ...)`
+    static func best_choice_ru_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.best_choice_ru_ic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2070,8 +2097,8 @@ struct R: Rswift.Validatable {
     static let onboardingThreeController = _R.nib._OnboardingThreeController()
     /// Nib `OnboardingWelcomeController`.
     static let onboardingWelcomeController = _R.nib._OnboardingWelcomeController()
-    /// Nib `PaywallComboFullController`.
-    static let paywallComboFullController = _R.nib._PaywallComboFullController()
+    /// Nib `PaywallComboController`.
+    static let paywallComboController = _R.nib._PaywallComboController()
     /// Nib `PaywallLifetimeController`.
     static let paywallLifetimeController = _R.nib._PaywallLifetimeController()
     /// Nib `PaywallYearController`.
@@ -2726,10 +2753,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "PaywallComboFullController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallComboFullController) instead")
-    static func paywallComboFullController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.paywallComboFullController)
+    /// `UINib(name: "PaywallComboController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallComboController) instead")
+    static func paywallComboController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallComboController)
     }
     #endif
 
@@ -3213,8 +3240,8 @@ struct R: Rswift.Validatable {
       return R.nib.onboardingWelcomeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func paywallComboFullController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.paywallComboFullController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    static func paywallComboController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallComboController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func paywallLifetimeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -3421,7 +3448,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 396 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 398 localization keys.
     struct localizable {
       /// en translation: %#@VARIABLE@
       ///
@@ -4491,6 +4518,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_cell_plants_happy = Rswift.StringResource(key: "garden_cell_plants_happy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Plants, Identification and Diagnosis
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_year_plant_identification = Rswift.StringResource(key: "subscribe_year_plant_identification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Plants:
       ///
       /// Locales: en, es, ru
@@ -4659,6 +4690,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let identify_result_onboarding = Rswift.StringResource(key: "identify_result_onboarding", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Select your plan:
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_select_plan = Rswift.StringResource(key: "subscribe_select_plan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Send Report!
       ///
       /// Locales: en, es, ru
@@ -4891,6 +4926,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Year
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_year = Rswift.StringResource(key: "subscribe_year", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
       ///
       /// Locales: en, es, ru
@@ -4983,10 +5022,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_add_to_or = Rswift.StringResource(key: "garden_add_to_or", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: plant Identification and Diagnosis
-      ///
-      /// Locales: en, es, ru
-      static let subscribe_year_plant_identification = Rswift.StringResource(key: "subscribe_year_plant_identification", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: professional
       ///
       /// Locales: en, es, ru
@@ -9035,6 +9070,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_cell_plants_happy", bundle: bundle, comment: "")
       }
 
+      /// en translation: Plants, Identification and Diagnosis
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_year_plant_identification(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_year_plant_identification", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_year_plant_identification"
+        }
+
+        return NSLocalizedString("subscribe_year_plant_identification", bundle: bundle, comment: "")
+      }
+
       /// en translation: Plants:
       ///
       /// Locales: en, es, ru
@@ -9665,6 +9715,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("identify_result_onboarding", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select your plan:
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_select_plan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_select_plan", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_select_plan"
+        }
+
+        return NSLocalizedString("subscribe_select_plan", bundle: bundle, comment: "")
       }
 
       /// en translation: Send Report!
@@ -10537,6 +10602,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("allert_yes", bundle: bundle, comment: "")
       }
 
+      /// en translation: Year
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_year(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_year", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_year"
+        }
+
+        return NSLocalizedString("subscribe_year", bundle: bundle, comment: "")
+      }
+
       /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
       ///
       /// Locales: en, es, ru
@@ -10882,21 +10962,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_add_to_or", bundle: bundle, comment: "")
       }
 
-      /// en translation: plant Identification and Diagnosis
-      ///
-      /// Locales: en, es, ru
-      static func subscribe_year_plant_identification(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("subscribe_year_plant_identification", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscribe_year_plant_identification"
-        }
-
-        return NSLocalizedString("subscribe_year_plant_identification", bundle: bundle, comment: "")
-      }
-
       /// en translation: professional
       ///
       /// Locales: en, es, ru
@@ -11053,7 +11118,7 @@ struct _R: Rswift.Validatable {
       try _LoginController.validate()
       try _MenuAccauntInfoTableViewCell.validate()
       try _OnboardingWelcomeController.validate()
-      try _PaywallComboFullController.validate()
+      try _PaywallComboController.validate()
       try _PaywallLifetimeController.validate()
       try _PaywallYearController.validate()
       try _PlantCollectionCell.validate()
@@ -12363,17 +12428,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _PaywallComboFullController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _PaywallComboController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let name = "PaywallComboFullController"
+      let name = "PaywallComboController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'PaywallComboFullController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallComboFullController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "best_choice_en_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'best_choice_en_ic' is used in nib 'PaywallComboController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_back_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_back_ic' is used in nib 'PaywallComboController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallComboController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

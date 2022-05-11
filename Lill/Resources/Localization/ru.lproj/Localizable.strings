@@ -344,8 +344,10 @@
 "scheldure_today" = "Сегодня";
 "subscribe_lifetime" = "Тариф Вечность";
 "subscribe_month_one" = "1 месяц";
+"subscribe_select_plan" = "Выберите свой план:";
+"subscribe_year" = "Год";
 "subscribe_year_one" = "1 год";
-"subscribe_year_plant_identification" = "идентификация растений и их диагноз";
+"subscribe_year_plant_identification" = "Идентификация растений и их диагноз";
 "subscribe_year_premium" = "Получить премиум";
 "subscribe_year_save" = "Сэкономьте 50%";
 "subscribe_year_subscribe" = "Подписывайся";

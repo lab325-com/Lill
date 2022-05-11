@@ -199,9 +199,9 @@ extension PreferencesManager {
         }
     }
     
-    var currentPopUp: PopUpType? {
+    var currentPopUp: PopupType? {
         get {
-            return PopUpType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.currentPopUp) ?? "")
+            return PopupType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.currentPopUp) ?? "")
         }
         set {
             userDefaults.set(newValue?.rawValue, forKey: PreferencesManager.currentPopUp)

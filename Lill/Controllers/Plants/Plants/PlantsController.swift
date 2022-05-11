@@ -100,6 +100,10 @@ class PlantsController: BaseController {
             }
         }
         
+        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
+        }
+        
         presenter.checkRecepts { result in
             debugPrint("Sended recept to store: \(result)")
         }
