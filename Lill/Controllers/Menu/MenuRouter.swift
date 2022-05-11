@@ -57,4 +57,11 @@ class MenuRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)
     }
+    
+    func presentComboPaywall(controller: String) {
+        let controller = PaywallComboController(controller: controller)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
 }

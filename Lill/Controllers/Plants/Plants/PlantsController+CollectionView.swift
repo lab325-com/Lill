@@ -98,7 +98,8 @@ extension PlantsController: PlantCollectionDelegate {
         } else {
             if meModel.totalFavouritePlants > 4 && !isFavorite {
                 if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+//                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                    MenuRouter(presenter: navigationController).presentComboPaywall(controller: String(describing: PlantsController.self))
                 } else if StoreKitManager.sharedInstance.isLifeTime50() {
                     MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
                 } else if StoreKitManager.sharedInstance.isCombo() {
