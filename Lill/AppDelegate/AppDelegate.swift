@@ -239,6 +239,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         PreferencesManager.sharedManager.isShowFirstOnboarding = isShowFirstOnboarding
                     }
                     
+                    PreferencesManager.sharedManager.currentPopUp = RemoteConfigParameters.currentPopUp.value as? PopUpType
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         NotificationCenter.default.post(name: Constants.Notifications.endRemoteConfigEndNotification,
                                                         object: self,

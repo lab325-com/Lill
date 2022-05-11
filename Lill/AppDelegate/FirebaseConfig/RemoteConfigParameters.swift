@@ -8,8 +8,14 @@
 import Foundation
 import Firebase
 
+enum PopUpType: String, Codable {
+    case pop3
+    case pop2
+}
+
 enum RemoteConfigParameters: String, CaseIterable {
     case isShowFirstOnboarding = "isShowFirstOnboarding"
+    case currentPopUp = "currentPopUp"
 }
 
 extension RemoteConfigParameters {
@@ -18,6 +24,8 @@ extension RemoteConfigParameters {
         switch self {
         case .isShowFirstOnboarding:
             return try? self.toCodable().get() as Bool
+        case .currentPopUp:
+            return PopUpType(rawValue: RemoteConfig.remoteConfig().configValue(forKey: self.rawValue).stringValue ?? "")
         }
     }
 
