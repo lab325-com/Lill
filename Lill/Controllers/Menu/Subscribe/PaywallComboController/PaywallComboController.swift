@@ -120,8 +120,8 @@ class PaywallComboController: BaseController {
         planIdentifierLabel.text = RLocalization.subscribe_year_plant_identification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         selectPlanLabel.text = RLocalization.subscribe_select_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         firstSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        secondSubNameLabel.text = popupType == .pop2 ? "1 Year" : "1 Week"
-        thirdSubNameLabel.text = "Lifetime"
+        secondSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_week_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        thirdSubNameLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         let popup2ids = [kLifetime50, kYearly]
         let popup3ids = [kYearly50, kWeekly, kLifetime50]
