@@ -150,6 +150,9 @@ enum FirebaseEvents: String {
     
     /// GardenPlantCaresEdit (edit_cares)
     case add_care = "add_care"
+    
+    case quiz_gardener_level = "quiz_gardener_level"
+    case quiz_gardener_plants = "quiz_gardener_plants"
 }
 
 enum AppsFlyerEvents: String {

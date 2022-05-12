@@ -194,7 +194,7 @@ class PlantsDetailController: BaseController {
             AnalyticsHelper.sendFirebaseEvents(events: .add_to_fav)
         }
         
-        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
+        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 4 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
             MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
         } else {
             presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)

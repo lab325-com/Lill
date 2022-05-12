@@ -61,7 +61,7 @@ extension RecognizeArchiveController: PlantCollectionDelegate {
     }
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
-        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
+        if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 4 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
             MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
         } else {
             presenter.setFavoritePlant(id: id, isFavorite: isFavorite)

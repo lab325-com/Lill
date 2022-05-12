@@ -64,12 +64,15 @@ class DiseaseArchiveViewController: BaseController {
         guard let meModel = KeychainService.standard.me else { return }
         if meModel.access.isPremium {
             PlantsRouter(presenter: navigationController).presentDiagnosis()
-        } else {
+        } else {            
             if StoreKitManager.sharedInstance.isYearly50() {
                 MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: DiseaseArchiveViewController.self))
+            } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: DiseaseArchiveViewController.self))
+            } else if StoreKitManager.sharedInstance.isCombo() {
+                
             } else {
-//                MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: DiseaseArchiveViewController.self))
-                MenuRouter(presenter: navigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: DiseaseArchiveViewController.self))
+                
             }
         }
     }

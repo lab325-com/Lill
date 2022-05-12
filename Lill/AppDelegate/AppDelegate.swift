@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         checkingPurchase()
         forceUpdate()
+        loadConfig()
         
         SwiftyStoreKit.shouldAddStorePaymentHandler = { (_ payment: SKPayment, _ product: SKProduct) in
             if let controller = RootRouter.sharedInstance.topViewController as? BaseController {
@@ -223,6 +224,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppsFlyerLib.shared().handlePushNotification(userInfo)
     }
+    
+    private func loadConfig() {
+        PreferencesManager.sharedManager.isLoadConfig = false
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let fetchDuration: TimeInterval = 43200 // 12 hours
+        remoteConfig.fetch(withExpirationDuration: fetchDuration) { (result, error) in
+            remoteConfig.activate() { (changed, error) in
+                DispatchQueue.main.async { [weak self] in
+                    PreferencesManager.sharedManager.isLoadConfig = true
+                    
+                    if let isShowFirstOnboarding = RemoteConfigParameters.isShowFirstOnboarding.value as? Bool {
+                        PreferencesManager.sharedManager.isShowFirstOnboarding = isShowFirstOnboarding
+                    }
+                    
+                    PreferencesManager.sharedManager.currentPopUp = RemoteConfigParameters.currentPopUp.value as? PopupType
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        NotificationCenter.default.post(name: Constants.Notifications.endRemoteConfigEndNotification,
+                                                        object: self,
+                                                        userInfo: nil)
+                    }
+                }
+            }
+        }
+    }
 }
 
 //----------------------------------------------
@@ -277,18 +304,31 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID from userNotificationCenter didReceive: \(messageID)")
         }
         
+        guard let meModel = KeychainService.standard.me else { return }
+        
         let controller = RootRouter.sharedInstance.topViewController as? BaseController
         
-        if var subscription = userInfo["Subscription"] as? String {
-            if subscription == "All" {
-                MenuRouter(presenter: controller?.navigationController).presentSubscription(controller: "Push")
-            } else if subscription.contains(".immediately") {
-                if let range = subscription.range(of: ".immediately") {
-                    subscription.removeSubrange(range)
+        if !meModel.access.isPremium {
+            if var subscription = userInfo["Subscription"] as? String {
+                if subscription == "All" {
+                    MenuRouter(presenter: controller?.navigationController).presentSubscription(controller: "Push")
+                } else if subscription.contains(".immediately") {
+                    if let range = subscription.range(of: ".immediately") {
+                        subscription.removeSubrange(range)
+                    }
+                    purchase(id: subscription, controller: "Push")
+                } else {
+//                    MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
+                    if StoreKitManager.sharedInstance.isYearly50() {
+                        MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                        MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
+                    } else if StoreKitManager.sharedInstance.isCombo() {
+                        
+                    } else {
+                        
+                    }
                 }
-                purchase(id: subscription, controller: "Push")
-            } else {
-                MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
             }
         }
         

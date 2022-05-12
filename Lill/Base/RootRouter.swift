@@ -77,4 +77,13 @@ extension RootRouter {
                                                       animated: true,
                                                       completion: nil)
     }
+    
+    func loadQuiz(toWindow window: UIWindow) {
+        let viewController = QuizGardenerLevelController()
+        let navigationController = NavigationController(rootViewController: viewController)
+        UIApplication.shared.switchRootViewController(window: window,
+                                                      rootViewController: navigationController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
 }

@@ -42,9 +42,14 @@ class MenuController: BaseController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?){
         if motion == .motionShake {
-            let alert = UIAlertController(title: "Push Token", message: PreferencesManager.sharedManager.fcmToken, preferredStyle: .alert)
+            guard let pushToken = PreferencesManager.sharedManager.fcmToken,
+                  let userId = KeychainService.standard.me?.id,
+                  let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                  let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else { return }
+            let message = "Push token: \(pushToken)\n\nUser ID: \(userId)\n\nApp verion: \(version) (\(build))"
+            let alert = UIAlertController(title: "User info", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { action in
-                UIPasteboard.general.string = PreferencesManager.sharedManager.fcmToken
+                UIPasteboard.general.string = message
             }))
             self.present(alert, animated: true, completion: nil)
         }

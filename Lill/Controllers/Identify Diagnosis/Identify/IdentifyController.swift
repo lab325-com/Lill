@@ -254,9 +254,12 @@ class IdentifyController: BaseController {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
             if StoreKitManager.sharedInstance.isYearly50() {
                 MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
+            } else if StoreKitManager.sharedInstance.isLifeTime50() {
+                MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: IdentifyController.self))
+            } else if StoreKitManager.sharedInstance.isCombo() {
+                
             } else {
-//                MenuRouter(presenter: currentNavigationController).presentSubscription(controller: String(describing: IdentifyController.self))
-                MenuRouter(presenter: currentNavigationController).presentSubscribePopup(id: ["com.lill.subscription.lifetime.50"], controller: String(describing: IdentifyController.self))
+                
             }
         }
     }

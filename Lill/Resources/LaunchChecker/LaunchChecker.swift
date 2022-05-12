@@ -18,7 +18,7 @@ final class LaunchChecker <Entity> {
     func isFirstLaunch() -> Bool {
         if !wasLaunchedBefore {
             defaults.set(true, forKey: entityName)
-            return true
+            return !PreferencesManager.sharedManager.isShowFirstOnboarding
         }
         return false
     }

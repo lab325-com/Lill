@@ -15,6 +15,10 @@ class PreferencesManager : NSObject {
     static let firstPaywall = "firstPaywall"
     static let countInDatePaywall = "countInDatePaywall"
     
+    static let isLoadConfig = "isLoadConfig"
+    static let isShowFirstOnboarding = "isShowFirstOnboarding"
+    static let currentPopUp = "currentPopUp"
+    
     var userDefaults: UserDefaults
     
     required override init() {
@@ -167,5 +171,41 @@ class PreferencesManager : NSObject {
         PreferencesManager.sharedManager.firstPaywall = false
         PreferencesManager.sharedManager.countInDatePaywall = nil
         PreferencesManager.sharedManager.datePaywall = nil
+    }
+}
+
+//----------------------------------------------
+// MARK: - Firebase config
+//----------------------------------------------
+
+extension PreferencesManager {
+    var isLoadConfig: Bool {
+        get {
+            return userDefaults.bool(forKey: PreferencesManager.isLoadConfig)
+        }
+        set {
+            userDefaults.set(newValue, forKey: PreferencesManager.isLoadConfig)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var isShowFirstOnboarding: Bool {
+        get {
+            return userDefaults.bool(forKey: PreferencesManager.isShowFirstOnboarding)
+        }
+        set {
+            userDefaults.set(newValue, forKey: PreferencesManager.isShowFirstOnboarding)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var currentPopUp: PopupType? {
+        get {
+            return PopupType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.currentPopUp) ?? "")
+        }
+        set {
+            userDefaults.set(newValue?.rawValue, forKey: PreferencesManager.currentPopUp)
+            userDefaults.synchronize()
+        }
     }
 }
