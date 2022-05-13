@@ -3448,7 +3448,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 399 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 402 localization keys.
     struct localizable {
       /// en translation: %#@VARIABLE@
       ///
@@ -4590,6 +4590,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let pop_done_specific_care_record_care = Rswift.StringResource(key: "pop_done_specific_care_record_care", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Recuring weekly billing
+      ///
+      /// Locales: en, es, ru
+      static let subscription_recurring_weekly = Rswift.StringResource(key: "subscription_recurring_weekly", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Recurring monthly billing
       ///
       /// Locales: en, es, ru
@@ -4930,10 +4934,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let allert_yes = Rswift.StringResource(key: "allert_yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: Year
-      ///
-      /// Locales: en, es, ru
-      static let subscribe_year = Rswift.StringResource(key: "subscribe_year", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
       ///
       /// Locales: en, es, ru
@@ -5017,6 +5017,10 @@ struct R: Rswift.Validatable {
       /// en translation: month
       ///
       /// Locales: en, es, ru
+      static let subscribe_month = Rswift.StringResource(key: "subscribe_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: month
+      ///
+      /// Locales: en, es, ru
       static let subscription_month = Rswift.StringResource(key: "subscription_month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: months
       ///
@@ -5042,10 +5046,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garden_hiistory_view_all = Rswift.StringResource(key: "garden_hiistory_view_all", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: week
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_week = Rswift.StringResource(key: "subscribe_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: weeks
       ///
       /// Locales: en, es, ru
       static let period_type_week = Rswift.StringResource(key: "period_type_week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: year
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_year = Rswift.StringResource(key: "subscribe_year", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
 
       /// en translation: %#@VARIABLE@
       ///
@@ -9346,6 +9358,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("pop_done_specific_care_record_care", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recuring weekly billing
+      ///
+      /// Locales: en, es, ru
+      static func subscription_recurring_weekly(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscription_recurring_weekly", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscription_recurring_weekly"
+        }
+
+        return NSLocalizedString("subscription_recurring_weekly", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recurring monthly billing
       ///
       /// Locales: en, es, ru
@@ -10621,21 +10648,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("allert_yes", bundle: bundle, comment: "")
       }
 
-      /// en translation: Year
-      ///
-      /// Locales: en, es, ru
-      static func subscribe_year(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("subscribe_year", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscribe_year"
-        }
-
-        return NSLocalizedString("subscribe_year", bundle: bundle, comment: "")
-      }
-
       /// en translation: You can cancel your subscription of free trial anytime by cancelling your subscription through your iTunes account settings, or it will automatically renew. This must be done in 24 hours before the end of the free trial or any subscription period to avoid being charged. Subscription with a free trial period will automatically renew to a paid subscription. Please note: any unused portion of a free trial period (if offered) will be forfeited when you purchase a premium subscription during the free trial period. Subscription payments will be charged to your iTunes account at confirmation of your purchase and upon commencement of each renewal term. For more information, please see our Terms of Use and Privacy Policy.
       ///
       /// Locales: en, es, ru
@@ -10939,6 +10951,21 @@ struct R: Rswift.Validatable {
       /// en translation: month
       ///
       /// Locales: en, es, ru
+      static func subscribe_month(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_month", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_month"
+        }
+
+        return NSLocalizedString("subscribe_month", bundle: bundle, comment: "")
+      }
+
+      /// en translation: month
+      ///
+      /// Locales: en, es, ru
       static func subscription_month(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("subscription_month", bundle: hostingBundle, comment: "")
@@ -11041,6 +11068,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("garden_hiistory_view_all", bundle: bundle, comment: "")
       }
 
+      /// en translation: week
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_week(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_week", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_week"
+        }
+
+        return NSLocalizedString("subscribe_week", bundle: bundle, comment: "")
+      }
+
       /// en translation: weeks
       ///
       /// Locales: en, es, ru
@@ -11054,6 +11096,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("period_type_week", bundle: bundle, comment: "")
+      }
+
+      /// en translation: year
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_year(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_year", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_year"
+        }
+
+        return NSLocalizedString("subscribe_year", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

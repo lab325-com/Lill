@@ -343,10 +343,12 @@
 "scheldure_title" = "Schedule";
 "scheldure_today" = "Today";
 "subscribe_lifetime" = "Lifetime";
+"subscribe_month" = "month";
 "subscribe_month_one" = "1 Month";
 "subscribe_select_plan" = "Select your plan:";
+"subscribe_week" = "week";
 "subscribe_week_one" = "1 Week";
-"subscribe_year" = "Year";
+"subscribe_year" = "year";
 "subscribe_year_one" = "1 Year";
 "subscribe_year_plant_identification" = "Plants, Identification\nand Diagnosis";
 "subscribe_year_premium" = "Become a Premium";
@@ -360,6 +362,7 @@
 "subscription_one_time" = "One-time payment";
 "subscription_privacy" = "Privacy policy";
 "subscription_recurring_mounthly" = "Recurring monthly billing";
+"subscription_recurring_weekly" = "Recuring weekly billing";
 "subscription_recurring_yearly" = "Recurring yearly billing";
 "subscription_restore" = "Restore Purchases";
 "subscription_save_50" = "Save 50% Off";

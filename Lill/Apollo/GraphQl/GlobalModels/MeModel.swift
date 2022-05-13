@@ -16,6 +16,7 @@ struct MeModel: Codable {
     let totalGardens: Int
     let totalFavouritePlants: Int
     let totalGardenPlants: Int
+    let totalUniquePlants: Int
     
     mutating func changeNotification(notification: NotificationSettings?) {
         self.notificationSettings = notification
@@ -40,6 +41,7 @@ struct MeModel: Codable {
         case totalGardens = "totalGardens"
         case totalFavouritePlants = "totalFavouritePlants"
         case totalGardenPlants = "totalGardenPlants"
+        case totalUniquePlants = "totalUniquePlants"
     }
 }
 
@@ -54,14 +56,16 @@ struct NotificationSettings: Codable {
     let todayListSendAt: String
 }
 
-
-struct NotificationsHours:  Codable {
+struct NotificationsHours: Codable {
     let hours: Int
     let minutes: Int?
     let seconds: Int?
 }
 
 struct SalesModel: Codable {
-    let id: String
-    let name: String
+    let sale: SaleType
+    let condition: String
+    let value: Int
 }
+
+extension SaleType: Codable { }

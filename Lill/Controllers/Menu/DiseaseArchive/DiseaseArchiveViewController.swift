@@ -64,15 +64,24 @@ class DiseaseArchiveViewController: BaseController {
         guard let meModel = KeychainService.standard.me else { return }
         if meModel.access.isPremium {
             PlantsRouter(presenter: navigationController).presentDiagnosis()
-        } else {            
-            if StoreKitManager.sharedInstance.isYearly50() {
-                MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: DiseaseArchiveViewController.self))
-            } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: DiseaseArchiveViewController.self))
-            } else if StoreKitManager.sharedInstance.isCombo() {
-                
-            } else {
-                
+        } else {
+            if let model = StoreKitManager.sharedInstance.checkSaleType(type: .diagnosis) {
+                if let total = meModel.access.diagnosisTotal, total >= model.value {
+                    switch model.sale {
+                    case .saleTypeLifetime_50:
+                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: DiseaseArchiveViewController.self))
+                    case .saleTypeYearly_50:
+                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: DiseaseArchiveViewController.self))
+                    case .saleTypeCombo, .saleTypeComboFull:
+                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: DiseaseArchiveViewController.self))
+                        }
+                    default:
+                        return
+                    }
+                } else {
+                    PlantsRouter(presenter: navigationController).presentDiagnosis()
+                }
             }
         }
     }
