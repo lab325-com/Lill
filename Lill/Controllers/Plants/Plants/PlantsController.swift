@@ -100,7 +100,7 @@ class PlantsController: BaseController {
             }
         }
         
-        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp, KeychainService.standard.me?.access.isPremium == false {
             MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
         }
         
