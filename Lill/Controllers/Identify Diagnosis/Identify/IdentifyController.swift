@@ -249,21 +249,6 @@ class IdentifyController: BaseController {
         }
     }
     
-    @IBAction func subscribeAction(_ sender: Any) {
-        dismiss(animated: false) {
-            let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            if StoreKitManager.sharedInstance.isYearly50() {
-                MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
-            } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: IdentifyController.self))
-            } else if StoreKitManager.sharedInstance.isCombo() {
-                
-            } else {
-                
-            }
-        }
-    }
-    
     @IBAction func identifyAction(_ sender: Any) {
         
         AnalyticsHelper.sendFirebaseEvents(events: .identifying)

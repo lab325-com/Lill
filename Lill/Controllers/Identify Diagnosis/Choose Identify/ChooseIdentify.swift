@@ -105,23 +105,27 @@ class ChooseIdentify: BaseController {
         
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
-            
-            guard let total = meModel.access.identifyTotal else {
-                PlantsRouter(presenter: currentNavigationController).presentIdentify()
-                return
-            }
-            
-            if meModel.access.identifyUsed < total {
+
+            if meModel.access.isPremium {
                 PlantsRouter(presenter: currentNavigationController).presentIdentify()
             } else {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
-                } else {
-                    
+                if let model = StoreKitManager.sharedInstance.checkSaleType(type: .identify) {
+                    if let total = meModel.access.identifyTotal, total >= model.value {
+                        switch model.sale {
+                        case .saleTypeLifetime_50:
+                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeYearly_50:
+                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeCombo, .saleTypeComboFull:
+                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
+                            }
+                        default:
+                            return
+                        }
+                    } else {
+                        PlantsRouter(presenter: currentNavigationController).presentIdentify()
+                    }
                 }
             }
         }
@@ -129,20 +133,32 @@ class ChooseIdentify: BaseController {
     
     @IBAction func diagnosisAction(_ sender: Any) {
         AnalyticsHelper.sendFirebaseEvents(events: .diagnose)
+        
         guard let meModel = KeychainService.standard.me else { return }
+        
         dismiss(animated: false) {
             let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
+            
             if meModel.access.isPremium {
                 PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
             } else {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
-                } else {
-                    
+                if let model = StoreKitManager.sharedInstance.checkSaleType(type: .diagnosis) {
+                    if let total = meModel.access.diagnosisTotal, total >= model.value {
+                        switch model.sale {
+                        case .saleTypeLifetime_50:
+                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeYearly_50:
+                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeCombo, .saleTypeComboFull:
+                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
+                            }
+                        default:
+                            return
+                        }
+                    } else {
+                        PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
+                    }
                 }
             }
         }
@@ -158,18 +174,23 @@ class ChooseIdentify: BaseController {
             if meModel.access.isPremium {
                 self.delegate?.didPressedAddUniquePlant()
             } else {
-                if meModel.totalGardenPlants > 0 {
-                    if StoreKitManager.sharedInstance.isYearly50() {
-                        MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                        MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                    } else if StoreKitManager.sharedInstance.isCombo() {
-                        
+                if let model = StoreKitManager.sharedInstance.checkSaleType(type: .unique) {
+                    if meModel.totalUniquePlants >= model.value {
+                        switch model.sale {
+                        case .saleTypeLifetime_50:
+                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeYearly_50:
+                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeCombo, .saleTypeComboFull:
+                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
+                            }
+                        default:
+                            return
+                        }
                     } else {
-                        
+                        self.delegate?.didPressedAddUniquePlant()
                     }
-                } else {
-                    self.delegate?.didPressedAddUniquePlant()
                 }
             }
         }

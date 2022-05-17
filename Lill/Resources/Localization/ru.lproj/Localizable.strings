@@ -343,10 +343,12 @@
 "scheldure_title" = "Расписание";
 "scheldure_today" = "Сегодня";
 "subscribe_lifetime" = "Тариф Вечность";
+"subscribe_month" = "месяц";
 "subscribe_month_one" = "1 месяц";
 "subscribe_select_plan" = "Выберите свой план:";
+"subscribe_week" = "неделю";
 "subscribe_week_one" = "1 неделя";
-"subscribe_year" = "Год";
+"subscribe_year" = "год";
 "subscribe_year_one" = "1 год";
 "subscribe_year_plant_identification" = "Идентификация растений и их диагноз";
 "subscribe_year_premium" = "Получить премиум";
@@ -360,6 +362,7 @@
 "subscription_one_time" = "Одноразовый платеж";
 "subscription_privacy" = "Политика\nконфиденциальности";
 "subscription_recurring_mounthly" = "Ежемесячное выставление счетов";
+"subscription_recurring_weekly" = "Eженедельное выставление счетов";
 "subscription_recurring_yearly" = "Ежегодное выставление счетов";
 "subscription_restore" = "Восстановить покупки";
 "subscription_save_50" = "Сэкономьте 50%";

@@ -312,16 +312,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                         subscription.removeSubrange(range)
                     }
                     purchase(id: subscription, controller: "Push")
-                } else {
-                    //                    MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
-                    if StoreKitManager.sharedInstance.isYearly50() {
-                        MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
-                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                        MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
-                    } else if StoreKitManager.sharedInstance.isCombo() {
-                        
-                    } else {
-                        
+                } else if subscription.contains(SubscribeType.lifetime50Product.rawValue) {
+                    MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
+                } else if subscription.contains(SubscribeType.year50Product.rawValue) {
+                    MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+                } else if subscription.contains("combo") {
+                    if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                        MenuRouter(presenter: controller?.navigationController).presentComboPaywall(popupType: currentPopUp, controller: "Push")
                     }
                 }
             }

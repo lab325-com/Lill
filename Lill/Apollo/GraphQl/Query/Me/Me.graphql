@@ -60,11 +60,13 @@ query Me {
 			}
 		}
         Sales {
-            id
-            name
+			sale
+			condition
+			value
         }
 		totalGardens
 		totalFavouritePlants
 		totalGardenPlants
+		totalUniquePlants
 	}
 }
