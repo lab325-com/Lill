@@ -26,30 +26,35 @@ public func preciseRound(
 }
 
 enum SubscribeType: String, CaseIterable {
-    case lifetimeProduct = "com.lill.subscription.lifetime.50"
+    case lifetime50Product = "com.lill.subscription.lifetime.50"
+    case year50Product = "com.lill.subscription.yearly.50"
     case yearProduct = "com.lill.subscription.yearly"
     case monthProduct = "com.lill.subscription.monthly"
+    case weekProduct = "com.lill.subscription.weekly"
     
     func priceLabel(sub: PaymentsModel) -> String {
-//        switch self {
-//        case .lifetimeProduct:
-//            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
-//        case .yearProduct:
-//            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
-//        case .monthProduct:
-//            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
-//        }
-        return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
+        switch self {
+        case .lifetime50Product:
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f", sub.price))"
+        case .year50Product, .yearProduct:
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f/%@", sub.price, RLocalization.subscribe_year.localized(PreferencesManager.sharedManager.languageCode.rawValue)))"
+        case .monthProduct:
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f/%@", sub.price, RLocalization.subscribe_month.localized(PreferencesManager.sharedManager.languageCode.rawValue)))"
+        case .weekProduct:
+            return "\(sub.currencySymbol ?? "$") \(String(format: "%.2f/%@", sub.price, RLocalization.subscribe_week.localized(PreferencesManager.sharedManager.languageCode.rawValue)))"
+        }
     }
     
     func infoLabel(sub: PaymentsModel) -> String {
         switch self {
-        case .lifetimeProduct:
+        case .lifetime50Product:
             return RLocalization.subscription_one_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        case .yearProduct:
+        case .year50Product, .yearProduct:
             return RLocalization.subscription_recurring_yearly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         case .monthProduct:
             return RLocalization.subscription_recurring_mounthly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        case .weekProduct:
+            return RLocalization.subscription_recurring_weekly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
     }
 }
@@ -65,6 +70,7 @@ class SubcribeController: BaseController {
     @IBOutlet weak var lifetimeView: ShadowView!
     @IBOutlet weak var yearView: ShadowView!
     @IBOutlet weak var mounthView: ShadowView!
+    @IBOutlet weak var weekView: ShadowView!
     
     @IBOutlet weak var paywallTitleLabel: UILabel!
     @IBOutlet weak var paywallSubLabel: UILabel!
@@ -91,6 +97,13 @@ class SubcribeController: BaseController {
     @IBOutlet weak var monthUnsubscribeView: UIView!
     @IBOutlet weak var monthActiveView: UIView!
     
+    @IBOutlet weak var weekTitleLabel: UILabel!
+    @IBOutlet weak var weekPriceLabel: UILabel!
+    @IBOutlet weak var weekInfoLabel: UILabel!
+    @IBOutlet weak var weekSubscribeButton: UIButton!
+    @IBOutlet weak var weekUnsubscribeView: UIView!
+    @IBOutlet weak var weekActiveView: UIView!
+    
     @IBOutlet weak var cancelAnyTimeLabel: UILabel!
     @IBOutlet weak var restoreButton: UIButton!
     
@@ -109,9 +122,11 @@ class SubcribeController: BaseController {
     //----------------------------------------------
     
     private lazy var presenter = SubscribePresenter(view: self)
-    private var lifetimeSub = SubscribeType.lifetimeProduct
+    private var lifetime50Sub = SubscribeType.lifetime50Product
+    private var year50Sub = SubscribeType.year50Product
     private var yearSub = SubscribeType.yearProduct
     private var mounthSub = SubscribeType.monthProduct
+    private var weekSub = SubscribeType.weekProduct
     var controller: String
     
     private let yourAttributes: [NSAttributedString.Key: Any] = [
@@ -169,11 +184,19 @@ class SubcribeController: BaseController {
             attributes: yourAttributes
         )
         restoreButton.setAttributedTitle(attributeString, for: .normal)
+        
+        lifetimeTitleLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        lifetimeSaveLabel.text = RLocalization.subscription_save_50.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        lifetimeSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
     
-        yearSaveLabel.text = RLocalization.subscription_save_50.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        yearTitleLabel.text = RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         yearSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
+        monthTitleLabel.text = RLocalization.subscribe_month_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         monthSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        
+        weekTitleLabel.text = RLocalization.subscribe_week_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        weekSubscribeButton.setTitle(RLocalization.subscription_subscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         
         cancelAnyTimeLabel.text = RLocalization.subscription_cancel_any_time.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
@@ -188,7 +211,7 @@ class SubcribeController: BaseController {
     }
     
     private func retriveProduct() {
-        presenter.retriveProduct(id: [SubscribeType.lifetimeProduct.rawValue, SubscribeType.yearProduct.rawValue, SubscribeType.monthProduct.rawValue])
+        presenter.retriveProduct(id: [SubscribeType.lifetime50Product.rawValue, SubscribeType.yearProduct.rawValue, SubscribeType.monthProduct.rawValue, SubscribeType.weekProduct.rawValue])
     }
     
     private func checkSubscribeUI() {
@@ -208,9 +231,9 @@ class SubcribeController: BaseController {
     }
     
     private func updatePrices() {
-        if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.lifetimeSub.rawValue}) {
-            self.lifetimePriceLabel.text = SubscribeType.lifetimeProduct.priceLabel(sub: sub)
-            self.lifetimeInfoLabel.text = SubscribeType.lifetimeProduct.infoLabel(sub: sub)
+        if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.lifetime50Sub.rawValue}) {
+            self.lifetimePriceLabel.text = SubscribeType.lifetime50Product.priceLabel(sub: sub)
+            self.lifetimeInfoLabel.text = SubscribeType.lifetime50Product.infoLabel(sub: sub)
         }
         
         if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.yearSub.rawValue}) {
@@ -221,6 +244,11 @@ class SubcribeController: BaseController {
         if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.mounthSub.rawValue}) {
             self.monthPriceLabel.text = SubscribeType.monthProduct.priceLabel(sub: sub)
             self.monthInfoLabel.text = SubscribeType.monthProduct.infoLabel(sub: sub)
+        }
+        
+        if let sub = self.presenter.paymentsInfo.first(where: {$0.product == self.weekSub.rawValue}) {
+            self.weekPriceLabel.text = SubscribeType.weekProduct.priceLabel(sub: sub)
+            self.weekInfoLabel.text = SubscribeType.weekProduct.infoLabel(sub: sub)
         }
     }
     
@@ -244,7 +272,7 @@ class SubcribeController: BaseController {
         AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "lifetime"])
         AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "lifetime"])
         
-        presenter.purchase(id: self.lifetimeSub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
+        presenter.purchase(id: self.lifetime50Sub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
             if result {
                 self?.successRetrive()
             } else {
@@ -273,6 +301,20 @@ class SubcribeController: BaseController {
         AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "mounth"])
         
         presenter.purchase(id: self.mounthSub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
+            if result {
+                self?.successRetrive()
+            } else {
+                self?.view.makeToast(error)
+            }
+        }
+    }
+    
+    @IBAction func actionWeekSubscription(_ sender: UIButton) {
+        AnalyticsHelper.sendFirebaseEvents(events: .start_subscription_process, params: ["subscription_type": "week"])
+        AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_start_subscription_process, values: ["subscription_type": "week"])
+        AnalyticsHelper.sendFacebookEvent(event: .fb_start_subscription_process, values: ["subscription_type": "week"])
+        
+        presenter.purchase(id: self.weekSub.rawValue, controller: String(describing: SubcribeController.self)) { [weak self] result, error in
             if result {
                 self?.successRetrive()
             } else {
@@ -316,16 +358,14 @@ extension SubcribeController: SubscribeOutputProtocol {
             self.updatePrices()
             
             if let name = KeychainService.standard.me?.access.subscription?.name, let currentSub = SubscribeType(rawValue: name) {
-                self.lifetimeView.backgroundColor = currentSub == self.lifetimeSub ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFFF5DA)
-                self.lifetimeTitleLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-                self.lifetimeTitleLabel.font = currentSub == self.lifetimeSub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
-                self.lifetimeTitleLabel.textColor = currentSub == self.lifetimeSub ? .white : .black
-                self.lifetimeSubscribeButton.isHidden = currentSub == self.lifetimeSub ? true : false
-                self.lifetimeActiveView.isHidden = currentSub == self.lifetimeSub ? false : true
-                self.saveView.isHidden = currentSub == self.lifetimeSub ? true : false
+                self.lifetimeView.backgroundColor = currentSub == self.lifetime50Sub ? UIColor(rgb: 0x7CDAA3) : UIColor(rgb: 0xFFF5DA)
+                self.lifetimeTitleLabel.font = currentSub == self.lifetime50Sub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
+                self.lifetimeTitleLabel.textColor = currentSub == self.lifetime50Sub ? .white : .black
+                self.lifetimeSubscribeButton.isHidden = currentSub == self.lifetime50Sub ? true : false
+                self.lifetimeActiveView.isHidden = currentSub == self.lifetime50Sub ? false : true
+                self.saveView.isHidden = currentSub == self.lifetime50Sub ? true : false
                 
                 self.yearView.backgroundColor = currentSub == self.yearSub ? UIColor(rgb: 0x7CDAA3) : .white
-                self.yearTitleLabel.text = RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 self.yearTitleLabel.font = currentSub == self.yearSub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
                 self.yearTitleLabel.textColor = currentSub == self.yearSub ? .white : .black
                 self.yearSubscribeButton.isHidden = currentSub == self.yearSub ? true : false
@@ -333,12 +373,18 @@ extension SubcribeController: SubscribeOutputProtocol {
                 self.yearActiveView.isHidden = currentSub == self.yearSub ? false : true
                 
                 self.mounthView.backgroundColor = currentSub == self.mounthSub ? UIColor(rgb: 0x7CDAA3) : .white
-                self.monthTitleLabel.text = RLocalization.subscribe_month_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
                 self.monthTitleLabel.font = currentSub == self.mounthSub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
                 self.monthTitleLabel.textColor = currentSub == self.mounthSub ? .white : .black
                 self.monthSubscribeButton.isHidden = currentSub == self.mounthSub ? true : false
                 self.monthUnsubscribeView.isHidden = currentSub == self.mounthSub ? false : true
                 self.monthActiveView.isHidden = currentSub == self.mounthSub ? false : true
+                
+                self.weekView.backgroundColor = currentSub == self.weekSub ? UIColor(rgb: 0x7CDAA3) : .white
+                self.weekTitleLabel.font = currentSub == self.weekSub ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 15)
+                self.weekTitleLabel.textColor = currentSub == self.weekSub ? .white : .black
+                self.weekSubscribeButton.isHidden = currentSub == self.weekSub ? true : false
+                self.weekUnsubscribeView.isHidden = currentSub == self.weekSub ? false : true
+                self.weekActiveView.isHidden = currentSub == self.weekSub ? false : true
             }
         }
     }

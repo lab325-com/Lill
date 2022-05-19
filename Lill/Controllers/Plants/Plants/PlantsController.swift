@@ -100,7 +100,7 @@ class PlantsController: BaseController {
             }
         }
         
-        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp, KeychainService.standard.me?.access.isPremium == false {
             MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
         }
         
@@ -142,9 +142,9 @@ class PlantsController: BaseController {
         
         blurEffectHeighLayout.constant = UIDevice.current.hasSafeArea ? 98.0 : 82.0
         
-        if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
-            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-        }
+//        if PreferencesManager.sharedManager.firstPaywall == true, KeychainService.standard.me?.access.isPremium == false, StoreKitManager.sharedInstance.isYearly50() {
+//            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+//        }
         
         setupLocalization()
     }
@@ -225,18 +225,23 @@ class PlantsController: BaseController {
         if meModel.access.isPremium {
             PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
         } else {
-            if meModel.totalGardenPlants > 0 {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
+            if let model = StoreKitManager.sharedInstance.checkSaleType(type: .unique) {
+                if meModel.totalUniquePlants >= model.value {
+                    switch model.sale {
+                    case .saleTypeLifetime_50:
+                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                    case .saleTypeYearly_50:
+                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                    case .saleTypeCombo, .saleTypeComboFull:
+                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
+                        }
+                    default:
+                        return
+                    }
                 } else {
-                    
+                    PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
                 }
-            } else {
-                PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
             }
         }
     }

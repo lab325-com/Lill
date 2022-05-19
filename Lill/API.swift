@@ -1087,6 +1087,71 @@ public enum GardenPlantHistoryType: RawRepresentable, Equatable, Hashable, CaseI
   }
 }
 
+public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case saleTypeCombo
+  case saleTypeComboFull
+  case saleTypeLifetime_50
+  case saleTypeMonthly
+  case saleTypeWeekly
+  case saleTypeYearly
+  case saleTypeYearly_50
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "SALE_TYPE_COMBO": self = .saleTypeCombo
+      case "SALE_TYPE_COMBO_FULL": self = .saleTypeComboFull
+      case "SALE_TYPE_LIFETIME_50": self = .saleTypeLifetime_50
+      case "SALE_TYPE_MONTHLY": self = .saleTypeMonthly
+      case "SALE_TYPE_WEEKLY": self = .saleTypeWeekly
+      case "SALE_TYPE_YEARLY": self = .saleTypeYearly
+      case "SALE_TYPE_YEARLY_50": self = .saleTypeYearly_50
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .saleTypeCombo: return "SALE_TYPE_COMBO"
+      case .saleTypeComboFull: return "SALE_TYPE_COMBO_FULL"
+      case .saleTypeLifetime_50: return "SALE_TYPE_LIFETIME_50"
+      case .saleTypeMonthly: return "SALE_TYPE_MONTHLY"
+      case .saleTypeWeekly: return "SALE_TYPE_WEEKLY"
+      case .saleTypeYearly: return "SALE_TYPE_YEARLY"
+      case .saleTypeYearly_50: return "SALE_TYPE_YEARLY_50"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: SaleType, rhs: SaleType) -> Bool {
+    switch (lhs, rhs) {
+      case (.saleTypeCombo, .saleTypeCombo): return true
+      case (.saleTypeComboFull, .saleTypeComboFull): return true
+      case (.saleTypeLifetime_50, .saleTypeLifetime_50): return true
+      case (.saleTypeMonthly, .saleTypeMonthly): return true
+      case (.saleTypeWeekly, .saleTypeWeekly): return true
+      case (.saleTypeYearly, .saleTypeYearly): return true
+      case (.saleTypeYearly_50, .saleTypeYearly_50): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [SaleType] {
+    return [
+      .saleTypeCombo,
+      .saleTypeComboFull,
+      .saleTypeLifetime_50,
+      .saleTypeMonthly,
+      .saleTypeWeekly,
+      .saleTypeYearly,
+      .saleTypeYearly_50,
+    ]
+  }
+}
+
 public final class AddImageToGalleryMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -8530,12 +8595,14 @@ public final class MeQuery: GraphQLQuery {
         }
         Sales {
           __typename
-          id
-          name
+          sale
+          condition
+          value
         }
         totalGardens
         totalFavouritePlants
         totalGardenPlants
+        totalUniquePlants
       }
     }
     """
@@ -8593,6 +8660,7 @@ public final class MeQuery: GraphQLQuery {
           GraphQLField("totalGardens", type: .scalar(Int.self)),
           GraphQLField("totalFavouritePlants", type: .scalar(Int.self)),
           GraphQLField("totalGardenPlants", type: .scalar(Int.self)),
+          GraphQLField("totalUniquePlants", type: .scalar(Int.self)),
         ]
       }
 
@@ -8602,8 +8670,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil, sales: [Sale?]? = nil, totalGardens: Int? = nil, totalFavouritePlants: Int? = nil, totalGardenPlants: Int? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }, "Sales": sales.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }, "totalGardens": totalGardens, "totalFavouritePlants": totalFavouritePlants, "totalGardenPlants": totalGardenPlants])
+      public init(id: GraphQLID? = nil, fullName: String? = nil, email: String? = nil, timezone: String? = nil, defaultGardenId: String? = nil, hasUdid: Bool? = nil, language: Language? = nil, notificationSettings: NotificationSetting? = nil, gardens: [Garden?]? = nil, access: Access? = nil, sales: [Sale?]? = nil, totalGardens: Int? = nil, totalFavouritePlants: Int? = nil, totalGardenPlants: Int? = nil, totalUniquePlants: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "fullName": fullName, "email": email, "timezone": timezone, "defaultGardenId": defaultGardenId, "hasUdid": hasUdid, "Language": language.flatMap { (value: Language) -> ResultMap in value.resultMap }, "NotificationSettings": notificationSettings.flatMap { (value: NotificationSetting) -> ResultMap in value.resultMap }, "Gardens": gardens.flatMap { (value: [Garden?]) -> [ResultMap?] in value.map { (value: Garden?) -> ResultMap? in value.flatMap { (value: Garden) -> ResultMap in value.resultMap } } }, "access": access.flatMap { (value: Access) -> ResultMap in value.resultMap }, "Sales": sales.flatMap { (value: [Sale?]) -> [ResultMap?] in value.map { (value: Sale?) -> ResultMap? in value.flatMap { (value: Sale) -> ResultMap in value.resultMap } } }, "totalGardens": totalGardens, "totalFavouritePlants": totalFavouritePlants, "totalGardenPlants": totalGardenPlants, "totalUniquePlants": totalUniquePlants])
       }
 
       public var __typename: String {
@@ -8738,6 +8806,15 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "totalGardenPlants")
+        }
+      }
+
+      public var totalUniquePlants: Int? {
+        get {
+          return resultMap["totalUniquePlants"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalUniquePlants")
         }
       }
 
@@ -9389,8 +9466,9 @@ public final class MeQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("id", type: .scalar(GraphQLID.self)),
-            GraphQLField("name", type: .scalar(String.self)),
+            GraphQLField("sale", type: .scalar(SaleType.self)),
+            GraphQLField("condition", type: .scalar(String.self)),
+            GraphQLField("value", type: .scalar(Int.self)),
           ]
         }
 
@@ -9400,8 +9478,8 @@ public final class MeQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Sale", "id": id, "name": name])
+        public init(sale: SaleType? = nil, condition: String? = nil, value: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Sale", "sale": sale, "condition": condition, "value": value])
         }
 
         public var __typename: String {
@@ -9413,21 +9491,30 @@ public final class MeQuery: GraphQLQuery {
           }
         }
 
-        public var id: GraphQLID? {
+        public var sale: SaleType? {
           get {
-            return resultMap["id"] as? GraphQLID
+            return resultMap["sale"] as? SaleType
           }
           set {
-            resultMap.updateValue(newValue, forKey: "id")
+            resultMap.updateValue(newValue, forKey: "sale")
           }
         }
 
-        public var name: String? {
+        public var condition: String? {
           get {
-            return resultMap["name"] as? String
+            return resultMap["condition"] as? String
           }
           set {
-            resultMap.updateValue(newValue, forKey: "name")
+            resultMap.updateValue(newValue, forKey: "condition")
+          }
+        }
+
+        public var value: Int? {
+          get {
+            return resultMap["value"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "value")
           }
         }
       }

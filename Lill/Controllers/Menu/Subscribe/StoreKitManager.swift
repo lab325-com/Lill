@@ -10,19 +10,17 @@ import StoreKit
 class StoreKitManager {
     static let sharedInstance = StoreKitManager()
     
-    let lifetime50 = "com.lill.subscription.lifetime.50"
-    let yearly50 = "com.lill.subscription.yearly.50"
-    let combo = "combo"
-    
-    func isYearly50() -> Bool {
-        return KeychainService.standard.me?.sales?.contains(where: {$0.name == yearly50}) ?? false
+    enum ConditionType: String, Codable {
+        case favorite = "totalFavouritePlants"
+        case plants = "totalGardenPlants"
+        case identify = "identifyUsed"
+        case diagnosis = "diagnosisUsed"
+        case unique = "totalUniquePlants"
+        case gardens = "totalGardens"
+        case login = "login"
     }
     
-    func isLifeTime50() -> Bool {
-        return KeychainService.standard.me?.sales?.contains(where: {$0.name == lifetime50}) ?? false
-    }
-    
-    func isCombo() -> Bool {
-        return KeychainService.standard.me?.sales?.contains(where: {$0.name == combo}) ?? false
+    func checkSaleType(type: ConditionType) -> (SalesModel?) {
+        return KeychainService.standard.me?.sales?.first(where: {$0.condition == type.rawValue})
     }
 }

@@ -73,41 +73,51 @@ extension PlantsController: PlantCollectionDelegate {
         if meModel.access.isPremium {
             GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
         } else {
-            if meModel.totalGardenPlants > 4 {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
+            if let model = StoreKitManager.sharedInstance.checkSaleType(type: .plants) {
+                if meModel.totalGardenPlants >= model.value {
+                    switch model.sale {
+                    case .saleTypeLifetime_50:
+                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                    case .saleTypeYearly_50:
+                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                    case .saleTypeCombo, .saleTypeComboFull:
+                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
+                        }
+                    default:
+                        return
+                    }
                 } else {
-                    
+                    GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
                 }
-            } else {
-                GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
             }
         }
     }
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
-
+        
         guard let meModel = KeychainService.standard.me else { return }
         
         if meModel.access.isPremium {
             presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
         } else {
-            if meModel.totalFavouritePlants > 4 && !isFavorite {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
+            if let model = StoreKitManager.sharedInstance.checkSaleType(type: .favorite) {
+                if meModel.totalFavouritePlants >= model.value && !isFavorite {
+                    switch model.sale {
+                    case .saleTypeLifetime_50:
+                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
+                    case .saleTypeYearly_50:
+                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+                    case .saleTypeCombo, .saleTypeComboFull:
+                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
+                        }
+                    default:
+                        return
+                    }
                 } else {
-                    
+                    presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
                 }
-            } else {
-                presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
             }
         }
     }

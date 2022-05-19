@@ -43,6 +43,14 @@ class GardenAddToPlacePresenter: GardenAddToPlacePresenterProtocol {
         request?.cancel()
         let mutation = PlantToGardenMutation(plantId: plantId, gardenId: gardenId)
         let _ = Network.shared.mutation(model: PlantToGardenDataModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { (granted, error) in
+                DispatchQueue.main.async {
+                    if (granted) {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            })
             self?.updateMe()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()

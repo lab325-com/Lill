@@ -70,25 +70,25 @@ class RecognizeArchiveController: BaseController {
     
     @IBAction func actionRecognizePlant(_ sender: UIButton) {
         guard let meModel = KeychainService.standard.me else { return }
-        guard let total = meModel.access.identifyTotal else {
-            PlantsRouter(presenter: navigationController).presentIdentify()
-            return
-        }
-        
         if meModel.access.isPremium {
             PlantsRouter(presenter: navigationController).presentIdentify()
         } else {
-            if meModel.access.identifyUsed < total {
-                PlantsRouter(presenter: navigationController).presentIdentify()
-            } else {
-                if StoreKitManager.sharedInstance.isYearly50() {
-                    MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
-                } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                    MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: RecognizeArchiveController.self))
-                } else if StoreKitManager.sharedInstance.isCombo() {
-                    
+            if let model = StoreKitManager.sharedInstance.checkSaleType(type: .identify) {
+                if let total = meModel.access.identifyTotal, total >= model.value {
+                    switch model.sale {
+                    case .saleTypeLifetime_50:
+                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: RecognizeArchiveController.self))
+                    case .saleTypeYearly_50:
+                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+                    case .saleTypeCombo, .saleTypeComboFull:
+                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: RecognizeArchiveController.self))
+                        }
+                    default:
+                        return
+                    }
                 } else {
-                    
+                    PlantsRouter(presenter: navigationController).presentIdentify()
                 }
             }
         }

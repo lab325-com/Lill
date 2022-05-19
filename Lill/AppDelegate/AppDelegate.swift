@@ -25,15 +25,15 @@ typealias RColor = R.color
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let gcmMessageIDKey = "gcm.message_id"
     var window: UIWindow?
-        
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-       // SKPaymentQueue.default().add(StoreKitManager.sharedInstance)
+        // SKPaymentQueue.default().add(StoreKitManager.sharedInstance)
         
         //Firebase analytics
         
         FirebaseApp.configure()
-                
+        
         //Facebook analytics
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             return true // or false if user shall not purchase the product yet
         }
-    
+        
         Messaging.messaging().delegate = self
         
         UIApplication.shared.applicationIconBadgeNumber = 0
@@ -76,42 +76,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // For iOS 10 display notification (sent via APNS)
         UNUserNotificationCenter.current().delegate = self
         
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { (granted, error) in
-            DispatchQueue.main.async {
-                if (granted) {
-                    application.registerForRemoteNotifications()
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    if #available(iOS 14, *) {
-                        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                            switch status {
-                            case .authorized:
-                                Settings.shared.isAdvertiserIDCollectionEnabled = true
-                                Settings.shared.isAdvertiserTrackingEnabled = true
-                                break
-                            case .denied:
-                                Settings.shared.isAdvertiserIDCollectionEnabled = false
-                                Settings.shared.isAdvertiserTrackingEnabled = false
-                                break
-                            case .notDetermined:
-                                // Tracking authorization dialog has not been shown
-                                print("Not Determined")
-                            case .restricted:
-                                Settings.shared.isAdvertiserIDCollectionEnabled = false
-                                Settings.shared.isAdvertiserTrackingEnabled = false
-                                print("Restricted")
-                            @unknown default:
-                                print("Unknown")
-                            }
-                        })
-                    }
+        DispatchQueue.main.async {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if #available(iOS 14, *) {
+                    ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                        switch status {
+                        case .authorized:
+                            Settings.shared.isAdvertiserIDCollectionEnabled = true
+                            Settings.shared.isAdvertiserTrackingEnabled = true
+                            break
+                        case .denied:
+                            Settings.shared.isAdvertiserIDCollectionEnabled = false
+                            Settings.shared.isAdvertiserTrackingEnabled = false
+                            break
+                        case .notDetermined:
+                            // Tracking authorization dialog has not been shown
+                            print("Not Determined")
+                        case .restricted:
+                            Settings.shared.isAdvertiserIDCollectionEnabled = false
+                            Settings.shared.isAdvertiserTrackingEnabled = false
+                            print("Restricted")
+                        @unknown default:
+                            print("Unknown")
+                        }
+                    })
                 }
             }
-        })
-        
+        }
+        application.registerForRemoteNotifications()
         SKAdNetwork.registerAppForAdNetworkAttribution()
-                
+        
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
     }
     
@@ -123,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
         return true
     }
-
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         AppsFlyerLib.shared().handleOpen(url, sourceApplication: sourceApplication, withAnnotation: annotation)
         return true
@@ -317,16 +312,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                         subscription.removeSubrange(range)
                     }
                     purchase(id: subscription, controller: "Push")
-                } else {
-//                    MenuRouter(presenter: controller?.navigationController).presentSubscribePopup(id: [subscription], controller: "Push")
-                    if StoreKitManager.sharedInstance.isYearly50() {
-                        MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
-                    } else if StoreKitManager.sharedInstance.isLifeTime50() {
-                        MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
-                    } else if StoreKitManager.sharedInstance.isCombo() {
-                        
-                    } else {
-                        
+                } else if subscription.contains(SubscribeType.lifetime50Product.rawValue) {
+                    MenuRouter(presenter: controller?.navigationController).presentLifetimePayWall(controller: "Push")
+                } else if subscription.contains(SubscribeType.year50Product.rawValue) {
+                    MenuRouter(presenter: controller?.navigationController).presentYearPaywall(delegate: nil, controller: "Push")
+                } else if subscription.contains("combo") {
+                    if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
+                        MenuRouter(presenter: controller?.navigationController).presentComboPaywall(popupType: currentPopUp, controller: "Push")
                     }
                 }
             }
@@ -421,14 +413,14 @@ extension AppDelegate: AppsFlyerLibDelegate {
         if let status = data["af_status"] as? String {
             if (status == "Non-organic") {
                 if let sourceID = data["media_source"],
-                    let campaign = data["campaign"] {
+                   let campaign = data["campaign"] {
                     print("This is a Non-Organic install. Media source: \(sourceID)  Campaign: \(campaign)")
                 }
             } else {
                 print("This is an organic install.")
             }
             if let is_first_launch = data["is_first_launch"] as? Bool,
-                is_first_launch {
+               is_first_launch {
                 print("First Launch")
             } else {
                 print("Not First Launch")

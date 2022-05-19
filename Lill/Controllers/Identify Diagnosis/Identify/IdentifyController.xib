@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -377,13 +377,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-sx-GCs">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="subscribeAction:" destination="-1" eventType="touchUpInside" id="DOg-Wb-12f"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -391,14 +384,10 @@
                                         <constraint firstItem="omf-Sm-ZQI" firstAttribute="centerX" secondItem="6LT-LU-s2l" secondAttribute="centerX" id="AWO-42-yUI"/>
                                         <constraint firstItem="omf-Sm-ZQI" firstAttribute="top" secondItem="xxr-QK-1wg" secondAttribute="bottom" constant="4" id="G9d-1e-CsR"/>
                                         <constraint firstAttribute="height" constant="100" id="Ohf-3A-vee"/>
-                                        <constraint firstItem="bCj-sx-GCs" firstAttribute="leading" secondItem="6LT-LU-s2l" secondAttribute="leading" id="Rqh-7Q-yjI"/>
                                         <constraint firstItem="xxr-QK-1wg" firstAttribute="centerX" secondItem="6LT-LU-s2l" secondAttribute="centerX" id="Wrn-qf-Fjq"/>
                                         <constraint firstItem="sdA-FA-SrY" firstAttribute="top" secondItem="omf-Sm-ZQI" secondAttribute="bottom" constant="4" id="e0B-IK-4ie"/>
                                         <constraint firstItem="omf-Sm-ZQI" firstAttribute="centerY" secondItem="6LT-LU-s2l" secondAttribute="centerY" id="oeN-LR-KeJ"/>
                                         <constraint firstItem="sdA-FA-SrY" firstAttribute="centerX" secondItem="6LT-LU-s2l" secondAttribute="centerX" id="tQ5-LW-RtJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="bCj-sx-GCs" secondAttribute="trailing" id="u9G-GD-QnR"/>
-                                        <constraint firstAttribute="bottom" secondItem="bCj-sx-GCs" secondAttribute="bottom" id="uEh-rb-N4B"/>
-                                        <constraint firstItem="bCj-sx-GCs" firstAttribute="top" secondItem="6LT-LU-s2l" secondAttribute="top" id="vx5-ra-F36"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-hl-OBq">
