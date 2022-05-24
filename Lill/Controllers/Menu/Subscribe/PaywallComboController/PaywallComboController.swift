@@ -29,7 +29,6 @@ class PaywallComboController: BaseController {
     @IBOutlet weak var bestChoiseTrialImage: UIImageView!
     @IBOutlet weak var bestChoiseImage: UIImageView!
     @IBOutlet weak var saveOffLabel: UILabel!
-    @IBOutlet weak var saveOffTrialLabel: UILabel!
     @IBOutlet weak var trialSubNameLabel: UILabel!
     @IBOutlet weak var firstSubNameLabel: UILabel!
     @IBOutlet weak var firstSubDiscountPriceLabel: UILabel!
@@ -122,7 +121,6 @@ class PaywallComboController: BaseController {
         
         trialSubLabel.alpha = 0.0
         trialPriceLabel.alpha = 0.0
-        saveOffTrialLabel.alpha = 0.0
         
         firstSubDiscountPriceLabel.alpha = 0.0
         firstSubCurrentPriceLabel.alpha = 0.0
@@ -164,6 +162,7 @@ class PaywallComboController: BaseController {
         thirdSubSubscribeButton.layer.borderWidth = 1.0
         thirdSubSubscribeButton.layer.borderColor = UIColor(rgb: 0x7CDAA3).cgColor
         
+        saveOffLabel.text = RLocalization.subscribe_year_save.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         becomePremiumLabel.text = RLocalization.subscribe_year_premium.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         unlimitedLabel.text = RLocalization.subscribe_year_unlimited.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         planIdentifierLabel.text = RLocalization.subscribe_year_plant_identification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -178,7 +177,7 @@ class PaywallComboController: BaseController {
         trialSubscribeButton.setTitle(RLocalization.subscribe_trial_start.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         trialSubNameLabel.text = RLocalization.subscribe_trial_weekly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         firstSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        secondSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_month_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+        secondSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_month_upper.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         thirdSubNameLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         let popup2ids = [kLifetime50, kYearly]
@@ -292,11 +291,13 @@ extension PaywallComboController: SubscribeOutputProtocol {
             
             self.trialSubLabel.alpha = 1.0
             self.trialPriceLabel.alpha = 1.0
-            self.saveOffTrialLabel.alpha = 1.0
             
             let symbol = String(format: "%@ ", self.presenter.paymentsInfo.first?.currencySymbol ?? "")
             let currentPrice = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice ?? "" : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.prettyPrice ?? ""
-            let discountPrice = self.popupType == .pop2 ? "119,99" : "79,99"
+            
+            let discount = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.price ?? 0 : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.price ?? 0
+            
+            let discountPrice = "\(Int(discount / 2)),99"
             let year = self.popupType == .pop2 ? "" : String(format: " / %@", RLocalization.subscribe_year.localized(PreferencesManager.sharedManager.languageCode.rawValue))
             
             self.firstSubCurrentPriceLabel.text = symbol + currentPrice + year
@@ -306,11 +307,10 @@ extension PaywallComboController: SubscribeOutputProtocol {
             self.thirdSubPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice
             
             
-            self.trialPriceLabel.text =  self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice ?? ""
+            self.trialPriceLabel.text = RLocalization.subscribe_trial_price(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice ?? "", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
             
             self.trialSubLabel.text = RLocalization.subscribe_trial_with_days(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.daysTrial ?? "0", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
             
-            self.saveOffTrialLabel.text = RLocalization.subscribe_trial_days(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.daysTrial ?? "0", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
         }
     }
     

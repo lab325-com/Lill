@@ -177,7 +177,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 if let priceString = product.localizedPrice,
                    let number = product.productIdentifier == SubscribeType.lifetime50Product.rawValue ? 0 : product.subscriptionPeriod?.numberOfUnits,
                    let period = product.productIdentifier == SubscribeType.lifetime50Product.rawValue ? "" : self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
-                    let trial = self?.getCurrentPeriodTrial(product.introductoryPrice?.subscriptionPeriod.unit, numberOfUnits: product.introductoryPrice?.subscriptionPeriod.numberOfUnits).lowercased()
+                    let trial = self?.getCurrentPeriodTrial(product.introductoryPrice?.subscriptionPeriod.unit, numberOfUnits: product.introductoryPrice?.subscriptionPeriod.numberOfUnits)
                     let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol, daysTrial: trial)
                     self?.paymentsInfo.append(model)
                 } else {
