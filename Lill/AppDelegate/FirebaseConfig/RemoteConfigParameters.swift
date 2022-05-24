@@ -11,6 +11,7 @@ import Firebase
 enum PopupType: String, Codable {
     case pop3
     case pop2
+    case weekTrial
 }
 
 enum RemoteConfigParameters: String, CaseIterable {

@@ -346,6 +346,12 @@
 "subscribe_month" = "месяц";
 "subscribe_month_one" = "1 месяц";
 "subscribe_select_plan" = "Выберите свой план:";
+"subscribe_trial_days" = "%@\nбесплатно!";
+"subscribe_trial_start" = "Начать пробный период";
+"subscribe_trial_try_free" = "Попробуй бесплатно:";
+"subscribe_trial_unsubscribe" = "Отписывайте в любой момент!";
+"subscribe_trial_weekly" = "Еженедельно";
+"subscribe_trial_with_days" = "С %@ бесплатно!";
 "subscribe_week" = "неделю";
 "subscribe_week_one" = "1 неделя";
 "subscribe_year" = "год";

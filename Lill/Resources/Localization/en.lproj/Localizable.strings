@@ -346,6 +346,12 @@
 "subscribe_month" = "month";
 "subscribe_month_one" = "1 Month";
 "subscribe_select_plan" = "Select your plan:";
+"subscribe_trial_days" = "%@\n Free!";
+"subscribe_trial_start" = "Start trial";
+"subscribe_trial_try_free" = "Try for free:";
+"subscribe_trial_unsubscribe" = "unsubscribe any moment!";
+"subscribe_trial_weekly" = "Weekly";
+"subscribe_trial_with_days" = "with %@ free!";
 "subscribe_week" = "week";
 "subscribe_week_one" = "1 Week";
 "subscribe_year" = "year";

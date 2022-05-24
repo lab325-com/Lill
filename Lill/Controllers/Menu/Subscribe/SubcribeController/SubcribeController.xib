@@ -621,7 +621,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="actionWeekSubscription:" destination="-1" eventType="touchDragInside" id="OT4-na-EFv"/>
+                                                        <action selector="actionWeekSubscription:" destination="-1" eventType="touchUpInside" id="zxS-o6-Uz6"/>
                                                     </connections>
                                                 </button>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFH-rz-M2K">
