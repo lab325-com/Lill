@@ -349,10 +349,10 @@
 "subscribe_select_plan" = "Select your plan:";
 "subscribe_trial_price" = "7 days - %@";
 "subscribe_trial_start" = "Start trial";
-"subscribe_trial_try_free" = "Try for free:";
+"subscribe_trial_try_free" = "Try for free";
 "subscribe_trial_unsubscribe" = "unsubscribe any moment!";
-"subscribe_trial_weekly" = "Trial";
-"subscribe_trial_with_days" = "%@ Free!";
+"subscribe_trial_weekly" = "1 Week Trial";
+"subscribe_trial_with_days" = "with %@ fee!";
 "subscribe_week" = "week";
 "subscribe_week_one" = "1 Week";
 "subscribe_year" = "year";

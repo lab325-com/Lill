@@ -45,15 +45,14 @@
                 <outlet property="secondSubSubscribeButton" destination="4wd-6g-wvt" id="9BE-5K-tc4"/>
                 <outlet property="secondSubView" destination="P7Q-QF-n3l" id="xta-BM-VLf"/>
                 <outlet property="selectPlanLabel" destination="3xn-Vb-UQp" id="YCo-Q3-kjs"/>
-                <outlet property="selectPlanTrialLabel" destination="3xn-Vb-UQp" id="y0R-na-tWw"/>
                 <outlet property="termsOfUserButton" destination="gw1-Cg-C0I" id="M4w-3L-nq8"/>
                 <outlet property="thirdSubNameLabel" destination="mhV-EY-Qus" id="9Ax-Bu-Jgs"/>
                 <outlet property="thirdSubPriceLabel" destination="T6Z-5K-laq" id="p5H-dv-nHh"/>
                 <outlet property="thirdSubSubscribeButton" destination="cgF-EQ-xhK" id="7aP-zB-vkh"/>
                 <outlet property="thirdSubView" destination="1ac-aQ-txm" id="ltA-Ta-G0F"/>
                 <outlet property="trialActivityIndicato" destination="Yg5-Zx-BwR" id="gMP-KR-5rh"/>
-                <outlet property="trialPriceLabel" destination="Mda-qv-lXt" id="qV2-rt-KQc"/>
-                <outlet property="trialSubLabel" destination="7Ig-Lp-YAn" id="snW-Ud-Dch"/>
+                <outlet property="trialPriceLabel" destination="7Ig-Lp-YAn" id="IyN-yC-Iym"/>
+                <outlet property="trialSubLabel" destination="Mda-qv-lXt" id="jG4-WV-3RR"/>
                 <outlet property="trialSubNameLabel" destination="Ysy-5H-Q8m" id="pRK-Yw-PQN"/>
                 <outlet property="trialSubView" destination="2W1-Xa-QgM" id="1RA-WV-7Lp"/>
                 <outlet property="trialSubscribeButton" destination="5Te-er-p0R" id="XVI-1w-viQ"/>
@@ -152,7 +151,7 @@ Identification</string>
                                     <rect key="frame" x="0.0" y="-111" width="329" height="111"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sub_trial_line_en_ic" translatesAutoresizingMaskIntoConstraints="NO" id="8s5-2X-D8w">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="138.5" height="140.5"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0BY-6l-lHx">
                                             <rect key="frame" x="0.0" y="5" width="329" height="5"/>
@@ -160,19 +159,19 @@ Identification</string>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sub_trial_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="SJs-CK-fid">
                                                     <rect key="frame" x="0.0" y="0.0" width="329" height="0.0"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Ysy-5H-Q8m">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Week Trial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Ysy-5H-Q8m">
                                                     <rect key="frame" x="0.0" y="0.0" width="329" height="0.0"/>
-                                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
-                                                    <color key="textColor" red="0.97647058823529409" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LD6-e7-zPf">
                                                     <rect key="frame" x="0.0" y="0.0" width="329" height="5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="3 Free Days!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="7Ig-Lp-YAn">
-                                                            <rect key="frame" x="74" y="0.0" width="181" height="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="$ 4,99" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="7Ig-Lp-YAn">
+                                                            <rect key="frame" x="115.5" y="0.0" width="98" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="32"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -185,7 +184,7 @@ Identification</string>
                                                         <constraint firstItem="7Ig-Lp-YAn" firstAttribute="centerX" secondItem="LD6-e7-zPf" secondAttribute="centerX" id="qYR-NK-9ev"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="7 days - $4,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mda-qv-lXt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="with 3 free days!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mda-qv-lXt">
                                                     <rect key="frame" x="0.0" y="5" width="329" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                                     <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
@@ -555,7 +554,7 @@ Identification</string>
         <image name="sub_oneyear_back_ic" width="375" height="667"/>
         <image name="sub_oneyear_close_ic" width="13" height="13"/>
         <image name="sub_trial_back_ic" width="126.5" height="126.5"/>
-        <image name="sub_trial_line_en_ic" width="128" height="128"/>
+        <image name="sub_trial_line_en_ic" width="138.5" height="140.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

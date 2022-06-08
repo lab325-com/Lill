@@ -17,7 +17,6 @@ class PaywallComboController: BaseController {
     @IBOutlet weak var unlimitedLabel: UILabel!
     @IBOutlet weak var planIdentifierLabel: UILabel!
     @IBOutlet weak var selectPlanLabel: UILabel!
-    @IBOutlet weak var selectPlanTrialLabel: UILabel!
     
     @IBOutlet weak var trialSubView: UIView!
     @IBOutlet weak var firstSubView: UIView!
@@ -168,13 +167,13 @@ class PaywallComboController: BaseController {
         planIdentifierLabel.text = RLocalization.subscribe_year_plant_identification.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
         if popupType == .weekTrial {
-            selectPlanLabel.text = RLocalization.subscribe_trial_try_free.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            selectPlanLabel.text = ""
         } else {
             selectPlanLabel.text = RLocalization.subscribe_select_plan.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         }
         
         trialUnsubscribeLabel.text = RLocalization.subscribe_trial_unsubscribe.localized(PreferencesManager.sharedManager.languageCode.rawValue)
-        trialSubscribeButton.setTitle(RLocalization.subscribe_trial_start.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
+        trialSubscribeButton.setTitle(RLocalization.subscribe_trial_try_free.localized(PreferencesManager.sharedManager.languageCode.rawValue), for: .normal)
         trialSubNameLabel.text = RLocalization.subscribe_trial_weekly.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         firstSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         secondSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_month_upper.localized(PreferencesManager.sharedManager.languageCode.rawValue)
@@ -192,7 +191,6 @@ class PaywallComboController: BaseController {
         case .weekTrial:
             id.formUnion(popupTrial)
         }
-        
         
         presenter.retriveProduct(id: id)
     }
@@ -306,10 +304,9 @@ extension PaywallComboController: SubscribeOutputProtocol {
             self.secondSubPriceLabel.text = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kYearly})?.prettyPrice : self.presenter.paymentsInfo.first(where: {$0.product == kMonth})?.prettyPrice
             self.thirdSubPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice
             
+            self.trialPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice ?? ""
             
-            self.trialPriceLabel.text = RLocalization.subscribe_trial_price(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice ?? "", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
-            
-            self.trialSubLabel.text = RLocalization.subscribe_trial_with_days(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.daysTrial ?? "0", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
+            self.trialSubLabel.text = RLocalization.subscribe_trial_with_days(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.daysTrial?.lowercased() ?? "0", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
             
         }
     }
