@@ -17,11 +17,11 @@ class LocalizationService {
     // MARK: - Private init
     
     private init() {
-        let deviceLanguage = Locale.components(fromIdentifier: Locale.preferredLanguages[0])["kCFLocaleLanguageCodeKey"]!
+        let deviceLanguage = PreferencesManager.sharedManager.languageCode
         switch deviceLanguage {
-        case "ru":
+        case .russian:
             self.currentLanguage = .russian
-        case "es":
+        case .spanish:
             self.currentLanguage = .spanish
         default:
             self.currentLanguage = .english

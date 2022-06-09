@@ -152,7 +152,7 @@ class SubscribeYearPresenter: NSObject, SubscribeYearPresenterProtocol  {
                    let number = product.subscriptionPeriod?.numberOfUnits,
                    let period = self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
                     
-                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
+                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol, daysTrial: product.introductoryPrice?.localizedSubscriptionPeriod)
                     self?.paymentsInfo.append(model)
                 } else {
                     debugPrint(">>>>>>>>>>>>>>>>>>>incorrect product!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -165,7 +165,7 @@ class SubscribeYearPresenter: NSObject, SubscribeYearPresenterProtocol  {
                     
                     let number = discount.subscriptionPeriod.numberOfUnits
                     
-                    let model = PaymentsModel(product: discount.identifier ?? "", prettyPrice: priceString, period: period, number: number, price: Double(truncating: discount.price), currencySymbol: discount.priceLocale.currencySymbol)
+                    let model = PaymentsModel(product: discount.identifier ?? "", prettyPrice: priceString, period: period, number: number, price: Double(truncating: discount.price), currencySymbol: discount.priceLocale.currencySymbol, daysTrial: product.introductoryPrice?.localizedSubscriptionPeriod)
                     self?.discountInfo.append(model)
                 } else {
                     debugPrint(">>>>>>>>>>>>>>>>>>>incorrect product!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

@@ -18,7 +18,7 @@ struct PaymentsModel {
     let number: Int
     let price: Double
     let currencySymbol: String?
-    let daysTrial: Int? = nil
+    let daysTrial: String?
 }
 
 //----------------------------------------------
@@ -177,7 +177,8 @@ class SubscribePresenter: SubscribePresenterProtocol {
                 if let priceString = product.localizedPrice,
                    let number = product.productIdentifier == SubscribeType.lifetime50Product.rawValue ? 0 : product.subscriptionPeriod?.numberOfUnits,
                    let period = product.productIdentifier == SubscribeType.lifetime50Product.rawValue ? "" : self?.getCurrentPeriod(product.subscriptionPeriod?.unit) {
-                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol)
+                    let trial = self?.getCurrentPeriodTrial(product.introductoryPrice?.subscriptionPeriod.unit, numberOfUnits: product.introductoryPrice?.subscriptionPeriod.numberOfUnits)
+                    let model = PaymentsModel(product: product.productIdentifier, prettyPrice: priceString, period: period, number: number, price: Double(truncating: product.price), currencySymbol: product.priceLocale.currencySymbol, daysTrial: trial)
                     self?.paymentsInfo.append(model)
                 } else {
                     debugPrint(">>>>>>>>>>>>>>>>>>>incorrect product!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -199,6 +200,24 @@ class SubscribePresenter: SubscribePresenterProtocol {
             return "month"
         case .week:
             return "week"
+        case .year:
+            return "year"
+        case .none:
+            return "none"
+        @unknown default:
+            return "default"
+        }
+    }
+    
+    private func getCurrentPeriodTrial(_ product: SKProduct.PeriodUnit?, numberOfUnits: Int?) -> String {
+        guard let numberOfUnits = numberOfUnits else { return ""}
+        switch product {
+        case .day:
+            return LocalizationService.shared.localizedString(key: "DetailCaresView.days", args: numberOfUnits)
+        case .month:
+            return LocalizationService.shared.localizedString(key: "DetailCaresView.months", args: numberOfUnits)
+        case .week:
+            return LocalizationService.shared.localizedString(key: "DetailCaresView.weeks", args: numberOfUnits)
         case .year:
             return "year"
         case .none:
