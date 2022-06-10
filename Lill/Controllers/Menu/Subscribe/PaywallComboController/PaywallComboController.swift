@@ -179,8 +179,8 @@ class PaywallComboController: BaseController {
         secondSubNameLabel.text = popupType == .pop2 ? RLocalization.subscribe_year_one.localized(PreferencesManager.sharedManager.languageCode.rawValue) : RLocalization.subscribe_month_upper.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         thirdSubNameLabel.text = RLocalization.subscribe_lifetime.localized(PreferencesManager.sharedManager.languageCode.rawValue)
         
-        let popup2ids = [kLifetime50, kYearly]
         let popup3ids = [kYearly50, kMonth, kLifetime50]
+        let popup2ids = [kLifetime50, kYearly]
         let popupTrial = [kWeekly]
         
         switch popupType {
@@ -286,28 +286,27 @@ extension PaywallComboController: SubscribeOutputProtocol {
             self.secondSubPriceLabel.alpha = 1.0
             self.thirdSubPriceLabel.alpha = 1.0
             self.lineView.alpha = 1.0
-            
             self.trialSubLabel.alpha = 1.0
             self.trialPriceLabel.alpha = 1.0
             
-            let symbol = String(format: "%@ ", self.presenter.paymentsInfo.first?.currencySymbol ?? "")
-            let currentPrice = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice ?? "" : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.prettyPrice ?? ""
+            let symbol = String(format: "%@", self.presenter.paymentsInfo.first?.currencySymbol ?? "")
+            
+            let currentPrice = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice.dropLast(2) ?? "" : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.prettyPrice.dropLast(2) ?? ""
             
             let discount = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.price ?? 0 : self.presenter.paymentsInfo.first(where: {$0.product == kYearly50})?.price ?? 0
             
-            let discountPrice = "\(Int(discount / 2)),99"
+            let discountPrice = "\(Int(discount * 2)).99"
             let year = self.popupType == .pop2 ? "" : String(format: " / %@", RLocalization.subscribe_year.localized(PreferencesManager.sharedManager.languageCode.rawValue))
             
             self.firstSubCurrentPriceLabel.text = symbol + currentPrice + year
             self.firstSubDiscountPriceLabel.text = symbol + discountPrice + year
             
             self.secondSubPriceLabel.text = self.popupType == .pop2 ? self.presenter.paymentsInfo.first(where: {$0.product == kYearly})?.prettyPrice : self.presenter.paymentsInfo.first(where: {$0.product == kMonth})?.prettyPrice
+            
             self.thirdSubPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kLifetime50})?.prettyPrice
             
             self.trialPriceLabel.text = self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.prettyPrice ?? ""
-            
             self.trialSubLabel.text = RLocalization.subscribe_trial_with_days(self.presenter.paymentsInfo.first(where: {$0.product == kWeekly})?.daysTrial?.lowercased() ?? "0", preferredLanguages: [PreferencesManager.sharedManager.languageCode.rawValue])
-            
         }
     }
     

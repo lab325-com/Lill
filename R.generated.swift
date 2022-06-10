@@ -4706,14 +4706,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let subscription_save_50 = Rswift.StringResource(key: "subscription_save_50", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Save 50% Off!
+      ///
+      /// Locales: en, es, ru
+      static let subscribe_year_save = Rswift.StringResource(key: "subscribe_year_save", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Save Changes
       ///
       /// Locales: en, es, ru
       static let garden_history_save_changes = Rswift.StringResource(key: "garden_history_save_changes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
-      /// en translation: Save: $30 Now!
-      ///
-      /// Locales: en, es, ru
-      static let subscribe_year_save = Rswift.StringResource(key: "subscribe_year_save", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Schedule
       ///
       /// Locales: en, es, ru
@@ -9724,6 +9724,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("subscription_save_50", bundle: bundle, comment: "")
       }
 
+      /// en translation: Save 50% Off!
+      ///
+      /// Locales: en, es, ru
+      static func subscribe_year_save(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("subscribe_year_save", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "subscribe_year_save"
+        }
+
+        return NSLocalizedString("subscribe_year_save", bundle: bundle, comment: "")
+      }
+
       /// en translation: Save Changes
       ///
       /// Locales: en, es, ru
@@ -9737,21 +9752,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("garden_history_save_changes", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Save: $30 Now!
-      ///
-      /// Locales: en, es, ru
-      static func subscribe_year_save(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("subscribe_year_save", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "subscribe_year_save"
-        }
-
-        return NSLocalizedString("subscribe_year_save", bundle: bundle, comment: "")
       }
 
       /// en translation: Schedule
