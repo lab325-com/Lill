@@ -1,5 +1,5 @@
 //
-//  PaywallLongController.swift
+//  PaywallShortController.swift
 //  Lill
 //
 //  Created by Andrey S on 21.06.2022.
@@ -7,12 +7,8 @@
 
 import UIKit
 
-protocol PaywallDelegate: AnyObject {
-    func paywallSuccess(controller: BaseController)
-}
-
-class PaywallLongController: BaseController {
-
+class PaywallShortController: BaseController {
+    
     //----------------------------------------------
     // MARK: - IBOutlet
     //----------------------------------------------
@@ -44,6 +40,7 @@ class PaywallLongController: BaseController {
     
     private let controller: String
     private let isWeek: Bool
+    
     weak var delegate: PaywallDelegate?
     
     //----------------------------------------------
@@ -76,13 +73,12 @@ class PaywallLongController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        
         weekTialView.isHidden = !isWeek
         yearView.isHidden = isWeek
         
-        DispatchQueue.main.async {
-            self.heightImageView.constant = self.scollView.contentSize.height + 20
-        }
+//        DispatchQueue.main.async {
+//            self.heightImageView.constant = self.scollView.contentSize.height + 20
+//        }
         
         weakPrice.isHidden = true
         weakTialLabel.isHidden = true
@@ -155,7 +151,7 @@ class PaywallLongController: BaseController {
 // MARK: - SubscribeOutputProtocol
 //----------------------------------------------
 
-extension PaywallLongController: SubscribeOutputProtocol {
+extension PaywallShortController: SubscribeOutputProtocol {
     func successRetrive() {
         yearActivity.isHidden = true
         discountPriceLabel.isHidden = false

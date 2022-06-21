@@ -152,6 +152,8 @@
 		027B5FAD27590B2B00A84D98 /* LoaderTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */; };
 		027E194E28619B8200524821 /* PaywallLongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E194C28619B8200524821 /* PaywallLongController.swift */; };
 		027E194F28619B8200524821 /* PaywallLongController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027E194D28619B8200524821 /* PaywallLongController.xib */; };
+		027E19532861DA5100524821 /* PaywallShortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E19512861DA5100524821 /* PaywallShortController.swift */; };
+		027E19542861DA5100524821 /* PaywallShortController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027E19522861DA5100524821 /* PaywallShortController.xib */; };
 		028C9BF4274D1B2B0043EA31 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */; };
 		028C9BF5274D1B2B0043EA31 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */; };
 		028C9BF7274D1BCB0043EA31 /* ScheduleController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */; };
@@ -655,6 +657,8 @@
 		027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderTimeline.swift; sourceTree = "<group>"; };
 		027E194C28619B8200524821 /* PaywallLongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLongController.swift; sourceTree = "<group>"; };
 		027E194D28619B8200524821 /* PaywallLongController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallLongController.xib; sourceTree = "<group>"; };
+		027E19512861DA5100524821 /* PaywallShortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallShortController.swift; sourceTree = "<group>"; };
+		027E19522861DA5100524821 /* PaywallShortController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallShortController.xib; sourceTree = "<group>"; };
 		028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleController+TableView.swift"; sourceTree = "<group>"; };
@@ -1717,6 +1721,15 @@
 				027E194D28619B8200524821 /* PaywallLongController.xib */,
 			);
 			path = PaywallLongController;
+			sourceTree = "<group>";
+		};
+		027E19502861DA2300524821 /* PaywallShortController */ = {
+			isa = PBXGroup;
+			children = (
+				027E19512861DA5100524821 /* PaywallShortController.swift */,
+				027E19522861DA5100524821 /* PaywallShortController.xib */,
+			);
+			path = PaywallShortController;
 			sourceTree = "<group>";
 		};
 		028C9BF0274D1A910043EA31 /* Cell */ = {
@@ -3223,6 +3236,7 @@
 				02E329A427342586004344C0 /* SubscribePresenter.swift */,
 				0207E1A927B0FF3300DCD693 /* SubscribeYearPresenter.swift */,
 				0271C53827AD76C300479376 /* StoreKitManager.swift */,
+				027E19502861DA2300524821 /* PaywallShortController */,
 				027E194B28619B1300524821 /* PaywallLongController */,
 				021B351027B568B4002DAC0E /* PaywallYearController */,
 				FA6D68F22805DA93008DB4AA /* PaywallLifetimeController */,
@@ -3939,6 +3953,7 @@
 				02359B99274D730600109C69 /* GardenPlantClone.graphql in Resources */,
 				FA8C93A22790334C0009DA6D /* GardenCreate.graphql in Resources */,
 				FAFCF3612715D0F800C3134E /* IdentifyController.xib in Resources */,
+				027E19542861DA5100524821 /* PaywallShortController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4001,7 +4016,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4231,6 +4246,7 @@
 				026CFC12270C221C003A0687 /* GardenButtonCell.swift in Sources */,
 				FA8C93A32790334C0009DA6D /* GardenCreateModel.swift in Sources */,
 				02BD7A8C2774DCDD00A8B943 /* GardenDetailEditPresenter.swift in Sources */,
+				027E19532861DA5100524821 /* PaywallShortController.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,
@@ -4506,7 +4522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 75;
+				CURRENT_PROJECT_VERSION = 76;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4515,7 +4531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4658,7 +4674,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 75;
+				CURRENT_PROJECT_VERSION = 76;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4667,7 +4683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4690,7 +4706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 75;
+				CURRENT_PROJECT_VERSION = 76;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4699,7 +4715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

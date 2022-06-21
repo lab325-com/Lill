@@ -109,7 +109,7 @@ class GardenAddToPlaceController: BaseController {
     
     @IBAction func actionAddToNew(_ sender: UIButton) {
         if let totalGardens = KeychainService.standard.me?.totalGardens, totalGardens > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
-            MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: PlantsController.self))
         } else {
             GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
         }

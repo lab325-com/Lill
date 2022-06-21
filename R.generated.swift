@@ -704,7 +704,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 141 images.
+  /// This `R.image` struct is generated, and contains static references to 155 images.
   struct image {
     /// Image `0387eb0228108c3862249f5f68cc1f46a2b645bf`.
     static let eb0228108c3862249f5f68cc1f46a2b645bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "0387eb0228108c3862249f5f68cc1f46a2b645bf")
@@ -898,6 +898,34 @@ struct R: Rswift.Validatable {
     static let ic_wishlist_no_data = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_wishlist_no_data")
     /// Image `icn_diagnose`.
     static let icn_diagnose = Rswift.ImageResource(bundle: R.hostingBundle, name: "icn_diagnose")
+    /// Image `paywall_long_1_ic`.
+    static let paywall_long_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_1_ic")
+    /// Image `paywall_long_2_ic`.
+    static let paywall_long_2_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_2_ic")
+    /// Image `paywall_long_3_ic`.
+    static let paywall_long_3_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_3_ic")
+    /// Image `paywall_long_4_ic`.
+    static let paywall_long_4_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_4_ic")
+    /// Image `paywall_long_5_ic`.
+    static let paywall_long_5_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_5_ic")
+    /// Image `paywall_long_avatar_1_ic`.
+    static let paywall_long_avatar_1_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_avatar_1_ic")
+    /// Image `paywall_long_avatar_2_ic`.
+    static let paywall_long_avatar_2_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_avatar_2_ic")
+    /// Image `paywall_long_avatar_3_ic`.
+    static let paywall_long_avatar_3_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_avatar_3_ic")
+    /// Image `paywall_long_background_ic`.
+    static let paywall_long_background_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_background_ic")
+    /// Image `paywall_long_best_choise_ic`.
+    static let paywall_long_best_choise_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_best_choise_ic")
+    /// Image `paywall_long_close_ic`.
+    static let paywall_long_close_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_close_ic")
+    /// Image `paywall_long_free_ic`.
+    static let paywall_long_free_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_free_ic")
+    /// Image `paywall_long_top_ic`.
+    static let paywall_long_top_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_long_top_ic")
+    /// Image `paywall_short_background_ic`.
+    static let paywall_short_background_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "paywall_short_background_ic")
     /// Image `placeholder_big_ic`.
     static let placeholder_big_ic = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder_big_ic")
     /// Image `placeholder_little_ic`.
@@ -1662,6 +1690,104 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_1_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_1_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_1_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_2_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_2_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_2_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_3_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_3_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_3_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_4_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_4_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_4_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_5_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_5_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_5_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_avatar_1_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_avatar_1_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_avatar_1_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_avatar_2_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_avatar_2_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_avatar_2_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_avatar_3_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_avatar_3_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_avatar_3_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_background_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_background_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_background_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_best_choise_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_best_choise_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_best_choise_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_close_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_close_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_close_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_free_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_free_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_free_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_long_top_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_long_top_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_long_top_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "paywall_short_background_ic", bundle: ..., traitCollection: ...)`
+    static func paywall_short_background_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.paywall_short_background_ic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "placeholder_big_ic", bundle: ..., traitCollection: ...)`
     static func placeholder_big_ic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.placeholder_big_ic, compatibleWith: traitCollection)
@@ -1979,7 +2105,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 99 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 101 nibs.
   struct nib {
     /// Nib `AddCareCell`.
     static let addCareCell = _R.nib._AddCareCell()
@@ -2137,6 +2263,10 @@ struct R: Rswift.Validatable {
     static let paywallComboController = _R.nib._PaywallComboController()
     /// Nib `PaywallLifetimeController`.
     static let paywallLifetimeController = _R.nib._PaywallLifetimeController()
+    /// Nib `PaywallLongController`.
+    static let paywallLongController = _R.nib._PaywallLongController()
+    /// Nib `PaywallShortController`.
+    static let paywallShortController = _R.nib._PaywallShortController()
     /// Nib `PaywallYearController`.
     static let paywallYearController = _R.nib._PaywallYearController()
     /// Nib `PickerCaresController`.
@@ -2805,6 +2935,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaywallLongController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallLongController) instead")
+    static func paywallLongController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallLongController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PaywallShortController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallShortController) instead")
+    static func paywallShortController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.paywallShortController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PaywallYearController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.paywallYearController) instead")
     static func paywallYearController(_: Void = ()) -> UIKit.UINib {
@@ -3282,6 +3428,14 @@ struct R: Rswift.Validatable {
 
     static func paywallLifetimeController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.paywallLifetimeController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func paywallLongController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallLongController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func paywallShortController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.paywallShortController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func paywallYearController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -11369,6 +11523,8 @@ struct _R: Rswift.Validatable {
       try _OnboardingWelcomeController.validate()
       try _PaywallComboController.validate()
       try _PaywallLifetimeController.validate()
+      try _PaywallLongController.validate()
+      try _PaywallShortController.validate()
       try _PaywallYearController.validate()
       try _PlantCollectionCell.validate()
       try _PlantsDetailController.validate()
@@ -12710,6 +12866,61 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "sub_lifetime_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_lifetime_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_oneyear_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_close_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sub_oneyear_flower_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sub_oneyear_flower_ic' is used in nib 'PaywallLifetimeController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PaywallLongController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaywallLongController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "paywall_long_1_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_1_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_2_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_2_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_3_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_4_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_4_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_5_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_5_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_avatar_1_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_avatar_1_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_avatar_2_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_avatar_2_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_avatar_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_avatar_3_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_background_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_background_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_best_choise_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_best_choise_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_close_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_free_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_free_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_top_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_top_ic' is used in nib 'PaywallLongController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PaywallShortController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PaywallShortController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "paywall_long_1_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_1_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_2_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_2_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_3_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_3_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_4_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_4_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_5_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_5_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_best_choise_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_best_choise_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_close_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_close_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_free_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_free_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_long_top_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_long_top_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "paywall_short_background_ic", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'paywall_short_background_ic' is used in nib 'PaywallShortController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

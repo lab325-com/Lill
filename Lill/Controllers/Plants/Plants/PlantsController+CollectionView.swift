@@ -84,6 +84,10 @@ extension PlantsController: PlantCollectionDelegate {
                         if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                             MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
                         }
+                    case .saleTypeLongWeek, .saleTypeLongYear:
+                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
+                    case .saleTypeShortWeek, .saleTypeShortYear:
+                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
                     default:
                         return
                     }
@@ -112,6 +116,10 @@ extension PlantsController: PlantCollectionDelegate {
                         if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                             MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
                         }
+                    case .saleTypeLongWeek, .saleTypeLongYear:
+                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
+                    case .saleTypeShortWeek, .saleTypeShortYear:
+                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
                     default:
                         return
                     }

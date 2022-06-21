@@ -64,4 +64,18 @@ class MenuRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)
     }
+    
+    func presentLongPaywall(isWeek: Bool = false, delegate: PaywallDelegate?, controller: String) {
+        let controller = PaywallLongController(isWeek: isWeek, delegate: delegate, controller: controller)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
+    
+    func presentShortPaywall(isWeek: Bool = false, delegate: PaywallDelegate?, controller: String) {
+        let controller = PaywallShortController(isWeek: isWeek, delegate: delegate, controller: controller)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .overCurrentContext
+        present(controller: controller, presentStyle: .overFullScreen)
+    }
 }
