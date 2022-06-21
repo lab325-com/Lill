@@ -150,6 +150,8 @@
 		027B5FA82758F23900A84D98 /* LillActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027B5FA72758F23900A84D98 /* LillActivityIndicator.xib */; };
 		027B5FAC27590B2B00A84D98 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FAA27590B2B00A84D98 /* LoaderView.swift */; };
 		027B5FAD27590B2B00A84D98 /* LoaderTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */; };
+		027E194E28619B8200524821 /* PaywallLongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E194C28619B8200524821 /* PaywallLongController.swift */; };
+		027E194F28619B8200524821 /* PaywallLongController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027E194D28619B8200524821 /* PaywallLongController.xib */; };
 		028C9BF4274D1B2B0043EA31 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */; };
 		028C9BF5274D1B2B0043EA31 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */; };
 		028C9BF7274D1BCB0043EA31 /* ScheduleController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */; };
@@ -651,6 +653,8 @@
 		027B5FA72758F23900A84D98 /* LillActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LillActivityIndicator.xib; sourceTree = "<group>"; };
 		027B5FAA27590B2B00A84D98 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderTimeline.swift; sourceTree = "<group>"; };
+		027E194C28619B8200524821 /* PaywallLongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLongController.swift; sourceTree = "<group>"; };
+		027E194D28619B8200524821 /* PaywallLongController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallLongController.xib; sourceTree = "<group>"; };
 		028C9BF2274D1B2B0043EA31 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		028C9BF3274D1B2B0043EA31 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		028C9BF6274D1BCB0043EA31 /* ScheduleController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleController+TableView.swift"; sourceTree = "<group>"; };
@@ -1704,6 +1708,15 @@
 				027B5FAB27590B2B00A84D98 /* LoaderTimeline.swift */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		027E194B28619B1300524821 /* PaywallLongController */ = {
+			isa = PBXGroup;
+			children = (
+				027E194C28619B8200524821 /* PaywallLongController.swift */,
+				027E194D28619B8200524821 /* PaywallLongController.xib */,
+			);
+			path = PaywallLongController;
 			sourceTree = "<group>";
 		};
 		028C9BF0274D1A910043EA31 /* Cell */ = {
@@ -3210,6 +3223,7 @@
 				02E329A427342586004344C0 /* SubscribePresenter.swift */,
 				0207E1A927B0FF3300DCD693 /* SubscribeYearPresenter.swift */,
 				0271C53827AD76C300479376 /* StoreKitManager.swift */,
+				027E194B28619B1300524821 /* PaywallLongController */,
 				021B351027B568B4002DAC0E /* PaywallYearController */,
 				FA6D68F22805DA93008DB4AA /* PaywallLifetimeController */,
 				FAF3A4F1282BB1E70000D93C /* PaywallComboController */,
@@ -3762,6 +3776,7 @@
 				02D04ED126F5E7B000F86B87 /* Release.xcconfig in Resources */,
 				FAD1833926F9DD2C007A67DC /* LoginController.xib in Resources */,
 				02BBBE7B273E623900E97712 /* PickerCaresController.xib in Resources */,
+				027E194F28619B8200524821 /* PaywallLongController.xib in Resources */,
 				02DF6B432756A5410069CFF6 /* OnboardingWelcomeController.xib in Resources */,
 				FA77834927B13FB600124CB4 /* SaveUDID.graphql in Resources */,
 				021BC12127707A8F0083DC65 /* GardenDetailHistoryStatisticCell.xib in Resources */,
@@ -4184,6 +4199,7 @@
 				02D142BD2757D90D008A7FA3 /* IPhone13ProMax2View.swift in Sources */,
 				FA1CEC54273C572E003A4F84 /* RecognizeArchiveModel.swift in Sources */,
 				02D142C92757DA6E008A7FA3 /* IPhone13ProMax4Timeline.swift in Sources */,
+				027E194E28619B8200524821 /* PaywallLongController.swift in Sources */,
 				02D4BFB62743B94D00B9322B /* UIViewFlow+Extension.swift in Sources */,
 				FAF93FF82763736D004B784B /* GardenPlantCareCreateModel.swift in Sources */,
 				FA8C939527902CB30009DA6D /* GardenCreateCoverPresenter.swift in Sources */,
