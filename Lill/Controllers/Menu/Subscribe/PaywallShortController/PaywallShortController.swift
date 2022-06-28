@@ -35,7 +35,7 @@ class PaywallShortController: BaseController {
     //----------------------------------------------
     
     private let week = "com.lill.subscription.weekly"
-    private let year = "com.lill.subscription.yearly"
+    private let year = "com.lill.subscription.yearly.50"
     private lazy var presenter = SubscribePresenter(view: self)
     
     private let controller: String
