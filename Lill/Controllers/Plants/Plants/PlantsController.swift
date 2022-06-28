@@ -100,9 +100,9 @@ class PlantsController: BaseController {
             }
         }
         
-        if KeychainService.standard.me?.access.isPremium == false {
-            MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: false, delegate: nil, controller: String(describing: PlantsController.self))
-        }
+//        if KeychainService.standard.me?.access.isPremium == false {
+//            MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: false, delegate: nil, controller: String(describing: PlantsController.self))
+//        }
         
         presenter.checkRecepts { result in
             debugPrint("Sended recept to store: \(result)")

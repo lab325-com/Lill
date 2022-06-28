@@ -39,7 +39,7 @@ class PaywallLongController: BaseController {
     //----------------------------------------------
     
     private let week = "com.lill.subscription.weekly"
-    private let year = "com.lill.subscription.yearly"
+    private let year = "com.lill.subscription.yearly.50"
     private lazy var presenter = SubscribePresenter(view: self)
     
     private let controller: String
@@ -80,7 +80,7 @@ class PaywallLongController: BaseController {
         weekTialView.isHidden = !isWeek
         yearView.isHidden = isWeek
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.heightImageView.constant = self.scollView.contentSize.height + 20
         }
         
