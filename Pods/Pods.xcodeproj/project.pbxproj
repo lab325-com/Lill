@@ -1093,6 +1093,24 @@
 			};
 			name = Debug;
 		};
+		00B575CC7D27797276A902D62E2B4E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6703BF0EAFC2CF7BD599D66F028B0C3F /* FBAEMKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		06BE6D660354A64DCA20041A96310434 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB7B9080161F281563AE1BADDF672793 /* Pods-Lill.staging.xcconfig */;
@@ -1193,23 +1211,22 @@
 			};
 			name = Staging;
 		};
-		081DA994152D705FD6211E26B8D134A5 /* Staging */ = {
+		0ED844C6B30D778D8B4EA497765A001E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8112E178E429558893A13A507C738C5F /* FBSDKCoreKit.release.xcconfig */;
+			baseConfigurationReference = E3EA82E41EC3F5E863792F669D820803 /* FBSDKCoreKit_Basics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Staging;
+			name = Debug;
 		};
 		17C37C88A01BAC8D220495F8A98C2232 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1245,6 +1262,23 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		1F109BB9E89214C6A29C9AA7C27646C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31A53AF199C515E7F4FB0B1EF8BD7FC3 /* FBSDKLoginKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		2828AAD007C5D9F0DCB486FA31A96F11 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1297,22 +1331,23 @@
 			};
 			name = Release;
 		};
-		38C21C396324938126689BC076BD1553 /* Debug */ = {
+		413508B2E251AC96922B963EB268E86C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31A53AF199C515E7F4FB0B1EF8BD7FC3 /* FBSDKLoginKit.debug.xcconfig */;
+			baseConfigurationReference = 4612926FBCC3F91179C0E29C2FA54518 /* FBSDKLoginKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		4A9ECAB599B9686E4D9D6D7EC7DD1E60 /* Staging */ = {
 			isa = XCBuildConfiguration;
@@ -1386,14 +1421,31 @@
 			};
 			name = Debug;
 		};
-		592606337AA7BA9AB02FF266787F30DE /* Release */ = {
+		5BE702F0CE14533F7BB8E23A076AED7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A04F8B12715041A794A46F96A12FA5D1 /* FBSDKCoreKit_Basics.release.xcconfig */;
+			baseConfigurationReference = 1CDDD0AB2CEA26ECD96EBDD089991422 /* FBAEMKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66D91772A09993B886DA67823857F203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8112E178E429558893A13A507C738C5F /* FBSDKCoreKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1404,14 +1456,14 @@
 			};
 			name = Release;
 		};
-		7AA52E73D00BF6C978DDE587350C1655 /* Debug */ = {
+		6E6EFEEEAC48EFB276AD6CA288B905C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A763D64B5A66C329C595D4FEB8C4B53 /* FBSDKCoreKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1454,6 +1506,24 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		8850729D9D50518C42FC45530A6DF45E /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A04F8B12715041A794A46F96A12FA5D1 /* FBSDKCoreKit_Basics.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
 		};
 		8F018A2DEE5B886EB809F46934E80258 /* Staging */ = {
 			isa = XCBuildConfiguration;
@@ -1541,49 +1611,14 @@
 			};
 			name = Release;
 		};
-		A52856A9BC061727EC7CFD4DC1022BA3 /* Release */ = {
+		B052B9197EC66D2267FD7B1B000BCD9B /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4612926FBCC3F91179C0E29C2FA54518 /* FBSDKLoginKit.release.xcconfig */;
+			baseConfigurationReference = 8112E178E429558893A13A507C738C5F /* FBSDKCoreKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B136D8CE10F7C8F90C7675FDCF0A87A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CDDD0AB2CEA26ECD96EBDD089991422 /* FBAEMKit.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B25B3E4E41FD562F2B0D4BC8E787B02D /* Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4612926FBCC3F91179C0E29C2FA54518 /* FBSDKLoginKit.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1594,14 +1629,14 @@
 			};
 			name = Staging;
 		};
-		B2E9EA8E726A5708C8CB84AD003872EC /* Staging */ = {
+		B7D3333DF15BD39A49396C1522C7EBB2 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A04F8B12715041A794A46F96A12FA5D1 /* FBSDKCoreKit_Basics.release.xcconfig */;
+			baseConfigurationReference = 4612926FBCC3F91179C0E29C2FA54518 /* FBSDKLoginKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1611,24 +1646,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Staging;
-		};
-		B86F672FBA04C337EFB3E28FFDA213A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6703BF0EAFC2CF7BD599D66F028B0C3F /* FBAEMKit.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		B91359F49F4BFF916A1F307262C4C5F9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1668,14 +1685,14 @@
 			};
 			name = Release;
 		};
-		C8E8B5BB042E520926E47DFE7BE9A0E4 /* Staging */ = {
+		D0D56874CC33CB73862ED58CCC03260F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6703BF0EAFC2CF7BD599D66F028B0C3F /* FBAEMKit.release.xcconfig */;
+			baseConfigurationReference = A04F8B12715041A794A46F96A12FA5D1 /* FBSDKCoreKit_Basics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1684,7 +1701,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Staging;
+			name = Release;
 		};
 		E5B12AB88A4F6C443C963D290ECB2428 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1748,14 +1765,14 @@
 			};
 			name = Release;
 		};
-		EB9C9F80687FE0DBAFB8A2C676B52F05 /* Release */ = {
+		E5DABFD1DE5C50BB12D1708F476BC8E9 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8112E178E429558893A13A507C738C5F /* FBSDKCoreKit.release.xcconfig */;
+			baseConfigurationReference = 6703BF0EAFC2CF7BD599D66F028B0C3F /* FBAEMKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1764,7 +1781,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Staging;
 		};
 		F710A77531AB280707FF0ACF97B2458F /* Staging */ = {
 			isa = XCBuildConfiguration;
@@ -1783,32 +1800,15 @@
 			};
 			name = Staging;
 		};
-		F8E3348C0E4E7CA8BA33C39D931E8A17 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3EA82E41EC3F5E863792F669D820803 /* FBSDKCoreKit_Basics.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		3F462F2A3D0B34B003197E5826615ADB /* Build configuration list for PBXAggregateTarget "FBSDKCoreKit_Basics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8E3348C0E4E7CA8BA33C39D931E8A17 /* Debug */,
-				592606337AA7BA9AB02FF266787F30DE /* Release */,
-				B2E9EA8E726A5708C8CB84AD003872EC /* Staging */,
+				0ED844C6B30D778D8B4EA497765A001E /* Debug */,
+				D0D56874CC33CB73862ED58CCC03260F /* Release */,
+				8850729D9D50518C42FC45530A6DF45E /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1856,9 +1856,9 @@
 		C5D60AFC681ACCCE3305703C506BDD76 /* Build configuration list for PBXAggregateTarget "FBSDKLoginKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				38C21C396324938126689BC076BD1553 /* Debug */,
-				A52856A9BC061727EC7CFD4DC1022BA3 /* Release */,
-				B25B3E4E41FD562F2B0D4BC8E787B02D /* Staging */,
+				1F109BB9E89214C6A29C9AA7C27646C1 /* Debug */,
+				413508B2E251AC96922B963EB268E86C /* Release */,
+				B7D3333DF15BD39A49396C1522C7EBB2 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1866,9 +1866,9 @@
 		CDBE6EEE7FFFEE38BA6C7A3A2DFE7871 /* Build configuration list for PBXAggregateTarget "FBSDKCoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7AA52E73D00BF6C978DDE587350C1655 /* Debug */,
-				EB9C9F80687FE0DBAFB8A2C676B52F05 /* Release */,
-				081DA994152D705FD6211E26B8D134A5 /* Staging */,
+				6E6EFEEEAC48EFB276AD6CA288B905C0 /* Debug */,
+				66D91772A09993B886DA67823857F203 /* Release */,
+				B052B9197EC66D2267FD7B1B000BCD9B /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1886,9 +1886,9 @@
 		F2F47AB06C13DA92F1E638CB2FE0D19A /* Build configuration list for PBXAggregateTarget "FBAEMKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B136D8CE10F7C8F90C7675FDCF0A87A3 /* Debug */,
-				B86F672FBA04C337EFB3E28FFDA213A8 /* Release */,
-				C8E8B5BB042E520926E47DFE7BE9A0E4 /* Staging */,
+				5BE702F0CE14533F7BB8E23A076AED7C /* Debug */,
+				00B575CC7D27797276A902D62E2B4E88 /* Release */,
+				E5DABFD1DE5C50BB12D1708F476BC8E9 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
