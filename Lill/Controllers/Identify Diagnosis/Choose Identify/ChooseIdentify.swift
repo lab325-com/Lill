@@ -120,6 +120,10 @@ class ChooseIdentify: BaseController {
                             if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                                 MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
                             }
+                        case .saleTypeLongWeek, .saleTypeLongYear:
+                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeShortWeek, .saleTypeShortYear:
+                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
                         default:
                             return
                         }
@@ -153,6 +157,10 @@ class ChooseIdentify: BaseController {
                             if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                                 MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
                             }
+                        case .saleTypeLongWeek, .saleTypeLongYear:
+                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeShortWeek, .saleTypeShortYear:
+                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
                         default:
                             return
                         }
@@ -185,6 +193,10 @@ class ChooseIdentify: BaseController {
                             if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                                 MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
                             }
+                        case .saleTypeLongWeek, .saleTypeLongYear:
+                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
+                        case .saleTypeShortWeek, .saleTypeShortYear:
+                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
                         default:
                             return
                         }

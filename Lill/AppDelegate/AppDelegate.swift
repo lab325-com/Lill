@@ -320,6 +320,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                     if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
                         MenuRouter(presenter: controller?.navigationController).presentComboPaywall(popupType: currentPopUp, controller: "Push")
                     }
+                } else if subscription.contains("saleTypeLongWeek") {
+                    MenuRouter(presenter: controller?.navigationController).presentLongPaywall(isWeek: true, delegate: nil, controller: "Push")
+                } else if subscription.contains("saleTypeLongYear") {
+                    MenuRouter(presenter: controller?.navigationController).presentLongPaywall(delegate: nil, controller: "Push")
+                } else if subscription.contains("saleTypeShortWeek") {
+                    MenuRouter(presenter: controller?.navigationController).presentShortPaywall(isWeek: true, delegate: nil, controller: "Push")
+                } else if subscription.contains("saleTypeShortYear") {
+                    MenuRouter(presenter: controller?.navigationController).presentShortPaywall(delegate: nil, controller: "Push")
                 }
             }
         }

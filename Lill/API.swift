@@ -1092,7 +1092,11 @@ public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
   case saleTypeCombo
   case saleTypeComboFull
   case saleTypeLifetime_50
+  case saleTypeLongWeek
+  case saleTypeLongYear
   case saleTypeMonthly
+  case saleTypeShortWeek
+  case saleTypeShortYear
   case saleTypeWeekly
   case saleTypeYearly
   case saleTypeYearly_50
@@ -1104,7 +1108,11 @@ public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
       case "SALE_TYPE_COMBO": self = .saleTypeCombo
       case "SALE_TYPE_COMBO_FULL": self = .saleTypeComboFull
       case "SALE_TYPE_LIFETIME_50": self = .saleTypeLifetime_50
+      case "SALE_TYPE_LONG_WEEK": self = .saleTypeLongWeek
+      case "SALE_TYPE_LONG_YEAR": self = .saleTypeLongYear
       case "SALE_TYPE_MONTHLY": self = .saleTypeMonthly
+      case "SALE_TYPE_SHORT_WEEK": self = .saleTypeShortWeek
+      case "SALE_TYPE_SHORT_YEAR": self = .saleTypeShortYear
       case "SALE_TYPE_WEEKLY": self = .saleTypeWeekly
       case "SALE_TYPE_YEARLY": self = .saleTypeYearly
       case "SALE_TYPE_YEARLY_50": self = .saleTypeYearly_50
@@ -1117,7 +1125,11 @@ public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
       case .saleTypeCombo: return "SALE_TYPE_COMBO"
       case .saleTypeComboFull: return "SALE_TYPE_COMBO_FULL"
       case .saleTypeLifetime_50: return "SALE_TYPE_LIFETIME_50"
+      case .saleTypeLongWeek: return "SALE_TYPE_LONG_WEEK"
+      case .saleTypeLongYear: return "SALE_TYPE_LONG_YEAR"
       case .saleTypeMonthly: return "SALE_TYPE_MONTHLY"
+      case .saleTypeShortWeek: return "SALE_TYPE_SHORT_WEEK"
+      case .saleTypeShortYear: return "SALE_TYPE_SHORT_YEAR"
       case .saleTypeWeekly: return "SALE_TYPE_WEEKLY"
       case .saleTypeYearly: return "SALE_TYPE_YEARLY"
       case .saleTypeYearly_50: return "SALE_TYPE_YEARLY_50"
@@ -1130,7 +1142,11 @@ public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
       case (.saleTypeCombo, .saleTypeCombo): return true
       case (.saleTypeComboFull, .saleTypeComboFull): return true
       case (.saleTypeLifetime_50, .saleTypeLifetime_50): return true
+      case (.saleTypeLongWeek, .saleTypeLongWeek): return true
+      case (.saleTypeLongYear, .saleTypeLongYear): return true
       case (.saleTypeMonthly, .saleTypeMonthly): return true
+      case (.saleTypeShortWeek, .saleTypeShortWeek): return true
+      case (.saleTypeShortYear, .saleTypeShortYear): return true
       case (.saleTypeWeekly, .saleTypeWeekly): return true
       case (.saleTypeYearly, .saleTypeYearly): return true
       case (.saleTypeYearly_50, .saleTypeYearly_50): return true
@@ -1144,7 +1160,11 @@ public enum SaleType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
       .saleTypeCombo,
       .saleTypeComboFull,
       .saleTypeLifetime_50,
+      .saleTypeLongWeek,
+      .saleTypeLongYear,
       .saleTypeMonthly,
+      .saleTypeShortWeek,
+      .saleTypeShortYear,
       .saleTypeWeekly,
       .saleTypeYearly,
       .saleTypeYearly_50,
