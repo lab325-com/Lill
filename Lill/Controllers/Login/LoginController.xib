@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jP8-d2-od0">
-                    <rect key="frame" x="67" y="625" width="280" height="197"/>
+                    <rect key="frame" x="67" y="727" width="280" height="95"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHi-aA-Nm7">
                             <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
@@ -143,8 +143,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-yF-9FD">
-                            <rect key="frame" x="0.0" y="102" width="280" height="44"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-yF-9FD">
+                            <rect key="frame" x="0.0" y="95" width="280" height="44"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-hK-mkq">
                                     <rect key="frame" x="41.5" y="0.0" width="197" height="44"/>
@@ -195,8 +195,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-Ra-ROg">
-                            <rect key="frame" x="0.0" y="153" width="280" height="44"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-Ra-ROg">
+                            <rect key="frame" x="0.0" y="95" width="280" height="44"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-Re-A3T">
                                     <rect key="frame" x="41" y="0.0" width="198" height="44"/>
