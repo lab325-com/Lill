@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jP8-d2-od0">
-                    <rect key="frame" x="67" y="727" width="280" height="95"/>
+                    <rect key="frame" x="67" y="625" width="280" height="197"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHi-aA-Nm7">
                             <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
@@ -143,8 +143,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-yF-9FD">
-                            <rect key="frame" x="0.0" y="95" width="280" height="44"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-yF-9FD">
+                            <rect key="frame" x="0.0" y="102" width="280" height="44"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Juq-hK-mkq">
                                     <rect key="frame" x="41.5" y="0.0" width="197" height="44"/>
@@ -195,8 +195,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-Ra-ROg">
-                            <rect key="frame" x="0.0" y="95" width="280" height="44"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-Ra-ROg">
+                            <rect key="frame" x="0.0" y="153" width="280" height="44"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AUG-Re-A3T">
                                     <rect key="frame" x="41" y="0.0" width="198" height="44"/>
@@ -268,11 +268,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-95-IyI">
-                    <rect key="frame" x="35" y="44" width="28" height="28"/>
+                    <rect key="frame" x="314" y="44" width="100" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="28" id="hV7-qL-4ZC"/>
-                        <constraint firstAttribute="height" constant="28" id="m4g-fQ-X6K"/>
+                        <constraint firstAttribute="width" constant="100" id="hV7-qL-4ZC"/>
+                        <constraint firstAttribute="height" constant="100" id="m4g-fQ-X6K"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="ic_login_close"/>
@@ -302,11 +302,11 @@
                 <constraint firstItem="5HK-Ih-qLU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WuO-tT-aXP"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xz6-yA-x0I"/>
                 <constraint firstItem="6TV-gg-gnu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="bcD-UP-NX4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pPd-95-IyI" secondAttribute="trailing" id="hiM-OQ-gT2"/>
                 <constraint firstAttribute="bottom" secondItem="xho-CO-Sgg" secondAttribute="bottom" id="iV5-Pg-acd"/>
                 <constraint firstItem="S1P-gb-BDL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kvU-I5-x9n"/>
                 <constraint firstItem="xho-CO-Sgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n4s-xA-JBB"/>
                 <constraint firstItem="S1P-gb-BDL" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-8" id="pj4-Lv-gQp"/>
-                <constraint firstItem="pPd-95-IyI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="uiU-jN-Tuf"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="68.973214285714278"/>
         </view>
