@@ -18,6 +18,7 @@ class PreferencesManager : NSObject {
     static let isLoadConfig = "isLoadConfig"
     static let isShowFirstOnboarding = "isShowFirstOnboarding"
     static let currentPopUp = "currentPopUp"
+    static let paywallType = "paywallType"
     
     var userDefaults: UserDefaults
     
@@ -205,6 +206,16 @@ extension PreferencesManager {
         }
         set {
             userDefaults.set(newValue?.rawValue, forKey: PreferencesManager.currentPopUp)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var paywallType: PaywallType? {
+        get {
+            return PaywallType(rawValue: UserDefaults.standard.string(forKey: PreferencesManager.paywallType) ?? "")
+        }
+        set {
+            userDefaults.set(newValue?.rawValue, forKey: PreferencesManager.paywallType)
             userDefaults.synchronize()
         }
     }

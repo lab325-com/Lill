@@ -75,22 +75,7 @@ class RecognizeArchiveController: BaseController {
         } else {
             if let model = StoreKitManager.sharedInstance.checkSaleType(type: .identify) {
                 if let total = meModel.access.identifyTotal, total >= model.value {
-                    switch model.sale {
-                    case .saleTypeLifetime_50:
-                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: RecognizeArchiveController.self))
-                    case .saleTypeYearly_50:
-                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
-                    case .saleTypeCombo, .saleTypeComboFull:
-                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: RecognizeArchiveController.self))
-                        }
-                    case .saleTypeLongWeek, .saleTypeLongYear:
-                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    case .saleTypeShortWeek, .saleTypeShortYear:
-                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    default:
-                        return
-                    }
+                    MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
                 } else {
                     PlantsRouter(presenter: navigationController).presentIdentify()
                 }

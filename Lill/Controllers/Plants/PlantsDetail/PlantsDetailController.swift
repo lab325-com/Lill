@@ -195,7 +195,7 @@ class PlantsDetailController: BaseController {
         }
         
         if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 4 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
-            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
+            MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
         } else {
             presenter.setFavoritePlant(id: id, isFavorite: !isFavorite)
         }
@@ -209,7 +209,7 @@ class PlantsDetailController: BaseController {
             firstOnboardingView.isHidden = true
         }
         if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
-            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: IdentifyController.self))
+            MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: PlantsDetailController.self))
         } else {
             AnalyticsHelper.sendFirebaseEvents(events: .add_to_garden)
             GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)

@@ -72,6 +72,7 @@
 		021D6D012731263D00C73183 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D002731263D00C73183 /* Constants.swift */; };
 		021D6D0527315D6200C73183 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0427315D6200C73183 /* MeModel.swift */; };
 		021D6D0D2731AE4B00C73183 /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021D6D0C2731AE4B00C73183 /* SharingManager.swift */; };
+		021FEEF52872ECBE00E15C8F /* PaywallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FEEF42872ECBE00E15C8F /* PaywallModel.swift */; };
 		0228B48C2760DE3300F7101C /* GardenPlantCaresEditDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228B48A2760DE3300F7101C /* GardenPlantCaresEditDelete.swift */; };
 		0228B48D2760DE3300F7101C /* GardenPlantCaresEditDelete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0228B48B2760DE3300F7101C /* GardenPlantCaresEditDelete.xib */; };
 		022949942701E7F700003A3E /* GetCatalogPlantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022949932701E7F700003A3E /* GetCatalogPlantsModel.swift */; };
@@ -578,6 +579,7 @@
 		021D6D002731263D00C73183 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		021D6D0427315D6200C73183 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeModel.swift; path = Lill/Apollo/GraphQl/GlobalModels/MeModel.swift; sourceTree = SOURCE_ROOT; };
 		021D6D0C2731AE4B00C73183 /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
+		021FEEF42872ECBE00E15C8F /* PaywallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallModel.swift; sourceTree = "<group>"; };
 		0228B48A2760DE3300F7101C /* GardenPlantCaresEditDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenPlantCaresEditDelete.swift; sourceTree = "<group>"; };
 		0228B48B2760DE3300F7101C /* GardenPlantCaresEditDelete.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GardenPlantCaresEditDelete.xib; sourceTree = "<group>"; };
 		022949932701E7F700003A3E /* GetCatalogPlantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCatalogPlantsModel.swift; sourceTree = "<group>"; };
@@ -1329,6 +1331,14 @@
 				FA74059C2808569400C224C8 /* LocalizationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		021FEEF32872ECA900E15C8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				021FEEF42872ECBE00E15C8F /* PaywallModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0228B4892760DE1700F7101C /* GardenPlantCaresEditDelete */ = {
@@ -2184,6 +2194,7 @@
 			isa = PBXGroup;
 			children = (
 				02C9F3A22821018400214D85 /* RemoteConfigParameters.swift */,
+				021FEEF32872ECA900E15C8F /* Model */,
 			);
 			path = FirebaseConfig;
 			sourceTree = "<group>";
@@ -4100,6 +4111,7 @@
 				FA8C937B278F19580009DA6D /* GardenEditChangeName.swift in Sources */,
 				021B351327B56913002DAC0E /* PaywallYearController.swift in Sources */,
 				02D4BFC42743B98C00B9322B /* TimelineSwipeLeft.swift in Sources */,
+				021FEEF52872ECBE00E15C8F /* PaywallModel.swift in Sources */,
 				02527DA02746DCEB00126022 /* AddImageToGalleryModel.swift in Sources */,
 				02527D8A2746339500126022 /* GardenDetailController+TableView.swift in Sources */,
 				0207E1AA27B0FF3300DCD693 /* SubscribeYearPresenter.swift in Sources */,
@@ -4522,7 +4534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4531,7 +4543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4674,7 +4686,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4683,7 +4695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -4706,7 +4718,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lill/Lill.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				INFOPLIST_FILE = Lill/Info.plist;
@@ -4715,7 +4727,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

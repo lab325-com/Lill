@@ -53,10 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppsFlyerLib.shared().appsFlyerDevKey = "sapALRVCHUnGS6xNLJQPjS"
         AppsFlyerLib.shared().appleAppID = "1586099684"
+        #if DEBUG
+            AppsFlyerLib.shared().isDebug = true
+            AppsFlyerLib.shared().useReceiptValidationSandbox = true
+            AppsFlyerLib.shared().useUninstallSandbox = true
+        #else
+            AppsFlyerLib.shared().isDebug = false
+        #endif
         AppsFlyerLib.shared().delegate = self
-        AppsFlyerLib.shared().isDebug = true
-        AppsFlyerLib.shared().useReceiptValidationSandbox = true
-        AppsFlyerLib.shared().useUninstallSandbox = true
         
         checkingPurchase()
         forceUpdate()
@@ -234,6 +238,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         PreferencesManager.sharedManager.isShowFirstOnboarding = isShowFirstOnboarding
                     }
                     
+                    if let paywall = RemoteConfigParameters.paywall.value as? PaywallModel  {
+                        PreferencesManager.sharedManager.paywallType = paywall.type
+                    }
+                    
                     PreferencesManager.sharedManager.currentPopUp = RemoteConfigParameters.currentPopUp.value as? PopupType
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -342,7 +350,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { result in
             switch result {
-            case .success(let product):
+            case .success(let product), .deferred(purchase: let product):
                 AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id, "controller": controller])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_purchase_success, values: ["id": id])
                 AnalyticsHelper.sendFacebookEvent(event: .fb_purchase_success, values: ["id": id])

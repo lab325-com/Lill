@@ -8,6 +8,13 @@
 import Foundation
 import Firebase
 
+enum PaywallType: String, Codable {
+    case saleTypeLongWeek
+    case saleTypeLongYear
+    case saleTypeShortWeek
+    case saleTypeShortYear
+}
+
 enum PopupType: String, Codable {
     case pop3
     case pop2
@@ -17,6 +24,7 @@ enum PopupType: String, Codable {
 enum RemoteConfigParameters: String, CaseIterable {
     case isShowFirstOnboarding = "isShowFirstOnboarding"
     case currentPopUp = "currentPopUp"
+    case paywall = "paywall"
 }
 
 extension RemoteConfigParameters {
@@ -25,6 +33,8 @@ extension RemoteConfigParameters {
         switch self {
         case .isShowFirstOnboarding:
             return try? self.toCodable().get() as Bool
+        case .paywall:
+            return try? self.toCodable().get() as PaywallModel
         case .currentPopUp:
             return PopupType(rawValue: RemoteConfig.remoteConfig().configValue(forKey: self.rawValue).stringValue ?? "")
         }

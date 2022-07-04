@@ -78,4 +78,20 @@ class MenuRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         present(controller: controller, presentStyle: .overFullScreen)
     }
+    
+    func presentPaywall(delegate: PaywallDelegate?, controller: String) {
+        
+        switch PreferencesManager.sharedManager.paywallType {
+        case .saleTypeShortYear:
+            presentShortPaywall(isWeek: false, delegate: delegate, controller: controller)
+        case .saleTypeShortWeek:
+            presentShortPaywall(isWeek: true, delegate: delegate, controller: controller)
+        case .saleTypeLongWeek:
+            presentLongPaywall(isWeek: true, delegate: delegate, controller: controller)
+        case .saleTypeLongYear:
+            presentLongPaywall(isWeek: false, delegate: delegate, controller: controller)
+        default:
+            presentLongPaywall(isWeek: true, delegate: delegate, controller: controller)
+        }
+    }
 }

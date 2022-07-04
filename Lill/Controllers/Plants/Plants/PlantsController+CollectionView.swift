@@ -75,22 +75,7 @@ extension PlantsController: PlantCollectionDelegate {
         } else {
             if let model = StoreKitManager.sharedInstance.checkSaleType(type: .plants) {
                 if meModel.totalGardenPlants >= model.value {
-                    switch model.sale {
-                    case .saleTypeLifetime_50:
-                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                    case .saleTypeYearly_50:
-                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                    case .saleTypeCombo, .saleTypeComboFull:
-                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
-                        }
-                    case .saleTypeLongWeek, .saleTypeLongYear:
-                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    case .saleTypeShortWeek, .saleTypeShortYear:
-                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    default:
-                        return
-                    }
+                    MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
                     GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
                 }
@@ -107,22 +92,7 @@ extension PlantsController: PlantCollectionDelegate {
         } else {
             if let model = StoreKitManager.sharedInstance.checkSaleType(type: .favorite) {
                 if meModel.totalFavouritePlants >= model.value && !isFavorite {
-                    switch model.sale {
-                    case .saleTypeLifetime_50:
-                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                    case .saleTypeYearly_50:
-                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                    case .saleTypeCombo, .saleTypeComboFull:
-                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
-                        }
-                    case .saleTypeLongWeek, .saleTypeLongYear:
-                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    case .saleTypeShortWeek, .saleTypeShortYear:
-                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    default:
-                        return
-                    }
+                    MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
                     presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
                 }
