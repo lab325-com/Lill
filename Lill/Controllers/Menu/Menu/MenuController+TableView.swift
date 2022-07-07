@@ -121,6 +121,22 @@ extension MenuController: UITableViewDelegate {
         case .subscriptions:
             AnalyticsHelper.sendFirebaseEvents(events: .menu_subscription)
             MenuRouter(presenter: navigationController).presentSubscription(controller: String(describing: MenuController.self))
+        case .deleteAccount:
+            
+            let title = RLocalization.allert_delete_message.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            let yesText = RLocalization.allert_yes.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            let noText = RLocalization.allert_no.localized(PreferencesManager.sharedManager.languageCode.rawValue)
+            
+            let alert = UIAlertController(title: "Lill", message: title, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: yesText, style: .default, handler: { action in
+                self.presenter.deleteAccount()
+            }))
+            
+            alert.addAction(UIAlertAction(title: noText, style: .cancel, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

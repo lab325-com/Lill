@@ -13,6 +13,7 @@ import UIKit
 //----------------------------------------------
 protocol MenuOutputProtocol: BaseController {
     func success(model: MeDataModel)
+    func successDelete()
     func failure(error: String)
 }
 
@@ -29,7 +30,8 @@ class MenuPresenter: MenuPresenterProtocol {
     let menuItems: [MenuSectionItem] = [
             MenuSectionItem(type: .account, items: [
                 MenuItem(type: .accountInfo),
-                MenuItem(type: .subscriptions)
+                MenuItem(type: .subscriptions),
+                MenuItem(type: .deleteAccount)
         ]),
             MenuSectionItem(type: .archive, items: [
                 MenuItem(type: .recognized),
@@ -64,6 +66,19 @@ class MenuPresenter: MenuPresenterProtocol {
             self?.view?.failure(error: error.localizedDescription)
         }
     }
+    
+    func deleteAccount() {
+        view?.startLoader()
+        let mutation = ProfileDeleteMutation()
+        
+        let _ = Network.shared.mutation(model: ProfileDeleteModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successDelete()
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
+        }
+    }
 }
 
 //----------------------------------------------
@@ -78,6 +93,7 @@ enum MenuSectionType {
 enum MenuItemType {
     case accountInfo
     case subscriptions
+    case deleteAccount
     case recognized
     case disease
     case lang

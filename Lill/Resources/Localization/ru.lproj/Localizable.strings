@@ -18,6 +18,7 @@
 "allert_camer_permission_settings" = "Настройки";
 "allert_camer_permission_subtittle" = "Перейти к настройкам для включения разрешений для использования камеры?";
 "allert_camer_permission_title" = "Разрешения";
+"allert_delete_message" = "Вы точно хотите удалить аккаунт?";
 "allert_logout_message" = "Вы уверены, что вы хотите выйти?";
 "allert_no" = "НЕТ";
 "allert_yes" = "ДА";
@@ -255,6 +256,7 @@
 "login_info" = "Исследуйте растения и создайте сад своей мечты";
 "login_instagram" = "Войдите в Instagram";
 "menu_account" = "учетная запись";
+"menu_delete_account" = "Удалить аккаунт";
 "menu_item_archive_disease" = "Архив болезни";
 "menu_item_archive_recognized" = "Архив распознанных растений";
 "menu_item_language" = "Язык";

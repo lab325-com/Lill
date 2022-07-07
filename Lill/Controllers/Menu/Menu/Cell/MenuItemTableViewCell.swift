@@ -29,10 +29,14 @@ class MenuItemTableViewCell: UITableViewCell {
     }
     
     func setup(type: MenuItemType, with model: MeDataModel?){
+        self.titleLabel.textColor = .black
         switch (type){
         case .subscriptions:
             self.titleLabel.text = RLocalization.menu_item_subscriptions.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
             self.accessoryType = .disclosureIndicator
+        case .deleteAccount:
+            self.titleLabel.text = RLocalization.menu_delete_account.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
+            self.titleLabel.textColor = UIColor(rgb: 0xF96161)
         case .recognized:
             self.titleLabel.text = RLocalization.menu_item_archive_recognized.localized(PreferencesManager.sharedManager.languageCode.rawValue).capitalized
             self.subtitleLabel.text = model?.me.access.identifyTotal == nil ? "\(model?.me.access.identifyUsed ?? 0)/\(model?.me.access.identifyUsed ?? 0)" : "\(model?.me.access.identifyUsed ?? 0)/\(model?.me.access.identifyTotal ?? 0)"

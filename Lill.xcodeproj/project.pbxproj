@@ -287,6 +287,8 @@
 		02D4BFC82743BC7800B9322B /* AnimationBackGroundSwipeRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */; };
 		02D4BFC92743BC7800B9322B /* TimelineSwipeRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */; };
 		02DCC49E27621C7000F976BA /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCC49D27621C7000F976BA /* AnalyticsHelper.swift */; };
+		02DDE1B32876E0D500AB2CB6 /* ProfileDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02DDE1B22876E0D400AB2CB6 /* ProfileDelete.graphql */; };
+		02DDE1B52876E0FA00AB2CB6 /* ProfileDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDE1B42876E0FA00AB2CB6 /* ProfileDeleteModel.swift */; };
 		02DF6B31275659910069CFF6 /* OnboardingFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */; };
 		02DF6B32275659910069CFF6 /* OnboardingFourController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DF6B30275659910069CFF6 /* OnboardingFourController.xib */; };
 		02DF6B3A275663C80069CFF6 /* MainOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */; };
@@ -795,6 +797,8 @@
 		02D4BFC62743BC7700B9322B /* AnimationBackGroundSwipeRightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBackGroundSwipeRightView.swift; sourceTree = "<group>"; };
 		02D4BFC72743BC7700B9322B /* TimelineSwipeRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwipeRight.swift; sourceTree = "<group>"; };
 		02DCC49D27621C7000F976BA /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
+		02DDE1B22876E0D400AB2CB6 /* ProfileDelete.graphql */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProfileDelete.graphql; path = Lill/Apollo/GraphQl/Mutation/ProfileDelete/ProfileDelete.graphql; sourceTree = SOURCE_ROOT; };
+		02DDE1B42876E0FA00AB2CB6 /* ProfileDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileDeleteModel.swift; path = Lill/Apollo/GraphQl/Mutation/ProfileDelete/ProfileDeleteModel.swift; sourceTree = SOURCE_ROOT; };
 		02DF6B2F275659910069CFF6 /* OnboardingFourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFourController.swift; sourceTree = "<group>"; };
 		02DF6B30275659910069CFF6 /* OnboardingFourController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingFourController.xib; sourceTree = "<group>"; };
 		02DF6B38275663C80069CFF6 /* MainOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingController.swift; sourceTree = "<group>"; };
@@ -2510,6 +2514,15 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
+		02DDE1B12876E0A100AB2CB6 /* ProfileDelete */ = {
+			isa = PBXGroup;
+			children = (
+				02DDE1B22876E0D400AB2CB6 /* ProfileDelete.graphql */,
+				02DDE1B42876E0FA00AB2CB6 /* ProfileDeleteModel.swift */,
+			);
+			path = ProfileDelete;
+			sourceTree = "<group>";
+		};
 		02DF6B2E2756591A0069CFF6 /* OnboardingFourController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2760,6 +2773,7 @@
 		FA1CEC50273C55A8003A4F84 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				02DDE1B12876E0A100AB2CB6 /* ProfileDelete */,
 				FADE700B280065A800CA4B31 /* ProfileUpdate */,
 				FA29D9E327C4EA8300A4B6C6 /* ReportDiagnose */,
 				FA62365827BE5D3A005C593B /* ReportRecognize */,
@@ -3811,6 +3825,7 @@
 				FAFCF35527157FE100C3134E /* Me.graphql in Resources */,
 				021D6CFE273118C000C73183 /* LanguageCell.xib in Resources */,
 				025ECF22273D5CFE0041A7BD /* AddPlantTimeCell.xib in Resources */,
+				02DDE1B32876E0D500AB2CB6 /* ProfileDelete.graphql in Resources */,
 				FA8C935D278D62620009DA6D /* AddPlaceCell.xib in Resources */,
 				FA8C9389279009870009DA6D /* GardenDelete.graphql in Resources */,
 				FA36BC5D27747A8800A878AA /* PopDoneSpecificCareController.xib in Resources */,
@@ -4027,7 +4042,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/Scripts/Localization/loc.sh\"\n";
 		};
 		4057351ABD9EBDED402D1CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4259,6 +4274,7 @@
 				FA8C93A32790334C0009DA6D /* GardenCreateModel.swift in Sources */,
 				02BD7A8C2774DCDD00A8B943 /* GardenDetailEditPresenter.swift in Sources */,
 				027E19532861DA5100524821 /* PaywallShortController.swift in Sources */,
+				02DDE1B52876E0FA00AB2CB6 /* ProfileDeleteModel.swift in Sources */,
 				021D6D0527315D6200C73183 /* MeModel.swift in Sources */,
 				02493DDE2727F1C3008C2064 /* LoadFromXibProtocol.swift in Sources */,
 				02FCBFAF270A40490089CEF8 /* KeychainService.swift in Sources */,

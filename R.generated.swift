@@ -153,7 +153,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 63 files.
+  /// This `R.file` struct is generated, and contains static references to 64 files.
   struct file {
     /// Resource file `AddImageToGallery.graphql`.
     static let addImageToGalleryGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "AddImageToGallery", pathExtension: "graphql")
@@ -239,6 +239,8 @@ struct R: Rswift.Validatable {
     static let plantByIdGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantById", pathExtension: "graphql")
     /// Resource file `PlantToGarden.graphql`.
     static let plantToGardenGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "PlantToGarden", pathExtension: "graphql")
+    /// Resource file `ProfileDelete.graphql`.
+    static let profileDeleteGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ProfileDelete", pathExtension: "graphql")
     /// Resource file `ProfileUpdate.graphql`.
     static let profileUpdateGraphql = Rswift.FileResource(bundle: R.hostingBundle, name: "ProfileUpdate", pathExtension: "graphql")
     /// Resource file `RecognizeArhive.graphql`.
@@ -531,6 +533,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "PlantToGarden", withExtension: "graphql")`
     static func plantToGardenGraphql(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.plantToGardenGraphql
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "ProfileDelete", withExtension: "graphql")`
+    static func profileDeleteGraphql(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.profileDeleteGraphql
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -3638,7 +3646,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 409 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 411 localization keys.
     struct localizable {
       /// en translation: %#@VARIABLE@
       ///
@@ -3860,6 +3868,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let uniques_cover_add_apply = Rswift.StringResource(key: "uniques_cover_add_apply", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Are you sure want delete account?
+      ///
+      /// Locales: en, es, ru
+      static let allert_delete_message = Rswift.StringResource(key: "allert_delete_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Are you sure want log out?
       ///
       /// Locales: en, es, ru
@@ -4188,6 +4200,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es, ru
       static let garde_edit_delete_allert_button = Rswift.StringResource(key: "garde_edit_delete_allert_button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
+      /// en translation: Delete Account
+      ///
+      /// Locales: en, es, ru
+      static let menu_delete_account = Rswift.StringResource(key: "menu_delete_account", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "ru"], comment: nil)
       /// en translation: Delete Care
       ///
       /// Locales: en, es, ru
@@ -6122,6 +6138,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("uniques_cover_add_apply", bundle: bundle, comment: "")
       }
 
+      /// en translation: Are you sure want delete account?
+      ///
+      /// Locales: en, es, ru
+      static func allert_delete_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allert_delete_message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allert_delete_message"
+        }
+
+        return NSLocalizedString("allert_delete_message", bundle: bundle, comment: "")
+      }
+
       /// en translation: Are you sure want log out?
       ///
       /// Locales: en, es, ru
@@ -7354,6 +7385,21 @@ struct R: Rswift.Validatable {
 
         let format = NSLocalizedString("garde_edit_delete_allert_button", bundle: bundle, comment: "")
         return String(format: format, locale: locale, value1)
+      }
+
+      /// en translation: Delete Account
+      ///
+      /// Locales: en, es, ru
+      static func menu_delete_account(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("menu_delete_account", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "menu_delete_account"
+        }
+
+        return NSLocalizedString("menu_delete_account", bundle: bundle, comment: "")
       }
 
       /// en translation: Delete Care
