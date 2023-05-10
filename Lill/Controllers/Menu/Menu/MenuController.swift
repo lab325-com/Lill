@@ -89,6 +89,10 @@ class MenuController: BaseController {
 //----------------------------------------------
 
 extension MenuController: MenuOutputProtocol {
+    func successDelete() {
+        MenuRouter(presenter: self.navigationController).logOut()
+    }
+    
     func success(model: MeDataModel) {
         self.meModel = model
         self.menuTable.reloadData()

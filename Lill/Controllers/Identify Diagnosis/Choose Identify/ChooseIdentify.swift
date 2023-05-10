@@ -111,22 +111,7 @@ class ChooseIdentify: BaseController {
             } else {
                 if let model = StoreKitManager.sharedInstance.checkSaleType(type: .identify) {
                     if let total = meModel.access.identifyTotal, total >= model.value {
-                        switch model.sale {
-                        case .saleTypeLifetime_50:
-                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeYearly_50:
-                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeCombo, .saleTypeComboFull:
-                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
-                            }
-                        case .saleTypeLongWeek, .saleTypeLongYear:
-                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeShortWeek, .saleTypeShortYear:
-                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        default:
-                            return
-                        }
+                        MenuRouter(presenter: currentNavigationController).presentPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                     } else {
                         PlantsRouter(presenter: currentNavigationController).presentIdentify()
                     }
@@ -148,22 +133,7 @@ class ChooseIdentify: BaseController {
             } else {
                 if let model = StoreKitManager.sharedInstance.checkSaleType(type: .diagnosis) {
                     if let total = meModel.access.diagnosisTotal, total >= model.value {
-                        switch model.sale {
-                        case .saleTypeLifetime_50:
-                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeYearly_50:
-                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeCombo, .saleTypeComboFull:
-                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
-                            }
-                        case .saleTypeLongWeek, .saleTypeLongYear:
-                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeShortWeek, .saleTypeShortYear:
-                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        default:
-                            return
-                        }
+                        MenuRouter(presenter: currentNavigationController).presentPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                     } else {
                         PlantsRouter(presenter: currentNavigationController).presentDiagnosis()
                     }
@@ -184,22 +154,7 @@ class ChooseIdentify: BaseController {
             } else {
                 if let model = StoreKitManager.sharedInstance.checkSaleType(type: .unique) {
                     if meModel.totalUniquePlants >= model.value {
-                        switch model.sale {
-                        case .saleTypeLifetime_50:
-                            MenuRouter(presenter: currentNavigationController).presentLifetimePayWall(controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeYearly_50:
-                            MenuRouter(presenter: currentNavigationController).presentYearPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeCombo, .saleTypeComboFull:
-                            if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                                MenuRouter(presenter: currentNavigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: ChooseIdentify.self))
-                            }
-                        case .saleTypeLongWeek, .saleTypeLongYear:
-                            MenuRouter(presenter: currentNavigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        case .saleTypeShortWeek, .saleTypeShortYear:
-                            MenuRouter(presenter: currentNavigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                        default:
-                            return
-                        }
+                        MenuRouter(presenter: currentNavigationController).presentPaywall(delegate: nil, controller: String(describing: ChooseIdentify.self))
                     } else {
                         self.delegate?.didPressedAddUniquePlant()
                     }

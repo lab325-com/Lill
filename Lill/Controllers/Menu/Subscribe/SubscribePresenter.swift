@@ -2,7 +2,7 @@
 //  SubscribePresenter.swift
 //  Lill
 //
-//  Created by Andrey S on 04.11.2021.
+//  Created by mob325 on 04.11.2021.
 //
 
 import Foundation
@@ -53,7 +53,7 @@ class SubscribePresenter: SubscribePresenterProtocol {
         
         SwiftyStoreKit.purchaseProduct(id, quantity: 1, atomically: true) { [weak self] result in
             switch result {
-            case .success(let product):
+            case .success(let product), .deferred(purchase: let product):
                 AnalyticsHelper.sendFirebaseEvents(events: .purchase_success, params: ["id": id, "controller": controller])
                 AnalyticsHelper.sendAppsFlyerEvent(event: .appsflyer_purchase_success, values: ["id": id])
                 AnalyticsHelper.sendFacebookEvent(event: .fb_purchase_success, values: ["id": id])

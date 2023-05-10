@@ -2,7 +2,7 @@
 //  RecognizeArchiveController+Collection.swift
 //  Lill
 //
-//  Created by Andrey S on 03.11.2021.
+//  Created by mob325 on 03.11.2021.
 //
 
 import UIKit
@@ -54,7 +54,7 @@ extension RecognizeArchiveController: UICollectionViewDelegateFlowLayout {
 extension RecognizeArchiveController: PlantCollectionDelegate {
     func setToGarden(cell: PlantCollectionCell, id: String) {
         if let totalGardenPlants = KeychainService.standard.me?.totalGardenPlants, totalGardenPlants > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
-            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+            MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
         } else {
             GardenRouter(presenter: navigationController).presentAddToGarden(tabBarController: tabBarController, delegate: self, plantId: id)
         }
@@ -62,7 +62,7 @@ extension RecognizeArchiveController: PlantCollectionDelegate {
     
     func setFavorite(cell: PlantCollectionCell, id: String, isFavorite: Bool) {
         if let totalFavouritePlants = KeychainService.standard.me?.totalFavouritePlants, totalFavouritePlants > 4 && KeychainService.standard.me?.access.subscription?.name == nil && !isFavorite {
-            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self))
+            MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: RecognizeArchiveController.self)) 
         } else {
             presenter.setFavoritePlant(id: id, isFavorite: isFavorite)
         }

@@ -2,7 +2,7 @@
 //  GardenAddToPlaceController.swift
 //  Lill
 //
-//  Created by Andrey S on 13.01.2022.
+//  Created by mob325 on 13.01.2022.
 //
 
 import UIKit
@@ -109,7 +109,7 @@ class GardenAddToPlaceController: BaseController {
     
     @IBAction func actionAddToNew(_ sender: UIButton) {
         if let totalGardens = KeychainService.standard.me?.totalGardens, totalGardens > 0 && KeychainService.standard.me?.access.subscription?.name == nil {
-            MenuRouter(presenter: navigationController).presentLongPaywall(delegate: nil, controller: String(describing: PlantsController.self))
+            MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: GardenAddToPlaceController.self))
         } else {
             GardenRouter(presenter: navigationController).presentGardenCreateName(delegate: self)
         }

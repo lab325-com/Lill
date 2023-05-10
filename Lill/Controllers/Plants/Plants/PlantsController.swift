@@ -100,10 +100,6 @@ class PlantsController: BaseController {
             }
         }
         
-//        if KeychainService.standard.me?.access.isPremium == false {
-//            MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: false, delegate: nil, controller: String(describing: PlantsController.self))
-//        }
-        
         presenter.checkRecepts { result in
             debugPrint("Sended recept to store: \(result)")
         }
@@ -227,22 +223,7 @@ class PlantsController: BaseController {
         } else {
             if let model = StoreKitManager.sharedInstance.checkSaleType(type: .unique) {
                 if meModel.totalUniquePlants >= model.value {
-                    switch model.sale {
-                    case .saleTypeLifetime_50:
-                        MenuRouter(presenter: navigationController).presentLifetimePayWall(controller: String(describing: PlantsController.self))
-                    case .saleTypeYearly_50:
-                        MenuRouter(presenter: navigationController).presentYearPaywall(delegate: nil, controller: String(describing: PlantsController.self))
-                    case .saleTypeCombo, .saleTypeComboFull:
-                        if let currentPopUp = PreferencesManager.sharedManager.currentPopUp {
-                            MenuRouter(presenter: navigationController).presentComboPaywall(popupType: currentPopUp, controller: String(describing: PlantsController.self))
-                        }
-                    case .saleTypeLongWeek, .saleTypeLongYear:
-                        MenuRouter(presenter: navigationController).presentLongPaywall(isWeek: model.sale == .saleTypeLongWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    case .saleTypeShortWeek, .saleTypeShortYear:
-                        MenuRouter(presenter: navigationController).presentShortPaywall(isWeek: model.sale == .saleTypeShortWeek,  delegate: nil, controller: String(describing: ChooseIdentify.self))
-                    default:
-                        return
-                    }
+                    MenuRouter(presenter: navigationController).presentPaywall(delegate: nil, controller: String(describing: PlantsController.self))
                 } else {
                     PopUpRouter(presenter: navigationController).presentUniquePlant(tabBarController: tabBarController, delegate: self)
                 }

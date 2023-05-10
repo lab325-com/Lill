@@ -2,7 +2,7 @@
 //  PaywallYearController.swift
 //  Lill
 //
-//  Created by Andrey S on 10.02.2022.
+//  Created by mob325 on 10.02.2022.
 //
 
 import UIKit

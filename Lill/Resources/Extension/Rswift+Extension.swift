@@ -2,7 +2,7 @@
 //  Rswift+Extension.swift
 //  Lill
 //
-//  Created by Andrey S on 01.11.2021.
+//  Created by mob325 on 01.11.2021.
 //
 
 import Foundation

@@ -18,6 +18,7 @@
 "allert_camer_permission_settings" = "Settings";
 "allert_camer_permission_subtittle" = "Go to settings for camera permission?";
 "allert_camer_permission_title" = "Permissions";
+"allert_delete_message" = "Are you sure want delete account?";
 "allert_logout_message" = "Are you sure want log out?";
 "allert_no" = "NO";
 "allert_yes" = "YES";
@@ -255,6 +256,7 @@
 "login_info" = "Explore Plants and create the garden of your dreams";
 "login_instagram" = "Sign in with Instagram";
 "menu_account" = "account";
+"menu_delete_account" = "Delete Account";
 "menu_item_archive_disease" = "Disease Archive";
 "menu_item_archive_recognized" = "Recognized Archive";
 "menu_item_language" = "Language";

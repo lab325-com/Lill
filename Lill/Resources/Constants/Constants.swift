@@ -2,7 +2,7 @@
 //  Constants.swift
 //  Lill
 //
-//  Created by Andrey S on 02.11.2021.
+//  Created by mob325 on 02.11.2021.
 //
 
 import Foundation

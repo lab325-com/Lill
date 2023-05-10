@@ -2,7 +2,7 @@
 //  LillActivityIndicator.swift
 //  Lill
 //
-//  Created by Andrey S on 02.12.2021.
+//  Created by mob325 on 02.12.2021.
 //
 
 import Foundation
