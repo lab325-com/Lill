@@ -2,7 +2,7 @@
 //  ProfileDeleteModel.swift
 //  Lill
 //
-//  Created by Andrey S on 07.07.2022.
+//  Created by mob325 on 07.07.2022.
 //
 
 import Foundation

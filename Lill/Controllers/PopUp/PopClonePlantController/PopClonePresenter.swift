@@ -2,7 +2,7 @@
 //  PopClonePresenter.swift
 //  Lill
 //
-//  Created by Andrey S on 20.11.2021.
+//  Created by mob325 on 20.11.2021.
 //
 
 import Foundation

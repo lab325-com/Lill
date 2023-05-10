@@ -2,7 +2,7 @@
 //  GalleryHistoryCell.swift
 //  Lill
 //
-//  Created by Andrey S on 20.12.2021.
+//  Created by mob325 on 20.12.2021.
 //
 
 import UIKit

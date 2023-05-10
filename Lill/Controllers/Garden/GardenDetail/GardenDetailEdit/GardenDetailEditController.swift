@@ -2,7 +2,7 @@
 //  GardenDetailEditController.swift
 //  Lill
 //
-//  Created by Andrey S on 23.12.2021.
+//  Created by mob325 on 23.12.2021.
 //
 
 import UIKit
